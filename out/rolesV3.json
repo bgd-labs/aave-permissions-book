@@ -1,0 +1,239 @@
+[
+  {
+    "role": "ASSET_LISTING_ADMIN_ROLE",
+    "networks": [
+      {
+        "networkName": "optimism",
+        "addresses": []
+      },
+      {
+        "networkName": "matic",
+        "addresses": []
+      },
+      {
+        "networkName": "arbitrum",
+        "addresses": []
+      },
+      {
+        "networkName": "avalanche",
+        "addresses": []
+      },
+      {
+        "networkName": "fantom",
+        "addresses": []
+      },
+      {
+        "networkName": "harmony",
+        "addresses": []
+      }
+    ]
+  },
+  {
+    "role": "BRIDGE_ROLE",
+    "networks": [
+      {
+        "networkName": "optimism",
+        "addresses": []
+      },
+      {
+        "networkName": "matic",
+        "addresses": []
+      },
+      {
+        "networkName": "arbitrum",
+        "addresses": []
+      },
+      {
+        "networkName": "avalanche",
+        "addresses": []
+      },
+      {
+        "networkName": "fantom",
+        "addresses": []
+      },
+      {
+        "networkName": "harmony",
+        "addresses": []
+      }
+    ]
+  },
+  {
+    "role": "DEFAULT_ADMIN_ROLE",
+    "networks": [
+      {
+        "networkName": "optimism",
+        "addresses": [
+          "0xE50c8C619d05ff98b22Adf991F17602C774F785c"
+        ]
+      },
+      {
+        "networkName": "matic",
+        "addresses": [
+          "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772"
+        ]
+      },
+      {
+        "networkName": "arbitrum",
+        "addresses": [
+          "0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb"
+        ]
+      },
+      {
+        "networkName": "avalanche",
+        "addresses": [
+          "0xa35b76e4935449e33c56ab24b23fcd3246f13470"
+        ]
+      },
+      {
+        "networkName": "fantom",
+        "addresses": [
+          "0x39cb97b105173b56b5a2b4b33ad25d6a50e6c949"
+        ]
+      },
+      {
+        "networkName": "harmony",
+        "addresses": [
+          "0xb2f0c5f37f4bed2cb51c44653cd5d84866bdcd2d"
+        ]
+      }
+    ]
+  },
+  {
+    "role": "EMERGENCY_ADMIN_ROLE",
+    "networks": [
+      {
+        "networkName": "optimism",
+        "addresses": [
+          "0xE50c8C619d05ff98b22Adf991F17602C774F785c"
+        ]
+      },
+      {
+        "networkName": "matic",
+        "addresses": [
+          "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58"
+        ]
+      },
+      {
+        "networkName": "arbitrum",
+        "addresses": [
+          "0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb"
+        ]
+      },
+      {
+        "networkName": "avalanche",
+        "addresses": [
+          "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
+        ]
+      },
+      {
+        "networkName": "fantom",
+        "addresses": [
+          "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"
+        ]
+      },
+      {
+        "networkName": "harmony",
+        "addresses": [
+          "0xb2f0c5f37f4bed2cb51c44653cd5d84866bdcd2d"
+        ]
+      }
+    ]
+  },
+  {
+    "role": "FLASH_BORROWER_ROLE",
+    "networks": [
+      {
+        "networkName": "optimism",
+        "addresses": []
+      },
+      {
+        "networkName": "matic",
+        "addresses": []
+      },
+      {
+        "networkName": "arbitrum",
+        "addresses": []
+      },
+      {
+        "networkName": "avalanche",
+        "addresses": []
+      },
+      {
+        "networkName": "fantom",
+        "addresses": []
+      },
+      {
+        "networkName": "harmony",
+        "addresses": []
+      }
+    ]
+  },
+  {
+    "role": "POOL_ADMIN_ROLE",
+    "networks": [
+      {
+        "networkName": "optimism",
+        "addresses": [
+          "0xE50c8C619d05ff98b22Adf991F17602C774F785c"
+        ]
+      },
+      {
+        "networkName": "matic",
+        "addresses": [
+          "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772"
+        ]
+      },
+      {
+        "networkName": "arbitrum",
+        "addresses": [
+          "0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb"
+        ]
+      },
+      {
+        "networkName": "avalanche",
+        "addresses": [
+          "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
+        ]
+      },
+      {
+        "networkName": "fantom",
+        "addresses": [
+          "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"
+        ]
+      },
+      {
+        "networkName": "harmony",
+        "addresses": []
+      }
+    ]
+  },
+  {
+    "role": "RISK_ADMIN_ROLE",
+    "networks": [
+      {
+        "networkName": "optimism",
+        "addresses": []
+      },
+      {
+        "networkName": "matic",
+        "addresses": []
+      },
+      {
+        "networkName": "arbitrum",
+        "addresses": []
+      },
+      {
+        "networkName": "avalanche",
+        "addresses": []
+      },
+      {
+        "networkName": "fantom",
+        "addresses": []
+      },
+      {
+        "networkName": "harmony",
+        "addresses": []
+      }
+    ]
+  }
+]

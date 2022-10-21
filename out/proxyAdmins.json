@@ -1,0 +1,89 @@
+[
+    {
+        "contract": "Collector",
+        "networks": [
+            {
+                "networkName": "optimism",
+                "proxyAdmin": "0xe50c8c619d05ff98b22adf991f17602c774f785c"
+            },
+            {
+                "networkName": "arbitrum",
+                "proxyAdmin": "0xbbd9f90699c1fa0d7a65870d241dd1f1217c96eb"
+            },
+            {
+                "networkName": "matic",
+                "proxyAdmin": "0xdc9a35b16db4e126cfedc41322b3a36454b1f772"
+            },
+            {
+                "networkName": "fantom",
+                "proxyAdmin": "0x39cb97b105173b56b5a2b4b33ad25d6a50e6c949"
+            },
+            {
+                "networkName": "avalanche",
+                "proxyAdmin": "0xa35b76e4935449e33c56ab24b23fcd3246f13470"
+            },
+            {
+                "networkName": "harmony",
+                "proxyAdmin": "0xb2f0c5f37f4bed2cb51c44653cd5d84866bdcd2d"
+            }
+        ]
+    },
+    {
+        "contract": "Pool",
+        "networks": [
+            {
+                "networkName": "optimism",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            },
+            {
+                "networkName": "arbitrum",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            },
+            {
+                "networkName": "matic",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            },
+            {
+                "networkName": "fantom",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            },
+            {
+                "networkName": "avalanche",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            },
+            {
+                "networkName": "harmony",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            }
+        ]
+    },
+    {
+        "contract": "PoolConfigurator",
+        "networks": [
+            {
+                "networkName": "optimism",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            },
+            {
+                "networkName": "arbitrum",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            },
+            {
+                "networkName": "matic",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            },
+            {
+                "networkName": "fantom",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            },
+            {
+                "networkName": "avalanche",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            },
+            {
+                "networkName": "harmony",
+                "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+            }
+        ]
+    }
+]

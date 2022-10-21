@@ -1,0 +1,323 @@
+[
+    {
+      "contract": "Pool",
+      "functions": [
+        {
+          "name": "mintUnbacked",
+          "roles": [
+            "BRIDGE_ROLE"
+          ] 
+        },
+        {
+            "name": "backUnbacked",
+            "roles": [
+              "BRIDGE_ROLE"
+            ] 
+        },
+        {
+            "name": "initReserve",
+            "roles": [
+              "onlyPoolConfigurator"
+            ] 
+        },
+        {
+            "name": "dropReserve",
+            "roles": [
+              "onlyPoolConfigurator"
+            ] 
+        },
+        {
+            "name": "setReserveInterestRateStrategyAddress",
+            "roles": [
+              "onlyPoolConfigurator"
+            ] 
+        },
+        {
+            "name": "setConfiguration",
+            "roles": [
+              "onlyPoolConfigurator"
+            ] 
+        },
+        {
+            "name": "updateBridgeProtocolFee",
+            "roles": [
+              "onlyPoolConfigurator"
+            ] 
+        },
+        {
+            "name": "updateFlashloanPremiums",
+            "roles": [
+              "onlyPoolConfigurator"
+            ] 
+        },
+        {
+            "name": "configureEModeCategory",
+            "roles": [
+              "onlyPoolConfigurator"
+            ] 
+        },
+        {
+            "name": "resetIsolationModeTotalDebt",
+            "roles": [
+              "onlyPoolConfigurator"
+            ] 
+        },
+        {
+            "name": "rescueTokens",
+            "roles": [
+              "POOL_ADMIN_ROLE"
+            ] 
+        }
+      ]
+    },
+    {  
+      "contract": "PoolConfigurator",
+      "functions": [
+          {
+            "name": "initReserves",
+            "roles": [
+              "ASSET_LISTING_ADMIN_ROLE",
+              "POOL_ADMIN_ROLE"
+            ] 
+          },
+          {
+              "name": "dropReserve",
+              "roles": [
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "dropReserve",
+              "roles": [
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "updateAToken",
+              "roles": [
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "updateStableDebtToken",
+              "roles": [
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "updateVariableDebtToken",
+              "roles": [
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setReserveActive",
+              "roles": [
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "updateBridgeProtocolFee",
+              "roles": [
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "updateFlashloanPremiumTotal",
+              "roles": [
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "updateFlashloanPremiumToProtocol",
+              "roles": [
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setPoolPause",
+              "roles": [
+                "EMERGENCY_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setReserveBorrowing",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setReserveBorrowing",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "configureReserveAsCollateral",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setReserveStableRateBorrowing",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setReserveFreeze",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setBorrowableInIsolation",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setReserveFactor",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setDebtCeiling",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setSiloedBorrowing",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setBorrowCap",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setSupplyCap",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setLiquidationProtocolFee",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setEModeCategory",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setAssetEModeCategory",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setUnbackedMintCap",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setReserveInterestRateStrategyAddress",
+              "roles": [
+                "RISK_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          },
+          {
+              "name": "setReservePause",
+              "roles": [
+                "EMERGENCY_ADMIN_ROLE",
+                "POOL_ADMIN_ROLE"
+              ] 
+          }
+      ]
+    }, 
+    {
+        "contract": "AaveOracle",
+        "functions": [
+            {
+                "name": "setAssetSources",
+                "roles": [
+                    "ASSET_LISTING_ADMIN_ROLE",
+                    "POOL_ADMIN_ROLE"
+                ]
+            },
+            {
+                "name": "setFallbackOracle",
+                "roles": [
+                    "ASSET_LISTING_ADMIN_ROLE",
+                    "POOL_ADMIN_ROLE"
+                ]
+            }
+        ]
+    },
+    {
+        "contract": "Collector",
+        "functions": [
+            {
+                "name": "approve",
+                "roles": [
+                    "onlyFundsAdmin"
+                ]
+            },
+            {
+                "name": "transfer",
+                "roles": [
+                    "onlyFundsAdmin"
+                ]
+            },
+            {
+                "name": "setFundsAdmin",
+                "roles": [
+                    "onlyFundsAdmin"
+                ]
+            }
+        ]
+    },
+    {
+        "contract": "CollectorController",
+        "functions": [
+            {
+                "name": "approve",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "transfer",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }
+        ]
+    }
+]
