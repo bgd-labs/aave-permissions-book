@@ -39,7 +39,7 @@ async function main() {
       flag: "a+",
     });
 
-    data = "| Role | Addreesses |\n";
+    data = "| Role | Addresses |\n";
     data += "|------|------------|\n";
 
     writeFileSync(join(__dirname, ROLES_FILENAME), data, {
