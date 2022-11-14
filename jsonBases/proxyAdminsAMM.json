@@ -1,0 +1,11 @@
+[
+  {
+    "contract": "Collector",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "address": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+      }
+    ]
+  }
+]

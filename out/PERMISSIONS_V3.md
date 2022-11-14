@@ -1,7 +1,6 @@
-# Roles
 <br/>
 
-## ASSET_LISTING_ADMIN_ROLE
+## ASSET_LISTING_ADMIN
 
 | Contract | Function |
 |----------|----------|
@@ -10,7 +9,7 @@
 | AaveOracle | setFallbackOracle |
 <br/>
 
-## BRIDGE_ROLE
+## BRIDGE
 
 | Contract | Function |
 |----------|----------|
@@ -18,13 +17,13 @@
 | Pool | backUnbacked |
 <br/>
 
-## DEFAULT_ADMIN_ROLE
+## DEFAULT_ADMIN
 
 | Contract | Function |
 |----------|----------|
 <br/>
 
-## EMERGENCY_ADMIN_ROLE
+## EMERGENCY_ADMIN
 
 | Contract | Function |
 |----------|----------|
@@ -32,13 +31,13 @@
 | PoolConfigurator | setReservePause |
 <br/>
 
-## FLASH_BORROWER_ROLE
+## FLASH_BORROWER
 
 | Contract | Function |
 |----------|----------|
 <br/>
 
-## POOL_ADMIN_ROLE
+## POOL_ADMIN
 
 | Contract | Function |
 |----------|----------|
@@ -74,7 +73,7 @@
 | AaveOracle | setFallbackOracle |
 <br/>
 
-## RISK_ADMIN_ROLE
+## RISK_ADMIN
 
 | Contract | Function |
 |----------|----------|
@@ -104,6 +103,30 @@
 | CollectorController | transfer |
 <br/>
 
+## PoolAddressesProvider.onlyOwner
+
+| Contract | Function |
+|----------|----------|
+| PoolAddressesProvider | setMarketId |
+| PoolAddressesProvider | setAddress |
+| PoolAddressesProvider | setAddressAsProxy |
+| PoolAddressesProvider | setPoolImpl |
+| PoolAddressesProvider | setPoolConfiguratorImpl |
+| PoolAddressesProvider | setPriceOracle |
+| PoolAddressesProvider | setACLManager |
+| PoolAddressesProvider | setACLAdmin |
+| PoolAddressesProvider | setPriceOracleSentinel |
+| PoolAddressesProvider | setPoolDataProvider |
+<br/>
+
+## PoolAddressesProviderRegistry.onlyOwner
+
+| Contract | Function |
+|----------|----------|
+| PoolAddressesProviderRegistry | registerAddressesProvider |
+| PoolAddressesProviderRegistry | unregisterAddressesProvider |
+<br/>
+
 ## Collector.onlyFundsAdmin
 
 | Contract | Function |
@@ -111,3 +134,13 @@
 | Collector | approve |
 | Collector | transfer |
 | Collector | setFundsAdmin |
+<br/>
+
+## RewardsController.onlyEmissionManager
+
+| Contract | Function |
+|----------|----------|
+| RewardsController | configureAssets |
+| RewardsController | setTransferStrategy |
+| RewardsController | setRewardOracle |
+| RewardsController | setClaimer |

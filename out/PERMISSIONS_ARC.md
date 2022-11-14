@@ -1,13 +1,17 @@
 <br/>
 
-## LendingPool.onlyLendingPoolConfigurator
+## ArcTimelock.onlyEthereumGovernanceExecutor
 
 | Contract | Function |
 |----------|----------|
-| LendingPool | initReserve |
-| LendingPool | setReserveInterestRateStrategyAddress |
-| LendingPool | setConfiguration |
-| LendingPool | setPause |
+| ArcTimelock | queue |
+<br/>
+
+## ArcTimelock.onlyGuardian
+
+| Contract | Function |
+|----------|----------|
+| ArcTimelock | cancel |
 <br/>
 
 ## LendingPoolConfigurator.onlyPoolAdmin
@@ -38,14 +42,6 @@
 | LendingPoolConfigurator | setPoolPause |
 <br/>
 
-## LendingPoolAddressesProviderRegistry.onlyOwner
-
-| Contract | Function |
-|----------|----------|
-| LendingPoolAddressesProviderRegistry | registerAddressesProvider |
-| LendingPoolAddressesProviderRegistry | unregisterAddressesProvider |
-<br/>
-
 ## LendingPoolAddressesProvider.onlyOwner
 
 | Contract | Function |
@@ -70,8 +66,33 @@
 | AaveOracle | setFallbackOracle |
 <br/>
 
-## LendingRateOracle.onlyOwner
+## PermissionManager.onlyOwner
 
 | Contract | Function |
 |----------|----------|
-| LendingRateOracle | setMarketBorrowRate |
+| PermissionManager | addPermissionAdmins |
+| PermissionManager | removePermissionAdmins |
+<br/>
+
+## ExecutorWithTimelock.onlyAdmin
+
+| Contract | Function |
+|----------|----------|
+| ExecutorWithTimelock | queueTransaction |
+| ExecutorWithTimelock | cancelTransaction |
+| ExecutorWithTimelock | executeTransaction |
+<br/>
+
+## ExecutorWithTimelock.onlyTimelock
+
+| Contract | Function |
+|----------|----------|
+| ExecutorWithTimelock | setDelay |
+| ExecutorWithTimelock | setPendingAdmin |
+<br/>
+
+## ExecutorWithTimelock.onlyPendingAdmin
+
+| Contract | Function |
+|----------|----------|
+| ExecutorWithTimelock | acceptAdmin |

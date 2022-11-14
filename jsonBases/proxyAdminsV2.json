@@ -1,0 +1,19 @@
+[
+  {
+    "contract": "Collector",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "address": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+      },
+      {
+        "networkName": "matic",
+        "address": "0xdc9a35b16db4e126cfedc41322b3a36454b1f772"
+      },
+      {
+        "networkName": "avalanche",
+        "address": "0x01244e7842254e3fd229cd263472076b1439d1cd"
+      }
+    ]
+  }
+]

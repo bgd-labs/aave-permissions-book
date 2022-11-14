@@ -5,13 +5,13 @@
         {
           "name": "mintUnbacked",
           "roles": [
-            "BRIDGE_ROLE"
+            "BRIDGE"
           ] 
         },
         {
             "name": "backUnbacked",
             "roles": [
-              "BRIDGE_ROLE"
+              "BRIDGE"
             ] 
         },
         {
@@ -65,7 +65,7 @@
         {
             "name": "rescueTokens",
             "roles": [
-              "POOL_ADMIN_ROLE"
+              "POOL_ADMIN"
             ] 
         }
       ]
@@ -76,187 +76,187 @@
           {
             "name": "initReserves",
             "roles": [
-              "ASSET_LISTING_ADMIN_ROLE",
-              "POOL_ADMIN_ROLE"
+              "ASSET_LISTING_ADMIN",
+              "POOL_ADMIN"
             ] 
           },
           {
               "name": "dropReserve",
               "roles": [
-                "POOL_ADMIN_ROLE"
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "dropReserve",
               "roles": [
-                "POOL_ADMIN_ROLE"
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "updateAToken",
               "roles": [
-                "POOL_ADMIN_ROLE"
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "updateStableDebtToken",
               "roles": [
-                "POOL_ADMIN_ROLE"
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "updateVariableDebtToken",
               "roles": [
-                "POOL_ADMIN_ROLE"
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setReserveActive",
               "roles": [
-                "POOL_ADMIN_ROLE"
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "updateBridgeProtocolFee",
               "roles": [
-                "POOL_ADMIN_ROLE"
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "updateFlashloanPremiumTotal",
               "roles": [
-                "POOL_ADMIN_ROLE"
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "updateFlashloanPremiumToProtocol",
               "roles": [
-                "POOL_ADMIN_ROLE"
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setPoolPause",
               "roles": [
-                "EMERGENCY_ADMIN_ROLE"
+                "EMERGENCY_ADMIN"
               ] 
           },
           {
               "name": "setReserveBorrowing",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setReserveBorrowing",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "configureReserveAsCollateral",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setReserveStableRateBorrowing",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setReserveFreeze",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setBorrowableInIsolation",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setReserveFactor",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setDebtCeiling",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setSiloedBorrowing",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setBorrowCap",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setSupplyCap",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setLiquidationProtocolFee",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setEModeCategory",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setAssetEModeCategory",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setUnbackedMintCap",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setReserveInterestRateStrategyAddress",
               "roles": [
-                "RISK_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "RISK_ADMIN",
+                "POOL_ADMIN"
               ] 
           },
           {
               "name": "setReservePause",
               "roles": [
-                "EMERGENCY_ADMIN_ROLE",
-                "POOL_ADMIN_ROLE"
+                "EMERGENCY_ADMIN",
+                "POOL_ADMIN"
               ] 
           }
       ]
@@ -267,15 +267,15 @@
             {
                 "name": "setAssetSources",
                 "roles": [
-                    "ASSET_LISTING_ADMIN_ROLE",
-                    "POOL_ADMIN_ROLE"
+                    "ASSET_LISTING_ADMIN",
+                    "POOL_ADMIN"
                 ]
             },
             {
                 "name": "setFallbackOracle",
                 "roles": [
-                    "ASSET_LISTING_ADMIN_ROLE",
-                    "POOL_ADMIN_ROLE"
+                    "ASSET_LISTING_ADMIN",
+                    "POOL_ADMIN"
                 ]
             }
         ]
@@ -319,5 +319,116 @@
                 ]
             }
         ]
-    }
+    },
+    {
+      "contract": "RewardsController",
+      "functions": [
+        {
+            "name": "configureAssets",
+            "roles": [
+                "onlyEmissionManager"
+            ]
+        },
+        {
+            "name": "setTransferStrategy",
+            "roles": [
+                "onlyEmissionManager"
+            ]
+        },
+        {
+            "name": "setRewardOracle",
+            "roles": [
+                "onlyEmissionManager"
+            ]
+        },
+        {
+          "name": "setClaimer",
+          "roles": [
+              "onlyEmissionManager"
+          ]
+        }
+      ]
+    },
+    {
+      "contract": "PoolAddressesProvider",
+      "functions": [
+        {
+          "name": "setMarketId",
+          "roles": [
+            "onlyOwner"
+          ]
+        },
+        {
+          "name": "setAddress",
+          "roles": [
+            "onlyOwner"
+          ]
+        },
+        {
+          "name": "setAddressAsProxy",
+          "roles": [
+            "onlyOwner"
+          ]
+        },
+        {
+          "name": "setPoolImpl",
+          "roles": [
+            "onlyOwner"
+          ]
+        },
+        {
+          "name": "setPoolConfiguratorImpl",
+          "roles": [
+            "onlyOwner"
+          ]
+        },
+        {
+          "name": "setPriceOracle",
+          "roles": [
+            "onlyOwner"
+          ]
+        },
+        {
+          "name": "setACLManager",
+          "roles": [
+            "onlyOwner"
+          ]
+        },
+        {
+          "name": "setACLAdmin",
+          "roles": [
+            "onlyOwner"
+          ]
+        },
+        {
+          "name": "setPriceOracleSentinel",
+          "roles": [
+            "onlyOwner"
+          ]
+        },
+        {
+          "name": "setPoolDataProvider",
+          "roles": [
+            "onlyOwner"
+          ]
+        }
+      ]
+    },
+    {
+      "contract": "PoolAddressesProviderRegistry",
+      "functions": [
+          {
+              "name": "registerAddressesProvider",
+              "roles": [
+                  "onlyOwner"
+              ]
+          },
+          {
+              "name": "unregisterAddressesProvider",
+              "roles": [
+                  "onlyOwner"
+              ]
+          }
+      ]
+  }
 ]

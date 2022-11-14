@@ -1,6 +1,6 @@
 [
   {
-    "role": "ASSET_LISTING_ADMIN_ROLE",
+    "role": "ASSET_LISTING_ADMIN",
     "networks": [
       {
         "networkName": "optimism",
@@ -29,7 +29,7 @@
     ]
   },
   {
-    "role": "BRIDGE_ROLE",
+    "role": "BRIDGE",
     "networks": [
       {
         "networkName": "optimism",
@@ -58,7 +58,7 @@
     ]
   },
   {
-    "role": "DEFAULT_ADMIN_ROLE",
+    "role": "DEFAULT_ADMIN",
     "networks": [
       {
         "networkName": "optimism",
@@ -99,7 +99,7 @@
     ]
   },
   {
-    "role": "EMERGENCY_ADMIN_ROLE",
+    "role": "EMERGENCY_ADMIN",
     "networks": [
       {
         "networkName": "optimism",
@@ -140,7 +140,7 @@
     ]
   },
   {
-    "role": "FLASH_BORROWER_ROLE",
+    "role": "FLASH_BORROWER",
     "networks": [
       {
         "networkName": "optimism",
@@ -169,7 +169,7 @@
     ]
   },
   {
-    "role": "POOL_ADMIN_ROLE",
+    "role": "POOL_ADMIN",
     "networks": [
       {
         "networkName": "optimism",
@@ -208,7 +208,7 @@
     ]
   },
   {
-    "role": "RISK_ADMIN_ROLE",
+    "role": "RISK_ADMIN",
     "networks": [
       {
         "networkName": "optimism",

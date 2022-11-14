@@ -1,5 +1,87 @@
 [
     {
+        "contract": "LendingPoolAddressesProviderRegistry",
+        "functions": [
+            {
+                "name": "registerAddressesProvider",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "unregisterAddressesProvider",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }
+        ]
+    },
+    {
+        "contract": "LendingPoolAddressesProvider",
+        "functions": [
+            {
+                "name": "setMarketId",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setAddressAsProxy",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }, 
+            {
+                "name": "setAddress",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }, 
+            {
+                "name": "setLendingPoolImpl",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }, 
+            {
+                "name": "setLendingPoolConfiguratorImpl",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }, 
+            {
+                "name": "setLendingPoolCollateralManager",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setPoolAdmin",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setEmergencyAdmin",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setPriceOracle",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setLendingRateOracle",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }
+        ]
+    },
+    {
         "contract": "LendingPool",
         "functions": [
             {

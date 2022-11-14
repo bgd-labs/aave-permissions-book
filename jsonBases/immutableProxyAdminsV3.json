@@ -1,0 +1,60 @@
+[
+    {
+      "contract": "POOL",
+      "networks": [
+        {
+          "networkName": "optimism",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        },
+        {
+          "networkName": "arbitrum",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        },
+        {
+          "networkName": "matic",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        },
+        {
+          "networkName": "fantom",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        },
+        {
+          "networkName": "avalanche",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        },
+        {
+          "networkName": "harmony",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        }
+      ]
+    },
+    {
+      "contract": "PoolConfigurator",
+      "networks": [
+        {
+          "networkName": "optimism",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        },
+        {
+          "networkName": "arbitrum",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        },
+        {
+          "networkName": "matic",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        },
+        {
+          "networkName": "fantom",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        },
+        {
+          "networkName": "avalanche",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        },
+        {
+          "networkName": "harmony",
+          "address": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        }
+      ]
+    }
+  ]

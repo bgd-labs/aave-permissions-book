@@ -1,40 +1,107 @@
+require("dotenv").config();
+
 export const ZERO = 0;
 export const ONE = 1;
 export const TWO = 2;
 
-export const networks = ["optimism", "matic", "arbitrum"];
-
-export const roleNames = [
-  "ASSET_LISTING_ADMIN_ROLE",
-  "BRIDGE_ROLE",
-  "DEFAULT_ADMIN_ROLE",
-  "EMERGENCY_ADMIN_ROLE",
-  "FLASH_BORROWER_ROLE",
-  "POOL_ADMIN_ROLE",
-  "RISK_ADMIN_ROLE",
+export const networkSettings = [
+  {
+    name: "optimism",
+    apiKey: process.env.OPTIMISM_API_KEY as string,
+  },
+  {
+    name: "matic",
+    apiKey: process.env.MATIC_API_KEY as string,
+  },
+  {
+    name: "arbitrum",
+    apiKey: process.env.ARBITRUM_API_KEY as string,
+  },
 ];
 
-export const modifierNames = ["onlyOwner", "onlyFundsAdmin"];
+export const basicNetworkSettings = [
+  {
+    name: "optimism",
+    url: "https://mainnet.optimism.io",
+  },
+  {
+    name: "arbitrum",
+    url: "https://arb1.arbitrum.io/rpc",
+  },
+  {
+    name: "matic",
+    url: "https://polygon-rpc.com",
+  },
+  {
+    name: "fantom",
+    url: "https://rpc.ftm.tools",
+  },
+  {
+    name: "avalanche",
+    url: "https://api.avax.network/ext/bc/C/rpc",
+  },
+  {
+    name: "harmony",
+    url: "https://api.harmony.one",
+  },
+];
+
+export const basicNetworkSettingsV2 = [
+  {
+    name: "mainnet",
+    url: "https://eth-mainnet.public.blastapi.io",
+  },
+  {
+    name: "matic",
+    url: "https://polygon-rpc.com",
+  },
+  {
+    name: "avalanche",
+    url: "https://api.avax.network/ext/bc/C/rpc",
+  },
+];
+
+export const roleNames = [
+  "ASSET_LISTING_ADMIN",
+  "BRIDGE",
+  "DEFAULT_ADMIN",
+  "EMERGENCY_ADMIN",
+  "FLASH_BORROWER",
+  "POOL_ADMIN",
+  "RISK_ADMIN",
+];
+
+export const modifierNames = [
+  "onlyOwner",
+  "onlyFundsAdmin",
+  "onlyEmissionManager",
+];
 export const modifierNamesV2 = [
+  "onlyLendingPoolConfigurator",
   "onlyPoolAdmin",
   "onlyEmergencyAdmin",
   "onlyOwner",
+  "onlyEmissionManager",
 ];
 
-// same address for all networks
+export const modifierNamesArc = [
+  "onlyEthereumGovernanceExecutor",
+  "onlyGuardian",
+  "onlyPoolAdmin",
+  "onlyEmergencyAdmin",
+  "onlyOwner",
+  "onlyAdmin",
+  "onlyTimelock",
+  "onlyPendingAdmin",
+];
+
 export const ACL_MANAGER_ADDRESS = "0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B";
 
-export const collectorControllerAddresses = new Map<string, string>([
-  ["optimism", "0xA77E4A084d7d4f064E326C0F6c0aCefd47A5Cb21"],
-  ["matic", "0x73D435AFc15e35A9aC63B2a81B5AA54f974eadFe"],
-  ["arbitrum", "0xC3301b30f4EcBfd59dE0d74e89690C1a70C6f21B"],
-]);
+export const poolAddressProviderRegistryAddress =
+  "0x770ef9f4fe897e59daCc474EF11238303F9552b6";
 
-export const collectorAddresses = new Map<string, string>([
-  ["optimism", "0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf"],
-  ["matic", "0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383"],
-  ["arbitrum", "0x053D55f9B5AF8694c503EB288a1B7E552f590710"],
-]);
+export const rewardsControllerAddress =
+  "0x929EC64c34a17401F460460D4B9390518E5B473e";
 
 export const roleGrantedEventABI = [
   "event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)",
@@ -49,6 +116,10 @@ export const newFundsAdminEventABI = [
   "event NewFundsAdmin(address indexed fundsAdmin)",
 ];
 
+export const adminChangedEventABI = [
+  "event AdminChanged(address previousAdmin, address newAdmin)",
+];
+
 export const configuratorAdminUpdatedEventABI = [
   "event ConfigurationAdminUpdated(address indexed newAddress)",
 ];
@@ -57,33 +128,83 @@ export const emergencyAdminUpdatedEventABI = [
   "event EmergencyAdminUpdated(address indexed newAddress)",
 ];
 
-export const roleCodeMap = new Map<string, string>([
+export const proxyContracts = new Map([
   [
-    "0x19c860a63258efbd0ecb7d55c626237bf5c2044c26c073390b74f0c13c857433",
-    "ASSET_LISTING_ADMIN_ROLE",
+    "optimism",
+    [
+      {
+        contractName: "RewardsController",
+        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+      },
+      {
+        contractName: "Collector",
+        address: "0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf",
+      },
+    ],
   ],
   [
-    "0x08fb31c3e81624356c3314088aa971b73bcc82d22bc3e3b184b4593077ae3278",
-    "BRIDGE_ROLE",
+    "arbitrum",
+    [
+      {
+        contractName: "RewardsController",
+        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+      },
+      {
+        contractName: "Collector",
+        address: "0x053D55f9B5AF8694c503EB288a1B7E552f590710",
+      },
+    ],
   ],
   [
-    "0x0000000000000000000000000000000000000000000000000000000000000000",
-    "DEFAULT_ADMIN_ROLE",
+    "matic",
+    [
+      {
+        contractName: "RewardsController",
+        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+      },
+      {
+        contractName: "Collector",
+        address: "0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383",
+      },
+    ],
   ],
   [
-    "0x5c91514091af31f62f596a314af7d5be40146b2f2355969392f055e12e0982fb",
-    "EMERGENCY_ADMIN_ROLE",
+    "fantom",
+    [
+      {
+        contractName: "RewardsController",
+        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+      },
+      {
+        contractName: "Collector",
+        address: "0xBe85413851D195fC6341619cD68BfDc26a25b928",
+      },
+    ],
   ],
   [
-    "0x939b8dfb57ecef2aea54a93a15e86768b9d4089f1ba61c245e6ec980695f4ca4",
-    "FLASH_BORROWER_ROLE",
+    "avalanche",
+    [
+      {
+        contractName: "RewardsController",
+        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+      },
+      {
+        contractName: "Collector",
+        address: "0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0",
+      },
+    ],
   ],
   [
-    "0x12ad05bde78c5ab75238ce885307f96ecd482bb402ef831f99e7018a0f169b7b",
-    "POOL_ADMIN_ROLE",
-  ],
-  [
-    "0x8aa855a911518ecfbe5bc3088c8f3dda7badf130faaf8ace33fdc33828e18167",
-    "RISK_ADMIN_ROLE",
+    "harmony",
+    [
+      {
+        contractName: "RewardsController",
+        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+      },
+      {
+        contractName: "Collector",
+        address: "0x8a020d92d6b119978582be4d3edfdc9f7b28bf31",
+      },
+    ],
   ],
 ]);
