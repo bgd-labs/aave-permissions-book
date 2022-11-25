@@ -1,0 +1,127 @@
+name: Calculate and output permissions
+
+on:
+  workflow_dispatch:
+  schedule: 
+    - cron:  '0 0 * * *'
+
+
+permissions: write-all
+
+jobs:
+  calculate-permissions:
+    name: Fetch all permissions
+    runs-on: ubuntu-latest
+    env: 
+      OPTIMISM_API_KEY: ${{ secrets.OPTIMISM_API_KEY }}
+      MATIC_API_KEY: ${{ secrets.MATIC_API_KEY }}
+      ARBITRUM_API_KEY: ${{ secrets.ARBITRUM_API_KEY }}
+      FANTOM_API_KEY: ${{ secrets.FANTOM_API_KEY }}
+      AVALANCHE_API_KEY: ${{ secrets.AVALANCHE_API_KEY }}
+      HARMONY_API_KEY: ${{ secrets.HARMONY_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Fetch ARC modifiers
+        run: npx ts-node scripts/ARC/modifiersArcCalculator.ts
+
+      - name: Fetch V2 modifiers
+        run: npx ts-node scripts/V2/modifiersCalculatorV2.ts 
+
+      - name: Fetch V3 modifiers
+        run: npx ts-node scripts/V3/modifierCalculatorScript.ts 
+
+      - name: Fetch V3 roles
+        run: npx ts-node scripts/V3/roleCalculatorScript.ts
+
+      - name: Fetch V2 proxy admins
+        run: npx ts-node scripts/proxyAdmins/calculateProxyAdminsV2.ts 
+
+      - name: Fetch V3 proxy admins
+        run: npx ts-node scripts/proxyAdmins/calculateProxyAdminsV3.ts 
+
+      - name: check diff
+        run: |
+          if [[ -z $(git status -s) ]]
+          then
+            echo "tree is clean"
+          else
+            git config --global user.name 'test'
+            git config --global user.email 'test@test.com'
+            git config --global pull.rebase true
+            git add .
+            git commit -am ":robot: permission address update"
+            git pull origin master
+            git push
+          exit
+          fi 
+
+  output-tables:
+    name: Output permission tables
+    needs: [calculate-permissions]
+    runs-on: ubuntu-latest
+    env: 
+      OPTIMISM_API_KEY: ${{ secrets.OPTIMISM_API_KEY }}
+      MATIC_API_KEY: ${{ secrets.MATIC_API_KEY }}
+      ARBITRUM_API_KEY: ${{ secrets.ARBITRUM_API_KEY }}
+      FANTOM_API_KEY: ${{ secrets.FANTOM_API_KEY }}
+      AVALANCHE_API_KEY: ${{ secrets.AVALANCHE_API_KEY }}
+      HARMONY_API_KEY: ${{ secrets.HARMONY_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create V2 permissions table
+        run: npx ts-node scripts/V2/createV2PermissionsTable.ts 
+
+      - name: Create V3 permissions table
+        run: npx ts-node scripts/V3/createV3PermissionsTable.ts 
+
+      - name: Create ARC permissions table
+        run: npx ts-node scripts/ARC/createArcPermissionsTable.ts 
+
+      - name: Create modifiers table
+        run: npx ts-node scripts/createModifierTables.ts 
+
+      - name: Create ARC modifiers table
+        run: npx ts-node scripts/ARC/createModifiersArcTable.ts 
+
+      - name: Create V3 roles table
+        run: npx ts-node scripts/V3/createRolesV3Table.ts 
+
+      - name: Create proxy admins table
+        run: npx ts-node scripts/proxyAdmins/createProxyAdminsTable.ts 
+
+      - name: check diff
+        run: |
+          if [[ -z $(git status -s) ]]
+          then
+            echo "tree is clean"
+          else
+            git config --global user.name 'test'
+            git config --global user.email 'test@test.com'
+            git config --global pull.rebase true
+            git add .
+            git commit -am ":robot: tables update"
+            git pull origin master
+            git push
+          exit
+          fi 
