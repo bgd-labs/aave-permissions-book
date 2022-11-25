@@ -1,0 +1,30 @@
+[
+  {
+    "role": "ASSET_LISTING_ADMIN",
+    "networks": []
+  },
+  {
+    "role": "BRIDGE",
+    "networks": []
+  },
+  {
+    "role": "DEFAULT_ADMIN",
+    "networks": []
+  },
+  {
+    "role": "EMERGENCY_ADMIN",
+    "networks": []
+  },
+  {
+    "role": "FLASH_BORROWER",
+    "networks": []
+  },
+  {
+    "role": "POOL_ADMIN",
+    "networks": []
+  },
+  {
+    "role": "RISK_ADMIN",
+    "networks": []
+  }
+]

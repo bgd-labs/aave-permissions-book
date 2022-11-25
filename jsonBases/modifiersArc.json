@@ -1,0 +1,122 @@
+[
+  {
+    "contract": "LendingPoolAddressProvider",
+    "modifier": "onlyOwner",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "addresses": [
+          "0x23c155C1c1ecB18a86921Da29802292f1d282c68"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "LendingPoolConfigurator",
+    "modifier": "onlyPoolAdmin",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "addresses": [
+          "0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "LendingPoolConfigurator",
+    "modifier": "onlyEmergencyAdmin",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "addresses": [
+          "0x33B09130b035d6D7e57d76fEa0873d9545FA7557"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "ArcTimelock",
+    "modifier": "onlyEthereumGovernanceExecutor",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "addresses": [
+          "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "ArcTimelock",
+    "modifier": "onlyGuardian",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "addresses": [
+          "0x33B09130b035d6D7e57d76fEa0873d9545FA7557"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "AaveOracle",
+    "modifier": "onlyOwner",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "addresses": [
+          "0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "ExecutorWithTimelock",
+    "modifier": "onlyTimelock",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "addresses": [
+          "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "ExecutorWithTimelock",
+    "modifier": "onlyPendingAdmin",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "addresses": [
+          "0x0000000000000000000000000000000000000000"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "ExecutorWithTimelock",
+    "modifier": "onlyAdmin",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "addresses": [
+          "0xEC568fffba86c094cf06b22134B23074DFE2252c"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "PermissionManager",
+    "modifier": "onlyOwner",
+    "networks": [
+      {
+        "networkName": "mainnet",
+        "addresses": [
+          "0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218"
+        ]
+      }
+    ]
+  }
+]

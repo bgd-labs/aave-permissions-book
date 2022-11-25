@@ -1,0 +1,53 @@
+[
+    {
+      "contract": "LendingPool",
+      "networks": [
+        {
+          "networkName": "mainnet",
+          "address": "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
+        },
+        {
+          "networkName": "matic",
+          "address": "0xd05e3e715d945b59290df0ae8ef85c1bdb684744"
+        },
+        {
+          "networkName": "avalanche",
+          "address": "0xb6a86025f0fe1862b372cb0ca18ce3ede02a318f"
+        }
+      ]
+    },
+    {
+      "contract": "LendingPoolConfigurator",
+      "networks": [
+        {
+          "networkName": "mainnet",
+          "address": "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
+        },
+        {
+          "networkName": "matic",
+          "address": "0xd05e3e715d945b59290df0ae8ef85c1bdb684744"
+        },
+        {
+          "networkName": "avalanche",
+          "address": "0xb6a86025f0fe1862b372cb0ca18ce3ede02a318f"
+        }
+      ]
+    },
+    {
+      "contract": "IncentivesController",
+      "networks": [
+        {
+          "networkName": "mainnet",
+          "address": "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
+        },
+        {
+          "networkName": "matic",
+          "address": "0xd05e3e715d945b59290df0ae8ef85c1bdb684744"
+        },
+        {
+          "networkName": "avalanche",
+          "address": "0xb6a86025f0fe1862b372cb0ca18ce3ede02a318f"
+        }
+      ]
+    }
+  ]

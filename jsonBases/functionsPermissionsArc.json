@@ -1,0 +1,289 @@
+[
+    {
+        "contract": "LendingPoolAddressesProvider",
+        "functions": [
+            {
+                "name": "setMarketId",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setAddressAsProxy",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }, 
+            {
+                "name": "setAddress",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }, 
+            {
+                "name": "setLendingPoolImpl",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }, 
+            {
+                "name": "setLendingPoolConfiguratorImpl",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }, 
+            {
+                "name": "setLendingPoolCollateralManager",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setPoolAdmin",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setEmergencyAdmin",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setPriceOracle",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setLendingRateOracle",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }
+        ]
+    },
+    {
+        "contract": "LendingPool",
+        "functions": [
+            {
+                "name": "initReserve",
+                "roles": [
+                    "onlyLendingPoolConfigurator"
+                ]
+            },
+            {
+                "name": "setReserveInterestRateStrategyAddress",
+                "roles": [
+                    "onlyLendingPoolConfigurator"
+                ]
+            },
+            {
+                "name": "setConfiguration",
+                "roles": [
+                    "onlyLendingPoolConfigurator"
+                ]
+            },
+            {
+                "name": "setPause",
+                "roles": [
+                    "onlyLendingPoolConfigurator"
+                ]
+            }
+        ]
+    },
+    {
+        "contract": "ArcTimelock",
+        "functions": [
+            {
+                "name": "queue",
+                "roles": [
+                    "onlyEthereumGovernanceExecutor"
+                ]
+            },
+            {
+                "name": "cancel",
+                "roles": [
+                    "onlyGuardian"
+                ]
+            }
+        ]
+    }, 
+    {
+        "contract": "LendingPoolConfigurator",
+        "functions": [
+            {
+                "name": "initReserve",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "updateAToken",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "updateStableDebtToken",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "updateVariableDebtToken",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "enableBorrowingOnReserve",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "disableBorrowingOnReserve",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "configureReserveAsCollateral",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "enableReserveStableRate",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "disableReserveStableRate",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "activateReserve",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "deactivateReserve",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "freezeReserve",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "unfreezeReserve",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "setReserveFactor",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "setReserveInterestRateStrategyAddress",
+                "roles": [
+                    "onlyPoolAdmin"
+                ]
+            },
+            {
+                "name": "setPoolPause",
+                "roles": [
+                    "onlyEmergencyAdmin"
+                ]
+            }
+        ]
+    },
+    {
+        "contract": "AaveOracle",
+        "functions": [
+            {
+                "name": "setAssetSources",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "setFallbackOracle",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }
+        ]
+    },
+    {
+        "contract": "PermissionManager",
+        "functions": [
+            {
+                "name": "addPermissionAdmins",
+                "roles": [
+                    "onlyOwner"
+                ]
+            },
+            {
+                "name": "removePermissionAdmins",
+                "roles": [
+                    "onlyOwner"
+                ]
+            }
+        ]
+    },
+    {
+        "contract": "ExecutorWithTimelock",
+        "functions": [
+            {
+                "name": "setDelay",
+                "roles": [
+                    "onlyTimelock"
+                ]
+            },
+            {
+                "name": "acceptAdmin",
+                "roles": [
+                    "onlyPendingAdmin"
+                ]
+            },
+            {
+                "name": "setPendingAdmin",
+                "roles": [
+                    "onlyTimelock"
+                ]
+            },
+            {
+                "name": "queueTransaction",
+                "roles": [
+                    "onlyAdmin"
+                ]
+            },
+            {
+                "name": "cancelTransaction",
+                "roles": [
+                    "onlyAdmin"
+                ]
+            },
+            {
+                "name": "executeTransaction",
+                "roles": [
+                    "onlyAdmin"
+                ]
+            }
+        ]
+    }
+]
