@@ -9,6 +9,7 @@
     "lowdb": "^1.0.0",
     "postman-request": "^2.88.1-postman.31",
     "request": "^2.88.2",
-    "sha3": "^2.1.4"
+    "sha3": "^2.1.4",
+    "typescript": "^4.9.3"
   }
 }

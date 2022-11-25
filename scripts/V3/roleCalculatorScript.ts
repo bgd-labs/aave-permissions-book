@@ -103,7 +103,7 @@ async function main() {
       network.name,
       network.apiKey
     );
-    console.log(network.apiKey);
+
     /*
     var filter = {
       address: ACL_MANAGER_ADDRESS,
