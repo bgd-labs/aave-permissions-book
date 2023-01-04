@@ -26,6 +26,10 @@ export const networkSettings = [
     name: 'arbitrum',
     apiKey: process.env.ARBITRUM_API_KEY as string,
   },
+  {
+    name: 'mainnet',
+    apiKey: process.env.ETHEREUM_API_KEY,
+  },
 ];
 
 export const basicNetworkSettings = [

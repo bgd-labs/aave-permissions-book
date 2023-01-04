@@ -5,9 +5,7 @@
     "networks": [
       {
         "networkName": "mainnet",
-        "addresses": [
-          "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
-        ]
+        "addresses": ["0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"]
       }
     ]
   },
@@ -17,9 +15,7 @@
     "networks": [
       {
         "networkName": "mainnet",
-        "addresses": [
-          "0x23A875eDe3F1030138701683e42E9b16A7F87768"
-        ]
+        "addresses": ["0x23A875eDe3F1030138701683e42E9b16A7F87768"]
       }
     ]
   },
@@ -29,9 +25,7 @@
     "networks": [
       {
         "networkName": "mainnet",
-        "addresses": [
-          "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
-        ]
+        "addresses": ["0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"]
       }
     ]
   },
@@ -41,9 +35,7 @@
     "networks": [
       {
         "networkName": "mainnet",
-        "addresses": [
-          "0xB9062896ec3A615a4e4444DF183F0531a77218AE"
-        ]
+        "addresses": ["0xB9062896ec3A615a4e4444DF183F0531a77218AE"]
       }
     ]
   },
@@ -53,9 +45,7 @@
     "networks": [
       {
         "networkName": "mainnet",
-        "addresses": [
-          "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
-        ]
+        "addresses": ["0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"]
       }
     ]
   },
@@ -65,9 +55,7 @@
     "networks": [
       {
         "networkName": "mainnet",
-        "addresses": [
-          "0xB9062896ec3A615a4e4444DF183F0531a77218AE"
-        ]
+        "addresses": ["0xB9062896ec3A615a4e4444DF183F0531a77218AE"]
       }
     ]
   }

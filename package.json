@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/bgd-labs/aave-permissions-list#readme",
   "devDependencies": {
+    "@aave/contract-helpers": "^1.12.0",
     "@bgd-labs/aave-address-book": "^1.5.2",
     "@types/lowdb": "^1.0.11",
     "@types/node": "^18.8.3",
