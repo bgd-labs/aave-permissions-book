@@ -1,4 +1,13 @@
-require("dotenv").config();
+require('dotenv').config();
+
+import {
+  AaveV3Optimism,
+  AaveV3Arbitrum,
+  AaveV3Polygon,
+  AaveV3Fantom,
+  AaveV3Avalanche,
+  AaveV3Harmony,
+} from '@bgd-labs/aave-address-book';
 
 export const ZERO = 0;
 export const ONE = 1;
@@ -6,204 +15,204 @@ export const TWO = 2;
 
 export const networkSettings = [
   {
-    name: "optimism",
+    name: 'optimism',
     apiKey: process.env.OPTIMISM_API_KEY as string,
   },
   {
-    name: "matic",
+    name: 'matic',
     apiKey: process.env.MATIC_API_KEY as string,
   },
   {
-    name: "arbitrum",
+    name: 'arbitrum',
     apiKey: process.env.ARBITRUM_API_KEY as string,
   },
 ];
 
 export const basicNetworkSettings = [
   {
-    name: "optimism",
-    url: "https://mainnet.optimism.io",
+    name: 'optimism',
+    url: 'https://mainnet.optimism.io',
   },
   {
-    name: "arbitrum",
-    url: "https://arb1.arbitrum.io/rpc",
+    name: 'arbitrum',
+    url: 'https://arb1.arbitrum.io/rpc',
   },
   {
-    name: "matic",
-    url: "https://polygon-rpc.com",
+    name: 'matic',
+    url: 'https://polygon-rpc.com',
   },
   {
-    name: "fantom",
-    url: "https://rpc.ftm.tools",
+    name: 'fantom',
+    url: 'https://rpc.ftm.tools',
   },
   {
-    name: "avalanche",
-    url: "https://api.avax.network/ext/bc/C/rpc",
+    name: 'avalanche',
+    url: 'https://api.avax.network/ext/bc/C/rpc',
   },
   {
-    name: "harmony",
-    url: "https://api.harmony.one",
+    name: 'harmony',
+    url: 'https://api.harmony.one',
   },
 ];
 
 export const basicNetworkSettingsV2 = [
   {
-    name: "mainnet",
-    url: "https://eth-mainnet.public.blastapi.io",
+    name: 'mainnet',
+    url: 'https://eth-mainnet.public.blastapi.io',
   },
   {
-    name: "matic",
-    url: "https://polygon-rpc.com",
+    name: 'matic',
+    url: 'https://polygon-rpc.com',
   },
   {
-    name: "avalanche",
-    url: "https://api.avax.network/ext/bc/C/rpc",
+    name: 'avalanche',
+    url: 'https://api.avax.network/ext/bc/C/rpc',
   },
 ];
 
 export const roleNames = [
-  "ASSET_LISTING_ADMIN",
-  "BRIDGE",
-  "DEFAULT_ADMIN",
-  "EMERGENCY_ADMIN",
-  "FLASH_BORROWER",
-  "POOL_ADMIN",
-  "RISK_ADMIN",
+  'ASSET_LISTING_ADMIN',
+  'BRIDGE',
+  'DEFAULT_ADMIN',
+  'EMERGENCY_ADMIN',
+  'FLASH_BORROWER',
+  'POOL_ADMIN',
+  'RISK_ADMIN',
 ];
 
 export const modifierNames = [
-  "onlyOwner",
-  "onlyFundsAdmin",
-  "onlyEmissionManager",
+  'onlyOwner',
+  'onlyFundsAdmin',
+  'onlyEmissionManager',
 ];
 export const modifierNamesV2 = [
-  "onlyLendingPoolConfigurator",
-  "onlyPoolAdmin",
-  "onlyEmergencyAdmin",
-  "onlyOwner",
-  "onlyEmissionManager",
+  'onlyLendingPoolConfigurator',
+  'onlyPoolAdmin',
+  'onlyEmergencyAdmin',
+  'onlyOwner',
+  'onlyEmissionManager',
 ];
 
 export const modifierNamesArc = [
-  "onlyEthereumGovernanceExecutor",
-  "onlyGuardian",
-  "onlyPoolAdmin",
-  "onlyEmergencyAdmin",
-  "onlyOwner",
-  "onlyAdmin",
-  "onlyTimelock",
-  "onlyPendingAdmin",
+  'onlyEthereumGovernanceExecutor',
+  'onlyGuardian',
+  'onlyPoolAdmin',
+  'onlyEmergencyAdmin',
+  'onlyOwner',
+  'onlyAdmin',
+  'onlyTimelock',
+  'onlyPendingAdmin',
 ];
 
-export const ACL_MANAGER_ADDRESS = "0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B";
+export const ACL_MANAGER_ADDRESS = '0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B';
 
 export const poolAddressProviderRegistryAddress =
-  "0x770ef9f4fe897e59daCc474EF11238303F9552b6";
+  '0x770ef9f4fe897e59daCc474EF11238303F9552b6';
 
 export const rewardsControllerAddress =
-  "0x929EC64c34a17401F460460D4B9390518E5B473e";
+  '0x929EC64c34a17401F460460D4B9390518E5B473e';
 
 export const roleGrantedEventABI = [
-  "event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)",
+  'event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)',
 ];
 export const roleRevokedEventABI = [
-  "event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)",
+  'event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)',
 ];
 export const ownershipTransferedEventABI = [
-  "event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)",
+  'event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)',
 ];
 export const newFundsAdminEventABI = [
-  "event NewFundsAdmin(address indexed fundsAdmin)",
+  'event NewFundsAdmin(address indexed fundsAdmin)',
 ];
 
 export const adminChangedEventABI = [
-  "event AdminChanged(address previousAdmin, address newAdmin)",
+  'event AdminChanged(address previousAdmin, address newAdmin)',
 ];
 
 export const configuratorAdminUpdatedEventABI = [
-  "event ConfigurationAdminUpdated(address indexed newAddress)",
+  'event ConfigurationAdminUpdated(address indexed newAddress)',
 ];
 
 export const emergencyAdminUpdatedEventABI = [
-  "event EmergencyAdminUpdated(address indexed newAddress)",
+  'event EmergencyAdminUpdated(address indexed newAddress)',
 ];
 
 export const proxyContracts = new Map([
   [
-    "optimism",
+    'optimism',
     [
       {
-        contractName: "RewardsController",
-        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+        contractName: 'RewardsController',
+        address: '0x929EC64c34a17401F460460D4B9390518E5B473e',
       },
       {
-        contractName: "Collector",
-        address: "0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf",
+        contractName: 'Collector',
+        address: AaveV3Optimism.COLLECTOR,
       },
     ],
   ],
   [
-    "arbitrum",
+    'arbitrum',
     [
       {
-        contractName: "RewardsController",
-        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+        contractName: 'RewardsController',
+        address: '0x929EC64c34a17401F460460D4B9390518E5B473e',
       },
       {
-        contractName: "Collector",
-        address: "0x053D55f9B5AF8694c503EB288a1B7E552f590710",
+        contractName: 'Collector',
+        address: AaveV3Arbitrum.COLLECTOR,
       },
     ],
   ],
   [
-    "matic",
+    'matic',
     [
       {
-        contractName: "RewardsController",
-        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+        contractName: 'RewardsController',
+        address: '0x929EC64c34a17401F460460D4B9390518E5B473e',
       },
       {
-        contractName: "Collector",
-        address: "0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383",
+        contractName: 'Collector',
+        address: AaveV3Polygon.COLLECTOR,
       },
     ],
   ],
   [
-    "fantom",
+    'fantom',
     [
       {
-        contractName: "RewardsController",
-        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+        contractName: 'RewardsController',
+        address: '0x929EC64c34a17401F460460D4B9390518E5B473e',
       },
       {
-        contractName: "Collector",
-        address: "0xBe85413851D195fC6341619cD68BfDc26a25b928",
+        contractName: 'Collector',
+        address: AaveV3Fantom.COLLECTOR,
       },
     ],
   ],
   [
-    "avalanche",
+    'avalanche',
     [
       {
-        contractName: "RewardsController",
-        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+        contractName: 'RewardsController',
+        address: '0x929EC64c34a17401F460460D4B9390518E5B473e',
       },
       {
-        contractName: "Collector",
-        address: "0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0",
+        contractName: 'Collector',
+        address: AaveV3Avalanche.COLLECTOR,
       },
     ],
   ],
   [
-    "harmony",
+    'harmony',
     [
       {
-        contractName: "RewardsController",
-        address: "0x929EC64c34a17401F460460D4B9390518E5B473e",
+        contractName: 'RewardsController',
+        address: '0x929EC64c34a17401F460460D4B9390518E5B473e',
       },
       {
-        contractName: "Collector",
-        address: "0x8a020d92d6b119978582be4d3edfdc9f7b28bf31",
+        contractName: 'Collector',
+        address: AaveV3Harmony.COLLECTOR,
       },
     ],
   ],

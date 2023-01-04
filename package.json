@@ -4,7 +4,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "get:modifiers:arc": "ts-node scripts/ARC/modifiersArcCalculator.ts",
+    "get:modifiers:v2": "ts-node scripts/V2/modifiersCalculatorV2.ts",
+    "get:modifiers:v3": "ts-node scripts/V3/modifierCalculatorScript.ts",
+    "get:roles:v3": "ts-node scripts/V3/roleCalculatorScript.ts",
+    "get:proxy-admins:v2": "ts-node scripts/proxyAdmins/calculateProxyAdminsV2.ts",
+    "get:proxy-admins:v3": "ts-node scripts/proxyAdmins/calculateProxyAdminsV3.ts",
+    "tables:permissions:v2": "ts-node scripts/V2/createV2PermissionsTable.ts",
+    "tables:permissions:v3": "ts-node scripts/V3/createV3PermissionsTable.ts",
+    "tables:permissions:arc": "ts-node scripts/ARC/createArcPermissionsTable.ts",
+    "tables:modifiers": "ts-node scripts/createModifierTables.ts",
+    "tables:modifiers:arc": "ts-node scripts/ARC/createModifiersArcTable.ts",
+    "tables:roles:v3": "ts-node scripts/V3/createRolesV3Table.ts",
+    "tables:proxy-admins": "ts-node scripts/proxyAdmins/createProxyAdminsTable.ts"
   },
   "repository": {
     "type": "git",
@@ -18,7 +30,7 @@
   },
   "homepage": "https://github.com/bgd-labs/aave-permissions-list#readme",
   "devDependencies": {
-    "@bgd-labs/aave-address-book": "^1.3.0",
+    "@bgd-labs/aave-address-book": "^1.5.2",
     "@types/lowdb": "^1.0.11",
     "@types/node": "^18.8.3",
     "dotenv": "^16.0.3",
