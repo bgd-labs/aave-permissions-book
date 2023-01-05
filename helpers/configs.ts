@@ -11,6 +11,7 @@ export type Modifier = {
 export type ContractInfo = {
   address: string;
   modifiers: Modifier[];
+  proxyAdmin?: string;
 };
 
 export type Contracts = Record<string, ContractInfo>;

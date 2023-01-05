@@ -1,6 +1,7 @@
 [
   {
     "contract": "LendingPoolAddressesProvider",
+    "proxyAdmin": false,
     "functions": [
       {
         "name": "setMarketId",

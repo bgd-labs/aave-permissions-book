@@ -24,6 +24,7 @@
       },
       "LendingPool": {
         "address": "0x37D7306019a38Af123e4b245Eb6C28AF552e0bB0",
+        "proxyAdmin": "0x6FdfafB66d39cD72CFE7984D3Bbcc76632faAb00",
         "modifiers": [
           {
             "modifier": "onlyLendingPoolConfigurator",
@@ -39,6 +40,7 @@
       },
       "LendingPoolConfigurator": {
         "address": "0x4e1c7865e7BE78A7748724Fa0409e88dc14E67aA",
+        "proxyAdmin": "0x6FdfafB66d39cD72CFE7984D3Bbcc76632faAb00",
         "modifiers": [
           {
             "modifier": "onlyPoolAdmin",

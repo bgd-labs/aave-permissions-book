@@ -1,4 +1,4 @@
-import { ethers, providers } from 'ethers';
+import { ethers } from 'ethers';
 import arcTimelockAbi from '../../abis/arcTimelockAbi.json';
 import lendingPoolConfiguratorAbi from '../../abis/lendingPoolConfigurator.json';
 import onlyOwnerAbi from '../../abis/onlyOwnerAbi.json';
@@ -9,20 +9,26 @@ import { AaveV2EthereumArc } from '@bgd-labs/aave-address-book';
 import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
 import { ChainId } from '@aave/contract-helpers';
 import {
-  ContractInfo,
   Contracts,
   FullPermissions,
   networkConfigs,
-  Pool,
   Pools,
 } from '../../helpers/configs';
 import { getAllPermissionsJson, saveJson } from '../../helpers/fileSystem';
-import { generateRoles } from '../../helpers/jsonParsers';
+import {
+  ContractMethodsModifiers,
+  generateRoles,
+} from '../../helpers/jsonParsers';
+import { getProxyAdmin } from '../../helpers/proxyAdmin';
 
-const generateArcModifiers = async () => {
+const generateArcModifiers = async (): Promise<void> => {
+  // TODO: provably makes sense to also externalize this
   const provider = new ethers.providers.StaticJsonRpcProvider(
     networkConfigs[ChainId.mainnet].rpcUrl,
   );
+
+  const obj: Contracts = {};
+  const roles = generateRoles(functionPermissions);
 
   // add Lending Pool Address Provider modifiers
   const lendingPoolAddressesProvider = new ethers.Contract(
@@ -35,8 +41,6 @@ const generateArcModifiers = async () => {
   const poolAdmin = await lendingPoolAddressesProvider.getPoolAdmin();
   const emergencyAdmin = await lendingPoolAddressesProvider.getEmergencyAdmin();
 
-  const obj: Contracts = {};
-  const roles = generateRoles(functionPermissions);
   obj['LendingPoolAddressesProvider'] = {
     address: AaveV2EthereumArc.POOL_ADDRESSES_PROVIDER,
     modifiers: [
@@ -50,6 +54,7 @@ const generateArcModifiers = async () => {
 
   obj['LendingPool'] = {
     address: AaveV2EthereumArc.POOL,
+    proxyAdmin: AaveV2EthereumArc.POOL_ADDRESSES_PROVIDER,
     modifiers: [
       {
         modifier: 'onlyLendingPoolConfigurator',
@@ -62,6 +67,7 @@ const generateArcModifiers = async () => {
   // add Lending Pool Configurator modifiers
   obj['LendingPoolConfigurator'] = {
     address: AaveV2EthereumArc.POOL_CONFIGURATOR,
+    proxyAdmin: AaveV2EthereumArc.POOL_ADDRESSES_PROVIDER,
     modifiers: [
       {
         modifier: 'onlyPoolAdmin',
@@ -161,6 +167,18 @@ const generateArcModifiers = async () => {
     ],
   };
 
+  // add proxy admins
+  const proxyAdminContracts = functionPermissions
+    .filter((contract) => contract.proxyAdmin)
+    .map((contract) => contract.contract);
+  for (let i = 0; i < proxyAdminContracts.length; i++) {
+    obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
+      obj[proxyAdminContracts[i]].address,
+      provider,
+    );
+  }
+
+  // Add pool information to global json
   let fullJson: FullPermissions = getAllPermissionsJson();
 
   if (Object.keys(fullJson).length === 0) {
@@ -175,4 +193,4 @@ const generateArcModifiers = async () => {
   saveJson('./out/aavePermissionList.json', JSON.stringify(fullJson, null, 2));
 };
 
-generateArcModifiers();
+generateArcModifiers().then().catch(console.log);

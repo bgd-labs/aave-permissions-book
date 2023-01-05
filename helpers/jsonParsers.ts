@@ -1,5 +1,6 @@
 export type ContractMethodsModifiers = {
   contract: string;
+  proxyAdmin?: boolean;
   functions: { name: string; roles: string[] }[];
 }[];
 
