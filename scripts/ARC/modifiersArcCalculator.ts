@@ -17,6 +17,7 @@ import {
   Pools,
 } from '../../helpers/configs';
 import { getAllPermissionsJson, saveJson } from '../../helpers/fileSystem';
+import { generateRoles } from '../../helpers/jsonParsers';
 
 const generateArcModifiers = async () => {
   const provider = new ethers.providers.StaticJsonRpcProvider(
@@ -35,7 +36,7 @@ const generateArcModifiers = async () => {
   const emergencyAdmin = await lendingPoolAddressesProvider.getEmergencyAdmin();
 
   const obj: Contracts = {};
-  const roles = generateArcRoles();
+  const roles = generateRoles(functionPermissions);
   obj['LendingPoolAddressesProvider'] = {
     address: AaveV2EthereumArc.POOL_ADDRESSES_PROVIDER,
     modifiers: [
@@ -47,7 +48,6 @@ const generateArcModifiers = async () => {
     ],
   };
 
-  // TODO: missing lendingPool contract modifiers
   obj['LendingPool'] = {
     address: AaveV2EthereumArc.POOL,
     modifiers: [
@@ -173,44 +173,6 @@ const generateArcModifiers = async () => {
     fullJson[ChainId.mainnet][Pools.ARC] = obj;
   }
   saveJson('./out/aavePermissionList.json', JSON.stringify(fullJson, null, 2));
-};
-
-export const generateArcRoles = (): Record<
-  string,
-  Record<string, string[]>
-> => {
-  const permissionsObj: Record<string, Record<string, string[]>> = {};
-
-  console.log(functionPermissions[0]);
-  functionPermissions.forEach(
-    (
-      {
-        contract,
-        functions,
-      }: {
-        contract: string;
-        functions: {
-          name: string;
-          roles: string[];
-        }[];
-      },
-      index,
-    ) => {
-      permissionsObj[contract] = {};
-      functionPermissions[index].functions.forEach(
-        ({ name, roles }: { name: string; roles: string[] }) => {
-          roles.forEach((role) => {
-            if (!permissionsObj[contract][role]) {
-              permissionsObj[contract][role] = [];
-            }
-            permissionsObj[contract][role].push(name);
-          });
-        },
-      );
-    },
-  );
-
-  return permissionsObj;
 };
 
 generateArcModifiers();
