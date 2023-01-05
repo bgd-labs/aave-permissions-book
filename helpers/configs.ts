@@ -1,4 +1,23 @@
 import { ChainId } from '@aave/contract-helpers';
+import dotenv from 'dotenv';
+dotenv.config();
+
+export type Modifier = {
+  modifier: string;
+  address: string;
+  functions: string[];
+};
+
+export type ContractInfo = {
+  address: string;
+  modifiers: Modifier[];
+};
+
+export type Contracts = Record<string, ContractInfo>;
+
+export type Pool = Record<string, Contracts>;
+
+export type FullPermissions = Record<string, Pool>;
 
 export type Network = {
   rpcUrl: string | undefined;
@@ -7,6 +26,12 @@ export type Network = {
 
 export type NetworkConfigs = Record<string, Network>;
 
+export enum Pools {
+  V2 = 'V2',
+  V3 = 'V3',
+  AMM = 'AMM',
+  ARC = 'ARC',
+}
 export const networkConfigs: NetworkConfigs = {
   [ChainId.mainnet]: {
     rpcUrl: process.env.RPC_ETHEREUM,

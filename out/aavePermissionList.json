@@ -1,0 +1,149 @@
+{
+  "1": {
+    "ARC": {
+      "LendingPoolAddressesProvider": {
+        "address": "0x6FdfafB66d39cD72CFE7984D3Bbcc76632faAb00",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "address": "0x23c155C1c1ecB18a86921Da29802292f1d282c68",
+            "functions": [
+              "setMarketId",
+              "setAddressAsProxy",
+              "setAddress",
+              "setLendingPoolImpl",
+              "setLendingPoolConfiguratorImpl",
+              "setLendingPoolCollateralManager",
+              "setPoolAdmin",
+              "setEmergencyAdmin",
+              "setPriceOracle",
+              "setLendingRateOracle"
+            ]
+          }
+        ]
+      },
+      "LendingPool": {
+        "address": "0x37D7306019a38Af123e4b245Eb6C28AF552e0bB0",
+        "modifiers": [
+          {
+            "modifier": "onlyLendingPoolConfigurator",
+            "address": "0x4e1c7865e7BE78A7748724Fa0409e88dc14E67aA",
+            "functions": [
+              "initReserve",
+              "setReserveInterestRateStrategyAddress",
+              "setConfiguration",
+              "setPause"
+            ]
+          }
+        ]
+      },
+      "LendingPoolConfigurator": {
+        "address": "0x4e1c7865e7BE78A7748724Fa0409e88dc14E67aA",
+        "modifiers": [
+          {
+            "modifier": "onlyPoolAdmin",
+            "address": "0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218",
+            "functions": [
+              "initReserve",
+              "updateAToken",
+              "updateStableDebtToken",
+              "updateVariableDebtToken",
+              "enableBorrowingOnReserve",
+              "disableBorrowingOnReserve",
+              "configureReserveAsCollateral",
+              "enableReserveStableRate",
+              "disableReserveStableRate",
+              "activateReserve",
+              "deactivateReserve",
+              "freezeReserve",
+              "unfreezeReserve",
+              "setReserveFactor",
+              "setReserveInterestRateStrategyAddress"
+            ]
+          },
+          {
+            "modifier": "onlyEmergencyAdmin",
+            "address": "0x33B09130b035d6D7e57d76fEa0873d9545FA7557",
+            "functions": [
+              "setPoolPause"
+            ]
+          }
+        ]
+      },
+      "ArcTimelock": {
+        "address": "0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218",
+        "modifiers": [
+          {
+            "modifier": "onlyEthereumGovernanceExecutor",
+            "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+            "functions": [
+              "queue"
+            ]
+          },
+          {
+            "modifier": "onlyGuardian",
+            "address": "0x33B09130b035d6D7e57d76fEa0873d9545FA7557",
+            "functions": [
+              "cancel"
+            ]
+          }
+        ]
+      },
+      "AaveOracle": {
+        "address": "0xB8a7bc0d13B1f5460513040a97F404b4fea7D2f3",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "address": "0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218",
+            "functions": [
+              "setAssetSources",
+              "setFallbackOracle"
+            ]
+          }
+        ]
+      },
+      "ExecutorWithTimelock": {
+        "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+        "modifiers": [
+          {
+            "modifier": "onlyTimelock",
+            "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+            "functions": [
+              "setDelay",
+              "setPendingAdmin"
+            ]
+          },
+          {
+            "modifier": "onlyPendingAdmin",
+            "address": "0x0000000000000000000000000000000000000000",
+            "functions": [
+              "acceptAdmin"
+            ]
+          },
+          {
+            "modifier": "onlyAdmin",
+            "address": "0xEC568fffba86c094cf06b22134B23074DFE2252c",
+            "functions": [
+              "queueTransaction",
+              "cancelTransaction",
+              "executeTransaction"
+            ]
+          }
+        ]
+      },
+      "PermissionManager": {
+        "address": "0xF4a1F5fEA79C3609514A417425971FadC10eCfBE",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "address": "0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218",
+            "functions": [
+              "addPermissionAdmins",
+              "removePermissionAdmins"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

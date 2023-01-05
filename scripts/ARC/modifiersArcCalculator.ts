@@ -1,78 +1,60 @@
 import { ethers, providers } from 'ethers';
-import * as fs from 'fs';
-import * as arcTimelockAbi from '../../abis/arcTimelockAbi.json';
-import * as lendingPoolConfiguratorAbi from '../../abis/lendingPoolConfigurator.json';
-import * as onlyOwnerAbi from '../../abis/onlyOwnerAbi.json';
-import * as executorWithTimelockAbi from '../../abis/executorWithTimelockAbi.json';
+import arcTimelockAbi from '../../abis/arcTimelockAbi.json';
+import lendingPoolConfiguratorAbi from '../../abis/lendingPoolConfigurator.json';
+import onlyOwnerAbi from '../../abis/onlyOwnerAbi.json';
+import executorWithTimelockAbi from '../../abis/executorWithTimelockAbi.json';
 
+import functionPermissions from '../../jsonBases/functionsPermissionsArc.json';
 import { AaveV2EthereumArc } from '@bgd-labs/aave-address-book';
 import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
-import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
-import { networkConfigs } from '../../helpers/configs';
-import { saveJson } from '../../helpers/fileSystem';
-
-// TODO: this should provably be added on address book
-const PERMISSION_MANAGER = '0xF4a1F5fEA79C3609514A417425971FadC10eCfBE';
-
-type NetworkData = {
-  networkName: string;
-  addresses: string[];
-};
-
-type ModifierData = {
-  contractName: string;
-  contractAddress: string;
-  modifier: string;
-  networks: NetworkData[];
-};
-
-async function addModifierInArray(
-  contractName: string,
-  modifier: string,
-  address: string,
-  modifiers: ModifierData[],
-  contractAddress: string,
-) {
-  modifiers.push({
-    contractName: contractName,
-    contractAddress,
-    modifier: modifier,
-    networks: [
-      {
-        networkName: ChainIdToNetwork[ChainId.mainnet],
-        // TODO: chainId should be added
-        addresses: [address],
-      },
-    ],
-  });
-}
+import { ChainId } from '@aave/contract-helpers';
+import {
+  ContractInfo,
+  Contracts,
+  FullPermissions,
+  networkConfigs,
+  Pool,
+  Pools,
+} from '../../helpers/configs';
+import { getAllPermissionsJson, saveJson } from '../../helpers/fileSystem';
 
 const generateArcModifiers = async () => {
-  const modifiers: ModifierData[] = [];
-
   const provider = new ethers.providers.StaticJsonRpcProvider(
     networkConfigs[ChainId.mainnet].rpcUrl,
   );
 
   // add Lending Pool Address Provider modifiers
-  const lendingPoolAddressProvider = new ethers.Contract(
+  const lendingPoolAddressesProvider = new ethers.Contract(
     AaveV2EthereumArc.POOL_ADDRESSES_PROVIDER,
     lendingPoolConfiguratorAbi,
     provider,
   );
-  const lendingPoolAddressProviderOwner =
-    await lendingPoolAddressProvider.owner();
-  const poolAdmin = await lendingPoolAddressProvider.getPoolAdmin();
-  const emergencyAdmin = await lendingPoolAddressProvider.getEmergencyAdmin();
+  const lendingPoolAddressesProviderOwner =
+    await lendingPoolAddressesProvider.owner();
+  const poolAdmin = await lendingPoolAddressesProvider.getPoolAdmin();
+  const emergencyAdmin = await lendingPoolAddressesProvider.getEmergencyAdmin();
 
-  const obj: Record<string, any> = {};
-
-  obj['LendingPoolAddressProvider'] = {
+  const obj: Contracts = {};
+  const roles = generateArcRoles();
+  obj['LendingPoolAddressesProvider'] = {
     address: AaveV2EthereumArc.POOL_ADDRESSES_PROVIDER,
     modifiers: [
       {
         modifier: 'onlyOwner',
-        address: lendingPoolAddressProviderOwner,
+        address: lendingPoolAddressesProviderOwner,
+        functions: roles['LendingPoolAddressesProvider']['onlyOwner'],
+      },
+    ],
+  };
+
+  // TODO: missing lendingPool contract modifiers
+  obj['LendingPool'] = {
+    address: AaveV2EthereumArc.POOL,
+    modifiers: [
+      {
+        modifier: 'onlyLendingPoolConfigurator',
+        address: AaveV2EthereumArc.POOL_CONFIGURATOR,
+        functions: roles['LendingPool']['onlyLendingPoolConfigurator'],
       },
     ],
   };
@@ -84,102 +66,151 @@ const generateArcModifiers = async () => {
       {
         modifier: 'onlyPoolAdmin',
         address: poolAdmin,
+        functions: roles['LendingPoolConfigurator']['onlyPoolAdmin'],
       },
       {
         modifier: 'onlyEmergencyAdmin',
         address: emergencyAdmin,
+        functions: roles['LendingPoolConfigurator']['onlyEmergencyAdmin'],
       },
     ],
   };
 
-  // addModifierInArray(
-  //   'LendingPoolConfigurator',
-  //   'onlyPoolAdmin',
-  //   await lendingPoolAddressProvider.getPoolAdmin(),
-  //   modifiers,
-  // );
-  //
-  // addModifierInArray(
-  //   'LendingPoolConfigurator',
-  //   'onlyEmergencyAdmin',
-  //   await lendingPoolAddressProvider.getEmergencyAdmin(),
-  //   modifiers,
-  // );
+  const arcTimelock = new ethers.Contract(poolAdmin, arcTimelockAbi, provider);
+  const governanceExecutor = await arcTimelock.getEthereumGovernanceExecutor();
+  const arcTimelockGuardian = await arcTimelock.getGuardian();
 
-  const arcTimelock = new ethers.Contract(
-    await lendingPoolAddressProvider.getPoolAdmin(),
-    arcTimelockAbi,
-    provider,
-  );
-
-  addModifierInArray(
-    'ArcTimelock',
-    'onlyEthereumGovernanceExecutor',
-    await arcTimelock.getEthereumGovernanceExecutor(),
-    modifiers,
-  );
-
-  addModifierInArray(
-    'ArcTimelock',
-    'onlyGuardian',
-    await arcTimelock.getGuardian(),
-    modifiers,
-  );
+  obj['ArcTimelock'] = {
+    address: poolAdmin,
+    modifiers: [
+      {
+        modifier: 'onlyEthereumGovernanceExecutor',
+        address: governanceExecutor,
+        functions: roles['ArcTimelock']['onlyEthereumGovernanceExecutor'],
+      },
+      {
+        modifier: 'onlyGuardian',
+        address: arcTimelockGuardian,
+        functions: roles['ArcTimelock']['onlyGuardian'],
+      },
+    ],
+  };
 
   const aaveOracle = new ethers.Contract(
     AaveV2EthereumArc.ORACLE,
     onlyOwnerAbi,
     provider,
   );
+  const aaveOracleOwner = await aaveOracle.owner();
 
-  addModifierInArray(
-    'AaveOracle',
-    'onlyOwner',
-    await aaveOracle.owner(),
-    modifiers,
-  );
+  obj['AaveOracle'] = {
+    address: AaveV2EthereumArc.ORACLE,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        address: aaveOracleOwner,
+        functions: roles['AaveOracle']['onlyOwner'],
+      },
+    ],
+  };
 
   const executorWithTimelock = new ethers.Contract(
     AaveGovernanceV2.SHORT_EXECUTOR,
     executorWithTimelockAbi,
     provider,
   );
+  const pendingAdmin = await executorWithTimelock.getPendingAdmin();
+  const admin = await executorWithTimelock.getAdmin();
 
-  addModifierInArray(
-    'ExecutorWithTimelock',
-    'onlyTimelock',
-    executorWithTimelock.address,
-    modifiers,
-  );
-
-  addModifierInArray(
-    'ExecutorWithTimelock',
-    'onlyPendingAdmin',
-    await executorWithTimelock.getPendingAdmin(),
-    modifiers,
-  );
-
-  addModifierInArray(
-    'ExecutorWithTimelock',
-    'onlyAdmin',
-    await executorWithTimelock.getAdmin(),
-    modifiers,
-  );
+  obj['ExecutorWithTimelock'] = {
+    address: AaveGovernanceV2.SHORT_EXECUTOR,
+    modifiers: [
+      {
+        modifier: 'onlyTimelock',
+        address: executorWithTimelock.address,
+        functions: roles['ExecutorWithTimelock']['onlyTimelock'],
+      },
+      {
+        modifier: 'onlyPendingAdmin',
+        address: pendingAdmin,
+        functions: roles['ExecutorWithTimelock']['onlyPendingAdmin'],
+      },
+      {
+        modifier: 'onlyAdmin',
+        address: admin,
+        functions: roles['ExecutorWithTimelock']['onlyAdmin'],
+      },
+    ],
+  };
 
   const permissionManager = new ethers.Contract(
-    PERMISSION_MANAGER,
+    AaveV2EthereumArc.PERMISSION_MANAGER,
     onlyOwnerAbi,
     provider,
   );
+  const permissionManagerOwner = await permissionManager.owner();
 
-  addModifierInArray(
-    'PermissionManager',
-    'onlyOwner',
-    await permissionManager.owner(),
-    modifiers,
+  obj['PermissionManager'] = {
+    address: AaveV2EthereumArc.PERMISSION_MANAGER,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        address: permissionManagerOwner,
+        functions: roles['PermissionManager']['onlyOwner'],
+      },
+    ],
+  };
+
+  let fullJson: FullPermissions = getAllPermissionsJson();
+
+  if (Object.keys(fullJson).length === 0) {
+    fullJson = {
+      [ChainId.mainnet]: {
+        [Pools.ARC]: obj,
+      },
+    };
+  } else {
+    fullJson[ChainId.mainnet][Pools.ARC] = obj;
+  }
+  saveJson('./out/aavePermissionList.json', JSON.stringify(fullJson, null, 2));
+};
+
+export const generateArcRoles = (): Record<
+  string,
+  Record<string, string[]>
+> => {
+  const permissionsObj: Record<string, Record<string, string[]>> = {};
+
+  console.log(functionPermissions[0]);
+  functionPermissions.forEach(
+    (
+      {
+        contract,
+        functions,
+      }: {
+        contract: string;
+        functions: {
+          name: string;
+          roles: string[];
+        }[];
+      },
+      index,
+    ) => {
+      permissionsObj[contract] = {};
+      functionPermissions[index].functions.forEach(
+        ({ name, roles }: { name: string; roles: string[] }) => {
+          roles.forEach((role) => {
+            if (!permissionsObj[contract][role]) {
+              permissionsObj[contract][role] = [];
+            }
+            permissionsObj[contract][role].push(name);
+          });
+        },
+      );
+    },
   );
 
-  saveJson('./generated/modifiersArc.json', JSON.stringify(modifiers, null, 2));
+  return permissionsObj;
 };
 
 generateArcModifiers();
