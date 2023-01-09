@@ -14,6 +14,12 @@ export type ContractInfo = {
   proxyAdmin?: string;
 };
 
+export type ModifierTable = {
+  address: string;
+  contract: string;
+  functions: string[];
+};
+
 export type Contracts = Record<string, ContractInfo>;
 
 export type Pool = Record<string, Contracts>;
