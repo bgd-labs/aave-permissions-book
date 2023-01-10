@@ -4,7 +4,7 @@ import { networkConfigs } from './configs';
 
 export const explorerAddressUrlComposer = (
   address: string,
-  chainId: ChainId,
+  chainId: string, //ChainId,
 ): string | null => {
   if (ethers.utils.isAddress(address)) {
     return `${networkConfigs[chainId].explorer}/address/${address}`;
