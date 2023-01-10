@@ -1,3 +1,5 @@
+import { Contracts } from './configs';
+
 export type ContractMethodsModifiers = {
   contract: string;
   proxyAdmin?: boolean;
@@ -24,4 +26,15 @@ export const generateRoles = (
   });
 
   return permissionsObj;
+};
+
+export const generateContractsByAddress = (
+  contracts: Contracts,
+): Record<string, string> => {
+  const contractsByAddress: Record<string, string> = {};
+  Object.keys(contracts).forEach((contract) => {
+    contractsByAddress[contracts[contract].address] = contract;
+  });
+
+  return contractsByAddress;
 };
