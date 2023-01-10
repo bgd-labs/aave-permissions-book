@@ -1,5 +1,5 @@
 import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem';
-import { ContractInfo, Modifier } from '../helpers/configs';
+import { ContractInfo, FullPermissions, Modifier } from '../helpers/configs';
 import { explorerAddressUrlComposer } from '../helpers/explorer';
 import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
 import { generateContractsByAddress } from '../helpers/jsonParsers';
@@ -9,6 +9,21 @@ import {
   getTableHeader,
 } from '../helpers/tables';
 
+// TODO: correctly encode directory
+export const generateDirectory = (json: FullPermissions): string => {
+  let directory = '';
+  Object.keys(json).forEach((network) => {
+    const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
+    directory += `|-- [${networkName}](./${networkName}.md) \n`;
+
+    Object.keys(json[network]).forEach((pool) => {
+      directory += `|--|-- [${pool}](./${networkName}.md#${pool}) \n`;
+    });
+  });
+
+  return directory;
+};
+
 export const generateTables = async () => {
   const aavePermissionsList = getAllPermissionsJson();
 
@@ -17,19 +32,21 @@ export const generateTables = async () => {
 
   Object.keys(aavePermissionsList).forEach((network: string) => {
     const networkPermits = aavePermissionsList[network];
-    // create network table
+
+    // create network Readme with pool tables
     let readmeByNetwork = `# ${ChainIdToNetwork[
       Number(network)
     ].toUpperCase()} \n`;
 
     Object.keys(networkPermits).forEach((pool) => {
       const poolPermitsByContract = networkPermits[pool];
-      // create network table
+      // create pool table
       readmeByNetwork += `## ${pool} \n`;
 
       const contractsByAddress = generateContractsByAddress(
         poolPermitsByContract,
       );
+
       let contractTable = `## contracts && permits\n`;
       const contractsModifiersHeaderTitles = [
         'contract',
@@ -40,6 +57,8 @@ export const generateTables = async () => {
       ];
       const header = getTableHeader(contractsModifiersHeaderTitles);
       contractTable += header;
+
+      // fill pool table
       let tableBody = '';
       Object.keys(poolPermitsByContract).forEach((contractName) => {
         const contract = poolPermitsByContract[contractName];
@@ -74,7 +93,6 @@ export const generateTables = async () => {
       readmeByNetwork += contractTable + '\n';
     });
 
-    // TODO: create directory
     saveJson(
       `./out/${ChainIdToNetwork[Number(network)].toUpperCase()}.md`,
       readmeByNetwork,
@@ -82,8 +100,9 @@ export const generateTables = async () => {
   });
 
   // TODO: create directory readme
+  readmeDirectory += generateDirectory(aavePermissionsList);
 
-  saveJson('./out/TABLES.md', readmeDirectory);
+  saveJson('./out/DIRECTORY.md', readmeDirectory);
 };
 
 generateTables();
