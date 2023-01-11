@@ -184,11 +184,13 @@ const generateArcModifiers = async (): Promise<void> => {
   if (Object.keys(fullJson).length === 0) {
     fullJson = {
       [ChainId.mainnet]: {
-        [Pools.ARC]: obj,
+        [Pools.ARC]: {
+          contracts: obj,
+        },
       },
     };
   } else {
-    fullJson[ChainId.mainnet][Pools.ARC] = obj;
+    fullJson[ChainId.mainnet][Pools.ARC].contracts = obj;
   }
   saveJson('./out/aavePermissionList.json', JSON.stringify(fullJson, null, 2));
 };

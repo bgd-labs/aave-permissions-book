@@ -44,7 +44,7 @@ export const generateTables = async () => {
       readmeByNetwork += `## ${pool} \n`;
 
       const contractsByAddress = generateContractsByAddress(
-        poolPermitsByContract,
+        poolPermitsByContract.contracts,
       );
 
       let contractTable = `## contracts && permits\n`;
@@ -60,8 +60,8 @@ export const generateTables = async () => {
 
       // fill pool table
       let tableBody = '';
-      Object.keys(poolPermitsByContract).forEach((contractName) => {
-        const contract = poolPermitsByContract[contractName];
+      Object.keys(poolPermitsByContract.contracts).forEach((contractName) => {
+        const contract = poolPermitsByContract.contracts[contractName];
 
         contract.modifiers.forEach((modifier: Modifier) => {
           tableBody += getTableBody([

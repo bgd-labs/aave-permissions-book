@@ -17,7 +17,8 @@
     "tables:modifiers:arc": "ts-node scripts/ARC/createModifiersArcTable.ts",
     "tables:roles:v3": "ts-node scripts/V3/createRolesV3Table.ts",
     "tables:proxy-admins": "ts-node scripts/proxyAdmins/createProxyAdminsTable.ts",
-    "tables:create": "ts-node scripts/createTables.ts"
+    "tables:create": "ts-node scripts/createTables.ts",
+    "role:generateRoles": "ts-node helpers/adminRoles.ts"
   },
   "repository": {
     "type": "git",
