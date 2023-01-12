@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "get:modifiers:arc": "ts-node scripts/ARC/modifiersArcCalculator.ts",
-    "get:modifiers:v2": "ts-node scripts/V2/modifiersCalculatorV2.ts",
+    "get:modifiers:v2": "ts-node scripts/modifiersCalculator.ts",
     "get:modifiers:v3": "ts-node scripts/V3/modifierCalculatorScript.ts",
     "get:roles:v3": "ts-node scripts/V3/roleCalculatorScript.ts",
     "get:proxy-admins:v2": "ts-node scripts/proxyAdmins/calculateProxyAdminsV2.ts",
@@ -17,6 +17,7 @@
     "tables:modifiers:arc": "ts-node scripts/ARC/createModifiersArcTable.ts",
     "tables:roles:v3": "ts-node scripts/V3/createRolesV3Table.ts",
     "tables:proxy-admins": "ts-node scripts/proxyAdmins/createProxyAdminsTable.ts",
+    "modifiers:generate": "ts-node scripts/modifiersCalculator.ts",
     "tables:create": "ts-node scripts/createTables.ts",
     "role:generateRoles": "ts-node helpers/adminRoles.ts"
   },

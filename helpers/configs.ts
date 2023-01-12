@@ -1,10 +1,22 @@
 import { ChainId } from '@aave/contract-helpers';
 import dotenv from 'dotenv';
+import {
+  AaveV2Avalanche,
+  AaveV2Ethereum,
+  AaveV2EthereumAMM,
+  AaveV2EthereumArc,
+  AaveV2Polygon,
+  AaveV3Arbitrum,
+  AaveV3Avalanche,
+  AaveV3Harmony,
+  AaveV3Optimism,
+  AaveV3Polygon,
+} from '@bgd-labs/aave-address-book';
 dotenv.config();
 
 export type Modifier = {
   modifier: string;
-  address: string;
+  address: string[];
   functions: string[];
 };
 
@@ -14,20 +26,7 @@ export type ContractInfo = {
   proxyAdmin?: string;
 };
 
-export type ModifierTable = {
-  address: string;
-  contract: string;
-  functions: string[];
-};
-
 export type Contracts = Record<string, ContractInfo>;
-
-export type RoleInfo = {
-  roleHash: string;
-  adminAddress: string;
-  blockNumber: number;
-  tx: string;
-};
 
 export type Roles = {
   latestBlockNumber: number;
@@ -43,15 +42,29 @@ export type Pool = Record<string, PoolInfo>;
 
 export type FullPermissions = Record<string, Pool>;
 
+export type PoolConfigs = {
+  permissionsJson: string;
+  addressBook: any;
+  aclBlock?: number;
+};
 export type Network = {
   rpcUrl: string | undefined;
   explorer: string;
-  V3?: {
-    aclBlock: number;
-  };
+  pools: Record<string, PoolConfigs>;
 };
 
 export type NetworkConfigs = Record<string, Network>;
+
+export type Function = {
+  name: string;
+  roles: string[];
+};
+
+export type PermissionsJson = {
+  contract: string;
+  proxyAdmin?: boolean;
+  functions: Function[];
+}[];
 
 export enum Pools {
   V2 = 'V2',
@@ -59,51 +72,98 @@ export enum Pools {
   AMM = 'AMM',
   ARC = 'ARC',
 }
+
 export const networkConfigs: NetworkConfigs = {
   [ChainId.mainnet]: {
     rpcUrl: process.env.RPC_ETHEREUM,
     explorer: 'https://etherscan.io',
+    pools: {
+      [Pools.V2]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2Ethereum,
+      },
+      [Pools.ARC]: {
+        permissionsJson: './statics/functionsPermissionsARC.json',
+        addressBook: AaveV2EthereumArc,
+      },
+      [Pools.AMM]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2EthereumAMM,
+      },
+    },
   },
   [ChainId.polygon]: {
-    rpcUrl: process.env.RPC_ETHEREUM,
+    rpcUrl: process.env.RPC_POLYGON,
     explorer: 'https://polygonscan.com',
-    V3: {
-      aclBlock: 25824416,
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 25824416,
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Polygon,
+      },
+      [Pools.V2]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2Polygon,
+      },
     },
   },
   [ChainId.avalanche]: {
-    rpcUrl: process.env.RPC_ETHEREUM,
+    rpcUrl: process.env.RPC_AVALANCHE,
     explorer: 'https://snowtrace.io',
-    V3: {
-      aclBlock: 11970456,
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 11970456,
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Avalanche,
+      },
+      [Pools.V2]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2Avalanche,
+      },
     },
   },
   [ChainId.optimism]: {
-    rpcUrl: process.env.RPC_ETHEREUM,
+    rpcUrl: process.env.RPC_OPTIMISM,
     explorer: 'https://optimistic.etherscan.io',
-    V3: {
-      aclBlock: 4365546,
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 4365546,
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Optimism,
+      },
     },
   },
   [ChainId.arbitrum_one]: {
-    rpcUrl: process.env.RPC_ETHEREUM,
+    rpcUrl: process.env.RPC_ARBITRUM,
     explorer: 'https://arbiscan.io',
-    V3: {
-      aclBlock: 7740502,
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 7740502,
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Arbitrum,
+      },
     },
   },
   [ChainId.fantom]: {
-    rpcUrl: process.env.RPC_ETHEREUM,
+    rpcUrl: process.env.RPC_FANTOM,
     explorer: 'https://ftmscan.com',
-    V3: {
-      aclBlock: 33141475,
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 33141475,
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Arbitrum,
+      },
     },
   },
   [ChainId.harmony]: {
-    rpcUrl: process.env.RPC_ETHEREUM,
+    rpcUrl: process.env.RPC_HARMONY,
     explorer: 'https://explorer.harmony.one',
-    V3: {
-      aclBlock: 23930307,
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 23930307,
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Harmony,
+      },
     },
   },
 };

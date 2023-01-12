@@ -7,7 +7,7 @@ This repo is containing scripts for calculating and shownig addresses which hold
 Repo contains multiple scripts for fetching the permissions and for writing output tables.
 
 Fatching:
-- [Fatching modifiers on V2 contracts](./scripts/V2/modifiersCalculatorV2.ts)
+- [Fatching modifiers on V2 contracts](scripts/modifiersCalculator.ts)
 - [Fatching ARC modifiers](./scripts/ARC/modifiersArcCalculator.ts)
 - [Fatching modifiers on V3 contracts](./scripts/V3/modifierCalculatorScript.ts)
 - [Fatching roles on V3 contracts](./scripts/V3/roleCalculatorScript.ts)

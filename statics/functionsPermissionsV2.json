@@ -1,5 +1,18 @@
 [
   {
+    "contract": "LendingPoolAddressesProviderRegistry",
+    "functions": [
+      {
+        "name": "registerAddressesProvider",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "unregisterAddressesProvider",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
     "contract": "LendingPoolAddressesProvider",
     "proxyAdmin": false,
     "functions": [
@@ -63,19 +76,6 @@
       {
         "name": "setPause",
         "roles": ["onlyLendingPoolConfigurator"]
-      }
-    ]
-  },
-  {
-    "contract": "ArcTimelock",
-    "functions": [
-      {
-        "name": "queue",
-        "roles": ["onlyEthereumGovernanceExecutor"]
-      },
-      {
-        "name": "cancel",
-        "roles": ["onlyGuardian"]
       }
     ]
   },
@@ -162,44 +162,11 @@
     ]
   },
   {
-    "contract": "PermissionManager",
+    "contract": "LendingRateOracle",
     "functions": [
       {
-        "name": "addPermissionAdmins",
+        "name": "setMarketBorrowRate",
         "roles": ["onlyOwner"]
-      },
-      {
-        "name": "removePermissionAdmins",
-        "roles": ["onlyOwner"]
-      }
-    ]
-  },
-  {
-    "contract": "ExecutorWithTimelock",
-    "functions": [
-      {
-        "name": "setDelay",
-        "roles": ["onlyTimelock"]
-      },
-      {
-        "name": "acceptAdmin",
-        "roles": ["onlyPendingAdmin"]
-      },
-      {
-        "name": "setPendingAdmin",
-        "roles": ["onlyTimelock"]
-      },
-      {
-        "name": "queueTransaction",
-        "roles": ["onlyAdmin"]
-      },
-      {
-        "name": "cancelTransaction",
-        "roles": ["onlyAdmin"]
-      },
-      {
-        "name": "executeTransaction",
-        "roles": ["onlyAdmin"]
       }
     ]
   }

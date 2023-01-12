@@ -1,16 +1,7 @@
-import { ethers, utils } from 'ethers';
-
-import {
-  AaveV3Optimism,
-  AaveV3Arbitrum,
-  AaveV3Polygon,
-  AaveV3Fantom,
-  AaveV3Avalanche,
-  AaveV3Harmony,
-} from '@bgd-labs/aave-address-book';
+import { ethers, providers, utils } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { networkConfigs, Pools, RoleInfo } from './configs';
-import { getAllPermissionsJson, saveJson } from './fileSystem';
+import { Pools, Roles } from './configs';
+import { getLogs } from './eventLogs';
 
 export const roleGrantedEventABI = [
   'event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)',
@@ -46,14 +37,6 @@ function initializeRoleCodeMap() {
 
   return roleCodeMap;
 }
-export const aclByChainId: Record<number, string> = {
-  [ChainId.harmony]: AaveV3Harmony.ACL_MANAGER,
-  [ChainId.avalanche]: AaveV3Avalanche.ACL_MANAGER,
-  [ChainId.fantom]: AaveV3Fantom.ACL_MANAGER,
-  [ChainId.polygon]: AaveV3Polygon.ACL_MANAGER,
-  [ChainId.arbitrum_one]: AaveV3Arbitrum.ACL_MANAGER,
-  [ChainId.optimism]: AaveV3Optimism.ACL_MANAGER,
-};
 
 export const getRoleBytes32 = (roleName: string): string => {
   return utils.solidityKeccak256(['string'], [roleName]);
@@ -63,46 +46,36 @@ export const parseLog = (
   abi: string[],
   eventLog: ethers.providers.Log,
 ): { account: string; role: string } => {
-  const iface = new ethers.utils.Interface(roleRevokedEventABI);
+  const iface = new ethers.utils.Interface(abi);
   const parsedEvent = iface.parseLog(eventLog);
   const { role, account } = parsedEvent.args;
 
   return { account, role };
 };
 
-export const getCurrentACLRoleAdmins = async (
+export const getCurrentRoleAdmins = async (
+  provider: providers.Provider,
+  fromBlock: number,
+  addressBook: any,
   chainId: ChainId,
-  pool: Pools,
-): Promise<{}> => {
-  // TODO: provably makes sense to also externalize this
-  const provider = new ethers.providers.StaticJsonRpcProvider(
-    networkConfigs[chainId].rpcUrl,
-  );
-  const aclManager = aclByChainId[chainId];
-
-  // get last block
-  let fullJson = getAllPermissionsJson();
-
+): Promise<Roles> => {
+  const aclManager = addressBook.ACL_MANAGER;
   const roleHexToNameMap = initializeRoleCodeMap();
 
-  const fromBlock =
-    (fullJson[chainId] && fullJson[chainId][pool]?.roles?.latestBlockNumber) ||
-    networkConfigs[chainId].V3?.aclBlock;
-
-  // if block doesn't exist means it does not have acl
-  if (!fromBlock) {
-    return {};
+  let limit = undefined;
+  if (chainId === ChainId.avalanche) {
+    limit = 99999;
+  } else if (chainId === ChainId.harmony) {
+    limit = 9999;
   }
 
-  const latestBlockNumber = await provider.getBlockNumber();
-  const filter = {
-    address: aclManager,
+  const { eventLogs, finalBlock } = await getLogs(
+    provider,
+    aclManager,
     fromBlock,
-    toBlock: latestBlockNumber,
-  };
-
-  const eventLogs = await provider.getLogs(filter);
-
+    [],
+    limit,
+  );
   const roles: Record<string, string[]> = {};
 
   // get roleGranted events
@@ -132,27 +105,5 @@ export const getCurrentACLRoleAdmins = async (
     }
   });
 
-  // if (Object.keys(fullJson).length === 0) {
-  //   fullJson = {
-  //     [chainId]: {
-  //       [pool]: {
-  //         roles: {
-  //           latestBlockNumber,
-  //           role: roles,
-  //         },
-  //         contracts: {},
-  //       },
-  //     },
-  //   };
-  // } else {
-  //   fullJson[chainId][pool].roles = {
-  //     role: roles,
-  //     latestBlockNumber,
-  //   };
-  // }
-  // saveJson('./out/aavePermissionList.json', JSON.stringify(fullJson, null, 2));
-
-  return { role: roles, latestBlockNumber };
+  return { role: roles, latestBlockNumber: finalBlock };
 };
-
-getCurrentACLRoleAdmins(ChainId.arbitrum_one, Pools.V3);

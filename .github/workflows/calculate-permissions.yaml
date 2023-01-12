@@ -36,7 +36,7 @@ jobs:
         run: npx ts-node scripts/ARC/modifiersArcCalculator.ts
 
       - name: Fetch V2 modifiers
-        run: npx ts-node scripts/V2/modifiersCalculatorV2.ts 
+        run: npx ts-node scripts/V2/modifiersCalculator.ts
 
       - name: Fetch V3 modifiers
         run: npx ts-node scripts/V3/modifierCalculatorScript.ts 

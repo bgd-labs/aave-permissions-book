@@ -1,15 +1,9 @@
-import { Contracts } from './configs';
-
-export type ContractMethodsModifiers = {
-  contract: string;
-  proxyAdmin?: boolean;
-  functions: { name: string; roles: string[] }[];
-}[];
+import { Contracts, PermissionsJson } from './configs';
 
 export type MethodsByModifier = Record<string, Record<string, string[]>>;
 
 export const generateRoles = (
-  functionPermissions: ContractMethodsModifiers,
+  functionPermissions: PermissionsJson,
 ): MethodsByModifier => {
   const permissionsObj: MethodsByModifier = {};
 
