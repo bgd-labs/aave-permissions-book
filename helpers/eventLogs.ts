@@ -14,7 +14,7 @@ export const getLogs = async (
   const currentBlock = await provider.getBlockNumber();
 
   // TODO: for now i have put a margin, but should maybe be comparision between from and current
-  if (fromBlock + 30 >= currentBlock) {
+  if (fromBlock + 10 >= currentBlock) {
     return { eventLogs: logs, finalBlock: fromBlock };
   }
 

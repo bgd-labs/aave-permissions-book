@@ -614,7 +614,7 @@
           "POOL_ADMIN": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 65899648
+        "latestBlockNumber": 65921348
       }
     }
   },
@@ -702,7 +702,9 @@
             },
             {
               "modifier": "onlyEmergencyAdmin",
-              "address": [],
+              "address": [
+                "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58"
+              ],
               "functions": [
                 "setPoolPause"
               ]
@@ -738,7 +740,9 @@
             },
             {
               "modifier": "onlyEmergencyOrPoolAdmin",
-              "address": [],
+              "address": [
+                "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58"
+              ],
               "functions": [
                 "setReservePause"
               ]
@@ -811,15 +815,17 @@
       },
       "roles": {
         "role": {
-          "ASSET_LISTING_ADMIN": [],
-          "BRIDGE": [],
           "DEFAULT_ADMIN": [],
-          "EMERGENCY_ADMIN": [],
-          "FLASH_BORROWER": [],
           "POOL_ADMIN": [],
-          "RISK_ADMIN": []
+          "EMERGENCY_ADMIN": [
+            "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58"
+          ],
+          "ASSET_LISTING_ADMIN": [],
+          "RISK_ADMIN": [],
+          "BRIDGE": [],
+          "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 38031525
+        "latestBlockNumber": 38032909
       }
     },
     "V2": {
@@ -1137,7 +1143,7 @@
           "POOL_ADMIN": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 53698356
+        "latestBlockNumber": 53700732
       }
     }
   },
@@ -1342,7 +1348,7 @@
           "POOL_ADMIN": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 52804410
+        "latestBlockNumber": 52812028
       }
     }
   },
@@ -1547,7 +1553,7 @@
           "POOL_ADMIN": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 24892545
+        "latestBlockNumber": 24893961
       }
     },
     "V2": {

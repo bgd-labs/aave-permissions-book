@@ -84,12 +84,12 @@ export const getCurrentRoleAdmins = async (
     [],
     limit,
   );
-  const roles = getDefaultRoles();
 
   // get roleGranted events
   const roleGrantedTopic0 = utils.id('RoleGranted(bytes32,address,address)');
   const roleRevokedTopic0 = utils.id('RoleRevoked(bytes32,address,address)');
 
+  const roles: Record<string, string[]> = {};
   // save or remove admins
   eventLogs.forEach((eventLog) => {
     if (eventLog.topics[0] === roleGrantedTopic0) {
@@ -111,6 +111,10 @@ export const getCurrentRoleAdmins = async (
       console.error(new Error('some error parsing logs'));
       return {};
     }
+  });
+
+  roleNames.forEach((roleName) => {
+    if (!roles[roleName]) roles[roleName] = [];
   });
 
   return { role: roles, latestBlockNumber: finalBlock };
