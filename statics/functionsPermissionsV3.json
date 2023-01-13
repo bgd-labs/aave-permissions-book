@@ -211,6 +211,7 @@
   },
   {
     "contract": "RewardsController",
+    "proxyAdmin": true,
     "functions": [
       {
         "name": "configureAssets",

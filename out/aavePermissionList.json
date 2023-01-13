@@ -557,7 +557,7 @@
           ]
         },
         "Collector": {
-          "address": "0xA77E4A084d7d4f064E326C0F6c0aCefd47A5Cb21",
+          "address": "0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf",
           "modifiers": [
             {
               "modifier": "onlyFundsAdmin",
@@ -571,7 +571,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0x0000000000000000000000000000000000000000"
+          "proxyAdmin": "0xe50c8c619d05ff98b22adf991f17602c774f785c"
         },
         "RewardsController": {
           "address": "0x929EC64c34a17401F460460D4B9390518E5B473e",
@@ -582,7 +582,8 @@
                 "0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73"
               ]
             }
-          ]
+          ],
+          "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
         }
       },
       "roles": {
@@ -595,7 +596,7 @@
           "POOL_ADMIN": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 65781046
+        "latestBlockNumber": 65860356
       }
     }
   },
@@ -743,7 +744,7 @@
           ]
         },
         "Collector": {
-          "address": "0xDB89487A449274478e984665b8692AfC67459deF",
+          "address": "0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383",
           "modifiers": [
             {
               "modifier": "onlyFundsAdmin",
@@ -757,7 +758,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0x0000000000000000000000000000000000000000"
+          "proxyAdmin": "0xdc9a35b16db4e126cfedc41322b3a36454b1f772"
         },
         "RewardsController": {
           "address": "0x929EC64c34a17401F460460D4B9390518E5B473e",
@@ -768,7 +769,8 @@
                 "0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73"
               ]
             }
-          ]
+          ],
+          "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
         }
       },
       "roles": {
@@ -781,7 +783,7 @@
           "POOL_ADMIN": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 38025939
+        "latestBlockNumber": 38029470
       }
     },
     "V2": {
@@ -1042,7 +1044,7 @@
           ]
         },
         "Collector": {
-          "address": "0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD",
+          "address": "0xBe85413851D195fC6341619cD68BfDc26a25b928",
           "modifiers": [
             {
               "modifier": "onlyFundsAdmin",
@@ -1056,7 +1058,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0x0000000000000000000000000000000000000000"
+          "proxyAdmin": "0x39cb97b105173b56b5a2b4b33ad25d6a50e6c949"
         },
         "RewardsController": {
           "address": "0x929EC64c34a17401F460460D4B9390518E5B473e",
@@ -1067,7 +1069,8 @@
                 "0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73"
               ]
             }
-          ]
+          ],
+          "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
         }
       },
       "roles": {
@@ -1080,7 +1083,7 @@
           "POOL_ADMIN": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 53690844
+        "latestBlockNumber": 53695161
       }
     }
   },
@@ -1228,7 +1231,7 @@
           ]
         },
         "Collector": {
-          "address": "0xC3301b30f4EcBfd59dE0d74e89690C1a70C6f21B",
+          "address": "0x053D55f9B5AF8694c503EB288a1B7E552f590710",
           "modifiers": [
             {
               "modifier": "onlyFundsAdmin",
@@ -1242,7 +1245,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0x0000000000000000000000000000000000000000"
+          "proxyAdmin": "0xbbd9f90699c1fa0d7a65870d241dd1f1217c96eb"
         },
         "RewardsController": {
           "address": "0x929EC64c34a17401F460460D4B9390518E5B473e",
@@ -1253,7 +1256,8 @@
                 "0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73"
               ]
             }
-          ]
+          ],
+          "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
         }
       },
       "roles": {
@@ -1266,7 +1270,7 @@
           "POOL_ADMIN": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 52770712
+        "latestBlockNumber": 52792093
       }
     }
   },
@@ -1414,7 +1418,7 @@
           ]
         },
         "Collector": {
-          "address": "0xaCbE7d574EF8dC39435577eb638167Aca74F79f0",
+          "address": "0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0",
           "modifiers": [
             {
               "modifier": "onlyFundsAdmin",
@@ -1428,7 +1432,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0x0000000000000000000000000000000000000000"
+          "proxyAdmin": "0xa35b76e4935449e33c56ab24b23fcd3246f13470"
         },
         "RewardsController": {
           "address": "0x929EC64c34a17401F460460D4B9390518E5B473e",
@@ -1439,7 +1443,8 @@
                 "0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73"
               ]
             }
-          ]
+          ],
+          "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
         }
       },
       "roles": {
@@ -1452,7 +1457,7 @@
           "POOL_ADMIN": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 24886845
+        "latestBlockNumber": 24890455
       }
     },
     "V2": {

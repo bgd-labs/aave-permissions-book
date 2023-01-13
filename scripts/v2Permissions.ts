@@ -185,6 +185,10 @@ export const resolveV2Modifiers = async (
     };
   }
 
+  // TODO: incentives controller
+  // TODO: weth gateway
+  // TODO: collector controller. should have proxyAdmin true
+
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
     .filter((contract) => contract.proxyAdmin)

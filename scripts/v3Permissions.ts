@@ -36,7 +36,6 @@ export const resolveV3Modifiers = async (
     ],
   };
 
-  // todo use acl admin to get the roles addresses
   obj['Pool'] = {
     address: addressBook.POOL,
     proxyAdmin: addressBook.POOL_ADDRESSES_PROVIDER,
@@ -163,8 +162,7 @@ export const resolveV3Modifiers = async (
 
   const fundsAdmin = await collector.getFundsAdmin();
   obj['Collector'] = {
-    address: addressBook.COLLECTOR_CONTROLLER,
-    // proxyAdmin: addressBook.ACL_ADMIN,
+    address: addressBook.COLLECTOR,
     modifiers: [
       {
         modifier: 'onlyFundsAdmin',
@@ -186,6 +184,8 @@ export const resolveV3Modifiers = async (
       },
     ],
   };
+
+  // TODO: weth gateway
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
