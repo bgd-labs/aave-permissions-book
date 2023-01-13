@@ -8,6 +8,7 @@ import {
   AaveV2Polygon,
   AaveV3Arbitrum,
   AaveV3Avalanche,
+  AaveV3Fantom,
   AaveV3Harmony,
   AaveV3Optimism,
   AaveV3Polygon,
@@ -151,19 +152,19 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 33141475,
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Arbitrum,
+        addressBook: AaveV3Fantom,
       },
     },
   },
-  [ChainId.harmony]: {
-    rpcUrl: process.env.RPC_HARMONY,
-    explorer: 'https://explorer.harmony.one',
-    pools: {
-      [Pools.V3]: {
-        aclBlock: 23930307,
-        permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Harmony,
-      },
-    },
-  },
+  // [ChainId.harmony]: {
+  //   rpcUrl: process.env.RPC_HARMONY,
+  //   explorer: 'https://explorer.harmony.one',
+  //   pools: {
+  //     [Pools.V3]: {
+  //       aclBlock: 23930307,
+  //       permissionsJson: './statics/functionsPermissionsV3.json',
+  //       addressBook: AaveV3Harmony,
+  //     },
+  //   },
+  // },
 };

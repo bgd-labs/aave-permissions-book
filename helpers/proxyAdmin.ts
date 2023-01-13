@@ -7,7 +7,6 @@ export const getProxyAdmin = async (
   contract: string,
   provider: providers.Provider,
 ): Promise<string> => {
-  console.log(contract);
   const longAdmin = await provider.getStorageAt(contract, PROXY_ADMIN_SLOT);
   return longAdmin.slice(0, 2) + longAdmin.slice(26, longAdmin.length);
 };

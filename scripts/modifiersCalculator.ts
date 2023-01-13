@@ -13,8 +13,7 @@ import {
 } from '../helpers/fileSystem';
 import { getCurrentRoleAdmins } from '../helpers/adminRoles';
 import { resolveV2Modifiers } from './v2Permissions';
-
-// TODO: extract this logic to different file
+import { resolveV3Modifiers } from './v3Permissions';
 
 async function main() {
   let fullJson: FullPermissions = getAllPermissionsJson();
@@ -45,8 +44,6 @@ async function main() {
           poolKey,
         );
       } else if (poolKey === Pools.V3) {
-        console.log('V3 not implemented yet');
-
         const fromBlock =
           (fullJson[network] &&
             fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
@@ -64,6 +61,13 @@ async function main() {
             fromBlock,
             pool.addressBook,
             Number(network),
+          );
+          poolPermissions = await resolveV3Modifiers(
+            pool.addressBook,
+            provider,
+            permissionsJson,
+            poolKey,
+            admins,
           );
         }
       } else {
@@ -86,13 +90,13 @@ async function main() {
             roles: admins,
           },
         };
-      } else if (!fullJson[network][poolKey]) {
+      } else {
+        // if (!fullJson[network][poolKey]) {
         fullJson[network][poolKey] = {
           contracts: poolPermissions,
           roles: admins,
         };
       }
-      // TODO: get roles admins
     }
   }
 

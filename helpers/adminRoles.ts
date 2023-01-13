@@ -22,7 +22,7 @@ export const roleNames = [
   'RISK_ADMIN',
 ];
 
-function initializeRoleCodeMap() {
+function initializeRoleCodeMap(): Map<string, string> {
   let roleCodeMap = new Map<string, string>([
     [
       '0x0000000000000000000000000000000000000000000000000000000000000000',
@@ -53,6 +53,14 @@ export const parseLog = (
   return { account, role };
 };
 
+export const getDefaultRoles = (): Record<string, string[]> => {
+  const roles: Record<string, string[]> = {};
+  roleNames.forEach((roleName) => {
+    roles[roleName] = [];
+  });
+  return roles;
+};
+
 export const getCurrentRoleAdmins = async (
   provider: providers.Provider,
   fromBlock: number,
@@ -76,7 +84,7 @@ export const getCurrentRoleAdmins = async (
     [],
     limit,
   );
-  const roles: Record<string, string[]> = {};
+  const roles = getDefaultRoles();
 
   // get roleGranted events
   const roleGrantedTopic0 = utils.id('RoleGranted(bytes32,address,address)');

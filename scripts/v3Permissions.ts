@@ -1,18 +1,18 @@
 import { ethers, providers } from 'ethers';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json';
 import collectorAbi from '../abis/collectorAbi.json';
-import rewardsControllerAbi from '../abis/rewardsControllerAbi.json';
-import { Contracts, PermissionsJson, Pools } from '../helpers/configs';
+import { Contracts, PermissionsJson, Pools, Roles } from '../helpers/configs';
 import { generateRoles } from '../helpers/jsonParsers';
 import poolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json';
 import { getProxyAdmin } from '../helpers/proxyAdmin';
 
-async function resolveV3Modifiers(
+export const resolveV3Modifiers = async (
   addressBook: any,
   provider: providers.Provider,
   permissionsObject: PermissionsJson,
   pool: Pools,
-) {
+  adminRoles: Roles,
+): Promise<Contracts> => {
   const obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
 
@@ -48,12 +48,12 @@ async function resolveV3Modifiers(
       },
       {
         modifier: 'onlyPoolAdmin',
-        address: [poolAdmin],
+        address: [...adminRoles.role['POOL_ADMIN']],
         functions: roles['Pool']['onlyPoolAdmin'],
       },
       {
         modifier: 'onlyBridge',
-        address: [bridgeAdmin],
+        address: [...adminRoles.role['BRIDGE']],
         functions: roles['Pool']['onlyBridge'],
       },
     ],
@@ -65,27 +65,42 @@ async function resolveV3Modifiers(
     modifiers: [
       {
         modifier: 'onlyPoolAdmin',
-        address: [poolAdmin],
+        address: [...adminRoles.role['POOL_ADMIN']],
         functions: roles['PoolConfigurator']['onlyPoolAdmin'],
       },
       {
         modifier: 'onlyEmergencyAdmin',
-        address: [emergencyAdmin],
+        address: [...adminRoles.role['EMERGENCY_ADMIN']],
         functions: roles['PoolConfigurator']['onlyEmergencyAdmin'],
       },
       {
         modifier: 'onlyAssetListingOrPoolAdmins',
-        address: [poolAdmin, assetListingAdmin],
+        address: [
+          ...new Set([
+            ...adminRoles.role['POOL_ADMIN'],
+            ...adminRoles.role['ASSET_LISTING_ADMIN'],
+          ]),
+        ],
         functions: roles['PoolConfigurator']['onlyAssetListingOrPoolAdmins'],
       },
       {
         modifier: 'onlyRiskOrPoolAdmins',
-        address: [riskAdmin, poolAdmin],
+        address: [
+          ...new Set([
+            ...adminRoles.role['POOL_ADMIN'],
+            ...adminRoles.role['RISK_ADMIN'],
+          ]),
+        ],
         functions: roles['PoolConfigurator']['onlyRiskOrPoolAdmins'],
       },
       {
         modifier: 'onlyEmergencyOrPoolAdmin',
-        address: [emergencyAdmin, poolAdmin],
+        address: [
+          ...new Set([
+            ...adminRoles.role['POOL_ADMIN'],
+            ...adminRoles.role['EMERGENCY_ADMIN'],
+          ]),
+        ],
         functions: roles['PoolConfigurator']['onlyEmergencyOrPoolAdmin'],
       },
     ],
@@ -96,7 +111,12 @@ async function resolveV3Modifiers(
     modifiers: [
       {
         modifier: 'onlyAssetListingOrPoolAdmins',
-        address: [assetListingAdmin, poolAdmin],
+        address: [
+          ...new Set([
+            ...adminRoles.role['POOL_ADMIN'],
+            ...adminRoles.role['ASSET_LISTING_ADMIN'],
+          ]),
+        ],
         functions: roles['AaveOracle']['onlyAssetListingOrPoolAdmins'],
       },
     ],
@@ -129,7 +149,7 @@ async function resolveV3Modifiers(
     modifiers: [
       {
         modifier: 'onlyOwner',
-        address: collectorControllerOwner,
+        address: [collectorControllerOwner],
         functions: roles['CollectorController']['onlyOwner'],
       },
     ],
@@ -148,25 +168,24 @@ async function resolveV3Modifiers(
     modifiers: [
       {
         modifier: 'onlyFundsAdmin',
-        address: fundsAdmin,
+        address: [fundsAdmin],
         functions: roles['Collector']['onlyFundsAdmin'],
       },
     ],
   };
 
-  // const rewardsController = new ethers.Contract(
-  //   rewardsControllerAddress,
-  //   rewardsControllerAbi,
-  //   provider,
-  // );
-  // const emissionManager = await rewardsController.getEmissionManager();
-  // addModifier(
-  //   network,
-  //   emissionManager,
-  //   index,
-  //   'RewardsController',
-  //   'onlyEmissionManager',
-  // );
+  // for now, we use the same as practically there is only one rewards controller and emission manager
+  // but could be that there is one of these for every token
+  obj['RewardsController'] = {
+    address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
+    modifiers: [
+      {
+        modifier: 'onlyEmissionManager',
+        address: [addressBook.EMISSION_MANAGER],
+        functions: roles['Collector']['onlyEmissionManager'],
+      },
+    ],
+  };
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
@@ -178,4 +197,6 @@ async function resolveV3Modifiers(
       provider,
     );
   }
-}
+
+  return obj;
+};
