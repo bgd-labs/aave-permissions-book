@@ -30,7 +30,7 @@ export const resolveV3Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyOwner',
-        address: lendingPoolAddressesProviderOwner,
+        address: [lendingPoolAddressesProviderOwner],
         functions: roles['PoolAddressesProvider']['onlyOwner'],
       },
     ],
@@ -41,9 +41,9 @@ export const resolveV3Modifiers = async (
     proxyAdmin: addressBook.POOL_ADDRESSES_PROVIDER,
     modifiers: [
       {
-        modifier: 'onlyLendingPoolConfigurator',
+        modifier: 'onlyPoolConfigurator',
         address: [addressBook.POOL_CONFIGURATOR],
-        functions: roles['Pool']['onlyLendingPoolConfigurator'],
+        functions: roles['Pool']['onlyPoolConfigurator'],
       },
       {
         modifier: 'onlyPoolAdmin',
@@ -180,7 +180,7 @@ export const resolveV3Modifiers = async (
       {
         modifier: 'onlyEmissionManager',
         address: [addressBook.EMISSION_MANAGER],
-        functions: roles['Collector']['onlyEmissionManager'],
+        functions: roles['RewardsController']['onlyEmissionManager'],
       },
     ],
   };

@@ -75,14 +75,22 @@ export const generateTables = async () => {
                   (contractsByAddress[contract.proxyAdmin] ??
                     contract.proxyAdmin) +
                   '](' +
-                  explorerAddressUrlComposer(modifier.address, network) +
+                  explorerAddressUrlComposer(contract.proxyAdmin, network) +
                   ')'
                 : '-'
             }`,
             `${modifier.modifier}`,
-            `[${
-              contractsByAddress[modifier.address] ?? modifier.address
-            }](${explorerAddressUrlComposer(modifier.address, network)})`,
+            `${modifier.address
+              .map((modifierAddress) => {
+                return (
+                  '[' +
+                  (contractsByAddress[modifierAddress] ?? modifierAddress) +
+                  '](' +
+                  explorerAddressUrlComposer(modifierAddress, network) +
+                  ')'
+                );
+              })
+              .join(', ')}`,
             modifier.functions.join(', '),
           ]);
           tableBody += getLineSeparator(contractsModifiersHeaderTitles.length);
