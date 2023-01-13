@@ -11,13 +11,13 @@ import {
 
 // TODO: correctly encode directory
 export const generateDirectory = (json: FullPermissions): string => {
-  let directory = '';
+  let directory = '# Directory \n';
   Object.keys(json).forEach((network) => {
     const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
-    directory += `|-- [${networkName}](./${networkName}.md) \n`;
+    directory += `## Network ${networkName} \n`;
 
     Object.keys(json[network]).forEach((pool) => {
-      directory += `|--|-- [${pool}](./${networkName}.md#${pool}) \n`;
+      directory += `- [${pool}](./${networkName}.md#${pool}) \n`;
     });
   });
 
@@ -28,20 +28,21 @@ export const generateTables = async () => {
   const aavePermissionsList = getAllPermissionsJson();
 
   // create readme string
-  let readmeDirectory = '# Network Tables \n';
+  let readmeDirectory = '# Directory \n';
 
   Object.keys(aavePermissionsList).forEach((network: string) => {
+    const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
+    readmeDirectory += `## ${networkName} \n`;
     const networkPermits = aavePermissionsList[network];
 
     // create network Readme with pool tables
-    let readmeByNetwork = `# ${ChainIdToNetwork[
-      Number(network)
-    ].toUpperCase()} \n`;
+    let readmeByNetwork = `# ${networkName} \n`;
 
     Object.keys(networkPermits).forEach((pool) => {
       const poolPermitsByContract = networkPermits[pool];
       // create pool table
       readmeByNetwork += `## ${pool} \n`;
+      readmeDirectory += `- [${pool}](./${networkName}.md#${pool}) \n`;
 
       const contractsByAddress = generateContractsByAddress(
         poolPermitsByContract.contracts,
@@ -106,9 +107,6 @@ export const generateTables = async () => {
       readmeByNetwork,
     );
   });
-
-  // TODO: create directory readme
-  readmeDirectory += generateDirectory(aavePermissionsList);
 
   saveJson('./out/DIRECTORY.md', readmeDirectory);
 };
