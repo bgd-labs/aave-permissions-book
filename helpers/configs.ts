@@ -8,6 +8,7 @@ import {
   AaveV2Polygon,
   AaveV3Arbitrum,
   AaveV3Avalanche,
+  AaveV3Ethereum,
   AaveV3Fantom,
   AaveV3Harmony,
   AaveV3Optimism,
@@ -28,10 +29,13 @@ export type ContractInfo = {
 };
 
 export type Contracts = Record<string, ContractInfo>;
-
+export type Role = {
+  address: string;
+  owners: string[];
+};
 export type Roles = {
   latestBlockNumber: number;
-  role: Record<string, string[]>;
+  role: Record<string, Role[]>;
 };
 
 export type PoolInfo = {
@@ -90,6 +94,11 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.AMM]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2EthereumAMM,
+      },
+
+      [Pools.V3]: {
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Ethereum,
       },
     },
   },

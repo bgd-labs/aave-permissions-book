@@ -1,7 +1,8 @@
 import { ethers, providers, utils } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { Pools, Roles } from './configs';
+import { Pools, Role, Roles } from './configs';
 import { getLogs } from './eventLogs';
+import { getSafeOwners } from './guardian';
 
 export const roleGrantedEventABI = [
   'event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)',
@@ -89,9 +90,10 @@ export const getCurrentRoleAdmins = async (
   const roleGrantedTopic0 = utils.id('RoleGranted(bytes32,address,address)');
   const roleRevokedTopic0 = utils.id('RoleRevoked(bytes32,address,address)');
 
-  const roles: Record<string, string[]> = {};
+  const roles: Record<string, Role[]> = {};
   // save or remove admins
-  eventLogs.forEach((eventLog) => {
+  for (let eventLog of eventLogs) {
+    // eventLogs.forEach((eventLog) => {
     if (eventLog.topics[0] === roleGrantedTopic0) {
       const { role, account } = parseLog(roleGrantedEventABI, eventLog);
       const roleName = roleHexToNameMap.get(role);
@@ -99,19 +101,22 @@ export const getCurrentRoleAdmins = async (
       if (roleName && !roles[roleName]) {
         roles[roleName] = [];
       } else if (roleName && roles[roleName]) {
-        roles[roleName].push(account);
+        const safeOwners = await getSafeOwners(provider, account);
+        roles[roleName].push({ address: account, owners: safeOwners });
       }
     } else if (eventLog.topics[0] === roleRevokedTopic0) {
       const { role, account } = parseLog(roleRevokedEventABI, eventLog);
       const roleName = roleHexToNameMap.get(role);
       if (roleName) {
-        roles[roleName].splice(roles[roleName].indexOf(account), 1);
+        roles[roleName] = roles[roleName].filter(
+          (role) => role.address !== account,
+        );
       }
     } else {
       console.error(new Error('some error parsing logs'));
-      return {};
+      return {} as Roles;
     }
-  });
+  }
 
   roleNames.forEach((roleName) => {
     if (!roles[roleName]) roles[roleName] = [];
