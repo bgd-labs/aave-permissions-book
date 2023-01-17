@@ -68,6 +68,10 @@ export const getCurrentRoleAdmins = async (
   addressBook: any,
   chainId: ChainId,
 ): Promise<Roles> => {
+  console.log(`
+  ------------------------------
+        ChainId: ${chainId}
+  `);
   const aclManager = addressBook.ACL_MANAGER;
   const roleHexToNameMap = initializeRoleCodeMap();
 
@@ -93,6 +97,11 @@ export const getCurrentRoleAdmins = async (
   const roles: Record<string, Role[]> = {};
   // save or remove admins
   for (let eventLog of eventLogs) {
+    console.log(`
+      topic0: ${eventLog.topics[0]}
+      grant : ${roleGrantedTopic0}
+      revoke: ${roleRevokedTopic0}
+    `);
     // eventLogs.forEach((eventLog) => {
     if (eventLog.topics[0] === roleGrantedTopic0) {
       const { role, account } = parseLog(roleGrantedEventABI, eventLog);
@@ -121,6 +130,6 @@ export const getCurrentRoleAdmins = async (
   roleNames.forEach((roleName) => {
     if (!roles[roleName]) roles[roleName] = [];
   });
-
+  console.log('-------------------------------');
   return { role: roles, latestBlockNumber: finalBlock };
 };
