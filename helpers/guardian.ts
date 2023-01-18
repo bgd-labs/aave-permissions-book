@@ -9,7 +9,6 @@ export const getSafeOwners = async (
 
   try {
     const safeOwners = await gnosisContract.getOwners();
-    console.log('safe owners: ', safeOwners);
     return safeOwners;
   } catch (error) {
     return [];
