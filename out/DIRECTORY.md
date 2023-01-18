@@ -3,6 +3,7 @@
 - [ARC](./MAINNET.md#ARC) 
 - [V2](./MAINNET.md#V2) 
 - [AMM](./MAINNET.md#AMM) 
+- [V3](./MAINNET.md#V3) 
 ## OPTIMISM 
 - [V3](./OPTIMISM.md#V3) 
 ## POLYGON 

@@ -1,5 +1,10 @@
 import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem';
-import { ContractInfo, FullPermissions, Modifier } from '../helpers/configs';
+import {
+  ContractInfo,
+  FullPermissions,
+  Modifier,
+  Pools,
+} from '../helpers/configs';
 import { explorerAddressUrlComposer } from '../helpers/explorer';
 import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
 import { generateContractsByAddress } from '../helpers/jsonParsers';
@@ -100,6 +105,71 @@ export const generateTables = async () => {
 
       contractTable += tableBody;
       readmeByNetwork += contractTable + '\n';
+
+      let adminTable = `## Admins \n`;
+      const adminsHeaderTitles = ['Role', 'Contract'];
+      const adminHeader = getTableHeader(adminsHeaderTitles);
+      adminTable += adminHeader;
+
+      let guardianTable = `## Guardians \n`;
+      const guardianHeaderTitles = ['Guardian', 'Owners'];
+      const guardianHeader = getTableHeader(guardianHeaderTitles);
+      guardianTable += guardianHeader;
+
+      const guardians: string[] = [];
+
+      if (
+        pool === Pools.V3 &&
+        poolPermitsByContract.roles &&
+        poolPermitsByContract.roles.role
+      ) {
+        Object.keys(poolPermitsByContract.roles.role).forEach((role) => {
+          const roleInfo = poolPermitsByContract.roles?.role[role] || [];
+          adminTable += getTableBody([
+            role,
+            `${roleInfo
+              .map((info) => {
+                return (
+                  '[' +
+                  (contractsByAddress[info.address] ?? info.address) +
+                  '](' +
+                  explorerAddressUrlComposer(info.address, network) +
+                  ')'
+                );
+              })
+              .join(', ')}`,
+          ]);
+          adminTable += getLineSeparator(adminsHeaderTitles.length);
+          roleInfo.forEach((info) => {
+            if (
+              guardians.indexOf(info.address) === -1 &&
+              info.owners.length > 0
+            ) {
+              guardians.push(info.address);
+              guardianTable += getTableBody([
+                `[${
+                  contractsByAddress[info.address] ?? info.address
+                }](${explorerAddressUrlComposer(info.address, network)})`,
+                `${info.owners
+                  .map((owner) => {
+                    return (
+                      '[' +
+                      (contractsByAddress[owner] ?? owner) +
+                      '](' +
+                      explorerAddressUrlComposer(owner, network) +
+                      ')'
+                    );
+                  })
+                  .join(', ')}`,
+              ]);
+              guardianTable += getLineSeparator(guardianHeaderTitles.length);
+            }
+          });
+        });
+
+        readmeByNetwork += adminTable + '\n';
+        readmeByNetwork += guardianTable + '\n';
+      }
     });
 
     saveJson(

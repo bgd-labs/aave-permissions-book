@@ -47,12 +47,12 @@ export const resolveV3Modifiers = async (
       },
       {
         modifier: 'onlyPoolAdmin',
-        address: [...adminRoles.role['POOL_ADMIN']],
+        address: [...adminRoles.role['POOL_ADMIN'].map((role) => role.address)],
         functions: roles['Pool']['onlyPoolAdmin'],
       },
       {
         modifier: 'onlyBridge',
-        address: [...adminRoles.role['BRIDGE']],
+        address: [...adminRoles.role['BRIDGE'].map((role) => role.address)],
         functions: roles['Pool']['onlyBridge'],
       },
     ],
@@ -64,20 +64,24 @@ export const resolveV3Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyPoolAdmin',
-        address: [...adminRoles.role['POOL_ADMIN']],
+        address: [...adminRoles.role['POOL_ADMIN'].map((role) => role.address)],
         functions: roles['PoolConfigurator']['onlyPoolAdmin'],
       },
       {
         modifier: 'onlyEmergencyAdmin',
-        address: [...adminRoles.role['EMERGENCY_ADMIN']],
+        address: [
+          ...adminRoles.role['EMERGENCY_ADMIN'].map((role) => role.address),
+        ],
         functions: roles['PoolConfigurator']['onlyEmergencyAdmin'],
       },
       {
         modifier: 'onlyAssetListingOrPoolAdmins',
         address: [
           ...new Set([
-            ...adminRoles.role['POOL_ADMIN'],
-            ...adminRoles.role['ASSET_LISTING_ADMIN'],
+            ...adminRoles.role['POOL_ADMIN'].map((role) => role.address),
+            ...adminRoles.role['ASSET_LISTING_ADMIN'].map(
+              (role) => role.address,
+            ),
           ]),
         ],
         functions: roles['PoolConfigurator']['onlyAssetListingOrPoolAdmins'],
@@ -86,8 +90,8 @@ export const resolveV3Modifiers = async (
         modifier: 'onlyRiskOrPoolAdmins',
         address: [
           ...new Set([
-            ...adminRoles.role['POOL_ADMIN'],
-            ...adminRoles.role['RISK_ADMIN'],
+            ...adminRoles.role['POOL_ADMIN'].map((role) => role.address),
+            ...adminRoles.role['RISK_ADMIN'].map((role) => role.address),
           ]),
         ],
         functions: roles['PoolConfigurator']['onlyRiskOrPoolAdmins'],
@@ -96,8 +100,8 @@ export const resolveV3Modifiers = async (
         modifier: 'onlyEmergencyOrPoolAdmin',
         address: [
           ...new Set([
-            ...adminRoles.role['POOL_ADMIN'],
-            ...adminRoles.role['EMERGENCY_ADMIN'],
+            ...adminRoles.role['POOL_ADMIN'].map((role) => role.address),
+            ...adminRoles.role['EMERGENCY_ADMIN'].map((role) => role.address),
           ]),
         ],
         functions: roles['PoolConfigurator']['onlyEmergencyOrPoolAdmin'],
@@ -112,8 +116,10 @@ export const resolveV3Modifiers = async (
         modifier: 'onlyAssetListingOrPoolAdmins',
         address: [
           ...new Set([
-            ...adminRoles.role['POOL_ADMIN'],
-            ...adminRoles.role['ASSET_LISTING_ADMIN'],
+            ...adminRoles.role['POOL_ADMIN'].map((role) => role.address),
+            ...adminRoles.role['ASSET_LISTING_ADMIN'].map(
+              (role) => role.address,
+            ),
           ]),
         ],
         functions: roles['AaveOracle']['onlyAssetListingOrPoolAdmins'],

@@ -4,6 +4,7 @@ import {
   FullPermissions,
   networkConfigs,
   Pools,
+  Role,
   Roles,
 } from '../helpers/configs';
 import {
@@ -58,6 +59,8 @@ async function main() {
           `);
           admins = await getCurrentRoleAdmins(
             provider,
+            fullJson[network][poolKey]?.roles?.role ||
+              ({} as Record<string, Role[]>),
             fromBlock,
             pool.addressBook,
             Number(network),
