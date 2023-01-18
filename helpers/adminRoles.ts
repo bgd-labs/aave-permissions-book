@@ -1,6 +1,6 @@
 import { ethers, providers, utils } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { Pools, Role, Roles } from './configs';
+import { Role, Roles } from './configs';
 import { getLogs } from './eventLogs';
 import { getSafeOwners } from './guardian';
 
@@ -80,6 +80,8 @@ export const getCurrentRoleAdmins = async (
     limit = 99999;
   } else if (chainId === ChainId.harmony) {
     limit = 9999;
+  } else if (chainId == ChainId.fantom) {
+    limit = 99999;
   }
 
   const { eventLogs, finalBlock } = await getLogs(
@@ -97,15 +99,17 @@ export const getCurrentRoleAdmins = async (
   const roles: Record<string, Role[]> = {};
   // save or remove admins
   for (let eventLog of eventLogs) {
-    console.log(`
-      topic0: ${eventLog.topics[0]}
-      grant : ${roleGrantedTopic0}
-      revoke: ${roleRevokedTopic0}
-    `);
     // eventLogs.forEach((eventLog) => {
     if (eventLog.topics[0] === roleGrantedTopic0) {
       const { role, account } = parseLog(roleGrantedEventABI, eventLog);
       const roleName = roleHexToNameMap.get(role);
+      console.log(`
+      topic0: ${eventLog.topics[0]}
+      grant : ${roleGrantedTopic0}
+      revoke: ${roleRevokedTopic0}
+      address: ${account}
+      role: ${roleName}
+    `);
 
       if (roleName && !roles[roleName]) {
         roles[roleName] = [];
@@ -116,6 +120,13 @@ export const getCurrentRoleAdmins = async (
     } else if (eventLog.topics[0] === roleRevokedTopic0) {
       const { role, account } = parseLog(roleRevokedEventABI, eventLog);
       const roleName = roleHexToNameMap.get(role);
+      console.log(`
+      topic0: ${eventLog.topics[0]}
+      grant : ${roleGrantedTopic0}
+      revoke: ${roleRevokedTopic0}
+      address: ${account}
+      role: ${roleName}
+    `);
       if (roleName) {
         roles[roleName] = roles[roleName].filter(
           (role) => role.address !== account,
@@ -130,6 +141,7 @@ export const getCurrentRoleAdmins = async (
   roleNames.forEach((roleName) => {
     if (!roles[roleName]) roles[roleName] = [];
   });
+  console.log('roes: ', roles);
   console.log('-------------------------------');
   return { role: roles, latestBlockNumber: finalBlock };
 };
