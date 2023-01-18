@@ -98,6 +98,7 @@ export const networkConfigs: NetworkConfigs = {
 
       [Pools.V3]: {
         permissionsJson: './statics/functionsPermissionsV3.json',
+        aclBlock: 16291117,
         addressBook: AaveV3Ethereum,
       },
     },
