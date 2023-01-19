@@ -9,7 +9,7 @@ import {
   getTableHeader,
 } from '../helpers/tables';
 import { getSafeOwners } from '../helpers/guardian';
-import { providers } from 'ethers';
+import { providers, utils } from 'ethers';
 
 export const generateTables = async () => {
   const aavePermissionsList = getAllPermissionsJson();
@@ -77,8 +77,15 @@ export const generateTables = async () => {
             `${
               contract.proxyAdmin
                 ? '[' +
-                  (contractsByAddress[contract.proxyAdmin] ??
-                    contract.proxyAdmin) +
+                  (contractsByAddress[contract.proxyAdmin]
+                    ? contractsByAddress[contract.proxyAdmin]
+                    : poolGuardians[utils.getAddress(contract.proxyAdmin)]
+                    ? 'Guardian' +
+                      (Object.keys(poolGuardians).indexOf(
+                        utils.getAddress(contract.proxyAdmin),
+                      ) +
+                        1)
+                    : utils.getAddress(contract.proxyAdmin)) +
                   '](' +
                   explorerAddressUrlComposer(contract.proxyAdmin, network) +
                   ')'

@@ -321,6 +321,8 @@ export const resolveV3Modifiers = async (
   };
 
   // TODO: weth gateway
+  // TODO: emission manager
+  // TODO: bridge executor
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
