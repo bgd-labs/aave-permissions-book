@@ -21,16 +21,10 @@
   "devDependencies": {
     "@aave/contract-helpers": "^1.12.0",
     "@bgd-labs/aave-address-book": "^1.7.0",
-    "@types/lowdb": "^1.0.11",
     "@types/node": "^18.8.3",
     "dotenv": "^16.0.3",
     "ethers": "^5.7.1",
-    "keccak256": "^1.0.6",
-    "lowdb": "^1.0.0",
-    "postman-request": "^2.88.1-postman.31",
     "prettier": "^2.8.1",
-    "request": "^2.88.2",
-    "sha3": "^2.1.4",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3"
   }
