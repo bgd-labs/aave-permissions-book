@@ -1,7 +1,7 @@
 import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem';
 import { Modifier, networkConfigs, Pools } from '../helpers/configs';
 import { explorerAddressUrlComposer } from '../helpers/explorer';
-import { ChainIdToNetwork } from '@aave/contract-helpers';
+import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
 import { generateContractsByAddress } from '../helpers/jsonParsers';
 import {
   getLineSeparator,
@@ -18,7 +18,6 @@ export const generateTables = async () => {
   let readmeDirectory = '# Directory \n';
 
   for (let network of Object.keys(aavePermissionsList)) {
-    // Object.keys(aavePermissionsList).forEach((network: string) => {
     const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
     readmeDirectory += `## ${networkName} \n`;
     const networkPermits = aavePermissionsList[network];
@@ -28,15 +27,22 @@ export const generateTables = async () => {
 
     for (let pool of Object.keys(networkPermits)) {
       const poolGuardians: Record<string, string[]> = {};
-      // Object.keys(networkPermits).forEach((pool) => {
       const poolPermitsByContract = networkPermits[pool];
       // create pool table
       readmeByNetwork += `## ${pool} \n`;
       readmeDirectory += `- [${pool}](./${networkName}.md#${pool}) \n`;
 
-      const contractsByAddress = generateContractsByAddress(
+      let contractsByAddress = generateContractsByAddress(
         poolPermitsByContract.contracts,
       );
+
+      // add gov contracts to contractsByAddresses
+      if (Number(network) === ChainId.mainnet && pool !== Pools.GOV_V2) {
+        contractsByAddress = generateContractsByAddress({
+          ...poolPermitsByContract.contracts,
+          ...networkPermits[Pools.GOV_V2].contracts,
+        });
+      }
 
       let contractTable = `### contracts\n`;
       const contractsModifiersHeaderTitles = [
@@ -49,18 +55,13 @@ export const generateTables = async () => {
       const header = getTableHeader(contractsModifiersHeaderTitles);
       contractTable += header;
 
-      // const guardians: string[] = [];
-
       // fill pool table
       let tableBody = '';
       for (let contractName of Object.keys(poolPermitsByContract.contracts)) {
-        // Object.keys(poolPermitsByContract.contracts).forEach((contractName) => {
         const contract = poolPermitsByContract.contracts[contractName];
 
         for (let modifier of contract.modifiers) {
-          // contract.modifiers.forEach((modifier: Modifier) => {
           for (let modifierAddress of modifier.addresses) {
-            // modifier.address.forEach((modifierAddress) => {
             if (!poolGuardians[modifierAddress.address]) {
               if (modifierAddress.owners.length > 0) {
                 poolGuardians[modifierAddress.address] = modifierAddress.owners;

@@ -1,6 +1,7 @@
 import { ChainId } from '@aave/contract-helpers';
 import dotenv from 'dotenv';
 import {
+  AaveGovernanceV2,
   AaveV2Avalanche,
   AaveV2Ethereum,
   AaveV2EthereumAMM,
@@ -76,20 +77,10 @@ export enum Pools {
   V3 = 'V3',
   AMM = 'AMM',
   ARC = 'ARC',
+  GOV_V2 = 'GOV_V2',
 }
 
 export const networkConfigs: NetworkConfigs = {
-  // 'tenderly-mainnet': {
-  //   rpcUrl: 'https://rpc.tenderly.co/fork/a7bc5061-f9f6-42e6-8cc8-2fa94014851a',
-  //   explorer: 'https://etherscan.io',
-  //   pools: {
-  //     [Pools.V3]: {
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       aclBlock: 16291117,
-  //       addressBook: AaveV3Ethereum,
-  //     },
-  //   },
-  // },
   [ChainId.mainnet]: {
     rpcUrl: process.env.RPC_ETHEREUM,
     explorer: 'https://etherscan.io',
@@ -98,6 +89,10 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.json',
         aclBlock: 16291117,
         addressBook: AaveV3Ethereum,
+      },
+      [Pools.GOV_V2]: {
+        permissionsJson: './statics/functionsPermissionsGov.json',
+        addressBook: AaveGovernanceV2,
       },
       [Pools.V2]: {
         permissionsJson: './statics/functionsPermissionsV2.json',

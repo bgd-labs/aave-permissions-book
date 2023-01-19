@@ -256,7 +256,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16441633
+        "latestBlockNumber": 16442147
       }
     },
     "V2": {
@@ -407,6 +407,44 @@
               ]
             }
           ]
+        },
+        "CollectorController": {
+          "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "approve",
+                "transfer"
+              ]
+            }
+          ]
+        },
+        "Collector": {
+          "address": "0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c",
+          "modifiers": [
+            {
+              "modifier": "onlyFundsAdmin",
+              "addresses": [
+                {
+                  "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
+            }
+          ],
+          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
         }
       },
       "roles": {}
@@ -547,6 +585,44 @@
             }
           ]
         },
+        "CollectorController": {
+          "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "approve",
+                "transfer"
+              ]
+            }
+          ]
+        },
+        "Collector": {
+          "address": "0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c",
+          "modifiers": [
+            {
+              "modifier": "onlyFundsAdmin",
+              "addresses": [
+                {
+                  "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
+            }
+          ],
+          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+        },
         "ArcTimelock": {
           "address": "0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218",
           "modifiers": [
@@ -574,50 +650,6 @@
               ],
               "functions": [
                 "cancel"
-              ]
-            }
-          ]
-        },
-        "ExecutorWithTimelock": {
-          "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
-          "modifiers": [
-            {
-              "modifier": "onlyTimelock",
-              "addresses": [
-                {
-                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
-                  "owners": []
-                }
-              ],
-              "functions": [
-                "setDelay",
-                "setPendingAdmin"
-              ]
-            },
-            {
-              "modifier": "onlyPendingAdmin",
-              "addresses": [
-                {
-                  "address": "0x0000000000000000000000000000000000000000",
-                  "owners": []
-                }
-              ],
-              "functions": [
-                "acceptAdmin"
-              ]
-            },
-            {
-              "modifier": "onlyAdmin",
-              "addresses": [
-                {
-                  "address": "0xEC568fffba86c094cf06b22134B23074DFE2252c",
-                  "owners": []
-                }
-              ],
-              "functions": [
-                "queueTransaction",
-                "cancelTransaction",
-                "executeTransaction"
               ]
             }
           ]
@@ -787,6 +819,181 @@
               ],
               "functions": [
                 "setMarketBorrowRate"
+              ]
+            }
+          ]
+        },
+        "CollectorController": {
+          "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "approve",
+                "transfer"
+              ]
+            }
+          ]
+        },
+        "Collector": {
+          "address": "0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c",
+          "modifiers": [
+            {
+              "modifier": "onlyFundsAdmin",
+              "addresses": [
+                {
+                  "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
+            }
+          ],
+          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+        }
+      },
+      "roles": {}
+    },
+    "GOV_V2": {
+      "contracts": {
+        "AaveGovernanceV2": {
+          "address": "0xEC568fffba86c094cf06b22134B23074DFE2252c",
+          "modifiers": [
+            {
+              "modifier": "onlyGuardian",
+              "addresses": [
+                {
+                  "address": "0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633",
+                  "owners": [
+                    "0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707",
+                    "0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39",
+                    "0xC55Ee0fc4147b5e453c487e144541aBb4892621f",
+                    "0xe5d453700d99296c2c085B8119BD6c152Cf63FA6",
+                    "0xF1ba2231F373CffD47641540CfaEB1f21E50659B",
+                    "0x2e868321a6154Fad4bEbcE11BCC8e2AD1E02F0de",
+                    "0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
+                    "0xf68142d964297aDB5866CF08885Dc299AA4058f5",
+                    "0x9343dcB6A3A523510F3499004D8aa595Baa25bc5",
+                    "0x2BEDd8645B407B3B6447fbC09B269eC7a5794606"
+                  ]
+                }
+              ],
+              "functions": [
+                "cancel",
+                "__abdicate"
+              ]
+            },
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x79426A1c24B2978D90d7A5070a46C65B07bC4299",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setGovernanceStrategy",
+                "setVotingDelay",
+                "authorizeExecutors",
+                "unauthorizeExecutors"
+              ]
+            }
+          ]
+        },
+        "ShortExecutor": {
+          "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+          "modifiers": [
+            {
+              "modifier": "onlyTimelock",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setDelay",
+                "setPendingAdmin"
+              ]
+            },
+            {
+              "modifier": "onlyPendingAdmin",
+              "addresses": [
+                {
+                  "address": "0x0000000000000000000000000000000000000000",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "acceptAdmin"
+              ]
+            },
+            {
+              "modifier": "onlyAdmin",
+              "addresses": [
+                {
+                  "address": "0xEC568fffba86c094cf06b22134B23074DFE2252c",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "queueTransaction",
+                "cancelTransaction",
+                "executeTransaction"
+              ]
+            }
+          ]
+        },
+        "LongExecutor": {
+          "address": "0x61910EcD7e8e942136CE7Fe7943f956cea1CC2f7",
+          "modifiers": [
+            {
+              "modifier": "onlyTimelock",
+              "addresses": [
+                {
+                  "address": "0x61910EcD7e8e942136CE7Fe7943f956cea1CC2f7",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setDelay",
+                "setPendingAdmin"
+              ]
+            },
+            {
+              "modifier": "onlyPendingAdmin",
+              "addresses": [
+                {
+                  "address": "0x0000000000000000000000000000000000000000",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "acceptAdmin"
+              ]
+            },
+            {
+              "modifier": "onlyAdmin",
+              "addresses": [
+                {
+                  "address": "0xEC568fffba86c094cf06b22134B23074DFE2252c",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "queueTransaction",
+                "cancelTransaction",
+                "executeTransaction"
               ]
             }
           ]
@@ -1176,7 +1383,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 69148534
+        "latestBlockNumber": 69161349
       }
     }
   },
@@ -1463,7 +1670,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 38274665
+        "latestBlockNumber": 38277525
       }
     },
     "V2": {
@@ -1612,6 +1819,44 @@
               ]
             }
           ]
+        },
+        "CollectorController": {
+          "address": "0xDB89487A449274478e984665b8692AfC67459deF",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "approve",
+                "transfer"
+              ]
+            }
+          ]
+        },
+        "Collector": {
+          "address": "0x7734280A4337F37Fbf4651073Db7c28C80B339e9",
+          "modifiers": [
+            {
+              "modifier": "onlyFundsAdmin",
+              "addresses": [
+                {
+                  "address": "0xDB89487A449274478e984665b8692AfC67459deF",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
+            }
+          ],
+          "proxyAdmin": "0xdc9a35b16db4e126cfedc41322b3a36454b1f772"
         }
       },
       "roles": {}
@@ -1973,7 +2218,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 54036283
+        "latestBlockNumber": 54040328
       }
     }
   },
@@ -2358,7 +2603,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 54119011
+        "latestBlockNumber": 54135396
       }
     }
   },
@@ -2724,7 +2969,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 25146313
+        "latestBlockNumber": 25149366
       }
     },
     "V2": {

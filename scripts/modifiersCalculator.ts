@@ -14,6 +14,7 @@ import {
 import { getCurrentRoleAdmins } from '../helpers/adminRoles';
 import { resolveV2Modifiers } from './v2Permissions';
 import { resolveV3Modifiers } from './v3Permissions';
+import { resolveGovV2Modifiers } from './governancePermissions';
 
 async function main() {
   let fullJson: FullPermissions = getAllPermissionsJson();
@@ -42,6 +43,13 @@ async function main() {
           provider,
           permissionsJson,
           poolKey,
+          Number(network),
+        );
+      } else if (poolKey === Pools.GOV_V2) {
+        poolPermissions = await resolveGovV2Modifiers(
+          pool.addressBook,
+          provider,
+          permissionsJson,
         );
       } else if (poolKey === Pools.V3) {
         const fromBlock =

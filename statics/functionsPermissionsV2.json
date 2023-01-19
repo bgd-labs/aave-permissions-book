@@ -169,5 +169,36 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "Collector",
+    "proxyAdmin": true,
+    "functions": [
+      {
+        "name": "approve",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "transfer",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "setFundsAdmin",
+        "roles": ["onlyFundsAdmin"]
+      }
+    ]
+  },
+  {
+    "contract": "CollectorController",
+    "functions": [
+      {
+        "name": "approve",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "transfer",
+        "roles": ["onlyOwner"]
+      }
+    ]
   }
 ]

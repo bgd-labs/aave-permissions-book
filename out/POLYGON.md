@@ -43,6 +43,8 @@
 |  [LendingPoolConfigurator](https://polygonscan.com/address/0x26db2B833021583566323E3b8985999981b9F1F3) |  [LendingPoolAddressesProvider](https://polygonscan.com/address/0xd05e3E715d945B59290df0ae8eF85c1BdB684744) |  onlyEmergencyAdmin |  [Guardian1](https://polygonscan.com/address/0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58) |  setPoolPause | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://polygonscan.com/address/0x0229F777B0fAb107F9591a41d5F02E4e98dB6f2d) |  - |  onlyOwner |  [0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
 |  [LendingRateOracle](https://polygonscan.com/address/0x17F73aEaD876CC4059089ff815EDA37052960dFB) |  - |  onlyOwner |  [Guardian2](https://polygonscan.com/address/0xBb2F3BA4a63982eD6D93c190c28B15CBBA0B6AF3) |  setMarketBorrowRate | |--------|--------|--------|--------|--------|
+|  [CollectorController](https://polygonscan.com/address/0xDB89487A449274478e984665b8692AfC67459deF) |  - |  onlyOwner |  [0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  approve, transfer | |--------|--------|--------|--------|--------|
+|  [Collector](https://polygonscan.com/address/0x7734280A4337F37Fbf4651073Db7c28C80B339e9) |  [0xdc9a35b16db4e126cfedc41322b3a36454b1f772](https://polygonscan.com/address/0xdc9a35b16db4e126cfedc41322b3a36454b1f772) |  onlyFundsAdmin |  [CollectorController](https://polygonscan.com/address/0xDB89487A449274478e984665b8692AfC67459deF) |  approve, transfer, setFundsAdmin | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Owners |

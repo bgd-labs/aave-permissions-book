@@ -4,19 +4,18 @@ import { generateRoles } from '../helpers/jsonParsers';
 import lendingPoolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json';
 import arcTimelockAbi from '../abis/arcTimelockAbi.json';
-import {
-  AaveGovernanceV2,
-  AaveV2EthereumArc,
-} from '@bgd-labs/aave-address-book';
-import executorWithTimelockAbi from '../abis/executorWithTimelockAbi.json';
+import { AaveV2EthereumArc } from '@bgd-labs/aave-address-book';
 import { getProxyAdmin } from '../helpers/proxyAdmin';
 import { getSafeOwners } from '../helpers/guardian';
+import collectorAbi from '../abis/collectorAbi.json';
+import { ChainId } from '@aave/contract-helpers';
 
 export const resolveV2Modifiers = async (
   addressBook: any,
   provider: providers.Provider,
   permissionsObject: PermissionsJson,
   pool: Pools,
+  chainId: ChainId,
 ): Promise<Contracts> => {
   const obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
@@ -144,6 +143,55 @@ export const resolveV2Modifiers = async (
     ],
   };
 
+  // TODO: investigate why avalanche v2 doesnt have collector controller
+  if (chainId !== ChainId.avalanche) {
+    const collectorController = new ethers.Contract(
+      addressBook.COLLECTOR_CONTROLLER,
+      onlyOwnerAbi,
+      provider,
+    );
+
+    const collectorControllerOwner = await collectorController.owner();
+
+    obj['CollectorController'] = {
+      address: addressBook.COLLECTOR_CONTROLLER,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: collectorControllerOwner,
+              owners: await getSafeOwners(provider, collectorControllerOwner),
+            },
+          ],
+          functions: roles['CollectorController']['onlyOwner'],
+        },
+      ],
+    };
+    const collector = new ethers.Contract(
+      addressBook.COLLECTOR,
+      collectorAbi,
+      provider,
+    );
+
+    const fundsAdmin = await collector.getFundsAdmin();
+    obj['Collector'] = {
+      address: addressBook.COLLECTOR,
+      modifiers: [
+        {
+          modifier: 'onlyFundsAdmin',
+          addresses: [
+            {
+              address: fundsAdmin,
+              owners: await getSafeOwners(provider, fundsAdmin),
+            },
+          ],
+          functions: roles['Collector']['onlyFundsAdmin'],
+        },
+      ],
+    };
+  }
+
   // extra contracts for arc
   if (pool === Pools.ARC) {
     const arcTimelock = new ethers.Contract(
@@ -181,53 +229,6 @@ export const resolveV2Modifiers = async (
       ],
     };
 
-    const executorWithTimelock = new ethers.Contract(
-      AaveGovernanceV2.SHORT_EXECUTOR,
-      executorWithTimelockAbi,
-      provider,
-    );
-    const pendingAdmin = await executorWithTimelock.getPendingAdmin();
-    const admin = await executorWithTimelock.getAdmin();
-
-    obj['ExecutorWithTimelock'] = {
-      address: AaveGovernanceV2.SHORT_EXECUTOR,
-      modifiers: [
-        {
-          modifier: 'onlyTimelock',
-          addresses: [
-            {
-              address: executorWithTimelock.address,
-              owners: await getSafeOwners(
-                provider,
-                executorWithTimelock.address,
-              ),
-            },
-          ],
-          functions: roles['ExecutorWithTimelock']['onlyTimelock'],
-        },
-        {
-          modifier: 'onlyPendingAdmin',
-          addresses: [
-            {
-              address: pendingAdmin,
-              owners: await getSafeOwners(provider, pendingAdmin),
-            },
-          ],
-          functions: roles['ExecutorWithTimelock']['onlyPendingAdmin'],
-        },
-        {
-          modifier: 'onlyAdmin',
-          addresses: [
-            {
-              address: admin,
-              owners: await getSafeOwners(provider, admin),
-            },
-          ],
-          functions: roles['ExecutorWithTimelock']['onlyAdmin'],
-        },
-      ],
-    };
-
     const permissionManager = new ethers.Contract(
       AaveV2EthereumArc.PERMISSION_MANAGER,
       onlyOwnerAbi,
@@ -254,13 +255,20 @@ export const resolveV2Modifiers = async (
 
   // TODO: incentives controller
   // TODO: weth gateway
-  // TODO: collector controller. should have proxyAdmin true
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
     .filter((contract) => contract.proxyAdmin)
     .map((contract) => contract.contract);
   for (let i = 0; i < proxyAdminContracts.length; i++) {
+    console.log('proxyAdminContracts: ', i, ' ', proxyAdminContracts[i]);
+    // TODO: finally fix avax v2 collector stuff
+    if (
+      proxyAdminContracts[i] === 'Collector' &&
+      chainId === ChainId.avalanche
+    ) {
+      break;
+    }
     obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
       obj[proxyAdminContracts[i]].address,
       provider,
