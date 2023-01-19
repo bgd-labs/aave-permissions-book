@@ -50,16 +50,18 @@ async function main() {
             fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
           networkConfigs[network].pools[poolKey].aclBlock;
         if (fromBlock) {
-          // console.log(`
-          // ------------------------------------
-          //   network: ${network}
-          //   pool: ${poolKey}
-          //   fromBlock: ${fromBlock}
-          // ------------------------------------
-          // `);
+          console.log(`
+          ------------------------------------
+            network: ${network}
+            pool: ${poolKey}
+            fromBlock: ${fromBlock}
+          ------------------------------------
+          `);
           admins = await getCurrentRoleAdmins(
             provider,
-            fullJson[network][poolKey]?.roles?.role ||
+            (fullJson[network] &&
+              fullJson[network][poolKey] &&
+              fullJson[network][poolKey]?.roles?.role) ||
               ({} as Record<string, Role[]>),
             fromBlock,
             pool.addressBook,

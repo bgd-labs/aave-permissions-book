@@ -83,6 +83,11 @@ export const networkConfigs: NetworkConfigs = {
     rpcUrl: process.env.RPC_ETHEREUM,
     explorer: 'https://etherscan.io',
     pools: {
+      [Pools.V3]: {
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        aclBlock: 16291117,
+        addressBook: AaveV3Ethereum,
+      },
       [Pools.V2]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2Ethereum,
@@ -94,12 +99,6 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.AMM]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2EthereumAMM,
-      },
-
-      [Pools.V3]: {
-        permissionsJson: './statics/functionsPermissionsV3.json',
-        aclBlock: 16291117,
-        addressBook: AaveV3Ethereum,
       },
     },
   },
