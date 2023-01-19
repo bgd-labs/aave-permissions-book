@@ -1,33 +1,13 @@
 import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem';
-import {
-  ContractInfo,
-  FullPermissions,
-  Modifier,
-  Pools,
-} from '../helpers/configs';
+import { Modifier, Pools } from '../helpers/configs';
 import { explorerAddressUrlComposer } from '../helpers/explorer';
-import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
+import { ChainIdToNetwork } from '@aave/contract-helpers';
 import { generateContractsByAddress } from '../helpers/jsonParsers';
 import {
   getLineSeparator,
   getTableBody,
   getTableHeader,
 } from '../helpers/tables';
-
-// TODO: correctly encode directory
-export const generateDirectory = (json: FullPermissions): string => {
-  let directory = '# Directory \n';
-  Object.keys(json).forEach((network) => {
-    const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
-    directory += `## Network ${networkName} \n`;
-
-    Object.keys(json[network]).forEach((pool) => {
-      directory += `- [${pool}](./${networkName}.md#${pool}) \n`;
-    });
-  });
-
-  return directory;
-};
 
 export const generateTables = async () => {
   const aavePermissionsList = getAllPermissionsJson();
