@@ -10,6 +10,7 @@ import {
 } from '@bgd-labs/aave-address-book';
 import executorWithTimelockAbi from '../abis/executorWithTimelockAbi.json';
 import { getProxyAdmin } from '../helpers/proxyAdmin';
+import { getSafeOwners } from '../helpers/guardian';
 
 export const resolveV2Modifiers = async (
   addressBook: any,
@@ -39,7 +40,15 @@ export const resolveV2Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyOwner',
-        address: [lendingPoolAddressesProviderOwner],
+        addresses: [
+          {
+            address: lendingPoolAddressesProviderOwner,
+            owners: await getSafeOwners(
+              provider,
+              lendingPoolAddressesProviderOwner,
+            ),
+          },
+        ],
         functions: roles['LendingPoolAddressesProvider']['onlyOwner'],
       },
     ],
@@ -51,7 +60,12 @@ export const resolveV2Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyLendingPoolConfigurator',
-        address: [addressBook.POOL_CONFIGURATOR],
+        addresses: [
+          {
+            address: addressBook.POOL_CONFIGURATOR,
+            owners: [],
+          },
+        ],
         functions: roles['LendingPool']['onlyLendingPoolConfigurator'],
       },
     ],
@@ -63,12 +77,22 @@ export const resolveV2Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyPoolAdmin',
-        address: [poolAdmin],
+        addresses: [
+          {
+            address: poolAdmin,
+            owners: await getSafeOwners(provider, poolAdmin),
+          },
+        ],
         functions: roles['LendingPoolConfigurator']['onlyPoolAdmin'],
       },
       {
         modifier: 'onlyEmergencyAdmin',
-        address: [emergencyAdmin],
+        addresses: [
+          {
+            address: emergencyAdmin,
+            owners: await getSafeOwners(provider, emergencyAdmin),
+          },
+        ],
         functions: roles['LendingPoolConfigurator']['onlyEmergencyAdmin'],
       },
     ],
@@ -86,7 +110,12 @@ export const resolveV2Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyOwner',
-        address: [aaveOracleOwner],
+        addresses: [
+          {
+            address: aaveOracleOwner,
+            owners: await getSafeOwners(provider, aaveOracleOwner),
+          },
+        ],
         functions: roles['AaveOracle']['onlyOwner'],
       },
     ],
@@ -104,7 +133,12 @@ export const resolveV2Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyOwner',
-        address: [lendingRateOracleOwner],
+        addresses: [
+          {
+            address: lendingRateOracleOwner,
+            owners: await getSafeOwners(provider, lendingRateOracleOwner),
+          },
+        ],
         functions: roles['LendingRateOracle']['onlyOwner'],
       },
     ],
@@ -126,12 +160,22 @@ export const resolveV2Modifiers = async (
       modifiers: [
         {
           modifier: 'onlyEthereumGovernanceExecutor',
-          address: [governanceExecutor],
+          addresses: [
+            {
+              address: governanceExecutor,
+              owners: await getSafeOwners(provider, governanceExecutor),
+            },
+          ],
           functions: roles['ArcTimelock']['onlyEthereumGovernanceExecutor'],
         },
         {
           modifier: 'onlyGuardian',
-          address: [arcTimelockGuardian],
+          addresses: [
+            {
+              address: arcTimelockGuardian,
+              owners: await getSafeOwners(provider, arcTimelockGuardian),
+            },
+          ],
           functions: roles['ArcTimelock']['onlyGuardian'],
         },
       ],
@@ -150,17 +194,35 @@ export const resolveV2Modifiers = async (
       modifiers: [
         {
           modifier: 'onlyTimelock',
-          address: [executorWithTimelock.address],
+          addresses: [
+            {
+              address: executorWithTimelock.address,
+              owners: await getSafeOwners(
+                provider,
+                executorWithTimelock.address,
+              ),
+            },
+          ],
           functions: roles['ExecutorWithTimelock']['onlyTimelock'],
         },
         {
           modifier: 'onlyPendingAdmin',
-          address: [pendingAdmin],
+          addresses: [
+            {
+              address: pendingAdmin,
+              owners: await getSafeOwners(provider, pendingAdmin),
+            },
+          ],
           functions: roles['ExecutorWithTimelock']['onlyPendingAdmin'],
         },
         {
           modifier: 'onlyAdmin',
-          address: [admin],
+          addresses: [
+            {
+              address: admin,
+              owners: await getSafeOwners(provider, admin),
+            },
+          ],
           functions: roles['ExecutorWithTimelock']['onlyAdmin'],
         },
       ],
@@ -178,7 +240,12 @@ export const resolveV2Modifiers = async (
       modifiers: [
         {
           modifier: 'onlyOwner',
-          address: [permissionManagerOwner],
+          addresses: [
+            {
+              address: permissionManagerOwner,
+              owners: await getSafeOwners(provider, permissionManagerOwner),
+            },
+          ],
           functions: roles['PermissionManager']['onlyOwner'],
         },
       ],

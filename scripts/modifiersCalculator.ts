@@ -4,7 +4,6 @@ import {
   FullPermissions,
   networkConfigs,
   Pools,
-  Role,
   Roles,
 } from '../helpers/configs';
 import {
@@ -62,17 +61,19 @@ async function main() {
             (fullJson[network] &&
               fullJson[network][poolKey] &&
               fullJson[network][poolKey]?.roles?.role) ||
-              ({} as Record<string, Role[]>),
+              ({} as Record<string, string[]>),
             fromBlock,
             pool.addressBook,
-            Number(network),
+            network === 'tenderly-mainnet'
+              ? 'tenderly-mainnet'
+              : Number(network),
           );
           poolPermissions = await resolveV3Modifiers(
             pool.addressBook,
             provider,
             permissionsJson,
             poolKey,
-            admins,
+            admins.role,
           );
         }
       } else {

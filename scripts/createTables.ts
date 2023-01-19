@@ -18,9 +18,6 @@ export const generateTables = async () => {
   let readmeDirectory = '# Directory \n';
 
   for (let network of Object.keys(aavePermissionsList)) {
-    const provider = new providers.StaticJsonRpcProvider(
-      networkConfigs[network].rpcUrl,
-    );
     // Object.keys(aavePermissionsList).forEach((network: string) => {
     const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
     readmeDirectory += `## ${networkName} \n`;
@@ -62,15 +59,11 @@ export const generateTables = async () => {
 
         for (let modifier of contract.modifiers) {
           // contract.modifiers.forEach((modifier: Modifier) => {
-          for (let modifierAddress of modifier.address) {
+          for (let modifierAddress of modifier.addresses) {
             // modifier.address.forEach((modifierAddress) => {
-            if (!poolGuardians[modifierAddress]) {
-              const guardianOwners = await getSafeOwners(
-                provider,
-                modifierAddress,
-              );
-              if (guardianOwners.length > 0) {
-                poolGuardians[modifierAddress] = guardianOwners;
+            if (!poolGuardians[modifierAddress.address]) {
+              if (modifierAddress.owners.length > 0) {
+                poolGuardians[modifierAddress.address] = modifierAddress.owners;
               }
             }
           }
@@ -91,17 +84,21 @@ export const generateTables = async () => {
                 : '-'
             }`,
             `${modifier.modifier}`,
-            `${modifier.address
+            `${modifier.addresses
               .map((modifierAddress) => {
                 return (
                   '[' +
-                  (contractsByAddress[modifierAddress]
-                    ? contractsByAddress[modifierAddress]
-                    : poolGuardians[modifierAddress]
-                    ? modifierAddress + '(Guardian)'
-                    : modifierAddress) +
+                  (contractsByAddress[modifierAddress.address]
+                    ? contractsByAddress[modifierAddress.address]
+                    : poolGuardians[modifierAddress.address]
+                    ? 'Guardian' +
+                      (Object.keys(poolGuardians).indexOf(
+                        modifierAddress.address,
+                      ) +
+                        1)
+                    : modifierAddress.address) +
                   '](' +
-                  explorerAddressUrlComposer(modifierAddress, network) +
+                  explorerAddressUrlComposer(modifierAddress.address, network) +
                   ')'
                 );
               })
@@ -151,20 +148,21 @@ export const generateTables = async () => {
         poolPermitsByContract.roles.role
       ) {
         Object.keys(poolPermitsByContract.roles.role).forEach((role) => {
-          const roleInfo = poolPermitsByContract.roles?.role[role] || [];
+          const roleAddresses = poolPermitsByContract.roles?.role[role] || [];
           adminTable += getTableBody([
             role,
-            `${roleInfo
-              .map((info) => {
+            `${roleAddresses
+              .map((roleAddress) => {
                 return (
                   '[' +
-                  (contractsByAddress[info.address]
-                    ? contractsByAddress[info.address]
-                    : poolGuardians[info.address]
-                    ? info.address + '(Guardian)'
-                    : info.address) +
+                  (contractsByAddress[roleAddress]
+                    ? contractsByAddress[roleAddress]
+                    : poolGuardians[roleAddress]
+                    ? 'Guardian' +
+                      (Object.keys(poolGuardians).indexOf(roleAddress) + 1)
+                    : roleAddress) +
                   '](' +
-                  explorerAddressUrlComposer(info.address, network) +
+                  explorerAddressUrlComposer(roleAddress, network) +
                   ')'
                 );
               })

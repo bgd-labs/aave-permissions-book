@@ -15,3 +15,12 @@ npm run modifiers:generate
 ```
 npm run tables:create
 ```
+
+
+## TODO:
+- Add working tenderly fork version
+- Check RewardController proxyAdmin for v3 mainnet
+- Add more contracts like
+  - weth gateway
+  - paraswap adapters
+- add error handling to indexer

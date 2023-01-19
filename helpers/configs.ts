@@ -18,7 +18,7 @@ dotenv.config();
 
 export type Modifier = {
   modifier: string;
-  address: string[];
+  addresses: AddressInfo[];
   functions: string[];
 };
 
@@ -29,13 +29,13 @@ export type ContractInfo = {
 };
 
 export type Contracts = Record<string, ContractInfo>;
-export type Role = {
+export type AddressInfo = {
   address: string;
   owners: string[];
 };
 export type Roles = {
   latestBlockNumber: number;
-  role: Record<string, Role[]>;
+  role: Record<string, string[]>;
 };
 
 export type PoolInfo = {
@@ -79,6 +79,17 @@ export enum Pools {
 }
 
 export const networkConfigs: NetworkConfigs = {
+  // 'tenderly-mainnet': {
+  //   rpcUrl: 'https://rpc.tenderly.co/fork/a7bc5061-f9f6-42e6-8cc8-2fa94014851a',
+  //   explorer: 'https://etherscan.io',
+  //   pools: {
+  //     [Pools.V3]: {
+  //       permissionsJson: './statics/functionsPermissionsV3.json',
+  //       aclBlock: 16291117,
+  //       addressBook: AaveV3Ethereum,
+  //     },
+  //   },
+  // },
   [ChainId.mainnet]: {
     rpcUrl: process.env.RPC_ETHEREUM,
     explorer: 'https://etherscan.io',
