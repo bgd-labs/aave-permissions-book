@@ -77,8 +77,8 @@ export const generateTables = async () => {
             `${
               contract.proxyAdmin
                 ? '[' +
-                  (contractsByAddress[contract.proxyAdmin]
-                    ? contractsByAddress[contract.proxyAdmin]
+                  (contractsByAddress[utils.getAddress(contract.proxyAdmin)]
+                    ? contractsByAddress[utils.getAddress(contract.proxyAdmin)]
                     : poolGuardians[utils.getAddress(contract.proxyAdmin)]
                     ? 'Guardian' +
                       (Object.keys(poolGuardians).indexOf(
