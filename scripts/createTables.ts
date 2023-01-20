@@ -17,6 +17,8 @@ export const generateTables = async () => {
   // create readme string
   let readmeDirectory = '# Directory \n';
 
+  const mainnetPermissions = aavePermissionsList[ChainId.mainnet.toString()];
+
   for (let network of Object.keys(aavePermissionsList)) {
     const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
     readmeDirectory += `## ${networkName} \n`;
@@ -37,10 +39,10 @@ export const generateTables = async () => {
       );
 
       // add gov contracts to contractsByAddresses
-      if (Number(network) === ChainId.mainnet && pool !== Pools.GOV_V2) {
+      if (pool !== Pools.GOV_V2) {
         contractsByAddress = generateContractsByAddress({
           ...poolPermitsByContract.contracts,
-          ...networkPermits[Pools.GOV_V2].contracts,
+          ...mainnetPermissions[Pools.GOV_V2].contracts,
         });
       }
 
@@ -87,7 +89,20 @@ export const generateTables = async () => {
                         1)
                     : utils.getAddress(contract.proxyAdmin)) +
                   '](' +
-                  explorerAddressUrlComposer(contract.proxyAdmin, network) +
+                  (contractsByAddress[utils.getAddress(contract.proxyAdmin)] &&
+                  (contractsByAddress[utils.getAddress(contract.proxyAdmin)] ===
+                    'ShortExecutor' ||
+                    contractsByAddress[
+                      utils.getAddress(contract.proxyAdmin)
+                    ] === 'LongExecutor')
+                    ? explorerAddressUrlComposer(
+                        contract.proxyAdmin,
+                        ChainId.mainnet.toString(),
+                      )
+                    : explorerAddressUrlComposer(
+                        contract.proxyAdmin,
+                        network,
+                      )) +
                   ')'
                 : '-'
             }`,
@@ -106,7 +121,23 @@ export const generateTables = async () => {
                         1)
                     : modifierAddress.address) +
                   '](' +
-                  explorerAddressUrlComposer(modifierAddress.address, network) +
+                  (contractsByAddress[
+                    utils.getAddress(modifierAddress.address)
+                  ] &&
+                  (contractsByAddress[
+                    utils.getAddress(modifierAddress.address)
+                  ] === 'ShortExecutor' ||
+                    contractsByAddress[
+                      utils.getAddress(modifierAddress.address)
+                    ] === 'LongExecutor')
+                    ? explorerAddressUrlComposer(
+                        modifierAddress.address,
+                        ChainId.mainnet.toString(),
+                      )
+                    : explorerAddressUrlComposer(
+                        modifierAddress.address,
+                        network,
+                      )) +
                   ')'
                 );
               })

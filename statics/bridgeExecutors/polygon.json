@@ -1,0 +1,47 @@
+[
+  {
+    "contract": "PolygonBridgeExecutor",
+    "functions": [
+      {
+        "name": "cancel",
+        "roles": ["onlyGuardian"]
+      },
+      {
+        "name": "processMessageFromRoot",
+        "roles": ["onlyFxChild", "onlyFxRootSender"]
+      },
+      {
+        "name": "updateFxRootSender",
+        "roles": ["onlyThis"]
+      },
+      {
+        "name": "updateFxChild",
+        "roles": ["onlyThis"]
+      },
+      {
+        "name": "updateGuardian",
+        "roles": ["onlyThis"]
+      },
+      {
+        "name": "updateDelay",
+        "roles": ["onlyThis"]
+      },
+      {
+        "name": "updateGracePeriod",
+        "roles": ["onlyThis"]
+      },
+      {
+        "name": "updateMinimumDelay",
+        "roles": ["onlyThis"]
+      },
+      {
+        "name": "updateMaximumDelay",
+        "roles": ["onlyThis"]
+      },
+      {
+        "name": "executeDelegateCall",
+        "roles": ["onlyThis"]
+      }
+    ]
+  }
+]
