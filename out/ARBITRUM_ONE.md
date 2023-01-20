@@ -20,7 +20,6 @@
 |  [ParaSwapLiquiditySwapAdapter](https://arbiscan.io/address/0xAE9f94BD98eC2831a1330e0418bE0fDb5C95C2B9) |  - |  onlyOwner |  [0x4365F8e70CF38C6cA67DE41448508F2da8825500](https://arbiscan.io/address/0x4365F8e70CF38C6cA67DE41448508F2da8825500) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://arbiscan.io/address/0x32FdC26aFFA1eB331263Bcdd59F2e46eCbCC2E24) |  - |  onlyOwner |  [0x4365F8e70CF38C6cA67DE41448508F2da8825500](https://arbiscan.io/address/0x4365F8e70CF38C6cA67DE41448508F2da8825500) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://arbiscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyOwner |  [Guardian1](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
-|  [EmissionManager](https://arbiscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyEmissionAdmin |  [Dependent on reward](null) |  setDistributionEnd, setRewardOracle, setTransferStrategy, configureAssets, setEmissionPerSecond | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Owners |

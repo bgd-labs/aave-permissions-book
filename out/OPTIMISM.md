@@ -20,7 +20,6 @@
 |  [ParaSwapLiquiditySwapAdapter](https://optimistic.etherscan.io/address/0xC7524B08101dBe695d7ad671a332760b5d967Cbd) |  - |  onlyOwner |  [0x4365F8e70CF38C6cA67DE41448508F2da8825500](https://optimistic.etherscan.io/address/0x4365F8e70CF38C6cA67DE41448508F2da8825500) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://optimistic.etherscan.io/address/0x70371a494f73A8Df658C5cd29E2C1601787e1009) |  - |  onlyOwner |  [0x4365F8e70CF38C6cA67DE41448508F2da8825500](https://optimistic.etherscan.io/address/0x4365F8e70CF38C6cA67DE41448508F2da8825500) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://optimistic.etherscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyOwner |  [Guardian1](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
-|  [EmissionManager](https://optimistic.etherscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyEmissionAdmin |  [Dependent on reward](null) |  setDistributionEnd, setRewardOracle, setTransferStrategy, configureAssets, setEmissionPerSecond | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Owners |

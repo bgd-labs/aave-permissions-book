@@ -20,7 +20,6 @@
 |  [ParaSwapLiquiditySwapAdapter](https://ftmscan.com/address/0xE387c6053CE8EC9f8C3fa5cE085Af73114a695d3) |  - |  onlyOwner |  [0x4365F8e70CF38C6cA67DE41448508F2da8825500](https://ftmscan.com/address/0x4365F8e70CF38C6cA67DE41448508F2da8825500) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://ftmscan.com/address/0x1408401B2A7E28cB747b3e258D0831Fc926bAC51) |  - |  onlyOwner |  [0x4365F8e70CF38C6cA67DE41448508F2da8825500](https://ftmscan.com/address/0x4365F8e70CF38C6cA67DE41448508F2da8825500) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://ftmscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyOwner |  [Guardian1](https://ftmscan.com/address/0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
-|  [EmissionManager](https://ftmscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyEmissionAdmin |  [Dependent on reward](null) |  setDistributionEnd, setRewardOracle, setTransferStrategy, configureAssets, setEmissionPerSecond | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Owners |

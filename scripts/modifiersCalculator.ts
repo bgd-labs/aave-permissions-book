@@ -81,6 +81,7 @@ async function main() {
             provider,
             permissionsJson,
             poolKey,
+            Number(network),
             admins.role,
           );
         }

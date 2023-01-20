@@ -11,6 +11,8 @@ import { generateRoles } from '../helpers/jsonParsers';
 import poolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json';
 import { getProxyAdmin } from '../helpers/proxyAdmin';
 import { getSafeOwners } from '../helpers/guardian';
+import { ChainId } from '@aave/contract-helpers';
+import { getBridgeExecutor } from './bridgeExecutors';
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -43,9 +45,10 @@ export const resolveV3Modifiers = async (
   provider: providers.Provider,
   permissionsObject: PermissionsJson,
   pool: Pools,
+  chainId: ChainId,
   adminRoles: Record<string, string[]>,
 ): Promise<Contracts> => {
-  const obj: Contracts = {};
+  let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
 
   const owners: Record<string, Record<string, string[]>> = {};
@@ -410,20 +413,28 @@ export const resolveV3Modifiers = async (
         functions: roles['EmissionManager']['onlyOwner'],
       },
       // TODO: as emissionAdmin is for reward, for now we leave it commented, not so sure what to do with this
-      {
-        modifier: 'onlyEmissionAdmin',
-        addresses: [
-          {
-            address: 'Dependent on reward',
-            owners: [],
-          },
-        ],
-        functions: roles['EmissionManager']['onlyEmissionAdmin'],
-      },
+      // {
+      //   modifier: 'onlyEmissionAdmin',
+      //   addresses: [
+      //     {
+      //       address: 'Dependent on reward',
+      //       owners: [],
+      //     },
+      //   ],
+      //   functions: roles['EmissionManager']['onlyEmissionAdmin'],
+      // },
     ],
   };
 
-  // TODO: bridge executor
+  let bridgeExecutor = {};
+  if (
+    chainId === ChainId.polygon ||
+    chainId === ChainId.optimism ||
+    chainId === ChainId.arbitrum_one
+  ) {
+    bridgeExecutor = await getBridgeExecutor(provider, chainId);
+  }
+  obj = { ...obj, ...bridgeExecutor };
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
