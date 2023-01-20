@@ -320,5 +320,42 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "EmissionManager",
+    "functions": [
+      {
+        "name": "setClaimer",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setEmissionAdmin",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setRewardsController",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setDistributionEnd",
+        "roles": ["onlyEmissionAdmin"]
+      },
+      {
+        "name": "setRewardOracle",
+        "roles": ["onlyEmissionAdmin"]
+      },
+      {
+        "name": "setTransferStrategy",
+        "roles": ["onlyEmissionAdmin"]
+      },
+      {
+        "name": "configureAssets",
+        "roles": ["onlyEmissionAdmin"]
+      },
+      {
+        "name": "setEmissionPerSecond",
+        "roles": ["onlyEmissionAdmin"]
+      }
+    ]
   }
 ]

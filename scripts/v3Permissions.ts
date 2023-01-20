@@ -389,7 +389,40 @@ export const resolveV3Modifiers = async (
     ],
   };
 
-  // TODO: emission manager
+  const emissionManagerContract = new ethers.Contract(
+    addressBook.EMISSION_MANAGER,
+    onlyOwnerAbi,
+    provider,
+  );
+  const emissionManagerOwner = await emissionManagerContract.owner();
+
+  obj['EmissionManager'] = {
+    address: addressBook.EMISSION_MANAGER,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: emissionManagerOwner,
+            owners: await getSafeOwners(provider, emissionManagerOwner),
+          },
+        ],
+        functions: roles['EmissionManager']['onlyOwner'],
+      },
+      // TODO: as emissionAdmin is for reward, for now we leave it commented, not so sure what to do with this
+      {
+        modifier: 'onlyEmissionAdmin',
+        addresses: [
+          {
+            address: 'Dependent on reward',
+            owners: [],
+          },
+        ],
+        functions: roles['EmissionManager']['onlyEmissionAdmin'],
+      },
+    ],
+  };
+
   // TODO: bridge executor
 
   // add proxy admins
