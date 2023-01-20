@@ -307,21 +307,50 @@ export const resolveV3Modifiers = async (
 
   // for now, we use the same as practically there is only one rewards controller and emission manager
   // but could be that there is one of these for every token
-  obj['RewardsController'] = {
-    address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
-    modifiers: [
-      {
-        modifier: 'onlyEmissionManager',
-        addresses: [
-          {
-            address: addressBook.EMISSION_MANAGER,
-            owners: await getSafeOwners(provider, addressBook.EMISSION_MANAGER),
-          },
-        ],
-        functions: roles['RewardsController']['onlyEmissionManager'],
-      },
-    ],
-  };
+  if (chainId === ChainId.mainnet) {
+    console.log(
+      'addressBook.POOL_ADDRESSES_PROVIDER: ',
+      addressBook.POOL_ADDRESSES_PROVIDER,
+    );
+    obj['RewardsController'] = {
+      address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
+      proxyAdmin: addressBook.POOL_ADDRESSES_PROVIDER,
+      modifiers: [
+        {
+          modifier: 'onlyEmissionManager',
+          addresses: [
+            {
+              address: addressBook.EMISSION_MANAGER,
+              owners: await getSafeOwners(
+                provider,
+                addressBook.EMISSION_MANAGER,
+              ),
+            },
+          ],
+          functions: roles['RewardsController']['onlyEmissionManager'],
+        },
+      ],
+    };
+  } else {
+    obj['RewardsController'] = {
+      address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
+      modifiers: [
+        {
+          modifier: 'onlyEmissionManager',
+          addresses: [
+            {
+              address: addressBook.EMISSION_MANAGER,
+              owners: await getSafeOwners(
+                provider,
+                addressBook.EMISSION_MANAGER,
+              ),
+            },
+          ],
+          functions: roles['RewardsController']['onlyEmissionManager'],
+        },
+      ],
+    };
+  }
 
   const wethGatewayContract = new ethers.Contract(
     addressBook.WETH_GATEWAY,

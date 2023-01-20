@@ -333,7 +333,6 @@ export const resolveV2Modifiers = async (
     .filter((contract) => contract.proxyAdmin)
     .map((contract) => contract.contract);
   for (let i = 0; i < proxyAdminContracts.length; i++) {
-    console.log('proxyAdminContracts: ', i, ' ', proxyAdminContracts[i]);
     // TODO: finally fix avax v2 collector stuff
     if (
       proxyAdminContracts[i] === 'Collector' &&

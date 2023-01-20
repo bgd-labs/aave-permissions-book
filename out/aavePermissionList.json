@@ -221,6 +221,7 @@
         },
         "RewardsController": {
           "address": "0x8164Cc65827dcFe994AB23944CBC90e0aa80bFcb",
+          "proxyAdmin": "0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e",
           "modifiers": [
             {
               "modifier": "onlyEmissionManager",
@@ -237,8 +238,7 @@
                 "setClaimer"
               ]
             }
-          ],
-          "proxyAdmin": "0x0000000000000000000000000000000000000000"
+          ]
         },
         "WrappedTokenGatewayV3": {
           "address": "0xD322A49006FC828F9B5B37Ab215F99B4E5caB19C",
@@ -328,7 +328,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16448522
+        "latestBlockNumber": 16449210
       }
     },
     "V2": {
@@ -1685,7 +1685,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 69300185
+        "latestBlockNumber": 69317773
       }
     }
   },
@@ -2114,7 +2114,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 38312052
+        "latestBlockNumber": 38315867
       }
     },
     "V2": {
@@ -2816,7 +2816,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 54078742
+        "latestBlockNumber": 54083337
       }
     }
   },
@@ -3352,7 +3352,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 54298283
+        "latestBlockNumber": 54321117
       }
     }
   },
@@ -3811,7 +3811,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 25187019
+        "latestBlockNumber": 25191098
       }
     },
     "V2": {

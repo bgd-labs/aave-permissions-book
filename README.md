@@ -18,9 +18,7 @@ npm run tables:create
 
 
 ## TODO:
-- Add working tenderly fork version
-- Check RewardController proxyAdmin for v3 mainnet
 - Add more contracts like
-  - weth gateway
-  - paraswap adapters
+  - registry
 - add error handling to indexer
+  - Add working tenderly fork version

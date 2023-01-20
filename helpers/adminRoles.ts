@@ -65,6 +65,7 @@ export const getCurrentRoleAdmins = async (
   const roleHexToNameMap = initializeRoleCodeMap();
 
   let limit = undefined;
+  let timeout = undefined;
   if (chainId === ChainId.avalanche) {
     limit = 99999;
   } else if (chainId === ChainId.harmony) {
@@ -72,7 +73,8 @@ export const getCurrentRoleAdmins = async (
   } else if (chainId === ChainId.fantom) {
     limit = 99999;
   } else if (chainId === 'tenderly-mainnet') {
-    limit = 899;
+    limit = 999;
+    timeout = 10000;
   }
   console.log('chainId:', chainId);
   console.log('limit: ', limit);
@@ -82,6 +84,7 @@ export const getCurrentRoleAdmins = async (
     fromBlock,
     [],
     limit,
+    timeout,
   );
 
   // get roleGranted events
