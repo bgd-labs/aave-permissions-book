@@ -4,7 +4,6 @@ import {
   FullPermissions,
   networkConfigs,
   Pools,
-  Role,
   Roles,
 } from '../helpers/configs';
 import {
@@ -15,6 +14,7 @@ import {
 import { getCurrentRoleAdmins } from '../helpers/adminRoles';
 import { resolveV2Modifiers } from './v2Permissions';
 import { resolveV3Modifiers } from './v3Permissions';
+import { resolveGovV2Modifiers } from './governancePermissions';
 
 async function main() {
   let fullJson: FullPermissions = getAllPermissionsJson();
@@ -43,6 +43,13 @@ async function main() {
           provider,
           permissionsJson,
           poolKey,
+          Number(network),
+        );
+      } else if (poolKey === Pools.GOV_V2) {
+        poolPermissions = await resolveGovV2Modifiers(
+          pool.addressBook,
+          provider,
+          permissionsJson,
         );
       } else if (poolKey === Pools.V3) {
         const fromBlock =
@@ -50,27 +57,31 @@ async function main() {
             fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
           networkConfigs[network].pools[poolKey].aclBlock;
         if (fromBlock) {
-          // console.log(`
-          // ------------------------------------
-          //   network: ${network}
-          //   pool: ${poolKey}
-          //   fromBlock: ${fromBlock}
-          // ------------------------------------
-          // `);
+          console.log(`
+          ------------------------------------
+            network: ${network}
+            pool: ${poolKey}
+            fromBlock: ${fromBlock}
+          ------------------------------------
+          `);
           admins = await getCurrentRoleAdmins(
             provider,
-            fullJson[network][poolKey]?.roles?.role ||
-              ({} as Record<string, Role[]>),
+            (fullJson[network] &&
+              fullJson[network][poolKey] &&
+              fullJson[network][poolKey]?.roles?.role) ||
+              ({} as Record<string, string[]>),
             fromBlock,
             pool.addressBook,
-            Number(network),
+            network === 'tenderly-mainnet'
+              ? 'tenderly-mainnet'
+              : Number(network),
           );
           poolPermissions = await resolveV3Modifiers(
             pool.addressBook,
             provider,
             permissionsJson,
             poolKey,
-            admins,
+            admins.role,
           );
         }
       } else {

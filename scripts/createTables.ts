@@ -1,13 +1,15 @@
 import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem';
-import { Modifier, Pools } from '../helpers/configs';
+import { Modifier, networkConfigs, Pools } from '../helpers/configs';
 import { explorerAddressUrlComposer } from '../helpers/explorer';
-import { ChainIdToNetwork } from '@aave/contract-helpers';
+import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
 import { generateContractsByAddress } from '../helpers/jsonParsers';
 import {
   getLineSeparator,
   getTableBody,
   getTableHeader,
 } from '../helpers/tables';
+import { getSafeOwners } from '../helpers/guardian';
+import { providers, utils } from 'ethers';
 
 export const generateTables = async () => {
   const aavePermissionsList = getAllPermissionsJson();
@@ -15,7 +17,7 @@ export const generateTables = async () => {
   // create readme string
   let readmeDirectory = '# Directory \n';
 
-  Object.keys(aavePermissionsList).forEach((network: string) => {
+  for (let network of Object.keys(aavePermissionsList)) {
     const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
     readmeDirectory += `## ${networkName} \n`;
     const networkPermits = aavePermissionsList[network];
@@ -23,22 +25,31 @@ export const generateTables = async () => {
     // create network Readme with pool tables
     let readmeByNetwork = `# ${networkName} \n`;
 
-    Object.keys(networkPermits).forEach((pool) => {
+    for (let pool of Object.keys(networkPermits)) {
+      const poolGuardians: Record<string, string[]> = {};
       const poolPermitsByContract = networkPermits[pool];
       // create pool table
       readmeByNetwork += `## ${pool} \n`;
       readmeDirectory += `- [${pool}](./${networkName}.md#${pool}) \n`;
 
-      const contractsByAddress = generateContractsByAddress(
+      let contractsByAddress = generateContractsByAddress(
         poolPermitsByContract.contracts,
       );
 
-      let contractTable = `## contracts && permits\n`;
+      // add gov contracts to contractsByAddresses
+      if (Number(network) === ChainId.mainnet && pool !== Pools.GOV_V2) {
+        contractsByAddress = generateContractsByAddress({
+          ...poolPermitsByContract.contracts,
+          ...networkPermits[Pools.GOV_V2].contracts,
+        });
+      }
+
+      let contractTable = `### contracts\n`;
       const contractsModifiersHeaderTitles = [
         'contract',
         'proxyAdmin',
         'modifier',
-        'caller',
+        'permission owner',
         'functions',
       ];
       const header = getTableHeader(contractsModifiersHeaderTitles);
@@ -46,10 +57,18 @@ export const generateTables = async () => {
 
       // fill pool table
       let tableBody = '';
-      Object.keys(poolPermitsByContract.contracts).forEach((contractName) => {
+      for (let contractName of Object.keys(poolPermitsByContract.contracts)) {
         const contract = poolPermitsByContract.contracts[contractName];
 
-        contract.modifiers.forEach((modifier: Modifier) => {
+        for (let modifier of contract.modifiers) {
+          for (let modifierAddress of modifier.addresses) {
+            if (!poolGuardians[modifierAddress.address]) {
+              if (modifierAddress.owners.length > 0) {
+                poolGuardians[modifierAddress.address] = modifierAddress.owners;
+              }
+            }
+          }
+
           tableBody += getTableBody([
             `[${contractName}](${explorerAddressUrlComposer(
               contract.address,
@@ -58,21 +77,36 @@ export const generateTables = async () => {
             `${
               contract.proxyAdmin
                 ? '[' +
-                  (contractsByAddress[contract.proxyAdmin] ??
-                    contract.proxyAdmin) +
+                  (contractsByAddress[utils.getAddress(contract.proxyAdmin)]
+                    ? contractsByAddress[utils.getAddress(contract.proxyAdmin)]
+                    : poolGuardians[utils.getAddress(contract.proxyAdmin)]
+                    ? 'Guardian' +
+                      (Object.keys(poolGuardians).indexOf(
+                        utils.getAddress(contract.proxyAdmin),
+                      ) +
+                        1)
+                    : utils.getAddress(contract.proxyAdmin)) +
                   '](' +
                   explorerAddressUrlComposer(contract.proxyAdmin, network) +
                   ')'
                 : '-'
             }`,
             `${modifier.modifier}`,
-            `${modifier.address
+            `${modifier.addresses
               .map((modifierAddress) => {
                 return (
                   '[' +
-                  (contractsByAddress[modifierAddress] ?? modifierAddress) +
+                  (contractsByAddress[modifierAddress.address]
+                    ? contractsByAddress[modifierAddress.address]
+                    : poolGuardians[modifierAddress.address]
+                    ? 'Guardian' +
+                      (Object.keys(poolGuardians).indexOf(
+                        modifierAddress.address,
+                      ) +
+                        1)
+                    : modifierAddress.address) +
                   '](' +
-                  explorerAddressUrlComposer(modifierAddress, network) +
+                  explorerAddressUrlComposer(modifierAddress.address, network) +
                   ')'
                 );
               })
@@ -80,23 +114,41 @@ export const generateTables = async () => {
             modifier.functions.join(', '),
           ]);
           tableBody += getLineSeparator(contractsModifiersHeaderTitles.length);
-        });
-      });
+        }
+      }
 
       contractTable += tableBody;
       readmeByNetwork += contractTable + '\n';
 
-      let adminTable = `## Admins \n`;
+      if (Object.keys(poolGuardians).length > 0) {
+        let guardianTable = `### Guardians \n`;
+        const guardianHeaderTitles = ['Guardian', 'Owners'];
+        const guardianHeader = getTableHeader(guardianHeaderTitles);
+        guardianTable += guardianHeader;
+
+        Object.keys(poolGuardians).forEach((guardian) => {
+          guardianTable += getTableBody([
+            `[${guardian}](${explorerAddressUrlComposer(guardian, network)})`,
+            `${poolGuardians[guardian]
+              .map((owner) => {
+                return (
+                  '[' +
+                  owner +
+                  '](' +
+                  explorerAddressUrlComposer(owner, network) +
+                  ')'
+                );
+              })
+              .join(', ')}`,
+          ]);
+          guardianTable += getLineSeparator(guardianHeaderTitles.length);
+        });
+        readmeByNetwork += guardianTable + '\n';
+      }
+      let adminTable = `### Admins \n`;
       const adminsHeaderTitles = ['Role', 'Contract'];
       const adminHeader = getTableHeader(adminsHeaderTitles);
       adminTable += adminHeader;
-
-      let guardianTable = `## Guardians \n`;
-      const guardianHeaderTitles = ['Guardian', 'Owners'];
-      const guardianHeader = getTableHeader(guardianHeaderTitles);
-      guardianTable += guardianHeader;
-
-      const guardians: string[] = [];
 
       if (
         pool === Pools.V3 &&
@@ -104,59 +156,38 @@ export const generateTables = async () => {
         poolPermitsByContract.roles.role
       ) {
         Object.keys(poolPermitsByContract.roles.role).forEach((role) => {
-          const roleInfo = poolPermitsByContract.roles?.role[role] || [];
+          const roleAddresses = poolPermitsByContract.roles?.role[role] || [];
           adminTable += getTableBody([
             role,
-            `${roleInfo
-              .map((info) => {
+            `${roleAddresses
+              .map((roleAddress) => {
                 return (
                   '[' +
-                  (contractsByAddress[info.address] ?? info.address) +
+                  (contractsByAddress[roleAddress]
+                    ? contractsByAddress[roleAddress]
+                    : poolGuardians[roleAddress]
+                    ? 'Guardian' +
+                      (Object.keys(poolGuardians).indexOf(roleAddress) + 1)
+                    : roleAddress) +
                   '](' +
-                  explorerAddressUrlComposer(info.address, network) +
+                  explorerAddressUrlComposer(roleAddress, network) +
                   ')'
                 );
               })
               .join(', ')}`,
           ]);
           adminTable += getLineSeparator(adminsHeaderTitles.length);
-          roleInfo.forEach((info) => {
-            if (
-              guardians.indexOf(info.address) === -1 &&
-              info.owners.length > 0
-            ) {
-              guardians.push(info.address);
-              guardianTable += getTableBody([
-                `[${
-                  contractsByAddress[info.address] ?? info.address
-                }](${explorerAddressUrlComposer(info.address, network)})`,
-                `${info.owners
-                  .map((owner) => {
-                    return (
-                      '[' +
-                      (contractsByAddress[owner] ?? owner) +
-                      '](' +
-                      explorerAddressUrlComposer(owner, network) +
-                      ')'
-                    );
-                  })
-                  .join(', ')}`,
-              ]);
-              guardianTable += getLineSeparator(guardianHeaderTitles.length);
-            }
-          });
         });
 
         readmeByNetwork += adminTable + '\n';
-        readmeByNetwork += guardianTable + '\n';
       }
-    });
+    }
 
     saveJson(
       `./out/${ChainIdToNetwork[Number(network)].toUpperCase()}.md`,
       readmeByNetwork,
     );
-  });
+  }
 
   saveJson('./out/DIRECTORY.md', readmeDirectory);
 };

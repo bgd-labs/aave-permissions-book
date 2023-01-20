@@ -175,39 +175,41 @@
     ]
   },
   {
-    "contract": "ExecutorWithTimelock",
-    "functions": [
-      {
-        "name": "setDelay",
-        "roles": ["onlyTimelock"]
-      },
-      {
-        "name": "acceptAdmin",
-        "roles": ["onlyPendingAdmin"]
-      },
-      {
-        "name": "setPendingAdmin",
-        "roles": ["onlyTimelock"]
-      },
-      {
-        "name": "queueTransaction",
-        "roles": ["onlyAdmin"]
-      },
-      {
-        "name": "cancelTransaction",
-        "roles": ["onlyAdmin"]
-      },
-      {
-        "name": "executeTransaction",
-        "roles": ["onlyAdmin"]
-      }
-    ]
-  },
-  {
     "contract": "LendingRateOracle",
     "functions": [
       {
         "name": "setMarketBorrowRate",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "Collector",
+    "proxyAdmin": true,
+    "functions": [
+      {
+        "name": "approve",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "transfer",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "setFundsAdmin",
+        "roles": ["onlyFundsAdmin"]
+      }
+    ]
+  },
+  {
+    "contract": "CollectorController",
+    "functions": [
+      {
+        "name": "approve",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "transfer",
         "roles": ["onlyOwner"]
       }
     ]

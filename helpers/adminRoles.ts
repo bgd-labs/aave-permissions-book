@@ -1,6 +1,6 @@
 import { ethers, providers, utils } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { Role, Roles } from './configs';
+import { Roles } from './configs';
 import { getLogs } from './eventLogs';
 import { getSafeOwners } from './guardian';
 
@@ -39,10 +39,6 @@ function initializeRoleCodeMap(): Map<string, string> {
   return roleCodeMap;
 }
 
-export const getRoleBytes32 = (roleName: string): string => {
-  return utils.solidityKeccak256(['string'], [roleName]);
-};
-
 export const parseLog = (
   abi: string[],
   eventLog: ethers.providers.Log,
@@ -56,10 +52,10 @@ export const parseLog = (
 
 export const getCurrentRoleAdmins = async (
   provider: providers.Provider,
-  oldRoles: Record<string, Role[]>,
+  oldRoles: Record<string, string[]>,
   fromBlock: number,
   addressBook: any,
-  chainId: ChainId,
+  chainId: ChainId | string,
 ): Promise<Roles> => {
   // console.log(`
   // ------------------------------
@@ -72,11 +68,14 @@ export const getCurrentRoleAdmins = async (
   if (chainId === ChainId.avalanche) {
     limit = 99999;
   } else if (chainId === ChainId.harmony) {
-    limit = 9999;
-  } else if (chainId == ChainId.fantom) {
+    limit = 1000;
+  } else if (chainId === ChainId.fantom) {
     limit = 99999;
+  } else if (chainId === 'tenderly-mainnet') {
+    limit = 899;
   }
-
+  console.log('chainId:', chainId);
+  console.log('limit: ', limit);
   const { eventLogs, finalBlock } = await getLogs(
     provider,
     aclManager,
@@ -89,7 +88,7 @@ export const getCurrentRoleAdmins = async (
   const roleGrantedTopic0 = utils.id('RoleGranted(bytes32,address,address)');
   const roleRevokedTopic0 = utils.id('RoleRevoked(bytes32,address,address)');
 
-  const roles: Record<string, Role[]> = { ...oldRoles };
+  const roles: Record<string, string[]> = { ...oldRoles };
   // save or remove admins
   for (let eventLog of eventLogs) {
     // eventLogs.forEach((eventLog) => {
@@ -107,8 +106,7 @@ export const getCurrentRoleAdmins = async (
       if (roleName && !roles[roleName]) {
         roles[roleName] = [];
       } else if (roleName && roles[roleName]) {
-        const safeOwners = await getSafeOwners(provider, account);
-        roles[roleName].push({ address: account, owners: safeOwners });
+        roles[roleName].push(account);
       }
     } else if (eventLog.topics[0] === roleRevokedTopic0) {
       const { role, account } = parseLog(roleRevokedEventABI, eventLog);
@@ -121,9 +119,7 @@ export const getCurrentRoleAdmins = async (
       //   role: ${roleName}
       // `);
       if (roleName) {
-        roles[roleName] = roles[roleName].filter(
-          (role) => role.address !== account,
-        );
+        roles[roleName] = roles[roleName].filter((role) => role !== account);
       }
     } else {
       console.error(new Error('some error parsing logs'));

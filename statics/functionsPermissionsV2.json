@@ -169,5 +169,67 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "Collector",
+    "proxyAdmin": true,
+    "functions": [
+      {
+        "name": "approve",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "transfer",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "setFundsAdmin",
+        "roles": ["onlyFundsAdmin"]
+      }
+    ]
+  },
+  {
+    "contract": "CollectorController",
+    "functions": [
+      {
+        "name": "approve",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "transfer",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "WrappedTokenGatewayV2",
+    "functions": [
+      {
+        "name": "emergencyTokenTransfer",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "emergencyEtherTransfer",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "ParaSwapLiquiditySwapAdapter",
+    "functions": [
+      {
+        "name": "rescueTokens",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "ParaSwapRepayAdapter",
+    "functions": [
+      {
+        "name": "rescueTokens",
+        "roles": ["onlyOwner"]
+      }
+    ]
   }
 ]

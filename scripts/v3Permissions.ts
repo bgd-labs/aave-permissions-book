@@ -1,36 +1,89 @@
 import { ethers, providers } from 'ethers';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json';
 import collectorAbi from '../abis/collectorAbi.json';
-import { Contracts, PermissionsJson, Pools, Roles } from '../helpers/configs';
+import {
+  AddressInfo,
+  Contracts,
+  PermissionsJson,
+  Pools,
+} from '../helpers/configs';
 import { generateRoles } from '../helpers/jsonParsers';
 import poolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json';
 import { getProxyAdmin } from '../helpers/proxyAdmin';
+import { getSafeOwners } from '../helpers/guardian';
+
+const getAddressInfo = async (
+  provider: providers.Provider,
+  roleAddress: string,
+): Promise<AddressInfo> => {
+  const owners = await getSafeOwners(provider, roleAddress);
+  return {
+    address: roleAddress,
+    owners,
+  };
+};
+
+const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
+  const cleanAddresses: AddressInfo[] = [];
+
+  addressesInfo.forEach((addressInfo) => {
+    const found = cleanAddresses.find(
+      (cleanAddressInfo) => cleanAddressInfo.address === addressInfo.address,
+    );
+    if (!found) {
+      cleanAddresses.push(addressInfo);
+    }
+  });
+
+  return cleanAddresses;
+};
 
 export const resolveV3Modifiers = async (
   addressBook: any,
   provider: providers.Provider,
   permissionsObject: PermissionsJson,
   pool: Pools,
-  adminRoles: Roles,
+  adminRoles: Record<string, string[]>,
 ): Promise<Contracts> => {
   const obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
 
-  const lendingPoolAddressesProvider = new ethers.Contract(
+  const owners: Record<string, Record<string, string[]>> = {};
+  // owners
+  for (const roleName of Object.keys(adminRoles)) {
+    for (const roleAddress of adminRoles[roleName]) {
+      if (!owners[roleName]) {
+        owners[roleName] = {
+          [roleAddress]: await getSafeOwners(provider, roleAddress),
+        };
+      } else if (owners[roleName] && !owners[roleName][roleAddress]) {
+        owners[roleName][roleAddress] = await getSafeOwners(
+          provider,
+          roleAddress,
+        );
+      }
+    }
+  }
+
+  const poolAddressesProvider = new ethers.Contract(
     addressBook.POOL_ADDRESSES_PROVIDER,
     poolAddressProviderAbi,
     provider,
   );
 
-  const lendingPoolAddressesProviderOwner =
-    await lendingPoolAddressesProvider.owner();
+  const poolAddressesProviderOwner = await poolAddressesProvider.owner();
 
   obj['PoolAddressesProvider'] = {
     address: addressBook.POOL_ADDRESSES_PROVIDER,
     modifiers: [
       {
         modifier: 'onlyOwner',
-        address: [lendingPoolAddressesProviderOwner],
+        addresses: [
+          {
+            address: poolAddressesProviderOwner,
+            owners: await getSafeOwners(provider, poolAddressesProviderOwner),
+          },
+        ],
         functions: roles['PoolAddressesProvider']['onlyOwner'],
       },
     ],
@@ -42,17 +95,36 @@ export const resolveV3Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyPoolConfigurator',
-        address: [addressBook.POOL_CONFIGURATOR],
+        addresses: [
+          {
+            address: addressBook.POOL_CONFIGURATOR,
+            owners: [],
+          },
+        ],
         functions: roles['Pool']['onlyPoolConfigurator'],
       },
       {
         modifier: 'onlyPoolAdmin',
-        address: [...adminRoles.role['POOL_ADMIN'].map((role) => role.address)],
+        addresses: [
+          ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['POOL_ADMIN'][roleAddress] || [],
+            };
+          }),
+        ],
         functions: roles['Pool']['onlyPoolAdmin'],
       },
       {
         modifier: 'onlyBridge',
-        address: [...adminRoles.role['BRIDGE'].map((role) => role.address)],
+        addresses: [
+          ...adminRoles['BRIDGE'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['BRIDGE'][roleAddress] || [],
+            };
+          }),
+        ],
         functions: roles['Pool']['onlyBridge'],
       },
     ],
@@ -64,46 +136,82 @@ export const resolveV3Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyPoolAdmin',
-        address: [...adminRoles.role['POOL_ADMIN'].map((role) => role.address)],
+        addresses: [
+          ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['POOL_ADMIN'][roleAddress] || [],
+            };
+          }),
+        ],
         functions: roles['PoolConfigurator']['onlyPoolAdmin'],
       },
       {
         modifier: 'onlyEmergencyAdmin',
-        address: [
-          ...adminRoles.role['EMERGENCY_ADMIN'].map((role) => role.address),
+        addresses: [
+          ...adminRoles['EMERGENCY_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['EMERGENCY_ADMIN'][roleAddress] || [],
+            };
+          }),
         ],
         functions: roles['PoolConfigurator']['onlyEmergencyAdmin'],
       },
       {
         modifier: 'onlyAssetListingOrPoolAdmins',
-        address: [
-          ...new Set([
-            ...adminRoles.role['POOL_ADMIN'].map((role) => role.address),
-            ...adminRoles.role['ASSET_LISTING_ADMIN'].map(
-              (role) => role.address,
-            ),
-          ]),
-        ],
+        addresses: uniqueAddresses([
+          ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['POOL_ADMIN'][roleAddress] || [],
+            };
+          }),
+          ...adminRoles['ASSET_LISTING_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['ASSET_LISTING_ADMIN'][roleAddress] || [],
+            };
+          }),
+        ]),
         functions: roles['PoolConfigurator']['onlyAssetListingOrPoolAdmins'],
       },
       {
         modifier: 'onlyRiskOrPoolAdmins',
-        address: [
-          ...new Set([
-            ...adminRoles.role['POOL_ADMIN'].map((role) => role.address),
-            ...adminRoles.role['RISK_ADMIN'].map((role) => role.address),
-          ]),
-        ],
+        addresses: uniqueAddresses([
+          ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['POOL_ADMIN'][roleAddress] || [],
+            };
+          }),
+          ...adminRoles['RISK_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['RISK_ADMIN'][roleAddress] || [],
+            };
+          }),
+        ]),
+
         functions: roles['PoolConfigurator']['onlyRiskOrPoolAdmins'],
       },
       {
         modifier: 'onlyEmergencyOrPoolAdmin',
-        address: [
-          ...new Set([
-            ...adminRoles.role['POOL_ADMIN'].map((role) => role.address),
-            ...adminRoles.role['EMERGENCY_ADMIN'].map((role) => role.address),
-          ]),
-        ],
+        addresses: uniqueAddresses([
+          ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['POOL_ADMIN'][roleAddress] || [],
+            };
+          }),
+          ...adminRoles['EMERGENCY_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['EMERGENCY_ADMIN'][roleAddress] || [],
+            };
+          }),
+        ]),
+
         functions: roles['PoolConfigurator']['onlyEmergencyOrPoolAdmin'],
       },
     ],
@@ -114,14 +222,20 @@ export const resolveV3Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyAssetListingOrPoolAdmins',
-        address: [
-          ...new Set([
-            ...adminRoles.role['POOL_ADMIN'].map((role) => role.address),
-            ...adminRoles.role['ASSET_LISTING_ADMIN'].map(
-              (role) => role.address,
-            ),
-          ]),
-        ],
+        addresses: uniqueAddresses([
+          ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['POOL_ADMIN'][roleAddress] || [],
+            };
+          }),
+          ...adminRoles['ASSET_LISTING_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['ASSET_LISTING_ADMIN'][roleAddress] || [],
+            };
+          }),
+        ]),
         functions: roles['AaveOracle']['onlyAssetListingOrPoolAdmins'],
       },
     ],
@@ -154,7 +268,12 @@ export const resolveV3Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyOwner',
-        address: [collectorControllerOwner],
+        addresses: [
+          {
+            address: collectorControllerOwner,
+            owners: await getSafeOwners(provider, collectorControllerOwner),
+          },
+        ],
         functions: roles['CollectorController']['onlyOwner'],
       },
     ],
@@ -172,7 +291,12 @@ export const resolveV3Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyFundsAdmin',
-        address: [fundsAdmin],
+        addresses: [
+          {
+            address: fundsAdmin,
+            owners: await getSafeOwners(provider, fundsAdmin),
+          },
+        ],
         functions: roles['Collector']['onlyFundsAdmin'],
       },
     ],
@@ -185,13 +309,121 @@ export const resolveV3Modifiers = async (
     modifiers: [
       {
         modifier: 'onlyEmissionManager',
-        address: [addressBook.EMISSION_MANAGER],
+        addresses: [
+          {
+            address: addressBook.EMISSION_MANAGER,
+            owners: await getSafeOwners(provider, addressBook.EMISSION_MANAGER),
+          },
+        ],
         functions: roles['RewardsController']['onlyEmissionManager'],
       },
     ],
   };
 
-  // TODO: weth gateway
+  const wethGatewayContract = new ethers.Contract(
+    addressBook.WETH_GATEWAY,
+    onlyOwnerAbi,
+    provider,
+  );
+  const wethGatewayOwner = await wethGatewayContract.owner();
+
+  obj['WrappedTokenGatewayV3'] = {
+    address: addressBook.WETH_GATEWAY,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: wethGatewayOwner,
+            owners: await getSafeOwners(provider, wethGatewayOwner),
+          },
+        ],
+        functions: roles['WrappedTokenGatewayV3']['onlyOwner'],
+      },
+    ],
+  };
+
+  const paraswapLiquiditySwapContract = new ethers.Contract(
+    addressBook.SWAP_COLLATERAL_ADAPTER,
+    onlyOwnerAbi,
+    provider,
+  );
+  const liquiditySwapOwner = await paraswapLiquiditySwapContract.owner();
+
+  obj['ParaSwapLiquiditySwapAdapter'] = {
+    address: addressBook.SWAP_COLLATERAL_ADAPTER,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: liquiditySwapOwner,
+            owners: await getSafeOwners(provider, liquiditySwapOwner),
+          },
+        ],
+        functions: roles['ParaSwapLiquiditySwapAdapter']['onlyOwner'],
+      },
+    ],
+  };
+
+  const paraswapRepaySwapContract = new ethers.Contract(
+    addressBook.REPAY_WITH_COLLATERAL_ADAPTER,
+    onlyOwnerAbi,
+    provider,
+  );
+  const repaySwapOwner = await paraswapRepaySwapContract.owner();
+
+  obj['ParaSwapRepayAdapter'] = {
+    address: addressBook.REPAY_WITH_COLLATERAL_ADAPTER,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: repaySwapOwner,
+            owners: await getSafeOwners(provider, repaySwapOwner),
+          },
+        ],
+        functions: roles['ParaSwapRepayAdapter']['onlyOwner'],
+      },
+    ],
+  };
+
+  const emissionManagerContract = new ethers.Contract(
+    addressBook.EMISSION_MANAGER,
+    onlyOwnerAbi,
+    provider,
+  );
+  const emissionManagerOwner = await emissionManagerContract.owner();
+
+  obj['EmissionManager'] = {
+    address: addressBook.EMISSION_MANAGER,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: emissionManagerOwner,
+            owners: await getSafeOwners(provider, emissionManagerOwner),
+          },
+        ],
+        functions: roles['EmissionManager']['onlyOwner'],
+      },
+      // TODO: as emissionAdmin is for reward, for now we leave it commented, not so sure what to do with this
+      {
+        modifier: 'onlyEmissionAdmin',
+        addresses: [
+          {
+            address: 'Dependent on reward',
+            owners: [],
+          },
+        ],
+        functions: roles['EmissionManager']['onlyEmissionAdmin'],
+      },
+    ],
+  };
+
+  // TODO: bridge executor
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject

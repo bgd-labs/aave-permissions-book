@@ -1,9 +1,10 @@
 # Directory 
 ## MAINNET 
-- [ARC](./MAINNET.md#ARC) 
-- [V2](./MAINNET.md#V2) 
-- [AMM](./MAINNET.md#AMM) 
 - [V3](./MAINNET.md#V3) 
+- [V2](./MAINNET.md#V2) 
+- [ARC](./MAINNET.md#ARC) 
+- [AMM](./MAINNET.md#AMM) 
+- [GOV_V2](./MAINNET.md#GOV_V2) 
 ## OPTIMISM 
 - [V3](./OPTIMISM.md#V3) 
 ## POLYGON 
