@@ -162,6 +162,10 @@
       {
         "name": "setReservePause",
         "roles": ["onlyEmergencyOrPoolAdmin"]
+      },
+      {
+        "name": "setReserveFlashLoaning",
+        "roles": ["onlyRiskOrPoolAdmins"]
       }
     ]
   },

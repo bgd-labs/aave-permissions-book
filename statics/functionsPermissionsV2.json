@@ -200,5 +200,36 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "WrappedTokenGatewayV2",
+    "functions": [
+      {
+        "name": "emergencyTokenTransfer",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "emergencyEtherTransfer",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "ParaSwapLiquiditySwapAdapter",
+    "functions": [
+      {
+        "name": "rescueTokens",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "ParaSwapRepayAdapter",
+    "functions": [
+      {
+        "name": "rescueTokens",
+        "roles": ["onlyOwner"]
+      }
+    ]
   }
 ]

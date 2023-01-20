@@ -86,7 +86,7 @@ export const networkConfigs: NetworkConfigs = {
     explorer: 'https://etherscan.io',
     pools: {
       [Pools.V3]: {
-        permissionsJson: './statics/functionsPermissionsV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         aclBlock: 16291117,
         addressBook: AaveV3Ethereum,
       },
