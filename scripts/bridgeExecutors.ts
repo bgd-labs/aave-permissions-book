@@ -1,10 +1,11 @@
 import { ethers, providers } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { ContractInfo, Contracts } from '../helpers/configs';
+import { Contracts } from '../helpers/configs';
 import { getStaticPermissionsJson } from '../helpers/fileSystem';
 import { generateRoles } from '../helpers/jsonParsers';
 import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
 import polygonBridgeExecutorABI from '../abis/polygonBridgeExecutorABI.json';
+import optimismBridgeExecutorABI from '../abis/optimismExecutorBridgeABI.json';
 import { getSafeOwners } from '../helpers/guardian';
 
 export const bridgeExecutors: Record<number, string> = {
@@ -31,8 +32,6 @@ export const getBridgeExecutor = async (
       provider,
     );
     const guardian = await bridgeExecutorContract.getGuardian();
-    // const ethereumGovExecutor =
-    //   await bridgeExecutorContract.getEthereumGovernanceExecutor();
     const fxChild = await bridgeExecutorContract.getFxChild();
     const fxRootSender = await bridgeExecutorContract.getFxRootSender();
 
@@ -82,7 +81,97 @@ export const getBridgeExecutor = async (
       ],
     };
   } else if (chainId === ChainId.optimism) {
-    // } else if () {
+    const bridgeExecutorContract = new ethers.Contract(
+      AaveGovernanceV2.OPTIMISM_BRIDGE_EXECUTOR,
+      optimismBridgeExecutorABI,
+      provider,
+    );
+    const guardian = await bridgeExecutorContract.getGuardian();
+    const ethereumGovExecutor =
+      await bridgeExecutorContract.getEthereumGovernanceExecutor();
+
+    obj['OptimismBridgeExecutor'] = {
+      address: AaveGovernanceV2.OPTIMISM_BRIDGE_EXECUTOR,
+      modifiers: [
+        {
+          modifier: 'onlyGuardian',
+          addresses: [
+            {
+              address: guardian,
+              owners: await getSafeOwners(provider, guardian),
+            },
+          ],
+          functions: roles['OptimismBridgeExecutor']['onlyGuardian'],
+        },
+        {
+          modifier: 'onlyThis',
+          addresses: [
+            {
+              address: AaveGovernanceV2.OPTIMISM_BRIDGE_EXECUTOR,
+              owners: [],
+            },
+          ],
+          functions: roles['OptimismBridgeExecutor']['onlyThis'],
+        },
+        {
+          modifier: 'onlyEthereumGovernanceExecutor',
+          addresses: [
+            {
+              address: ethereumGovExecutor,
+              owners: await getSafeOwners(provider, ethereumGovExecutor),
+            },
+          ],
+          functions:
+            roles['OptimismBridgeExecutor']['onlyEthereumGovernanceExecutor'],
+        },
+      ],
+    };
+  } else if (chainId === ChainId.arbitrum_one) {
+    const bridgeExecutorContract = new ethers.Contract(
+      AaveGovernanceV2.ARBITRUM_BRIDGE_EXECUTOR,
+      optimismBridgeExecutorABI,
+      provider,
+    );
+    const guardian = await bridgeExecutorContract.getGuardian();
+    const ethereumGovExecutor =
+      await bridgeExecutorContract.getEthereumGovernanceExecutor();
+
+    obj['ArbitrumBridgeExecutor'] = {
+      address: AaveGovernanceV2.ARBITRUM_BRIDGE_EXECUTOR,
+      modifiers: [
+        {
+          modifier: 'onlyGuardian',
+          addresses: [
+            {
+              address: guardian,
+              owners: await getSafeOwners(provider, guardian),
+            },
+          ],
+          functions: roles['ArbitrumBridgeExecutor']['onlyGuardian'],
+        },
+        {
+          modifier: 'onlyThis',
+          addresses: [
+            {
+              address: AaveGovernanceV2.ARBITRUM_BRIDGE_EXECUTOR,
+              owners: [],
+            },
+          ],
+          functions: roles['ArbitrumBridgeExecutor']['onlyThis'],
+        },
+        {
+          modifier: 'onlyEthereumGovernanceExecutor',
+          addresses: [
+            {
+              address: ethereumGovExecutor,
+              owners: await getSafeOwners(provider, ethereumGovExecutor),
+            },
+          ],
+          functions:
+            roles['ArbitrumBridgeExecutor']['onlyEthereumGovernanceExecutor'],
+        },
+      ],
+    };
   } else {
     return {};
   }

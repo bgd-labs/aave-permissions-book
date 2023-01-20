@@ -1,6 +1,6 @@
 [
   {
-    "contract": "OptimismBridgeExecutor",
+    "contract": "ArbitrumBridgeExecutor",
     "functions": [
       {
         "name": "cancel",
