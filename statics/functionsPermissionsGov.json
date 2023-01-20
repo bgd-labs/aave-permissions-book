@@ -1,0 +1,61 @@
+[
+  {
+    "contract": "AaveGovernanceV2",
+    "proxyAdmin": false,
+    "functions": [
+      {
+        "name": "cancel",
+        "roles": ["onlyGuardian"]
+      },
+      {
+        "name": "__abdicate",
+        "roles": ["onlyGuardian"]
+      },
+      {
+        "name": "setGovernanceStrategy",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setVotingDelay",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "authorizeExecutors",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "unauthorizeExecutors",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "ExecutorWithTimelock",
+    "functions": [
+      {
+        "name": "setDelay",
+        "roles": ["onlyTimelock"]
+      },
+      {
+        "name": "acceptAdmin",
+        "roles": ["onlyPendingAdmin"]
+      },
+      {
+        "name": "setPendingAdmin",
+        "roles": ["onlyTimelock"]
+      },
+      {
+        "name": "queueTransaction",
+        "roles": ["onlyAdmin"]
+      },
+      {
+        "name": "cancelTransaction",
+        "roles": ["onlyAdmin"]
+      },
+      {
+        "name": "executeTransaction",
+        "roles": ["onlyAdmin"]
+      }
+    ]
+  }
+]

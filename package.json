@@ -1,15 +1,31 @@
 {
+  "name": "aave-permissions-list",
+  "description": "This repo is containing scripts for calculating and shownig addresses which hold permissions inside all contracts of Aave protocol. Tables with permissions are shown in the [out](./out/) folder.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "modifiers:generate": "ts-node scripts/modifiersCalculator.ts",
+    "tables:create": "ts-node scripts/createTables.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgd-labs/aave-permissions-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bgd-labs/aave-permissions-list/issues"
+  },
+  "homepage": "https://github.com/bgd-labs/aave-permissions-list#readme",
   "devDependencies": {
-    "@bgd-labs/aave-address-book": "^1.3.0",
-    "@types/lowdb": "^1.0.11",
+    "@aave/contract-helpers": "^1.12.0",
+    "@bgd-labs/aave-address-book": "^1.9.0",
     "@types/node": "^18.8.3",
     "dotenv": "^16.0.3",
     "ethers": "^5.7.1",
-    "keccak256": "^1.0.6",
-    "lowdb": "^1.0.0",
-    "postman-request": "^2.88.1-postman.31",
-    "request": "^2.88.2",
-    "sha3": "^2.1.4",
+    "prettier": "^2.8.1",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.3"
   }
 }

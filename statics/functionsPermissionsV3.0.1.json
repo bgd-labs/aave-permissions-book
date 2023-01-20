@@ -1,0 +1,365 @@
+[
+  {
+    "contract": "Pool",
+    "functions": [
+      {
+        "name": "mintUnbacked",
+        "roles": ["onlyBridge"]
+      },
+      {
+        "name": "backUnbacked",
+        "roles": ["onlyBridge"]
+      },
+      {
+        "name": "initReserve",
+        "roles": ["onlyPoolConfigurator"]
+      },
+      {
+        "name": "dropReserve",
+        "roles": ["onlyPoolConfigurator"]
+      },
+      {
+        "name": "setReserveInterestRateStrategyAddress",
+        "roles": ["onlyPoolConfigurator"]
+      },
+      {
+        "name": "setConfiguration",
+        "roles": ["onlyPoolConfigurator"]
+      },
+      {
+        "name": "updateBridgeProtocolFee",
+        "roles": ["onlyPoolConfigurator"]
+      },
+      {
+        "name": "updateFlashloanPremiums",
+        "roles": ["onlyPoolConfigurator"]
+      },
+      {
+        "name": "configureEModeCategory",
+        "roles": ["onlyPoolConfigurator"]
+      },
+      {
+        "name": "resetIsolationModeTotalDebt",
+        "roles": ["onlyPoolConfigurator"]
+      },
+      {
+        "name": "rescueTokens",
+        "roles": ["onlyPoolAdmin"]
+      }
+    ]
+  },
+  {
+    "contract": "PoolConfigurator",
+    "functions": [
+      {
+        "name": "initReserves",
+        "roles": ["onlyAssetListingOrPoolAdmins"]
+      },
+      {
+        "name": "dropReserve",
+        "roles": ["onlyPoolAdmin"]
+      },
+      {
+        "name": "dropReserve",
+        "roles": ["onlyPoolAdmin"]
+      },
+      {
+        "name": "updateAToken",
+        "roles": ["onlyPoolAdmin"]
+      },
+      {
+        "name": "updateStableDebtToken",
+        "roles": ["onlyPoolAdmin"]
+      },
+      {
+        "name": "updateVariableDebtToken",
+        "roles": ["onlyPoolAdmin"]
+      },
+      {
+        "name": "setReserveActive",
+        "roles": ["onlyPoolAdmin"]
+      },
+      {
+        "name": "updateBridgeProtocolFee",
+        "roles": ["onlyPoolAdmin"]
+      },
+      {
+        "name": "updateFlashloanPremiumTotal",
+        "roles": ["onlyPoolAdmin"]
+      },
+      {
+        "name": "updateFlashloanPremiumToProtocol",
+        "roles": ["onlyPoolAdmin"]
+      },
+      {
+        "name": "setPoolPause",
+        "roles": ["onlyEmergencyAdmin"]
+      },
+      {
+        "name": "setReserveBorrowing",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setReserveBorrowing",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "configureReserveAsCollateral",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setReserveStableRateBorrowing",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setReserveFreeze",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setBorrowableInIsolation",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setReserveFactor",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setDebtCeiling",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setSiloedBorrowing",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setBorrowCap",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setSupplyCap",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setLiquidationProtocolFee",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setEModeCategory",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setAssetEModeCategory",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setUnbackedMintCap",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setReserveInterestRateStrategyAddress",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      },
+      {
+        "name": "setReservePause",
+        "roles": ["onlyEmergencyOrPoolAdmin"]
+      },
+      {
+        "name": "setReserveFlashLoaning",
+        "roles": ["onlyRiskOrPoolAdmins"]
+      }
+    ]
+  },
+  {
+    "contract": "AaveOracle",
+    "functions": [
+      {
+        "name": "setAssetSources",
+        "roles": ["onlyAssetListingOrPoolAdmins"]
+      },
+      {
+        "name": "setFallbackOracle",
+        "roles": ["onlyAssetListingOrPoolAdmins"]
+      }
+    ]
+  },
+  {
+    "contract": "Collector",
+    "proxyAdmin": true,
+    "functions": [
+      {
+        "name": "approve",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "transfer",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "setFundsAdmin",
+        "roles": ["onlyFundsAdmin"]
+      }
+    ]
+  },
+  {
+    "contract": "CollectorController",
+    "functions": [
+      {
+        "name": "approve",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "transfer",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "RewardsController",
+    "proxyAdmin": true,
+    "functions": [
+      {
+        "name": "configureAssets",
+        "roles": ["onlyEmissionManager"]
+      },
+      {
+        "name": "setTransferStrategy",
+        "roles": ["onlyEmissionManager"]
+      },
+      {
+        "name": "setRewardOracle",
+        "roles": ["onlyEmissionManager"]
+      },
+      {
+        "name": "setClaimer",
+        "roles": ["onlyEmissionManager"]
+      }
+    ]
+  },
+  {
+    "contract": "PoolAddressesProvider",
+    "proxyAdmin": false,
+    "functions": [
+      {
+        "name": "setMarketId",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setAddress",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setAddressAsProxy",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setPoolImpl",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setPoolConfiguratorImpl",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setPriceOracle",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setACLManager",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setACLAdmin",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setPriceOracleSentinel",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setPoolDataProvider",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "PoolAddressesProviderRegistry",
+    "functions": [
+      {
+        "name": "registerAddressesProvider",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "unregisterAddressesProvider",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "WrappedTokenGatewayV3",
+    "functions": [
+      {
+        "name": "emergencyTokenTransfer",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "emergencyEtherTransfer",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "ParaSwapLiquiditySwapAdapter",
+    "functions": [
+      {
+        "name": "rescueTokens",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "ParaSwapRepayAdapter",
+    "functions": [
+      {
+        "name": "rescueTokens",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "EmissionManager",
+    "functions": [
+      {
+        "name": "setClaimer",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setEmissionAdmin",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setRewardsController",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setDistributionEnd",
+        "roles": ["onlyEmissionAdmin"]
+      },
+      {
+        "name": "setRewardOracle",
+        "roles": ["onlyEmissionAdmin"]
+      },
+      {
+        "name": "setTransferStrategy",
+        "roles": ["onlyEmissionAdmin"]
+      },
+      {
+        "name": "configureAssets",
+        "roles": ["onlyEmissionAdmin"]
+      },
+      {
+        "name": "setEmissionPerSecond",
+        "roles": ["onlyEmissionAdmin"]
+      }
+    ]
+  }
+]
