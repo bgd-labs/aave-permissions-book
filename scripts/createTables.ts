@@ -25,10 +25,10 @@ export const generateTables = async () => {
     readmeDirectory += `- ${networkName} \n`;
     const networkPermits = aavePermissionsList[network];
 
-    // create network Readme with pool tables
-    let readmeByNetwork = `# ${networkName} \n`;
-
     for (let pool of Object.keys(networkPermits)) {
+      // create network Readme with pool tables
+      let readmeByNetwork = `# ${networkName} \n`;
+
       const poolGuardians: Record<string, string[]> = {};
       const poolPermitsByContract = networkPermits[pool];
       // create pool table
