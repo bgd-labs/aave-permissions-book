@@ -244,20 +244,6 @@ export const resolveV3Modifiers = async (
     ],
   };
 
-  // const addressProviderRegistry = new ethers.Contract(
-  //   poolAddressProviderRegistryAddress,
-  //   onlyOwnerAbi,
-  //   provider,
-  // );
-  // const addressProviderRegistryOwner = await addressProviderRegistry.owner();
-  // addModifier(
-  //   network,
-  //   addressProviderRegistryOwner,
-  //   index,
-  //   'PoolAddressesProviderRegistry',
-  //   'onlyOwner',
-  // );
-
   const collectorController = new ethers.Contract(
     addressBook.COLLECTOR_CONTROLLER,
     onlyOwnerAbi,
@@ -307,45 +293,23 @@ export const resolveV3Modifiers = async (
 
   // for now, we use the same as practically there is only one rewards controller and emission manager
   // but could be that there is one of these for every token
+  obj['RewardsController'] = {
+    address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
+    modifiers: [
+      {
+        modifier: 'onlyEmissionManager',
+        addresses: [
+          {
+            address: addressBook.EMISSION_MANAGER,
+            owners: await getSafeOwners(provider, addressBook.EMISSION_MANAGER),
+          },
+        ],
+        functions: roles['RewardsController']['onlyEmissionManager'],
+      },
+    ],
+  };
   if (chainId === ChainId.mainnet) {
-    obj['RewardsController'] = {
-      address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
-      proxyAdmin: addressBook.POOL_ADDRESSES_PROVIDER,
-      modifiers: [
-        {
-          modifier: 'onlyEmissionManager',
-          addresses: [
-            {
-              address: addressBook.EMISSION_MANAGER,
-              owners: await getSafeOwners(
-                provider,
-                addressBook.EMISSION_MANAGER,
-              ),
-            },
-          ],
-          functions: roles['RewardsController']['onlyEmissionManager'],
-        },
-      ],
-    };
-  } else {
-    obj['RewardsController'] = {
-      address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
-      modifiers: [
-        {
-          modifier: 'onlyEmissionManager',
-          addresses: [
-            {
-              address: addressBook.EMISSION_MANAGER,
-              owners: await getSafeOwners(
-                provider,
-                addressBook.EMISSION_MANAGER,
-              ),
-            },
-          ],
-          functions: roles['RewardsController']['onlyEmissionManager'],
-        },
-      ],
-    };
+    obj['RewardsController'].proxyAdmin = addressBook.POOL_ADDRESSES_PROVIDER;
   }
 
   const wethGatewayContract = new ethers.Contract(
@@ -448,6 +412,29 @@ export const resolveV3Modifiers = async (
       //   ],
       //   functions: roles['EmissionManager']['onlyEmissionAdmin'],
       // },
+    ],
+  };
+
+  const addressesRegistryContract = new ethers.Contract(
+    addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
+    onlyOwnerAbi,
+    provider,
+  );
+  const addressRegistryOwner = await addressesRegistryContract.owner();
+
+  obj['PoolAddressesProviderRegistry'] = {
+    address: addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: addressRegistryOwner,
+            owners: await getSafeOwners(provider, addressRegistryOwner),
+          },
+        ],
+        functions: roles['PoolAddressesProviderRegistry']['onlyOwner'],
+      },
     ],
   };
 

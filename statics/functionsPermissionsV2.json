@@ -231,5 +231,18 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "LendingPoolAddressesProviderRegistry",
+    "functions": [
+      {
+        "name": "registerAddressesProvider",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "unregisterAddressesProvider",
+        "roles": ["onlyOwner"]
+      }
+    ]
   }
 ]

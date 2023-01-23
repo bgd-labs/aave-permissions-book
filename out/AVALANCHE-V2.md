@@ -12,6 +12,7 @@
 |  [WrappedTokenGatewayV2](https://snowtrace.io/address/0xC27d4dBefc2C0CE57916a699971b58a3BD9C7d5b) |  - |  onlyOwner |  [Guardian2](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2EcF2a2e74B19Aab2a62312167aFF4B78E93B6C5) |  - |  onlyOwner |  [0x05182E579FDfCf69E4390c3411D8FeA1fb6467cf](https://snowtrace.io/address/0x05182E579FDfCf69E4390c3411D8FeA1fb6467cf) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x935b362EE3E1f342cc48118C528AAbee5118F6e6) |  - |  onlyOwner |  [0x05182E579FDfCf69E4390c3411D8FeA1fb6467cf](https://snowtrace.io/address/0x05182E579FDfCf69E4390c3411D8FeA1fb6467cf) |  rescueTokens | |--------|--------|--------|--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://snowtrace.io/address/0x4235E22d9C3f28DCDA82b58276cb6370B01265C2) |  - |  onlyOwner |  [Guardian1](https://snowtrace.io/address/0x01244E7842254e3FD229CD263472076B1439D1Cd) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Owners |

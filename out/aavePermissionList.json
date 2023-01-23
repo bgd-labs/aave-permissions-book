@@ -221,7 +221,6 @@
         },
         "RewardsController": {
           "address": "0x8164Cc65827dcFe994AB23944CBC90e0aa80bFcb",
-          "proxyAdmin": "0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e",
           "modifiers": [
             {
               "modifier": "onlyEmissionManager",
@@ -238,7 +237,8 @@
                 "setClaimer"
               ]
             }
-          ]
+          ],
+          "proxyAdmin": "0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e"
         },
         "WrappedTokenGatewayV3": {
           "address": "0xD322A49006FC828F9B5B37Ab215F99B4E5caB19C",
@@ -310,6 +310,24 @@
               ]
             }
           ]
+        },
+        "PoolAddressesProviderRegistry": {
+          "address": "0xbaA999AC55EAce41CcAE355c77809e68Bb345170",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "registerAddressesProvider",
+                "unregisterAddressesProvider"
+              ]
+            }
+          ]
         }
       },
       "roles": {
@@ -328,7 +346,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16470221
+        "latestBlockNumber": 16470747
       }
     },
     "V2": {
@@ -573,6 +591,32 @@
               ],
               "functions": [
                 "rescueTokens"
+              ]
+            }
+          ]
+        },
+        "LendingPoolAddressesProviderRegistry": {
+          "address": "0x52D306e36E3B6B02c153d0266ff0f85d18BCD413",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xB9062896ec3A615a4e4444DF183F0531a77218AE",
+                  "owners": [
+                    "0xa81cF4389f493Fee9FC0fA69510b48D3E2Bfd3ce",
+                    "0x8eC8a830005688dc153b341A779904D6FcA04092",
+                    "0xf0919eC356e4221e0b8C8b0d1992Bdc0D7475e4E",
+                    "0xB0c9C5B5211dE3a75b61BB798887b76AcCD64193",
+                    "0x106fc088aBA908130fBC343F2F6d212Ff36150D1",
+                    "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
+                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30"
+                  ]
+                }
+              ],
+              "functions": [
+                "registerAddressesProvider",
+                "unregisterAddressesProvider"
               ]
             }
           ]
@@ -1002,6 +1046,32 @@
               "functions": [
                 "emergencyTokenTransfer",
                 "emergencyEtherTransfer"
+              ]
+            }
+          ]
+        },
+        "LendingPoolAddressesProviderRegistry": {
+          "address": "0x52D306e36E3B6B02c153d0266ff0f85d18BCD413",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xB9062896ec3A615a4e4444DF183F0531a77218AE",
+                  "owners": [
+                    "0xa81cF4389f493Fee9FC0fA69510b48D3E2Bfd3ce",
+                    "0x8eC8a830005688dc153b341A779904D6FcA04092",
+                    "0xf0919eC356e4221e0b8C8b0d1992Bdc0D7475e4E",
+                    "0xB0c9C5B5211dE3a75b61BB798887b76AcCD64193",
+                    "0x106fc088aBA908130fBC343F2F6d212Ff36150D1",
+                    "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
+                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30"
+                  ]
+                }
+              ],
+              "functions": [
+                "registerAddressesProvider",
+                "unregisterAddressesProvider"
               ]
             }
           ]
@@ -1603,6 +1673,35 @@
             }
           ]
         },
+        "PoolAddressesProviderRegistry": {
+          "address": "0x770ef9f4fe897e59daCc474EF11238303F9552b6",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
+                  "owners": [
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
+                    "0x4C30E33758216aD0d676419c21CB8D014C68099f",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                    "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                    "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                    "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                    "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                    "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
+                  ]
+                }
+              ],
+              "functions": [
+                "registerAddressesProvider",
+                "unregisterAddressesProvider"
+              ]
+            }
+          ]
+        },
         "OptimismBridgeExecutor": {
           "address": "0x7d9103572bE58FfE99dc390E8246f02dcAe6f611",
           "modifiers": [
@@ -1679,7 +1778,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 69945741
+        "latestBlockNumber": 69965896
       }
     }
   },
@@ -2020,6 +2119,24 @@
             }
           ]
         },
+        "PoolAddressesProviderRegistry": {
+          "address": "0x770ef9f4fe897e59daCc474EF11238303F9552b6",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "registerAddressesProvider",
+                "unregisterAddressesProvider"
+              ]
+            }
+          ]
+        },
         "PolygonBridgeExecutor": {
           "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
           "modifiers": [
@@ -2108,7 +2225,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 38432920
+        "latestBlockNumber": 38435896
       }
     },
     "V2": {
@@ -2353,6 +2470,32 @@
               ],
               "functions": [
                 "rescueTokens"
+              ]
+            }
+          ]
+        },
+        "LendingPoolAddressesProviderRegistry": {
+          "address": "0x3ac4e9aa29940770aeC38fe853a4bbabb2dA9C19",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xBb2F3BA4a63982eD6D93c190c28B15CBBA0B6AF3",
+                  "owners": [
+                    "0x8eC8a830005688dc153b341A779904D6FcA04092",
+                    "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
+                    "0xB0c9C5B5211dE3a75b61BB798887b76AcCD64193",
+                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30",
+                    "0xf0919eC356e4221e0b8C8b0d1992Bdc0D7475e4E",
+                    "0x106fc088aBA908130fBC343F2F6d212Ff36150D1",
+                    "0x357B7E9AcD156c0f930B75c6aE6A42F3D9173042"
+                  ]
+                }
+              ],
+              "functions": [
+                "registerAddressesProvider",
+                "unregisterAddressesProvider"
               ]
             }
           ]
@@ -2792,6 +2935,35 @@
               ]
             }
           ]
+        },
+        "PoolAddressesProviderRegistry": {
+          "address": "0x770ef9f4fe897e59daCc474EF11238303F9552b6",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
+                  "owners": [
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
+                    "0x4C30E33758216aD0d676419c21CB8D014C68099f",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                    "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                    "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                    "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                    "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                    "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
+                  ]
+                }
+              ],
+              "functions": [
+                "registerAddressesProvider",
+                "unregisterAddressesProvider"
+              ]
+            }
+          ]
         }
       },
       "roles": {
@@ -2810,7 +2982,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 54280225
+        "latestBlockNumber": 54285554
       }
     }
   },
@@ -3270,6 +3442,35 @@
             }
           ]
         },
+        "PoolAddressesProviderRegistry": {
+          "address": "0x770ef9f4fe897e59daCc474EF11238303F9552b6",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb",
+                  "owners": [
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                    "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                    "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
+                    "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                    "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
+                    "0x4C30E33758216aD0d676419c21CB8D014C68099f"
+                  ]
+                }
+              ],
+              "functions": [
+                "registerAddressesProvider",
+                "unregisterAddressesProvider"
+              ]
+            }
+          ]
+        },
         "ArbitrumBridgeExecutor": {
           "address": "0x7d9103572bE58FfE99dc390E8246f02dcAe6f611",
           "modifiers": [
@@ -3346,7 +3547,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 54937923
+        "latestBlockNumber": 54957557
       }
     }
   },
@@ -3785,6 +3986,35 @@
               ]
             }
           ]
+        },
+        "PoolAddressesProviderRegistry": {
+          "address": "0x770ef9f4fe897e59daCc474EF11238303F9552b6",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "owners": [
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
+                    "0x4C30E33758216aD0d676419c21CB8D014C68099f",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                    "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                    "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                    "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                    "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                    "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
+                  ]
+                }
+              ],
+              "functions": [
+                "registerAddressesProvider",
+                "unregisterAddressesProvider"
+              ]
+            }
+          ]
         }
       },
       "roles": {
@@ -3805,7 +4035,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 25315152
+        "latestBlockNumber": 25318309
       }
     },
     "V2": {
@@ -4050,6 +4280,35 @@
               ],
               "functions": [
                 "rescueTokens"
+              ]
+            }
+          ]
+        },
+        "LendingPoolAddressesProviderRegistry": {
+          "address": "0x4235E22d9C3f28DCDA82b58276cb6370B01265C2",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x01244E7842254e3FD229CD263472076B1439D1Cd",
+                  "owners": [
+                    "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                    "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                    "0x7390A48219636571408c58582F6F9175d7Cc9d77",
+                    "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                    "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                    "0xB0b42c4931e370c001B24AE0ef89443C84201991",
+                    "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                    "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
+                    "0xE8D848debB3A3e12AA815b15900c8E020B863F31",
+                    "0xf68142d964297aDB5866CF08885Dc299AA4058f5"
+                  ]
+                }
+              ],
+              "functions": [
+                "registerAddressesProvider",
+                "unregisterAddressesProvider"
               ]
             }
           ]

@@ -10,7 +10,36 @@ import {
 } from '../helpers/tables';
 import { utils } from 'ethers';
 import { getPrincipalReadme } from './readme';
+import { ContractsByAddress, PoolGuardians } from '../helpers/types';
 
+export const generateTableAddress = (
+  address: string | undefined,
+  contractsByAddress: ContractsByAddress,
+  poolGuardians: PoolGuardians,
+  network: string,
+): string => {
+  const checkSummedAddress = address ? utils.getAddress(address) : null;
+
+  return checkSummedAddress
+    ? '[' +
+        (contractsByAddress[checkSummedAddress]
+          ? contractsByAddress[checkSummedAddress]
+          : poolGuardians[checkSummedAddress]
+          ? 'Guardian' +
+            (Object.keys(poolGuardians).indexOf(checkSummedAddress) + 1)
+          : checkSummedAddress) +
+        '](' +
+        (contractsByAddress[checkSummedAddress] &&
+        (contractsByAddress[checkSummedAddress] === 'ShortExecutor' ||
+          contractsByAddress[checkSummedAddress] === 'LongExecutor')
+          ? explorerAddressUrlComposer(
+              checkSummedAddress,
+              ChainId.mainnet.toString(),
+            )
+          : explorerAddressUrlComposer(checkSummedAddress, network)) +
+        ')'
+    : '-';
+};
 export const generateTables = async () => {
   const aavePermissionsList = getAllPermissionsJson();
 
@@ -76,71 +105,22 @@ export const generateTables = async () => {
               contract.address,
               network,
             )})`,
-            `${
-              contract.proxyAdmin
-                ? '[' +
-                  (contractsByAddress[utils.getAddress(contract.proxyAdmin)]
-                    ? contractsByAddress[utils.getAddress(contract.proxyAdmin)]
-                    : poolGuardians[utils.getAddress(contract.proxyAdmin)]
-                    ? 'Guardian' +
-                      (Object.keys(poolGuardians).indexOf(
-                        utils.getAddress(contract.proxyAdmin),
-                      ) +
-                        1)
-                    : utils.getAddress(contract.proxyAdmin)) +
-                  '](' +
-                  (contractsByAddress[utils.getAddress(contract.proxyAdmin)] &&
-                  (contractsByAddress[utils.getAddress(contract.proxyAdmin)] ===
-                    'ShortExecutor' ||
-                    contractsByAddress[
-                      utils.getAddress(contract.proxyAdmin)
-                    ] === 'LongExecutor')
-                    ? explorerAddressUrlComposer(
-                        contract.proxyAdmin,
-                        ChainId.mainnet.toString(),
-                      )
-                    : explorerAddressUrlComposer(
-                        contract.proxyAdmin,
-                        network,
-                      )) +
-                  ')'
-                : '-'
-            }`,
+            `${generateTableAddress(
+              contract.proxyAdmin,
+              contractsByAddress,
+              poolGuardians,
+              network,
+            )}`,
             `${modifier.modifier}`,
             `${modifier.addresses
-              .map((modifierAddress) => {
-                return (
-                  '[' +
-                  (contractsByAddress[modifierAddress.address]
-                    ? contractsByAddress[modifierAddress.address]
-                    : poolGuardians[modifierAddress.address]
-                    ? 'Guardian' +
-                      (Object.keys(poolGuardians).indexOf(
-                        modifierAddress.address,
-                      ) +
-                        1)
-                    : modifierAddress.address) +
-                  '](' +
-                  (contractsByAddress[
-                    utils.getAddress(modifierAddress.address)
-                  ] &&
-                  (contractsByAddress[
-                    utils.getAddress(modifierAddress.address)
-                  ] === 'ShortExecutor' ||
-                    contractsByAddress[
-                      utils.getAddress(modifierAddress.address)
-                    ] === 'LongExecutor')
-                    ? explorerAddressUrlComposer(
-                        modifierAddress.address,
-                        ChainId.mainnet.toString(),
-                      )
-                    : explorerAddressUrlComposer(
-                        modifierAddress.address,
-                        network,
-                      )) +
-                  ')'
-                );
-              })
+              .map((modifierAddress) =>
+                generateTableAddress(
+                  modifierAddress.address,
+                  contractsByAddress,
+                  poolGuardians,
+                  network,
+                ),
+              )
               .join(', ')}`,
             modifier.functions.join(', '),
           ]);
@@ -163,15 +143,10 @@ export const generateTables = async () => {
           guardianTable += getTableBody([
             `[${guardian}](${explorerAddressUrlComposer(guardian, network)})`,
             `${poolGuardians[guardian]
-              .map((owner) => {
-                return (
-                  '[' +
-                  owner +
-                  '](' +
-                  explorerAddressUrlComposer(owner, network) +
-                  ')'
-                );
-              })
+              .map(
+                (owner) =>
+                  `[${owner}](${explorerAddressUrlComposer(owner, network)})`,
+              )
               .join(', ')}`,
           ]);
           guardianTable += getLineSeparator(guardianHeaderTitles.length);
@@ -195,20 +170,14 @@ export const generateTables = async () => {
           adminTable += getTableBody([
             role,
             `${roleAddresses
-              .map((roleAddress) => {
-                return (
-                  '[' +
-                  (contractsByAddress[roleAddress]
-                    ? contractsByAddress[roleAddress]
-                    : poolGuardians[roleAddress]
-                    ? 'Guardian' +
-                      (Object.keys(poolGuardians).indexOf(roleAddress) + 1)
-                    : roleAddress) +
-                  '](' +
-                  explorerAddressUrlComposer(roleAddress, network) +
-                  ')'
-                );
-              })
+              .map((roleAddress) =>
+                generateTableAddress(
+                  roleAddress,
+                  contractsByAddress,
+                  poolGuardians,
+                  network,
+                ),
+              )
               .join(', ')}`,
           ]);
           adminTable += getLineSeparator(adminsHeaderTitles.length);
