@@ -99,7 +99,7 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: AaveV2Ethereum,
       },
       [Pools.ARC]: {
-        permissionsJson: './statics/functionsPermissionsARC.json',
+        permissionsJson: './statics/functionsPermissionsArc.json',
         addressBook: AaveV2EthereumArc,
       },
       [Pools.AMM]: {
