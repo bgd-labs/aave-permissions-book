@@ -91,4 +91,4 @@ To generate the permissions tables, execute:
 
 
 ## License
-
+This repository is under [MIT License](./LICENSE)
