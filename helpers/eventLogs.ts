@@ -31,18 +31,18 @@ export const getLogs = async (
     toBlock = currentBlock;
   }
 
-  console.log(`from: ${fromBlock} to: ${toBlock}`);
-
   // get All logs of stream creation
-  const streamCreatedFilter = {
+  const logEventFilter = {
     address,
     topics: [topic0, topic1, topic2, topic3],
     fromBlock,
     toBlock,
   };
   try {
-    const streamsCreated = await provider.getLogs(streamCreatedFilter);
-    logs.push(...streamsCreated);
+    const logEvents = await provider.getLogs(logEventFilter);
+    logs.push(...logEvents);
+
+    console.log(`from: ${fromBlock} to: ${toBlock} logs: ${logEvents.length}`);
 
     return await getLogs(
       provider,
@@ -51,7 +51,7 @@ export const getLogs = async (
       logs,
       limit,
       timeout,
-      retries,
+      0, // if last call was successful, reset retries
       topic0,
       topic1,
       topic2,
@@ -59,7 +59,7 @@ export const getLogs = async (
     );
   } catch (error) {
     // @ts-ignore
-    console.log('error', error.code);
+    console.log('error=> ', error.code);
     // @ts-ignore
     if (error.code === 'TIMEOUT') {
       if (timeout) {
@@ -80,10 +80,12 @@ export const getLogs = async (
           topic2,
           topic3,
         );
+      } else {
+        return { eventLogs: logs, finalBlock: fromBlock };
       }
+    } else {
+      // throw error;
+      return { eventLogs: logs, finalBlock: fromBlock };
     }
-
-    // );
-    throw error;
   }
 };

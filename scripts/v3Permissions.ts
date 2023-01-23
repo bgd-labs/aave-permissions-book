@@ -308,10 +308,6 @@ export const resolveV3Modifiers = async (
   // for now, we use the same as practically there is only one rewards controller and emission manager
   // but could be that there is one of these for every token
   if (chainId === ChainId.mainnet) {
-    console.log(
-      'addressBook.POOL_ADDRESSES_PROVIDER: ',
-      addressBook.POOL_ADDRESSES_PROVIDER,
-    );
     obj['RewardsController'] = {
       address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
       proxyAdmin: addressBook.POOL_ADDRESSES_PROVIDER,
