@@ -81,19 +81,19 @@ export enum Pools {
 }
 
 export const networkConfigs: NetworkConfigs = {
-  'tenderly-mainnet': {
-    rpcUrl: 'https://rpc.tenderly.co/fork/82b65f8e-69eb-4b07-b365-190fc84f63bb',
-    explorer: '',
-    pools: {
-      [Pools.V3]: {
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        aclBlock: 16291117,
-        addressBook: AaveV3Ethereum,
-      },
-    },
-  },
+  // 'tenderly-mainnet': {
+  //   rpcUrl: 'https://rpc.tenderly.co/fork/82b65f8e-69eb-4b07-b365-190fc84f63bb',
+  //   explorer: '',
+  //   pools: {
+  //     [Pools.V3]: {
+  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+  //       aclBlock: 16291117,
+  //       addressBook: AaveV3Ethereum,
+  //     },
+  //   },
+  // },
   [ChainId.mainnet]: {
-    rpcUrl: process.env.RPC_ETHEREUM,
+    rpcUrl: process.env.RPC_MAINNET,
     explorer: 'https://etherscan.io',
     pools: {
       [Pools.V3]: {
@@ -110,7 +110,7 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: AaveV2Ethereum,
       },
       [Pools.ARC]: {
-        permissionsJson: './statics/functionsPermissionsARC.json',
+        permissionsJson: './statics/functionsPermissionsArc.json',
         addressBook: AaveV2EthereumArc,
       },
       [Pools.AMM]: {

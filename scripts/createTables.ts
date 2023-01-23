@@ -1,5 +1,5 @@
 import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem';
-import { Modifier, networkConfigs, Pools } from '../helpers/configs';
+import { Pools } from '../helpers/configs';
 import { explorerAddressUrlComposer } from '../helpers/explorer';
 import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
 import { generateContractsByAddress } from '../helpers/jsonParsers';
@@ -8,31 +8,31 @@ import {
   getTableBody,
   getTableHeader,
 } from '../helpers/tables';
-import { getSafeOwners } from '../helpers/guardian';
-import { providers, utils } from 'ethers';
+import { utils } from 'ethers';
+import { getPrincipalReadme } from './readme';
 
 export const generateTables = async () => {
   const aavePermissionsList = getAllPermissionsJson();
 
   // create readme string
-  let readmeDirectory = '# Directory \n';
+  let readmeDirectory = '';
 
   const mainnetPermissions = aavePermissionsList[ChainId.mainnet.toString()];
 
   for (let network of Object.keys(aavePermissionsList)) {
     const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
-    readmeDirectory += `## ${networkName} \n`;
+    readmeDirectory += `- ${networkName} \n`;
     const networkPermits = aavePermissionsList[network];
 
-    // create network Readme with pool tables
-    let readmeByNetwork = `# ${networkName} \n`;
-
     for (let pool of Object.keys(networkPermits)) {
+      // create network Readme with pool tables
+      let readmeByNetwork = `# ${networkName} \n`;
+
       const poolGuardians: Record<string, string[]> = {};
       const poolPermitsByContract = networkPermits[pool];
       // create pool table
       readmeByNetwork += `## ${pool} \n`;
-      readmeDirectory += `- [${pool}](./${networkName}.md#${pool}) \n`;
+      readmeDirectory += `  - [${pool}](./${networkName}-${pool}.md) \n`;
 
       let contractsByAddress = generateContractsByAddress(
         poolPermitsByContract.contracts,
@@ -149,6 +149,8 @@ export const generateTables = async () => {
       }
 
       contractTable += tableBody;
+
+      readmeDirectory += `    - [Contracts](./${networkName}-${pool}.md#contracts) \n`;
       readmeByNetwork += contractTable + '\n';
 
       if (Object.keys(poolGuardians).length > 0) {
@@ -174,6 +176,8 @@ export const generateTables = async () => {
           ]);
           guardianTable += getLineSeparator(guardianHeaderTitles.length);
         });
+
+        readmeDirectory += `    - [Guardians](./${networkName}-${pool}.md#Guardians) \n`;
         readmeByNetwork += guardianTable + '\n';
       }
       let adminTable = `### Admins \n`;
@@ -211,16 +215,14 @@ export const generateTables = async () => {
         });
 
         readmeByNetwork += adminTable + '\n';
+        readmeDirectory += `    - [Admins](./${networkName}-${pool}.md#Admins) \n`;
       }
-    }
 
-    saveJson(
-      `./out/${ChainIdToNetwork[Number(network)].toUpperCase()}.md`,
-      readmeByNetwork,
-    );
+      saveJson(`./out/${networkName}-${pool}.md`, readmeByNetwork);
+    }
   }
 
-  saveJson('./out/DIRECTORY.md', readmeDirectory);
+  saveJson('./README.md', getPrincipalReadme(readmeDirectory));
 };
 
 generateTables();

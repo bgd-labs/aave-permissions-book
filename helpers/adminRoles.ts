@@ -76,8 +76,7 @@ export const getCurrentRoleAdmins = async (
     limit = 999;
     timeout = 10000;
   }
-  console.log('chainId:', chainId);
-  console.log('limit: ', limit);
+
   const { eventLogs, finalBlock } = await getLogs(
     provider,
     aclManager,
@@ -86,7 +85,7 @@ export const getCurrentRoleAdmins = async (
     limit,
     timeout,
   );
-  console.log('event logs: ', eventLogs);
+
   // get roleGranted events
   const roleGrantedTopic0 = utils.id('RoleGranted(bytes32,address,address)');
   const roleRevokedTopic0 = utils.id('RoleRevoked(bytes32,address,address)');
@@ -133,7 +132,7 @@ export const getCurrentRoleAdmins = async (
   roleNames.forEach((roleName) => {
     if (!roles[roleName]) roles[roleName] = [];
   });
-  console.log('roes: ', roles);
+  // console.log('roes: ', roles);
   // console.log('-------------------------------');
   return { role: roles, latestBlockNumber: finalBlock };
 };

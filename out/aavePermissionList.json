@@ -328,7 +328,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16449210
+        "latestBlockNumber": 16470221
       }
     },
     "V2": {
@@ -462,15 +462,13 @@
                 {
                   "address": "0xB9062896ec3A615a4e4444DF183F0531a77218AE",
                   "owners": [
+                    "0xa81cF4389f493Fee9FC0fA69510b48D3E2Bfd3ce",
                     "0x8eC8a830005688dc153b341A779904D6FcA04092",
                     "0xf0919eC356e4221e0b8C8b0d1992Bdc0D7475e4E",
                     "0xB0c9C5B5211dE3a75b61BB798887b76AcCD64193",
                     "0x106fc088aBA908130fBC343F2F6d212Ff36150D1",
-                    "0x30Fe242a69D7694a931791429815DB792E24cF97",
                     "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
-                    "0xCE990b1f86e954746AD3a57F5Aa6CFa9CC0c3348",
-                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30",
-                    "0x60C8dC4762b217b4A00FF1824111077f331B1FbF"
+                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30"
                   ]
                 }
               ],
@@ -893,15 +891,13 @@
                 {
                   "address": "0xB9062896ec3A615a4e4444DF183F0531a77218AE",
                   "owners": [
+                    "0xa81cF4389f493Fee9FC0fA69510b48D3E2Bfd3ce",
                     "0x8eC8a830005688dc153b341A779904D6FcA04092",
                     "0xf0919eC356e4221e0b8C8b0d1992Bdc0D7475e4E",
                     "0xB0c9C5B5211dE3a75b61BB798887b76AcCD64193",
                     "0x106fc088aBA908130fBC343F2F6d212Ff36150D1",
-                    "0x30Fe242a69D7694a931791429815DB792E24cF97",
                     "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
-                    "0xCE990b1f86e954746AD3a57F5Aa6CFa9CC0c3348",
-                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30",
-                    "0x60C8dC4762b217b4A00FF1824111077f331B1FbF"
+                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30"
                   ]
                 }
               ],
@@ -938,15 +934,13 @@
                 {
                   "address": "0xB9062896ec3A615a4e4444DF183F0531a77218AE",
                   "owners": [
+                    "0xa81cF4389f493Fee9FC0fA69510b48D3E2Bfd3ce",
                     "0x8eC8a830005688dc153b341A779904D6FcA04092",
                     "0xf0919eC356e4221e0b8C8b0d1992Bdc0D7475e4E",
                     "0xB0c9C5B5211dE3a75b61BB798887b76AcCD64193",
                     "0x106fc088aBA908130fBC343F2F6d212Ff36150D1",
-                    "0x30Fe242a69D7694a931791429815DB792E24cF97",
                     "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
-                    "0xCE990b1f86e954746AD3a57F5Aa6CFa9CC0c3348",
-                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30",
-                    "0x60C8dC4762b217b4A00FF1824111077f331B1FbF"
+                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30"
                   ]
                 }
               ],
@@ -1685,7 +1679,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 69317773
+        "latestBlockNumber": 69945741
       }
     }
   },
@@ -2114,7 +2108,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 38315867
+        "latestBlockNumber": 38432920
       }
     },
     "V2": {
@@ -2816,7 +2810,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 54083337
+        "latestBlockNumber": 54280225
       }
     }
   },
@@ -3352,7 +3346,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 54321117
+        "latestBlockNumber": 54937923
       }
     }
   },
@@ -3811,7 +3805,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 25191098
+        "latestBlockNumber": 25315152
       }
     },
     "V2": {

@@ -2,9 +2,11 @@ name: Calculate and output permissions
 
 on:
   workflow_dispatch:
-  schedule: 
-    - cron:  '0 0 * * *'
-
+  schedule:
+    - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
 
 permissions: write-all
 
@@ -12,14 +14,6 @@ jobs:
   calculate-permissions:
     name: Fetch all permissions
     runs-on: ubuntu-latest
-    env: 
-      OPTIMISM_API_KEY: ${{ secrets.OPTIMISM_API_KEY }}
-      MATIC_API_KEY: ${{ secrets.MATIC_API_KEY }}
-      ARBITRUM_API_KEY: ${{ secrets.ARBITRUM_API_KEY }}
-      FANTOM_API_KEY: ${{ secrets.FANTOM_API_KEY }}
-      AVALANCHE_API_KEY: ${{ secrets.AVALANCHE_API_KEY }}
-      HARMONY_API_KEY: ${{ secrets.HARMONY_API_KEY }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout
@@ -31,44 +25,16 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Copy .env
+        run: |
+          cp .env.example .env 2> /dev/null || :
 
       - name: Generate json
-        run: npx ts-node scripts/modifiersCalculator.ts
-
-      - name: check diff
-        run: |
-          if [[ -z $(git status -s) ]]
-          then
-            echo "tree is clean"
-          else
-            git config --global user.name 'test'
-            git config --global user.email 'test@test.com'
-            git config --global pull.rebase true
-            git add .
-            git commit -am ":robot: permission address update"
-            git pull origin master
-            git push
-          exit
-          fi 
-
-  output-tables:
-    name: Output tables
-    needs: [calculate-permissions]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: npm install
+        run: npm run modifiers:generate
 
       - name: Create tables
-        run: npx ts-node scripts/createTables.ts
+        run: npm run tables:create
 
       - name: check diff
         run: |
@@ -80,8 +46,8 @@ jobs:
             git config --global user.email 'test@test.com'
             git config --global pull.rebase true
             git add .
-            git commit -am ":robot: tables update"
+            git commit -am "chore: tables update :robot:"
             git pull origin master
             git push
           exit
-          fi 
+          fi
