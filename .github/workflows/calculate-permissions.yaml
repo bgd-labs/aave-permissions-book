@@ -33,40 +33,8 @@ jobs:
       - name: Generate json
         run: npm run modifiers:generate
 
-      - name: check diff
-        run: |
-          if [[ -z $(git status -s) ]]
-          then
-            echo "tree is clean"
-          else
-            git config --global user.name 'test'
-            git config --global user.email 'test@test.com'
-            git config --global pull.rebase true
-            git add .
-            git commit -am ":robot: permission address update"
-            git pull origin master
-            git push
-          exit
-          fi
-
-  output-tables:
-    name: Output tables
-    needs: [calculate-permissions]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: npm install
-
       - name: Create tables
-        run: npx ts-node scripts/createTables.ts
+        run: npm run tables:create
 
       - name: check diff
         run: |
@@ -78,7 +46,7 @@ jobs:
             git config --global user.email 'test@test.com'
             git config --global pull.rebase true
             git add .
-            git commit -am ":robot: tables update"
+            git commit -am "chore: tables update :robot:"
             git pull origin master
             git push
           exit
