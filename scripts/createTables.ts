@@ -1,5 +1,5 @@
 import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem';
-import { Modifier, networkConfigs, Pools } from '../helpers/configs';
+import { Pools } from '../helpers/configs';
 import { explorerAddressUrlComposer } from '../helpers/explorer';
 import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
 import { generateContractsByAddress } from '../helpers/jsonParsers';
@@ -8,8 +8,7 @@ import {
   getTableBody,
   getTableHeader,
 } from '../helpers/tables';
-import { getSafeOwners } from '../helpers/guardian';
-import { providers, utils } from 'ethers';
+import { utils } from 'ethers';
 import { getPrincipalReadme } from './readme';
 
 export const generateTables = async () => {
