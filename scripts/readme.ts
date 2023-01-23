@@ -7,7 +7,7 @@ Aave protocol permissions tables.
 ## Table of contents
 - [Description](#Description)
 - [Usage](#Usage)
-- [Permissions Tables](#Permissions Tables)
+- [Permissions Tables](#PermissionsTables)
 - [License](#License)
 
 ## Description

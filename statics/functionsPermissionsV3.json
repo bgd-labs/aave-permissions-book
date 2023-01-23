@@ -357,5 +357,18 @@
         "roles": ["onlyEmissionAdmin"]
       }
     ]
+  },
+  {
+    "contract": "PoolAddressesProviderRegistry",
+    "functions": [
+      {
+        "name": "registerAddressesProvider",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "unregisterAddressesProvider",
+        "roles": ["onlyOwner"]
+      }
+    ]
   }
 ]

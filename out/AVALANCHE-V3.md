@@ -20,6 +20,7 @@
 |  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0xF7fC20D9D1D8DFE55F5F2c3180272a5747dD327F) |  - |  onlyOwner |  [0x0d541A4E05d3df625A5aFe23beF0E4EeCBDB201A](https://snowtrace.io/address/0x0d541A4E05d3df625A5aFe23beF0E4EeCBDB201A) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x8a743090e9759E758d15a4CFd18408fb6332c625) |  - |  onlyOwner |  [0x0d541A4E05d3df625A5aFe23beF0E4EeCBDB201A](https://snowtrace.io/address/0x0d541A4E05d3df625A5aFe23beF0E4EeCBDB201A) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://snowtrace.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyOwner |  [Guardian1](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://snowtrace.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  - |  onlyOwner |  [Guardian1](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Owners |

@@ -14,6 +14,7 @@
 |  [WrappedTokenGatewayV2](https://polygonscan.com/address/0xAeBF56223F044a73A513FAD7E148A9075227eD9b) |  - |  onlyOwner |  [0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://polygonscan.com/address/0x35784a624D4FfBC3594f4d16fA3801FeF063241c) |  - |  onlyOwner |  [Guardian3](https://polygonscan.com/address/0x46DF4eb6f7A3B0AdF526f6955b15d3fE02c618b7) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE84cF064a0a65290Ae5673b500699f3753063936) |  - |  onlyOwner |  [0x05182E579FDfCf69E4390c3411D8FeA1fb6467cf](https://polygonscan.com/address/0x05182E579FDfCf69E4390c3411D8FeA1fb6467cf) |  rescueTokens | |--------|--------|--------|--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://polygonscan.com/address/0x3ac4e9aa29940770aeC38fe853a4bbabb2dA9C19) |  - |  onlyOwner |  [Guardian2](https://polygonscan.com/address/0xBb2F3BA4a63982eD6D93c190c28B15CBBA0B6AF3) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Owners |

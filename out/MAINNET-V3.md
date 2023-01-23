@@ -20,6 +20,7 @@
 |  [ParaSwapLiquiditySwapAdapter](https://etherscan.io/address/0x872fBcb1B582e8Cd0D0DD4327fBFa0B4C2730995) |  - |  onlyOwner |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://etherscan.io/address/0x1809f186D680f239420B56948C58F8DbbCdf1E18) |  - |  onlyOwner |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://etherscan.io/address/0x223d844fc4B006D67c0cDbd39371A9F73f69d974) |  - |  onlyOwner |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://etherscan.io/address/0xbaA999AC55EAce41CcAE355c77809e68Bb345170) |  - |  onlyOwner |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 
 ### Admins 
 | Role |Contract |

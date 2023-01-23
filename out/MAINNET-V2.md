@@ -14,6 +14,7 @@
 |  [WrappedTokenGatewayV2](https://etherscan.io/address/0xEFFC18fC3b7eb8E676dac549E0c693ad50D1Ce31) |  - |  onlyOwner |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://etherscan.io/address/0x135896DE8421be2ec868E0b811006171D9df802A) |  - |  onlyOwner |  [Guardian3](https://etherscan.io/address/0x36fEDC70feC3B77CAaf50E6C524FD7e5DFBD629A) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://etherscan.io/address/0x80Aca0C645fEdABaa20fd2Bf0Daf57885A309FE6) |  - |  onlyOwner |  [0x05182E579FDfCf69E4390c3411D8FeA1fb6467cf](https://etherscan.io/address/0x05182E579FDfCf69E4390c3411D8FeA1fb6467cf) |  rescueTokens | |--------|--------|--------|--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://etherscan.io/address/0x52D306e36E3B6B02c153d0266ff0f85d18BCD413) |  - |  onlyOwner |  [Guardian2](https://etherscan.io/address/0xB9062896ec3A615a4e4444DF183F0531a77218AE) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Owners |

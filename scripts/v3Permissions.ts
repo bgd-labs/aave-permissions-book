@@ -451,6 +451,29 @@ export const resolveV3Modifiers = async (
     ],
   };
 
+  const addressesRegistryContract = new ethers.Contract(
+    addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
+    onlyOwnerAbi,
+    provider,
+  );
+  const addressRegistryOwner = await addressesRegistryContract.owner();
+
+  obj['PoolAddressesProviderRegistry'] = {
+    address: addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: addressRegistryOwner,
+            owners: await getSafeOwners(provider, addressRegistryOwner),
+          },
+        ],
+        functions: roles['PoolAddressesProviderRegistry']['onlyOwner'],
+      },
+    ],
+  };
+
   let bridgeExecutor = {};
   if (
     chainId === ChainId.polygon ||

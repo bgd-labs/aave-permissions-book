@@ -9,6 +9,7 @@ import { getProxyAdmin } from '../helpers/proxyAdmin';
 import { getSafeOwners } from '../helpers/guardian';
 import collectorAbi from '../abis/collectorAbi.json';
 import { ChainId } from '@aave/contract-helpers';
+import { POOL_ADDRESSES_PROVIDER_REGISTRY } from '@bgd-labs/aave-address-book/dist/AaveV2EthereumAMM';
 
 export const resolveV2Modifiers = async (
   addressBook: any,
@@ -321,6 +322,31 @@ export const resolveV2Modifiers = async (
             },
           ],
           functions: roles['ParaSwapRepayAdapter']['onlyOwner'],
+        },
+      ],
+    };
+  }
+
+  if (pool !== Pools.ARC) {
+    const addressesRegistryContract = new ethers.Contract(
+      addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
+      onlyOwnerAbi,
+      provider,
+    );
+    const addressRegistryOwner = await addressesRegistryContract.owner();
+
+    obj['LendingPoolAddressesProviderRegistry'] = {
+      address: addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: addressRegistryOwner,
+              owners: await getSafeOwners(provider, addressRegistryOwner),
+            },
+          ],
+          functions: roles['LendingPoolAddressesProviderRegistry']['onlyOwner'],
         },
       ],
     };
