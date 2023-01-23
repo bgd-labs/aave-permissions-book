@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
 
 permissions: write-all
 
@@ -22,6 +25,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Copy .env
+        run: |
+          cp .env.example .env 2> /dev/null || :
 
       - name: Generate json
         run: npm run modifiers:generate
