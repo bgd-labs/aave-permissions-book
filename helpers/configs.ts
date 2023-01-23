@@ -82,7 +82,7 @@ export enum Pools {
 
 export const networkConfigs: NetworkConfigs = {
   [ChainId.mainnet]: {
-    rpcUrl: process.env.RPC_ETHEREUM,
+    rpcUrl: process.env.RPC_MAINNET,
     explorer: 'https://etherscan.io',
     pools: {
       [Pools.V3]: {
