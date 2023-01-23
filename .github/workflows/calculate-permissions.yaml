@@ -2,9 +2,8 @@ name: Calculate and output permissions
 
 on:
   workflow_dispatch:
-  schedule: 
-    - cron:  '0 0 * * *'
-
+  schedule:
+    - cron: '0 0 * * *'
 
 permissions: write-all
 
@@ -12,14 +11,6 @@ jobs:
   calculate-permissions:
     name: Fetch all permissions
     runs-on: ubuntu-latest
-    env: 
-      OPTIMISM_API_KEY: ${{ secrets.OPTIMISM_API_KEY }}
-      MATIC_API_KEY: ${{ secrets.MATIC_API_KEY }}
-      ARBITRUM_API_KEY: ${{ secrets.ARBITRUM_API_KEY }}
-      FANTOM_API_KEY: ${{ secrets.FANTOM_API_KEY }}
-      AVALANCHE_API_KEY: ${{ secrets.AVALANCHE_API_KEY }}
-      HARMONY_API_KEY: ${{ secrets.HARMONY_API_KEY }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout
@@ -33,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Generate json
-        run: npx ts-node scripts/modifiersCalculator.ts
+        run: npm run modifiers:generate
 
       - name: check diff
         run: |
@@ -49,7 +40,7 @@ jobs:
             git pull origin master
             git push
           exit
-          fi 
+          fi
 
   output-tables:
     name: Output tables
@@ -84,4 +75,4 @@ jobs:
             git pull origin master
             git push
           exit
-          fi 
+          fi
