@@ -6,7 +6,7 @@ Aave protocol permissions tables.
 ## Table of contents
 - [Description](#Description)
 - [Usage](#Usage)
-- [Permissions Tables](#PermissionsTables)
+- [Permissions](#Permissions)
 - [License](#License)
 
 ## Description
@@ -39,7 +39,7 @@ To generate the permissions tables, execute:
 ```
 
 
-## Permissions Tables
+## Permissions
 
 - MAINNET 
   - [V3](./MAINNET-V3.md) 
