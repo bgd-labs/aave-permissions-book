@@ -1,0 +1,19 @@
+# MAINNET 
+## GOV_V2 
+### contracts
+| contract |proxyAdmin |modifier |permission owner |functions |
+|----------|----------|----------|----------|----------|
+|  [AaveGovernanceV2](https://etherscan.io/address/0xEC568fffba86c094cf06b22134B23074DFE2252c) |  - |  onlyGuardian |  [Guardian1](https://etherscan.io/address/0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633) |  cancel, __abdicate | |--------|--------|--------|--------|--------|
+|  [AaveGovernanceV2](https://etherscan.io/address/0xEC568fffba86c094cf06b22134B23074DFE2252c) |  - |  onlyOwner |  [LongExecutor](https://etherscan.io/address/0x79426A1c24B2978D90d7A5070a46C65B07bC4299) |  setGovernanceStrategy, setVotingDelay, authorizeExecutors, unauthorizeExecutors | |--------|--------|--------|--------|--------|
+|  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  - |  onlyTimelock |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  setDelay, setPendingAdmin | |--------|--------|--------|--------|--------|
+|  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  - |  onlyPendingAdmin |  [0x0000000000000000000000000000000000000000](https://etherscan.io/address/0x0000000000000000000000000000000000000000) |  acceptAdmin | |--------|--------|--------|--------|--------|
+|  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  - |  onlyAdmin |  [AaveGovernanceV2](https://etherscan.io/address/0xEC568fffba86c094cf06b22134B23074DFE2252c) |  queueTransaction, cancelTransaction, executeTransaction | |--------|--------|--------|--------|--------|
+|  [LongExecutor](https://etherscan.io/address/0x79426A1c24B2978D90d7A5070a46C65B07bC4299) |  - |  onlyTimelock |  [LongExecutor](https://etherscan.io/address/0x79426A1c24B2978D90d7A5070a46C65B07bC4299) |  setDelay, setPendingAdmin | |--------|--------|--------|--------|--------|
+|  [LongExecutor](https://etherscan.io/address/0x79426A1c24B2978D90d7A5070a46C65B07bC4299) |  - |  onlyPendingAdmin |  [0x0000000000000000000000000000000000000000](https://etherscan.io/address/0x0000000000000000000000000000000000000000) |  acceptAdmin | |--------|--------|--------|--------|--------|
+|  [LongExecutor](https://etherscan.io/address/0x79426A1c24B2978D90d7A5070a46C65B07bC4299) |  - |  onlyAdmin |  [AaveGovernanceV2](https://etherscan.io/address/0xEC568fffba86c094cf06b22134B23074DFE2252c) |  queueTransaction, cancelTransaction, executeTransaction | |--------|--------|--------|--------|--------|
+
+### Guardians 
+| Guardian |Owners |
+|----------|----------|
+|  [0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633](https://etherscan.io/address/0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633) |  [0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707](https://etherscan.io/address/0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707), [0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39](https://etherscan.io/address/0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39), [0xC55Ee0fc4147b5e453c487e144541aBb4892621f](https://etherscan.io/address/0xC55Ee0fc4147b5e453c487e144541aBb4892621f), [0xe5d453700d99296c2c085B8119BD6c152Cf63FA6](https://etherscan.io/address/0xe5d453700d99296c2c085B8119BD6c152Cf63FA6), [0xF1ba2231F373CffD47641540CfaEB1f21E50659B](https://etherscan.io/address/0xF1ba2231F373CffD47641540CfaEB1f21E50659B), [0x2e868321a6154Fad4bEbcE11BCC8e2AD1E02F0de](https://etherscan.io/address/0x2e868321a6154Fad4bEbcE11BCC8e2AD1E02F0de), [0x936CD9654271083cCF93A975919Da0aB3Bc99EF3](https://etherscan.io/address/0x936CD9654271083cCF93A975919Da0aB3Bc99EF3), [0xf68142d964297aDB5866CF08885Dc299AA4058f5](https://etherscan.io/address/0xf68142d964297aDB5866CF08885Dc299AA4058f5), [0x9343dcB6A3A523510F3499004D8aa595Baa25bc5](https://etherscan.io/address/0x9343dcB6A3A523510F3499004D8aa595Baa25bc5), [0x2BEDd8645B407B3B6447fbC09B269eC7a5794606](https://etherscan.io/address/0x2BEDd8645B407B3B6447fbC09B269eC7a5794606) | |--------|--------|
+
