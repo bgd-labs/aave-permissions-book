@@ -346,7 +346,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16473152
+        "latestBlockNumber": 16480304
       }
     },
     "V2": {
@@ -561,9 +561,7 @@
                 {
                   "address": "0x36fEDC70feC3B77CAaf50E6C524FD7e5DFBD629A",
                   "owners": [
-                    "0xa19aD68F08aA362D5F6a49a5342fE0a1225318d1",
                     "0x2972E573b172D2565EF66784852e14003c50dD25",
-                    "0x82E3a2378c3A924488997009c2FBD96b06EC29e4",
                     "0x37426F4554cb81FC035Ceb306D15c36D4D6207E4",
                     "0x3b4512e84017EC2dbc24e97006b47318807E1d3F",
                     "0x22f3Bdd1135e62BA7EE980eD53dED634E412869c",
@@ -1681,18 +1679,7 @@
               "addresses": [
                 {
                   "address": "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
-                  "owners": [
-                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                    "0xb647055A9915bF9c8021a684E175A353525b9890",
-                    "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                    "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                    "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                    "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                    "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                    "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                    "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                  ]
+                  "owners": []
                 }
               ],
               "functions": [
@@ -1778,7 +1765,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 70027244
+        "latestBlockNumber": 70230114
       }
     }
   },
@@ -3547,7 +3534,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 55036080
+        "latestBlockNumber": 55255382
       }
     }
   },
