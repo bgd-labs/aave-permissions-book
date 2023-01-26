@@ -1,5 +1,5 @@
 import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem';
-import { Pools } from '../helpers/configs';
+import { networkConfigs, Pools } from '../helpers/configs';
 import { explorerAddressUrlComposer } from '../helpers/explorer';
 import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
 import { generateContractsByAddress } from '../helpers/jsonParsers';
@@ -165,7 +165,7 @@ export const generateTables = async () => {
       adminTable += adminHeader;
 
       if (
-        pool === Pools.V3 &&
+        networkConfigs[network].pools[pool].aclBlock &&
         poolPermitsByContract.roles &&
         poolPermitsByContract.roles.role
       ) {

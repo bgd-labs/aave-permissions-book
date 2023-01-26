@@ -143,7 +143,12 @@ export const getCurrentRoleAdmins = async (
       if (roleName && !roles[roleName]) {
         roles[roleName] = [];
       } else if (roleName && roles[roleName]) {
-        roles[roleName].push(account);
+        const accountFound = roles[roleName].find(
+          (roleAddress) => roleAddress === account,
+        );
+        if (!accountFound) {
+          roles[roleName].push(account);
+        }
       }
     } else if (eventLog.topics[0] === roleRevokedTopic0) {
       const { role, account } = parseLog(roleRevokedEventABI, eventLog);

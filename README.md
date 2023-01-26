@@ -35,6 +35,7 @@ This repository contains and easy directory of tables showing which permissions 
     - [Guardians](./MAINNET-GOV_V2.md#Guardians) 
   - [TENDERLY](./MAINNET-TENDERLY.md) 
     - [Contracts](./MAINNET-TENDERLY.md#contracts) 
+    - [Admins](./MAINNET-TENDERLY.md#Admins) 
 - OPTIMISM 
   - [V3](./OPTIMISM-V3.md) 
     - [Contracts](./OPTIMISM-V3.md#contracts) 

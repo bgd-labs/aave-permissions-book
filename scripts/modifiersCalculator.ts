@@ -1,4 +1,4 @@
-import { ethers } from 'ethers';
+import { ethers, providers } from 'ethers';
 import { networkConfigs, Pools } from '../helpers/configs';
 import {
   getAllPermissionsJson,
@@ -50,7 +50,7 @@ async function main() {
         const fromBlock =
           (fullJson[network] &&
             fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-          networkConfigs[network].pools[poolKey].aclBlock;
+          pool.aclBlock;
         if (fromBlock) {
           console.log(`
           ------------------------------------
@@ -74,7 +74,9 @@ async function main() {
           );
           poolPermissions = await resolveV3Modifiers(
             pool.addressBook,
-            provider,
+            poolKey === Pools.TENDERLY
+              ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+              : provider,
             permissionsJson,
             Pools[poolKey as keyof typeof Pools],
             Number(network),
