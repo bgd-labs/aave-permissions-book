@@ -33,6 +33,8 @@ This repository contains and easy directory of tables showing which permissions 
   - [GOV_V2](./MAINNET-GOV_V2.md) 
     - [Contracts](./MAINNET-GOV_V2.md#contracts) 
     - [Guardians](./MAINNET-GOV_V2.md#Guardians) 
+  - [TENDERLY](./MAINNET-TENDERLY.md) 
+    - [Contracts](./MAINNET-TENDERLY.md#contracts) 
 - OPTIMISM 
   - [V3](./OPTIMISM-V3.md) 
     - [Contracts](./OPTIMISM-V3.md#contracts) 

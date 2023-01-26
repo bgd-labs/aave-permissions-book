@@ -1,10 +1,11 @@
 import { ethers, providers } from 'ethers';
-import { Contracts, PermissionsJson, Pools } from '../helpers/configs';
+
 import { generateRoles } from '../helpers/jsonParsers';
 import { getProxyAdmin } from '../helpers/proxyAdmin';
 import { getSafeOwners } from '../helpers/guardian';
 import AaveGovernanceV2ABI from '../abis/AaveGovernanceV2.json';
 import executorWithTimelockAbi from '../abis/executorWithTimelockAbi.json';
+import { Contracts, PermissionsJson } from '../helpers/types';
 
 export const resolveGovV2Modifiers = async (
   addressBook: any,

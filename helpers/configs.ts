@@ -15,62 +15,8 @@ import {
   AaveV3Optimism,
   AaveV3Polygon,
 } from '@bgd-labs/aave-address-book';
+import { NetworkConfigs } from './types';
 dotenv.config();
-
-export type Modifier = {
-  modifier: string;
-  addresses: AddressInfo[];
-  functions: string[];
-};
-
-export type ContractInfo = {
-  address: string;
-  modifiers: Modifier[];
-  proxyAdmin?: string;
-};
-
-export type Contracts = Record<string, ContractInfo>;
-export type AddressInfo = {
-  address: string;
-  owners: string[];
-};
-export type Roles = {
-  latestBlockNumber: number;
-  role: Record<string, string[]>;
-};
-
-export type PoolInfo = {
-  roles?: Roles;
-  contracts: Contracts;
-};
-
-export type Pool = Record<string, PoolInfo>;
-
-export type FullPermissions = Record<string, Pool>;
-
-export type PoolConfigs = {
-  permissionsJson: string;
-  addressBook: any;
-  aclBlock?: number;
-};
-export type Network = {
-  rpcUrl: string | undefined;
-  explorer: string;
-  pools: Record<string, PoolConfigs>;
-};
-
-export type NetworkConfigs = Record<string, Network>;
-
-export type Function = {
-  name: string;
-  roles: string[];
-};
-
-export type PermissionsJson = {
-  contract: string;
-  proxyAdmin?: boolean;
-  functions: Function[];
-}[];
 
 export enum Pools {
   V2 = 'V2',
@@ -78,20 +24,10 @@ export enum Pools {
   AMM = 'AMM',
   ARC = 'ARC',
   GOV_V2 = 'GOV_V2',
+  TENDERLY = 'TENDERLY',
 }
 
 export const networkConfigs: NetworkConfigs = {
-  // 'tenderly-mainnet': {
-  //   rpcUrl: 'https://rpc.tenderly.co/fork/82b65f8e-69eb-4b07-b365-190fc84f63bb',
-  //   explorer: '',
-  //   pools: {
-  //     [Pools.V3]: {
-  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //       aclBlock: 16291117,
-  //       addressBook: AaveV3Ethereum,
-  //     },
-  //   },
-  // },
   [ChainId.mainnet]: {
     rpcUrl: process.env.RPC_MAINNET,
     explorer: 'https://etherscan.io',
@@ -116,6 +52,14 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.AMM]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2EthereumAMM,
+      },
+      [Pools.TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        aclBlock: 16291117,
+        addressBook: AaveV3Ethereum,
+        tenderlyBlock: 16426887,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/82b65f8e-69eb-4b07-b365-190fc84f63bb',
       },
     },
   },

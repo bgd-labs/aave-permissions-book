@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { FullPermissions, PermissionsJson } from './configs';
+import { FullPermissions, PermissionsJson } from './types';
 
 export const saveJson = (filePath: string, stringifiedJson: string) => {
   fs.writeFileSync(filePath, stringifiedJson);
