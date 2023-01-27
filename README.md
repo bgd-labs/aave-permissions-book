@@ -20,6 +20,7 @@ This repository contains and easy directory of tables showing which permissions 
 - MAINNET 
   - [V3](./MAINNET-V3.md) 
     - [Contracts](./MAINNET-V3.md#contracts) 
+    - [Guardians](./MAINNET-V3.md#Guardians) 
     - [Admins](./MAINNET-V3.md#Admins) 
   - [V2](./MAINNET-V2.md) 
     - [Contracts](./MAINNET-V2.md#contracts) 
@@ -33,9 +34,6 @@ This repository contains and easy directory of tables showing which permissions 
   - [GOV_V2](./MAINNET-GOV_V2.md) 
     - [Contracts](./MAINNET-GOV_V2.md#contracts) 
     - [Guardians](./MAINNET-GOV_V2.md#Guardians) 
-  - [TENDERLY](./MAINNET-TENDERLY.md) 
-    - [Contracts](./MAINNET-TENDERLY.md#contracts) 
-    - [Admins](./MAINNET-TENDERLY.md#Admins) 
 - OPTIMISM 
   - [V3](./OPTIMISM-V3.md) 
     - [Contracts](./OPTIMISM-V3.md#contracts) 
