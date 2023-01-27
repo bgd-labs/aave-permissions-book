@@ -20,6 +20,7 @@ This repository contains and easy directory of tables showing which permissions 
 - MAINNET 
   - [V3](./MAINNET-V3.md) 
     - [Contracts](./MAINNET-V3.md#contracts) 
+    - [Guardians](./MAINNET-V3.md#Guardians) 
     - [Admins](./MAINNET-V3.md#Admins) 
   - [V2](./MAINNET-V2.md) 
     - [Contracts](./MAINNET-V2.md#contracts) 

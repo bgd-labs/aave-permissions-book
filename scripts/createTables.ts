@@ -1,5 +1,5 @@
 import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem';
-import { Pools } from '../helpers/configs';
+import { networkConfigs, Pools } from '../helpers/configs';
 import { explorerAddressUrlComposer } from '../helpers/explorer';
 import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
 import { generateContractsByAddress } from '../helpers/jsonParsers';
@@ -10,7 +10,11 @@ import {
 } from '../helpers/tables';
 import { utils } from 'ethers';
 import { getPrincipalReadme } from './readme';
-import { ContractsByAddress, PoolGuardians } from '../helpers/types';
+import {
+  AddressInfo,
+  ContractsByAddress,
+  PoolGuardians,
+} from '../helpers/types';
 
 export const generateTableAddress = (
   address: string | undefined,
@@ -113,7 +117,7 @@ export const generateTables = async () => {
             )}`,
             `${modifier.modifier}`,
             `${modifier.addresses
-              .map((modifierAddress) =>
+              .map((modifierAddress: AddressInfo) =>
                 generateTableAddress(
                   modifierAddress.address,
                   contractsByAddress,
@@ -161,7 +165,7 @@ export const generateTables = async () => {
       adminTable += adminHeader;
 
       if (
-        pool === Pools.V3 &&
+        networkConfigs[network].pools[pool].aclBlock &&
         poolPermitsByContract.roles &&
         poolPermitsByContract.roles.role
       ) {
@@ -170,7 +174,7 @@ export const generateTables = async () => {
           adminTable += getTableBody([
             role,
             `${roleAddresses
-              .map((roleAddress) =>
+              .map((roleAddress: string) =>
                 generateTableAddress(
                   roleAddress,
                   contractsByAddress,

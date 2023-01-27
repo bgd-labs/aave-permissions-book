@@ -1,12 +1,12 @@
 import { ethers, providers } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { Contracts } from '../helpers/configs';
 import { getStaticPermissionsJson } from '../helpers/fileSystem';
 import { generateRoles } from '../helpers/jsonParsers';
 import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
 import polygonBridgeExecutorABI from '../abis/polygonBridgeExecutorABI.json';
 import optimismBridgeExecutorABI from '../abis/optimismExecutorBridgeABI.json';
 import { getSafeOwners } from '../helpers/guardian';
+import { Contracts } from '../helpers/types';
 
 export const bridgeExecutors: Record<number, string> = {
   [ChainId.optimism]: './statics/bridgeExecutors/optimism.json',

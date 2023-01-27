@@ -1,18 +1,14 @@
 import { ethers, providers } from 'ethers';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json';
 import collectorAbi from '../abis/collectorAbi.json';
-import {
-  AddressInfo,
-  Contracts,
-  PermissionsJson,
-  Pools,
-} from '../helpers/configs';
+import { Pools } from '../helpers/configs';
 import { generateRoles } from '../helpers/jsonParsers';
 import poolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json';
 import { getProxyAdmin } from '../helpers/proxyAdmin';
 import { getSafeOwners } from '../helpers/guardian';
 import { ChainId } from '@aave/contract-helpers';
 import { getBridgeExecutor } from './bridgeExecutors';
+import { AddressInfo, Contracts, PermissionsJson } from '../helpers/types';
 
 const getAddressInfo = async (
   provider: providers.Provider,

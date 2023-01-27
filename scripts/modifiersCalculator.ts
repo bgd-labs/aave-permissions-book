@@ -1,11 +1,5 @@
-import { ethers } from 'ethers';
-import {
-  Contracts,
-  FullPermissions,
-  networkConfigs,
-  Pools,
-  Roles,
-} from '../helpers/configs';
+import { ethers, providers } from 'ethers';
+import { networkConfigs, Pools } from '../helpers/configs';
 import {
   getAllPermissionsJson,
   getStaticPermissionsJson,
@@ -15,6 +9,7 @@ import { getCurrentRoleAdmins } from '../helpers/adminRoles';
 import { resolveV2Modifiers } from './v2Permissions';
 import { resolveV3Modifiers } from './v3Permissions';
 import { resolveGovV2Modifiers } from './governancePermissions';
+import { Contracts, FullPermissions, Roles } from '../helpers/types';
 
 async function main() {
   let fullJson: FullPermissions = getAllPermissionsJson();
@@ -51,11 +46,11 @@ async function main() {
           provider,
           permissionsJson,
         );
-      } else if (poolKey === Pools.V3) {
+      } else if (pool.aclBlock) {
         const fromBlock =
           (fullJson[network] &&
             fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-          networkConfigs[network].pools[poolKey].aclBlock;
+          pool.aclBlock;
         if (fromBlock) {
           console.log(`
           ------------------------------------
@@ -75,12 +70,15 @@ async function main() {
             network === 'tenderly-mainnet'
               ? 'tenderly-mainnet'
               : Number(network),
+            Pools[poolKey as keyof typeof Pools],
           );
           poolPermissions = await resolveV3Modifiers(
             pool.addressBook,
-            provider,
+            poolKey === Pools.TENDERLY
+              ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+              : provider,
             permissionsJson,
-            poolKey,
+            Pools[poolKey as keyof typeof Pools],
             Number(network),
             admins.role,
           );

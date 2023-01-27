@@ -1,5 +1,5 @@
 import { ethers, providers } from 'ethers';
-import { Contracts, PermissionsJson, Pools } from '../helpers/configs';
+import { Pools } from '../helpers/configs';
 import { generateRoles } from '../helpers/jsonParsers';
 import lendingPoolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json';
@@ -10,6 +10,7 @@ import { getSafeOwners } from '../helpers/guardian';
 import collectorAbi from '../abis/collectorAbi.json';
 import { ChainId } from '@aave/contract-helpers';
 import { POOL_ADDRESSES_PROVIDER_REGISTRY } from '@bgd-labs/aave-address-book/dist/AaveV2EthereumAMM';
+import { Contracts, PermissionsJson } from '../helpers/types';
 
 export const resolveV2Modifiers = async (
   addressBook: any,

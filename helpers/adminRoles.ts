@@ -1,8 +1,9 @@
 import { ethers, providers, utils } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { Roles } from './configs';
 import { getLogs } from './eventLogs';
 import { getSafeOwners } from './guardian';
+import { Roles } from './types';
+import { networkConfigs, Pools } from './configs';
 
 export const roleGrantedEventABI = [
   'event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)',
@@ -56,6 +57,7 @@ export const getCurrentRoleAdmins = async (
   fromBlock: number,
   addressBook: any,
   chainId: ChainId | string,
+  pool: Pools,
 ): Promise<Roles> => {
   // console.log(`
   // ------------------------------
@@ -72,19 +74,52 @@ export const getCurrentRoleAdmins = async (
     limit = 1000;
   } else if (chainId === ChainId.fantom) {
     limit = 99999;
-  } else if (chainId === 'tenderly-mainnet') {
-    limit = 999;
-    timeout = 10000;
   }
 
-  const { eventLogs, finalBlock } = await getLogs(
-    provider,
-    aclManager,
-    fromBlock,
-    [],
-    limit,
-    timeout,
-  );
+  let eventLogs: providers.Log[] = [];
+  let finalBlock: number = 0;
+  if (pool === Pools.TENDERLY) {
+    const networkLogs = await getLogs({
+      provider,
+      address: aclManager,
+      fromBlock,
+      logs: [],
+      limit,
+      timeout,
+      maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock,
+    });
+    const tenderlyProvider = new providers.StaticJsonRpcProvider(
+      networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl,
+    );
+
+    limit = 999;
+    timeout = 10000;
+    const tenderlyLogs = await getLogs({
+      provider: tenderlyProvider,
+      address: aclManager,
+      fromBlock:
+        networkConfigs[Number(chainId)].pools[pool].tenderlyBlock ||
+        networkLogs.finalBlock,
+      logs: [],
+      limit,
+      timeout,
+    });
+
+    const logs = [...networkLogs.eventLogs, ...tenderlyLogs.eventLogs];
+    eventLogs = logs;
+    finalBlock = networkLogs.finalBlock;
+  } else {
+    const logs = await getLogs({
+      provider,
+      address: aclManager,
+      fromBlock,
+      logs: [],
+      limit,
+      timeout,
+    });
+    eventLogs = logs.eventLogs;
+    finalBlock = logs.finalBlock;
+  }
 
   // get roleGranted events
   const roleGrantedTopic0 = utils.id('RoleGranted(bytes32,address,address)');
@@ -108,7 +143,12 @@ export const getCurrentRoleAdmins = async (
       if (roleName && !roles[roleName]) {
         roles[roleName] = [];
       } else if (roleName && roles[roleName]) {
-        roles[roleName].push(account);
+        const accountFound = roles[roleName].find(
+          (roleAddress) => roleAddress === account,
+        );
+        if (!accountFound) {
+          roles[roleName].push(account);
+        }
       }
     } else if (eventLog.topics[0] === roleRevokedTopic0) {
       const { role, account } = parseLog(roleRevokedEventABI, eventLog);
@@ -125,7 +165,7 @@ export const getCurrentRoleAdmins = async (
       }
     } else {
       console.error(new Error('some error parsing logs'));
-      return {} as Roles;
+      return { role: oldRoles, latestBlockNumber: finalBlock };
     }
   }
 
