@@ -53,14 +53,14 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2EthereumAMM,
       },
-      [Pools.TENDERLY]: {
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        aclBlock: 16291117,
-        addressBook: AaveV3Ethereum,
-        tenderlyBlock: 16426887,
-        tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/82b65f8e-69eb-4b07-b365-190fc84f63bb',
-      },
+      // [Pools.TENDERLY]: {
+      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   aclBlock: 16291117,
+      //   addressBook: AaveV3Ethereum,
+      //   tenderlyBlock: 16426887,
+      //   tenderlyRpcUrl:
+      //     'https://rpc.tenderly.co/fork/82b65f8e-69eb-4b07-b365-190fc84f63bb',
+      // },
     },
   },
   [ChainId.polygon]: {
