@@ -1,4 +1,4 @@
-import { ethers, providers } from 'ethers';
+import { ethers, providers, utils } from 'ethers';
 import { Pools } from '../helpers/configs';
 import { generateRoles } from '../helpers/jsonParsers';
 import lendingPoolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json';
@@ -11,6 +11,7 @@ import collectorAbi from '../abis/collectorAbi.json';
 import { ChainId } from '@aave/contract-helpers';
 import { POOL_ADDRESSES_PROVIDER_REGISTRY } from '@bgd-labs/aave-address-book/dist/AaveV2EthereumAMM';
 import { Contracts, PermissionsJson } from '../helpers/types';
+import { DEFAULT_INCENTIVES_CONTROLLER } from '@bgd-labs/aave-address-book/dist/AaveV2Polygon';
 
 export const resolveV2Modifiers = async (
   addressBook: any,
@@ -358,7 +359,35 @@ export const resolveV2Modifiers = async (
     };
   }
 
-  // TODO: incentives controller
+  // TODO: for now we use the first encountered as default
+  if (
+    addressBook.DEFAULT_INCENTIVES_CONTROLLER !==
+    '0x0000000000000000000000000000000000000000'
+  ) {
+    obj['DefaultIncentivesController'] = {
+      address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
+      modifiers: [
+        {
+          modifier: 'onlyEmissionManager',
+          addresses: [
+            {
+              address: addressBook.EMISSION_MANAGER,
+              owners: await getSafeOwners(
+                provider,
+                addressBook.EMISSION_MANAGER,
+              ),
+            },
+          ],
+          functions:
+            chainId === ChainId.mainnet
+              ? roles['DefaultIncentivesController'][
+                  'onlyEmissionManager'
+                ].filter((functionName) => functionName !== 'setRewardsVault')
+              : roles['DefaultIncentivesController']['onlyEmissionManager'],
+        },
+      ],
+    };
+  }
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject

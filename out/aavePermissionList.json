@@ -372,7 +372,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16527383
+        "latestBlockNumber": 16527770
       }
     },
     "V2": {
@@ -641,6 +641,25 @@
               "functions": [
                 "registerAddressesProvider",
                 "unregisterAddressesProvider"
+              ]
+            }
+          ]
+        },
+        "DefaultIncentivesController": {
+          "address": "0xd784927Ff2f95ba542BfC824c8a8a98F3495f6b5",
+          "modifiers": [
+            {
+              "modifier": "onlyEmissionManager",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setDistributionEnd",
+                "configureAssets",
+                "setClaimer"
               ]
             }
           ]
@@ -1802,7 +1821,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 71473362
+        "latestBlockNumber": 71483190
       }
     }
   },
@@ -2249,7 +2268,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 38746758
+        "latestBlockNumber": 38748882
       }
     },
     "V2": {
@@ -2520,6 +2539,32 @@
               "functions": [
                 "registerAddressesProvider",
                 "unregisterAddressesProvider"
+              ]
+            }
+          ]
+        },
+        "DefaultIncentivesController": {
+          "address": "0x357D51124f59836DeD84c8a1730D72B749d8BC23",
+          "modifiers": [
+            {
+              "modifier": "onlyEmissionManager",
+              "addresses": [
+                {
+                  "address": "0x2bB25175d9B0F8965780209EB558Cc3b56cA6d32",
+                  "owners": [
+                    "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
+                    "0xCE990b1f86e954746AD3a57F5Aa6CFa9CC0c3348",
+                    "0x803B74766D8f79195D4DaeCF6f2aac31Dba78F25",
+                    "0x087A7AFB6975A2837453BE685EB6272576c0bC06",
+                    "0x42409227ce8C7D22B283E7DdB2F26449B49e93EF"
+                  ]
+                }
+              ],
+              "functions": [
+                "setDistributionEnd",
+                "configureAssets",
+                "setClaimer",
+                "setRewardsVault"
               ]
             }
           ]
@@ -3006,7 +3051,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 54786058
+        "latestBlockNumber": 54789357
       }
     }
   },
@@ -3571,7 +3616,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 56901657
+        "latestBlockNumber": 56917882
       }
     }
   },
@@ -3926,18 +3971,7 @@
               "addresses": [
                 {
                   "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                  "owners": [
-                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                    "0xb647055A9915bF9c8021a684E175A353525b9890",
-                    "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                    "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                    "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                    "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                    "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                    "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                    "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                  ]
+                  "owners": []
                 }
               ],
               "functions": [
@@ -4059,7 +4093,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 25653883
+        "latestBlockNumber": 25656179
       }
     },
     "V2": {
@@ -4338,6 +4372,30 @@
               "functions": [
                 "registerAddressesProvider",
                 "unregisterAddressesProvider"
+              ]
+            }
+          ]
+        },
+        "DefaultIncentivesController": {
+          "address": "0x01D83Fe6A10D2f2B7AF17034343746188272cAc9",
+          "modifiers": [
+            {
+              "modifier": "onlyEmissionManager",
+              "addresses": [
+                {
+                  "address": "0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26",
+                  "owners": [
+                    "0xb87F46f6B7589B6a777be7230D19Beb0b6229aa1",
+                    "0xfb1C51EEC9F0ADbb0ed5E8795aAc325eDC358149",
+                    "0xe79CA1B546774eEc2cd1e07cA6626eB2D435cdc7"
+                  ]
+                }
+              ],
+              "functions": [
+                "setDistributionEnd",
+                "configureAssets",
+                "setClaimer",
+                "setRewardsVault"
               ]
             }
           ]

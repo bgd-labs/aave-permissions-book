@@ -244,5 +244,26 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "DefaultIncentivesController",
+    "functions": [
+      {
+        "name": "setDistributionEnd",
+        "roles": ["onlyEmissionManager"]
+      },
+      {
+        "name": "configureAssets",
+        "roles": ["onlyEmissionManager"]
+      },
+      {
+        "name": "setClaimer",
+        "roles": ["onlyEmissionManager"]
+      },
+      {
+        "name": "setRewardsVault",
+        "roles": ["onlyEmissionManager"]
+      }
+    ]
   }
 ]
