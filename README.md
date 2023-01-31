@@ -1,4 +1,5 @@
 
+![Aave Permissions Book](./permissions_banner.jpg)
 # Aave Permissions Book
 
 Aave protocol permissions tables.
