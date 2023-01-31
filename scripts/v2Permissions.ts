@@ -192,6 +192,11 @@ export const resolveV2Modifiers = async (
         },
       ],
     };
+  } else {
+    obj['Collector'] = {
+      address: addressBook.COLLECTOR,
+      modifiers: [],
+    };
   }
 
   // extra contracts for arc
@@ -360,13 +365,6 @@ export const resolveV2Modifiers = async (
     .filter((contract) => contract.proxyAdmin)
     .map((contract) => contract.contract);
   for (let i = 0; i < proxyAdminContracts.length; i++) {
-    // TODO: finally fix avax v2 collector stuff
-    if (
-      proxyAdminContracts[i] === 'Collector' &&
-      chainId === ChainId.avalanche
-    ) {
-      break;
-    }
     obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
       obj[proxyAdminContracts[i]].address,
       provider,

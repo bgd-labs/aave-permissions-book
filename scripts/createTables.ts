@@ -95,6 +95,24 @@ export const generateTables = async () => {
       for (let contractName of Object.keys(poolPermitsByContract.contracts)) {
         const contract = poolPermitsByContract.contracts[contractName];
 
+        if (contract.modifiers.length === 0) {
+          tableBody += getTableBody([
+            `[${contractName}](${explorerAddressUrlComposer(
+              contract.address,
+              network,
+            )})`,
+            `${generateTableAddress(
+              contract.proxyAdmin,
+              contractsByAddress,
+              poolGuardians,
+              network,
+            )}`,
+            `-`,
+            `-`,
+            '-',
+          ]);
+          tableBody += getLineSeparator(contractsModifiersHeaderTitles.length);
+        }
         for (let modifier of contract.modifiers) {
           for (let modifierAddress of modifier.addresses) {
             if (!poolGuardians[modifierAddress.address]) {

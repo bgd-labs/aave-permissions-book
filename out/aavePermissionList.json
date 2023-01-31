@@ -372,7 +372,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16523294
+        "latestBlockNumber": 16527383
       }
     },
     "V2": {
@@ -1802,7 +1802,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 71374746
+        "latestBlockNumber": 71473362
       }
     }
   },
@@ -2249,7 +2249,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 38580590
+        "latestBlockNumber": 38746758
       }
     },
     "V2": {
@@ -3006,7 +3006,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 54530227
+        "latestBlockNumber": 54786058
       }
     }
   },
@@ -3571,7 +3571,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 56765134
+        "latestBlockNumber": 56901657
       }
     }
   },
@@ -4059,7 +4059,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 25472842
+        "latestBlockNumber": 25653883
       }
     },
     "V2": {
@@ -4244,6 +4244,11 @@
               ]
             }
           ]
+        },
+        "Collector": {
+          "address": "0x467b92aF281d14cB6809913AD016a607b5ba8A36",
+          "modifiers": [],
+          "proxyAdmin": "0x01244e7842254e3fd229cd263472076b1439d1cd"
         },
         "WrappedTokenGatewayV2": {
           "address": "0xC27d4dBefc2C0CE57916a699971b58a3BD9C7d5b",
