@@ -65,7 +65,7 @@ export const generateTables = async () => {
       const poolPermitsByContract = networkPermits[pool];
       // create pool table
       readmeByNetwork += `## ${pool} \n`;
-      readmeDirectory += `  - [${pool}](./${networkName}-${pool}.md) \n`;
+      readmeDirectory += `  - [${pool}](./out/${networkName}-${pool}.md) \n`;
 
       let contractsByAddress = generateContractsByAddress(
         poolPermitsByContract.contracts,
@@ -134,7 +134,7 @@ export const generateTables = async () => {
 
       contractTable += tableBody;
 
-      readmeDirectory += `    - [Contracts](./${networkName}-${pool}.md#contracts) \n`;
+      readmeDirectory += `    - [Contracts](./out/${networkName}-${pool}.md#contracts) \n`;
       readmeByNetwork += contractTable + '\n';
 
       if (Object.keys(poolGuardians).length > 0) {
@@ -156,7 +156,7 @@ export const generateTables = async () => {
           guardianTable += getLineSeparator(guardianHeaderTitles.length);
         });
 
-        readmeDirectory += `    - [Guardians](./${networkName}-${pool}.md#Guardians) \n`;
+        readmeDirectory += `    - [Guardians](./out/${networkName}-${pool}.md#Guardians) \n`;
         readmeByNetwork += guardianTable + '\n';
       }
       let adminTable = `### Admins \n`;
@@ -188,7 +188,7 @@ export const generateTables = async () => {
         });
 
         readmeByNetwork += adminTable + '\n';
-        readmeDirectory += `    - [Admins](./${networkName}-${pool}.md#Admins) \n`;
+        readmeDirectory += `    - [Admins](./out/${networkName}-${pool}.md#Admins) \n`;
       }
 
       saveJson(`./out/${networkName}-${pool}.md`, readmeByNetwork);
