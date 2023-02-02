@@ -91,6 +91,12 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2Avalanche,
       },
+      [Pools.TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2Avalanche,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/ee98f9f1-9d8b-4d25-90b6-4657ed81b85b',
+      },
     },
   },
   [ChainId.optimism]: {

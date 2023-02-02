@@ -20,6 +20,8 @@ export const resolveV2Modifiers = async (
   pool: Pools,
   chainId: ChainId,
 ): Promise<Contracts> => {
+  console.log(`V2 Mods | ${chainId} : ${pool}`);
+  console.log(addressBook.POOL_ADDRESSES_PROVIDER);
   const obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
 
@@ -28,7 +30,6 @@ export const resolveV2Modifiers = async (
     lendingPoolAddressProviderAbi,
     provider,
   );
-
   const lendingPoolAddressesProviderOwner: string =
     await lendingPoolAddressesProvider.owner();
   const lendingRateOracleAddress: string =

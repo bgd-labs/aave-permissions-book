@@ -66,6 +66,9 @@ This repository contains and easy directory of tables showing which permissions 
   - [V2](./out/AVALANCHE-V2.md) 
     - [Contracts](./out/AVALANCHE-V2.md#contracts) 
     - [Guardians](./out/AVALANCHE-V2.md#Guardians) 
+  - [TENDERLY](./out/AVALANCHE-TENDERLY.md) 
+    - [Contracts](./out/AVALANCHE-TENDERLY.md#contracts) 
+    - [Guardians](./out/AVALANCHE-TENDERLY.md#Guardians) 
        
     
 ## Usage
