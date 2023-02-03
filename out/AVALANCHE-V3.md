@@ -32,11 +32,11 @@
 ### Admins 
 | Role |Contract |
 |----------|----------|
-|  DEFAULT_ADMIN |  [Guardian1](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
-|  POOL_ADMIN |  [Guardian1](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
-|  EMERGENCY_ADMIN |  [Guardian1](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  RISK_ADMIN |  [0x4393277B02ef3cA293990A772B7160a8c76F2443](https://snowtrace.io/address/0x4393277B02ef3cA293990A772B7160a8c76F2443), [ProofOfReserveExecutor](https://snowtrace.io/address/0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc) | |--------|--------|
 |  BRIDGE |   | |--------|--------|
+|  DEFAULT_ADMIN |  [Guardian1](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
+|  EMERGENCY_ADMIN |  [Guardian1](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
 |  FLASH_BORROWER |   | |--------|--------|
+|  POOL_ADMIN |  [Guardian1](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
+|  RISK_ADMIN |  [0x4393277B02ef3cA293990A772B7160a8c76F2443](https://snowtrace.io/address/0x4393277B02ef3cA293990A772B7160a8c76F2443), [ProofOfReserveExecutor](https://snowtrace.io/address/0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc) | |--------|--------|
 
