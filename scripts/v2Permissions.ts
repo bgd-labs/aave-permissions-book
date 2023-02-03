@@ -10,6 +10,7 @@ import { getSafeOwners } from '../helpers/guardian';
 import collectorAbi from '../abis/collectorAbi.json';
 import { ChainId } from '@aave/contract-helpers';
 import { Contracts, PermissionsJson } from '../helpers/types';
+import { getBridgeExecutor } from './bridgeExecutors';
 
 export const resolveV2Modifiers = async (
   addressBook: any,
@@ -18,7 +19,7 @@ export const resolveV2Modifiers = async (
   pool: Pools,
   chainId: ChainId,
 ): Promise<Contracts> => {
-  const obj: Contracts = {};
+  let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
 
   const lendingPoolAddressesProvider = new ethers.Contract(
@@ -455,6 +456,12 @@ export const resolveV2Modifiers = async (
       ],
     };
   }
+
+  let bridgeExecutor = {};
+  if (chainId === ChainId.polygon) {
+    bridgeExecutor = await getBridgeExecutor(provider, chainId);
+  }
+  obj = { ...obj, ...bridgeExecutor };
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
