@@ -216,6 +216,51 @@ export const resolveV3Modifiers = async (
     ],
   };
 
+  if (chainId === ChainId.avalanche) {
+    const porExecutorContract = new ethers.Contract(
+      addressBook.PROOF_OF_RESERVE,
+      onlyOwnerAbi,
+      provider,
+    );
+    const porExecutorOwner = await porExecutorContract.owner();
+    obj['ProofOfReserveExecutor'] = {
+      address: addressBook.PROOF_OF_RESERVE,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: porExecutorOwner,
+              owners: await getSafeOwners(provider, porExecutorOwner),
+            },
+          ],
+          functions: roles['ProofOfReserveExecutor']['onlyOwner'],
+        },
+      ],
+    };
+    const porAggregatorContract = new ethers.Contract(
+      addressBook.PROOF_OF_RESERVE_AGGREGATOR,
+      onlyOwnerAbi,
+      provider,
+    );
+    const porAggregatorOwner = await porAggregatorContract.owner();
+    obj['ProofOfReserveAggregator'] = {
+      address: addressBook.PROOF_OF_RESERVE_AGGREGATOR,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: porAggregatorOwner,
+              owners: await getSafeOwners(provider, porAggregatorOwner),
+            },
+          ],
+          functions: roles['ProofOfReserveAggregator']['onlyOwner'],
+        },
+      ],
+    };
+  }
+
   obj['AaveOracle'] = {
     address: addressBook.ORACLE,
     modifiers: [
