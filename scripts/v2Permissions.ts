@@ -12,6 +12,7 @@ import { ChainId } from '@aave/contract-helpers';
 import { POOL_ADDRESSES_PROVIDER_REGISTRY } from '@bgd-labs/aave-address-book/dist/AaveV2EthereumAMM';
 import { Contracts, PermissionsJson } from '../helpers/types';
 import { DEFAULT_INCENTIVES_CONTROLLER } from '@bgd-labs/aave-address-book/dist/AaveV2Polygon';
+import { getBridgeExecutor } from './bridgeExecutors';
 
 export const resolveV2Modifiers = async (
   addressBook: any,
@@ -20,7 +21,7 @@ export const resolveV2Modifiers = async (
   pool: Pools,
   chainId: ChainId,
 ): Promise<Contracts> => {
-  const obj: Contracts = {};
+  let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
 
   const lendingPoolAddressesProvider = new ethers.Contract(
@@ -388,6 +389,12 @@ export const resolveV2Modifiers = async (
       ],
     };
   }
+
+  let bridgeExecutor = {};
+  if (chainId === ChainId.polygon) {
+    bridgeExecutor = await getBridgeExecutor(provider, chainId);
+  }
+  obj = { ...obj, ...bridgeExecutor };
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
