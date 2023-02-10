@@ -372,7 +372,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16587674
+        "latestBlockNumber": 16594846
       }
     },
     "V2": {
@@ -1821,7 +1821,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 73037566
+        "latestBlockNumber": 73304231
       }
     }
   },
@@ -3687,7 +3687,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 59255717
+        "latestBlockNumber": 59544652
       }
     }
   },
