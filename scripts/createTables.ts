@@ -144,7 +144,7 @@ export const generateTables = async () => {
                 ),
               )
               .join(', ')}`,
-            modifier.functions.join(', '),
+            modifier?.functions ? modifier.functions.join(', ') : '',
           ]);
           tableBody += getLineSeparator(contractsModifiersHeaderTitles.length);
         }

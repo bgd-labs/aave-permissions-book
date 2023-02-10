@@ -69,7 +69,7 @@ export const getCurrentRoleAdmins = async (
   let limit = undefined;
   let timeout = undefined;
   if (chainId === ChainId.avalanche) {
-    limit = 99999;
+    limit = 3000;
   } else if (chainId === ChainId.harmony) {
     limit = 1000;
   } else if (chainId === ChainId.fantom) {

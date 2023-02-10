@@ -88,13 +88,14 @@ export const getLogs = async ({
   } catch (error) {
     // @ts-ignore
     console.log('error=> ', error.code);
-    // @ts-ignore
-    if (error.code === 'TIMEOUT') {
-      if (timeout) {
-        await delay(timeout);
-      }
 
-      if (!retries || retries < MAX_RETRIES) {
+    if (!retries || retries < MAX_RETRIES) {
+      // @ts-ignore
+      if (error.code === 'TIMEOUT') {
+        if (timeout) {
+          await delay(timeout);
+        }
+
         return await getLogs({
           provider,
           address,
@@ -110,10 +111,42 @@ export const getLogs = async ({
           topic3,
         });
       } else {
-        return { eventLogs: logs, finalBlock: fromBlock };
+        console.log(error);
+        // solution that will work with generic rpcs or
+        // if alchemy fails with different error
+        const midBlock = (fromBlock + toBlock) >> 1;
+        const arr1 = await getLogs({
+          provider,
+          address,
+          fromBlock,
+          logs: [],
+          limit,
+          timeout,
+          maxBlock: midBlock,
+          retries: (retries ?? 0) + 1,
+          topic0,
+          topic1,
+          topic2,
+          topic3,
+        });
+        const arr2 = await getLogs({
+          provider,
+          address,
+          fromBlock: midBlock + 1,
+          logs: [],
+          limit,
+          timeout,
+          maxBlock: toBlock,
+          retries: (retries ?? 0) + 1,
+          topic0,
+          topic1,
+          topic2,
+          topic3,
+        });
+        const allLogs = [...logs, ...arr1.eventLogs, ...arr2.eventLogs];
+        return { eventLogs: allLogs, finalBlock: toBlock };
       }
     } else {
-      // throw error;
       return { eventLogs: logs, finalBlock: fromBlock };
     }
   }

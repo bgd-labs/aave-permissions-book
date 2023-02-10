@@ -370,5 +370,35 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "ProofOfReserveExecutor",
+    "functions": [
+      {
+        "name": "enableAssets",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "disableAssets",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "ProofOfReserveAggregator",
+    "functions": [
+      {
+        "name": "enableProofOfReserveFeed",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "enableProofOfReserveFeedWithBridgeWrapper",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "disableProofOfReserveFeed",
+        "roles": ["onlyOwner"]
+      }
+    ]
   }
 ]

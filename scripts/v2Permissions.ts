@@ -9,9 +9,7 @@ import { getProxyAdmin } from '../helpers/proxyAdmin';
 import { getSafeOwners } from '../helpers/guardian';
 import collectorAbi from '../abis/collectorAbi.json';
 import { ChainId } from '@aave/contract-helpers';
-import { POOL_ADDRESSES_PROVIDER_REGISTRY } from '@bgd-labs/aave-address-book/dist/AaveV2EthereumAMM';
 import { Contracts, PermissionsJson } from '../helpers/types';
-import { DEFAULT_INCENTIVES_CONTROLLER } from '@bgd-labs/aave-address-book/dist/AaveV2Polygon';
 import { getBridgeExecutor } from './bridgeExecutors';
 
 export const resolveV2Modifiers = async (
@@ -100,6 +98,75 @@ export const resolveV2Modifiers = async (
       },
     ],
   };
+
+  // Proof of reserve contracts
+  if (chainId === ChainId.avalanche) {
+    // const code = ethers.utils.solidityKeccak256(
+    //   ['string'],
+    //   ['PROOF_OF_RESERVE_ADMIN'],
+    // );
+    // const proofOfReserveAdmin = await lendingPoolAddressesProvider.getAddress(
+    //   code,
+    // );
+    obj['LendingPoolConfigurator'].modifiers.push({
+      modifier: 'onlyPoolOrProofOfReserveAdmin',
+      addresses: [
+        {
+          address: poolAdmin,
+          owners: await getSafeOwners(provider, poolAdmin),
+        },
+        {
+          address: addressBook.PROOF_OF_RESERVE,
+          owners: await getSafeOwners(provider, addressBook.PROOF_OF_RESERVE),
+        },
+      ],
+      functions:
+        roles['LendingPoolConfigurator']['onlyPoolOrProofOfReserveAdmin'],
+    });
+
+    const porExecutorContract = new ethers.Contract(
+      addressBook.PROOF_OF_RESERVE,
+      onlyOwnerAbi,
+      provider,
+    );
+    const porExecutorOwner = await porExecutorContract.owner();
+    obj['ProofOfReserveExecutor'] = {
+      address: addressBook.PROOF_OF_RESERVE,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: porExecutorOwner,
+              owners: await getSafeOwners(provider, porExecutorOwner),
+            },
+          ],
+          functions: roles['ProofOfReserveExecutor']['onlyOwner'],
+        },
+      ],
+    };
+    const porAggregatorContract = new ethers.Contract(
+      addressBook.PROOF_OF_RESERVE_AGGREGATOR,
+      onlyOwnerAbi,
+      provider,
+    );
+    const porAggregatorOwner = await porAggregatorContract.owner();
+    obj['ProofOfReserveAggregator'] = {
+      address: addressBook.PROOF_OF_RESERVE_AGGREGATOR,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: porAggregatorOwner,
+              owners: await getSafeOwners(provider, porAggregatorOwner),
+            },
+          ],
+          functions: roles['ProofOfReserveAggregator']['onlyOwner'],
+        },
+      ],
+    };
+  }
 
   const aaveOracle = new ethers.Contract(
     addressBook.ORACLE,
