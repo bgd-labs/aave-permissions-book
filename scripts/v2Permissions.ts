@@ -27,7 +27,6 @@ export const resolveV2Modifiers = async (
     lendingPoolAddressProviderAbi,
     provider,
   );
-
   const lendingPoolAddressesProviderOwner: string =
     await lendingPoolAddressesProvider.owner();
   const lendingRateOracleAddress: string =

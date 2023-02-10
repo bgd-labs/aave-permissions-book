@@ -16,7 +16,7 @@ async function main() {
 
   const networks = Object.keys(networkConfigs).map((network) => network);
   for (const network of networks) {
-    const provider = new ethers.providers.JsonRpcProvider(
+    let provider = new ethers.providers.JsonRpcProvider(
       networkConfigs[network].rpcUrl,
     );
 
@@ -28,16 +28,17 @@ async function main() {
       const permissionsJson = getStaticPermissionsJson(pool.permissionsJson);
       let poolPermissions: Contracts = {};
       let admins = {} as Roles;
-      if (
-        poolKey === Pools.V2 ||
-        poolKey === Pools.AMM ||
-        poolKey === Pools.ARC
-      ) {
+      if (poolKey !== Pools.GOV_V2 && !pool.aclBlock) {
+        if (poolKey === Pools.TENDERLY) {
+          provider = new ethers.providers.JsonRpcProvider(
+            networkConfigs[network].pools[poolKey].tenderlyRpcUrl,
+          );
+        }
         poolPermissions = await resolveV2Modifiers(
           pool.addressBook,
           provider,
           permissionsJson,
-          poolKey,
+          Pools[poolKey as keyof typeof Pools],
           Number(network),
         );
       } else if (poolKey === Pools.GOV_V2) {
