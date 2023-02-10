@@ -88,7 +88,7 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: AaveV3Avalanche,
       },
       [Pools.V2]: {
-        permissionsJson: './statics/functionsPermissionsV2.json',
+        permissionsJson: './statics/functionsPermissionsV2PoR.json',
         addressBook: AaveV2Avalanche,
       },
       [Pools.TENDERLY]: {
