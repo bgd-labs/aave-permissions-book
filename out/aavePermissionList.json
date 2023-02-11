@@ -59,12 +59,17 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             },
             {
               "modifier": "onlyBridge",
               "addresses": [],
-              "functions": ["mintUnbacked", "backUnbacked"]
+              "functions": [
+                "mintUnbacked",
+                "backUnbacked"
+              ]
             }
           ]
         },
@@ -111,7 +116,9 @@
                   ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             },
             {
               "modifier": "onlyAssetListingOrPoolAdmins",
@@ -121,7 +128,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["initReserves"]
+              "functions": [
+                "initReserves"
+              ]
             },
             {
               "modifier": "onlyRiskOrPoolAdmins",
@@ -174,7 +183,9 @@
                   ]
                 }
               ],
-              "functions": ["setReservePause"]
+              "functions": [
+                "setReservePause"
+              ]
             }
           ]
         },
@@ -189,7 +200,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -204,7 +218,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer"]
+              "functions": [
+                "approve",
+                "transfer"
+              ]
             }
           ]
         },
@@ -219,7 +236,11 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer", "setFundsAdmin"]
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
             }
           ],
           "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
@@ -256,7 +277,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
             }
           ]
         },
@@ -271,7 +295,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -286,7 +312,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -330,15 +358,21 @@
       },
       "roles": {
         "role": {
-          "DEFAULT_ADMIN": ["0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"],
-          "POOL_ADMIN": ["0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"],
-          "EMERGENCY_ADMIN": ["0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633"],
+          "DEFAULT_ADMIN": [
+            "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
+          ],
+          "POOL_ADMIN": [
+            "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
+          ],
+          "EMERGENCY_ADMIN": [
+            "0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633"
+          ],
           "ASSET_LISTING_ADMIN": [],
           "BRIDGE": [],
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16597383
+        "latestBlockNumber": 16601978
       }
     },
     "GOV_V2": {
@@ -365,7 +399,10 @@
                   ]
                 }
               ],
-              "functions": ["cancel", "__abdicate"]
+              "functions": [
+                "cancel",
+                "__abdicate"
+              ]
             },
             {
               "modifier": "onlyOwner",
@@ -395,7 +432,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["setDelay", "setPendingAdmin"]
+              "functions": [
+                "setDelay",
+                "setPendingAdmin"
+              ]
             },
             {
               "modifier": "onlyPendingAdmin",
@@ -405,7 +445,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["acceptAdmin"]
+              "functions": [
+                "acceptAdmin"
+              ]
             },
             {
               "modifier": "onlyAdmin",
@@ -434,7 +476,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["setDelay", "setPendingAdmin"]
+              "functions": [
+                "setDelay",
+                "setPendingAdmin"
+              ]
             },
             {
               "modifier": "onlyPendingAdmin",
@@ -444,7 +489,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["acceptAdmin"]
+              "functions": [
+                "acceptAdmin"
+              ]
             },
             {
               "modifier": "onlyAdmin",
@@ -563,7 +610,9 @@
                   ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             }
           ]
         },
@@ -578,7 +627,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -601,7 +653,9 @@
                   ]
                 }
               ],
-              "functions": ["setMarketBorrowRate"]
+              "functions": [
+                "setMarketBorrowRate"
+              ]
             }
           ]
         },
@@ -616,7 +670,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer"]
+              "functions": [
+                "approve",
+                "transfer"
+              ]
             }
           ]
         },
@@ -631,7 +688,11 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer", "setFundsAdmin"]
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
             }
           ],
           "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
@@ -647,7 +708,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
             }
           ]
         },
@@ -669,7 +733,9 @@
                   ]
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -684,7 +750,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -826,10 +894,14 @@
               "addresses": [
                 {
                   "address": "0x33B09130b035d6D7e57d76fEa0873d9545FA7557",
-                  "owners": ["0x686a12A79008246F4dF2f1Ea30d136BD6DE748B4"]
+                  "owners": [
+                    "0x686a12A79008246F4dF2f1Ea30d136BD6DE748B4"
+                  ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             }
           ]
         },
@@ -844,7 +916,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -859,7 +934,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["setMarketBorrowRate"]
+              "functions": [
+                "setMarketBorrowRate"
+              ]
             }
           ]
         },
@@ -874,7 +951,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer"]
+              "functions": [
+                "approve",
+                "transfer"
+              ]
             }
           ]
         },
@@ -889,7 +969,11 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer", "setFundsAdmin"]
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
             }
           ],
           "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
@@ -905,17 +989,23 @@
                   "owners": []
                 }
               ],
-              "functions": ["queue"]
+              "functions": [
+                "queue"
+              ]
             },
             {
               "modifier": "onlyGuardian",
               "addresses": [
                 {
                   "address": "0x33B09130b035d6D7e57d76fEa0873d9545FA7557",
-                  "owners": ["0x686a12A79008246F4dF2f1Ea30d136BD6DE748B4"]
+                  "owners": [
+                    "0x686a12A79008246F4dF2f1Ea30d136BD6DE748B4"
+                  ]
                 }
               ],
-              "functions": ["cancel"]
+              "functions": [
+                "cancel"
+              ]
             }
           ]
         },
@@ -930,7 +1020,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["addPermissionAdmins", "removePermissionAdmins"]
+              "functions": [
+                "addPermissionAdmins",
+                "removePermissionAdmins"
+              ]
             }
           ]
         }
@@ -1032,7 +1125,9 @@
                   ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             }
           ]
         },
@@ -1047,7 +1142,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -1070,7 +1168,9 @@
                   ]
                 }
               ],
-              "functions": ["setMarketBorrowRate"]
+              "functions": [
+                "setMarketBorrowRate"
+              ]
             }
           ]
         },
@@ -1085,7 +1185,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer"]
+              "functions": [
+                "approve",
+                "transfer"
+              ]
             }
           ]
         },
@@ -1100,7 +1203,11 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer", "setFundsAdmin"]
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
             }
           ],
           "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
@@ -1116,7 +1223,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
             }
           ]
         },
@@ -1236,12 +1346,17 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             },
             {
               "modifier": "onlyBridge",
               "addresses": [],
-              "functions": ["mintUnbacked", "backUnbacked"]
+              "functions": [
+                "mintUnbacked",
+                "backUnbacked"
+              ]
             }
           ]
         },
@@ -1303,7 +1418,9 @@
                   ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             },
             {
               "modifier": "onlyAssetListingOrPoolAdmins",
@@ -1328,7 +1445,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["initReserves"]
+              "functions": [
+                "initReserves"
+              ]
             },
             {
               "modifier": "onlyRiskOrPoolAdmins",
@@ -1395,7 +1514,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["setReservePause"]
+              "functions": [
+                "setReservePause"
+              ]
             }
           ]
         },
@@ -1425,7 +1546,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -1451,7 +1575,10 @@
                   ]
                 }
               ],
-              "functions": ["approve", "transfer"]
+              "functions": [
+                "approve",
+                "transfer"
+              ]
             }
           ]
         },
@@ -1466,7 +1593,11 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer", "setFundsAdmin"]
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
             }
           ],
           "proxyAdmin": "0xe50c8c619d05ff98b22adf991f17602c774f785c"
@@ -1514,7 +1645,10 @@
                   ]
                 }
               ],
-              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
             }
           ]
         },
@@ -1529,7 +1663,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -1544,7 +1680,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -1629,7 +1767,9 @@
                   ]
                 }
               ],
-              "functions": ["cancel"]
+              "functions": [
+                "cancel"
+              ]
             },
             {
               "modifier": "onlyThis",
@@ -1657,25 +1797,31 @@
                   "owners": []
                 }
               ],
-              "functions": ["queue"]
+              "functions": [
+                "queue"
+              ]
             }
           ]
         }
       },
       "roles": {
         "role": {
-          "DEFAULT_ADMIN": ["0xE50c8C619d05ff98b22Adf991F17602C774F785c"],
+          "DEFAULT_ADMIN": [
+            "0xE50c8C619d05ff98b22Adf991F17602C774F785c"
+          ],
           "POOL_ADMIN": [
             "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
             "0x7d9103572bE58FfE99dc390E8246f02dcAe6f611"
           ],
-          "EMERGENCY_ADMIN": ["0xE50c8C619d05ff98b22Adf991F17602C774F785c"],
+          "EMERGENCY_ADMIN": [
+            "0xE50c8C619d05ff98b22Adf991F17602C774F785c"
+          ],
           "ASSET_LISTING_ADMIN": [],
           "RISK_ADMIN": [],
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 73425221
+        "latestBlockNumber": 73578413
       }
     }
   },
@@ -1739,12 +1885,17 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             },
             {
               "modifier": "onlyBridge",
               "addresses": [],
-              "functions": ["mintUnbacked", "backUnbacked"]
+              "functions": [
+                "mintUnbacked",
+                "backUnbacked"
+              ]
             }
           ]
         },
@@ -1791,7 +1942,9 @@
                   ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             },
             {
               "modifier": "onlyAssetListingOrPoolAdmins",
@@ -1801,7 +1954,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["initReserves"]
+              "functions": [
+                "initReserves"
+              ]
             },
             {
               "modifier": "onlyRiskOrPoolAdmins",
@@ -1853,7 +2008,9 @@
                   ]
                 }
               ],
-              "functions": ["setReservePause"]
+              "functions": [
+                "setReservePause"
+              ]
             }
           ]
         },
@@ -1868,7 +2025,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -1883,7 +2043,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer"]
+              "functions": [
+                "approve",
+                "transfer"
+              ]
             }
           ]
         },
@@ -1898,7 +2061,11 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer", "setFundsAdmin"]
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
             }
           ],
           "proxyAdmin": "0xdc9a35b16db4e126cfedc41322b3a36454b1f772"
@@ -1935,7 +2102,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
             }
           ]
         },
@@ -1950,7 +2120,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -1965,7 +2137,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -2028,7 +2202,9 @@
                   ]
                 }
               ],
-              "functions": ["cancel"]
+              "functions": [
+                "cancel"
+              ]
             },
             {
               "modifier": "onlyThis",
@@ -2057,7 +2233,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["processMessageFromRoot"]
+              "functions": [
+                "processMessageFromRoot"
+              ]
             },
             {
               "modifier": "onlyFxRootSender",
@@ -2067,22 +2245,30 @@
                   "owners": []
                 }
               ],
-              "functions": ["processMessageFromRoot"]
+              "functions": [
+                "processMessageFromRoot"
+              ]
             }
           ]
         }
       },
       "roles": {
         "role": {
-          "DEFAULT_ADMIN": ["0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772"],
-          "POOL_ADMIN": ["0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772"],
-          "EMERGENCY_ADMIN": ["0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58"],
+          "DEFAULT_ADMIN": [
+            "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772"
+          ],
+          "POOL_ADMIN": [
+            "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772"
+          ],
+          "EMERGENCY_ADMIN": [
+            "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58"
+          ],
           "ASSET_LISTING_ADMIN": [],
           "RISK_ADMIN": [],
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 39129162
+        "latestBlockNumber": 39154232
       }
     },
     "V2": {
@@ -2183,7 +2369,9 @@
                   ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             }
           ]
         },
@@ -2198,7 +2386,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -2221,7 +2412,9 @@
                   ]
                 }
               ],
-              "functions": ["setMarketBorrowRate"]
+              "functions": [
+                "setMarketBorrowRate"
+              ]
             }
           ]
         },
@@ -2236,7 +2429,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer"]
+              "functions": [
+                "approve",
+                "transfer"
+              ]
             }
           ]
         },
@@ -2251,7 +2447,11 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer", "setFundsAdmin"]
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
             }
           ],
           "proxyAdmin": "0xdc9a35b16db4e126cfedc41322b3a36454b1f772"
@@ -2267,7 +2467,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
             }
           ]
         },
@@ -2291,7 +2494,9 @@
                   ]
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -2306,7 +2511,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -2384,7 +2591,9 @@
                   ]
                 }
               ],
-              "functions": ["cancel"]
+              "functions": [
+                "cancel"
+              ]
             },
             {
               "modifier": "onlyThis",
@@ -2413,7 +2622,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["processMessageFromRoot"]
+              "functions": [
+                "processMessageFromRoot"
+              ]
             },
             {
               "modifier": "onlyFxRootSender",
@@ -2423,7 +2634,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["processMessageFromRoot"]
+              "functions": [
+                "processMessageFromRoot"
+              ]
             }
           ]
         }
@@ -2513,12 +2726,17 @@
                   ]
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             },
             {
               "modifier": "onlyBridge",
               "addresses": [],
-              "functions": ["mintUnbacked", "backUnbacked"]
+              "functions": [
+                "mintUnbacked",
+                "backUnbacked"
+              ]
             }
           ]
         },
@@ -2576,7 +2794,9 @@
                   ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             },
             {
               "modifier": "onlyAssetListingOrPoolAdmins",
@@ -2597,7 +2817,9 @@
                   ]
                 }
               ],
-              "functions": ["initReserves"]
+              "functions": [
+                "initReserves"
+              ]
             },
             {
               "modifier": "onlyRiskOrPoolAdmins",
@@ -2656,7 +2878,9 @@
                   ]
                 }
               ],
-              "functions": ["setReservePause"]
+              "functions": [
+                "setReservePause"
+              ]
             }
           ]
         },
@@ -2682,7 +2906,10 @@
                   ]
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -2708,7 +2935,10 @@
                   ]
                 }
               ],
-              "functions": ["approve", "transfer"]
+              "functions": [
+                "approve",
+                "transfer"
+              ]
             }
           ]
         },
@@ -2723,7 +2953,11 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer", "setFundsAdmin"]
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
             }
           ],
           "proxyAdmin": "0x39cb97b105173b56b5a2b4b33ad25d6a50e6c949"
@@ -2771,7 +3005,10 @@
                   ]
                 }
               ],
-              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
             }
           ]
         },
@@ -2786,7 +3023,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -2801,7 +3040,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -2867,15 +3108,21 @@
       },
       "roles": {
         "role": {
-          "DEFAULT_ADMIN": ["0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"],
-          "POOL_ADMIN": ["0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"],
-          "EMERGENCY_ADMIN": ["0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"],
+          "DEFAULT_ADMIN": [
+            "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"
+          ],
+          "POOL_ADMIN": [
+            "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"
+          ],
+          "EMERGENCY_ADMIN": [
+            "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"
+          ],
           "ASSET_LISTING_ADMIN": [],
           "RISK_ADMIN": [],
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 55475653
+        "latestBlockNumber": 55526783
       }
     }
   },
@@ -2965,12 +3212,17 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             },
             {
               "modifier": "onlyBridge",
               "addresses": [],
-              "functions": ["mintUnbacked", "backUnbacked"]
+              "functions": [
+                "mintUnbacked",
+                "backUnbacked"
+              ]
             }
           ]
         },
@@ -3032,7 +3284,9 @@
                   ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             },
             {
               "modifier": "onlyAssetListingOrPoolAdmins",
@@ -3057,7 +3311,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["initReserves"]
+              "functions": [
+                "initReserves"
+              ]
             },
             {
               "modifier": "onlyRiskOrPoolAdmins",
@@ -3124,7 +3380,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["setReservePause"]
+              "functions": [
+                "setReservePause"
+              ]
             }
           ]
         },
@@ -3154,7 +3412,10 @@
                   "owners": []
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -3180,7 +3441,10 @@
                   ]
                 }
               ],
-              "functions": ["approve", "transfer"]
+              "functions": [
+                "approve",
+                "transfer"
+              ]
             }
           ]
         },
@@ -3195,7 +3459,11 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer", "setFundsAdmin"]
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
             }
           ],
           "proxyAdmin": "0xbbd9f90699c1fa0d7a65870d241dd1f1217c96eb"
@@ -3243,7 +3511,10 @@
                   ]
                 }
               ],
-              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
             }
           ]
         },
@@ -3258,7 +3529,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -3273,7 +3546,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -3358,7 +3633,9 @@
                   ]
                 }
               ],
-              "functions": ["cancel"]
+              "functions": [
+                "cancel"
+              ]
             },
             {
               "modifier": "onlyThis",
@@ -3386,25 +3663,31 @@
                   "owners": []
                 }
               ],
-              "functions": ["queue"]
+              "functions": [
+                "queue"
+              ]
             }
           ]
         }
       },
       "roles": {
         "role": {
-          "DEFAULT_ADMIN": ["0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb"],
+          "DEFAULT_ADMIN": [
+            "0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb"
+          ],
           "POOL_ADMIN": [
             "0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb",
             "0x7d9103572bE58FfE99dc390E8246f02dcAe6f611"
           ],
-          "EMERGENCY_ADMIN": ["0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb"],
+          "EMERGENCY_ADMIN": [
+            "0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb"
+          ],
           "ASSET_LISTING_ADMIN": [],
           "RISK_ADMIN": [],
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 59650185
+        "latestBlockNumber": 59843265
       }
     }
   },
@@ -3490,12 +3773,17 @@
                   ]
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             },
             {
               "modifier": "onlyBridge",
               "addresses": [],
-              "functions": ["mintUnbacked", "backUnbacked"]
+              "functions": [
+                "mintUnbacked",
+                "backUnbacked"
+              ]
             }
           ]
         },
@@ -3553,7 +3841,9 @@
                   ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             },
             {
               "modifier": "onlyAssetListingOrPoolAdmins",
@@ -3574,7 +3864,9 @@
                   ]
                 }
               ],
-              "functions": ["initReserves"]
+              "functions": [
+                "initReserves"
+              ]
             },
             {
               "modifier": "onlyRiskOrPoolAdmins",
@@ -3637,7 +3929,9 @@
                   ]
                 }
               ],
-              "functions": ["setReservePause"]
+              "functions": [
+                "setReservePause"
+              ]
             }
           ]
         },
@@ -3663,7 +3957,10 @@
                   ]
                 }
               ],
-              "functions": ["enableAssets", "disableAssets"]
+              "functions": [
+                "enableAssets",
+                "disableAssets"
+              ]
             }
           ]
         },
@@ -3719,7 +4016,10 @@
                   ]
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -3745,7 +4045,10 @@
                   ]
                 }
               ],
-              "functions": ["approve", "transfer"]
+              "functions": [
+                "approve",
+                "transfer"
+              ]
             }
           ]
         },
@@ -3760,7 +4063,11 @@
                   "owners": []
                 }
               ],
-              "functions": ["approve", "transfer", "setFundsAdmin"]
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin"
+              ]
             }
           ],
           "proxyAdmin": "0xa35b76e4935449e33c56ab24b23fcd3246f13470"
@@ -3808,7 +4115,10 @@
                   ]
                 }
               ],
-              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
             }
           ]
         },
@@ -3823,7 +4133,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -3838,7 +4150,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -3906,13 +4220,21 @@
         "role": {
           "ASSET_LISTING_ADMIN": [],
           "BRIDGE": [],
-          "DEFAULT_ADMIN": ["0xa35b76E4935449E33C56aB24b23fcd3246f13470"],
-          "EMERGENCY_ADMIN": ["0xa35b76E4935449E33C56aB24b23fcd3246f13470"],
+          "DEFAULT_ADMIN": [
+            "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
+          ],
+          "EMERGENCY_ADMIN": [
+            "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
+          ],
           "FLASH_BORROWER": [],
-          "POOL_ADMIN": ["0xa35b76E4935449E33C56aB24b23fcd3246f13470"],
-          "RISK_ADMIN": ["0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"]
+          "POOL_ADMIN": [
+            "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
+          ],
+          "RISK_ADMIN": [
+            "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
+          ]
         },
-        "latestBlockNumber": 26072635
+        "latestBlockNumber": 26075635
       }
     },
     "V2": {
@@ -4032,7 +4354,9 @@
                   ]
                 }
               ],
-              "functions": ["setPoolPause"]
+              "functions": [
+                "setPoolPause"
+              ]
             },
             {
               "modifier": "onlyPoolOrProofOfReserveAdmin",
@@ -4087,7 +4411,10 @@
                   ]
                 }
               ],
-              "functions": ["enableAssets", "disableAssets"]
+              "functions": [
+                "enableAssets",
+                "disableAssets"
+              ]
             }
           ]
         },
@@ -4143,7 +4470,10 @@
                   ]
                 }
               ],
-              "functions": ["setAssetSources", "setFallbackOracle"]
+              "functions": [
+                "setAssetSources",
+                "setFallbackOracle"
+              ]
             }
           ]
         },
@@ -4169,7 +4499,9 @@
                   ]
                 }
               ],
-              "functions": ["setMarketBorrowRate"]
+              "functions": [
+                "setMarketBorrowRate"
+              ]
             }
           ]
         },
@@ -4200,7 +4532,10 @@
                   ]
                 }
               ],
-              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
             }
           ]
         },
@@ -4215,7 +4550,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
@@ -4230,7 +4567,9 @@
                   "owners": []
                 }
               ],
-              "functions": ["rescueTokens"]
+              "functions": [
+                "rescueTokens"
+              ]
             }
           ]
         },
