@@ -372,7 +372,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16678067
+        "latestBlockNumber": 16684902
       }
     },
     "GOV_V2": {
@@ -1689,7 +1689,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 75778346
+        "latestBlockNumber": 76016301
       }
     }
   },
@@ -2136,7 +2136,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 39554999
+        "latestBlockNumber": 39591975
       }
     },
     "V2": {
@@ -2268,16 +2268,8 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xBb2F3BA4a63982eD6D93c190c28B15CBBA0B6AF3",
-                  "owners": [
-                    "0x8eC8a830005688dc153b341A779904D6FcA04092",
-                    "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
-                    "0xB0c9C5B5211dE3a75b61BB798887b76AcCD64193",
-                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30",
-                    "0xf0919eC356e4221e0b8C8b0d1992Bdc0D7475e4E",
-                    "0x106fc088aBA908130fBC343F2F6d212Ff36150D1",
-                    "0x357B7E9AcD156c0f930B75c6aE6A42F3D9173042"
-                  ]
+                  "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                  "owners": []
                 }
               ],
               "functions": [
@@ -2392,16 +2384,8 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xBb2F3BA4a63982eD6D93c190c28B15CBBA0B6AF3",
-                  "owners": [
-                    "0x8eC8a830005688dc153b341A779904D6FcA04092",
-                    "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
-                    "0xB0c9C5B5211dE3a75b61BB798887b76AcCD64193",
-                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30",
-                    "0xf0919eC356e4221e0b8C8b0d1992Bdc0D7475e4E",
-                    "0x106fc088aBA908130fBC343F2F6d212Ff36150D1",
-                    "0x357B7E9AcD156c0f930B75c6aE6A42F3D9173042"
-                  ]
+                  "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                  "owners": []
                 }
               ],
               "functions": [
@@ -2990,7 +2974,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 56243631
+        "latestBlockNumber": 56306036
       }
     }
   },
@@ -3457,7 +3441,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 63151902
+        "latestBlockNumber": 63477943
       }
     }
   },
@@ -4026,7 +4010,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 26552124
+        "latestBlockNumber": 26593828
       }
     },
     "V2": {
