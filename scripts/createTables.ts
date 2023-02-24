@@ -48,13 +48,17 @@ export const generateTables = async () => {
   const aavePermissionsList = getAllPermissionsJson();
 
   // create readme string
-  let readmeDirectory = '';
+  let readmeDirectoryTable = '';
+  const readmeDirectoryTableHeaderTitles = ['Network', 'Pool', 'Tables'];
+  const readmeDirectoryHeader = getTableHeader(
+    readmeDirectoryTableHeaderTitles,
+  );
+  readmeDirectoryTable += readmeDirectoryHeader;
 
   const mainnetPermissions = aavePermissionsList[ChainId.mainnet.toString()];
 
   for (let network of Object.keys(aavePermissionsList)) {
     const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
-    readmeDirectory += `- ${networkName} \n`;
     const networkPermits = aavePermissionsList[network];
 
     for (let pool of Object.keys(networkPermits)) {
@@ -65,7 +69,6 @@ export const generateTables = async () => {
       const poolPermitsByContract = networkPermits[pool];
       // create pool table
       readmeByNetwork += `## ${pool} \n`;
-      readmeDirectory += `  - [${pool}](./out/${networkName}-${pool}.md) \n`;
 
       let contractsByAddress = generateContractsByAddress(
         poolPermitsByContract.contracts,
@@ -152,7 +155,15 @@ export const generateTables = async () => {
 
       contractTable += tableBody;
 
-      readmeDirectory += `    - [Contracts](./out/${networkName}-${pool}.md#contracts) \n`;
+      readmeDirectoryTable += getTableBody([
+        networkName,
+        pool,
+        `[Permissions](./out/${networkName}-${pool}.md#contracts)`,
+      ]);
+      readmeDirectoryTable += getLineSeparator(
+        readmeDirectoryTableHeaderTitles.length,
+      );
+
       readmeByNetwork += contractTable + '\n';
 
       if (Object.keys(poolGuardians).length > 0) {
@@ -174,7 +185,6 @@ export const generateTables = async () => {
           guardianTable += getLineSeparator(guardianHeaderTitles.length);
         });
 
-        readmeDirectory += `    - [Guardians](./out/${networkName}-${pool}.md#Guardians) \n`;
         readmeByNetwork += guardianTable + '\n';
       }
       let adminTable = `### Admins \n`;
@@ -206,14 +216,13 @@ export const generateTables = async () => {
         });
 
         readmeByNetwork += adminTable + '\n';
-        readmeDirectory += `    - [Admins](./out/${networkName}-${pool}.md#Admins) \n`;
       }
 
       saveJson(`./out/${networkName}-${pool}.md`, readmeByNetwork);
     }
   }
 
-  saveJson('./README.md', getPrincipalReadme(readmeDirectory));
+  saveJson('./README.md', getPrincipalReadme(readmeDirectoryTable));
 };
 
 generateTables();
