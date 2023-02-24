@@ -1,5 +1,5 @@
 # MAINNET 
-## ARC 
+## V2_ARC 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|

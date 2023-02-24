@@ -49,7 +49,7 @@ export const generateTables = async () => {
 
   // create readme string
   let readmeDirectoryTable = '';
-  const readmeDirectoryTableHeaderTitles = ['Network', 'Pool', 'Tables'];
+  const readmeDirectoryTableHeaderTitles = ['Network', 'System type', 'Tables'];
   const readmeDirectoryHeader = getTableHeader(
     readmeDirectoryTableHeaderTitles,
   );

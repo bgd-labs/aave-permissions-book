@@ -268,7 +268,7 @@ export const resolveV2Modifiers = async (
   }
 
   // extra contracts for arc
-  if (pool === Pools.ARC) {
+  if (pool === Pools.V2_ARC) {
     const arcTimelock = new ethers.Contract(
       poolAdmin,
       arcTimelockAbi,
@@ -328,7 +328,7 @@ export const resolveV2Modifiers = async (
     };
   }
 
-  if (pool !== Pools.ARC) {
+  if (pool !== Pools.V2_ARC) {
     const wethGatewayContract = new ethers.Contract(
       addressBook.WETH_GATEWAY,
       onlyOwnerAbi,
@@ -353,7 +353,7 @@ export const resolveV2Modifiers = async (
     };
   }
 
-  if (pool !== Pools.AMM && pool !== Pools.ARC) {
+  if (pool !== Pools.V2_AMM && pool !== Pools.V2_ARC) {
     const paraswapLiquiditySwapContract = new ethers.Contract(
       addressBook.SWAP_COLLATERAL_ADAPTER,
       onlyOwnerAbi,
@@ -401,7 +401,7 @@ export const resolveV2Modifiers = async (
     };
   }
 
-  if (pool !== Pools.ARC) {
+  if (pool !== Pools.V2_ARC) {
     const addressesRegistryContract = new ethers.Contract(
       addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
       onlyOwnerAbi,

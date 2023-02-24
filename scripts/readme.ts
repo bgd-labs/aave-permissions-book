@@ -27,8 +27,7 @@ On these documents there can be found the next tables:
   - modifier: Name of the gate method that controls who can call a function. There is an entry for every modifier that a contract has.
   - permission owner: Name of the contract that holds the permission to call the modifier.
   - functions: Name of the functions of the contract that are gated by the modifier.
-- Guardians: This table holds the list of addresses with permissions to call certain methods. Normally a Guardian is a multi-sig with permission to call some methods without
-passing through a governance process. 
+- Guardians: This table holds the list of addresses with permissions to call certain methods. Normally a Guardian is a multi-sig with permission to call some methods without, following a mandate from the Aave governance.  
 - Roles: This table enumerates the different roles that a protocol can have, and the contracts who have that role. A role has permissions to call certain modifiers
 
 ### Permissions directory
