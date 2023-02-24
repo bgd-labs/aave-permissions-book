@@ -18,54 +18,32 @@ This repository contains and easy directory of tables showing which permissions 
 
 ## Permissions
 
-- MAINNET 
-  - [V3](./out/MAINNET-V3.md) 
-    - [Contracts](./out/MAINNET-V3.md#contracts) 
-    - [Guardians](./out/MAINNET-V3.md#Guardians) 
-    - [Admins](./out/MAINNET-V3.md#Admins) 
-  - [GOV_V2](./out/MAINNET-GOV_V2.md) 
-    - [Contracts](./out/MAINNET-GOV_V2.md#contracts) 
-    - [Guardians](./out/MAINNET-GOV_V2.md#Guardians) 
-  - [V2](./out/MAINNET-V2.md) 
-    - [Contracts](./out/MAINNET-V2.md#contracts) 
-    - [Guardians](./out/MAINNET-V2.md#Guardians) 
-  - [ARC](./out/MAINNET-ARC.md) 
-    - [Contracts](./out/MAINNET-ARC.md#contracts) 
-    - [Guardians](./out/MAINNET-ARC.md#Guardians) 
-  - [AMM](./out/MAINNET-AMM.md) 
-    - [Contracts](./out/MAINNET-AMM.md#contracts) 
-    - [Guardians](./out/MAINNET-AMM.md#Guardians) 
-- OPTIMISM 
-  - [V3](./out/OPTIMISM-V3.md) 
-    - [Contracts](./out/OPTIMISM-V3.md#contracts) 
-    - [Guardians](./out/OPTIMISM-V3.md#Guardians) 
-    - [Admins](./out/OPTIMISM-V3.md#Admins) 
-- POLYGON 
-  - [V3](./out/POLYGON-V3.md) 
-    - [Contracts](./out/POLYGON-V3.md#contracts) 
-    - [Guardians](./out/POLYGON-V3.md#Guardians) 
-    - [Admins](./out/POLYGON-V3.md#Admins) 
-  - [V2](./out/POLYGON-V2.md) 
-    - [Contracts](./out/POLYGON-V2.md#contracts) 
-    - [Guardians](./out/POLYGON-V2.md#Guardians) 
-- FANTOM_OPERA 
-  - [V3](./out/FANTOM_OPERA-V3.md) 
-    - [Contracts](./out/FANTOM_OPERA-V3.md#contracts) 
-    - [Guardians](./out/FANTOM_OPERA-V3.md#Guardians) 
-    - [Admins](./out/FANTOM_OPERA-V3.md#Admins) 
-- ARBITRUM_ONE 
-  - [V3](./out/ARBITRUM_ONE-V3.md) 
-    - [Contracts](./out/ARBITRUM_ONE-V3.md#contracts) 
-    - [Guardians](./out/ARBITRUM_ONE-V3.md#Guardians) 
-    - [Admins](./out/ARBITRUM_ONE-V3.md#Admins) 
-- AVALANCHE 
-  - [V3](./out/AVALANCHE-V3.md) 
-    - [Contracts](./out/AVALANCHE-V3.md#contracts) 
-    - [Guardians](./out/AVALANCHE-V3.md#Guardians) 
-    - [Admins](./out/AVALANCHE-V3.md#Admins) 
-  - [V2](./out/AVALANCHE-V2.md) 
-    - [Contracts](./out/AVALANCHE-V2.md#contracts) 
-    - [Guardians](./out/AVALANCHE-V2.md#Guardians) 
+A [permissions document](./out) has been created for every pool of every network where the Aave Protocol has been deployed. 
+On these documents there can be found the next tables:
+- Contracts: This table has information about the contracts forming the Aave protocol.
+  - contract: Name of the contract.
+  - proxyAdmin: If the contract follows the Proxy Pattern, here it will show the proxyAdmin address. The proxyAdmin has permissions to change the implementation 
+  - modifier: Name of the gate method that controls who can call a function. There is an entry for every modifier that a contract has.
+  - permission owner: Name of the contract that holds the permission to call the modifier.
+  - functions: Name of the functions of the contract that are gated by the modifier.
+- Guardians: This table holds the list of addresses with permissions to call certain methods. Normally a Guardian is a multi-sig with permission to call some methods without, following a mandate from the Aave governance.  
+- Roles: This table enumerates the different roles that a protocol can have, and the contracts who have that role. A role has permissions to call certain modifiers
+
+### Permissions directory
+| Network |System type |Tables |
+|----------|----------|----------|
+|  MAINNET |  V3 |  [Permissions](./out/MAINNET-V3.md#contracts) | |--------|--------|--------|
+|  MAINNET |  GOV_V2 |  [Permissions](./out/MAINNET-GOV_V2.md#contracts) | |--------|--------|--------|
+|  MAINNET |  V2 |  [Permissions](./out/MAINNET-V2.md#contracts) | |--------|--------|--------|
+|  MAINNET |  V2_ARC |  [Permissions](./out/MAINNET-V2_ARC.md#contracts) | |--------|--------|--------|
+|  MAINNET |  V2_AMM |  [Permissions](./out/MAINNET-V2_AMM.md#contracts) | |--------|--------|--------|
+|  OPTIMISM |  V3 |  [Permissions](./out/OPTIMISM-V3.md#contracts) | |--------|--------|--------|
+|  POLYGON |  V3 |  [Permissions](./out/POLYGON-V3.md#contracts) | |--------|--------|--------|
+|  POLYGON |  V2 |  [Permissions](./out/POLYGON-V2.md#contracts) | |--------|--------|--------|
+|  FANTOM_OPERA |  V3 |  [Permissions](./out/FANTOM_OPERA-V3.md#contracts) | |--------|--------|--------|
+|  ARBITRUM_ONE |  V3 |  [Permissions](./out/ARBITRUM_ONE-V3.md#contracts) | |--------|--------|--------|
+|  AVALANCHE |  V3 |  [Permissions](./out/AVALANCHE-V3.md#contracts) | |--------|--------|--------|
+|  AVALANCHE |  V2 |  [Permissions](./out/AVALANCHE-V2.md#contracts) | |--------|--------|--------|
        
     
 ## Usage

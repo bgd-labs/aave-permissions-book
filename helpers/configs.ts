@@ -21,8 +21,8 @@ dotenv.config();
 export enum Pools {
   V2 = 'V2',
   V3 = 'V3',
-  AMM = 'AMM',
-  ARC = 'ARC',
+  V2_AMM = 'V2_AMM',
+  V2_ARC = 'V2_ARC',
   GOV_V2 = 'GOV_V2',
   TENDERLY = 'TENDERLY',
 }
@@ -45,11 +45,11 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2Ethereum,
       },
-      [Pools.ARC]: {
+      [Pools.V2_ARC]: {
         permissionsJson: './statics/functionsPermissionsArc.json',
         addressBook: AaveV2EthereumArc,
       },
-      [Pools.AMM]: {
+      [Pools.V2_AMM]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2EthereumAMM,
       },
