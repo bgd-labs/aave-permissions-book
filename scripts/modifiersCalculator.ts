@@ -10,6 +10,7 @@ import { resolveV2Modifiers } from './v2Permissions';
 import { resolveV3Modifiers } from './v3Permissions';
 import { resolveGovV2Modifiers } from './governancePermissions';
 import { Contracts, FullPermissions, Roles } from '../helpers/types';
+import { resolveSafetyV2Modifiers } from './safetyPermissions';
 
 async function main() {
   let fullJson: FullPermissions = getAllPermissionsJson();
@@ -28,7 +29,11 @@ async function main() {
       const permissionsJson = getStaticPermissionsJson(pool.permissionsJson);
       let poolPermissions: Contracts = {};
       let admins = {} as Roles;
-      if (poolKey !== Pools.GOV_V2 && !pool.aclBlock) {
+      if (
+        poolKey !== Pools.GOV_V2 &&
+        poolKey !== Pools.SAFETY_MODULE &&
+        !pool.aclBlock
+      ) {
         if (poolKey === Pools.TENDERLY) {
           provider = new ethers.providers.JsonRpcProvider(
             networkConfigs[network].pools[poolKey].tenderlyRpcUrl,
@@ -43,6 +48,12 @@ async function main() {
         );
       } else if (poolKey === Pools.GOV_V2) {
         poolPermissions = await resolveGovV2Modifiers(
+          pool.addressBook,
+          provider,
+          permissionsJson,
+        );
+      } else if (poolKey === Pools.SAFETY_MODULE) {
+        poolPermissions = await resolveSafetyV2Modifiers(
           pool.addressBook,
           provider,
           permissionsJson,

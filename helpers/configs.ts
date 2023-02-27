@@ -2,6 +2,7 @@ import { ChainId } from '@aave/contract-helpers';
 import dotenv from 'dotenv';
 import {
   AaveGovernanceV2,
+  AaveSafetyModule,
   AaveV2Avalanche,
   AaveV2Ethereum,
   AaveV2EthereumAMM,
@@ -24,6 +25,7 @@ export enum Pools {
   V2_AMM = 'V2_AMM',
   V2_ARC = 'V2_ARC',
   GOV_V2 = 'GOV_V2',
+  SAFETY_MODULE = 'SAFETY_MODULE',
   TENDERLY = 'TENDERLY',
 }
 
@@ -52,6 +54,10 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V2_AMM]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2EthereumAMM,
+      },
+      [Pools.SAFETY_MODULE]: {
+        permissionsJson: './statics/functionsPermissionsSafety.json',
+        addressBook: AaveSafetyModule,
       },
       // [Pools.TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',

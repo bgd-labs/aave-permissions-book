@@ -1,0 +1,22 @@
+[
+  {
+    "contract": "stkAave",
+    "proxyAdmin": true,
+    "functions": [
+      {
+        "name": "configureAssets",
+        "roles": ["onlyEmissionManager"]
+      }
+    ]
+  },
+  {
+    "contract": "stkABPT",
+    "proxyAdmin": true,
+    "functions": [
+      {
+        "name": "configureAssets",
+        "roles": ["onlyEmissionManager"]
+      }
+    ]
+  }
+]
