@@ -4,7 +4,8 @@ import { generateRoles } from '../helpers/jsonParsers';
 import { getProxyAdmin } from '../helpers/proxyAdmin';
 import { getSafeOwners } from '../helpers/guardian';
 import stkAaveABI from '../abis/stkAaveABI.json';
-import executorWithTimelockAbi from '../abis/executorWithTimelockAbi.json';
+import abptABI from '../abis/abptABI.json';
+import bptABI from '../abis/bptABI.json';
 import { Contracts, PermissionsJson } from '../helpers/types';
 
 export const resolveSafetyV2Modifiers = async (
@@ -48,6 +49,7 @@ export const resolveSafetyV2Modifiers = async (
   );
 
   const stkABPTEmissionManager = await stkABPTContract.EMISSION_MANAGER();
+  const abptAddress = await stkABPTContract.STAKED_TOKEN();
 
   obj['stkABPT'] = {
     address: addressBook.STK_ABPT,
@@ -61,6 +63,44 @@ export const resolveSafetyV2Modifiers = async (
           },
         ],
         functions: roles['stkABPT']['onlyEmissionManager'],
+      },
+    ],
+  };
+
+  const abptContract = new ethers.Contract(abptAddress, abptABI, provider);
+  const bPool = await abptContract.bPool();
+  const abptController = await abptContract.getController();
+
+  obj['ABPT'] = {
+    address: abptAddress,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: abptController,
+            owners: await getSafeOwners(provider, abptController),
+          },
+        ],
+        functions: roles['ABPT']['onlyOwner'],
+      },
+    ],
+  };
+
+  const bptContract = new ethers.Contract(bPool, bptABI, provider);
+  const bptController = await bptContract.getController();
+  obj['BPT'] = {
+    address: bPool,
+    modifiers: [
+      {
+        modifier: 'onlyController',
+        addresses: [
+          {
+            address: bptController,
+            owners: await getSafeOwners(provider, bptController),
+          },
+        ],
+        functions: roles['BPT']['onlyController'],
       },
     ],
   };

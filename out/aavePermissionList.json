@@ -372,7 +372,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16720680
+        "latestBlockNumber": 16720935
       }
     },
     "GOV_V2": {
@@ -1262,6 +1262,63 @@
             }
           ],
           "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+        },
+        "ABPT": {
+          "address": "0x41A08648C3766F9F9d85598fF102a08f4ef84F84",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xB9062896ec3A615a4e4444DF183F0531a77218AE",
+                  "owners": [
+                    "0xa81cF4389f493Fee9FC0fA69510b48D3E2Bfd3ce",
+                    "0xf0919eC356e4221e0b8C8b0d1992Bdc0D7475e4E",
+                    "0xB0c9C5B5211dE3a75b61BB798887b76AcCD64193",
+                    "0x106fc088aBA908130fBC343F2F6d212Ff36150D1",
+                    "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
+                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30"
+                  ]
+                }
+              ],
+              "functions": [
+                "setCap",
+                "setPublicSwap",
+                "createPool",
+                "updateWeight",
+                "updateWeightsGradually",
+                "commitAddToken",
+                "applyAddToken",
+                "removeToken",
+                "whitelistLiquidityProvider",
+                "removeWhitelistedLiquidityProvider"
+              ]
+            }
+          ],
+          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+        },
+        "BPT": {
+          "address": "0xC697051d1C6296C24aE3bceF39acA743861D9A81",
+          "modifiers": [
+            {
+              "modifier": "onlyController",
+              "addresses": [
+                {
+                  "address": "0x41A08648C3766F9F9d85598fF102a08f4ef84F84",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setSwapFee",
+                "setController",
+                "setPublicSwap",
+                "finalize",
+                "bind",
+                "rebind",
+                "unbind"
+              ]
+            }
+          ]
         }
       },
       "roles": {}
@@ -1697,7 +1754,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 77588839
+        "latestBlockNumber": 77600229
       }
     }
   },
@@ -2144,7 +2201,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 39773740
+        "latestBlockNumber": 39775103
       }
     },
     "V2": {
@@ -2982,7 +3039,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 56614336
+        "latestBlockNumber": 56616857
       }
     }
   },
@@ -3416,7 +3473,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 65135347
+        "latestBlockNumber": 65147592
       }
     }
   },
@@ -3985,7 +4042,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 26807202
+        "latestBlockNumber": 26808736
       }
     },
     "V2": {

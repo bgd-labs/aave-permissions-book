@@ -18,5 +18,84 @@
         "roles": ["onlyEmissionManager"]
       }
     ]
+  },
+  {
+    "contract": "ABPT",
+    "proxyAdmin": true,
+    "functions": [
+      {
+        "name": "setCap",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setPublicSwap",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "createPool",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "updateWeight",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "updateWeightsGradually",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "commitAddToken",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "applyAddToken",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "removeToken",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "whitelistLiquidityProvider",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "removeWhitelistedLiquidityProvider",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "BPT",
+    "functions": [
+      {
+        "name": "setSwapFee",
+        "roles": ["onlyController"]
+      },
+      {
+        "name": "setController",
+        "roles": ["onlyController"]
+      },
+      {
+        "name": "setPublicSwap",
+        "roles": ["onlyController"]
+      },
+      {
+        "name": "finalize",
+        "roles": ["onlyController"]
+      },
+      {
+        "name": "bind",
+        "roles": ["onlyController"]
+      },
+      {
+        "name": "rebind",
+        "roles": ["onlyController"]
+      },
+      {
+        "name": "unbind",
+        "roles": ["onlyController"]
+      }
+    ]
   }
 ]
