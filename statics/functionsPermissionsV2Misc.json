@@ -1,0 +1,24 @@
+[
+  {
+    "contract": "LendToAaveMigrator",
+    "proxyAdmin": true,
+    "functions": []
+  },
+  {
+    "contract": "AaveMerkleDistributor",
+    "functions": [
+      {
+        "name": "addDistributions",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "emergencyTokenTransfer",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "emergencyEtherTransfer",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  }
+]

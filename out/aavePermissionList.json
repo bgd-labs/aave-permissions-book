@@ -372,7 +372,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16725516
+        "latestBlockNumber": 16726637
       }
     },
     "GOV_V2": {
@@ -1322,6 +1322,35 @@
         }
       },
       "roles": {}
+    },
+    "V2_MISC": {
+      "contracts": {
+        "LendToAaveMigrator": {
+          "address": "0x317625234562B1526Ea2FaC4030Ea499C5291de4",
+          "modifiers": [],
+          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+        },
+        "AaveMerkleDistributor": {
+          "address": "0x317625234562B1526Ea2FaC4030Ea499C5291de4",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "addDistributions",
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
+            }
+          ]
+        }
+      },
+      "roles": {}
     }
   },
   "10": {
@@ -1754,7 +1783,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 77710259
+        "latestBlockNumber": 77745677
       }
     }
   },
@@ -2201,7 +2230,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 39799291
+        "latestBlockNumber": 39804981
       }
     },
     "V2": {
@@ -3039,7 +3068,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 56657175
+        "latestBlockNumber": 56667457
       }
     }
   },
@@ -3473,7 +3502,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 65358088
+        "latestBlockNumber": 65412028
       }
     }
   },
@@ -4042,7 +4071,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 26835402
+        "latestBlockNumber": 26841882
       }
     },
     "V2": {

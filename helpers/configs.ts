@@ -24,6 +24,7 @@ export enum Pools {
   V3 = 'V3',
   V2_AMM = 'V2_AMM',
   V2_ARC = 'V2_ARC',
+  V2_MISC = 'V2_MISC',
   GOV_V2 = 'GOV_V2',
   SAFETY_MODULE = 'SAFETY_MODULE',
   TENDERLY = 'TENDERLY',
@@ -58,6 +59,14 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.SAFETY_MODULE]: {
         permissionsJson: './statics/functionsPermissionsSafety.json',
         addressBook: AaveSafetyModule,
+      },
+      [Pools.V2_MISC]: {
+        permissionsJson: './statics/functionsPermissionsV2Misc.json',
+        addressBook: {},
+        addresses: {
+          LEND_TO_AAVE_MIGRATOR: '0x317625234562B1526Ea2FaC4030Ea499C5291de4',
+          AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
+        },
       },
       // [Pools.TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',

@@ -11,6 +11,7 @@ import { resolveV3Modifiers } from './v3Permissions';
 import { resolveGovV2Modifiers } from './governancePermissions';
 import { Contracts, FullPermissions, Roles } from '../helpers/types';
 import { resolveSafetyV2Modifiers } from './safetyPermissions';
+import { resolveV2MiscModifiers } from './v2MiscPermissions';
 
 async function main() {
   let fullJson: FullPermissions = getAllPermissionsJson();
@@ -32,6 +33,7 @@ async function main() {
       if (
         poolKey !== Pools.GOV_V2 &&
         poolKey !== Pools.SAFETY_MODULE &&
+        poolKey !== Pools.V2_MISC &&
         !pool.aclBlock
       ) {
         if (poolKey === Pools.TENDERLY) {
@@ -55,6 +57,13 @@ async function main() {
       } else if (poolKey === Pools.SAFETY_MODULE) {
         poolPermissions = await resolveSafetyV2Modifiers(
           pool.addressBook,
+          provider,
+          permissionsJson,
+        );
+      } else if (poolKey === Pools.V2_MISC) {
+        poolPermissions = await resolveV2MiscModifiers(
+          pool.addressBook,
+          pool.addresses || {},
           provider,
           permissionsJson,
         );
