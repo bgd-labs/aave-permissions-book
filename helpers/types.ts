@@ -39,6 +39,8 @@ export type PoolConfigs = {
 
   tenderlyBlock?: number;
   tenderlyRpcUrl?: string;
+
+  addresses?: Record<string, string>;
 };
 export type Network = {
   rpcUrl: string | undefined;
