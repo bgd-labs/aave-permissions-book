@@ -372,7 +372,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16723167
+        "latestBlockNumber": 16725516
       }
     },
     "GOV_V2": {
@@ -1224,6 +1224,104 @@
         }
       },
       "roles": {}
+    },
+    "SAFETY_MODULE": {
+      "contracts": {
+        "stkAave": {
+          "address": "0x4da27a545c0c5B758a6BA100e3a049001de870f5",
+          "modifiers": [
+            {
+              "modifier": "onlyEmissionManager",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "configureAssets"
+              ]
+            }
+          ],
+          "proxyAdmin": "0x79426a1c24b2978d90d7a5070a46c65b07bc4299"
+        },
+        "stkABPT": {
+          "address": "0xa1116930326D21fB917d5A27F1E9943A9595fb47",
+          "modifiers": [
+            {
+              "modifier": "onlyEmissionManager",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "configureAssets"
+              ]
+            }
+          ],
+          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+        },
+        "ABPT": {
+          "address": "0x41A08648C3766F9F9d85598fF102a08f4ef84F84",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xB9062896ec3A615a4e4444DF183F0531a77218AE",
+                  "owners": [
+                    "0xa81cF4389f493Fee9FC0fA69510b48D3E2Bfd3ce",
+                    "0xf0919eC356e4221e0b8C8b0d1992Bdc0D7475e4E",
+                    "0xB0c9C5B5211dE3a75b61BB798887b76AcCD64193",
+                    "0x106fc088aBA908130fBC343F2F6d212Ff36150D1",
+                    "0xE7A4F2b1772603170111BC633cbCF1AcEbD60BCe",
+                    "0xf6dcD4d7141E06B916987C3C46220f6241278a30"
+                  ]
+                }
+              ],
+              "functions": [
+                "setCap",
+                "setPublicSwap",
+                "createPool",
+                "updateWeight",
+                "updateWeightsGradually",
+                "commitAddToken",
+                "applyAddToken",
+                "removeToken",
+                "whitelistLiquidityProvider",
+                "removeWhitelistedLiquidityProvider"
+              ]
+            }
+          ],
+          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+        },
+        "BPT": {
+          "address": "0xC697051d1C6296C24aE3bceF39acA743861D9A81",
+          "modifiers": [
+            {
+              "modifier": "onlyController",
+              "addresses": [
+                {
+                  "address": "0x41A08648C3766F9F9d85598fF102a08f4ef84F84",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setSwapFee",
+                "setController",
+                "setPublicSwap",
+                "finalize",
+                "bind",
+                "rebind",
+                "unbind"
+              ]
+            }
+          ]
+        }
+      },
+      "roles": {}
     }
   },
   "10": {
@@ -1656,7 +1754,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 77657672
+        "latestBlockNumber": 77710259
       }
     }
   },
@@ -2103,7 +2201,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 39787273
+        "latestBlockNumber": 39799291
       }
     },
     "V2": {
@@ -2941,7 +3039,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 56639125
+        "latestBlockNumber": 56657175
       }
     }
   },
@@ -3375,7 +3473,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 65249804
+        "latestBlockNumber": 65358088
       }
     }
   },
@@ -3944,7 +4042,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 26693932
+        "latestBlockNumber": 26835402
       }
     },
     "V2": {
