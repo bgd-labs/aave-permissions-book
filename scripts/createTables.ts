@@ -32,8 +32,7 @@ export const generateTableAddress = (
           : poolGuardians[checkSummedAddress]
           ? addressesNames[checkSummedAddress]
             ? addressesNames[checkSummedAddress]
-            : 'Guardian' +
-              (Object.keys(poolGuardians).indexOf(checkSummedAddress) + 1)
+            : `${checkSummedAddress} (Safe)`
           : checkSummedAddress) +
         '](' +
         (contractsByAddress[checkSummedAddress] &&
@@ -183,11 +182,7 @@ export const generateTables = async () => {
             `[${
               addressesNames[utils.getAddress(guardian)]
                 ? addressesNames[utils.getAddress(guardian)]
-                : 'Guardian' +
-                  (Object.keys(poolGuardians).indexOf(
-                    utils.getAddress(guardian),
-                  ) +
-                    1)
+                : `${utils.getAddress(guardian)} (Safe)`
             }](${explorerAddressUrlComposer(guardian, network)})`,
             guardian,
             `${poolGuardians[guardian]
