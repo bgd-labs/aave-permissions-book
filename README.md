@@ -22,7 +22,7 @@ A [permissions document](./out) has been created for every pool of every network
 These documents contain tables with the following information:
 - **Contracts**: This table has information about the contracts of the Aave protocol.
   - contract: Name of the contract.
-  - proxyAdmin: If the contract follows the Proxy Pattern, here it will show the proxyAdmin address. The proxyAdmin has permissions to upgrade the implementation.
+  - proxyAdmin: If the contract follows the Proxy Pattern, it will show the proxyAdmin address. The proxyAdmin has permissions to upgrade the implementation.
   - modifier: Name of the gate method that controls who can call a function. There is an entry for every modifier that a contract has.
   - permission owner: Name of the contract that holds the permission to call the modifier.
   - functions: Name of the functions of the contract that are gated by the modifier.
