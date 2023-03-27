@@ -34,6 +34,13 @@ export const networkConfigs: NetworkConfigs = {
   [ChainId.mainnet]: {
     rpcUrl: process.env.RPC_MAINNET,
     explorer: 'https://etherscan.io',
+    addressesNames: {
+      '0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633': 'Aave Guardian Ethereum',
+      '0x23c155C1c1ecB18a86921Da29802292f1d282c68': 'Aave Arc DAO',
+      '0x33B09130b035d6D7e57d76fEa0873d9545FA7557': 'Aave Arc Guardian',
+      '0xB9062896ec3A615a4e4444DF183F0531a77218AE': 'Legacy Emergency Admin',
+      '0x36fEDC70feC3B77CAaf50E6C524FD7e5DFBD629A': 'ParaSwap',
+    },
     pools: {
       [Pools.V3]: {
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
@@ -81,6 +88,12 @@ export const networkConfigs: NetworkConfigs = {
   [ChainId.polygon]: {
     rpcUrl: process.env.RPC_POLYGON,
     explorer: 'https://polygonscan.com',
+    addressesNames: {
+      '0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58': 'Aave Guardian Polygon',
+      '0x46DF4eb6f7A3B0AdF526f6955b15d3fE02c618b7': 'ParaSwap',
+      '0x2bB25175d9B0F8965780209EB558Cc3b56cA6d32':
+        'Polygon v2 incentives admin',
+    },
     pools: {
       [Pools.V3]: {
         aclBlock: 25824416,
@@ -96,6 +109,13 @@ export const networkConfigs: NetworkConfigs = {
   [ChainId.avalanche]: {
     rpcUrl: process.env.RPC_AVALANCHE,
     explorer: 'https://snowtrace.io',
+    addressesNames: {
+      '0xa35b76E4935449E33C56aB24b23fcd3246f13470': 'Aave Guardian Avalanche',
+      '0x01244E7842254e3FD229CD263472076B1439D1Cd':
+        'Aave Guardian Avalanche (legacy)',
+      '0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26':
+        'Avalanche v2 incentives admin',
+    },
     pools: {
       [Pools.V3]: {
         aclBlock: 11970456,
@@ -117,6 +137,9 @@ export const networkConfigs: NetworkConfigs = {
   [ChainId.optimism]: {
     rpcUrl: process.env.RPC_OPTIMISM,
     explorer: 'https://optimistic.etherscan.io',
+    addressesNames: {
+      '0xE50c8C619d05ff98b22Adf991F17602C774F785c': 'Aave Guardian Optimism',
+    },
     pools: {
       [Pools.V3]: {
         aclBlock: 4365546,
@@ -128,6 +151,9 @@ export const networkConfigs: NetworkConfigs = {
   [ChainId.arbitrum_one]: {
     rpcUrl: process.env.RPC_ARBITRUM,
     explorer: 'https://arbiscan.io',
+    addressesNames: {
+      '0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb': 'Aave Guardian Arbitrum',
+    },
     pools: {
       [Pools.V3]: {
         aclBlock: 7740502,
@@ -139,6 +165,9 @@ export const networkConfigs: NetworkConfigs = {
   [ChainId.fantom]: {
     rpcUrl: process.env.RPC_FANTOM,
     explorer: 'https://ftmscan.com',
+    addressesNames: {
+      '0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949': 'Aave Guardian Fantom',
+    },
     pools: {
       [Pools.V3]: {
         aclBlock: 33141475,

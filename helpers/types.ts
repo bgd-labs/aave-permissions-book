@@ -46,6 +46,7 @@ export type Network = {
   rpcUrl: string | undefined;
   explorer: string;
   pools: Record<string, PoolConfigs>;
+  addressesNames?: Record<string, string>;
 };
 
 export type NetworkConfigs = Record<string, Network>;

@@ -18,6 +18,7 @@ import {
 
 export const generateTableAddress = (
   address: string | undefined,
+  addressesNames: Record<string, string>,
   contractsByAddress: ContractsByAddress,
   poolGuardians: PoolGuardians,
   network: string,
@@ -29,8 +30,9 @@ export const generateTableAddress = (
         (contractsByAddress[checkSummedAddress]
           ? contractsByAddress[checkSummedAddress]
           : poolGuardians[checkSummedAddress]
-          ? 'Guardian' +
-            (Object.keys(poolGuardians).indexOf(checkSummedAddress) + 1)
+          ? addressesNames[checkSummedAddress]
+            ? addressesNames[checkSummedAddress]
+            : `${checkSummedAddress} (Safe)`
           : checkSummedAddress) +
         '](' +
         (contractsByAddress[checkSummedAddress] &&
@@ -60,7 +62,7 @@ export const generateTables = async () => {
   for (let network of Object.keys(aavePermissionsList)) {
     const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
     const networkPermits = aavePermissionsList[network];
-
+    const addressesNames = networkConfigs[network].addressesNames || {};
     for (let pool of Object.keys(networkPermits)) {
       // create network Readme with pool tables
       let readmeByNetwork = `# ${networkName} \n`;
@@ -106,6 +108,7 @@ export const generateTables = async () => {
             )})`,
             `${generateTableAddress(
               contract.proxyAdmin,
+              addressesNames,
               contractsByAddress,
               poolGuardians,
               network,
@@ -132,6 +135,7 @@ export const generateTables = async () => {
             )})`,
             `${generateTableAddress(
               contract.proxyAdmin,
+              addressesNames,
               contractsByAddress,
               poolGuardians,
               network,
@@ -141,6 +145,7 @@ export const generateTables = async () => {
               .map((modifierAddress: AddressInfo) =>
                 generateTableAddress(
                   modifierAddress.address,
+                  addressesNames,
                   contractsByAddress,
                   poolGuardians,
                   network,
@@ -168,13 +173,18 @@ export const generateTables = async () => {
 
       if (Object.keys(poolGuardians).length > 0) {
         let guardianTable = `### Guardians \n`;
-        const guardianHeaderTitles = ['Guardian', 'Owners'];
+        const guardianHeaderTitles = ['Guardian', 'Address', 'Owners'];
         const guardianHeader = getTableHeader(guardianHeaderTitles);
         guardianTable += guardianHeader;
 
         Object.keys(poolGuardians).forEach((guardian) => {
           guardianTable += getTableBody([
-            `[${guardian}](${explorerAddressUrlComposer(guardian, network)})`,
+            `[${
+              addressesNames[utils.getAddress(guardian)]
+                ? addressesNames[utils.getAddress(guardian)]
+                : `${utils.getAddress(guardian)} (Safe)`
+            }](${explorerAddressUrlComposer(guardian, network)})`,
+            guardian,
             `${poolGuardians[guardian]
               .map(
                 (owner) =>
@@ -205,6 +215,7 @@ export const generateTables = async () => {
               .map((roleAddress: string) =>
                 generateTableAddress(
                   roleAddress,
+                  addressesNames,
                   contractsByAddress,
                   poolGuardians,
                   network,

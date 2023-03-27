@@ -12,7 +12,7 @@ Tool to index and visualise all the permissions on the whole Aave smart contract
 
 ## Description
 
-The Aave Protocol smart contracts require different permissions to execute its different methods. These permissions are also hold by different addresses,  being other smart contracts, EOAs or multi-sigs.
+The Aave Protocol smart contracts require different permissions to execute its different methods. These permissions are also hold by different addresses, being other smart contracts, EOAs or multi-sigs.
 This repository contains and easy directory of tables showing which permissions are needed to execute the functions of the different contracts conforming the Aave Protocol, and the owners of said permissions.
 
 
