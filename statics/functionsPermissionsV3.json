@@ -400,5 +400,10 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "RatesFactory",
+    "proxyAdmin": true,
+    "functions": []
   }
 ]

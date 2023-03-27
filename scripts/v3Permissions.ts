@@ -9,6 +9,7 @@ import { getSafeOwners } from '../helpers/guardian';
 import { ChainId } from '@aave/contract-helpers';
 import { getBridgeExecutor } from './bridgeExecutors';
 import { AddressInfo, Contracts, PermissionsJson } from '../helpers/types';
+import { RATES_FACTORY } from '@bgd-labs/aave-address-book/dist/AaveV3Ethereum';
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -479,6 +480,14 @@ export const resolveV3Modifiers = async (
     ],
   };
 
+  if (addressBook.RATES_FACTORY) {
+    console.log('chainId: ', chainId);
+    obj['RatesFactory'] = {
+      address: addressBook.RATES_FACTORY,
+      modifiers: [],
+    };
+  }
+
   let bridgeExecutor = {};
   if (
     chainId === ChainId.polygon ||
@@ -494,10 +503,12 @@ export const resolveV3Modifiers = async (
     .filter((contract) => contract.proxyAdmin)
     .map((contract) => contract.contract);
   for (let i = 0; i < proxyAdminContracts.length; i++) {
-    obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
-      obj[proxyAdminContracts[i]].address,
-      provider,
-    );
+    if (obj[proxyAdminContracts[i]]) {
+      obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
+        obj[proxyAdminContracts[i]].address,
+        provider,
+      );
+    }
   }
 
   return obj;

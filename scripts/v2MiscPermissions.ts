@@ -14,7 +14,7 @@ export const resolveV2MiscModifiers = async (
 ): Promise<Contracts> => {
   const obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
-  console.log('addresses: ', addresses);
+
   obj['LendToAaveMigrator'] = {
     address: addresses.LEND_TO_AAVE_MIGRATOR,
     modifiers: [],

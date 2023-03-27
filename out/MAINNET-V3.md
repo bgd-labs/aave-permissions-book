@@ -21,6 +21,7 @@
 |  [ParaSwapRepayAdapter](https://etherscan.io/address/0x1809f186D680f239420B56948C58F8DbbCdf1E18) |  - |  onlyOwner |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://etherscan.io/address/0x223d844fc4B006D67c0cDbd39371A9F73f69d974) |  - |  onlyOwner |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://etherscan.io/address/0xbaA999AC55EAce41CcAE355c77809e68Bb345170) |  - |  onlyOwner |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
+|  [RatesFactory](https://etherscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  [0xD3cF979e676265e4f6379749DECe4708B9A22476](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  - |  - | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Address |Owners |
