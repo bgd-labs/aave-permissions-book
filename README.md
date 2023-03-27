@@ -20,13 +20,13 @@ This repository contains and easy directory of tables showing which permissions 
 
 A [permissions document](./out) has been created for every pool of every network where the Aave Protocol has been deployed. 
 These documents contain tables with the following information:
-- **Contracts**: This table has information about the contracts forming the Aave protocol.
+- **Contracts**: This table has information about the contracts of the Aave protocol.
   - contract: Name of the contract.
-  - proxyAdmin: If the contract follows the Proxy Pattern, here it will show the proxyAdmin address. The proxyAdmin has permissions to upgrade the implementation 
+  - proxyAdmin: If the contract follows the Proxy Pattern, here it will show the proxyAdmin address. The proxyAdmin has permissions to upgrade the implementation.
   - modifier: Name of the gate method that controls who can call a function. There is an entry for every modifier that a contract has.
   - permission owner: Name of the contract that holds the permission to call the modifier.
   - functions: Name of the functions of the contract that are gated by the modifier.
-- **Guardians**: This table holds the list of addresses with permissions to call certain methods, excluding those of the Aave governance. Normally a Guardian is a multi-sig with permission to call some methods without, following a mandate from the Aave governance.  
+- **Guardians**: This table holds the list of addresses with permissions to call certain methods, excluding those of the Aave governance. Normally a Guardian is a multi-sig with permission to call some methods, following a mandate from the Aave governance.  
 - **Roles**: This table enumerates the different roles that a protocol can have, and the contracts who have that role. A role has permissions to call certain functions gated by modifiers.
 
 ### Permissions directory
