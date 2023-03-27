@@ -379,5 +379,22 @@
     "contract": "RatesFactory",
     "proxyAdmin": true,
     "functions": []
+  },
+  {
+    "contract": "ProxyAdmin",
+    "functions": [
+      {
+        "name": "changeProxyAdmin",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "upgrade",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "upgradeAndCall",
+        "roles": ["onlyOwner"]
+      }
+    ]
   }
 ]

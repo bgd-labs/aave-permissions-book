@@ -481,10 +481,34 @@ export const resolveV3Modifiers = async (
   };
 
   if (addressBook.RATES_FACTORY) {
-    console.log('chainId: ', chainId);
     obj['RatesFactory'] = {
       address: addressBook.RATES_FACTORY,
       modifiers: [],
+    };
+    const proxyAdminContractAddress = await getProxyAdmin(
+      addressBook.RATES_FACTORY,
+      provider,
+    );
+    const proxyAdminContract = new ethers.Contract(
+      proxyAdminContractAddress,
+      onlyOwnerAbi,
+      provider,
+    );
+    const proxyAdminOwner = await proxyAdminContract.owner();
+    obj['ProxyAdmin'] = {
+      address: proxyAdminContractAddress,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: proxyAdminOwner,
+              owners: await getSafeOwners(provider, proxyAdminOwner),
+            },
+          ],
+          functions: roles['ProxyAdmin']['onlyOwner'],
+        },
+      ],
     };
   }
 
