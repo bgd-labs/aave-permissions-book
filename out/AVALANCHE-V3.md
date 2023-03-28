@@ -23,8 +23,8 @@
 |  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x4fB0Ba43a5415f312cf5FA10d16Ff6dbA697d9aA) |  - |  onlyOwner |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://snowtrace.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyOwner |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://snowtrace.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  - |  onlyOwner |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
-|  [RatesFactory](https://snowtrace.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  [0xD3cF979e676265e4f6379749DECe4708B9A22476](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  - |  - | |--------|--------|--------|--------|--------|
-|  [ProxyAdmin](https://snowtrace.io/address/0xd3cf979e676265e4f6379749dece4708b9a22476) |  - |  onlyOwner |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
+|  [RatesFactory](https://snowtrace.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  - |  - | |--------|--------|--------|--------|--------|
+|  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Address |Owners |

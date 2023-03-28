@@ -1,4 +1,4 @@
-import { ethers, providers } from 'ethers';
+import { ethers, providers, utils } from 'ethers';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json';
 import collectorAbi from '../abis/collectorAbi.json';
 import { Pools } from '../helpers/configs';
@@ -496,7 +496,7 @@ export const resolveV3Modifiers = async (
     );
     const proxyAdminOwner = await proxyAdminContract.owner();
     obj['ProxyAdmin'] = {
-      address: proxyAdminContractAddress,
+      address: utils.getAddress(proxyAdminContractAddress),
       modifiers: [
         {
           modifier: 'onlyOwner',
