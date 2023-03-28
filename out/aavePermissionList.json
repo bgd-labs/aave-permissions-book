@@ -354,6 +354,30 @@
               ]
             }
           ]
+        },
+        "RatesFactory": {
+          "address": "0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896",
+          "modifiers": [],
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        },
+        "ProxyAdmin": {
+          "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
         }
       },
       "roles": {
@@ -372,7 +396,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 16900962
+        "latestBlockNumber": 16924506
       }
     },
     "GOV_V2": {
@@ -1701,6 +1725,30 @@
             }
           ]
         },
+        "RatesFactory": {
+          "address": "0xDd81E6F85358292075B78fc8D5830BE8434aF8BA",
+          "modifiers": [],
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        },
+        "ProxyAdmin": {
+          "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x7d9103572bE58FfE99dc390E8246f02dcAe6f611",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
         "OptimismBridgeExecutor": {
           "address": "0x7d9103572bE58FfE99dc390E8246f02dcAe6f611",
           "modifiers": [
@@ -1776,7 +1824,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 83502679
+        "latestBlockNumber": 84252539
       }
     }
   },
@@ -2135,6 +2183,30 @@
             }
           ]
         },
+        "RatesFactory": {
+          "address": "0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896",
+          "modifiers": [],
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        },
+        "ProxyAdmin": {
+          "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
         "PolygonBridgeExecutor": {
           "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
           "modifiers": [
@@ -2223,7 +2295,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 40732274
+        "latestBlockNumber": 40855071
       }
     },
     "V2": {
@@ -3061,7 +3133,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 58293712
+        "latestBlockNumber": 58552162
       }
     }
   },
@@ -3420,6 +3492,30 @@
             }
           ]
         },
+        "RatesFactory": {
+          "address": "0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896",
+          "modifiers": [],
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        },
+        "ProxyAdmin": {
+          "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x7d9103572bE58FfE99dc390E8246f02dcAe6f611",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
         "ArbitrumBridgeExecutor": {
           "address": "0x7d9103572bE58FfE99dc390E8246f02dcAe6f611",
           "modifiers": [
@@ -3495,7 +3591,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 73356262
+        "latestBlockNumber": 74497169
       }
     }
   },
@@ -3696,10 +3792,6 @@
                 },
                 {
                   "address": "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc",
-                  "owners": []
-                },
-                {
-                  "address": "0xeca5bdf0C2b352cBE2D9A19b555E1EC269d4765C",
                   "owners": []
                 }
               ],
@@ -4048,6 +4140,41 @@
               ]
             }
           ]
+        },
+        "RatesFactory": {
+          "address": "0xDd81E6F85358292075B78fc8D5830BE8434aF8BA",
+          "modifiers": [],
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        },
+        "ProxyAdmin": {
+          "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "owners": [
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
+                    "0x4C30E33758216aD0d676419c21CB8D014C68099f",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                    "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                    "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                    "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                    "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                    "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
+                  ]
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
         }
       },
       "roles": {
@@ -4065,11 +4192,10 @@
             "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
           ],
           "RISK_ADMIN": [
-            "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc",
-            "0xeca5bdf0C2b352cBE2D9A19b555E1EC269d4765C"
+            "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 26910882
+        "latestBlockNumber": 28000030
       }
     },
     "V2": {

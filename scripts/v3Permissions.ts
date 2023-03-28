@@ -1,4 +1,4 @@
-import { ethers, providers } from 'ethers';
+import { ethers, providers, utils } from 'ethers';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json';
 import collectorAbi from '../abis/collectorAbi.json';
 import { Pools } from '../helpers/configs';
@@ -9,6 +9,7 @@ import { getSafeOwners } from '../helpers/guardian';
 import { ChainId } from '@aave/contract-helpers';
 import { getBridgeExecutor } from './bridgeExecutors';
 import { AddressInfo, Contracts, PermissionsJson } from '../helpers/types';
+import { RATES_FACTORY } from '@bgd-labs/aave-address-book/dist/AaveV3Ethereum';
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -479,6 +480,38 @@ export const resolveV3Modifiers = async (
     ],
   };
 
+  if (addressBook.RATES_FACTORY) {
+    obj['RatesFactory'] = {
+      address: addressBook.RATES_FACTORY,
+      modifiers: [],
+    };
+    const proxyAdminContractAddress = await getProxyAdmin(
+      addressBook.RATES_FACTORY,
+      provider,
+    );
+    const proxyAdminContract = new ethers.Contract(
+      proxyAdminContractAddress,
+      onlyOwnerAbi,
+      provider,
+    );
+    const proxyAdminOwner = await proxyAdminContract.owner();
+    obj['ProxyAdmin'] = {
+      address: utils.getAddress(proxyAdminContractAddress),
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: proxyAdminOwner,
+              owners: await getSafeOwners(provider, proxyAdminOwner),
+            },
+          ],
+          functions: roles['ProxyAdmin']['onlyOwner'],
+        },
+      ],
+    };
+  }
+
   let bridgeExecutor = {};
   if (
     chainId === ChainId.polygon ||
@@ -494,10 +527,12 @@ export const resolveV3Modifiers = async (
     .filter((contract) => contract.proxyAdmin)
     .map((contract) => contract.contract);
   for (let i = 0; i < proxyAdminContracts.length; i++) {
-    obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
-      obj[proxyAdminContracts[i]].address,
-      provider,
-    );
+    if (obj[proxyAdminContracts[i]]) {
+      obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
+        obj[proxyAdminContracts[i]].address,
+        provider,
+      );
+    }
   }
 
   return obj;
