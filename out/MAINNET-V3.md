@@ -37,6 +37,6 @@
 |  EMERGENCY_ADMIN |  [Aave Guardian Ethereum](https://etherscan.io/address/0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  BRIDGE |   | |--------|--------|
-|  FLASH_BORROWER |   | |--------|--------|
+|  FLASH_BORROWER |  [0xd9D8e68717Ce24CCbf162868aaad7E38d81b05d1](https://etherscan.io/address/0xd9D8e68717Ce24CCbf162868aaad7E38d81b05d1), [0x72915D41982DfCAf30b871290618E59C45Edba7F](https://etherscan.io/address/0x72915D41982DfCAf30b871290618E59C45Edba7F) | |--------|--------|
 |  RISK_ADMIN |   | |--------|--------|
 
