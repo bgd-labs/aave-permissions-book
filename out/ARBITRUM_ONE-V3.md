@@ -41,5 +41,5 @@
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  RISK_ADMIN |   | |--------|--------|
 |  BRIDGE |   | |--------|--------|
-|  FLASH_BORROWER |   | |--------|--------|
+|  FLASH_BORROWER |  [0x219ac6dA971dE6d943cffD1BD62abde71525d382](https://arbiscan.io/address/0x219ac6dA971dE6d943cffD1BD62abde71525d382), [0x1561EAF39c98d45C55C7dC605E627672F4406819](https://arbiscan.io/address/0x1561EAF39c98d45C55C7dC605E627672F4406819) | |--------|--------|
 
