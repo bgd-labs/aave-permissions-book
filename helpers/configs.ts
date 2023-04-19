@@ -15,6 +15,7 @@ import {
   AaveV3Harmony,
   AaveV3Optimism,
   AaveV3Polygon,
+  AaveV3Metis,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types';
 dotenv.config();
@@ -173,6 +174,21 @@ export const networkConfigs: NetworkConfigs = {
         aclBlock: 33141475,
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Fantom,
+      },
+    },
+  },
+  ['1088']: {
+    // Metis
+    rpcUrl: process.env.RPC_METIS,
+    explorer: '',
+    addressesNames: {
+      '0xF6Db48C5968A9eBCB935786435530f28e32Cc501': 'Aave Guardian Metis',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 5405908,
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: AaveV3Metis,
       },
     },
   },
