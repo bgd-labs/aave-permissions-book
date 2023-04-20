@@ -286,29 +286,31 @@ export const resolveV3Modifiers = async (
     ],
   };
 
-  const collectorController = new ethers.Contract(
-    addressBook.COLLECTOR_CONTROLLER,
-    onlyOwnerAbi,
-    provider,
-  );
+  if (addressBook.COLLECTOR_CONTROLLER) {
+    const collectorController = new ethers.Contract(
+      addressBook.COLLECTOR_CONTROLLER,
+      onlyOwnerAbi,
+      provider,
+    );
 
-  const collectorControllerOwner = await collectorController.owner();
+    const collectorControllerOwner = await collectorController.owner();
 
-  obj['CollectorController'] = {
-    address: addressBook.COLLECTOR_CONTROLLER,
-    modifiers: [
-      {
-        modifier: 'onlyOwner',
-        addresses: [
-          {
-            address: collectorControllerOwner,
-            owners: await getSafeOwners(provider, collectorControllerOwner),
-          },
-        ],
-        functions: roles['CollectorController']['onlyOwner'],
-      },
-    ],
-  };
+    obj['CollectorController'] = {
+      address: addressBook.COLLECTOR_CONTROLLER,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: collectorControllerOwner,
+              owners: await getSafeOwners(provider, collectorControllerOwner),
+            },
+          ],
+          functions: roles['CollectorController']['onlyOwner'],
+        },
+      ],
+    };
+  }
 
   const collector = new ethers.Contract(
     addressBook.COLLECTOR,
@@ -354,74 +356,78 @@ export const resolveV3Modifiers = async (
     obj['RewardsController'].proxyAdmin = addressBook.POOL_ADDRESSES_PROVIDER;
   }
 
-  const wethGatewayContract = new ethers.Contract(
-    addressBook.WETH_GATEWAY,
-    onlyOwnerAbi,
-    provider,
-  );
-  const wethGatewayOwner = await wethGatewayContract.owner();
+  if (addressBook.WETH_GATEWAY) {
+    const wethGatewayContract = new ethers.Contract(
+      addressBook.WETH_GATEWAY,
+      onlyOwnerAbi,
+      provider,
+    );
+    const wethGatewayOwner = await wethGatewayContract.owner();
 
-  obj['WrappedTokenGatewayV3'] = {
-    address: addressBook.WETH_GATEWAY,
-    modifiers: [
-      {
-        modifier: 'onlyOwner',
-        addresses: [
-          {
-            address: wethGatewayOwner,
-            owners: await getSafeOwners(provider, wethGatewayOwner),
-          },
-        ],
-        functions: roles['WrappedTokenGatewayV3']['onlyOwner'],
-      },
-    ],
-  };
+    obj['WrappedTokenGatewayV3'] = {
+      address: addressBook.WETH_GATEWAY,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: wethGatewayOwner,
+              owners: await getSafeOwners(provider, wethGatewayOwner),
+            },
+          ],
+          functions: roles['WrappedTokenGatewayV3']['onlyOwner'],
+        },
+      ],
+    };
+  }
+  if (addressBook.SWAP_COLLATERAL_ADAPTER) {
+    const paraswapLiquiditySwapContract = new ethers.Contract(
+      addressBook.SWAP_COLLATERAL_ADAPTER,
+      onlyOwnerAbi,
+      provider,
+    );
+    const liquiditySwapOwner = await paraswapLiquiditySwapContract.owner();
 
-  const paraswapLiquiditySwapContract = new ethers.Contract(
-    addressBook.SWAP_COLLATERAL_ADAPTER,
-    onlyOwnerAbi,
-    provider,
-  );
-  const liquiditySwapOwner = await paraswapLiquiditySwapContract.owner();
+    obj['ParaSwapLiquiditySwapAdapter'] = {
+      address: addressBook.SWAP_COLLATERAL_ADAPTER,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: liquiditySwapOwner,
+              owners: await getSafeOwners(provider, liquiditySwapOwner),
+            },
+          ],
+          functions: roles['ParaSwapLiquiditySwapAdapter']['onlyOwner'],
+        },
+      ],
+    };
+  }
+  if (addressBook.REPAY_WITH_COLLATERAL_ADAPTER) {
+    const paraswapRepaySwapContract = new ethers.Contract(
+      addressBook.REPAY_WITH_COLLATERAL_ADAPTER,
+      onlyOwnerAbi,
+      provider,
+    );
+    const repaySwapOwner = await paraswapRepaySwapContract.owner();
 
-  obj['ParaSwapLiquiditySwapAdapter'] = {
-    address: addressBook.SWAP_COLLATERAL_ADAPTER,
-    modifiers: [
-      {
-        modifier: 'onlyOwner',
-        addresses: [
-          {
-            address: liquiditySwapOwner,
-            owners: await getSafeOwners(provider, liquiditySwapOwner),
-          },
-        ],
-        functions: roles['ParaSwapLiquiditySwapAdapter']['onlyOwner'],
-      },
-    ],
-  };
-
-  const paraswapRepaySwapContract = new ethers.Contract(
-    addressBook.REPAY_WITH_COLLATERAL_ADAPTER,
-    onlyOwnerAbi,
-    provider,
-  );
-  const repaySwapOwner = await paraswapRepaySwapContract.owner();
-
-  obj['ParaSwapRepayAdapter'] = {
-    address: addressBook.REPAY_WITH_COLLATERAL_ADAPTER,
-    modifiers: [
-      {
-        modifier: 'onlyOwner',
-        addresses: [
-          {
-            address: repaySwapOwner,
-            owners: await getSafeOwners(provider, repaySwapOwner),
-          },
-        ],
-        functions: roles['ParaSwapRepayAdapter']['onlyOwner'],
-      },
-    ],
-  };
+    obj['ParaSwapRepayAdapter'] = {
+      address: addressBook.REPAY_WITH_COLLATERAL_ADAPTER,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: repaySwapOwner,
+              owners: await getSafeOwners(provider, repaySwapOwner),
+            },
+          ],
+          functions: roles['ParaSwapRepayAdapter']['onlyOwner'],
+        },
+      ],
+    };
+  }
 
   const emissionManagerContract = new ethers.Contract(
     addressBook.EMISSION_MANAGER,

@@ -60,7 +60,10 @@ export const generateTables = async () => {
   const mainnetPermissions = aavePermissionsList[ChainId.mainnet.toString()];
 
   for (let network of Object.keys(aavePermissionsList)) {
-    const networkName = ChainIdToNetwork[Number(network)].toUpperCase();
+    const networkName =
+      network === '1088'
+        ? 'METIS'
+        : ChainIdToNetwork[Number(network)].toUpperCase();
     const networkPermits = aavePermissionsList[network];
     const addressesNames = networkConfigs[network].addressesNames || {};
     for (let pool of Object.keys(networkPermits)) {
