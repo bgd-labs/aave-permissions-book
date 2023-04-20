@@ -42,7 +42,7 @@ export const resolveV3Modifiers = async (
   provider: providers.Provider,
   permissionsObject: PermissionsJson,
   pool: Pools,
-  chainId: ChainId,
+  chainId: ChainId | number,
   adminRoles: Record<string, string[]>,
 ): Promise<Contracts> => {
   let obj: Contracts = {};
@@ -522,7 +522,8 @@ export const resolveV3Modifiers = async (
   if (
     chainId === ChainId.polygon ||
     chainId === ChainId.optimism ||
-    chainId === ChainId.arbitrum_one
+    chainId === ChainId.arbitrum_one ||
+    chainId === 1088
   ) {
     bridgeExecutor = await getBridgeExecutor(provider, chainId);
   }

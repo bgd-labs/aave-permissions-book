@@ -399,7 +399,7 @@
           ],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 17086488
+        "latestBlockNumber": 17086765
       }
     },
     "GOV_V2": {
@@ -1830,7 +1830,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 92501642
+        "latestBlockNumber": 92515088
       }
     }
   },
@@ -2301,7 +2301,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 41740306
+        "latestBlockNumber": 41741777
       }
     },
     "V2": {
@@ -3139,7 +3139,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 60364069
+        "latestBlockNumber": 60367244
       }
     }
   },
@@ -3398,6 +3398,88 @@
               ]
             }
           ]
+        },
+        "RatesFactory": {
+          "address": "0x59ED955e3a34479F4a35dCBD794BA70D6319CFcC",
+          "modifiers": [],
+          "proxyAdmin": "0x1cabd986cbabdf12e00128dff03c80ee62c4fd97"
+        },
+        "ProxyAdmin": {
+          "address": "0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x5cf20365Eb213ce89131caea6e3f01B1c6Ba282e",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
+        "MetisBridgeExecutor": {
+          "address": "0x8EC77963068474a45016938Deb95E603Ca82a029",
+          "modifiers": [
+            {
+              "modifier": "onlyGuardian",
+              "addresses": [
+                {
+                  "address": "0xF6Db48C5968A9eBCB935786435530f28e32Cc501",
+                  "owners": [
+                    "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                    "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                    "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                    "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                    "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                    "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x4C30E33758216aD0d676419c21CB8D014C68099f",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
+                  ]
+                }
+              ],
+              "functions": [
+                "cancel"
+              ]
+            },
+            {
+              "modifier": "onlyThis",
+              "addresses": [
+                {
+                  "address": "0x8EC77963068474a45016938Deb95E603Ca82a029",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "updateEthereumGovernanceExecutor",
+                "updateGuardian",
+                "updateDelay",
+                "updateGracePeriod",
+                "updateMinimumDelay",
+                "updateMaximumDelay",
+                "executeDelegateCall"
+              ]
+            },
+            {
+              "modifier": "onlyEthereumGovernanceExecutor",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "queue"
+              ]
+            }
+          ]
         }
       },
       "roles": {
@@ -3412,7 +3494,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 5416534
+        "latestBlockNumber": 5416857
       }
     }
   },
@@ -3873,7 +3955,7 @@
             "0x1561EAF39c98d45C55C7dC605E627672F4406819"
           ]
         },
-        "latestBlockNumber": 82372090
+        "latestBlockNumber": 82385726
       }
     }
   },
@@ -4477,7 +4559,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 28984176
+        "latestBlockNumber": 28985823
       }
     },
     "V2": {
