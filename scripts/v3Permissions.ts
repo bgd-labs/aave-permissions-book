@@ -352,7 +352,7 @@ export const resolveV3Modifiers = async (
       },
     ],
   };
-  if (chainId === ChainId.mainnet) {
+  if (chainId === ChainId.mainnet || chainId === 1088) {
     obj['RewardsController'].proxyAdmin = addressBook.POOL_ADDRESSES_PROVIDER;
   }
 
