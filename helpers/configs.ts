@@ -187,7 +187,7 @@ export const networkConfigs: NetworkConfigs = {
     },
     pools: {
       [Pools.V3]: {
-        aclBlock: 5405908,
+        aclBlock: 5405900,
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: {
           POOL_ADDRESSES_PROVIDER: '0x632bf4054334F263F49a7039Cce25f0294f3f667',

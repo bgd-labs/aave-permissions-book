@@ -399,7 +399,7 @@
           ],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 17086765
+        "latestBlockNumber": 17093588
       }
     },
     "GOV_V2": {
@@ -1830,7 +1830,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 92515088
+        "latestBlockNumber": 92812068
       }
     }
   },
@@ -2301,7 +2301,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 41741777
+        "latestBlockNumber": 41779209
       }
     },
     "V2": {
@@ -3139,7 +3139,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 60367244
+        "latestBlockNumber": 60444744
       }
     }
   },
@@ -3197,7 +3197,12 @@
             },
             {
               "modifier": "onlyPoolAdmin",
-              "addresses": [],
+              "addresses": [
+                {
+                  "address": "0x1f50ffda1996C42cB6FeA9EE7a070eB874009bBd",
+                  "owners": []
+                }
+              ],
               "functions": [
                 "rescueTokens"
               ]
@@ -3218,7 +3223,12 @@
           "modifiers": [
             {
               "modifier": "onlyPoolAdmin",
-              "addresses": [],
+              "addresses": [
+                {
+                  "address": "0x1f50ffda1996C42cB6FeA9EE7a070eB874009bBd",
+                  "owners": []
+                }
+              ],
               "functions": [
                 "dropReserve",
                 "dropReserve",
@@ -3256,14 +3266,24 @@
             },
             {
               "modifier": "onlyAssetListingOrPoolAdmins",
-              "addresses": [],
+              "addresses": [
+                {
+                  "address": "0x1f50ffda1996C42cB6FeA9EE7a070eB874009bBd",
+                  "owners": []
+                }
+              ],
               "functions": [
                 "initReserves"
               ]
             },
             {
               "modifier": "onlyRiskOrPoolAdmins",
-              "addresses": [],
+              "addresses": [
+                {
+                  "address": "0x1f50ffda1996C42cB6FeA9EE7a070eB874009bBd",
+                  "owners": []
+                }
+              ],
               "functions": [
                 "setReserveBorrowing",
                 "setReserveBorrowing",
@@ -3287,6 +3307,10 @@
             {
               "modifier": "onlyEmergencyOrPoolAdmin",
               "addresses": [
+                {
+                  "address": "0x1f50ffda1996C42cB6FeA9EE7a070eB874009bBd",
+                  "owners": []
+                },
                 {
                   "address": "0xF6Db48C5968A9eBCB935786435530f28e32Cc501",
                   "owners": [
@@ -3314,7 +3338,12 @@
           "modifiers": [
             {
               "modifier": "onlyAssetListingOrPoolAdmins",
-              "addresses": [],
+              "addresses": [
+                {
+                  "address": "0x1f50ffda1996C42cB6FeA9EE7a070eB874009bBd",
+                  "owners": []
+                }
+              ],
               "functions": [
                 "setAssetSources",
                 "setFallbackOracle"
@@ -3484,8 +3513,12 @@
       },
       "roles": {
         "role": {
-          "DEFAULT_ADMIN": [],
-          "POOL_ADMIN": [],
+          "DEFAULT_ADMIN": [
+            "0x1f50ffda1996C42cB6FeA9EE7a070eB874009bBd"
+          ],
+          "POOL_ADMIN": [
+            "0x1f50ffda1996C42cB6FeA9EE7a070eB874009bBd"
+          ],
           "EMERGENCY_ADMIN": [
             "0xF6Db48C5968A9eBCB935786435530f28e32Cc501"
           ],
@@ -3494,7 +3527,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 5416857
+        "latestBlockNumber": 5428685
       }
     }
   },
@@ -3955,7 +3988,7 @@
             "0x1561EAF39c98d45C55C7dC605E627672F4406819"
           ]
         },
-        "latestBlockNumber": 82385726
+        "latestBlockNumber": 82719406
       }
     }
   },
@@ -4559,7 +4592,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 28985823
+        "latestBlockNumber": 29027053
       }
     },
     "V2": {
