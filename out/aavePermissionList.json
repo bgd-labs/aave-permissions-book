@@ -232,7 +232,7 @@
               "modifier": "onlyFundsAdmin",
               "addresses": [
                 {
-                  "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
                   "owners": []
                 }
               ],
@@ -243,7 +243,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
         },
         "RewardsController": {
           "address": "0x8164Cc65827dcFe994AB23944CBC90e0aa80bFcb",
@@ -399,7 +399,7 @@
           ],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 17098356
+        "latestBlockNumber": 17105512
       }
     },
     "GOV_V2": {
@@ -703,7 +703,7 @@
               "modifier": "onlyFundsAdmin",
               "addresses": [
                 {
-                  "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
                   "owners": []
                 }
               ],
@@ -714,7 +714,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
         },
         "WrappedTokenGatewayV2": {
           "address": "0xEFFC18fC3b7eb8E676dac549E0c693ad50D1Ce31",
@@ -978,7 +978,7 @@
               "modifier": "onlyFundsAdmin",
               "addresses": [
                 {
-                  "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
                   "owners": []
                 }
               ],
@@ -989,7 +989,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
         },
         "ArcTimelock": {
           "address": "0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218",
@@ -1203,7 +1203,7 @@
               "modifier": "onlyFundsAdmin",
               "addresses": [
                 {
-                  "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
                   "owners": []
                 }
               ],
@@ -1214,7 +1214,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
         },
         "WrappedTokenGatewayV2": {
           "address": "0x1C4a4e31231F71Fc34867D034a9E68f6fC798249",
@@ -1830,7 +1830,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 93034523
+        "latestBlockNumber": 93354515
       }
     }
   },
@@ -2301,7 +2301,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 41806040
+        "latestBlockNumber": 41845333
       }
     },
     "V2": {
@@ -3139,7 +3139,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 60502061
+        "latestBlockNumber": 60575101
       }
     }
   },
@@ -3600,7 +3600,7 @@
             "0x1561EAF39c98d45C55C7dC605E627672F4406819"
           ]
         },
-        "latestBlockNumber": 82948975
+        "latestBlockNumber": 83294621
       }
     }
   },
@@ -4204,7 +4204,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 28958103
+        "latestBlockNumber": 28961103
       }
     },
     "V2": {
