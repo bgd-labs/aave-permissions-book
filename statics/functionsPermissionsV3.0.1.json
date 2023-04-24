@@ -201,19 +201,6 @@
     ]
   },
   {
-    "contract": "CollectorController",
-    "functions": [
-      {
-        "name": "approve",
-        "roles": ["onlyOwner"]
-      },
-      {
-        "name": "transfer",
-        "roles": ["onlyOwner"]
-      }
-    ]
-  },
-  {
     "contract": "RewardsController",
     "proxyAdmin": false,
     "functions": [
@@ -394,6 +381,15 @@
       {
         "name": "upgradeAndCall",
         "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "ACLManager",
+    "functions": [
+      {
+        "name": "setRoleAdmin",
+        "roles": ["onlyRole"]
       }
     ]
   }

@@ -26,6 +26,7 @@ async function main() {
     const poolsKeys = Object.keys(pools).map((pool) => pool);
 
     for (const poolKey of poolsKeys) {
+      console.log('pool key: ', poolKey);
       const pool = pools[poolKey];
       const permissionsJson = getStaticPermissionsJson(pool.permissionsJson);
       let poolPermissions: Contracts = {};
@@ -133,7 +134,7 @@ async function main() {
       }
     }
   }
-
+  console.log('---------------');
   saveJson('./out/aavePermissionList.json', JSON.stringify(fullJson, null, 2));
 }
 
