@@ -286,30 +286,6 @@ export const resolveV3Modifiers = async (
     ],
   };
 
-  const collectorController = new ethers.Contract(
-    addressBook.COLLECTOR_CONTROLLER,
-    onlyOwnerAbi,
-    provider,
-  );
-
-  const collectorControllerOwner = await collectorController.owner();
-
-  obj['CollectorController'] = {
-    address: addressBook.COLLECTOR_CONTROLLER,
-    modifiers: [
-      {
-        modifier: 'onlyOwner',
-        addresses: [
-          {
-            address: collectorControllerOwner,
-            owners: await getSafeOwners(provider, collectorControllerOwner),
-          },
-        ],
-        functions: roles['CollectorController']['onlyOwner'],
-      },
-    ],
-  };
-
   const collector = new ethers.Contract(
     addressBook.COLLECTOR,
     collectorAbi,
@@ -511,6 +487,24 @@ export const resolveV3Modifiers = async (
       ],
     };
   }
+
+  obj['ACLManager'] = {
+    address: addressBook.ACL_MANAGER,
+    modifiers: [
+      {
+        modifier: 'setRoleAdmin',
+        addresses: [
+          ...adminRoles['DEFAULT_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['DEFAULT_ADMIN'][roleAddress] || [],
+            };
+          }),
+        ],
+        functions: roles['ACLManager']['setRoleAdmin'],
+      },
+    ],
+  };
 
   let bridgeExecutor = {};
   if (
