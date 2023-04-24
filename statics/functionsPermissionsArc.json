@@ -200,18 +200,5 @@
         "roles": ["onlyFundsAdmin"]
       }
     ]
-  },
-  {
-    "contract": "CollectorController",
-    "functions": [
-      {
-        "name": "approve",
-        "roles": ["onlyOwner"]
-      },
-      {
-        "name": "transfer",
-        "roles": ["onlyOwner"]
-      }
-    ]
   }
 ]

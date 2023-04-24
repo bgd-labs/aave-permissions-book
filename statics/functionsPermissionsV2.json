@@ -189,19 +189,6 @@
     ]
   },
   {
-    "contract": "CollectorController",
-    "functions": [
-      {
-        "name": "approve",
-        "roles": ["onlyOwner"]
-      },
-      {
-        "name": "transfer",
-        "roles": ["onlyOwner"]
-      }
-    ]
-  },
-  {
     "contract": "WrappedTokenGatewayV2",
     "functions": [
       {
