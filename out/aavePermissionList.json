@@ -413,7 +413,7 @@
           ],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 17129930
+        "latestBlockNumber": 17130075
       }
     },
     "GOV_V2": {
@@ -706,11 +706,48 @@
               "functions": [
                 "approve",
                 "transfer",
-                "setFundsAdmin"
+                "setFundsAdmin",
+                "createStream"
+              ]
+            },
+            {
+              "modifier": "onlyAdminOrRecipient",
+              "addresses": [
+                {
+                  "address": "0xd3cf979e676265e4f6379749dece4708b9a22476",
+                  "owners": []
+                },
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "withdrawFromStream",
+                "cancelStream"
               ]
             }
           ],
           "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        },
+        "ProxyAdmin": {
+          "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
         },
         "WrappedTokenGatewayV2": {
           "address": "0xEFFC18fC3b7eb8E676dac549E0c693ad50D1Ce31",
@@ -963,11 +1000,48 @@
               "functions": [
                 "approve",
                 "transfer",
-                "setFundsAdmin"
+                "setFundsAdmin",
+                "createStream"
+              ]
+            },
+            {
+              "modifier": "onlyAdminOrRecipient",
+              "addresses": [
+                {
+                  "address": "0xd3cf979e676265e4f6379749dece4708b9a22476",
+                  "owners": []
+                },
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "withdrawFromStream",
+                "cancelStream"
               ]
             }
           ],
           "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        },
+        "ProxyAdmin": {
+          "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
         },
         "ArcTimelock": {
           "address": "0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218",
@@ -1170,11 +1244,48 @@
               "functions": [
                 "approve",
                 "transfer",
-                "setFundsAdmin"
+                "setFundsAdmin",
+                "createStream"
+              ]
+            },
+            {
+              "modifier": "onlyAdminOrRecipient",
+              "addresses": [
+                {
+                  "address": "0xd3cf979e676265e4f6379749dece4708b9a22476",
+                  "owners": []
+                },
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "withdrawFromStream",
+                "cancelStream"
               ]
             }
           ],
           "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        },
+        "ProxyAdmin": {
+          "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
         },
         "WrappedTokenGatewayV2": {
           "address": "0x1C4a4e31231F71Fc34867D034a9E68f6fC798249",
@@ -1804,7 +1915,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 94397457
+        "latestBlockNumber": 94405847
       }
     }
   },
@@ -2289,7 +2400,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 41977699
+        "latestBlockNumber": 41978516
       }
     },
     "V2": {
@@ -2445,11 +2556,48 @@
               "functions": [
                 "approve",
                 "transfer",
-                "setFundsAdmin"
+                "setFundsAdmin",
+                "createStream"
+              ]
+            },
+            {
+              "modifier": "onlyAdminOrRecipient",
+              "addresses": [
+                {
+                  "address": "0xd3cf979e676265e4f6379749dece4708b9a22476",
+                  "owners": []
+                },
+                {
+                  "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "withdrawFromStream",
+                "cancelStream"
               ]
             }
           ],
           "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        },
+        "ProxyAdmin": {
+          "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
         },
         "WrappedTokenGatewayV2": {
           "address": "0xAeBF56223F044a73A513FAD7E148A9075227eD9b",
@@ -3134,7 +3282,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 60819603
+        "latestBlockNumber": 60821657
       }
     }
   },
@@ -3631,7 +3779,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 5470743
+        "latestBlockNumber": 5471002
       }
     }
   },
@@ -4106,7 +4254,7 @@
             "0x1561EAF39c98d45C55C7dC605E627672F4406819"
           ]
         },
-        "latestBlockNumber": 84462914
+        "latestBlockNumber": 84470006
       }
     }
   },
@@ -4735,7 +4883,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 29242923
+        "latestBlockNumber": 29244001
       }
     },
     "V2": {
