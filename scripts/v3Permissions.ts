@@ -293,6 +293,10 @@ export const resolveV3Modifiers = async (
   );
 
   const fundsAdmin = await collector.getFundsAdmin();
+  const collectorProxyAdmin = await getProxyAdmin(
+    addressBook.COLLECTOR,
+    provider,
+  );
   obj['Collector'] = {
     address: addressBook.COLLECTOR,
     modifiers: [
@@ -305,6 +309,20 @@ export const resolveV3Modifiers = async (
           },
         ],
         functions: roles['Collector']['onlyFundsAdmin'],
+      },
+      {
+        modifier: 'onlyAdminOrRecipient',
+        addresses: [
+          {
+            address: collectorProxyAdmin,
+            owners: await getSafeOwners(provider, collectorProxyAdmin),
+          },
+          {
+            address: fundsAdmin,
+            owners: await getSafeOwners(provider, fundsAdmin),
+          },
+        ],
+        functions: roles['Collector']['onlyAdminOrRecipient'],
       },
     ],
   };
