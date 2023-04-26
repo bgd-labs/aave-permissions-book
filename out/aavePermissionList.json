@@ -395,7 +395,7 @@
           ],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 17119760
+        "latestBlockNumber": 17126882
       }
     },
     "GOV_V2": {
@@ -1532,7 +1532,7 @@
               "modifier": "onlyFundsAdmin",
               "addresses": [
                 {
-                  "address": "0xA77E4A084d7d4f064E326C0F6c0aCefd47A5Cb21",
+                  "address": "0x7d9103572bE58FfE99dc390E8246f02dcAe6f611",
                   "owners": []
                 }
               ],
@@ -1543,7 +1543,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0x7d9103572be58ffe99dc390e8246f02dcae6f611"
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
         },
         "RewardsController": {
           "address": "0x929EC64c34a17401F460460D4B9390518E5B473e",
@@ -1768,7 +1768,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 93961718
+        "latestBlockNumber": 94262300
       }
     }
   },
@@ -2235,7 +2235,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 41921044
+        "latestBlockNumber": 41960499
       }
     },
     "V2": {
@@ -3051,7 +3051,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 60708661
+        "latestBlockNumber": 60786761
       }
     }
   },
@@ -3269,7 +3269,7 @@
               "modifier": "onlyFundsAdmin",
               "addresses": [
                 {
-                  "address": "0xC3301b30f4EcBfd59dE0d74e89690C1a70C6f21B",
+                  "address": "0x7d9103572bE58FfE99dc390E8246f02dcAe6f611",
                   "owners": []
                 }
               ],
@@ -3280,7 +3280,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0x7d9103572be58ffe99dc390e8246f02dcae6f611"
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
         },
         "RewardsController": {
           "address": "0x929EC64c34a17401F460460D4B9390518E5B473e",
@@ -3508,7 +3508,7 @@
             "0x1561EAF39c98d45C55C7dC605E627672F4406819"
           ]
         },
-        "latestBlockNumber": 83976239
+        "latestBlockNumber": 84318076
       }
     }
   },
@@ -4108,7 +4108,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 29159372
+        "latestBlockNumber": 29162372
       }
     },
     "V2": {
