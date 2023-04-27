@@ -175,7 +175,7 @@ export const getBridgeExecutor = async (
     };
   } else if (chainId === 1088) {
     const bridgeExecutorContract = new ethers.Contract(
-      '0x8EC77963068474a45016938Deb95E603Ca82a029', //AaveGovernanceV2.METIS_BRIDGE_EXECUTOR,
+      AaveGovernanceV2.METIS_BRIDGE_EXECUTOR,
       optimismBridgeExecutorABI,
       provider,
     );
@@ -184,7 +184,7 @@ export const getBridgeExecutor = async (
       await bridgeExecutorContract.getEthereumGovernanceExecutor();
 
     obj['MetisBridgeExecutor'] = {
-      address: '0x8EC77963068474a45016938Deb95E603Ca82a029', //AaveGovernanceV2.METIS_BRIDGE_EXECUTOR,
+      address: AaveGovernanceV2.METIS_BRIDGE_EXECUTOR,
       modifiers: [
         {
           modifier: 'onlyGuardian',
@@ -200,7 +200,7 @@ export const getBridgeExecutor = async (
           modifier: 'onlyThis',
           addresses: [
             {
-              address: '0x8EC77963068474a45016938Deb95E603Ca82a029', //AaveGovernanceV2.METIS_BRIDGE_EXECUTOR,
+              address: AaveGovernanceV2.METIS_BRIDGE_EXECUTOR,
               owners: [],
             },
           ],
