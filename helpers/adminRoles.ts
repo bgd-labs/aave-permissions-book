@@ -74,6 +74,8 @@ export const getCurrentRoleAdmins = async (
     limit = 1000;
   } else if (chainId === ChainId.fantom) {
     limit = 99999;
+  } else if (chainId === '1088') {
+    limit = 3000;
   }
 
   let eventLogs: providers.Log[] = [];

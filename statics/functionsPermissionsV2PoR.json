@@ -185,6 +185,18 @@
       {
         "name": "setFundsAdmin",
         "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "createStream",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "withdrawFromStream",
+        "roles": ["onlyAdminOrRecipient"]
+      },
+      {
+        "name": "cancelStream",
+        "roles": ["onlyAdminOrRecipient"]
       }
     ]
   },
@@ -279,6 +291,23 @@
       },
       {
         "name": "disableProofOfReserveFeed",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "ProxyAdmin",
+    "functions": [
+      {
+        "name": "changeProxyAdmin",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "upgrade",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "upgradeAndCall",
         "roles": ["onlyOwner"]
       }
     ]

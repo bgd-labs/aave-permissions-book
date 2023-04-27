@@ -12,11 +12,12 @@ export const bridgeExecutors: Record<number, string> = {
   [ChainId.optimism]: './statics/bridgeExecutors/optimism.json',
   [ChainId.arbitrum_one]: './statics/bridgeExecutors/arbitrum.json',
   [ChainId.polygon]: './statics/bridgeExecutors/polygon.json',
+  ['1088']: './statics/bridgeExecutors/metis.json',
 };
 
 export const getBridgeExecutor = async (
   provider: providers.Provider,
-  chainId: ChainId,
+  chainId: ChainId | number,
 ): Promise<Contracts> => {
   const bridgeExecutorPermissionsObj = getStaticPermissionsJson(
     bridgeExecutors[chainId],
@@ -169,6 +170,52 @@ export const getBridgeExecutor = async (
           ],
           functions:
             roles['ArbitrumBridgeExecutor']['onlyEthereumGovernanceExecutor'],
+        },
+      ],
+    };
+  } else if (chainId === 1088) {
+    const bridgeExecutorContract = new ethers.Contract(
+      AaveGovernanceV2.METIS_BRIDGE_EXECUTOR,
+      optimismBridgeExecutorABI,
+      provider,
+    );
+    const guardian = await bridgeExecutorContract.getGuardian();
+    const ethereumGovExecutor =
+      await bridgeExecutorContract.getEthereumGovernanceExecutor();
+
+    obj['MetisBridgeExecutor'] = {
+      address: AaveGovernanceV2.METIS_BRIDGE_EXECUTOR,
+      modifiers: [
+        {
+          modifier: 'onlyGuardian',
+          addresses: [
+            {
+              address: guardian,
+              owners: await getSafeOwners(provider, guardian),
+            },
+          ],
+          functions: roles['MetisBridgeExecutor']['onlyGuardian'],
+        },
+        {
+          modifier: 'onlyThis',
+          addresses: [
+            {
+              address: AaveGovernanceV2.METIS_BRIDGE_EXECUTOR,
+              owners: [],
+            },
+          ],
+          functions: roles['MetisBridgeExecutor']['onlyThis'],
+        },
+        {
+          modifier: 'onlyEthereumGovernanceExecutor',
+          addresses: [
+            {
+              address: ethereumGovExecutor,
+              owners: await getSafeOwners(provider, ethereumGovExecutor),
+            },
+          ],
+          functions:
+            roles['MetisBridgeExecutor']['onlyEthereumGovernanceExecutor'],
         },
       ],
     };

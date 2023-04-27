@@ -222,6 +222,10 @@ export const resolveV2Modifiers = async (
     );
 
     const fundsAdmin = await collector.getFundsAdmin();
+    const collectorProxyAdmin = await getProxyAdmin(
+      addressBook.COLLECTOR,
+      provider,
+    );
     obj['Collector'] = {
       address: addressBook.COLLECTOR,
       modifiers: [
@@ -234,6 +238,41 @@ export const resolveV2Modifiers = async (
             },
           ],
           functions: roles['Collector']['onlyFundsAdmin'],
+        },
+        {
+          modifier: 'onlyAdminOrRecipient',
+          addresses: [
+            {
+              address: collectorProxyAdmin,
+              owners: await getSafeOwners(provider, collectorProxyAdmin),
+            },
+            {
+              address: fundsAdmin,
+              owners: await getSafeOwners(provider, fundsAdmin),
+            },
+          ],
+          functions: roles['Collector']['onlyAdminOrRecipient'],
+        },
+      ],
+    };
+    const proxyAdminContract = new ethers.Contract(
+      collectorProxyAdmin,
+      onlyOwnerAbi,
+      provider,
+    );
+    const proxyAdminOwner = await proxyAdminContract.owner();
+    obj['ProxyAdmin'] = {
+      address: utils.getAddress(collectorProxyAdmin),
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: proxyAdminOwner,
+              owners: await getSafeOwners(provider, proxyAdminOwner),
+            },
+          ],
+          functions: roles['ProxyAdmin']['onlyOwner'],
         },
       ],
     };
