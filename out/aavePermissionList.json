@@ -413,7 +413,7 @@
           ],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 17282926
+        "latestBlockNumber": 17297117
       }
     },
     "GOV_V2": {
@@ -1916,7 +1916,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 99240340
+        "latestBlockNumber": 99841510
       }
     }
   },
@@ -2401,7 +2401,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 42834868
+        "latestBlockNumber": 42914935
       }
     },
     "V2": {
@@ -3284,7 +3284,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 62247272
+        "latestBlockNumber": 62347271
       }
     }
   },
@@ -3781,7 +3781,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 5709899
+        "latestBlockNumber": 5734105
       }
     }
   },
@@ -4256,7 +4256,7 @@
             "0x1561EAF39c98d45C55C7dC605E627672F4406819"
           ]
         },
-        "latestBlockNumber": 91778324
+        "latestBlockNumber": 92438899
       }
     }
   },
@@ -4896,7 +4896,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 29325596
+        "latestBlockNumber": 29328596
       }
     },
     "V2": {
