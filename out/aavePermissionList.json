@@ -419,7 +419,7 @@
             "0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778"
           ]
         },
-        "latestBlockNumber": 17375374
+        "latestBlockNumber": 17382526
       }
     },
     "GOV_V2": {
@@ -1859,18 +1859,7 @@
               "addresses": [
                 {
                   "address": "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
-                  "owners": [
-                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                    "0xb647055A9915bF9c8021a684E175A353525b9890",
-                    "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                    "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                    "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                    "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                    "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                    "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                    "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                  ]
+                  "owners": []
                 }
               ],
               "functions": [
@@ -1928,7 +1917,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 103068866
+        "latestBlockNumber": 103422234
       }
     }
   },
@@ -2413,7 +2402,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 43348127
+        "latestBlockNumber": 43388375
       }
     },
     "V2": {
@@ -3296,7 +3285,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 63346604
+        "latestBlockNumber": 63394622
       }
     }
   },
@@ -3799,7 +3788,7 @@
             "0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731"
           ]
         },
-        "latestBlockNumber": 5923011
+        "latestBlockNumber": 5943754
       }
     }
   },
@@ -4280,7 +4269,7 @@
             "0x1561EAF39c98d45C55C7dC605E627672F4406819"
           ]
         },
-        "latestBlockNumber": 96174901
+        "latestBlockNumber": 96519990
       }
     }
   },
@@ -4920,7 +4909,7 @@
             "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc"
           ]
         },
-        "latestBlockNumber": 29358596
+        "latestBlockNumber": 29361596
       }
     },
     "V2": {
