@@ -9,7 +9,6 @@ import { getSafeOwners } from '../helpers/guardian';
 import { ChainId } from '@aave/contract-helpers';
 import { getBridgeExecutor } from './bridgeExecutors';
 import { AddressInfo, Contracts, PermissionsJson } from '../helpers/types';
-import { RATES_FACTORY } from '@bgd-labs/aave-address-book/dist/AaveV3Ethereum';
 
 const getAddressInfo = async (
   provider: providers.Provider,

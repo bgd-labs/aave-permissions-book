@@ -1,8 +1,9 @@
 {
   "name": "aave-permissions-list",
-  "description": "This repo is containing scripts for calculating and shownig addresses which hold permissions inside all contracts of Aave protocol. Tables with permissions are shown in the [out](./out/) folder.",
+  "description": "This repo is containing scripts for calculating and showing addresses which hold permissions inside all contracts of Aave protocol. Tables with permissions are shown in the [out](./out/) folder.",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "modifiers:generate": "ts-node scripts/modifiersCalculator.ts",
     "tables:create": "ts-node scripts/createTables.ts"
@@ -26,6 +27,6 @@
     "ethers": "^5.7.1",
     "prettier": "^2.8.1",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.3"
+    "typescript": "^5.1.6"
   }
 }
