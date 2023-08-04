@@ -192,6 +192,20 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
+  ['8453']: {
+    rpcUrl: process.env.RPC_BASE,
+    explorer: 'https://andromeda-explorer.metis.io',
+    addressesNames: {
+      '0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A': 'Aave Guardian Base',
+    },
+    pools: {
+      // [Pools.V3]: {
+      //   aclBlock: 5405900,
+      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   addressBook: AaveV3Metis,
+      // },
+    },
+  },
   // [ChainId.harmony]: {
   //   rpcUrl: process.env.RPC_HARMONY,
   //   explorer: 'https://explorer.harmony.one',
