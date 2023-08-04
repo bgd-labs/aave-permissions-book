@@ -1,10 +1,9 @@
 import { ethers, providers } from 'ethers';
-
-import { generateRoles } from '../helpers/jsonParsers';
-import { getProxyAdmin } from '../helpers/proxyAdmin';
-import { getSafeOwners } from '../helpers/guardian';
-import onlyOwnerAbi from '../abis/onlyOwnerAbi.json';
-import { Contracts, PermissionsJson } from '../helpers/types';
+import { generateRoles } from '../helpers/jsonParsers.js';
+import { getProxyAdmin } from '../helpers/proxyAdmin.js';
+import { getSafeOwners } from '../helpers/guardian.js';
+import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
+import { Contracts, PermissionsJson } from '../helpers/types.js';
 
 export const resolveV2MiscModifiers = async (
   addressBook: any,

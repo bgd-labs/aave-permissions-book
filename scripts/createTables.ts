@@ -1,20 +1,20 @@
-import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem';
-import { networkConfigs, Pools } from '../helpers/configs';
-import { explorerAddressUrlComposer } from '../helpers/explorer';
+import { getAllPermissionsJson, saveJson } from '../helpers/fileSystem.js';
+import { networkConfigs, Pools } from '../helpers/configs.js';
+import { explorerAddressUrlComposer } from '../helpers/explorer.js';
 import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
-import { generateContractsByAddress } from '../helpers/jsonParsers';
+import { generateContractsByAddress } from '../helpers/jsonParsers.js';
 import {
   getLineSeparator,
   getTableBody,
   getTableHeader,
-} from '../helpers/tables';
+} from '../helpers/tables.js';
 import { utils } from 'ethers';
-import { getPrincipalReadme } from './readme';
+import { getPrincipalReadme } from './readme.js';
 import {
   AddressInfo,
   ContractsByAddress,
   PoolGuardians,
-} from '../helpers/types';
+} from '../helpers/types.js';
 
 export const generateTableAddress = (
   address: string | undefined,
@@ -61,8 +61,8 @@ export const generateTables = async () => {
 
   for (let network of Object.keys(aavePermissionsList)) {
     const networkName =
-      network === '1088'
-        ? 'METIS'
+      network === '8453'
+        ? 'BASE'
         : ChainIdToNetwork[Number(network)].toUpperCase();
     const networkPermits = aavePermissionsList[network];
     const addressesNames = networkConfigs[network].addressesNames || {};

@@ -1,4 +1,4 @@
-import { Contracts, PermissionsJson } from './types';
+import { Contracts, PermissionsJson } from './types.js';
 
 export type MethodsByModifier = Record<string, Record<string, string[]>>;
 

@@ -1,9 +1,8 @@
 import { ethers, providers, utils } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { getLogs } from './eventLogs';
-import { getSafeOwners } from './guardian';
-import { Roles } from './types';
-import { networkConfigs, Pools } from './configs';
+import { getLogs } from './eventLogs.js';
+import { Roles } from './types.js';
+import { networkConfigs, Pools } from './configs.js';
 
 export const roleGrantedEventABI = [
   'event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)',

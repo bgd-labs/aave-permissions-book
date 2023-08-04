@@ -1,17 +1,17 @@
 import { ethers, providers } from 'ethers';
-import { networkConfigs, Pools } from '../helpers/configs';
+import { networkConfigs, Pools } from '../helpers/configs.js';
 import {
   getAllPermissionsJson,
   getStaticPermissionsJson,
   saveJson,
-} from '../helpers/fileSystem';
-import { getCurrentRoleAdmins } from '../helpers/adminRoles';
-import { resolveV2Modifiers } from './v2Permissions';
-import { resolveV3Modifiers } from './v3Permissions';
-import { resolveGovV2Modifiers } from './governancePermissions';
-import { Contracts, FullPermissions, Roles } from '../helpers/types';
-import { resolveSafetyV2Modifiers } from './safetyPermissions';
-import { resolveV2MiscModifiers } from './v2MiscPermissions';
+} from '../helpers/fileSystem.js';
+import { getCurrentRoleAdmins } from '../helpers/adminRoles.js';
+import { resolveV2Modifiers } from './v2Permissions.js';
+import { resolveV3Modifiers } from './v3Permissions.js';
+import { resolveGovV2Modifiers } from './governancePermissions.js';
+import { Contracts, FullPermissions, Roles } from '../helpers/types.js';
+import { resolveSafetyV2Modifiers } from './safetyPermissions.js';
+import { resolveV2MiscModifiers } from './v2MiscPermissions.js';
 
 async function main() {
   let fullJson: FullPermissions = getAllPermissionsJson();

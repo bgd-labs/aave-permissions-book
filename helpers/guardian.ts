@@ -1,5 +1,5 @@
 import { ethers, providers, utils } from 'ethers';
-import gnosisSafeABI from '../abis/gnosisSafe.json';
+import gnosisSafeABI from '../abis/gnosisSafe.json' assert { type: 'json' };
 
 export const getSafeOwners = async (
   provider: providers.Provider,

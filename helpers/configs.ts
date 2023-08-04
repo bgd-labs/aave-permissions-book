@@ -18,7 +18,7 @@ import {
   AaveV3Polygon,
   AaveV3Metis,
 } from '@bgd-labs/aave-address-book';
-import { NetworkConfigs } from './types';
+import { NetworkConfigs } from './types.js';
 dotenv.config();
 
 export enum Pools {
@@ -178,8 +178,7 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
-  ['1088']: {
-    // Metis
+  [ChainId.metis_andromeda]: {
     rpcUrl: process.env.RPC_METIS,
     explorer: 'https://andromeda-explorer.metis.io',
     addressesNames: {
