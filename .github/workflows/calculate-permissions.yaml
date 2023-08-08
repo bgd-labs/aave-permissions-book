@@ -27,7 +27,7 @@ jobs:
         run: npm install
 
       - name: Setup env
-        uses: bgd-labs/github-workflows/.github/actions/env
+        uses: bgd-labs/github-workflows/.github/actions/env@main
         with:
           RPC_MAINNET: ${{secrets.RPC_MAINNET}}
           RPC_POLYGON: ${{secrets.RPC_POLYGON}}
