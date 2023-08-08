@@ -54,7 +54,7 @@ jobs:
             git config --global pull.rebase true
             git add .
             git commit -am "chore: tables update :robot:"
-            git pull origin master
+            git pull origin main
             git push
           exit
           fi
