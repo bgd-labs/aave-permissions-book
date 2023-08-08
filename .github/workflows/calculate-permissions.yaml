@@ -26,9 +26,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Copy .env
-        run: |
-          cp .env.example .env 2> /dev/null || :
+      - name: Setup env
+        uses: bgd-labs/github-workflows/.github/actions/env
+        with:
+          RPC_MAINNET: ${{secrets.RPC_MAINNET}}
+          RPC_POLYGON: ${{secrets.RPC_POLYGON}}
+          RPC_AVALANCHE: ${{secrets.RPC_AVALANCHE}}
+          RPC_OPTIMISM: ${{secrets.RPC_OPTIMISM}}
+          RPC_ARBITRUM: ${{secrets.RPC_ARBITRUM}}
+          RPC_METIS: ${{secrets.RPC_METIS}}
+          RPC_BASE: ${{secrets.RPC_BASE}}
 
       - name: Generate json
         run: npm run modifiers:generate
