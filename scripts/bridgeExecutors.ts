@@ -262,7 +262,7 @@ export const getBridgeExecutor = async (
             },
           ],
           functions:
-            roles['OptimismBridgeExecutor']['onlyEthereumGovernanceExecutor'],
+            roles['BaseBridgeExecutor']['onlyEthereumGovernanceExecutor'],
         },
       ],
     };

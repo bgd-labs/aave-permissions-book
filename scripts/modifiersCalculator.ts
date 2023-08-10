@@ -133,7 +133,7 @@ async function main() {
       }
     }
   }
-  console.log('---------------');
+
   saveJson('./out/aavePermissionList.json', JSON.stringify(fullJson, null, 2));
 }
 
