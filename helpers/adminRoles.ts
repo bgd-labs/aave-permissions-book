@@ -133,7 +133,7 @@ export const getCurrentRoleAdmins = async (
     if (eventLog.topics[0] === roleGrantedTopic0) {
       const { role, account } = parseLog(roleGrantedEventABI, eventLog);
       const roleName = roleHexToNameMap.get(role);
-      //   console.log(`
+      // console.log(`role
       //   topic0: ${eventLog.topics[0]}
       //   grant : ${roleGrantedTopic0}
       //   revoke: ${roleRevokedTopic0}
@@ -143,7 +143,9 @@ export const getCurrentRoleAdmins = async (
 
       if (roleName && !roles[roleName]) {
         roles[roleName] = [];
-      } else if (roleName && roles[roleName]) {
+      }
+
+      if (roleName && roles[roleName]) {
         const accountFound = roles[roleName].find(
           (roleAddress) => roleAddress === account,
         );
@@ -154,7 +156,7 @@ export const getCurrentRoleAdmins = async (
     } else if (eventLog.topics[0] === roleRevokedTopic0) {
       const { role, account } = parseLog(roleRevokedEventABI, eventLog);
       const roleName = roleHexToNameMap.get(role);
-      //   console.log(`
+      // console.log(`
       //   topic0: ${eventLog.topics[0]}
       //   grant : ${roleGrantedTopic0}
       //   revoke: ${roleRevokedTopic0}

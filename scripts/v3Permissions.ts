@@ -486,12 +486,14 @@ export const resolveV3Modifiers = async (
       addressBook.RATES_FACTORY,
       provider,
     );
+
     const proxyAdminContract = new ethers.Contract(
       proxyAdminContractAddress,
       onlyOwnerAbi,
       provider,
     );
     const proxyAdminOwner = await proxyAdminContract.owner();
+
     obj['ProxyAdmin'] = {
       address: utils.getAddress(proxyAdminContractAddress),
       modifiers: [
