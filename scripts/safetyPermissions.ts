@@ -1,12 +1,12 @@
 import { ethers, providers } from 'ethers';
 
-import { generateRoles } from '../helpers/jsonParsers';
-import { getProxyAdmin } from '../helpers/proxyAdmin';
-import { getSafeOwners } from '../helpers/guardian';
-import stkAaveABI from '../abis/stkAaveABI.json';
-import abptABI from '../abis/abptABI.json';
-import bptABI from '../abis/bptABI.json';
-import { Contracts, PermissionsJson } from '../helpers/types';
+import { generateRoles } from '../helpers/jsonParsers.js';
+import { getProxyAdmin } from '../helpers/proxyAdmin.js';
+import { getSafeOwners } from '../helpers/guardian.js';
+import stkAaveABI from '../abis/stkAaveABI.json' assert { type: 'json' };
+import abptABI from '../abis/abptABI.json' assert { type: 'json' };
+import bptABI from '../abis/bptABI.json' assert { type: 'json' };
+import { Contracts, PermissionsJson } from '../helpers/types.js';
 
 export const resolveSafetyV2Modifiers = async (
   addressBook: any,

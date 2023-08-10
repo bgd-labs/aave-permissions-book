@@ -1,18 +1,19 @@
 import { ethers, providers } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { getStaticPermissionsJson } from '../helpers/fileSystem';
-import { generateRoles } from '../helpers/jsonParsers';
+import { getStaticPermissionsJson } from '../helpers/fileSystem.js';
+import { generateRoles } from '../helpers/jsonParsers.js';
 import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
-import polygonBridgeExecutorABI from '../abis/polygonBridgeExecutorABI.json';
-import optimismBridgeExecutorABI from '../abis/optimismExecutorBridgeABI.json';
-import { getSafeOwners } from '../helpers/guardian';
-import { Contracts } from '../helpers/types';
+import polygonBridgeExecutorABI from '../abis/polygonBridgeExecutorABI.json' assert { type: 'json' };
+import optimismBridgeExecutorABI from '../abis/optimismExecutorBridgeABI.json' assert { type: 'json' };
+import { getSafeOwners } from '../helpers/guardian.js';
+import { Contracts } from '../helpers/types.js';
 
 export const bridgeExecutors: Record<number, string> = {
   [ChainId.optimism]: './statics/bridgeExecutors/optimism.json',
   [ChainId.arbitrum_one]: './statics/bridgeExecutors/arbitrum.json',
   [ChainId.polygon]: './statics/bridgeExecutors/polygon.json',
-  ['1088']: './statics/bridgeExecutors/metis.json',
+  [ChainId.metis_andromeda]: './statics/bridgeExecutors/metis.json',
+  ['8453']: './statics/bridgeExecutors/base.json',
 };
 
 export const getBridgeExecutor = async (
@@ -173,7 +174,7 @@ export const getBridgeExecutor = async (
         },
       ],
     };
-  } else if (chainId === 1088) {
+  } else if (chainId === ChainId.metis_andromeda) {
     const bridgeExecutorContract = new ethers.Contract(
       AaveGovernanceV2.METIS_BRIDGE_EXECUTOR,
       optimismBridgeExecutorABI,

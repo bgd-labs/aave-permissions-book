@@ -1,16 +1,16 @@
 import { ethers, providers, utils } from 'ethers';
-import { Pools } from '../helpers/configs';
-import { generateRoles } from '../helpers/jsonParsers';
-import lendingPoolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json';
-import onlyOwnerAbi from '../abis/onlyOwnerAbi.json';
-import arcTimelockAbi from '../abis/arcTimelockAbi.json';
+import { Pools } from '../helpers/configs.js';
+import { generateRoles } from '../helpers/jsonParsers.js';
+import lendingPoolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json' assert { type: 'json' };
+import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
+import arcTimelockAbi from '../abis/arcTimelockAbi.json' assert { type: 'json' };
 import { AaveV2EthereumArc } from '@bgd-labs/aave-address-book';
-import { getProxyAdmin } from '../helpers/proxyAdmin';
-import { getSafeOwners } from '../helpers/guardian';
-import collectorAbi from '../abis/collectorAbi.json';
+import { getProxyAdmin } from '../helpers/proxyAdmin.js';
+import { getSafeOwners } from '../helpers/guardian.js';
+import collectorAbi from '../abis/collectorAbi.json' assert { type: 'json' };
 import { ChainId } from '@aave/contract-helpers';
-import { Contracts, PermissionsJson } from '../helpers/types';
-import { getBridgeExecutor } from './bridgeExecutors';
+import { Contracts, PermissionsJson } from '../helpers/types.js';
+import { getBridgeExecutor } from './bridgeExecutors.js';
 
 export const resolveV2Modifiers = async (
   addressBook: any,

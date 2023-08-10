@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { networkConfigs } from './configs';
+import { networkConfigs } from './configs.js';
 
 export const explorerAddressUrlComposer = (
   address: string,

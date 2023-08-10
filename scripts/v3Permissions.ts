@@ -1,15 +1,14 @@
 import { ethers, providers, utils } from 'ethers';
-import onlyOwnerAbi from '../abis/onlyOwnerAbi.json';
-import collectorAbi from '../abis/collectorAbi.json';
-import { Pools } from '../helpers/configs';
-import { generateRoles } from '../helpers/jsonParsers';
-import poolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json';
-import { getProxyAdmin } from '../helpers/proxyAdmin';
-import { getSafeOwners } from '../helpers/guardian';
+import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
+import collectorAbi from '../abis/collectorAbi.json' assert { type: 'json' };
+import { Pools } from '../helpers/configs.js';
+import { generateRoles } from '../helpers/jsonParsers.js';
+import poolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json' assert { type: 'json' };
+import { getProxyAdmin } from '../helpers/proxyAdmin.js';
+import { getSafeOwners } from '../helpers/guardian.js';
 import { ChainId } from '@aave/contract-helpers';
-import { getBridgeExecutor } from './bridgeExecutors';
-import { AddressInfo, Contracts, PermissionsJson } from '../helpers/types';
-import { RATES_FACTORY } from '@bgd-labs/aave-address-book/dist/AaveV3Ethereum';
+import { getBridgeExecutor } from './bridgeExecutors.js';
+import { AddressInfo, Contracts, PermissionsJson } from '../helpers/types.js';
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -487,12 +486,14 @@ export const resolveV3Modifiers = async (
       addressBook.RATES_FACTORY,
       provider,
     );
+
     const proxyAdminContract = new ethers.Contract(
       proxyAdminContractAddress,
       onlyOwnerAbi,
       provider,
     );
     const proxyAdminOwner = await proxyAdminContract.owner();
+
     obj['ProxyAdmin'] = {
       address: utils.getAddress(proxyAdminContractAddress),
       modifiers: [
