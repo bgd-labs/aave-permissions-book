@@ -222,7 +222,7 @@ export const getBridgeExecutor = async (
     };
   } else if (chainId === 8453) {
     const bridgeExecutorContract = new ethers.Contract(
-      AaveGovernanceV2.BASE_BRIDGE_EXECUTOR,
+      AaveGovernanceV2.BASENET_BRIDGE_EXECUTOR,
       optimismBridgeExecutorABI,
       provider,
     );
