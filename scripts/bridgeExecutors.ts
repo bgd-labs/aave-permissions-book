@@ -220,52 +220,6 @@ export const getBridgeExecutor = async (
         },
       ],
     };
-  } else if (chainId === 8453) {
-    const bridgeExecutorContract = new ethers.Contract(
-      '0xa9f30e6ed4098e9439b2ac8aea2d3fc26bcebb45', // AaveGovernanceV2.BASE_BRIDGE_EXECUTOR,
-      optimismBridgeExecutorABI,
-      provider,
-    );
-    const guardian = await bridgeExecutorContract.getGuardian();
-    const ethereumGovExecutor =
-      await bridgeExecutorContract.getEthereumGovernanceExecutor();
-
-    obj['OptimismBridgeExecutor'] = {
-      address: '0xa9f30e6ed4098e9439b2ac8aea2d3fc26bcebb45', //AaveGovernanceV2.BASE_BRIDGE_EXECUTOR,
-      modifiers: [
-        {
-          modifier: 'onlyGuardian',
-          addresses: [
-            {
-              address: guardian,
-              owners: await getSafeOwners(provider, guardian),
-            },
-          ],
-          functions: roles['OptimismBridgeExecutor']['onlyGuardian'],
-        },
-        {
-          modifier: 'onlyThis',
-          addresses: [
-            {
-              address: '0xa9f30e6ed4098e9439b2ac8aea2d3fc26bcebb45', //AaveGovernanceV2.BASE_BRIDGE_EXECUTOR,
-              owners: [],
-            },
-          ],
-          functions: roles['OptimismBridgeExecutor']['onlyThis'],
-        },
-        {
-          modifier: 'onlyEthereumGovernanceExecutor',
-          addresses: [
-            {
-              address: ethereumGovExecutor,
-              owners: await getSafeOwners(provider, ethereumGovExecutor),
-            },
-          ],
-          functions:
-            roles['OptimismBridgeExecutor']['onlyEthereumGovernanceExecutor'],
-        },
-      ],
-    };
   } else {
     return {};
   }
