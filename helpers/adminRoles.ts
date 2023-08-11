@@ -77,7 +77,6 @@ export const getCurrentRoleAdmins = async (
   } else if (chainId === ChainId.metis_andromeda) {
     limit = 3000;
   } else if (Number(chainId) === 8453) {
-    console.log('0000000000');
     limit = 3000;
   }
 
