@@ -17,7 +17,7 @@ import {
   AaveV3Optimism,
   AaveV3Polygon,
   AaveV3Metis,
-  AaveV3Basenet,
+  AaveV3Base,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -203,7 +203,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 2357130,
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: AaveV3Basenet,
+        addressBook: AaveV3Base,
       },
     },
   },
