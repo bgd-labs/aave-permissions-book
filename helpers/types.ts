@@ -14,6 +14,12 @@ export type ContractInfo = {
 };
 
 export type Contracts = Record<string, ContractInfo>;
+export type GovV3 = {
+  latestCCCBlockNumber: number;
+  contracts: Record<string, ContractInfo>;
+  senders: string[];
+  // bridgeAdapters: string[];
+};
 export type AddressInfo = {
   address: string;
   owners: string[];
@@ -26,6 +32,7 @@ export type Roles = {
 export type PoolInfo = {
   roles?: Roles;
   contracts: Contracts;
+  govV3?: GovV3;
 };
 
 export type Pool = Record<string, PoolInfo>;
@@ -36,6 +43,7 @@ export type PoolConfigs = {
   permissionsJson: string;
   addressBook: any;
   aclBlock?: number;
+  crossChainControllerBlock?: number;
 
   tenderlyBlock?: number;
   tenderlyRpcUrl?: string;

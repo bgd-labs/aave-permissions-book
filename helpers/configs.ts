@@ -48,6 +48,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         aclBlock: 16291117,
+        crossChainControllerBlock: 17684650,
         addressBook: AaveV3Ethereum,
       },
       [Pools.GOV_V2]: {
@@ -100,6 +101,7 @@ export const networkConfigs: NetworkConfigs = {
     pools: {
       [Pools.V3]: {
         aclBlock: 25824416,
+        crossChainControllerBlock: 45029910,
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Polygon,
       },
@@ -122,6 +124,7 @@ export const networkConfigs: NetworkConfigs = {
     pools: {
       [Pools.V3]: {
         aclBlock: 11970456,
+        crossChainControllerBlock: 32549880,
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Avalanche,
       },
@@ -146,6 +149,7 @@ export const networkConfigs: NetworkConfigs = {
     pools: {
       [Pools.V3]: {
         aclBlock: 4365546,
+        crossChainControllerBlock: 106996150,
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Optimism,
       },
@@ -160,6 +164,7 @@ export const networkConfigs: NetworkConfigs = {
     pools: {
       [Pools.V3]: {
         aclBlock: 7740502,
+        crossChainControllerBlock: 112113800,
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Arbitrum,
       },

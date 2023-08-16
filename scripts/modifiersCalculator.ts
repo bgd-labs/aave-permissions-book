@@ -9,9 +9,11 @@ import { getCurrentRoleAdmins } from '../helpers/adminRoles.js';
 import { resolveV2Modifiers } from './v2Permissions.js';
 import { resolveV3Modifiers } from './v3Permissions.js';
 import { resolveGovV2Modifiers } from './governancePermissions.js';
-import { Contracts, FullPermissions, Roles } from '../helpers/types.js';
+import { Contracts, FullPermissions, GovV3, Roles } from '../helpers/types.js';
 import { resolveSafetyV2Modifiers } from './safetyPermissions.js';
 import { resolveV2MiscModifiers } from './v2MiscPermissions.js';
+import { getCCCSendersAndAdapters } from '../helpers/crossChainControllerLogs.js';
+import { resolveGovV3Modifiers } from './govV3Permissions.js';
 
 async function main() {
   let fullJson: FullPermissions = getAllPermissionsJson();
@@ -30,6 +32,7 @@ async function main() {
       const permissionsJson = getStaticPermissionsJson(pool.permissionsJson);
       let poolPermissions: Contracts = {};
       let admins = {} as Roles;
+      let govV3 = {} as GovV3;
       if (
         poolKey !== Pools.GOV_V2 &&
         poolKey !== Pools.SAFETY_MODULE &&
@@ -103,6 +106,39 @@ async function main() {
             Number(network),
             admins.role,
           );
+
+          if (pool.crossChainControllerBlock) {
+            const cccFromBlock =
+              (fullJson[network] &&
+                fullJson[network][poolKey]?.govV3?.latestCCCBlockNumber) ||
+              pool.crossChainControllerBlock;
+
+            const { senders, latestCCCBlockNumber } =
+              await getCCCSendersAndAdapters(
+                provider,
+                (fullJson[network] &&
+                  fullJson[network][poolKey] &&
+                  fullJson[network][poolKey]?.govV3?.senders) ||
+                  [],
+                cccFromBlock,
+                pool.addressBook,
+                network === 'tenderly-mainnet'
+                  ? 'tenderly-mainnet'
+                  : Number(network),
+              );
+
+            govV3.contracts = await resolveGovV3Modifiers(
+              pool.addressBook,
+              poolKey === Pools.TENDERLY
+                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+                : provider,
+              permissionsJson,
+              Number(network),
+              senders,
+            );
+            govV3.senders = senders;
+            govV3.latestCCCBlockNumber = latestCCCBlockNumber;
+          }
         }
       } else {
         console.log(`pool not supported: ${poolKey}`);
@@ -114,6 +150,7 @@ async function main() {
             [poolKey]: {
               contracts: poolPermissions,
               roles: admins,
+              govV3: govV3,
             },
           },
         };
@@ -122,6 +159,7 @@ async function main() {
           [poolKey]: {
             contracts: poolPermissions,
             roles: admins,
+            govV3: govV3,
           },
         };
       } else {
@@ -129,6 +167,7 @@ async function main() {
         fullJson[network][poolKey] = {
           contracts: poolPermissions,
           roles: admins,
+          govV3: govV3,
         };
       }
     }
