@@ -17,7 +17,7 @@ import {
   AaveV3Optimism,
   AaveV3Polygon,
   AaveV3Metis,
-  AaveV3Basenet,
+  AaveV3Base,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -190,6 +190,20 @@ export const networkConfigs: NetworkConfigs = {
         aclBlock: 5405900,
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: AaveV3Metis,
+      },
+    },
+  },
+  ['8453']: {
+    rpcUrl: process.env.RPC_BASE,
+    explorer: 'https://basescan.org',
+    addressesNames: {
+      '0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A': 'Aave Guardian Base',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 2357130,
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: AaveV3Base,
       },
     },
   },

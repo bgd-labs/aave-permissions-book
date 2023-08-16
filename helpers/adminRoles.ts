@@ -67,13 +67,16 @@ export const getCurrentRoleAdmins = async (
 
   let limit = undefined;
   let timeout = undefined;
+
   if (chainId === ChainId.avalanche) {
     limit = 3000;
   } else if (chainId === ChainId.harmony) {
     limit = 1000;
   } else if (chainId === ChainId.fantom) {
     limit = 99999;
-  } else if (chainId === '1088') {
+  } else if (chainId === ChainId.metis_andromeda) {
+    limit = 3000;
+  } else if (Number(chainId) === 8453) {
     limit = 3000;
   }
 

@@ -534,7 +534,8 @@ export const resolveV3Modifiers = async (
     chainId === ChainId.polygon ||
     chainId === ChainId.optimism ||
     chainId === ChainId.arbitrum_one ||
-    chainId === 1088
+    chainId === ChainId.metis_andromeda ||
+    chainId === 8453
   ) {
     bridgeExecutor = await getBridgeExecutor(provider, chainId);
   }
