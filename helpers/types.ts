@@ -41,6 +41,7 @@ export type FullPermissions = Record<string, Pool>;
 
 export type PoolConfigs = {
   permissionsJson: string;
+  crossChainPermissionsJson?: string;
   addressBook: any;
   aclBlock?: number;
   crossChainControllerBlock?: number;

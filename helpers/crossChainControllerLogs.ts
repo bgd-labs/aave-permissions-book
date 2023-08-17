@@ -32,6 +32,9 @@ export const getCCCSendersAndAdapters = async (
   let eventLogs: providers.Log[] = [];
   let finalBlock: number = 0;
 
+  // get sender updated event
+  const senderUpdatedTopic0 = utils.id('SenderUpdated(address,bool)');
+
   const logs = await getLogs({
     provider,
     address: addressBook.CROSS_CHAIN_CONTROLLER,
@@ -39,12 +42,11 @@ export const getCCCSendersAndAdapters = async (
     logs: [],
     limit,
     timeout,
+    topic0: senderUpdatedTopic0,
   });
   eventLogs = logs.eventLogs;
   finalBlock = logs.finalBlock;
 
-  // get sender updated event
-  const senderUpdatedTopic0 = utils.id('SenderUpdated(address,bool)');
   // const bridgeAdapterUpdateTopic0 = utils.id(
   //   'ReceiverBridgeAdaptersUpdated(address,bool,uint256)',
   // );

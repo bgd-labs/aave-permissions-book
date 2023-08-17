@@ -27,6 +27,16 @@
 |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://snowtrace.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  setRoleAdmin |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |   | |--------|--------|--------|--------|--------|
 
+### Governance V3 Contracts 
+| contract |proxyAdmin |modifier |permission owner |functions |
+|----------|----------|----------|----------|----------|
+|  [CrossChainController](https://snowtrace.io/address/0x55b9C6DFCC84f120de502484C1C7Cb158A25D610) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6](https://snowtrace.io/address/0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6) |  approveSenders, removeSenders, enableBridgeAdapters, disableBridgeAdapters, updateMessagesValidityTimestamp, allowReceiverBridgeAdapters, disallowReceiverBridgeAdapters | |--------|--------|--------|--------|--------|
+|  [CrossChainController](https://snowtrace.io/address/0x55b9C6DFCC84f120de502484C1C7Cb158A25D610) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6](https://snowtrace.io/address/0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6) |  solveEmergency | |--------|--------|--------|--------|--------|
+|  [CrossChainController](https://snowtrace.io/address/0x55b9C6DFCC84f120de502484C1C7Cb158A25D610) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwnerOrGuardian |  [0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6](https://snowtrace.io/address/0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6), [0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6](https://snowtrace.io/address/0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6) |  retryEnvelope, retryTransaction, updateGuardian | |--------|--------|--------|--------|--------|
+|  [CrossChainController](https://snowtrace.io/address/0x55b9C6DFCC84f120de502484C1C7Cb158A25D610) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6](https://snowtrace.io/address/0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
+|  [CrossChainController](https://snowtrace.io/address/0x55b9C6DFCC84f120de502484C1C7Cb158A25D610) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyApprovedSenders |   |  forwardMessage | |--------|--------|--------|--------|--------|
+|  [CrossChainController](https://snowtrace.io/address/0x55b9C6DFCC84f120de502484C1C7Cb158A25D610) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyApprovedBridges |   |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
+
 ### Guardians 
 | Guardian |Address |Owners |
 |----------|----------|----------|

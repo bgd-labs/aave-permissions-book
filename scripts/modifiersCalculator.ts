@@ -107,7 +107,10 @@ async function main() {
             admins.role,
           );
 
-          if (pool.crossChainControllerBlock) {
+          if (
+            pool.crossChainControllerBlock &&
+            pool.crossChainPermissionsJson
+          ) {
             const cccFromBlock =
               (fullJson[network] &&
                 fullJson[network][poolKey]?.govV3?.latestCCCBlockNumber) ||
@@ -127,12 +130,15 @@ async function main() {
                   : Number(network),
               );
 
+            const permissionsGovV3Json = getStaticPermissionsJson(
+              pool.crossChainPermissionsJson,
+            );
             govV3.contracts = await resolveGovV3Modifiers(
               pool.addressBook,
               poolKey === Pools.TENDERLY
                 ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
                 : provider,
-              permissionsJson,
+              permissionsGovV3Json,
               Number(network),
               senders,
             );

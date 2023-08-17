@@ -174,6 +174,94 @@ export const generateTables = async () => {
 
       readmeByNetwork += contractTable + '\n';
 
+      if (
+        poolPermitsByContract.govV3 &&
+        Object.keys(poolPermitsByContract.govV3).length > 0
+      ) {
+        let govV3Table = `### Governance V3 Contracts \n`;
+        const govV3HeaderTitles = [
+          'contract',
+          'proxyAdmin',
+          'modifier',
+          'permission owner',
+          'functions',
+        ];
+        const govV3Header = getTableHeader(govV3HeaderTitles);
+        govV3Table += govV3Header;
+
+        let govV3tableBody = '';
+        for (let contractName of Object.keys(
+          poolPermitsByContract.govV3.contracts,
+        )) {
+          const contract = poolPermitsByContract.govV3.contracts[contractName];
+
+          if (contract.modifiers.length === 0) {
+            govV3tableBody += getTableBody([
+              `[${contractName}](${explorerAddressUrlComposer(
+                contract.address,
+                network,
+              )})`,
+              `${generateTableAddress(
+                contract.proxyAdmin,
+                addressesNames,
+                contractsByAddress,
+                poolGuardians,
+                network,
+              )}`,
+              `-`,
+              `-`,
+              '-',
+            ]);
+            govV3tableBody += getLineSeparator(
+              contractsModifiersHeaderTitles.length,
+            );
+          }
+          for (let modifier of contract.modifiers) {
+            for (let modifierAddress of modifier.addresses) {
+              if (!poolGuardians[modifierAddress.address]) {
+                if (modifierAddress.owners.length > 0) {
+                  poolGuardians[modifierAddress.address] =
+                    modifierAddress.owners;
+                }
+              }
+            }
+
+            govV3tableBody += getTableBody([
+              `[${contractName}](${explorerAddressUrlComposer(
+                contract.address,
+                network,
+              )})`,
+              `${generateTableAddress(
+                contract.proxyAdmin,
+                addressesNames,
+                contractsByAddress,
+                poolGuardians,
+                network,
+              )}`,
+              `${modifier.modifier}`,
+              `${modifier.addresses
+                .map((modifierAddress: AddressInfo) =>
+                  generateTableAddress(
+                    modifierAddress.address,
+                    addressesNames,
+                    contractsByAddress,
+                    poolGuardians,
+                    network,
+                  ),
+                )
+                .join(', ')}`,
+              modifier?.functions ? modifier.functions.join(', ') : '',
+            ]);
+            govV3tableBody += getLineSeparator(
+              contractsModifiersHeaderTitles.length,
+            );
+          }
+        }
+
+        govV3Table += govV3tableBody;
+        readmeByNetwork += govV3Table + '\n';
+      }
+
       if (Object.keys(poolGuardians).length > 0) {
         let guardianTable = `### Guardians \n`;
         const guardianHeaderTitles = ['Guardian', 'Address', 'Owners'];
