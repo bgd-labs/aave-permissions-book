@@ -109,7 +109,8 @@ async function main() {
 
           if (
             pool.crossChainControllerBlock &&
-            pool.crossChainPermissionsJson
+            pool.crossChainPermissionsJson &&
+            pool.governanceAddressBook
           ) {
             const cccFromBlock =
               (fullJson[network] &&
@@ -124,7 +125,7 @@ async function main() {
                   fullJson[network][poolKey]?.govV3?.senders) ||
                   [],
                 cccFromBlock,
-                pool.addressBook,
+                pool.governanceAddressBook,
                 network === 'tenderly-mainnet'
                   ? 'tenderly-mainnet'
                   : Number(network),
@@ -134,7 +135,7 @@ async function main() {
               pool.crossChainPermissionsJson,
             );
             govV3.contracts = await resolveGovV3Modifiers(
-              pool.addressBook,
+              pool.governanceAddressBook,
               poolKey === Pools.TENDERLY
                 ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
                 : provider,

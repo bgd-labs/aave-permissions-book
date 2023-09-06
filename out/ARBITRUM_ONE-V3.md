@@ -51,6 +51,6 @@
 |  EMERGENCY_ADMIN |  [Aave Guardian Arbitrum](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  RISK_ADMIN |  [0xADf86b537eF08591c2777E144322E8b0Ca7E82a7](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |  [0x219ac6dA971dE6d943cffD1BD62abde71525d382](https://arbiscan.io/address/0x219ac6dA971dE6d943cffD1BD62abde71525d382), [0x1561EAF39c98d45C55C7dC605E627672F4406819](https://arbiscan.io/address/0x1561EAF39c98d45C55C7dC605E627672F4406819) | |--------|--------|
+|  BRIDGE |   | |--------|--------|
 

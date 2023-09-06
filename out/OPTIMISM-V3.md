@@ -51,6 +51,6 @@
 |  EMERGENCY_ADMIN |  [Aave Guardian Optimism](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  RISK_ADMIN |  [0x5E76E98E0963EcDC6A065d1435F84065b7523f39](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |  [0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85](https://optimistic.etherscan.io/address/0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85), [0xE668197A175E7A2143222a028470c6ABBBD183F6](https://optimistic.etherscan.io/address/0xE668197A175E7A2143222a028470c6ABBBD183F6) | |--------|--------|
+|  BRIDGE |   | |--------|--------|
 

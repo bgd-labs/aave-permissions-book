@@ -18,6 +18,11 @@ import {
   AaveV3Polygon,
   AaveV3Metis,
   AaveV3Base,
+  GovernanceV3Ethereum,
+  GovernanceV3Polygon,
+  GovernanceV3Avalanche,
+  GovernanceV3Optimism,
+  GovernanceV3Arbitrum,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -48,6 +53,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        governanceAddressBook: GovernanceV3Ethereum,
         aclBlock: 16291117,
         crossChainControllerBlock: 17684650,
         addressBook: AaveV3Ethereum,
@@ -106,6 +112,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Polygon,
+        governanceAddressBook: GovernanceV3Polygon,
       },
       [Pools.V2]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
@@ -130,6 +137,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Avalanche,
+        governanceAddressBook: GovernanceV3Avalanche,
       },
       [Pools.V2]: {
         permissionsJson: './statics/functionsPermissionsV2PoR.json',
@@ -156,6 +164,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Optimism,
+        governanceAddressBook: GovernanceV3Optimism,
       },
     },
   },
@@ -172,6 +181,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Arbitrum,
+        governanceAddressBook: GovernanceV3Arbitrum,
       },
     },
   },

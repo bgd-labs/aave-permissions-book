@@ -45,11 +45,11 @@
 ### Admins 
 | Role |Contract |
 |----------|----------|
-|  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  DEFAULT_ADMIN |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
-|  EMERGENCY_ADMIN |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
-|  FLASH_BORROWER |   | |--------|--------|
 |  POOL_ADMIN |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
+|  EMERGENCY_ADMIN |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
+|  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  RISK_ADMIN |  [ProofOfReserveExecutor](https://snowtrace.io/address/0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc), [0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5) | |--------|--------|
+|  BRIDGE |   | |--------|--------|
+|  FLASH_BORROWER |   | |--------|--------|
 

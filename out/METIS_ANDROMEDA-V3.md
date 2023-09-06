@@ -36,8 +36,8 @@
 |  DEFAULT_ADMIN |  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) | |--------|--------|
 |  POOL_ADMIN |  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501), [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) | |--------|--------|
 |  EMERGENCY_ADMIN |  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501) | |--------|--------|
+|  RISK_ADMIN |  [0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |   | |--------|--------|
-|  RISK_ADMIN |  [0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) | |--------|--------|
 

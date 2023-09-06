@@ -45,6 +45,7 @@ export type PoolConfigs = {
   addressBook: any;
   aclBlock?: number;
   crossChainControllerBlock?: number;
+  governanceAddressBook?: any;
 
   tenderlyBlock?: number;
   tenderlyRpcUrl?: string;
