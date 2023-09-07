@@ -48,6 +48,7 @@ export const networkConfigs: NetworkConfigs = {
       '0x33B09130b035d6D7e57d76fEa0873d9545FA7557': 'Aave Arc Guardian',
       '0xB9062896ec3A615a4e4444DF183F0531a77218AE': 'Legacy Emergency Admin',
       '0x36fEDC70feC3B77CAaf50E6C524FD7e5DFBD629A': 'ParaSwap',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
       [Pools.V3]: {

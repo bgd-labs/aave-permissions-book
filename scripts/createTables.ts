@@ -75,14 +75,15 @@ export const generateTables = async () => {
       // create pool table
       readmeByNetwork += `## ${pool} \n`;
 
-      let contractsByAddress = generateContractsByAddress(
-        poolPermitsByContract.contracts,
-      );
+      let contractsByAddress = generateContractsByAddress({
+        ...poolPermitsByContract.contracts,
+      });
 
       // add gov contracts to contractsByAddresses
       if (pool !== Pools.GOV_V2) {
         contractsByAddress = generateContractsByAddress({
           ...poolPermitsByContract.contracts,
+          ...poolPermitsByContract.govV3?.contracts,
           ...mainnetPermissions[Pools.GOV_V2].contracts,
         });
       }
