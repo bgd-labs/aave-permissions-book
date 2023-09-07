@@ -87,14 +87,17 @@ export const networkConfigs: NetworkConfigs = {
           AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
         },
       },
-      // [Pools.TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-      //   aclBlock: 16291117,
-      //   addressBook: AaveV3Ethereum,
-      //   tenderlyBlock: 16426887,
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/82b65f8e-69eb-4b07-b365-190fc84f63bb',
-      // },
+      [Pools.TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        governanceAddressBook: GovernanceV3Ethereum,
+        aclBlock: 16291117,
+        crossChainControllerBlock: 17684650,
+        addressBook: AaveV3Ethereum,
+        tenderlyBlock: 18078726,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/8db80985-841a-442b-b15d-823f996f19e2',
+      },
     },
   },
   [ChainId.polygon]: {

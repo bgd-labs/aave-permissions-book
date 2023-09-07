@@ -39,6 +39,7 @@ These documents contain tables with the following information:
 |  MAINNET |  V2_AMM |  [Permissions](./out/MAINNET-V2_AMM.md#contracts) | |--------|--------|--------|
 |  MAINNET |  SAFETY_MODULE |  [Permissions](./out/MAINNET-SAFETY_MODULE.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_MISC |  [Permissions](./out/MAINNET-V2_MISC.md#contracts) | |--------|--------|--------|
+|  MAINNET |  TENDERLY |  [Permissions](./out/MAINNET-TENDERLY.md#contracts) | |--------|--------|--------|
 |  OPTIMISM |  V3 |  [Permissions](./out/OPTIMISM-V3.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V3 |  [Permissions](./out/POLYGON-V3.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V2 |  [Permissions](./out/POLYGON-V2.md#contracts) | |--------|--------|--------|
