@@ -44,13 +44,15 @@ async function main() {
             networkConfigs[network].pools[poolKey].tenderlyRpcUrl,
           );
         }
-        poolPermissions = await resolveV2Modifiers(
-          pool.addressBook,
-          provider,
-          permissionsJson,
-          Pools[poolKey as keyof typeof Pools],
-          Number(network),
-        );
+        if (Object.keys(pool.addressBook).length > 0) {
+          poolPermissions = await resolveV2Modifiers(
+            pool.addressBook,
+            provider,
+            permissionsJson,
+            Pools[poolKey as keyof typeof Pools],
+            Number(network),
+          );
+        }
       } else if (poolKey === Pools.GOV_V2) {
         poolPermissions = await resolveGovV2Modifiers(
           pool.addressBook,
@@ -83,30 +85,33 @@ async function main() {
             fromBlock: ${fromBlock}
           ------------------------------------
           `);
-          admins = await getCurrentRoleAdmins(
-            provider,
-            (fullJson[network] &&
-              fullJson[network][poolKey] &&
-              fullJson[network][poolKey]?.roles?.role) ||
-              ({} as Record<string, string[]>),
-            fromBlock,
-            pool.addressBook,
-            network === 'tenderly-mainnet'
-              ? 'tenderly-mainnet'
-              : Number(network),
-            Pools[poolKey as keyof typeof Pools],
-          );
-          poolPermissions = await resolveV3Modifiers(
-            pool.addressBook,
-            poolKey === Pools.TENDERLY
-              ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-              : provider,
-            permissionsJson,
-            Pools[poolKey as keyof typeof Pools],
-            Number(network),
-            admins.role,
-          );
 
+          if (Object.keys(pool.addressBook).length > 0) {
+            admins = await getCurrentRoleAdmins(
+              provider,
+              (fullJson[network] &&
+                fullJson[network][poolKey] &&
+                fullJson[network][poolKey]?.roles?.role) ||
+                ({} as Record<string, string[]>),
+              fromBlock,
+              pool.addressBook,
+              network === 'tenderly-mainnet'
+                ? 'tenderly-mainnet'
+                : Number(network),
+              Pools[poolKey as keyof typeof Pools],
+            );
+
+            poolPermissions = await resolveV3Modifiers(
+              pool.addressBook,
+              poolKey === Pools.TENDERLY
+                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+                : provider,
+              permissionsJson,
+              Pools[poolKey as keyof typeof Pools],
+              Number(network),
+              admins.role,
+            );
+          }
           if (
             pool.crossChainControllerBlock &&
             pool.crossChainPermissionsJson &&

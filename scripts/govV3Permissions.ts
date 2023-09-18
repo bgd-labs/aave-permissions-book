@@ -302,6 +302,33 @@ export const resolveGovV3Modifiers = async (
   }
 
   if (
+    addressBook.EMERGENCY_REGISTRY &&
+    addressBook.EMERGENCY_REGISTRY !== constants.AddressZero
+  ) {
+    const emergencyRegistryContract = new ethers.Contract(
+      addressBook.EMERGENCY_REGISTRY,
+      onlyOwnerAbi,
+      provider,
+    );
+    const owner = await emergencyRegistryContract.owner();
+    obj['EmergencyRegistry'] = {
+      address: addressBook.EMERGENCY_REGISTRY,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: owner,
+              owners: await getSafeOwners(provider, owner),
+            },
+          ],
+          functions: roles['EmergencyRegistry']['onlyOwner'],
+        },
+      ],
+    };
+  }
+
+  if (
     addressBook.CROSS_CHAIN_CONTROLLER &&
     addressBook.CROSS_CHAIN_CONTROLLER !== constants.AddressZero
   ) {
@@ -313,11 +340,15 @@ export const resolveGovV3Modifiers = async (
     const owner = await cccContract.owner();
     const guardian = await cccContract.guardian();
     const rescuer = await cccContract.whoCanRescue();
-    const approvedBridges: string[] = [];
-    // TODO: uncomment when new contract version gets deployed
-    //   await cccContract.getReceiverBridgeAdaptersByChain(
-    //   chainId,
-    // );
+
+    const supportedChains = await cccContract.getSupportedChains();
+
+    const receiverBridges: Set<string> = new Set();
+    for (let i = 0; i < supportedChains.length; i++) {
+      const bridges: string[] =
+        await cccContract.getReceiverBridgeAdaptersByChain(supportedChains[i]);
+      bridges.map((bridge) => receiverBridges.add(bridge));
+    }
 
     obj['CrossChainController'] = {
       address: addressBook.CROSS_CHAIN_CONTROLLER,
@@ -381,7 +412,7 @@ export const resolveGovV3Modifiers = async (
         {
           modifier: 'onlyApprovedBridges',
           addresses: [
-            ...approvedBridges.map((approvedBridge: string) => {
+            ...Array.from(receiverBridges).map((approvedBridge: string) => {
               return {
                 address: approvedBridge,
                 owners: [],

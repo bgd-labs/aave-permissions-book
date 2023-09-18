@@ -47,10 +47,6 @@ export const getCCCSendersAndAdapters = async (
   eventLogs = logs.eventLogs;
   finalBlock = logs.finalBlock;
 
-  // const bridgeAdapterUpdateTopic0 = utils.id(
-  //   'ReceiverBridgeAdaptersUpdated(address,bool,uint256)',
-  // );
-
   const senders = new Set<string>(oldSenders);
   // const bridgeAdapters = new Set<string>(oldBridgeAdapters);
 
@@ -69,19 +65,6 @@ export const getCCCSendersAndAdapters = async (
       } else {
         senders.delete(sender);
       }
-      // } else if (eventLog.topics[0] === bridgeAdapterUpdateTopic0) {
-      //   const { bridgeAdapter, allowed } = parseLog(senderUpdatedABI, eventLog);
-      //   // console.log(`bridgeAdapter
-      //   //   topic0: ${eventLog.topics[0]}
-      //   //   bridgeAdapter : ${bridgeAdapter}
-      //   //   allowed: ${allowed}
-      //   // `);
-      //
-      //   if (allowed) {
-      //     bridgeAdapters.add(bridgeAdapter);
-      //   } else {
-      //     bridgeAdapters.delete(bridgeAdapter);
-      //   }
     } else {
       console.error(new Error('some error parsing logs'));
       return {

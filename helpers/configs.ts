@@ -23,6 +23,7 @@ import {
   GovernanceV3Avalanche,
   GovernanceV3Optimism,
   GovernanceV3Arbitrum,
+  GovernanceV3Binance,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -56,7 +57,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         governanceAddressBook: GovernanceV3Ethereum,
         aclBlock: 16291117,
-        crossChainControllerBlock: 17684650,
+        crossChainControllerBlock: 18090380,
         addressBook: AaveV3Ethereum,
       },
       [Pools.GOV_V2]: {
@@ -87,17 +88,17 @@ export const networkConfigs: NetworkConfigs = {
           AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
         },
       },
-      [Pools.TENDERLY]: {
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        governanceAddressBook: GovernanceV3Ethereum,
-        aclBlock: 16291117,
-        crossChainControllerBlock: 17684650,
-        addressBook: AaveV3Ethereum,
-        tenderlyBlock: 18078726,
-        tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/8db80985-841a-442b-b15d-823f996f19e2',
-      },
+      // [Pools.TENDERLY]: {
+      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //   governanceAddressBook: GovernanceV3Ethereum,
+      //   aclBlock: 16291117,
+      //   crossChainControllerBlock: 17684650,
+      //   addressBook: AaveV3Ethereum,
+      //   tenderlyBlock: 18078726,
+      //   tenderlyRpcUrl:
+      //     'https://rpc.tenderly.co/fork/8db80985-841a-442b-b15d-823f996f19e2',
+      // },
     },
   },
   [ChainId.polygon]: {
@@ -121,6 +122,21 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V2]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2Polygon,
+      },
+    },
+  },
+  ['56']: {
+    rpcUrl: process.env.RPC_BINANCE,
+    explorer: 'https://bscscan.com',
+    addressesNames: {},
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 31558150, // update with updated acl when deployed
+        crossChainControllerBlock: 31558150,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: {},
+        governanceAddressBook: GovernanceV3Binance,
       },
     },
   },

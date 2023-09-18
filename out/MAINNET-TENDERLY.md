@@ -51,14 +51,3 @@
 |----------|----------|----------|
 |  [Aave Guardian Ethereum](https://etherscan.io/address/0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633) |  0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633 |  [0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707](https://etherscan.io/address/0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707), [0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39](https://etherscan.io/address/0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39), [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://etherscan.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0xe5d453700d99296c2c085B8119BD6c152Cf63FA6](https://etherscan.io/address/0xe5d453700d99296c2c085B8119BD6c152Cf63FA6), [0xF1ba2231F373CffD47641540CfaEB1f21E50659B](https://etherscan.io/address/0xF1ba2231F373CffD47641540CfaEB1f21E50659B), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://etherscan.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0x936CD9654271083cCF93A975919Da0aB3Bc99EF3](https://etherscan.io/address/0x936CD9654271083cCF93A975919Da0aB3Bc99EF3), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://etherscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x9343dcB6A3A523510F3499004D8aa595Baa25bc5](https://etherscan.io/address/0x9343dcB6A3A523510F3499004D8aa595Baa25bc5), [0x2BEDd8645B407B3B6447fbC09B269eC7a5794606](https://etherscan.io/address/0x2BEDd8645B407B3B6447fbC09B269eC7a5794606) | |--------|--------|--------|
 
-### Admins 
-| Role |Contract |
-|----------|----------|
-|  DEFAULT_ADMIN |  [Executor_lvl1](https://etherscan.io/address/0x95Fa2c817169E26956AB8795c84a225b55d7db5B) | |--------|--------|
-|  POOL_ADMIN |  [Executor_lvl1](https://etherscan.io/address/0x95Fa2c817169E26956AB8795c84a225b55d7db5B) | |--------|--------|
-|  EMERGENCY_ADMIN |  [Aave Guardian Ethereum](https://etherscan.io/address/0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633) | |--------|--------|
-|  FLASH_BORROWER |  [0xd9D8e68717Ce24CCbf162868aaad7E38d81b05d1](https://etherscan.io/address/0xd9D8e68717Ce24CCbf162868aaad7E38d81b05d1), [0x72915D41982DfCAf30b871290618E59C45Edba7F](https://etherscan.io/address/0x72915D41982DfCAf30b871290618E59C45Edba7F) | |--------|--------|
-|  RISK_ADMIN |  [0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778](https://etherscan.io/address/0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778), [0x2eE68ACb6A1319de1b49DC139894644E424fefD6](https://etherscan.io/address/0x2eE68ACb6A1319de1b49DC139894644E424fefD6) | |--------|--------|
-|  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  BRIDGE |   | |--------|--------|
-

@@ -94,6 +94,15 @@
     ]
   },
   {
+    "contract": "EmergencyRegistry",
+    "functions": [
+      {
+        "name": "setEmergency",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
     "contract": "CrossChainController",
     "proxyAdmin": true,
     "functions": [

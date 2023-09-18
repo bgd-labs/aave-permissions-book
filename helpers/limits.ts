@@ -13,6 +13,8 @@ export const getLimit = (chainId: ChainId | string) => {
     limit = 3000;
   } else if (Number(chainId) === 8453) {
     limit = 3000;
+  } else if (Number(chainId) === 56) {
+    limit = 1000;
   }
 
   return limit;

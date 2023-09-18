@@ -63,6 +63,8 @@ export const generateTables = async () => {
     const networkName =
       network === '8453'
         ? 'BASE'
+        : network == '56'
+        ? 'BINANCE'
         : ChainIdToNetwork[Number(network)].toUpperCase();
     const networkPermits = aavePermissionsList[network];
     const addressesNames = networkConfigs[network].addressesNames || {};
@@ -295,6 +297,7 @@ export const generateTables = async () => {
       adminTable += adminHeader;
 
       if (
+        networkConfigs[network].pools[pool] &&
         networkConfigs[network].pools[pool].aclBlock &&
         poolPermitsByContract.roles &&
         poolPermitsByContract.roles.role
