@@ -424,7 +424,7 @@
             "0x2eE68ACb6A1319de1b49DC139894644E424fefD6"
           ]
         },
-        "latestBlockNumber": 18166440
+        "latestBlockNumber": 18173575
       }
     },
     "GOV_V2": {
@@ -1941,7 +1941,7 @@
             "0xE668197A175E7A2143222a028470c6ABBBD183F6"
           ]
         },
-        "latestBlockNumber": 109742557
+        "latestBlockNumber": 109785745
       }
     }
   },
@@ -2087,6 +2087,10 @@
                 },
                 {
                   "address": "0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f",
+                  "owners": []
+                },
+                {
+                  "address": "0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB",
                   "owners": []
                 }
               ],
@@ -2427,12 +2431,13 @@
           ],
           "ASSET_LISTING_ADMIN": [],
           "RISK_ADMIN": [
-            "0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f"
+            "0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f",
+            "0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB"
           ],
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 47710682
+        "latestBlockNumber": 47750365
       }
     },
     "V2": {
@@ -3315,7 +3320,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 68326473
+        "latestBlockNumber": 68359239
       }
     }
   },
@@ -3818,7 +3823,7 @@
             "0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731"
           ]
         },
-        "latestBlockNumber": 8612689
+        "latestBlockNumber": 8630530
       }
     }
   },
@@ -4314,7 +4319,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 2468130
+        "latestBlockNumber": 2471130
       }
     }
   },
@@ -4460,6 +4465,10 @@
                 },
                 {
                   "address": "0xADf86b537eF08591c2777E144322E8b0Ca7E82a7",
+                  "owners": []
+                },
+                {
+                  "address": "0xe59470B3BE3293534603487E00A44C72f2CD466d",
                   "owners": []
                 }
               ],
@@ -4787,7 +4796,8 @@
           ],
           "ASSET_LISTING_ADMIN": [],
           "RISK_ADMIN": [
-            "0xADf86b537eF08591c2777E144322E8b0Ca7E82a7"
+            "0xADf86b537eF08591c2777E144322E8b0Ca7E82a7",
+            "0xe59470B3BE3293534603487E00A44C72f2CD466d"
           ],
           "BRIDGE": [],
           "FLASH_BORROWER": [
@@ -4795,7 +4805,7 @@
             "0x1561EAF39c98d45C55C7dC605E627672F4406819"
           ]
         },
-        "latestBlockNumber": 132368260
+        "latestBlockNumber": 132686106
       }
     }
   },
@@ -5440,7 +5450,7 @@
             "0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5"
           ]
         },
-        "latestBlockNumber": 35365038
+        "latestBlockNumber": 35407331
       }
     },
     "V2": {
