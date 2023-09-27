@@ -39,6 +39,7 @@ export enum Pools {
   GOV_V2 = 'GOV_V2',
   SAFETY_MODULE = 'SAFETY_MODULE',
   TENDERLY = 'TENDERLY',
+  V2_TENDERLY = 'V2_TENDERLY',
 }
 
 export const networkConfigs: NetworkConfigs = {
@@ -67,6 +68,10 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: AaveGovernanceV2,
       },
       [Pools.V2]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2Ethereum,
+      },
+      [Pools.V2_TENDERLY]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2Ethereum,
       },
