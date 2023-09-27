@@ -36,8 +36,12 @@ export enum Pools {
   V2_AMM = 'V2_AMM',
   V2_ARC = 'V2_ARC',
   V2_MISC = 'V2_MISC',
+  V2_AMM_TENDERLY = 'V2_AMM_TENDERLY',
+  V2_ARC_TENDERLY = 'V2_ARC_TENDERLY',
+  V2_MISC_TENDERLY = 'V2_MISC_TENDERLY',
   GOV_V2 = 'GOV_V2',
   SAFETY_MODULE = 'SAFETY_MODULE',
+  SAFETY_MODULE_TENDERLY = 'SAFETY_MODULE_TENDERLY',
   TENDERLY = 'TENDERLY',
   V2_TENDERLY = 'V2_TENDERLY',
 }
@@ -81,13 +85,31 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsArc.json',
         addressBook: AaveV2EthereumArc,
       },
+      [Pools.V2_ARC_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsArc.json',
+        addressBook: AaveV2EthereumArc,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/2f0eb8ae-a0d5-4040-b7bf-ac8e07e8af6f',
+      },
       [Pools.V2_AMM]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2EthereumAMM,
       },
+      [Pools.V2_AMM_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2EthereumAMM,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/2f0eb8ae-a0d5-4040-b7bf-ac8e07e8af6f',
+      },
       [Pools.SAFETY_MODULE]: {
         permissionsJson: './statics/functionsPermissionsSafety.json',
         addressBook: AaveSafetyModule,
+      },
+      [Pools.SAFETY_MODULE_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsSafety.json',
+        addressBook: AaveSafetyModule,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/2f0eb8ae-a0d5-4040-b7bf-ac8e07e8af6f',
       },
       [Pools.V2_MISC]: {
         permissionsJson: './statics/functionsPermissionsV2Misc.json',
@@ -96,6 +118,16 @@ export const networkConfigs: NetworkConfigs = {
           LEND_TO_AAVE_MIGRATOR: '0x317625234562B1526Ea2FaC4030Ea499C5291de4',
           AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
         },
+      },
+      [Pools.V2_MISC_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV2Misc.json',
+        addressBook: {},
+        addresses: {
+          LEND_TO_AAVE_MIGRATOR: '0x317625234562B1526Ea2FaC4030Ea499C5291de4',
+          AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
+        },
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/2f0eb8ae-a0d5-4040-b7bf-ac8e07e8af6f',
       },
       [Pools.TENDERLY]: {
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',

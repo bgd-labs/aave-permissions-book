@@ -36,14 +36,24 @@ async function main() {
       if (
         poolKey !== Pools.GOV_V2 &&
         poolKey !== Pools.SAFETY_MODULE &&
+        poolKey !== Pools.SAFETY_MODULE_TENDERLY &&
+        poolKey !== Pools.V2_MISC_TENDERLY &&
         poolKey !== Pools.V2_MISC &&
         poolKey !== Pools.TENDERLY &&
         !pool.aclBlock
       ) {
+        console.log(`
+          ------------------------------------
+            network: ${network}
+            pool: ${poolKey}
+          ------------------------------------
+          `);
         if (Object.keys(pool.addressBook).length > 0) {
           poolPermissions = await resolveV2Modifiers(
             pool.addressBook,
-            poolKey === Pools.V2_TENDERLY
+            poolKey === Pools.V2_TENDERLY ||
+              poolKey === Pools.V2_AMM_TENDERLY ||
+              poolKey === Pools.V2_ARC_TENDERLY
               ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
               : provider,
             permissionsJson,
@@ -52,22 +62,50 @@ async function main() {
           );
         }
       } else if (poolKey === Pools.GOV_V2) {
+        console.log(`
+          ------------------------------------
+            network: ${network}
+            pool: ${poolKey}
+          ------------------------------------
+          `);
         poolPermissions = await resolveGovV2Modifiers(
           pool.addressBook,
           provider,
           permissionsJson,
         );
-      } else if (poolKey === Pools.SAFETY_MODULE) {
+      } else if (
+        poolKey === Pools.SAFETY_MODULE ||
+        poolKey === Pools.SAFETY_MODULE_TENDERLY
+      ) {
+        console.log(`
+          ------------------------------------
+            network: ${network}
+            pool: ${poolKey}
+          ------------------------------------
+          `);
         poolPermissions = await resolveSafetyV2Modifiers(
           pool.addressBook,
-          provider,
+          poolKey === Pools.SAFETY_MODULE_TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
           permissionsJson,
         );
-      } else if (poolKey === Pools.V2_MISC) {
+      } else if (
+        poolKey === Pools.V2_MISC ||
+        poolKey === Pools.V2_MISC_TENDERLY
+      ) {
+        console.log(`
+          ------------------------------------
+            network: ${network}
+            pool: ${poolKey}
+          ------------------------------------
+          `);
         poolPermissions = await resolveV2MiscModifiers(
           pool.addressBook,
           pool.addresses || {},
-          provider,
+          poolKey === Pools.V2_MISC_TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
           permissionsJson,
         );
       } else if (pool.aclBlock) {
