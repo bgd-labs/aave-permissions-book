@@ -73,10 +73,19 @@ async function main() {
           permissionsJson,
         );
       } else if (pool.aclBlock) {
-        const fromBlock =
-          (fullJson[network] &&
-            fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-          pool.aclBlock;
+        let fromBlock;
+        if (poolKey === Pools.TENDERLY) {
+          fromBlock =
+            (fullJson[network] &&
+              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+            pool.tenderlyBlock;
+        } else {
+          fromBlock =
+            (fullJson[network] &&
+              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+            pool.aclBlock;
+        }
+
         if (fromBlock) {
           console.log(`
           ------------------------------------
@@ -88,7 +97,9 @@ async function main() {
 
           if (Object.keys(pool.addressBook).length > 0) {
             admins = await getCurrentRoleAdmins(
-              provider,
+              poolKey === Pools.TENDERLY
+                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+                : provider,
               (fullJson[network] &&
                 fullJson[network][poolKey] &&
                 fullJson[network][poolKey]?.roles?.role) ||
