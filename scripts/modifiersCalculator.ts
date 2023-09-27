@@ -37,9 +37,10 @@ async function main() {
         poolKey !== Pools.GOV_V2 &&
         poolKey !== Pools.SAFETY_MODULE &&
         poolKey !== Pools.V2_MISC &&
+        poolKey !== Pools.TENDERLY &&
         !pool.aclBlock
       ) {
-        if (poolKey === Pools.TENDERLY) {
+        if (poolKey === Pools.V2_TENDERLY) {
           provider = new ethers.providers.JsonRpcProvider(
             networkConfigs[network].pools[poolKey].tenderlyRpcUrl,
           );
