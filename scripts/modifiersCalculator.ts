@@ -40,15 +40,12 @@ async function main() {
         poolKey !== Pools.TENDERLY &&
         !pool.aclBlock
       ) {
-        if (poolKey === Pools.V2_TENDERLY) {
-          provider = new ethers.providers.JsonRpcProvider(
-            networkConfigs[network].pools[poolKey].tenderlyRpcUrl,
-          );
-        }
         if (Object.keys(pool.addressBook).length > 0) {
           poolPermissions = await resolveV2Modifiers(
             pool.addressBook,
-            provider,
+            poolKey === Pools.V2_TENDERLY
+              ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+              : provider,
             permissionsJson,
             Pools[poolKey as keyof typeof Pools],
             Number(network),

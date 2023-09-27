@@ -35,12 +35,12 @@ These documents contain tables with the following information:
 |  MAINNET |  V3 |  [Permissions](./out/MAINNET-V3.md#contracts) | |--------|--------|--------|
 |  MAINNET |  GOV_V2 |  [Permissions](./out/MAINNET-GOV_V2.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2 |  [Permissions](./out/MAINNET-V2.md#contracts) | |--------|--------|--------|
+|  MAINNET |  V2_TENDERLY |  [Permissions](./out/MAINNET-V2_TENDERLY.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_ARC |  [Permissions](./out/MAINNET-V2_ARC.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_AMM |  [Permissions](./out/MAINNET-V2_AMM.md#contracts) | |--------|--------|--------|
 |  MAINNET |  SAFETY_MODULE |  [Permissions](./out/MAINNET-SAFETY_MODULE.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_MISC |  [Permissions](./out/MAINNET-V2_MISC.md#contracts) | |--------|--------|--------|
 |  MAINNET |  TENDERLY |  [Permissions](./out/MAINNET-TENDERLY.md#contracts) | |--------|--------|--------|
-|  MAINNET |  V2_TENDERLY |  [Permissions](./out/MAINNET-V2_TENDERLY.md#contracts) | |--------|--------|--------|
 |  OPTIMISM |  V3 |  [Permissions](./out/OPTIMISM-V3.md#contracts) | |--------|--------|--------|
 |  OPTIMISM |  TENDERLY |  [Permissions](./out/OPTIMISM-TENDERLY.md#contracts) | |--------|--------|--------|
 |  BINANCE |  V3 |  [Permissions](./out/BINANCE-V3.md#contracts) | |--------|--------|--------|
