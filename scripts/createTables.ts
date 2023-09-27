@@ -89,6 +89,38 @@ export const generateTables = async () => {
           ...mainnetPermissions[Pools.GOV_V2].contracts,
         });
       }
+      if (network === ChainId.mainnet.toString()) {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList[ChainId.mainnet]['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      } else if (network === ChainId.polygon.toString()) {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList[ChainId.polygon]['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      } else if (network === ChainId.avalanche.toString()) {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList[ChainId.avalanche]['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      } else if (network === ChainId.arbitrum_one.toString()) {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList[ChainId.arbitrum_one]['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      } else if (network === ChainId.optimism.toString()) {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList[ChainId.optimism]['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      } else if (network === '8453') {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList['8453']['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      }
+      console.log(network, '', pool, ': ', contractsByAddress);
 
       let contractTable = `### contracts\n`;
       const contractsModifiersHeaderTitles = [
