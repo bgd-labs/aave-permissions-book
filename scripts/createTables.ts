@@ -120,7 +120,6 @@ export const generateTables = async () => {
         });
         contractsByAddress = { ...contractsByAddress, ...v3Contracts };
       }
-      console.log(network, '', pool, ': ', contractsByAddress);
 
       let contractTable = `### contracts\n`;
       const contractsModifiersHeaderTitles = [
