@@ -63,6 +63,8 @@ export const generateTables = async () => {
     const networkName =
       network === '8453'
         ? 'BASE'
+        : network == '56'
+        ? 'BINANCE'
         : ChainIdToNetwork[Number(network)].toUpperCase();
     const networkPermits = aavePermissionsList[network];
     const addressesNames = networkConfigs[network].addressesNames || {};
@@ -75,16 +77,48 @@ export const generateTables = async () => {
       // create pool table
       readmeByNetwork += `## ${pool} \n`;
 
-      let contractsByAddress = generateContractsByAddress(
-        poolPermitsByContract.contracts,
-      );
+      let contractsByAddress = generateContractsByAddress({
+        ...poolPermitsByContract.contracts,
+      });
 
       // add gov contracts to contractsByAddresses
       if (pool !== Pools.GOV_V2) {
         contractsByAddress = generateContractsByAddress({
           ...poolPermitsByContract.contracts,
+          ...poolPermitsByContract.govV3?.contracts,
           ...mainnetPermissions[Pools.GOV_V2].contracts,
         });
+      }
+      if (network === ChainId.mainnet.toString()) {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList[ChainId.mainnet]['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      } else if (network === ChainId.polygon.toString()) {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList[ChainId.polygon]['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      } else if (network === ChainId.avalanche.toString()) {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList[ChainId.avalanche]['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      } else if (network === ChainId.arbitrum_one.toString()) {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList[ChainId.arbitrum_one]['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      } else if (network === ChainId.optimism.toString()) {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList[ChainId.optimism]['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+      } else if (network === '8453') {
+        const v3Contracts = generateContractsByAddress({
+          ...aavePermissionsList['8453']['V3'].govV3?.contracts,
+        });
+        contractsByAddress = { ...contractsByAddress, ...v3Contracts };
       }
 
       let contractTable = `### contracts\n`;
@@ -174,6 +208,94 @@ export const generateTables = async () => {
 
       readmeByNetwork += contractTable + '\n';
 
+      if (
+        poolPermitsByContract.govV3 &&
+        Object.keys(poolPermitsByContract.govV3).length > 0
+      ) {
+        let govV3Table = `### Governance V3 Contracts \n`;
+        const govV3HeaderTitles = [
+          'contract',
+          'proxyAdmin',
+          'modifier',
+          'permission owner',
+          'functions',
+        ];
+        const govV3Header = getTableHeader(govV3HeaderTitles);
+        govV3Table += govV3Header;
+
+        let govV3tableBody = '';
+        for (let contractName of Object.keys(
+          poolPermitsByContract.govV3.contracts,
+        )) {
+          const contract = poolPermitsByContract.govV3.contracts[contractName];
+
+          if (contract.modifiers.length === 0) {
+            govV3tableBody += getTableBody([
+              `[${contractName}](${explorerAddressUrlComposer(
+                contract.address,
+                network,
+              )})`,
+              `${generateTableAddress(
+                contract.proxyAdmin,
+                addressesNames,
+                contractsByAddress,
+                poolGuardians,
+                network,
+              )}`,
+              `-`,
+              `-`,
+              '-',
+            ]);
+            govV3tableBody += getLineSeparator(
+              contractsModifiersHeaderTitles.length,
+            );
+          }
+          for (let modifier of contract.modifiers) {
+            for (let modifierAddress of modifier.addresses) {
+              if (!poolGuardians[modifierAddress.address]) {
+                if (modifierAddress.owners.length > 0) {
+                  poolGuardians[modifierAddress.address] =
+                    modifierAddress.owners;
+                }
+              }
+            }
+
+            govV3tableBody += getTableBody([
+              `[${contractName}](${explorerAddressUrlComposer(
+                contract.address,
+                network,
+              )})`,
+              `${generateTableAddress(
+                contract.proxyAdmin,
+                addressesNames,
+                contractsByAddress,
+                poolGuardians,
+                network,
+              )}`,
+              `${modifier.modifier}`,
+              `${modifier.addresses
+                .map((modifierAddress: AddressInfo) =>
+                  generateTableAddress(
+                    modifierAddress.address,
+                    addressesNames,
+                    contractsByAddress,
+                    poolGuardians,
+                    network,
+                  ),
+                )
+                .join(', ')}`,
+              modifier?.functions ? modifier.functions.join(', ') : '',
+            ]);
+            govV3tableBody += getLineSeparator(
+              contractsModifiersHeaderTitles.length,
+            );
+          }
+        }
+
+        govV3Table += govV3tableBody;
+        readmeByNetwork += govV3Table + '\n';
+      }
+
       if (Object.keys(poolGuardians).length > 0) {
         let guardianTable = `### Guardians \n`;
         const guardianHeaderTitles = ['Guardian', 'Address', 'Owners'];
@@ -206,6 +328,7 @@ export const generateTables = async () => {
       adminTable += adminHeader;
 
       if (
+        networkConfigs[network].pools[pool] &&
         networkConfigs[network].pools[pool].aclBlock &&
         poolPermitsByContract.roles &&
         poolPermitsByContract.roles.role

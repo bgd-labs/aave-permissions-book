@@ -3,6 +3,7 @@ import { ChainId } from '@aave/contract-helpers';
 import { getLogs } from './eventLogs.js';
 import { Roles } from './types.js';
 import { networkConfigs, Pools } from './configs.js';
+import { getLimit } from './limits.js';
 
 export const roleGrantedEventABI = [
   'event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)',
@@ -65,20 +66,8 @@ export const getCurrentRoleAdmins = async (
   const aclManager = addressBook.ACL_MANAGER;
   const roleHexToNameMap = initializeRoleCodeMap();
 
-  let limit = undefined;
+  let limit = getLimit(chainId);
   let timeout = undefined;
-
-  if (chainId === ChainId.avalanche) {
-    limit = 3000;
-  } else if (chainId === ChainId.harmony) {
-    limit = 1000;
-  } else if (chainId === ChainId.fantom) {
-    limit = 99999;
-  } else if (chainId === ChainId.metis_andromeda) {
-    limit = 3000;
-  } else if (Number(chainId) === 8453) {
-    limit = 3000;
-  }
 
   let eventLogs: providers.Log[] = [];
   let finalBlock: number = 0;
