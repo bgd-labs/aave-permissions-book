@@ -4,12 +4,17 @@ import { ChainId } from '@aave/contract-helpers';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners } from '../helpers/guardian.js';
-import AaveGovernanceV3ABI from '../abis/AaveGovernanceV3.json' assert { type: 'json' };
-import PayloadsController from '../abis/PayloadsController.json' assert { type: 'json' };
-import VotingMachine from '../abis/VotingMachine.json' assert { type: 'json' };
-import VotingPortal from '../abis/VotingPortal.json' assert { type: 'json' };
+import {
+  ICrossChainController_ABI,
+  IGovernanceCore_ABI,
+  IVotingPortal_ABI,
+  IVotingMachineWithProofs_ABI,
+  IPayloadsControllerCore_ABI,
+  IWithGuardian_ABI,
+  IOwnable_ABI,
+  IRescuable_ABI,
+} from '@bgd-labs/aave-address-book';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
-import CrossChainController from '../abis/CrossChainController.json' assert { type: 'json' };
 
 export const resolveGovV3Modifiers = async (
   addressBook: any,
@@ -25,14 +30,18 @@ export const resolveGovV3Modifiers = async (
     addressBook.GOVERNANCE &&
     addressBook.GOVERNANCE !== constants.AddressZero
   ) {
-    const govContract = new ethers.Contract(
+    const govContractGuardian = new ethers.Contract(
       addressBook.GOVERNANCE,
-      AaveGovernanceV3ABI,
+      IWithGuardian_ABI,
       provider,
     );
-
-    const govGuardian = await govContract.guardian();
-    const govOwner = await govContract.owner();
+    const govContractOwner = new ethers.Contract(
+      addressBook.GOVERNANCE,
+      IOwnable_ABI,
+      provider,
+    );
+    const govGuardian = await govContractGuardian.guardian();
+    const govOwner = await govContractOwner.owner();
 
     obj['AaveGovernanceV3'] = {
       address: addressBook.GOVERNANCE,
@@ -79,15 +88,25 @@ export const resolveGovV3Modifiers = async (
     addressBook.PAYLOADS_CONTROLLER &&
     addressBook.PAYLOADS_CONTROLLER !== constants.AddressZero
   ) {
-    const pcContract = new ethers.Contract(
+    const pcContractGuardian = new ethers.Contract(
       addressBook.PAYLOADS_CONTROLLER,
-      PayloadsController,
+      IWithGuardian_ABI,
+      provider,
+    );
+    const pcContractOwner = new ethers.Contract(
+      addressBook.PAYLOADS_CONTROLLER,
+      IOwnable_ABI,
+      provider,
+    );
+    const pcContractRescue = new ethers.Contract(
+      addressBook.PAYLOADS_CONTROLLER,
+      IRescuable_ABI,
       provider,
     );
 
-    const pcGuardian = await pcContract.guardian();
-    const pcOwner = await pcContract.owner();
-    const rescuer = await pcContract.whoCanRescue();
+    const pcGuardian = await pcContractGuardian.guardian();
+    const pcOwner = await pcContractOwner.owner();
+    const rescuer = await pcContractRescue.whoCanRescue();
     obj['PayloadsController'] = {
       address: addressBook.PAYLOADS_CONTROLLER,
       modifiers: [
@@ -144,7 +163,7 @@ export const resolveGovV3Modifiers = async (
   ) {
     const vmContract = new ethers.Contract(
       addressBook.VOTING_MACHINE,
-      VotingMachine,
+      IOwnable_ABI,
       provider,
     );
 
@@ -171,7 +190,7 @@ export const resolveGovV3Modifiers = async (
   ) {
     const vpContract = new ethers.Contract(
       addressBook.VOTING_PORTAL_ETH_ETH,
-      VotingPortal,
+      IOwnable_ABI,
       provider,
     );
 
@@ -198,7 +217,7 @@ export const resolveGovV3Modifiers = async (
   ) {
     const vpContract = new ethers.Contract(
       addressBook.VOTING_PORTAL_ETH_AVAX,
-      VotingPortal,
+      IOwnable_ABI,
       provider,
     );
 
@@ -225,7 +244,7 @@ export const resolveGovV3Modifiers = async (
   ) {
     const vpContract = new ethers.Contract(
       addressBook.VOTING_PORTAL_ETH_POL,
-      VotingPortal,
+      IOwnable_ABI,
       provider,
     );
 
@@ -253,7 +272,7 @@ export const resolveGovV3Modifiers = async (
   ) {
     const executorContract = new ethers.Contract(
       addressBook.EXECUTOR_LVL_1,
-      onlyOwnerAbi,
+      IOwnable_ABI,
       provider,
     );
     const owner = await executorContract.owner();
@@ -280,7 +299,7 @@ export const resolveGovV3Modifiers = async (
   ) {
     const executorContract = new ethers.Contract(
       addressBook.EXECUTOR_LVL_2,
-      onlyOwnerAbi,
+      IOwnable_ABI,
       provider,
     );
     const owner = await executorContract.owner();
@@ -307,7 +326,7 @@ export const resolveGovV3Modifiers = async (
   ) {
     const emergencyRegistryContract = new ethers.Contract(
       addressBook.EMERGENCY_REGISTRY,
-      onlyOwnerAbi,
+      IOwnable_ABI,
       provider,
     );
     const owner = await emergencyRegistryContract.owner();
@@ -334,12 +353,27 @@ export const resolveGovV3Modifiers = async (
   ) {
     const cccContract = new ethers.Contract(
       addressBook.CROSS_CHAIN_CONTROLLER,
-      CrossChainController,
+      ICrossChainController_ABI,
       provider,
     );
-    const owner = await cccContract.owner();
-    const guardian = await cccContract.guardian();
-    const rescuer = await cccContract.whoCanRescue();
+    const cccContractOwner = new ethers.Contract(
+      addressBook.CROSS_CHAIN_CONTROLLER,
+      IOwnable_ABI,
+      provider,
+    );
+    const cccContractGuardian = new ethers.Contract(
+      addressBook.CROSS_CHAIN_CONTROLLER,
+      IWithGuardian_ABI,
+      provider,
+    );
+    const cccContractRescue = new ethers.Contract(
+      addressBook.CROSS_CHAIN_CONTROLLER,
+      IRescuable_ABI,
+      provider,
+    );
+    const owner = await cccContractOwner.owner();
+    const guardian = await cccContractGuardian.guardian();
+    const rescuer = await cccContractRescue.whoCanRescue();
 
     const supportedChains = await cccContract.getSupportedChains();
 
