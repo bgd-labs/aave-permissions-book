@@ -424,7 +424,7 @@
           "ASSET_LISTING_ADMIN": [],
           "BRIDGE": []
         },
-        "latestBlockNumber": 18259313
+        "latestBlockNumber": 18266480
       },
       "govV3": {
         "contracts": {
@@ -786,7 +786,7 @@
           "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
           "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
         ],
-        "latestCCCBlockNumber": 18259313
+        "latestCCCBlockNumber": 18266481
       }
     },
     "GOV_V2": {
@@ -2309,7 +2309,7 @@
           ],
           "BRIDGE": []
         },
-        "latestBlockNumber": 110304181
+        "latestBlockNumber": 110347361
       },
       "govV3": {
         "contracts": {
@@ -2477,7 +2477,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 110304188
+        "latestCCCBlockNumber": 110347363
       }
     }
   },
@@ -2659,7 +2659,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 31565150
+        "latestCCCBlockNumber": 31566150
       }
     }
   },
@@ -3155,7 +3155,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 48218544
+        "latestBlockNumber": 48257867
       },
       "govV3": {
         "contracts": {
@@ -3359,7 +3359,7 @@
         "senders": [
           "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
         ],
-        "latestCCCBlockNumber": 48218550
+        "latestCCCBlockNumber": 48257869
       }
     },
     "V2": {
@@ -4243,7 +4243,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 68879911
+        "latestBlockNumber": 68916857
       },
       "govV3": {}
     }
@@ -4747,7 +4747,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 8819912
+        "latestBlockNumber": 8832338
       },
       "govV3": {
         "contracts": {
@@ -4915,7 +4915,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 8819916
+        "latestCCCBlockNumber": 8832339
       }
     }
   },
@@ -5429,7 +5429,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 2378130
+        "latestBlockNumber": 2381130
       },
       "govV3": {
         "contracts": {
@@ -5597,7 +5597,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 3707170
+        "latestCCCBlockNumber": 3710170
       }
     }
   },
@@ -6083,7 +6083,7 @@
           ],
           "BRIDGE": []
         },
-        "latestBlockNumber": 136608862
+        "latestBlockNumber": 136930851
       },
       "govV3": {
         "contracts": {
@@ -6251,7 +6251,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 136608898
+        "latestCCCBlockNumber": 136930865
       }
     }
   },
@@ -6896,7 +6896,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 35914332
+        "latestBlockNumber": 35956855
       },
       "govV3": {
         "contracts": {
@@ -7089,7 +7089,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 35914348
+        "latestCCCBlockNumber": 35956858
       }
     },
     "V2": {
