@@ -27,7 +27,9 @@ export const generateTableAddress = (
 
   return checkSummedAddress
     ? '[' +
-        (contractsByAddress[checkSummedAddress]
+        (addressesNames[checkSummedAddress]
+          ? addressesNames[checkSummedAddress]
+          : contractsByAddress[checkSummedAddress]
           ? contractsByAddress[checkSummedAddress]
           : poolGuardians[checkSummedAddress]
           ? addressesNames[checkSummedAddress]

@@ -65,6 +65,7 @@ export const networkConfigs: NetworkConfigs = {
       '0xB9062896ec3A615a4e4444DF183F0531a77218AE': 'Legacy Emergency Admin',
       '0x36fEDC70feC3B77CAaf50E6C524FD7e5DFBD629A': 'ParaSwap',
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0x00907f9921424583e7ffBfEdf84F92B7B2Be4977': 'GHO aToken',
     },
     pools: {
       [Pools.V3]: {
@@ -163,6 +164,7 @@ export const networkConfigs: NetworkConfigs = {
       '0x46DF4eb6f7A3B0AdF526f6955b15d3fE02c618b7': 'ParaSwap',
       '0x2bB25175d9B0F8965780209EB558Cc3b56cA6d32':
         'Polygon v2 incentives admin',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
       [Pools.V3]: {
@@ -199,7 +201,9 @@ export const networkConfigs: NetworkConfigs = {
   ['56']: {
     rpcUrl: process.env.RPC_BINANCE,
     explorer: 'https://bscscan.com',
-    addressesNames: {},
+    addressesNames: {
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+    },
     pools: {
       [Pools.V3]: {
         aclBlock: 31558150, // update with updated acl when deployed
@@ -258,6 +262,7 @@ export const networkConfigs: NetworkConfigs = {
     explorer: 'https://optimistic.etherscan.io',
     addressesNames: {
       '0xE50c8C619d05ff98b22Adf991F17602C774F785c': 'Aave Guardian Optimism',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
       [Pools.V3]: {
@@ -286,6 +291,7 @@ export const networkConfigs: NetworkConfigs = {
     explorer: 'https://arbiscan.io',
     addressesNames: {
       '0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb': 'Aave Guardian Arbitrum',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
       [Pools.V3]: {
@@ -314,6 +320,7 @@ export const networkConfigs: NetworkConfigs = {
     explorer: 'https://ftmscan.com',
     addressesNames: {
       '0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949': 'Aave Guardian Fantom',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
       [Pools.V3]: {
@@ -328,6 +335,7 @@ export const networkConfigs: NetworkConfigs = {
     explorer: 'https://andromeda-explorer.metis.io',
     addressesNames: {
       '0xF6Db48C5968A9eBCB935786435530f28e32Cc501': 'Aave Guardian Metis',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
       [Pools.V3]: {
@@ -345,6 +353,7 @@ export const networkConfigs: NetworkConfigs = {
     explorer: 'https://basescan.org',
     addressesNames: {
       '0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A': 'Aave Guardian Base',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
       [Pools.V3]: {
