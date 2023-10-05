@@ -44,7 +44,15 @@ export enum Pools {
   SAFETY_MODULE_TENDERLY = 'SAFETY_MODULE_TENDERLY',
   TENDERLY = 'TENDERLY',
   V2_TENDERLY = 'V2_TENDERLY',
+  GHO = 'GHO',
+  GHO_TENDERLY = 'GHO_TENDERLY',
 }
+
+export const ghoRoleNames = [
+  'DEFAULT_ADMIN',
+  'FACILITATOR_MANAGER_ROLE',
+  'BUCKET_MANAGER_ROLE',
+];
 
 export const networkConfigs: NetworkConfigs = {
   [ChainId.mainnet]: {
@@ -65,6 +73,11 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: GovernanceV3Ethereum,
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
+        addressBook: AaveV3Ethereum,
+      },
+      [Pools.GHO]: {
+        permissionsJson: './statics/functionsPermissionsGHO.json',
+        ghoBlock: 17698470,
         addressBook: AaveV3Ethereum,
       },
       [Pools.GOV_V2]: {
@@ -355,15 +368,4 @@ export const networkConfigs: NetworkConfigs = {
       // },
     },
   },
-  // [ChainId.harmony]: {
-  //   rpcUrl: process.env.RPC_HARMONY,
-  //   explorer: 'https://explorer.harmony.one',
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 23930307,
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: AaveV3Harmony,
-  //     },
-  //   },
-  // },
 };

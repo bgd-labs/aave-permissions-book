@@ -1825,6 +1825,72 @@
       },
       "roles": {},
       "govV3": {}
+    },
+    "GHO": {
+      "contracts": {
+        "GHO": {
+          "address": "0x54586bE62E3c3580375aE3723C145253060Ca0C2",
+          "modifiers": [
+            {
+              "modifier": "onlyFacilitator",
+              "addresses": [
+                {
+                  "address": "0x00907f9921424583e7ffBfEdf84F92B7B2Be4977",
+                  "owners": []
+                },
+                {
+                  "address": "0xb639D208Bcf0589D54FaC24E655C79EC529762B8",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "mint",
+                "burn"
+              ]
+            },
+            {
+              "modifier": "onlyFacilitatorManager",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "addFacilitator",
+                "removeFacilitator"
+              ]
+            },
+            {
+              "modifier": "onlyBucketManager",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setFacilitatorBucketCapacity"
+              ]
+            }
+          ]
+        }
+      },
+      "roles": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
+          ],
+          "FACILITATOR_MANAGER_ROLE": [
+            "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
+          ],
+          "BUCKET_MANAGER_ROLE": [
+            "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
+          ]
+        },
+        "latestBlockNumber": 18285387
+      },
+      "govV3": {}
     }
   },
   "10": {
