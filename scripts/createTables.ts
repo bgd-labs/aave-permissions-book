@@ -329,7 +329,6 @@ export const generateTables = async () => {
 
       if (
         networkConfigs[network].pools[pool] &&
-        networkConfigs[network].pools[pool].aclBlock &&
         poolPermitsByContract.roles &&
         poolPermitsByContract.roles.role
       ) {

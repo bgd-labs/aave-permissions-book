@@ -7,3 +7,10 @@
 |  [GHO](https://etherscan.io/address/0x54586bE62E3c3580375aE3723C145253060Ca0C2) |  - |  onlyFacilitatorManager |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  addFacilitator, removeFacilitator | |--------|--------|--------|--------|--------|
 |  [GHO](https://etherscan.io/address/0x54586bE62E3c3580375aE3723C145253060Ca0C2) |  - |  onlyBucketManager |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  setFacilitatorBucketCapacity | |--------|--------|--------|--------|--------|
 
+### Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) | |--------|--------|
+|  FACILITATOR_MANAGER_ROLE |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) | |--------|--------|
+|  BUCKET_MANAGER_ROLE |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) | |--------|--------|
+
