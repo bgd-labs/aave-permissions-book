@@ -78,19 +78,19 @@ export const networkConfigs: NetworkConfigs = {
       '0x00907f9921424583e7ffBfEdf84F92B7B2Be4977': 'GHO aToken',
     },
     pools: {
-      // [Pools.V3]: {
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   governanceAddressBook: GovernanceV3Ethereum,
-      //   aclBlock: 16291117,
-      //   crossChainControllerBlock: 18090380,
-      //   addressBook: AaveV3Ethereum,
-      // },
-      // [Pools.GHO]: {
-      //   permissionsJson: './statics/functionsPermissionsGHO.json',
-      //   ghoBlock: 17698470,
-      //   addressBook: AaveV3Ethereum,
-      // },
+      [Pools.V3]: {
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        governanceAddressBook: GovernanceV3Ethereum,
+        aclBlock: 16291117,
+        crossChainControllerBlock: 18090380,
+        addressBook: AaveV3Ethereum,
+      },
+      [Pools.GHO]: {
+        permissionsJson: './statics/functionsPermissionsGHO.json',
+        ghoBlock: 17698470,
+        addressBook: AaveV3Ethereum,
+      },
       [Pools.GHO_TENDERLY]: {
         permissionsJson: './statics/functionsPermissionsGHO.json',
         ghoBlock: 17698470,
@@ -99,300 +99,300 @@ export const networkConfigs: NetworkConfigs = {
         tenderlyRpcUrl:
           'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
       },
-      // [Pools.GOV_V2]: {
-      //   permissionsJson: './statics/functionsPermissionsGov.json',
-      //   addressBook: AaveGovernanceV2,
-      // },
-      // [Pools.V2]: {
-      //   permissionsJson: './statics/functionsPermissionsV2.json',
-      //   addressBook: AaveV2Ethereum,
-      // },
-      // [Pools.V2_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV2.json',
-      //   addressBook: AaveV2Ethereum,
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
-      // },
-      // [Pools.V2_ARC]: {
-      //   permissionsJson: './statics/functionsPermissionsArc.json',
-      //   addressBook: AaveV2EthereumArc,
-      // },
-      // [Pools.V2_ARC_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsArc.json',
-      //   addressBook: AaveV2EthereumArc,
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
-      // },
-      // [Pools.V2_AMM]: {
-      //   permissionsJson: './statics/functionsPermissionsV2.json',
-      //   addressBook: AaveV2EthereumAMM,
-      // },
-      // [Pools.V2_AMM_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV2.json',
-      //   addressBook: AaveV2EthereumAMM,
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
-      // },
-      // [Pools.SAFETY_MODULE]: {
-      //   permissionsJson: './statics/functionsPermissionsSafety.json',
-      //   addressBook: AaveSafetyModule,
-      // },
-      // [Pools.SAFETY_MODULE_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsSafety.json',
-      //   addressBook: AaveSafetyModule,
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
-      // },
-      // [Pools.V2_MISC]: {
-      //   permissionsJson: './statics/functionsPermissionsV2Misc.json',
-      //   addressBook: {},
-      //   addresses: {
-      //     LEND_TO_AAVE_MIGRATOR: '0x317625234562B1526Ea2FaC4030Ea499C5291de4',
-      //     AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
-      //   },
-      // },
-      // [Pools.V2_MISC_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV2Misc.json',
-      //   addressBook: {},
-      //   addresses: {
-      //     LEND_TO_AAVE_MIGRATOR: '0x317625234562B1526Ea2FaC4030Ea499C5291de4',
-      //     AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
-      //   },
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
-      // },
-      // [Pools.TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   governanceAddressBook: GovernanceV3Ethereum,
-      //   aclBlock: 16291117,
-      //   crossChainControllerBlock: 17684650,
-      //   addressBook: AaveV3Ethereum,
-      //   tenderlyBlock: 18277061,
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
-      // },
+      [Pools.GOV_V2]: {
+        permissionsJson: './statics/functionsPermissionsGov.json',
+        addressBook: AaveGovernanceV2,
+      },
+      [Pools.V2]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2Ethereum,
+      },
+      [Pools.V2_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2Ethereum,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
+      },
+      [Pools.V2_ARC]: {
+        permissionsJson: './statics/functionsPermissionsArc.json',
+        addressBook: AaveV2EthereumArc,
+      },
+      [Pools.V2_ARC_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsArc.json',
+        addressBook: AaveV2EthereumArc,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
+      },
+      [Pools.V2_AMM]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2EthereumAMM,
+      },
+      [Pools.V2_AMM_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2EthereumAMM,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
+      },
+      [Pools.SAFETY_MODULE]: {
+        permissionsJson: './statics/functionsPermissionsSafety.json',
+        addressBook: AaveSafetyModule,
+      },
+      [Pools.SAFETY_MODULE_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsSafety.json',
+        addressBook: AaveSafetyModule,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
+      },
+      [Pools.V2_MISC]: {
+        permissionsJson: './statics/functionsPermissionsV2Misc.json',
+        addressBook: {},
+        addresses: {
+          LEND_TO_AAVE_MIGRATOR: '0x317625234562B1526Ea2FaC4030Ea499C5291de4',
+          AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
+        },
+      },
+      [Pools.V2_MISC_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV2Misc.json',
+        addressBook: {},
+        addresses: {
+          LEND_TO_AAVE_MIGRATOR: '0x317625234562B1526Ea2FaC4030Ea499C5291de4',
+          AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
+        },
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
+      },
+      [Pools.TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        governanceAddressBook: GovernanceV3Ethereum,
+        aclBlock: 16291117,
+        crossChainControllerBlock: 17684650,
+        addressBook: AaveV3Ethereum,
+        tenderlyBlock: 18277061,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/6fda4a6d-fc4c-4c16-b7f2-6472905dc53d',
+      },
     },
   },
-  // [ChainId.polygon]: {
-  //   rpcUrl: process.env.RPC_POLYGON,
-  //   explorer: 'https://polygonscan.com',
-  //   addressesNames: {
-  //     '0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58': 'Aave Guardian Polygon',
-  //     '0x46DF4eb6f7A3B0AdF526f6955b15d3fE02c618b7': 'ParaSwap',
-  //     '0x2bB25175d9B0F8965780209EB558Cc3b56cA6d32':
-  //       'Polygon v2 incentives admin',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 25824416,
-  //       crossChainControllerBlock: 45029910,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: AaveV3Polygon,
-  //       governanceAddressBook: GovernanceV3Polygon,
-  //     },
-  //     [Pools.V2]: {
-  //       permissionsJson: './statics/functionsPermissionsV2.json',
-  //       addressBook: AaveV2Polygon,
-  //     },
-  //     [Pools.V2_TENDERLY]: {
-  //       permissionsJson: './statics/functionsPermissionsV2.json',
-  //       addressBook: AaveV2Polygon,
-  //       tenderlyRpcUrl:
-  //         'https://rpc.tenderly.co/fork/64d305a1-789f-4108-bb54-ec46602ba9e9',
-  //     },
-  //     [Pools.TENDERLY]: {
-  //       aclBlock: 25824416,
-  //       crossChainControllerBlock: 45029910,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: AaveV3Polygon,
-  //       governanceAddressBook: GovernanceV3Polygon,
-  //       tenderlyBlock: 48316096,
-  //       tenderlyRpcUrl:
-  //         'https://rpc.tenderly.co/fork/64d305a1-789f-4108-bb54-ec46602ba9e9',
-  //     },
-  //   },
-  // },
-  // ['56']: {
-  //   rpcUrl: process.env.RPC_BINANCE,
-  //   explorer: 'https://bscscan.com',
-  //   addressesNames: {
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 31558150, // update with updated acl when deployed
-  //       crossChainControllerBlock: 31558150,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: {},
-  //       governanceAddressBook: GovernanceV3Binance,
-  //     },
-  //   },
-  // },
-  // [ChainId.avalanche]: {
-  //   rpcUrl: process.env.RPC_AVALANCHE,
-  //   explorer: 'https://snowtrace.io',
-  //   addressesNames: {
-  //     '0xa35b76E4935449E33C56aB24b23fcd3246f13470': 'Aave Guardian Avalanche',
-  //     '0x01244E7842254e3FD229CD263472076B1439D1Cd':
-  //       'Aave Guardian Avalanche (legacy)',
-  //     '0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26':
-  //       'Avalanche v2 incentives admin',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 11970456,
-  //       crossChainControllerBlock: 32549880,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: AaveV3Avalanche,
-  //       governanceAddressBook: GovernanceV3Avalanche,
-  //     },
-  //     [Pools.V2]: {
-  //       permissionsJson: './statics/functionsPermissionsV2PoR.json',
-  //       addressBook: AaveV2Avalanche,
-  //     },
-  //     [Pools.V2_TENDERLY]: {
-  //       permissionsJson: './statics/functionsPermissionsV2PoR.json',
-  //       addressBook: AaveV2Avalanche,
-  //       tenderlyRpcUrl:
-  //         'https://rpc.tenderly.co/fork/1988d325-0b00-4f94-b616-6b63bdab429b',
-  //     },
-  //     [Pools.TENDERLY]: {
-  //       aclBlock: 11970456,
-  //       crossChainControllerBlock: 32549880,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: AaveV3Avalanche,
-  //       governanceAddressBook: GovernanceV3Avalanche,
-  //       tenderlyBlock: 36019998,
-  //       tenderlyRpcUrl:
-  //         'https://rpc.tenderly.co/fork/1988d325-0b00-4f94-b616-6b63bdab429b',
-  //     },
-  //   },
-  // },
-  // [ChainId.optimism]: {
-  //   rpcUrl: process.env.RPC_OPTIMISM,
-  //   explorer: 'https://optimistic.etherscan.io',
-  //   addressesNames: {
-  //     '0xE50c8C619d05ff98b22Adf991F17602C774F785c': 'Aave Guardian Optimism',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 4365546,
-  //       crossChainControllerBlock: 106996150,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: AaveV3Optimism,
-  //       governanceAddressBook: GovernanceV3Optimism,
-  //     },
-  //     [Pools.TENDERLY]: {
-  //       aclBlock: 4365546,
-  //       crossChainControllerBlock: 106996150,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: AaveV3Optimism,
-  //       governanceAddressBook: GovernanceV3Optimism,
-  //       tenderlyBlock: 110411305,
-  //       tenderlyRpcUrl:
-  //         'https://rpc.tenderly.co/fork/ed946159-9e43-48c8-9006-138a416365d4',
-  //     },
-  //   },
-  // },
-  // [ChainId.arbitrum_one]: {
-  //   rpcUrl: process.env.RPC_ARBITRUM,
-  //   explorer: 'https://arbiscan.io',
-  //   addressesNames: {
-  //     '0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb': 'Aave Guardian Arbitrum',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 7740502,
-  //       crossChainControllerBlock: 112113800,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: AaveV3Arbitrum,
-  //       governanceAddressBook: GovernanceV3Arbitrum,
-  //     },
-  //     [Pools.TENDERLY]: {
-  //       aclBlock: 7740502,
-  //       crossChainControllerBlock: 112113800,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: AaveV3Arbitrum,
-  //       governanceAddressBook: GovernanceV3Arbitrum,
-  //       tenderlyBlock: 137419921,
-  //       tenderlyRpcUrl:
-  //         'https://rpc.tenderly.co/fork/d0432708-60f3-434d-89eb-55fc5dabeef0',
-  //     },
-  //   },
-  // },
-  // [ChainId.fantom]: {
-  //   rpcUrl: process.env.RPC_FANTOM,
-  //   explorer: 'https://ftmscan.com',
-  //   addressesNames: {
-  //     '0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949': 'Aave Guardian Fantom',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 33141475,
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: AaveV3Fantom,
-  //     },
-  //   },
-  // },
-  // [ChainId.metis_andromeda]: {
-  //   rpcUrl: process.env.RPC_METIS,
-  //   explorer: 'https://andromeda-explorer.metis.io',
-  //   addressesNames: {
-  //     '0xF6Db48C5968A9eBCB935786435530f28e32Cc501': 'Aave Guardian Metis',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 5405900,
-  //       crossChainControllerBlock: 8526247,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //       addressBook: AaveV3Metis,
-  //       governanceAddressBook: GovernanceV3Metis,
-  //     },
-  //   },
-  // },
-  // ['8453']: {
-  //   rpcUrl: process.env.RPC_BASE,
-  //   explorer: 'https://basescan.org',
-  //   addressesNames: {
-  //     '0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A': 'Aave Guardian Base',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 2357130,
-  //       crossChainControllerBlock: 3686170,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //       addressBook: AaveV3Base,
-  //       governanceAddressBook: GovernanceV3Base,
-  //     },
-  //     [Pools.TENDERLY]: {
-  //       aclBlock: 2357130,
-  //       crossChainControllerBlock: 3686170,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //       addressBook: AaveV3Base,
-  //       governanceAddressBook: GovernanceV3Base,
-  //       tenderlyBlock: 4816022,
-  //       tenderlyRpcUrl:
-  //         'https://rpc.tenderly.co/fork/f1e1b69b-e485-493b-a7ec-575bce3d90f2',
-  //     },
-  //   },
-  // },
+  [ChainId.polygon]: {
+    rpcUrl: process.env.RPC_POLYGON,
+    explorer: 'https://polygonscan.com',
+    addressesNames: {
+      '0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58': 'Aave Guardian Polygon',
+      '0x46DF4eb6f7A3B0AdF526f6955b15d3fE02c618b7': 'ParaSwap',
+      '0x2bB25175d9B0F8965780209EB558Cc3b56cA6d32':
+        'Polygon v2 incentives admin',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 25824416,
+        crossChainControllerBlock: 45029910,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Polygon,
+        governanceAddressBook: GovernanceV3Polygon,
+      },
+      [Pools.V2]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2Polygon,
+      },
+      [Pools.V2_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV2.json',
+        addressBook: AaveV2Polygon,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/64d305a1-789f-4108-bb54-ec46602ba9e9',
+      },
+      [Pools.TENDERLY]: {
+        aclBlock: 25824416,
+        crossChainControllerBlock: 45029910,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Polygon,
+        governanceAddressBook: GovernanceV3Polygon,
+        tenderlyBlock: 48316096,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/64d305a1-789f-4108-bb54-ec46602ba9e9',
+      },
+    },
+  },
+  ['56']: {
+    rpcUrl: process.env.RPC_BINANCE,
+    explorer: 'https://bscscan.com',
+    addressesNames: {
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 31558150, // update with updated acl when deployed
+        crossChainControllerBlock: 31558150,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: {},
+        governanceAddressBook: GovernanceV3Binance,
+      },
+    },
+  },
+  [ChainId.avalanche]: {
+    rpcUrl: process.env.RPC_AVALANCHE,
+    explorer: 'https://snowtrace.io',
+    addressesNames: {
+      '0xa35b76E4935449E33C56aB24b23fcd3246f13470': 'Aave Guardian Avalanche',
+      '0x01244E7842254e3FD229CD263472076B1439D1Cd':
+        'Aave Guardian Avalanche (legacy)',
+      '0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26':
+        'Avalanche v2 incentives admin',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 11970456,
+        crossChainControllerBlock: 32549880,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Avalanche,
+        governanceAddressBook: GovernanceV3Avalanche,
+      },
+      [Pools.V2]: {
+        permissionsJson: './statics/functionsPermissionsV2PoR.json',
+        addressBook: AaveV2Avalanche,
+      },
+      [Pools.V2_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV2PoR.json',
+        addressBook: AaveV2Avalanche,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/1988d325-0b00-4f94-b616-6b63bdab429b',
+      },
+      [Pools.TENDERLY]: {
+        aclBlock: 11970456,
+        crossChainControllerBlock: 32549880,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Avalanche,
+        governanceAddressBook: GovernanceV3Avalanche,
+        tenderlyBlock: 36019998,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/1988d325-0b00-4f94-b616-6b63bdab429b',
+      },
+    },
+  },
+  [ChainId.optimism]: {
+    rpcUrl: process.env.RPC_OPTIMISM,
+    explorer: 'https://optimistic.etherscan.io',
+    addressesNames: {
+      '0xE50c8C619d05ff98b22Adf991F17602C774F785c': 'Aave Guardian Optimism',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 4365546,
+        crossChainControllerBlock: 106996150,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Optimism,
+        governanceAddressBook: GovernanceV3Optimism,
+      },
+      [Pools.TENDERLY]: {
+        aclBlock: 4365546,
+        crossChainControllerBlock: 106996150,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Optimism,
+        governanceAddressBook: GovernanceV3Optimism,
+        tenderlyBlock: 110411305,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/ed946159-9e43-48c8-9006-138a416365d4',
+      },
+    },
+  },
+  [ChainId.arbitrum_one]: {
+    rpcUrl: process.env.RPC_ARBITRUM,
+    explorer: 'https://arbiscan.io',
+    addressesNames: {
+      '0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb': 'Aave Guardian Arbitrum',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 7740502,
+        crossChainControllerBlock: 112113800,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Arbitrum,
+        governanceAddressBook: GovernanceV3Arbitrum,
+      },
+      [Pools.TENDERLY]: {
+        aclBlock: 7740502,
+        crossChainControllerBlock: 112113800,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Arbitrum,
+        governanceAddressBook: GovernanceV3Arbitrum,
+        tenderlyBlock: 137419921,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/d0432708-60f3-434d-89eb-55fc5dabeef0',
+      },
+    },
+  },
+  [ChainId.fantom]: {
+    rpcUrl: process.env.RPC_FANTOM,
+    explorer: 'https://ftmscan.com',
+    addressesNames: {
+      '0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949': 'Aave Guardian Fantom',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 33141475,
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Fantom,
+      },
+    },
+  },
+  [ChainId.metis_andromeda]: {
+    rpcUrl: process.env.RPC_METIS,
+    explorer: 'https://andromeda-explorer.metis.io',
+    addressesNames: {
+      '0xF6Db48C5968A9eBCB935786435530f28e32Cc501': 'Aave Guardian Metis',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 5405900,
+        crossChainControllerBlock: 8526247,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: AaveV3Metis,
+        governanceAddressBook: GovernanceV3Metis,
+      },
+    },
+  },
+  ['8453']: {
+    rpcUrl: process.env.RPC_BASE,
+    explorer: 'https://basescan.org',
+    addressesNames: {
+      '0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A': 'Aave Guardian Base',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 2357130,
+        crossChainControllerBlock: 3686170,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: AaveV3Base,
+        governanceAddressBook: GovernanceV3Base,
+      },
+      [Pools.TENDERLY]: {
+        aclBlock: 2357130,
+        crossChainControllerBlock: 3686170,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: AaveV3Base,
+        governanceAddressBook: GovernanceV3Base,
+        tenderlyBlock: 4816022,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/f1e1b69b-e485-493b-a7ec-575bce3d90f2',
+      },
+    },
+  },
 };

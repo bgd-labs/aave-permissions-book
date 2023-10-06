@@ -1939,7 +1939,12 @@
             },
             {
               "modifier": "onlyFacilitatorManager",
-              "addresses": [],
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": []
+                }
+              ],
               "functions": [
                 "addFacilitator",
                 "removeFacilitator"
@@ -1947,7 +1952,12 @@
             },
             {
               "modifier": "onlyBucketManager",
-              "addresses": [],
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": []
+                }
+              ],
               "functions": [
                 "setFacilitatorBucketCapacity"
               ]
@@ -1960,8 +1970,12 @@
           "DEFAULT_ADMIN": [
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ],
-          "FACILITATOR_MANAGER_ROLE": [],
-          "BUCKET_MANAGER_ROLE": []
+          "FACILITATOR_MANAGER_ROLE": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ],
+          "BUCKET_MANAGER_ROLE": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ]
         },
         "latestBlockNumber": 18277061
       },

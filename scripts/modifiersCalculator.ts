@@ -149,10 +149,10 @@ async function main() {
                 fullJson[network][poolKey]?.roles?.role) ||
                 ({} as Record<string, string[]>),
               fromBlock,
-              pool.addressBook,
               Number(network),
               Pools[poolKey as keyof typeof Pools],
               ghoRoleNames,
+              pool.addressBook.GHO_TOKEN,
             );
             poolPermissions = await resolveGHOModifiers(
               pool.addressBook,
@@ -199,12 +199,12 @@ async function main() {
                 fullJson[network][poolKey]?.roles?.role) ||
                 ({} as Record<string, string[]>),
               fromBlock,
-              pool.addressBook,
               network === 'tenderly-mainnet'
                 ? 'tenderly-mainnet'
                 : Number(network),
               Pools[poolKey as keyof typeof Pools],
               protocolRoleNames,
+              pool.addressBook.ACL_MANAGER,
             );
 
             poolPermissions = await resolveV3Modifiers(
