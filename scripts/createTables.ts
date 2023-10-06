@@ -94,6 +94,7 @@ export const generateTables = async () => {
       if (network === ChainId.mainnet.toString()) {
         const v3Contracts = generateContractsByAddress({
           ...aavePermissionsList[ChainId.mainnet]['V3'].govV3?.contracts,
+          ...aavePermissionsList[ChainId.mainnet]['V3'].contracts,
         });
         contractsByAddress = { ...contractsByAddress, ...v3Contracts };
       } else if (network === ChainId.polygon.toString()) {

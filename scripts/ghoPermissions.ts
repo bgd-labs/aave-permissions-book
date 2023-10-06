@@ -63,7 +63,7 @@ export const resolveGHOModifiers = async (
   console.log(facilitatorOwners);
 
   obj['GHO'] = {
-    address: addressBook.ORACLE,
+    address: addressBook.GHO_TOKEN,
     modifiers: [
       {
         modifier: 'onlyFacilitator',

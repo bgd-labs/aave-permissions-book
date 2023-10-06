@@ -216,6 +216,26 @@ export const resolveV3Modifiers = async (
     ],
   };
 
+  if (chainId === ChainId.mainnet) {
+    obj['GHOFlashMinter'] = {
+      address: '0xb639D208Bcf0589D54FaC24E655C79EC529762B8',
+      modifiers: [
+        {
+          modifier: 'onlyPoolAdmin',
+          addresses: uniqueAddresses([
+            ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
+              return {
+                address: roleAddress,
+                owners: owners['POOL_ADMIN'][roleAddress] || [],
+              };
+            }),
+          ]),
+          functions: roles['GHOFlashMinter']['onlyPoolAdmin'],
+        },
+      ],
+    };
+  }
+
   if (chainId === ChainId.avalanche) {
     const porExecutorContract = new ethers.Contract(
       addressBook.PROOF_OF_RESERVE,
