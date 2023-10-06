@@ -1,5 +1,10 @@
 import { ethers, providers } from 'ethers';
-import { ghoRoleNames, networkConfigs, Pools } from '../helpers/configs.js';
+import {
+  ghoRoleNames,
+  networkConfigs,
+  Pools,
+  protocolRoleNames,
+} from '../helpers/configs.js';
 import {
   getAllPermissionsJson,
   getStaticPermissionsJson,
@@ -14,7 +19,6 @@ import { resolveSafetyV2Modifiers } from './safetyPermissions.js';
 import { resolveV2MiscModifiers } from './v2MiscPermissions.js';
 import { getCCCSendersAndAdapters } from '../helpers/crossChainControllerLogs.js';
 import { resolveGovV3Modifiers } from './govV3Permissions.js';
-import { getRoleAdmins } from '../helpers/ghoAdminRoles.js';
 import { resolveGHOModifiers } from './ghoPermissions.js';
 
 async function main() {
@@ -135,7 +139,7 @@ async function main() {
           `);
 
           if (Object.keys(pool.addressBook).length > 0) {
-            admins = await getRoleAdmins(
+            admins = await getCurrentRoleAdmins(
               poolKey === Pools.GHO_TENDERLY
                 ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
                 : provider,
@@ -202,6 +206,7 @@ async function main() {
                 ? 'tenderly-mainnet'
                 : Number(network),
               Pools[poolKey as keyof typeof Pools],
+              protocolRoleNames,
             );
 
             poolPermissions = await resolveV3Modifiers(

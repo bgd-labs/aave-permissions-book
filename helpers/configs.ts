@@ -54,6 +54,16 @@ export const ghoRoleNames = [
   'BUCKET_MANAGER_ROLE',
 ];
 
+export const protocolRoleNames = [
+  'ASSET_LISTING_ADMIN',
+  'BRIDGE',
+  'DEFAULT_ADMIN',
+  'EMERGENCY_ADMIN',
+  'FLASH_BORROWER',
+  'POOL_ADMIN',
+  'RISK_ADMIN',
+];
+
 export const networkConfigs: NetworkConfigs = {
   [ChainId.mainnet]: {
     rpcUrl: process.env.RPC_MAINNET,
