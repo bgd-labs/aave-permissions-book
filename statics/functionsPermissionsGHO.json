@@ -1,0 +1,28 @@
+[
+  {
+    "contract": "GHO",
+    "proxyAdmin": false,
+    "functions": [
+      {
+        "name": "mint",
+        "roles": ["onlyFacilitator"]
+      },
+      {
+        "name": "burn",
+        "roles": ["onlyFacilitator"]
+      },
+      {
+        "name": "addFacilitator",
+        "roles": ["onlyFacilitatorManager"]
+      },
+      {
+        "name": "removeFacilitator",
+        "roles": ["onlyFacilitatorManager"]
+      },
+      {
+        "name": "setFacilitatorBucketCapacity",
+        "roles": ["onlyBucketManager"]
+      }
+    ]
+  }
+]

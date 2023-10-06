@@ -1,5 +1,10 @@
 import { ethers, providers } from 'ethers';
-import { networkConfigs, Pools } from '../helpers/configs.js';
+import {
+  ghoRoleNames,
+  networkConfigs,
+  Pools,
+  protocolRoleNames,
+} from '../helpers/configs.js';
 import {
   getAllPermissionsJson,
   getStaticPermissionsJson,
@@ -14,6 +19,7 @@ import { resolveSafetyV2Modifiers } from './safetyPermissions.js';
 import { resolveV2MiscModifiers } from './v2MiscPermissions.js';
 import { getCCCSendersAndAdapters } from '../helpers/crossChainControllerLogs.js';
 import { resolveGovV3Modifiers } from './govV3Permissions.js';
+import { resolveGHOModifiers } from './ghoPermissions.js';
 
 async function main() {
   let fullJson: FullPermissions = getAllPermissionsJson();
@@ -40,6 +46,8 @@ async function main() {
         poolKey !== Pools.V2_MISC_TENDERLY &&
         poolKey !== Pools.V2_MISC &&
         poolKey !== Pools.TENDERLY &&
+        poolKey !== Pools.GHO_TENDERLY &&
+        poolKey !== Pools.GHO &&
         !pool.aclBlock
       ) {
         console.log(`
@@ -108,6 +116,56 @@ async function main() {
             : provider,
           permissionsJson,
         );
+      } else if (poolKey === Pools.GHO || poolKey === Pools.GHO_TENDERLY) {
+        let fromBlock;
+        if (poolKey === Pools.GHO_TENDERLY) {
+          fromBlock =
+            (fullJson[network] &&
+              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+            pool.tenderlyBlock;
+        } else {
+          fromBlock =
+            (fullJson[network] &&
+              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+            pool.ghoBlock;
+        }
+
+        if (fromBlock) {
+          console.log(`
+          ------------------------------------
+            network: ${network}
+            pool: ${poolKey}
+            fromBlock: ${fromBlock}
+          ------------------------------------
+          `);
+
+          if (Object.keys(pool.addressBook).length > 0) {
+            admins = await getCurrentRoleAdmins(
+              poolKey === Pools.GHO_TENDERLY
+                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+                : provider,
+              (fullJson[network] &&
+                fullJson[network][poolKey] &&
+                fullJson[network][poolKey]?.roles?.role) ||
+                ({} as Record<string, string[]>),
+              fromBlock,
+              pool.addressBook,
+              Number(network),
+              Pools[poolKey as keyof typeof Pools],
+              ghoRoleNames,
+            );
+            poolPermissions = await resolveGHOModifiers(
+              pool.addressBook,
+              poolKey === Pools.GHO_TENDERLY
+                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+                : provider,
+              permissionsJson,
+              Pools[poolKey as keyof typeof Pools],
+              Number(network),
+              admins.role,
+            );
+          }
+        }
       } else if (pool.aclBlock) {
         let fromBlock;
         if (poolKey === Pools.TENDERLY) {
@@ -146,6 +204,7 @@ async function main() {
                 ? 'tenderly-mainnet'
                 : Number(network),
               Pools[poolKey as keyof typeof Pools],
+              protocolRoleNames,
             );
 
             poolPermissions = await resolveV3Modifiers(
