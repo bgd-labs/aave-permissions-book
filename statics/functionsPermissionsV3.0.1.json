@@ -404,5 +404,18 @@
         "roles": ["onlyRole"]
       }
     ]
+  },
+  {
+    "contract": "GHOFlashMinter",
+    "functions": [
+      {
+        "name": "updateFee",
+        "roles": ["onlyPoolAdmin"]
+      },
+      {
+        "name": "updateGhoTreasury",
+        "roles": ["onlyPoolAdmin"]
+      }
+    ]
   }
 ]

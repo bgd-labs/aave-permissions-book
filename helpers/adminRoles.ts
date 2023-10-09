@@ -14,17 +14,8 @@ export const roleRevokedEventABI = [
 
 export const defaultRolesAdmin =
   '0x0000000000000000000000000000000000000000000000000000000000000000';
-export const roleNames = [
-  'ASSET_LISTING_ADMIN',
-  'BRIDGE',
-  'DEFAULT_ADMIN',
-  'EMERGENCY_ADMIN',
-  'FLASH_BORROWER',
-  'POOL_ADMIN',
-  'RISK_ADMIN',
-];
 
-function initializeRoleCodeMap(): Map<string, string> {
+function initializeRoleCodeMap(roleNames: string[]): Map<string, string> {
   let roleCodeMap = new Map<string, string>([
     [
       '0x0000000000000000000000000000000000000000000000000000000000000000',
@@ -58,13 +49,14 @@ export const getCurrentRoleAdmins = async (
   addressBook: any,
   chainId: ChainId | string,
   pool: Pools,
+  roleNames: string[],
 ): Promise<Roles> => {
   // console.log(`
   // ------------------------------
   //       ChainId: ${chainId}
   // `);
   const aclManager = addressBook.ACL_MANAGER;
-  const roleHexToNameMap = initializeRoleCodeMap();
+  const roleHexToNameMap = initializeRoleCodeMap(roleNames);
 
   let limit = getLimit(chainId);
   let timeout = undefined;
@@ -158,9 +150,6 @@ export const getCurrentRoleAdmins = async (
       if (roleName) {
         roles[roleName] = roles[roleName].filter((role) => role !== account);
       }
-    } else {
-      console.error(new Error('some error parsing logs'));
-      return { role: oldRoles, latestBlockNumber: finalBlock };
     }
   }
 

@@ -50,6 +50,8 @@ export type PoolConfigs = {
   tenderlyBlock?: number;
   tenderlyRpcUrl?: string;
 
+  ghoBlock?: number;
+
   addresses?: Record<string, string>;
 };
 export type Network = {
