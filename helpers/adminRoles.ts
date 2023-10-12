@@ -52,7 +52,6 @@ export const getCurrentRoleAdmins = async (
   contract: string,
 ): Promise<Roles> => {
   const roleHexToNameMap = initializeRoleCodeMap(roleNames);
-  console.log(roleHexToNameMap);
 
   let limit = getLimit(chainId);
   let timeout = undefined;
@@ -109,7 +108,6 @@ export const getCurrentRoleAdmins = async (
   const roles: Record<string, string[]> = { ...oldRoles };
   // save or remove admins
   for (let eventLog of eventLogs) {
-    console.log(eventLog);
     // eventLogs.forEach((eventLog) => {
     if (eventLog.topics[0] === roleGrantedTopic0) {
       const { role, account } = parseLog(roleGrantedEventABI, eventLog);
