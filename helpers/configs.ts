@@ -260,7 +260,7 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV2PoR.json',
         addressBook: AaveV2Avalanche,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/ccc6b44c-1e5e-41c8-9f17-fafc153b6e69',
+          'https://rpc.tenderly.co/fork/7504a857-8f00-40e4-badd-c542901899d7',
       },
       [Pools.TENDERLY]: {
         aclBlock: 11970456,
@@ -269,9 +269,9 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Avalanche,
         governanceAddressBook: GovernanceV3Avalanche,
-        tenderlyBlock: 36354422,
+        tenderlyBlock: 36356957,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/ccc6b44c-1e5e-41c8-9f17-fafc153b6e69',
+          'https://rpc.tenderly.co/fork/7504a857-8f00-40e4-badd-c542901899d7',
       },
     },
   },

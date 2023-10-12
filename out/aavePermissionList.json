@@ -442,7 +442,7 @@
           "ASSET_LISTING_ADMIN": [],
           "BRIDGE": []
         },
-        "latestBlockNumber": 18333912
+        "latestBlockNumber": 18334291
       },
       "govV3": {
         "contracts": {
@@ -809,7 +809,7 @@
           "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
           "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6"
         ],
-        "latestCCCBlockNumber": 18333913
+        "latestCCCBlockNumber": 18334292
       }
     },
     "GOV_V2": {
@@ -1911,7 +1911,7 @@
             "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
           ]
         },
-        "latestBlockNumber": 18333915
+        "latestBlockNumber": 18334294
       },
       "govV3": {}
     },
@@ -3637,7 +3637,7 @@
           "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
           "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
         ],
-        "latestCCCBlockNumber": 18333928
+        "latestCCCBlockNumber": 18334307
       }
     }
   },
@@ -4123,7 +4123,7 @@
           ],
           "BRIDGE": []
         },
-        "latestBlockNumber": 110755019
+        "latestBlockNumber": 110757307
       },
       "govV3": {
         "contracts": {
@@ -4291,7 +4291,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 110755027
+        "latestCCCBlockNumber": 110757313
       }
     },
     "TENDERLY": {
@@ -4896,7 +4896,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 110755035
+        "latestCCCBlockNumber": 110757323
       }
     }
   },
@@ -5078,7 +5078,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 31570150
+        "latestCCCBlockNumber": 31571150
       }
     }
   },
@@ -5574,7 +5574,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 48626730
+        "latestBlockNumber": 48628821
       },
       "govV3": {
         "contracts": {
@@ -5783,7 +5783,7 @@
           "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d",
           "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6"
         ],
-        "latestCCCBlockNumber": 48626736
+        "latestCCCBlockNumber": 48628829
       }
     },
     "V2": {
@@ -6819,7 +6819,7 @@
           "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d",
           "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6"
         ],
-        "latestCCCBlockNumber": 48626757
+        "latestCCCBlockNumber": 48628847
       }
     },
     "V2_TENDERLY": {
@@ -7703,7 +7703,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 69248244
+        "latestBlockNumber": 69249976
       },
       "govV3": {}
     }
@@ -8207,7 +8207,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 8922715
+        "latestBlockNumber": 8923276
       },
       "govV3": {
         "contracts": {
@@ -8375,7 +8375,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 8922715
+        "latestCCCBlockNumber": 8923276
       }
     }
   },
@@ -8889,7 +8889,7 @@
           "FLASH_BORROWER": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 2393130
+        "latestBlockNumber": 2396130
       },
       "govV3": {
         "contracts": {
@@ -9057,7 +9057,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 3722170
+        "latestCCCBlockNumber": 3725170
       }
     },
     "TENDERLY": {
@@ -9628,7 +9628,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 3689170
+        "latestCCCBlockNumber": 3692170
       }
     }
   },
@@ -10114,7 +10114,7 @@
           ],
           "BRIDGE": []
         },
-        "latestBlockNumber": 139951516
+        "latestBlockNumber": 139968791
       },
       "govV3": {
         "contracts": {
@@ -10282,7 +10282,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 139951573
+        "latestCCCBlockNumber": 139968863
       }
     },
     "TENDERLY": {
@@ -10887,7 +10887,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 139951646
+        "latestCCCBlockNumber": 139968931
       }
     }
   },
@@ -11532,7 +11532,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 36355106
+        "latestBlockNumber": 36357348
       },
       "govV3": {
         "contracts": {
@@ -11725,7 +11725,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 36355121
+        "latestCCCBlockNumber": 36357353
       }
     },
     "V2": {
@@ -12130,7 +12130,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12178,7 +12178,7 @@
               "modifier": "onlyPoolAdmin",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12213,7 +12213,7 @@
               "modifier": "onlyPoolOrProofOfReserveAdmin",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 },
                 {
@@ -12236,7 +12236,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12254,7 +12254,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12273,7 +12273,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12291,7 +12291,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12313,7 +12313,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12365,7 +12365,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12413,7 +12413,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12543,7 +12543,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12561,7 +12561,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12593,7 +12593,7 @@
               "modifier": "onlyFundsAdmin",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12612,7 +12612,7 @@
                   "owners": []
                 },
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12652,7 +12652,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12670,7 +12670,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12687,7 +12687,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12704,7 +12704,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12723,7 +12723,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12746,7 +12746,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -12778,7 +12778,7 @@
           "POOL_ADMIN": [],
           "RISK_ADMIN": []
         },
-        "latestBlockNumber": 36354422
+        "latestBlockNumber": 36356957
       },
       "govV3": {
         "contracts": {
@@ -12971,7 +12971,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 36355387
+        "latestCCCBlockNumber": 36357615
       }
     }
   }
