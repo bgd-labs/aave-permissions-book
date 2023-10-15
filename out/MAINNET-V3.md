@@ -61,7 +61,7 @@
 |  DEFAULT_ADMIN |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) | |--------|--------|
 |  POOL_ADMIN |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) | |--------|--------|
 |  EMERGENCY_ADMIN |  [Aave Guardian Ethereum](https://etherscan.io/address/0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633) | |--------|--------|
-|  FLASH_BORROWER |  [0xd9D8e68717Ce24CCbf162868aaad7E38d81b05d1](https://etherscan.io/address/0xd9D8e68717Ce24CCbf162868aaad7E38d81b05d1), [0x72915D41982DfCAf30b871290618E59C45Edba7F](https://etherscan.io/address/0x72915D41982DfCAf30b871290618E59C45Edba7F) | |--------|--------|
+|  FLASH_BORROWER |  [0xd9D8e68717Ce24CCbf162868aaad7E38d81b05d1](https://etherscan.io/address/0xd9D8e68717Ce24CCbf162868aaad7E38d81b05d1), [0x72915D41982DfCAf30b871290618E59C45Edba7F](https://etherscan.io/address/0x72915D41982DfCAf30b871290618E59C45Edba7F), [0x8761e0370f94f68Db8EaA731f4fC581f6AD0Bd68](https://etherscan.io/address/0x8761e0370f94f68Db8EaA731f4fC581f6AD0Bd68) | |--------|--------|
 |  RISK_ADMIN |  [0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778](https://etherscan.io/address/0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778), [0x2eE68ACb6A1319de1b49DC139894644E424fefD6](https://etherscan.io/address/0x2eE68ACb6A1319de1b49DC139894644E424fefD6) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  BRIDGE |   | |--------|--------|
