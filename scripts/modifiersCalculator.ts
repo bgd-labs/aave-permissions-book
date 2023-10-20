@@ -209,7 +209,7 @@ async function main() {
 
             poolPermissions = await resolveV3Modifiers(
               pool.addressBook,
-              poolKey === Pools.TENDERLY
+              poolKey === Pools.TENDERLY || poolKey === Pools.V2_TENDERLY
                 ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
                 : provider,
               permissionsJson,
