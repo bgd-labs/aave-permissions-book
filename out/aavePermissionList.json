@@ -396,7 +396,8 @@
           "EMERGENCY_ADMIN": ["0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633"],
           "FLASH_BORROWER": [
             "0xd9D8e68717Ce24CCbf162868aaad7E38d81b05d1",
-            "0x72915D41982DfCAf30b871290618E59C45Edba7F"
+            "0x72915D41982DfCAf30b871290618E59C45Edba7F",
+            "0x8761e0370f94f68Db8EaA731f4fC581f6AD0Bd68"
           ],
           "RISK_ADMIN": [
             "0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778",
@@ -1709,6 +1710,60 @@
       },
       "roles": {},
       "govV3": {}
+    },
+    "GHO": {
+      "contracts": {
+        "GHO": {
+          "address": "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f",
+          "modifiers": [
+            {
+              "modifier": "onlyFacilitator",
+              "addresses": [
+                {
+                  "address": "0x00907f9921424583e7ffBfEdf84F92B7B2Be4977",
+                  "owners": []
+                },
+                {
+                  "address": "0xb639D208Bcf0589D54FaC24E655C79EC529762B8",
+                  "owners": []
+                }
+              ],
+              "functions": ["mint", "burn"]
+            },
+            {
+              "modifier": "onlyFacilitatorManager",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": ["addFacilitator", "removeFacilitator"]
+            },
+            {
+              "modifier": "onlyBucketManager",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": ["setFacilitatorBucketCapacity"]
+            }
+          ]
+        }
+      },
+      "roles": {
+        "role": {
+          "DEFAULT_ADMIN": ["0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"],
+          "FACILITATOR_MANAGER_ROLE": [
+            "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
+          ],
+          "BUCKET_MANAGER_ROLE": ["0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"]
+        },
+        "latestBlockNumber": 18388008
+      },
+      "govV3": {}
     }
   },
   "10": {
@@ -2151,7 +2206,8 @@
           ],
           "FLASH_BORROWER": [
             "0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85",
-            "0xE668197A175E7A2143222a028470c6ABBBD183F6"
+            "0xE668197A175E7A2143222a028470c6ABBBD183F6",
+            "0xcFaE0D8c5707FCc6478D6a65fFA31efADeF8b8EC"
           ],
           "BRIDGE": []
         },
@@ -2935,7 +2991,7 @@
             "0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB"
           ],
           "BRIDGE": [],
-          "FLASH_BORROWER": []
+          "FLASH_BORROWER": ["0xb58Fd91558fa213D97Ac94C97F831c7289278084"]
         },
         "latestBlockNumber": 48628821
       },
@@ -5670,7 +5726,8 @@
           ],
           "FLASH_BORROWER": [
             "0x219ac6dA971dE6d943cffD1BD62abde71525d382",
-            "0x1561EAF39c98d45C55C7dC605E627672F4406819"
+            "0x1561EAF39c98d45C55C7dC605E627672F4406819",
+            "0x9E8e9D6b0D24216F59043db68BDda1620892f549"
           ],
           "BRIDGE": []
         },

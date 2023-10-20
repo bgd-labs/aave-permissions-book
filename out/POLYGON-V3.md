@@ -59,5 +59,5 @@
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  RISK_ADMIN |  [0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f](https://polygonscan.com/address/0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f), [0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB](https://polygonscan.com/address/0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB) | |--------|--------|
 |  BRIDGE |   | |--------|--------|
-|  FLASH_BORROWER |   | |--------|--------|
+|  FLASH_BORROWER |  [0xb58Fd91558fa213D97Ac94C97F831c7289278084](https://polygonscan.com/address/0xb58Fd91558fa213D97Ac94C97F831c7289278084) | |--------|--------|
 
