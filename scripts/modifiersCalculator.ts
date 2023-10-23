@@ -118,17 +118,17 @@ async function main() {
         );
       } else if (poolKey === Pools.GHO || poolKey === Pools.GHO_TENDERLY) {
         let fromBlock;
-        if (poolKey === Pools.GHO_TENDERLY) {
-          fromBlock =
-            (fullJson[network] &&
-              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-            pool.tenderlyBlock;
-        } else {
-          fromBlock =
-            (fullJson[network] &&
-              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-            pool.ghoBlock;
-        }
+        // if (poolKey === Pools.GHO_TENDERLY) {
+        //   fromBlock =
+        //     (fullJson[network] &&
+        //       fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+        //     pool.tenderlyBlock;
+        // } else {
+        fromBlock =
+          (fullJson[network] &&
+            fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+          pool.ghoBlock;
+        // }
 
         if (fromBlock) {
           console.log(`
@@ -141,9 +141,10 @@ async function main() {
 
           if (Object.keys(pool.addressBook).length > 0) {
             admins = await getCurrentRoleAdmins(
-              poolKey === Pools.GHO_TENDERLY
-                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-                : provider,
+              // poolKey === Pools.GHO_TENDERLY
+              // ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+              // :
+              provider,
               (fullJson[network] &&
                 fullJson[network][poolKey] &&
                 fullJson[network][poolKey]?.roles?.role) ||
@@ -168,17 +169,17 @@ async function main() {
         }
       } else if (pool.aclBlock) {
         let fromBlock;
-        if (poolKey === Pools.TENDERLY) {
-          fromBlock =
-            (fullJson[network] &&
-              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-            pool.tenderlyBlock;
-        } else {
-          fromBlock =
-            (fullJson[network] &&
-              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-            pool.aclBlock;
-        }
+        // if (poolKey === Pools.TENDERLY) {
+        //   fromBlock =
+        //     (fullJson[network] &&
+        //       fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+        //     pool.tenderlyBlock;
+        // } else {
+        fromBlock =
+          (fullJson[network] &&
+            fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+          pool.aclBlock;
+        // }
 
         if (fromBlock) {
           console.log(`
@@ -191,9 +192,10 @@ async function main() {
 
           if (Object.keys(pool.addressBook).length > 0) {
             admins = await getCurrentRoleAdmins(
-              poolKey === Pools.TENDERLY
-                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-                : provider,
+              // poolKey === Pools.TENDERLY
+              //   ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+              //   : provider,
+              provider,
               (fullJson[network] &&
                 fullJson[network][poolKey] &&
                 fullJson[network][poolKey]?.roles?.role) ||
@@ -253,6 +255,7 @@ async function main() {
               permissionsGovV3Json,
               Number(network),
               senders,
+              poolKey === Pools.TENDERLY,
             );
             govV3.senders = senders;
             govV3.latestCCCBlockNumber = latestCCCBlockNumber;
