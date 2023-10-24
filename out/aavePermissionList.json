@@ -443,7 +443,7 @@
           "ASSET_LISTING_ADMIN": [],
           "BRIDGE": []
         },
-        "latestBlockNumber": 18420521
+        "latestBlockNumber": 18420805
       },
       "govV3": {
         "contracts": {
@@ -678,6 +678,90 @@
               }
             ]
           },
+          "BridgeAdapter0": {
+            "address": "0xDB8953194810b1942544fA528791278D458719D5",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
+                    "owners": []
+                  },
+                  {
+                    "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter1": {
+            "address": "0x2a323be63e08E08536Fc3b5d8C6f24825e68895e",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
+                    "owners": []
+                  },
+                  {
+                    "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter2": {
+            "address": "0x6Abb61beb5848B476d026C4934E8a6415e2E75a8",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
+                    "owners": []
+                  },
+                  {
+                    "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter3": {
+            "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
+                    "owners": []
+                  },
+                  {
+                    "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
           "CrossChainController": {
             "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
             "modifiers": [
@@ -810,7 +894,7 @@
           "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
           "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6"
         ],
-        "latestCCCBlockNumber": 18420522
+        "latestCCCBlockNumber": 18420806
       }
     },
     "GOV_V2": {
@@ -1994,7 +2078,7 @@
             "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5"
           ]
         },
-        "latestBlockNumber": 18420523
+        "latestBlockNumber": 18420808
       },
       "govV3": {}
     },
@@ -4452,7 +4536,7 @@
           ],
           "BRIDGE": []
         },
-        "latestBlockNumber": 111278339
+        "latestBlockNumber": 111280059
       },
       "govV3": {
         "contracts": {
@@ -4528,6 +4612,23 @@
                 ],
                 "functions": [
                   "executeTransaction"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter0": {
+            "address": "0x81d32B36380e6266e1BDd490eAC56cdB300afBe0",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
                 ]
               }
             ]
@@ -4620,7 +4721,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 111278348
+        "latestCCCBlockNumber": 111280067
       }
     },
     "TENDERLY": {
@@ -5359,6 +5460,57 @@
               }
             ]
           },
+          "BridgeAdapter0": {
+            "address": "0xFF1137243698CaA18EE364Cc966CF0e02A4e6327",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter1": {
+            "address": "0x118DFD5418890c0332042ab05173Db4A2C1d283c",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter2": {
+            "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
           "CrossChainController": {
             "address": "0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19",
             "modifiers": [
@@ -5455,7 +5607,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 31571650
+        "latestCCCBlockNumber": 31571750
       }
     }
   },
@@ -5953,7 +6105,7 @@
             "0xb58Fd91558fa213D97Ac94C97F831c7289278084"
           ]
         },
-        "latestBlockNumber": 49096690
+        "latestBlockNumber": 49098261
       },
       "govV3": {
         "contracts": {
@@ -6046,6 +6198,74 @@
                 ],
                 "functions": [
                   "executeTransaction"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter0": {
+            "address": "0x95Fa2c817169E26956AB8795c84a225b55d7db5B",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter1": {
+            "address": "0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter2": {
+            "address": "0x3c25b96fF62D21E90556869272a277eE2E229747",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter3": {
+            "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
                 ]
               }
             ]
@@ -6162,7 +6382,7 @@
           "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d",
           "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6"
         ],
-        "latestCCCBlockNumber": 49096698
+        "latestCCCBlockNumber": 49098269
       }
     },
     "V2": {
@@ -8128,7 +8348,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 69722455
+        "latestBlockNumber": 69724037
       },
       "govV3": {}
     }
@@ -8632,7 +8852,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 9062933
+        "latestBlockNumber": 9063797
       },
       "govV3": {
         "contracts": {
@@ -8708,6 +8928,23 @@
                 ],
                 "functions": [
                   "executeTransaction"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter0": {
+            "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
                 ]
               }
             ]
@@ -8800,7 +9037,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 9062938
+        "latestCCCBlockNumber": 9063797
       }
     }
   },
@@ -10661,7 +10898,7 @@
           ],
           "BRIDGE": []
         },
-        "latestBlockNumber": 143556130
+        "latestBlockNumber": 143569586
       },
       "govV3": {
         "contracts": {
@@ -10737,6 +10974,23 @@
                 ],
                 "functions": [
                   "executeTransaction"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter0": {
+            "address": "0x3829943c53F2d00e20B58475aF19716724bF90Ba",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
                 ]
               }
             ]
@@ -10829,7 +11083,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 143556196
+        "latestCCCBlockNumber": 143569654
       }
     },
     "TENDERLY": {
@@ -12127,7 +12381,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 36862464
+        "latestBlockNumber": 36864169
       },
       "govV3": {
         "contracts": {
@@ -12220,6 +12474,57 @@
                 ],
                 "functions": [
                   "executeTransaction"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter0": {
+            "address": "0x3F006299eC88985c18E6e885EeA29A49eC579882",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter1": {
+            "address": "0xf41193E25408F652AF878c47E4401A01B5E4B682",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
+                ]
+              }
+            ]
+          },
+          "BridgeAdapter2": {
+            "address": "0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04",
+            "modifiers": [
+              {
+                "modifier": "trustedRemote",
+                "addresses": [
+                  {
+                    "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                    "owners": []
+                  }
+                ],
+                "functions": [
+                  "receiveMessage"
                 ]
               }
             ]
@@ -12320,7 +12625,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 36862469
+        "latestCCCBlockNumber": 36864174
       }
     },
     "V2": {

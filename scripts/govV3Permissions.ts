@@ -15,6 +15,7 @@ import {
   IRescuable_ABI,
 } from '@bgd-labs/aave-address-book';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
+import baseAdapter from '../abis/BaseAdapter.json' assert { type: 'json' };
 import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
 
 export const resolveGovV3Modifiers = async (
@@ -409,6 +410,42 @@ export const resolveGovV3Modifiers = async (
       const bridges: string[] =
         await cccContract.getReceiverBridgeAdaptersByChain(supportedChains[i]);
       bridges.map((bridge) => receiverBridges.add(bridge));
+    }
+
+    const receiverBridgesArray = Array.from(receiverBridges);
+    for (let i = 0; i < receiverBridgesArray.length; i++) {
+      // get trusted remotes
+      const trustedRemotes: Set<string> = new Set();
+      for (let i = 0; i < supportedChains.length; i++) {
+        const bridgeAdapterContract = new ethers.Contract(
+          receiverBridgesArray[i],
+          baseAdapter,
+          provider,
+        );
+        const trustedRemote: string =
+          await bridgeAdapterContract.getTrustedRemoteByChainId(
+            supportedChains[i],
+          );
+        trustedRemotes.add(trustedRemote);
+      }
+
+      obj[`BridgeAdapter${i}`] = {
+        address: receiverBridgesArray[i],
+        modifiers: [
+          {
+            modifier: 'trustedRemote',
+            addresses: [
+              ...Array.from(trustedRemotes).map((trustedRemote) => {
+                return {
+                  address: trustedRemote,
+                  owners: [],
+                };
+              }),
+            ],
+            functions: ['receiveMessage'],
+          },
+        ],
+      };
     }
 
     obj['CrossChainController'] = {
