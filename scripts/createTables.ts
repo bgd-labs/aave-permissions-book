@@ -71,6 +71,12 @@ export const generateTables = async () => {
     const networkPermits = aavePermissionsList[network];
     const addressesNames = networkConfigs[network].addressesNames || {};
     for (let pool of Object.keys(networkPermits)) {
+      if (
+        (!process.env.TENDERLY || process.env.TENDERLY === 'false') &&
+        pool.toLowerCase().indexOf('tenderly') > -1
+      ) {
+        continue;
+      }
       // create network Readme with pool tables
       let readmeByNetwork = `# ${networkName} \n`;
 
@@ -84,7 +90,7 @@ export const generateTables = async () => {
       });
 
       // add gov contracts to contractsByAddresses
-      if (pool !== Pools.GOV_V2) {
+      if (pool !== Pools.GOV_V2 && pool !== Pools.GOV_V2_TENDERLY) {
         contractsByAddress = generateContractsByAddress({
           ...poolPermitsByContract.contracts,
           ...poolPermitsByContract.govV3?.contracts,

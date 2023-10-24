@@ -4,6 +4,7 @@ import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners } from '../helpers/guardian.js';
 import stkAaveABI from '../abis/stkAaveABI.json' assert { type: 'json' };
+import stkToken from '../abis/stkToken.json' assert { type: 'json' };
 import abptABI from '../abis/abptABI.json' assert { type: 'json' };
 import bptABI from '../abis/bptABI.json' assert { type: 'json' };
 import { Contracts, PermissionsJson } from '../helpers/types.js';
@@ -13,17 +14,24 @@ export const resolveSafetyV2Modifiers = async (
   provider: providers.Provider,
   permissionsObject: PermissionsJson,
 ): Promise<Contracts> => {
+  const SLASH_ADMIN_ROLE = 0;
+  const COOLDOWN_ADMIN_ROLE = 1;
+  const CLAIM_HELPER_ROLE = 2;
+
   const obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
 
   // stk aave token
   const stkAaveContract = new ethers.Contract(
     addressBook.STK_AAVE,
-    stkAaveABI,
+    stkToken,
     provider,
   );
 
   const stkAaveEmissionManager = await stkAaveContract.EMISSION_MANAGER();
+  const slashAdmin = await stkAaveContract.getAdmin(SLASH_ADMIN_ROLE);
+  const cooldDownAdmin = await stkAaveContract.getAdmin(COOLDOWN_ADMIN_ROLE);
+  const claimHelperAdmin = await stkAaveContract.getAdmin(CLAIM_HELPER_ROLE);
 
   obj['stkAave'] = {
     address: addressBook.STK_AAVE,
@@ -38,18 +46,55 @@ export const resolveSafetyV2Modifiers = async (
         ],
         functions: roles['stkAave']['onlyEmissionManager'],
       },
+      {
+        modifier: 'onlySlashingAdmin',
+        addresses: [
+          {
+            address: slashAdmin,
+            owners: await getSafeOwners(provider, slashAdmin),
+          },
+        ],
+        functions: roles['stkAave']['onlySlashingAdmin'],
+      },
+      {
+        modifier: 'onlyCooldownAdmin',
+        addresses: [
+          {
+            address: cooldDownAdmin,
+            owners: await getSafeOwners(provider, cooldDownAdmin),
+          },
+        ],
+        functions: roles['stkAave']['onlyCooldownAdmin'],
+      },
+      {
+        modifier: 'onlyClaimHelper',
+        addresses: [
+          {
+            address: claimHelperAdmin,
+            owners: await getSafeOwners(provider, claimHelperAdmin),
+          },
+        ],
+        functions: roles['stkAave']['onlyClaimHelper'],
+      },
     ],
   };
 
   // stk ABPT token
   const stkABPTContract = new ethers.Contract(
     addressBook.STK_ABPT,
-    stkAaveABI,
+    stkToken,
     provider,
   );
 
   const stkABPTEmissionManager = await stkABPTContract.EMISSION_MANAGER();
   const abptAddress = await stkABPTContract.STAKED_TOKEN();
+  const stkABPTslashAdmin = await stkABPTContract.getAdmin(SLASH_ADMIN_ROLE);
+  const stkABPTcooldDownAdmin = await stkABPTContract.getAdmin(
+    COOLDOWN_ADMIN_ROLE,
+  );
+  const stkABPTclaimHelperAdmin = await stkABPTContract.getAdmin(
+    CLAIM_HELPER_ROLE,
+  );
 
   obj['stkABPT'] = {
     address: addressBook.STK_ABPT,
@@ -63,6 +108,36 @@ export const resolveSafetyV2Modifiers = async (
           },
         ],
         functions: roles['stkABPT']['onlyEmissionManager'],
+      },
+      {
+        modifier: 'onlySlashingAdmin',
+        addresses: [
+          {
+            address: stkABPTslashAdmin,
+            owners: await getSafeOwners(provider, stkABPTslashAdmin),
+          },
+        ],
+        functions: roles['stkAave']['onlySlashingAdmin'],
+      },
+      {
+        modifier: 'onlyCooldownAdmin',
+        addresses: [
+          {
+            address: stkABPTcooldDownAdmin,
+            owners: await getSafeOwners(provider, stkABPTcooldDownAdmin),
+          },
+        ],
+        functions: roles['stkAave']['onlyCooldownAdmin'],
+      },
+      {
+        modifier: 'onlyClaimHelper',
+        addresses: [
+          {
+            address: stkABPTclaimHelperAdmin,
+            owners: await getSafeOwners(provider, stkABPTclaimHelperAdmin),
+          },
+        ],
+        functions: roles['stkAave']['onlyClaimHelper'],
       },
     ],
   };

@@ -46,16 +46,11 @@ export const getCurrentRoleAdmins = async (
   provider: providers.Provider,
   oldRoles: Record<string, string[]>,
   fromBlock: number,
-  addressBook: any,
   chainId: ChainId | string,
   pool: Pools,
   roleNames: string[],
+  contract: string,
 ): Promise<Roles> => {
-  // console.log(`
-  // ------------------------------
-  //       ChainId: ${chainId}
-  // `);
-  const aclManager = addressBook.ACL_MANAGER;
   const roleHexToNameMap = initializeRoleCodeMap(roleNames);
 
   let limit = getLimit(chainId);
@@ -63,10 +58,10 @@ export const getCurrentRoleAdmins = async (
 
   let eventLogs: providers.Log[] = [];
   let finalBlock: number = 0;
-  if (pool === Pools.TENDERLY) {
+  if (pool === Pools.TENDERLY || pool === Pools.GHO_TENDERLY) {
     const networkLogs = await getLogs({
       provider,
-      address: aclManager,
+      address: contract,
       fromBlock,
       logs: [],
       limit,
@@ -79,15 +74,19 @@ export const getCurrentRoleAdmins = async (
 
     limit = 999;
     timeout = 10000;
+
+    const tenderlyBlock =
+      networkConfigs[Number(chainId)].pools[pool].tenderlyBlock ||
+      networkLogs.finalBlock;
+
     const tenderlyLogs = await getLogs({
       provider: tenderlyProvider,
-      address: aclManager,
-      fromBlock:
-        networkConfigs[Number(chainId)].pools[pool].tenderlyBlock ||
-        networkLogs.finalBlock,
+      address: contract,
+      fromBlock: tenderlyBlock,
       logs: [],
       limit,
       timeout,
+      tenderly: true,
     });
 
     const logs = [...networkLogs.eventLogs, ...tenderlyLogs.eventLogs];
@@ -96,7 +95,7 @@ export const getCurrentRoleAdmins = async (
   } else {
     const logs = await getLogs({
       provider,
-      address: aclManager,
+      address: contract,
       fromBlock,
       logs: [],
       limit,
@@ -117,11 +116,12 @@ export const getCurrentRoleAdmins = async (
     if (eventLog.topics[0] === roleGrantedTopic0) {
       const { role, account } = parseLog(roleGrantedEventABI, eventLog);
       const roleName = roleHexToNameMap.get(role);
-      // console.log(`role
+      // console.log(`role granted
       //   topic0: ${eventLog.topics[0]}
       //   grant : ${roleGrantedTopic0}
       //   revoke: ${roleRevokedTopic0}
       //   address: ${account}
+      //   rawRole: ${role}
       //   role: ${roleName}
       // `);
 
@@ -140,16 +140,21 @@ export const getCurrentRoleAdmins = async (
     } else if (eventLog.topics[0] === roleRevokedTopic0) {
       const { role, account } = parseLog(roleRevokedEventABI, eventLog);
       const roleName = roleHexToNameMap.get(role);
-      // console.log(`
+      // console.log(`role revoked
       //   topic0: ${eventLog.topics[0]}
       //   grant : ${roleGrantedTopic0}
       //   revoke: ${roleRevokedTopic0}
       //   address: ${account}
+      //   rawRole: ${role}
       //   role: ${roleName}
       // `);
       if (roleName) {
         roles[roleName] = roles[roleName].filter((role) => role !== account);
       }
+    } else {
+      // console.log(`
+      //   topic0: ${eventLog}
+      // `);
     }
   }
 

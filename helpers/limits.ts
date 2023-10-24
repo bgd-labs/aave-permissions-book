@@ -12,9 +12,9 @@ export const getLimit = (chainId: ChainId | string) => {
   } else if (chainId === ChainId.metis_andromeda) {
     limit = 3000;
   } else if (Number(chainId) === 8453) {
-    limit = 3000;
-  } else if (Number(chainId) === 56) {
     limit = 1000;
+  } else if (Number(chainId) === 56) {
+    limit = 100;
   }
 
   return limit;

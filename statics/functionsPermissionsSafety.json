@@ -6,6 +6,38 @@
       {
         "name": "configureAssets",
         "roles": ["onlyEmissionManager"]
+      },
+      {
+        "name": "slash",
+        "roles": ["onlySlashingAdmin"]
+      },
+      {
+        "name": "settleSlashing",
+        "roles": ["onlySlashingAdmin"]
+      },
+      {
+        "name": "setMaxSlashablePercentage",
+        "roles": ["onlySlashingAdmin"]
+      },
+      {
+        "name": "setCooldownSeconds",
+        "roles": ["onlyCooldownAdmin"]
+      },
+      {
+        "name": "cooldownOnBehalfOf",
+        "roles": ["onlyClaimHelper"]
+      },
+      {
+        "name": "redeemOnBehalf",
+        "roles": ["onlyClaimHelper"]
+      },
+      {
+        "name": "claimRewardsOnBehalf",
+        "roles": ["onlyClaimHelper"]
+      },
+      {
+        "name": "claimRewardsAndRedeemOnBehalf",
+        "roles": ["onlyClaimHelper"]
       }
     ]
   },
@@ -16,6 +48,38 @@
       {
         "name": "configureAssets",
         "roles": ["onlyEmissionManager"]
+      },
+      {
+        "name": "slash",
+        "roles": ["onlySlashingAdmin"]
+      },
+      {
+        "name": "settleSlashing",
+        "roles": ["onlySlashingAdmin"]
+      },
+      {
+        "name": "setMaxSlashablePercentage",
+        "roles": ["onlySlashingAdmin"]
+      },
+      {
+        "name": "setCooldownSeconds",
+        "roles": ["onlyCooldownAdmin"]
+      },
+      {
+        "name": "cooldownOnBehalfOf",
+        "roles": ["onlyClaimHelper"]
+      },
+      {
+        "name": "redeemOnBehalf",
+        "roles": ["onlyClaimHelper"]
+      },
+      {
+        "name": "claimRewardsOnBehalf",
+        "roles": ["onlyClaimHelper"]
+      },
+      {
+        "name": "claimRewardsAndRedeemOnBehalf",
+        "roles": ["onlyClaimHelper"]
       }
     ]
   },

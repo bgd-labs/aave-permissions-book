@@ -32,20 +32,28 @@ async function main() {
 
     const pools = networkConfigs[network].pools;
     const poolsKeys = Object.keys(pools).map((pool) => pool);
-
     for (const poolKey of poolsKeys) {
+      if (
+        (!process.env.TENDERLY || process.env.TENDERLY === 'false') &&
+        poolKey.toLowerCase().indexOf('tenderly') > -1
+      ) {
+        continue;
+      }
       const pool = pools[poolKey];
+
       const permissionsJson = getStaticPermissionsJson(pool.permissionsJson);
       let poolPermissions: Contracts = {};
       let admins = {} as Roles;
       let govV3 = {} as GovV3;
       if (
         poolKey !== Pools.GOV_V2 &&
+        poolKey !== Pools.GOV_V2_TENDERLY &&
         poolKey !== Pools.SAFETY_MODULE &&
         poolKey !== Pools.SAFETY_MODULE_TENDERLY &&
         poolKey !== Pools.V2_MISC_TENDERLY &&
         poolKey !== Pools.V2_MISC &&
         poolKey !== Pools.TENDERLY &&
+        poolKey !== Pools.GHO_TENDERLY &&
         poolKey !== Pools.GHO &&
         !pool.aclBlock
       ) {
@@ -68,7 +76,10 @@ async function main() {
             Number(network),
           );
         }
-      } else if (poolKey === Pools.GOV_V2) {
+      } else if (
+        poolKey === Pools.GOV_V2 ||
+        poolKey === Pools.GOV_V2_TENDERLY
+      ) {
         console.log(`
           ------------------------------------
             network: ${network}
@@ -77,7 +88,10 @@ async function main() {
           `);
         poolPermissions = await resolveGovV2Modifiers(
           pool.addressBook,
-          provider,
+
+          poolKey === Pools.GOV_V2_TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
           permissionsJson,
         );
       } else if (
@@ -140,22 +154,17 @@ async function main() {
 
           if (Object.keys(pool.addressBook).length > 0) {
             admins = await getCurrentRoleAdmins(
-              poolKey === Pools.GHO_TENDERLY
-                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-                : provider,
+              provider,
               (fullJson[network] &&
                 fullJson[network][poolKey] &&
                 fullJson[network][poolKey]?.roles?.role) ||
                 ({} as Record<string, string[]>),
               fromBlock,
-              pool.addressBook,
-              network === 'tenderly-mainnet'
-                ? 'tenderly-mainnet'
-                : Number(network),
+              Number(network),
               Pools[poolKey as keyof typeof Pools],
               ghoRoleNames,
+              pool.addressBook.GHO_TOKEN,
             );
-
             poolPermissions = await resolveGHOModifiers(
               pool.addressBook,
               poolKey === Pools.GHO_TENDERLY
@@ -193,25 +202,23 @@ async function main() {
 
           if (Object.keys(pool.addressBook).length > 0) {
             admins = await getCurrentRoleAdmins(
-              poolKey === Pools.TENDERLY
-                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-                : provider,
+              provider,
               (fullJson[network] &&
                 fullJson[network][poolKey] &&
                 fullJson[network][poolKey]?.roles?.role) ||
                 ({} as Record<string, string[]>),
               fromBlock,
-              pool.addressBook,
               network === 'tenderly-mainnet'
                 ? 'tenderly-mainnet'
                 : Number(network),
               Pools[poolKey as keyof typeof Pools],
               protocolRoleNames,
+              pool.addressBook.ACL_MANAGER,
             );
 
             poolPermissions = await resolveV3Modifiers(
               pool.addressBook,
-              poolKey === Pools.TENDERLY
+              poolKey === Pools.TENDERLY || poolKey === Pools.V2_TENDERLY
                 ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
                 : provider,
               permissionsJson,
@@ -255,6 +262,7 @@ async function main() {
               permissionsGovV3Json,
               Number(network),
               senders,
+              poolKey === Pools.TENDERLY,
             );
             govV3.senders = senders;
             govV3.latestCCCBlockNumber = latestCCCBlockNumber;
