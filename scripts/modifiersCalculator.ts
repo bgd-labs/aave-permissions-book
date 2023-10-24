@@ -148,9 +148,6 @@ async function main() {
 
           if (Object.keys(pool.addressBook).length > 0) {
             admins = await getCurrentRoleAdmins(
-              // poolKey === Pools.GHO_TENDERLY
-              // ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-              // :
               provider,
               (fullJson[network] &&
                 fullJson[network][poolKey] &&
@@ -187,11 +184,7 @@ async function main() {
               fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
             pool.aclBlock;
         }
-        console.log(
-          'from block:',
-          fullJson[network] &&
-            fullJson[network][poolKey]?.roles?.latestBlockNumber,
-        );
+
         if (fromBlock) {
           console.log(`
           ------------------------------------
@@ -203,9 +196,6 @@ async function main() {
 
           if (Object.keys(pool.addressBook).length > 0) {
             admins = await getCurrentRoleAdmins(
-              // poolKey === Pools.TENDERLY
-              //   ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-              //   : provider,
               provider,
               (fullJson[network] &&
                 fullJson[network][poolKey] &&
