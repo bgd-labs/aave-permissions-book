@@ -249,6 +249,7 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Guardian Avalanche (legacy)',
       '0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26':
         'Avalanche v2 incentives admin',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
       [Pools.V3]: {
