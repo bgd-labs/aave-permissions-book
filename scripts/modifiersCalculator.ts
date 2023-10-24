@@ -176,17 +176,17 @@ async function main() {
         }
       } else if (pool.aclBlock) {
         let fromBlock;
-        // if (poolKey === Pools.TENDERLY) {
-        //   fromBlock =
-        //     (fullJson[network] &&
-        //       fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-        //     pool.tenderlyBlock;
-        // } else {
-        fromBlock =
-          (fullJson[network] &&
-            fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-          pool.aclBlock;
-        // }
+        if (poolKey === Pools.TENDERLY) {
+          fromBlock =
+            // (fullJson[network] &&
+            //   fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+            pool.tenderlyBlock;
+        } else {
+          fromBlock =
+            (fullJson[network] &&
+              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+            pool.aclBlock;
+        }
 
         if (fromBlock) {
           console.log(`

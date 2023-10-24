@@ -1744,6 +1744,47 @@
               "functions": [
                 "configureAssets"
               ]
+            },
+            {
+              "modifier": "onlySlashingAdmin",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "slash",
+                "settleSlashing",
+                "setMaxSlashablePercentage"
+              ]
+            },
+            {
+              "modifier": "onlyCooldownAdmin",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setCooldownSeconds"
+              ]
+            },
+            {
+              "modifier": "onlyClaimHelper",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "cooldownOnBehalfOf",
+                "redeemOnBehalf",
+                "claimRewardsOnBehalf",
+                "claimRewardsAndRedeemOnBehalf"
+              ]
             }
           ],
           "proxyAdmin": "0x86c3ffee349a7cff7ca88c449717b1b133bfb517"
@@ -1761,6 +1802,47 @@
               ],
               "functions": [
                 "configureAssets"
+              ]
+            },
+            {
+              "modifier": "onlySlashingAdmin",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "slash",
+                "settleSlashing",
+                "setMaxSlashablePercentage"
+              ]
+            },
+            {
+              "modifier": "onlyCooldownAdmin",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setCooldownSeconds"
+              ]
+            },
+            {
+              "modifier": "onlyClaimHelper",
+              "addresses": [
+                {
+                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "cooldownOnBehalfOf",
+                "redeemOnBehalf",
+                "claimRewardsOnBehalf",
+                "claimRewardsAndRedeemOnBehalf"
               ]
             }
           ],
@@ -2775,6 +2857,47 @@
               "functions": [
                 "configureAssets"
               ]
+            },
+            {
+              "modifier": "onlySlashingAdmin",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "slash",
+                "settleSlashing",
+                "setMaxSlashablePercentage"
+              ]
+            },
+            {
+              "modifier": "onlyCooldownAdmin",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setCooldownSeconds"
+              ]
+            },
+            {
+              "modifier": "onlyClaimHelper",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "cooldownOnBehalfOf",
+                "redeemOnBehalf",
+                "claimRewardsOnBehalf",
+                "claimRewardsAndRedeemOnBehalf"
+              ]
             }
           ],
           "proxyAdmin": "0x86c3ffee349a7cff7ca88c449717b1b133bfb517"
@@ -2792,6 +2915,47 @@
               ],
               "functions": [
                 "configureAssets"
+              ]
+            },
+            {
+              "modifier": "onlySlashingAdmin",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "slash",
+                "settleSlashing",
+                "setMaxSlashablePercentage"
+              ]
+            },
+            {
+              "modifier": "onlyCooldownAdmin",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "setCooldownSeconds"
+              ]
+            },
+            {
+              "modifier": "onlyClaimHelper",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "cooldownOnBehalfOf",
+                "redeemOnBehalf",
+                "claimRewardsOnBehalf",
+                "claimRewardsAndRedeemOnBehalf"
               ]
             }
           ],
@@ -13459,7 +13623,7 @@
           }
         },
         "senders": [],
-        "latestCCCBlockNumber": 36829836
+        "latestCCCBlockNumber": 36854742
       }
     }
   }
