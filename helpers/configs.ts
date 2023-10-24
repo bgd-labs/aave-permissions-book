@@ -382,14 +382,14 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
-      [Pools.V3]: {
-        aclBlock: 2357130,
-        crossChainControllerBlock: 3686170,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: AaveV3Base,
-        governanceAddressBook: GovernanceV3Base,
-      },
+      // [Pools.V3]: {
+      //   aclBlock: 2357130,
+      //   crossChainControllerBlock: 3686170,
+      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   addressBook: AaveV3Base,
+      //   governanceAddressBook: GovernanceV3Base,
+      // },
       [Pools.TENDERLY]: {
         aclBlock: 2357130,
         crossChainControllerBlock: 3686170,

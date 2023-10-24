@@ -71,6 +71,12 @@ export const generateTables = async () => {
     const networkPermits = aavePermissionsList[network];
     const addressesNames = networkConfigs[network].addressesNames || {};
     for (let pool of Object.keys(networkPermits)) {
+      if (
+        (!process.env.TENDERLY || process.env.TENDERLY === 'false') &&
+        pool.toLowerCase().indexOf('tenderly') > -1
+      ) {
+        continue;
+      }
       // create network Readme with pool tables
       let readmeByNetwork = `# ${networkName} \n`;
 

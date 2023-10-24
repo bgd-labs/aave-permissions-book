@@ -32,9 +32,15 @@ async function main() {
 
     const pools = networkConfigs[network].pools;
     const poolsKeys = Object.keys(pools).map((pool) => pool);
-
     for (const poolKey of poolsKeys) {
+      if (
+        (!process.env.TENDERLY || process.env.TENDERLY === 'false') &&
+        poolKey.toLowerCase().indexOf('tenderly') > -1
+      ) {
+        continue;
+      }
       const pool = pools[poolKey];
+
       const permissionsJson = getStaticPermissionsJson(pool.permissionsJson);
       let poolPermissions: Contracts = {};
       let admins = {} as Roles;
