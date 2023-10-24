@@ -15,6 +15,7 @@ export type GetLogsType = {
   topic1?: string;
   topic2?: string;
   topic3?: string;
+  tenderly?: boolean;
 };
 
 const MAX_RETRIES = 3;
@@ -31,6 +32,7 @@ export const getLogs = async ({
   topic1,
   topic2,
   topic3,
+  tenderly,
 }: GetLogsType): Promise<{
   eventLogs: providers.Log[];
   finalBlock: number;
@@ -38,7 +40,9 @@ export const getLogs = async ({
   const currentBlock = await provider.getBlockNumber();
 
   // TODO: for now i have put a margin, but should maybe be comparision between from and current
-  if (fromBlock + 10 >= (maxBlock ?? currentBlock)) {
+  if (!tenderly && fromBlock + 10 >= (maxBlock ?? currentBlock)) {
+    return { eventLogs: logs, finalBlock: fromBlock };
+  } else if (tenderly && fromBlock >= (maxBlock ?? currentBlock)) {
     return { eventLogs: logs, finalBlock: fromBlock };
   }
 

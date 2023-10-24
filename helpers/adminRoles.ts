@@ -79,8 +79,6 @@ export const getCurrentRoleAdmins = async (
       networkConfigs[Number(chainId)].pools[pool].tenderlyBlock ||
       networkLogs.finalBlock;
 
-    console.log('tenderly query from block: ', tenderlyBlock);
-
     const tenderlyLogs = await getLogs({
       provider: tenderlyProvider,
       address: contract,
@@ -88,6 +86,7 @@ export const getCurrentRoleAdmins = async (
       logs: [],
       limit,
       timeout,
+      tenderly: true,
     });
 
     const logs = [...networkLogs.eventLogs, ...tenderlyLogs.eventLogs];

@@ -125,17 +125,17 @@ async function main() {
         );
       } else if (poolKey === Pools.GHO || poolKey === Pools.GHO_TENDERLY) {
         let fromBlock;
-        // if (poolKey === Pools.GHO_TENDERLY) {
-        //   fromBlock =
-        //     (fullJson[network] &&
-        //       fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-        //     pool.tenderlyBlock;
-        // } else {
-        fromBlock =
-          (fullJson[network] &&
-            fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-          pool.ghoBlock;
-        // }
+        if (poolKey === Pools.GHO_TENDERLY) {
+          fromBlock =
+            (fullJson[network] &&
+              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+            pool.tenderlyBlock;
+        } else {
+          fromBlock =
+            (fullJson[network] &&
+              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+            pool.ghoBlock;
+        }
 
         if (fromBlock) {
           console.log(`
@@ -178,8 +178,8 @@ async function main() {
         let fromBlock;
         if (poolKey === Pools.TENDERLY) {
           fromBlock =
-            // (fullJson[network] &&
-            //   fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
+            (fullJson[network] &&
+              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
             pool.tenderlyBlock;
         } else {
           fromBlock =
@@ -187,7 +187,11 @@ async function main() {
               fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
             pool.aclBlock;
         }
-
+        console.log(
+          'from block:',
+          fullJson[network] &&
+            fullJson[network][poolKey]?.roles?.latestBlockNumber,
+        );
         if (fromBlock) {
           console.log(`
           ------------------------------------
