@@ -46,6 +46,7 @@ export enum Pools {
   V2_TENDERLY = 'V2_TENDERLY',
   GHO = 'GHO',
   GHO_TENDERLY = 'GHO_TENDERLY',
+  GOV_V2_TENDERLY = 'GOV_V2_TENDERLY',
 }
 
 export const ghoRoleNames = [
@@ -102,6 +103,12 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.GOV_V2]: {
         permissionsJson: './statics/functionsPermissionsGov.json',
         addressBook: AaveGovernanceV2,
+      },
+      [Pools.GOV_V2_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsGov.json',
+        addressBook: AaveGovernanceV2,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/b5e044bf-ba5a-4239-b6ec-c882c6e75cc2',
       },
       [Pools.V2]: {
         permissionsJson: './statics/functionsPermissionsV2.json',

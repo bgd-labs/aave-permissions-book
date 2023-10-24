@@ -41,6 +41,7 @@ async function main() {
       let govV3 = {} as GovV3;
       if (
         poolKey !== Pools.GOV_V2 &&
+        poolKey !== Pools.GOV_V2_TENDERLY &&
         poolKey !== Pools.SAFETY_MODULE &&
         poolKey !== Pools.SAFETY_MODULE_TENDERLY &&
         poolKey !== Pools.V2_MISC_TENDERLY &&
@@ -69,7 +70,10 @@ async function main() {
             Number(network),
           );
         }
-      } else if (poolKey === Pools.GOV_V2) {
+      } else if (
+        poolKey === Pools.GOV_V2 ||
+        poolKey === Pools.GOV_V2_TENDERLY
+      ) {
         console.log(`
           ------------------------------------
             network: ${network}
@@ -78,7 +82,10 @@ async function main() {
           `);
         poolPermissions = await resolveGovV2Modifiers(
           pool.addressBook,
-          provider,
+
+          poolKey === Pools.GOV_V2_TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
           permissionsJson,
         );
       } else if (

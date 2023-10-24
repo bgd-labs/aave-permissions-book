@@ -84,7 +84,7 @@ export const generateTables = async () => {
       });
 
       // add gov contracts to contractsByAddresses
-      if (pool !== Pools.GOV_V2) {
+      if (pool !== Pools.GOV_V2 && pool !== Pools.GOV_V2_TENDERLY) {
         contractsByAddress = generateContractsByAddress({
           ...poolPermitsByContract.contracts,
           ...poolPermitsByContract.govV3?.contracts,

@@ -47,6 +47,7 @@ These documents contain tables with the following information:
 |  MAINNET |  SAFETY_MODULE_TENDERLY |  [Permissions](./out/MAINNET-SAFETY_MODULE_TENDERLY.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_MISC_TENDERLY |  [Permissions](./out/MAINNET-V2_MISC_TENDERLY.md#contracts) | |--------|--------|--------|
 |  MAINNET |  TENDERLY |  [Permissions](./out/MAINNET-TENDERLY.md#contracts) | |--------|--------|--------|
+|  MAINNET |  GOV_V2_TENDERLY |  [Permissions](./out/MAINNET-GOV_V2_TENDERLY.md#contracts) | |--------|--------|--------|
 |  OPTIMISM |  V3 |  [Permissions](./out/OPTIMISM-V3.md#contracts) | |--------|--------|--------|
 |  OPTIMISM |  TENDERLY |  [Permissions](./out/OPTIMISM-TENDERLY.md#contracts) | |--------|--------|--------|
 |  BINANCE |  V3 |  [Permissions](./out/BINANCE-V3.md#contracts) | |--------|--------|--------|
