@@ -77,6 +77,7 @@ export const networkConfigs: NetworkConfigs = {
       '0x36fEDC70feC3B77CAaf50E6C524FD7e5DFBD629A': 'ParaSwap',
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x00907f9921424583e7ffBfEdf84F92B7B2Be4977': 'GHO aToken',
+      '0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF': 'BGD',
     },
     pools: {
       [Pools.V3]: {
