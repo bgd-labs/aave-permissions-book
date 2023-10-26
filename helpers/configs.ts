@@ -95,10 +95,10 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.GHO_TENDERLY]: {
         permissionsJson: './statics/functionsPermissionsGHO.json',
         ghoBlock: 17698470,
-        tenderlyBlock: 18433206,
+        tenderlyBlock: 18433538,
         addressBook: AaveV3Ethereum,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/6d3909b9-07b9-4e6c-a038-b942b8f6b632',
+          'https://rpc.tenderly.co/fork/d7ca8a3b-35c3-4a42-a064-87cdad757ed8',
       },
       [Pools.GOV_V2]: {
         permissionsJson: './statics/functionsPermissionsGov.json',
@@ -108,7 +108,7 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsGov.json',
         addressBook: AaveGovernanceV2,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/6d3909b9-07b9-4e6c-a038-b942b8f6b632',
+          'https://rpc.tenderly.co/fork/d7ca8a3b-35c3-4a42-a064-87cdad757ed8',
       },
       [Pools.V2]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
@@ -118,7 +118,7 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2Ethereum,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/6d3909b9-07b9-4e6c-a038-b942b8f6b632',
+          'https://rpc.tenderly.co/fork/d7ca8a3b-35c3-4a42-a064-87cdad757ed8',
       },
       [Pools.V2_ARC]: {
         permissionsJson: './statics/functionsPermissionsArc.json',
@@ -128,7 +128,7 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsArc.json',
         addressBook: AaveV2EthereumArc,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/6d3909b9-07b9-4e6c-a038-b942b8f6b632',
+          'https://rpc.tenderly.co/fork/d7ca8a3b-35c3-4a42-a064-87cdad757ed8',
       },
       [Pools.V2_AMM]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
@@ -138,7 +138,7 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV2.json',
         addressBook: AaveV2EthereumAMM,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/6d3909b9-07b9-4e6c-a038-b942b8f6b632',
+          'https://rpc.tenderly.co/fork/d7ca8a3b-35c3-4a42-a064-87cdad757ed8',
       },
       [Pools.SAFETY_MODULE]: {
         permissionsJson: './statics/functionsPermissionsSafety.json',
@@ -148,7 +148,7 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsSafety.json',
         addressBook: AaveSafetyModule,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/6d3909b9-07b9-4e6c-a038-b942b8f6b632',
+          'https://rpc.tenderly.co/fork/d7ca8a3b-35c3-4a42-a064-87cdad757ed8',
       },
       [Pools.V2_MISC]: {
         permissionsJson: './statics/functionsPermissionsV2Misc.json',
@@ -166,7 +166,7 @@ export const networkConfigs: NetworkConfigs = {
           AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
         },
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/6d3909b9-07b9-4e6c-a038-b942b8f6b632',
+          'https://rpc.tenderly.co/fork/d7ca8a3b-35c3-4a42-a064-87cdad757ed8',
       },
       [Pools.TENDERLY]: {
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
@@ -175,9 +175,9 @@ export const networkConfigs: NetworkConfigs = {
         aclBlock: 16291117,
         crossChainControllerBlock: 17684650,
         addressBook: AaveV3Ethereum,
-        tenderlyBlock: 18433206,
+        tenderlyBlock: 18433538,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/6d3909b9-07b9-4e6c-a038-b942b8f6b632',
+          'https://rpc.tenderly.co/fork/d7ca8a3b-35c3-4a42-a064-87cdad757ed8',
       },
     },
   },
