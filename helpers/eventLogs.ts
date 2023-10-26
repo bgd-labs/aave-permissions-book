@@ -63,17 +63,39 @@ export const getLogs = async ({
   }
 
   // get All logs of stream creation
+
+  // Quick patch, to not add nulls into the query, as not clear how support for this is working on tenderly.
+  // For now we use only Topic 0 or no topics so should be fine
+  const topics = [];
+  if (topic0) {
+    topics.push(topic0);
+  }
+  if (topic1) {
+    topics.push(topic1);
+  }
+  if (topic2) {
+    topics.push(topic2);
+  }
+  if (topic3) {
+    topics.push(topic3);
+  }
   const logEventFilter = {
     address,
-    topics: [topic0 ?? null, topic1 ?? null, topic2 ?? null, topic3 ?? null],
+    topics, //: [topic0 ?? null, topic1 ?? null, topic2 ?? null, topic3 ?? null],
     fromBlock,
     toBlock,
   };
+
+  console.log('event filter', logEventFilter);
   try {
     const logEvents = await provider.getLogs(logEventFilter);
     logs.push(...logEvents);
 
-    console.log(`from: ${fromBlock} to: ${toBlock} logs: ${logEvents.length}`);
+    console.log(
+      `${tenderly ? 'tenderly' : ''} from: ${fromBlock} to: ${toBlock} logs: ${
+        logEvents.length
+      }`,
+    );
 
     return await getLogs({
       provider,
