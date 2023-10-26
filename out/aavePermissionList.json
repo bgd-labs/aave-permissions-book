@@ -11991,7 +11991,7 @@
           "BRIDGE": [],
           "FLASH_BORROWER": []
         },
-        "latestBlockNumber": 36946679
+        "latestBlockNumber": 36947445
       },
       "govV3": {
         "contracts": {
@@ -12154,7 +12154,16 @@
               },
               {
                 "modifier": "onlyApprovedSenders",
-                "addresses": [],
+                "addresses": [
+                  {
+                    "address": "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F",
+                    "owners": []
+                  },
+                  {
+                    "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                    "owners": []
+                  }
+                ],
                 "functions": [
                   "forwardMessage"
                 ]
@@ -12183,8 +12192,11 @@
             "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
           }
         },
-        "senders": [],
-        "latestCCCBlockNumber": 36946687
+        "senders": [
+          "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F",
+          "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6"
+        ],
+        "latestCCCBlockNumber": 36947859
       }
     },
     "V2": {
@@ -13744,7 +13756,12 @@
               },
               {
                 "modifier": "onlyApprovedSenders",
-                "addresses": [],
+                "addresses": [
+                  {
+                    "address": "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F",
+                    "owners": []
+                  }
+                ],
                 "functions": [
                   "forwardMessage"
                 ]
@@ -13773,7 +13790,9 @@
             "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
           }
         },
-        "senders": [],
+        "senders": [
+          "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
+        ],
         "latestCCCBlockNumber": 36945912
       }
     }

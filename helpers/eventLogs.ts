@@ -86,7 +86,6 @@ export const getLogs = async ({
     toBlock,
   };
 
-  console.log('event filter', logEventFilter);
   try {
     const logEvents = await provider.getLogs(logEventFilter);
     logs.push(...logEvents);
