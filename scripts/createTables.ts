@@ -67,6 +67,8 @@ export const generateTables = async () => {
         ? 'BASE'
         : network == '56'
         ? 'BINANCE'
+        : network == '100'
+        ? 'GNOSIS'
         : ChainIdToNetwork[Number(network)].toUpperCase();
     const networkPermits = aavePermissionsList[network];
     const addressesNames = networkConfigs[network].addressesNames || {};
