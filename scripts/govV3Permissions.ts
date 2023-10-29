@@ -33,82 +33,78 @@ export const resolveGovV3Modifiers = async (
     addressBook.GOVERNANCE &&
     addressBook.GOVERNANCE !== constants.AddressZero
   ) {
-    if (tenderly) {
-      console.log('Gov tenderly', tenderly);
-      const shortExecutor = AaveGovernanceV2.SHORT_EXECUTOR;
+    const shortExecutor = AaveGovernanceV2.SHORT_EXECUTOR;
 
-      obj['AaveGovernanceV3'] = {
-        address: addressBook.GOVERNANCE,
-        modifiers: [
-          {
-            modifier: 'onlyShortExecutor',
-            addresses: [
-              {
-                address: AaveGovernanceV2.SHORT_EXECUTOR,
-                owners: await getSafeOwners(
-                  provider,
-                  AaveGovernanceV2.SHORT_EXECUTOR,
-                ),
-              },
-            ],
-            functions: roles['AaveGovernanceV3']['onlyOwner'],
-          },
-        ],
-      };
-    } else {
-      const govContractGuardian = new ethers.Contract(
-        addressBook.GOVERNANCE,
-        IWithGuardian_ABI,
-        provider,
-      );
-      const govContractOwner = new ethers.Contract(
-        addressBook.GOVERNANCE,
-        IOwnable_ABI,
-        provider,
-      );
-      const govGuardian = await govContractGuardian.guardian();
-      const govOwner = await govContractOwner.owner();
-
-      obj['AaveGovernanceV3'] = {
-        address: addressBook.GOVERNANCE,
-        modifiers: [
-          {
-            modifier: 'onlyOwner',
-            addresses: [
-              {
-                address: govOwner,
-                owners: await getSafeOwners(provider, govOwner),
-              },
-            ],
-            functions: roles['AaveGovernanceV3']['onlyOwner'],
-          },
-          {
-            modifier: 'onlyGuardian',
-            addresses: [
-              {
-                address: govGuardian,
-                owners: await getSafeOwners(provider, govGuardian),
-              },
-            ],
-            functions: roles['AaveGovernanceV3']['onlyGuardian'],
-          },
-          {
-            modifier: 'onlyOwnerOrGuardian',
-            addresses: [
-              {
-                address: govGuardian,
-                owners: await getSafeOwners(provider, govGuardian),
-              },
-              {
-                address: govOwner,
-                owners: await getSafeOwners(provider, govOwner),
-              },
-            ],
-            functions: roles['AaveGovernanceV3']['onlyOwnerOrGuardian'],
-          },
-        ],
-      };
-    }
+    obj['AaveGovernanceV3'] = {
+      address: addressBook.GOVERNANCE,
+      modifiers: [
+        {
+          modifier: 'onlyShortExecutor',
+          addresses: [
+            {
+              address: AaveGovernanceV2.SHORT_EXECUTOR,
+              owners: await getSafeOwners(
+                provider,
+                AaveGovernanceV2.SHORT_EXECUTOR,
+              ),
+            },
+          ],
+          functions: roles['AaveGovernanceV3']['onlyOwner'],
+        },
+      ],
+    };
+    // const govContractGuardian = new ethers.Contract(
+    //   addressBook.GOVERNANCE,
+    //   IWithGuardian_ABI,
+    //   provider,
+    // );
+    // const govContractOwner = new ethers.Contract(
+    //   addressBook.GOVERNANCE,
+    //   IOwnable_ABI,
+    //   provider,
+    // );
+    // const govGuardian = await govContractGuardian.guardian();
+    // const govOwner = await govContractOwner.owner();
+    //
+    // obj['AaveGovernanceV3'] = {
+    //   address: addressBook.GOVERNANCE,
+    //   modifiers: [
+    //     {
+    //       modifier: 'onlyOwner',
+    //       addresses: [
+    //         {
+    //           address: govOwner,
+    //           owners: await getSafeOwners(provider, govOwner),
+    //         },
+    //       ],
+    //       functions: roles['AaveGovernanceV3']['onlyOwner'],
+    //     },
+    //     {
+    //       modifier: 'onlyGuardian',
+    //       addresses: [
+    //         {
+    //           address: govGuardian,
+    //           owners: await getSafeOwners(provider, govGuardian),
+    //         },
+    //       ],
+    //       functions: roles['AaveGovernanceV3']['onlyGuardian'],
+    //     },
+    //     {
+    //       modifier: 'onlyOwnerOrGuardian',
+    //       addresses: [
+    //         {
+    //           address: govGuardian,
+    //           owners: await getSafeOwners(provider, govGuardian),
+    //         },
+    //         {
+    //           address: govOwner,
+    //           owners: await getSafeOwners(provider, govOwner),
+    //         },
+    //       ],
+    //       functions: roles['AaveGovernanceV3']['onlyOwnerOrGuardian'],
+    //     },
+    //   ],
+    // };
   }
 
   if (
