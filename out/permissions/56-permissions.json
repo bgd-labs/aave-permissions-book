@@ -1,0 +1,233 @@
+{
+  "V3": {
+    "contracts": {},
+    "roles": {},
+    "govV3": {
+      "contracts": {
+        "PayloadsController": {
+          "address": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "updateGasLimit",
+                "addVotingPortals",
+                "removeVotingPortals",
+                "setVotingConfigs",
+                "setPowerStrategy"
+              ]
+            },
+            {
+              "modifier": "onlyGuardian",
+              "addresses": [
+                {
+                  "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "rescueVotingPortal"
+              ]
+            },
+            {
+              "modifier": "onlyOwnerOrGuardian",
+              "addresses": [
+                {
+                  "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                  "owners": []
+                },
+                {
+                  "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "updateGuardian"
+              ]
+            },
+            {
+              "modifier": "onlyRescueGuardian",
+              "addresses": [
+                {
+                  "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                  "owners": []
+                }
+              ]
+            }
+          ],
+          "proxyAdmin": "0x39ebffc7679c62dfcc4a3e2c09bcb0be255ae63c"
+        },
+        "Executor_lvl1": {
+          "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "executeTransaction"
+              ]
+            }
+          ]
+        },
+        "BridgeAdapter0": {
+          "address": "0xFF1137243698CaA18EE364Cc966CF0e02A4e6327",
+          "modifiers": [
+            {
+              "modifier": "trustedRemote",
+              "addresses": [
+                {
+                  "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "receiveMessage"
+              ]
+            }
+          ]
+        },
+        "BridgeAdapter1": {
+          "address": "0x118DFD5418890c0332042ab05173Db4A2C1d283c",
+          "modifiers": [
+            {
+              "modifier": "trustedRemote",
+              "addresses": [
+                {
+                  "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "receiveMessage"
+              ]
+            }
+          ]
+        },
+        "BridgeAdapter2": {
+          "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+          "modifiers": [
+            {
+              "modifier": "trustedRemote",
+              "addresses": [
+                {
+                  "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "receiveMessage"
+              ]
+            }
+          ]
+        },
+        "CrossChainController": {
+          "address": "0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "approveSenders",
+                "removeSenders",
+                "enableBridgeAdapters",
+                "disableBridgeAdapters",
+                "updateMessagesValidityTimestamp",
+                "allowReceiverBridgeAdapters",
+                "disallowReceiverBridgeAdapters"
+              ]
+            },
+            {
+              "modifier": "onlyGuardian",
+              "addresses": [
+                {
+                  "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "solveEmergency"
+              ]
+            },
+            {
+              "modifier": "onlyOwnerOrGuardian",
+              "addresses": [
+                {
+                  "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                  "owners": []
+                },
+                {
+                  "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "retryEnvelope",
+                "retryTransaction",
+                "updateGuardian"
+              ]
+            },
+            {
+              "modifier": "onlyRescueGuardian",
+              "addresses": [
+                {
+                  "address": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
+            },
+            {
+              "modifier": "onlyApprovedSenders",
+              "addresses": [],
+              "functions": [
+                "forwardMessage"
+              ]
+            },
+            {
+              "modifier": "onlyApprovedBridges",
+              "addresses": [
+                {
+                  "address": "0xFF1137243698CaA18EE364Cc966CF0e02A4e6327",
+                  "owners": []
+                },
+                {
+                  "address": "0x118DFD5418890c0332042ab05173Db4A2C1d283c",
+                  "owners": []
+                },
+                {
+                  "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "receiveCrossChainMessage"
+              ]
+            }
+          ],
+          "proxyAdmin": "0x39ebffc7679c62dfcc4a3e2c09bcb0be255ae63c"
+        }
+      },
+      "senders": [],
+      "latestCCCBlockNumber": 31573650
+    }
+  }
+}
