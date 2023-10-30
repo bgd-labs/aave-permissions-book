@@ -428,6 +428,14 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: AaveV3Gnosis,
         governanceAddressBook: GovernanceV3Gnosis,
       },
+      [Pools.TENDERLY]: {
+        aclBlock: 30293056,
+        crossChainControllerBlock: 30373982,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: AaveV3Gnosis,
+        governanceAddressBook: GovernanceV3Gnosis,
+      },
     },
   },
 };
