@@ -183,7 +183,7 @@ async function main() {
           fromBlock =
             (fullJson[network] &&
               fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-            pool.tenderlyBlock;
+            pool.aclBlock;
         } else {
           fromBlock =
             (fullJson[network] &&
@@ -235,7 +235,7 @@ async function main() {
               cccFromBlock =
                 (fullJson[network] &&
                   fullJson[network][poolKey]?.govV3?.latestCCCBlockNumber) ||
-                pool.tenderlyBlock;
+                pool.crossChainControllerBlock;
             } else {
               cccFromBlock =
                 (fullJson[network] &&

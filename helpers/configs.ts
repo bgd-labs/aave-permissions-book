@@ -435,6 +435,9 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: AaveV3Gnosis,
         governanceAddressBook: GovernanceV3Gnosis,
+        tenderlyBlock: 30706655,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/7848428f-9ece-44f6-8958-0eae971c822b',
       },
     },
   },
