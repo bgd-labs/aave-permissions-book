@@ -1,6 +1,6 @@
 import { ethers, providers, utils } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { Pools } from './configs.js';
+import { networkConfigs, Pools } from './configs.js';
 import { getLogs } from './eventLogs.js';
 import { getLimit } from './limits.js';
 
@@ -25,9 +25,10 @@ export const getCCCSendersAndAdapters = async (
   fromBlock: number,
   addressBook: any,
   chainId: ChainId | string,
+  pool: Pools,
 ) => {
   let timeout = undefined;
-  const limit = getLimit(chainId);
+  let limit = getLimit(chainId);
 
   let eventLogs: providers.Log[] = [];
   let finalBlock: number = 0;
@@ -35,17 +36,56 @@ export const getCCCSendersAndAdapters = async (
   // get sender updated event
   const senderUpdatedTopic0 = utils.id('SenderUpdated(address,bool)');
 
-  const logs = await getLogs({
-    provider,
-    address: addressBook.CROSS_CHAIN_CONTROLLER,
-    fromBlock,
-    logs: [],
-    limit,
-    timeout,
-    topic0: senderUpdatedTopic0,
-  });
-  eventLogs = logs.eventLogs;
-  finalBlock = logs.finalBlock;
+  if (pool === Pools.TENDERLY || pool === Pools.GHO_TENDERLY) {
+    const networkLogs = await getLogs({
+      provider,
+      address: addressBook.CROSS_CHAIN_CONTROLLER,
+      fromBlock,
+      logs: [],
+      limit,
+      timeout,
+      maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock,
+      topic0: senderUpdatedTopic0,
+    });
+    const tenderlyProvider = new providers.StaticJsonRpcProvider(
+      networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl,
+    );
+
+    limit = 999;
+    timeout = 10000;
+
+    const tenderlyBlock =
+      networkConfigs[Number(chainId)].pools[pool].tenderlyBlock ||
+      networkLogs.finalBlock;
+
+    const tenderlyLogs = await getLogs({
+      provider: tenderlyProvider,
+      address: addressBook.CROSS_CHAIN_CONTROLLER,
+      fromBlock: tenderlyBlock,
+      logs: [],
+      limit,
+      timeout,
+      tenderly: true,
+      topic0: senderUpdatedTopic0,
+    });
+
+    const logs = [...networkLogs.eventLogs, ...tenderlyLogs.eventLogs];
+
+    eventLogs = logs;
+    finalBlock = networkLogs.finalBlock;
+  } else {
+    const logs = await getLogs({
+      provider,
+      address: addressBook.CROSS_CHAIN_CONTROLLER,
+      fromBlock,
+      logs: [],
+      limit,
+      timeout,
+      topic0: senderUpdatedTopic0,
+    });
+    eventLogs = logs.eventLogs;
+    finalBlock = logs.finalBlock;
+  }
 
   const senders = new Set<string>(oldSenders);
   // const bridgeAdapters = new Set<string>(oldBridgeAdapters);

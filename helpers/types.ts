@@ -1,3 +1,5 @@
+import { Pools } from './configs.js';
+
 export type ContractsByAddress = Record<string, string>;
 export type PoolGuardians = Record<string, string[]>;
 
@@ -49,6 +51,7 @@ export type PoolConfigs = {
 
   tenderlyBlock?: number;
   tenderlyRpcUrl?: string;
+  tenderlyBasePool?: string;
 
   ghoBlock?: number;
 

@@ -20,6 +20,7 @@ import { resolveV2MiscModifiers } from './v2MiscPermissions.js';
 import { getCCCSendersAndAdapters } from '../helpers/crossChainControllerLogs.js';
 import { resolveGovV3Modifiers } from './govV3Permissions.js';
 import { resolveGHOModifiers } from './ghoPermissions.js';
+import { overwriteBaseTenderlyPool } from '../helpers/jsonParsers.js';
 
 async function main() {
   let fullJson: FullPermissions = getAllPermissionsJson();
@@ -131,11 +132,13 @@ async function main() {
         );
       } else if (poolKey === Pools.GHO || poolKey === Pools.GHO_TENDERLY) {
         let fromBlock;
-        if (poolKey === Pools.GHO_TENDERLY) {
-          fromBlock =
-            (fullJson[network] &&
-              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-            pool.tenderlyBlock;
+        if (pool.tenderlyBasePool) {
+          await overwriteBaseTenderlyPool(
+            poolKey,
+            network,
+            pool.tenderlyBasePool,
+          );
+          fromBlock = pool.tenderlyBlock;
         } else {
           fromBlock =
             (fullJson[network] &&
@@ -179,11 +182,13 @@ async function main() {
         }
       } else if (pool.aclBlock) {
         let fromBlock;
-        if (poolKey === Pools.TENDERLY) {
-          fromBlock =
-            (fullJson[network] &&
-              fullJson[network][poolKey]?.roles?.latestBlockNumber) ||
-            pool.tenderlyBlock;
+        if (pool.tenderlyBasePool) {
+          await overwriteBaseTenderlyPool(
+            poolKey,
+            network,
+            pool.tenderlyBasePool,
+          );
+          fromBlock = pool.tenderlyBlock;
         } else {
           fromBlock =
             (fullJson[network] &&
@@ -208,9 +213,7 @@ async function main() {
                 fullJson[network][poolKey]?.roles?.role) ||
                 ({} as Record<string, string[]>),
               fromBlock,
-              network === 'tenderly-mainnet'
-                ? 'tenderly-mainnet'
-                : Number(network),
+              Number(network),
               Pools[poolKey as keyof typeof Pools],
               protocolRoleNames,
               pool.addressBook.ACL_MANAGER,
@@ -232,40 +235,45 @@ async function main() {
             pool.crossChainPermissionsJson &&
             pool.governanceAddressBook
           ) {
-            const cccFromBlock =
-              (fullJson[network] &&
-                fullJson[network][poolKey]?.govV3?.latestCCCBlockNumber) ||
-              pool.crossChainControllerBlock;
-
-            const { senders, latestCCCBlockNumber } =
-              await getCCCSendersAndAdapters(
-                provider,
+            let cccFromBlock;
+            if (pool.tenderlyBasePool) {
+              cccFromBlock = pool.tenderlyBlock;
+            } else {
+              cccFromBlock =
                 (fullJson[network] &&
-                  fullJson[network][poolKey] &&
-                  fullJson[network][poolKey]?.govV3?.senders) ||
-                  [],
-                cccFromBlock,
-                pool.governanceAddressBook,
-                network === 'tenderly-mainnet'
-                  ? 'tenderly-mainnet'
-                  : Number(network),
-              );
+                  fullJson[network][poolKey]?.govV3?.latestCCCBlockNumber) ||
+                pool.crossChainControllerBlock;
+            }
+            if (cccFromBlock) {
+              const { senders, latestCCCBlockNumber } =
+                await getCCCSendersAndAdapters(
+                  provider,
+                  (fullJson[network] &&
+                    fullJson[network][poolKey] &&
+                    fullJson[network][poolKey]?.govV3?.senders) ||
+                    [],
+                  cccFromBlock,
+                  pool.governanceAddressBook,
+                  Number(network),
+                  Pools[poolKey as keyof typeof Pools],
+                );
 
-            const permissionsGovV3Json = getStaticPermissionsJson(
-              pool.crossChainPermissionsJson,
-            );
-            govV3.contracts = await resolveGovV3Modifiers(
-              pool.governanceAddressBook,
-              poolKey === Pools.TENDERLY
-                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-                : provider,
-              permissionsGovV3Json,
-              Number(network),
-              senders,
-              poolKey === Pools.TENDERLY,
-            );
-            govV3.senders = senders;
-            govV3.latestCCCBlockNumber = latestCCCBlockNumber;
+              const permissionsGovV3Json = getStaticPermissionsJson(
+                pool.crossChainPermissionsJson,
+              );
+              govV3.contracts = await resolveGovV3Modifiers(
+                pool.governanceAddressBook,
+                poolKey === Pools.TENDERLY
+                  ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+                  : provider,
+                permissionsGovV3Json,
+                Number(network),
+                senders,
+                poolKey === Pools.TENDERLY,
+              );
+              govV3.senders = senders;
+              govV3.latestCCCBlockNumber = latestCCCBlockNumber;
+            }
           }
         }
       } else {

@@ -1,4 +1,5 @@
 import { Contracts, PermissionsJson } from './types.js';
+import { getAllPermissionsJson, saveJson } from './fileSystem.js';
 
 export type MethodsByModifier = Record<string, Record<string, string[]>>;
 
@@ -31,4 +32,22 @@ export const generateContractsByAddress = (
   });
 
   return contractsByAddress;
+};
+
+export const overwriteBaseTenderlyPool = async (
+  destinationPoolKey: string,
+  network: string,
+  basePoolKey: string,
+) => {
+  const permissions = getAllPermissionsJson();
+
+  const basePoolPermissions = permissions[network][basePoolKey];
+
+  // copy base pool to destionation pool
+  permissions[network][destinationPoolKey] = basePoolPermissions;
+
+  saveJson(
+    './out/aavePermissionList.json',
+    JSON.stringify(permissions, null, 2),
+  );
 };
