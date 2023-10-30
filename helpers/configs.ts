@@ -18,6 +18,7 @@ import {
   AaveV3Polygon,
   AaveV3Metis,
   AaveV3Base,
+  AaveV3Gnosis,
   GovernanceV3Ethereum,
   GovernanceV3Polygon,
   GovernanceV3Avalanche,
@@ -26,6 +27,7 @@ import {
   GovernanceV3BNB,
   GovernanceV3Base,
   GovernanceV3Metis,
+  GovernanceV3Gnosis,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -422,6 +424,35 @@ export const networkConfigs: NetworkConfigs = {
         tenderlyBlock: 5772374,
         tenderlyRpcUrl:
           'https://rpc.tenderly.co/fork/5de70ecb-f606-409f-83d5-bea7764e43a5',
+      },
+    },
+  },
+  ['100']: {
+    rpcUrl: process.env.RPC_GNOSIS,
+    explorer: 'https://gnosisscan.io/',
+    addressesNames: {
+      '0xF163b8698821cefbD33Cf449764d69Ea445cE23D': 'Aave Guardian Gnosis',
+      '0xcb8a3E864D12190eD2b03cbA0833b15f2c314Ed8': 'BGD',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 30293056,
+        crossChainControllerBlock: 30373982,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: AaveV3Gnosis,
+        governanceAddressBook: GovernanceV3Gnosis,
+      },
+      [Pools.TENDERLY]: {
+        aclBlock: 30293056,
+        crossChainControllerBlock: 30373982,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: AaveV3Gnosis,
+        governanceAddressBook: GovernanceV3Gnosis,
+        tenderlyBlock: 30706655,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/7848428f-9ece-44f6-8958-0eae971c822b',
       },
     },
   },
