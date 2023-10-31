@@ -25,6 +25,7 @@ export type GovV3 = {
 export type AddressInfo = {
   address: string;
   owners: string[];
+  chain?: string;
 };
 export type Roles = {
   latestBlockNumber: number;

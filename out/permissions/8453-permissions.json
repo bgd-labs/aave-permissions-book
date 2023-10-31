@@ -8,7 +8,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
             ],
@@ -54,10 +54,6 @@
             "modifier": "onlyPoolAdmin",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
-                "owners": []
-              },
-              {
                 "address": "0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A",
                 "owners": [
                   "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
@@ -71,6 +67,10 @@
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
+              },
+              {
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
+                "owners": []
               }
             ],
             "functions": [
@@ -95,10 +95,6 @@
             "modifier": "onlyPoolAdmin",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
-                "owners": []
-              },
-              {
                 "address": "0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A",
                 "owners": [
                   "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
@@ -112,6 +108,10 @@
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
+              },
+              {
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
+                "owners": []
               }
             ],
             "functions": [
@@ -153,10 +153,6 @@
             "modifier": "onlyAssetListingOrPoolAdmins",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
-                "owners": []
-              },
-              {
                 "address": "0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A",
                 "owners": [
                   "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
@@ -170,6 +166,10 @@
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
+              },
+              {
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
+                "owners": []
               }
             ],
             "functions": [
@@ -180,10 +180,6 @@
             "modifier": "onlyRiskOrPoolAdmins",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
-                "owners": []
-              },
-              {
                 "address": "0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A",
                 "owners": [
                   "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
@@ -197,6 +193,10 @@
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
+              },
+              {
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
+                "owners": []
               },
               {
                 "address": "0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6",
@@ -227,10 +227,6 @@
             "modifier": "onlyEmergencyOrPoolAdmin",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
-                "owners": []
-              },
-              {
                 "address": "0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A",
                 "owners": [
                   "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
@@ -244,6 +240,10 @@
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
+              },
+              {
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
+                "owners": []
               }
             ],
             "functions": [
@@ -259,10 +259,6 @@
             "modifier": "onlyAssetListingOrPoolAdmins",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
-                "owners": []
-              },
-              {
                 "address": "0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A",
                 "owners": [
                   "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
@@ -276,6 +272,10 @@
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
+              },
+              {
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
+                "owners": []
               }
             ],
             "functions": [
@@ -292,7 +292,7 @@
             "modifier": "onlyFundsAdmin",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
             ],
@@ -311,7 +311,7 @@
                 "owners": []
               },
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
             ],
@@ -350,7 +350,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
             ],
@@ -402,7 +402,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
             ],
@@ -421,7 +421,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
             ],
@@ -444,7 +444,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
             ],
@@ -463,7 +463,7 @@
             "modifier": "setRoleAdmin",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
             ]
@@ -532,11 +532,11 @@
     "roles": {
       "role": {
         "DEFAULT_ADMIN": [
-          "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45"
+          "0x9390B1735def18560c509E2d0bc090E9d6BA257a"
         ],
         "POOL_ADMIN": [
-          "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
-          "0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A"
+          "0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A",
+          "0x9390B1735def18560c509E2d0bc090E9d6BA257a"
         ],
         "EMERGENCY_ADMIN": [
           "0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A"
@@ -548,7 +548,7 @@
           "0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6"
         ]
       },
-      "latestBlockNumber": 5946412
+      "latestBlockNumber": 5986594
     },
     "govV3": {
       "contracts": {
@@ -658,7 +658,11 @@
               "addresses": [
                 {
                   "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
-                  "owners": []
+                  "owners": [],
+                  "chain": {
+                    "type": "BigNumber",
+                    "hex": "0x01"
+                  }
                 }
               ],
               "functions": [
@@ -763,7 +767,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 5946417
+      "latestCCCBlockNumber": 5986602
     }
   },
   "TENDERLY": {

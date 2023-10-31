@@ -88,7 +88,11 @@
               "addresses": [
                 {
                   "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
-                  "owners": []
+                  "owners": [],
+                  "chain": {
+                    "type": "BigNumber",
+                    "hex": "0x01"
+                  }
                 }
               ],
               "functions": [
@@ -105,7 +109,11 @@
               "addresses": [
                 {
                   "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
-                  "owners": []
+                  "owners": [],
+                  "chain": {
+                    "type": "BigNumber",
+                    "hex": "0x01"
+                  }
                 }
               ],
               "functions": [
@@ -122,7 +130,11 @@
               "addresses": [
                 {
                   "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
-                  "owners": []
+                  "owners": [],
+                  "chain": {
+                    "type": "BigNumber",
+                    "hex": "0x01"
+                  }
                 }
               ],
               "functions": [
@@ -227,7 +239,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 31573650
+      "latestCCCBlockNumber": 31573850
     }
   }
 }

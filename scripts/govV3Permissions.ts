@@ -411,7 +411,7 @@ export const resolveGovV3Modifiers = async (
     const receiverBridgesArray = Array.from(receiverBridges);
     for (let i = 0; i < receiverBridgesArray.length; i++) {
       // get trusted remotes
-      const trustedRemotes: Set<string> = new Set();
+      const trustedRemotes: { address: string; chain: string }[] = [];
       for (let i = 0; i < supportedChains.length; i++) {
         const bridgeAdapterContract = new ethers.Contract(
           receiverBridgesArray[i],
@@ -422,7 +422,11 @@ export const resolveGovV3Modifiers = async (
           await bridgeAdapterContract.getTrustedRemoteByChainId(
             supportedChains[i],
           );
-        trustedRemotes.add(trustedRemote);
+
+        trustedRemotes.push({
+          address: trustedRemote,
+          chain: supportedChains[i],
+        });
       }
 
       obj[`BridgeAdapter${i}`] = {
@@ -433,8 +437,9 @@ export const resolveGovV3Modifiers = async (
             addresses: [
               ...Array.from(trustedRemotes).map((trustedRemote) => {
                 return {
-                  address: trustedRemote,
+                  address: trustedRemote.address,
                   owners: [],
+                  chain: trustedRemote.chain,
                 };
               }),
             ],

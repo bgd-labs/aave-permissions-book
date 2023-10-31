@@ -15,7 +15,7 @@ export const getAllPermissionsJson = (): FullPermissions => {
   }
 };
 
-export const getPermissionsByNetwork = (network: string): Pool => {
+export const getPermissionsByNetwork = (network: string | number): Pool => {
   try {
     const file = fs.readFileSync(`out/permissions/${network}-permissions.json`);
     // @ts-ignore
