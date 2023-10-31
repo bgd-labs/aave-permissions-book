@@ -86,15 +86,11 @@ export const generateTable = (network: string, pool: string): string => {
   // create pool table
   readmeByNetwork += `## ${pool} \n`;
 
-  let contractsByAddress = generateContractsByAddress({
-    ...poolPermitsByContract.contracts,
-  });
+  let contractsByAddress: Record<string, string> = {};
 
   // add gov contracts to contractsByAddresses
   if (pool !== Pools.GOV_V2 && pool !== Pools.GOV_V2_TENDERLY) {
     contractsByAddress = generateContractsByAddress({
-      // ...poolPermitsByContract.contracts,
-      ...poolPermitsByContract.govV3?.contracts,
       ...mainnetPermissions[Pools.GOV_V2].contracts,
     });
   }
@@ -105,40 +101,7 @@ export const generateTable = (network: string, pool: string): string => {
     ...getPermissionsByNetwork(network)['V3'].contracts,
   });
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
-
-  // if (network === ChainId.mainnet.toString()) {
-  //   const v3Contracts = generateContractsByAddress({
-  //     ...mainnetPermissions['V3'].govV3?.contracts,
-  //     ...mainnetPermissions['V3'].contracts,
-  //   });
-  //   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
-  // } else if (network === ChainId.polygon.toString()) {
-  //   const v3Contracts = generateContractsByAddress({
-  //     ...getPermissionsByNetwork(ChainId.polygon)['V3'].govV3?.contracts,
-  //   });
-  //   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
-  // } else if (network === ChainId.avalanche.toString()) {
-  //   const v3Contracts = generateContractsByAddress({
-  //     ...getPermissionsByNetwork(ChainId.avalanche)['V3'].govV3?.contracts,
-  //   });
-  //   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
-  // } else if (network === ChainId.arbitrum_one.toString()) {
-  //   const v3Contracts = generateContractsByAddress({
-  //     ...getPermissionsByNetwork(ChainId.arbitrum_one)['V3'].govV3?.contracts,
-  //   });
-  //   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
-  // } else if (network === ChainId.optimism.toString()) {
-  //   const v3Contracts = generateContractsByAddress({
-  //     ...getPermissionsByNetwork(ChainId.optimism)['V3'].govV3?.contracts,
-  //   });
-  //   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
-  // } else if (network === '8453') {
-  //   const v3Contracts = generateContractsByAddress({
-  //     ...getPermissionsByNetwork('8453')['V3'].govV3?.contracts,
-  //   });
-  //   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
-  // }
-
+  console.log(contractsByAddress);
   let contractTable = `### contracts\n`;
   const contractsModifiersHeaderTitles = [
     'contract',
