@@ -8,19 +8,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -65,19 +54,8 @@
             "modifier": "onlyPoolAdmin",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -102,19 +80,8 @@
             "modifier": "onlyPoolAdmin",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -156,19 +123,8 @@
             "modifier": "onlyAssetListingOrPoolAdmins",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -179,19 +135,8 @@
             "modifier": "onlyRiskOrPoolAdmins",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               },
               {
                 "address": "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc",
@@ -225,6 +170,10 @@
             "modifier": "onlyEmergencyOrPoolAdmin",
             "addresses": [
               {
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
+              },
+              {
                 "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
                 "owners": [
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
@@ -253,19 +202,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -282,19 +220,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -312,19 +239,8 @@
             "modifier": "onlyAssetListingOrPoolAdmins",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -341,19 +257,8 @@
             "modifier": "onlyFundsAdmin",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -371,19 +276,8 @@
                 "owners": []
               },
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -422,19 +316,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -451,19 +334,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -479,19 +351,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -507,19 +368,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -537,19 +387,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -571,19 +410,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -601,19 +429,8 @@
             "modifier": "setRoleAdmin",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ]
           }
@@ -623,10 +440,10 @@
     "roles": {
       "role": {
         "DEFAULT_ADMIN": [
-          "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
+          "0x3C06dce358add17aAf230f2234bCCC4afd50d090"
         ],
         "POOL_ADMIN": [
-          "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
+          "0x3C06dce358add17aAf230f2234bCCC4afd50d090"
         ],
         "EMERGENCY_ADMIN": [
           "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
@@ -639,7 +456,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 37161457
+      "latestBlockNumber": 37191104
     },
     "govV3": {
       "contracts": {
@@ -932,7 +749,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 37161463
+      "latestCCCBlockNumber": 37191111
     }
   },
   "V2": {
@@ -944,19 +761,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -1003,19 +809,8 @@
             "modifier": "onlyPoolAdmin",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -1060,19 +855,8 @@
             "modifier": "onlyPoolOrProofOfReserveAdmin",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               },
               {
                 "address": "0x7fc3FCb14eF04A48Bb0c12f0c39CD74C249c37d8",
@@ -1094,19 +878,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -1123,19 +896,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -1153,19 +915,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -1182,19 +933,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -1210,19 +950,8 @@
             "modifier": "onlyFundsAdmin",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -1240,19 +969,8 @@
                 "owners": []
               },
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -1270,19 +988,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -1300,19 +1007,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [
@@ -1363,19 +1059,8 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                "owners": []
               }
             ],
             "functions": [

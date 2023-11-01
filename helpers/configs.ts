@@ -284,7 +284,7 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: AaveV2Avalanche,
         tenderlyBasePool: Pools.V2,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/40da20b7-d9d9-47a1-8346-4d02bcdd43aa',
+          'https://rpc.tenderly.co/fork/fdb8a0d2-be10-4d2f-a221-32c4441d010c',
       },
       [Pools.TENDERLY]: {
         aclBlock: 11970456,
@@ -296,7 +296,7 @@ export const networkConfigs: NetworkConfigs = {
         tenderlyBasePool: Pools.V3,
         tenderlyBlock: 36949744,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/40da20b7-d9d9-47a1-8346-4d02bcdd43aa',
+          'https://rpc.tenderly.co/fork/fdb8a0d2-be10-4d2f-a221-32c4441d010c',
       },
     },
   },
