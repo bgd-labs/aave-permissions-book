@@ -374,7 +374,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 30756296
+      "latestBlockNumber": 30758709
     },
     "govV3": {
       "contracts": {
@@ -634,7 +634,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 30756298
+      "latestCCCBlockNumber": 30758711
     }
   },
   "TENDERLY": {

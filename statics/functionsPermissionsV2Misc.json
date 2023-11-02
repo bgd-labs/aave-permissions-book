@@ -20,5 +20,56 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "EcosystemReserve",
+    "proxyAdmin": true,
+    "functions": [
+      {
+        "name": "approve",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "transfer",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "createStream",
+        "roles": ["onlyFundsAdmin"]
+      },
+      {
+        "name": "withdrawFromStream",
+        "roles": ["onlyAdminOrRecipient"]
+      },
+      {
+        "name": "cancelStream",
+        "roles": ["onlyAdminOrRecipient"]
+      }
+    ]
+  },
+  {
+    "contract": "EcosystemReserveController",
+    "functions": [
+      {
+        "name": "approve",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "transfer",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "createStream",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "withdrawFromStream",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "cancelStream",
+        "roles": ["onlyOwner"]
+      }
+    ]
   }
 ]
