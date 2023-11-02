@@ -439,7 +439,7 @@ export const resolveGovV3Modifiers = async (
                 return {
                   address: trustedRemote.address,
                   owners: [],
-                  chain: trustedRemote.chain,
+                  chain: trustedRemote.chain.toString(),
                 };
               }),
             ],

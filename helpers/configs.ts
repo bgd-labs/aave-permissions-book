@@ -67,6 +67,19 @@ export const protocolRoleNames = [
   'RISK_ADMIN',
 ];
 
+export const getNetowkName: Record<string | number, string> = {
+  1: 'Eth',
+  100: 'Gnosis',
+  137: 'Pol',
+  43114: 'Avax',
+  42161: 'Arb',
+  250: 'FTM',
+  10: 'Opt',
+  1088: 'Metis',
+  56: 'BNB',
+  8453: 'Base',
+};
+
 export const networkConfigs: NetworkConfigs = {
   [ChainId.mainnet]: {
     rpcUrl: process.env.RPC_MAINNET,
