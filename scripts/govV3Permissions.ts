@@ -405,7 +405,6 @@ export const resolveGovV3Modifiers = async (
     for (let i = 0; i < supportedChains.length; i++) {
       const bridges: string[] =
         await cccContract.getReceiverBridgeAdaptersByChain(supportedChains[i]);
-      // get bridge name
       bridges.map((bridge) => receiverBridges.add(bridge));
     }
 
