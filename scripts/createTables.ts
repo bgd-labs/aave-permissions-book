@@ -358,7 +358,7 @@ export const generateTable = (network: string, pool: string): string => {
 
 export const generateAllTables = () => {
   const networks = Object.keys(networkConfigs).map((network) => network);
-  console.log(networks);
+
   // create readme string
   let readmeDirectoryTable = '';
   const readmeDirectoryTableHeaderTitles = ['Network', 'System type', 'Tables'];
