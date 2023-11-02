@@ -46,6 +46,7 @@ export const getCCCSendersAndAdapters = async (
       timeout,
       maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock,
       topic0: senderUpdatedTopic0,
+      chainId,
     });
     const tenderlyProvider = new providers.StaticJsonRpcProvider(
       networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl,
@@ -67,6 +68,7 @@ export const getCCCSendersAndAdapters = async (
       timeout,
       tenderly: true,
       topic0: senderUpdatedTopic0,
+      chainId,
     });
 
     const logs = [...networkLogs.eventLogs, ...tenderlyLogs.eventLogs];
@@ -82,6 +84,7 @@ export const getCCCSendersAndAdapters = async (
       limit,
       timeout,
       topic0: senderUpdatedTopic0,
+      chainId,
     });
     eventLogs = logs.eventLogs;
     finalBlock = logs.finalBlock;

@@ -1,4 +1,5 @@
 import { providers } from 'ethers';
+import { ChainId } from '@aave/contract-helpers';
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
@@ -16,6 +17,7 @@ export type GetLogsType = {
   topic2?: string;
   topic3?: string;
   tenderly?: boolean;
+  chainId?: ChainId | string;
 };
 
 const MAX_RETRIES = 3;
@@ -33,6 +35,7 @@ export const getLogs = async ({
   topic2,
   topic3,
   tenderly,
+  chainId,
 }: GetLogsType): Promise<{
   eventLogs: providers.Log[];
   finalBlock: number;
@@ -91,9 +94,9 @@ export const getLogs = async ({
     logs.push(...logEvents);
 
     console.log(
-      `${tenderly ? 'tenderly' : ''} from: ${fromBlock} to: ${toBlock} logs: ${
-        logEvents.length
-      }`,
+      `${chainId ? chainId : ''} | ${
+        tenderly ? 'tenderly' : ''
+      } | from: ${fromBlock} to: ${toBlock} logs: ${logEvents.length}`,
     );
 
     return await getLogs({
@@ -109,15 +112,17 @@ export const getLogs = async ({
       topic1,
       topic2,
       topic3,
+      chainId,
     });
   } catch (error) {
-    // @ts-ignore
-    console.log('error=> ', error.code);
-
     if (!retries || retries < MAX_RETRIES) {
+      console.error(`${chainId ? chainId : ''} | Error => retry: ${retries}`);
       // @ts-ignore
       if (error.code === 'TIMEOUT') {
         if (timeout) {
+          console.log(
+            `${chainId ? chainId : ''} | awaiting tiemout ${timeout}`,
+          );
           await delay(timeout);
         }
 
@@ -134,9 +139,10 @@ export const getLogs = async ({
           topic1,
           topic2,
           topic3,
+          chainId,
         });
       } else {
-        console.log(error);
+        console.log(`${chainId ? chainId : ''} | To many blocks ${error}`);
         // solution that will work with generic rpcs or
         // if alchemy fails with different error
         const midBlock = (fromBlock + toBlock) >> 1;
@@ -153,6 +159,7 @@ export const getLogs = async ({
           topic1,
           topic2,
           topic3,
+          chainId,
         });
         const arr2 = await getLogs({
           provider,
@@ -167,11 +174,14 @@ export const getLogs = async ({
           topic1,
           topic2,
           topic3,
+          chainId,
         });
         const allLogs = [...logs, ...arr1.eventLogs, ...arr2.eventLogs];
         return { eventLogs: allLogs, finalBlock: toBlock };
       }
     } else {
+      // @ts-ignore
+      console.log(`${chainId ? chainId : ''} | ${error.code}`);
       return { eventLogs: logs, finalBlock: fromBlock };
     }
   }
