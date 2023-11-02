@@ -195,7 +195,7 @@
           }
         ]
       },
-      "ProofOfReserveExecutor": {
+      "ProofOfReserveExecutorV3": {
         "address": "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc",
         "modifiers": [
           {
@@ -213,7 +213,7 @@
           }
         ]
       },
-      "ProofOfReserveAggregator": {
+      "ProofOfReserveAggregatorV3": {
         "address": "0x80f2c02224a2E548FC67c0bF705eBFA825dd5439",
         "modifiers": [
           {
@@ -456,7 +456,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 37239705
+      "latestBlockNumber": 37244493
     },
     "govV3": {
       "contracts": {
@@ -740,7 +740,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 37239710
+      "latestCCCBlockNumber": 37244496
     }
   },
   "V2": {
@@ -862,7 +862,7 @@
           }
         ]
       },
-      "ProofOfReserveExecutor": {
+      "ProofOfReserveExecutorV2": {
         "address": "0x7fc3FCb14eF04A48Bb0c12f0c39CD74C249c37d8",
         "modifiers": [
           {
@@ -880,7 +880,7 @@
           }
         ]
       },
-      "ProofOfReserveAggregator": {
+      "ProofOfReserveAggregatorV2": {
         "address": "0x80f2c02224a2E548FC67c0bF705eBFA825dd5439",
         "modifiers": [
           {

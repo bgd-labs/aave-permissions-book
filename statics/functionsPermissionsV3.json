@@ -371,7 +371,7 @@
     ]
   },
   {
-    "contract": "ProofOfReserveExecutor",
+    "contract": "ProofOfReserveExecutorV3",
     "functions": [
       {
         "name": "enableAssets",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "contract": "ProofOfReserveAggregator",
+    "contract": "ProofOfReserveAggregatorV3",
     "functions": [
       {
         "name": "enableProofOfReserveFeed",

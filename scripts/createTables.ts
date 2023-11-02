@@ -30,10 +30,11 @@ export const generateTableAddress = (
 ): string => {
   const checkSummedAddress = address ? utils.getAddress(address) : null;
 
+  // console.log(contractsByAddress);
   if (chainId) {
     const newContractsByAddress = generateContractsByAddress({
       ...getPermissionsByNetwork(chainId)['V3'].govV3?.contracts,
-      ...getPermissionsByNetwork(chainId)['V3'].contracts,
+      // ...getPermissionsByNetwork(chainId)['V3'].contracts,
     });
     const networkContractsByAddress: Record<string, string> = {};
     Object.keys(newContractsByAddress).forEach((key) => {
@@ -41,9 +42,11 @@ export const generateTableAddress = (
         key
       ] = `${newContractsByAddress[key]}(${getNetowkName[chainId]})`;
     });
-    contractsByAddress = networkContractsByAddress;
+    contractsByAddress = {
+      ...contractsByAddress,
+      ...networkContractsByAddress,
+    };
   }
-
   return checkSummedAddress
     ? '[' +
         (addressesNames[checkSummedAddress]
@@ -355,7 +358,7 @@ export const generateTable = (network: string, pool: string): string => {
 
 export const generateAllTables = () => {
   const networks = Object.keys(networkConfigs).map((network) => network);
-
+  console.log(networks);
   // create readme string
   let readmeDirectoryTable = '';
   const readmeDirectoryTableHeaderTitles = ['Network', 'System type', 'Tables'];

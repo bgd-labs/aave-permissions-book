@@ -243,7 +243,7 @@ export const resolveV3Modifiers = async (
       provider,
     );
     const porExecutorOwner = await porExecutorContract.owner();
-    obj['ProofOfReserveExecutor'] = {
+    obj['ProofOfReserveExecutorV3'] = {
       address: addressBook.PROOF_OF_RESERVE,
       modifiers: [
         {
@@ -254,7 +254,7 @@ export const resolveV3Modifiers = async (
               owners: await getSafeOwners(provider, porExecutorOwner),
             },
           ],
-          functions: roles['ProofOfReserveExecutor']['onlyOwner'],
+          functions: roles['ProofOfReserveExecutorV3']['onlyOwner'],
         },
       ],
     };
@@ -264,7 +264,7 @@ export const resolveV3Modifiers = async (
       provider,
     );
     const porAggregatorOwner = await porAggregatorContract.owner();
-    obj['ProofOfReserveAggregator'] = {
+    obj['ProofOfReserveAggregatorV3'] = {
       address: addressBook.PROOF_OF_RESERVE_AGGREGATOR,
       modifiers: [
         {
@@ -275,7 +275,7 @@ export const resolveV3Modifiers = async (
               owners: await getSafeOwners(provider, porAggregatorOwner),
             },
           ],
-          functions: roles['ProofOfReserveAggregator']['onlyOwner'],
+          functions: roles['ProofOfReserveAggregatorV3']['onlyOwner'],
         },
       ],
     };
