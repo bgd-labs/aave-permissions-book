@@ -255,6 +255,7 @@ const generateNetworkPermissions = async (network: string) => {
               Number(network),
               senders,
               poolKey === Pools.TENDERLY,
+              pool.addresses,
             );
             govV3.senders = senders;
             govV3.latestCCCBlockNumber = latestCCCBlockNumber;

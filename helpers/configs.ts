@@ -102,6 +102,13 @@ export const networkConfigs: NetworkConfigs = {
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
         addressBook: AaveV3Ethereum,
+        addresses: {
+          '0xDB8953194810b1942544fA528791278D458719D5': 'CCIPAdapter',
+          '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
+          '0x6Abb61beb5848B476d026C4934E8a6415e2E75a8': 'HyperLaneAdapter',
+          '0xb13712De579E1f9943502FFCf72eab6ec348cF79':
+            'PolygonAdapterEthereum',
+        },
       },
       [Pools.GHO]: {
         permissionsJson: './statics/functionsPermissionsGHO.json',
@@ -224,6 +231,12 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Polygon,
         governanceAddressBook: GovernanceV3Polygon,
+        addresses: {
+          '0x95Fa2c817169E26956AB8795c84a225b55d7db5B': 'CCIPAdapter',
+          '0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5': 'LayerZeroAdapter',
+          '0x3c25b96fF62D21E90556869272a277eE2E229747': 'HyperLaneAdapter',
+          '0xb13712De579E1f9943502FFCf72eab6ec348cF79': 'PolygonAdapterPolygon',
+        },
       },
       [Pools.V2]: {
         permissionsJson: './statics/functionsPermissionsV2.json',
@@ -264,6 +277,11 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: {},
         governanceAddressBook: GovernanceV3BNB,
+        addresses: {
+          '0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf': 'CCIPAdapter',
+          '0xFF1137243698CaA18EE364Cc966CF0e02A4e6327': 'LayerZeroAdapter',
+          '0x118DFD5418890c0332042ab05173Db4A2C1d283c': 'HyperLaneAdapter',
+        },
       },
     },
   },
@@ -287,6 +305,11 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Avalanche,
         governanceAddressBook: GovernanceV3Avalanche,
+        addresses: {
+          '0x3F006299eC88985c18E6e885EeA29A49eC579882': 'CCIPAdapter',
+          '0xf41193E25408F652AF878c47E4401A01B5E4B682': 'LayerZeroAdapter',
+          '0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04': 'HyperLaneAdapter',
+        },
       },
       [Pools.V2]: {
         permissionsJson: './statics/functionsPermissionsV2PoR.json',
@@ -329,6 +352,9 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Optimism,
         governanceAddressBook: GovernanceV3Optimism,
+        addresses: {
+          '0x81d32B36380e6266e1BDd490eAC56cdB300afBe0': 'OpAdapter',
+        },
       },
       [Pools.TENDERLY]: {
         aclBlock: 4365546,
@@ -360,6 +386,9 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Arbitrum,
         governanceAddressBook: GovernanceV3Arbitrum,
+        addresses: {
+          '0x3829943c53F2d00e20B58475aF19716724bF90Ba': 'ArbAdapter',
+        },
       },
       [Pools.TENDERLY]: {
         aclBlock: 7740502,
@@ -406,6 +435,9 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: AaveV3Metis,
         governanceAddressBook: GovernanceV3Metis,
+        addresses: {
+          '0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf': 'MetisAdapter',
+        },
       },
     },
   },
@@ -425,6 +457,9 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: AaveV3Base,
         governanceAddressBook: GovernanceV3Base,
+        addresses: {
+          '0x7b62461a3570c6AC8a9f8330421576e417B71EE7': 'CBaseAdapter',
+        },
       },
       [Pools.TENDERLY]: {
         aclBlock: 2357130,
@@ -455,6 +490,11 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: AaveV3Gnosis,
         governanceAddressBook: GovernanceV3Gnosis,
+        addresses: {
+          '0x7b62461a3570c6AC8a9f8330421576e417B71EE7': 'LayerZeroAdapter',
+          '0x4A4c73d563395ad827511F70097d4Ef82E653805': 'HyperLaneAdapter',
+          '0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b': 'GnosisChainAdapter',
+        },
       },
       [Pools.TENDERLY]: {
         aclBlock: 30293056,

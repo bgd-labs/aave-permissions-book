@@ -481,7 +481,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 146423252
+      "latestBlockNumber": 146427398
     },
     "govV3": {
       "contracts": {
@@ -583,7 +583,7 @@
             }
           ]
         },
-        "BridgeAdapter0": {
+        "ArbAdapter": {
           "address": "0x3829943c53F2d00e20B58475aF19716724bF90Ba",
           "modifiers": [
             {
@@ -697,7 +697,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 146423316
+      "latestCCCBlockNumber": 146427460
     }
   },
   "TENDERLY": {

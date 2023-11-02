@@ -80,7 +80,7 @@
             }
           ]
         },
-        "BridgeAdapter0": {
+        "LayerZeroAdapter": {
           "address": "0xFF1137243698CaA18EE364Cc966CF0e02A4e6327",
           "modifiers": [
             {
@@ -98,7 +98,7 @@
             }
           ]
         },
-        "BridgeAdapter1": {
+        "HyperLaneAdapter": {
           "address": "0x118DFD5418890c0332042ab05173Db4A2C1d283c",
           "modifiers": [
             {
@@ -116,7 +116,7 @@
             }
           ]
         },
-        "BridgeAdapter2": {
+        "CCIPAdapter": {
           "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
           "modifiers": [
             {
@@ -230,7 +230,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 33145007
+      "latestCCCBlockNumber": 33145373
     }
   }
 }

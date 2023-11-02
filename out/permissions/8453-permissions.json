@@ -548,7 +548,7 @@
           "0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6"
         ]
       },
-      "latestBlockNumber": 6074996
+      "latestBlockNumber": 6075545
     },
     "govV3": {
       "contracts": {
@@ -650,7 +650,7 @@
             }
           ]
         },
-        "BridgeAdapter0": {
+        "CBaseAdapter": {
           "address": "0x7b62461a3570c6AC8a9f8330421576e417B71EE7",
           "modifiers": [
             {
@@ -764,7 +764,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 6075001
+      "latestCCCBlockNumber": 6075550
     }
   },
   "TENDERLY": {

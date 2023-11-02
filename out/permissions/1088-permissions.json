@@ -497,7 +497,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 9174978
+      "latestBlockNumber": 9175083
     },
     "govV3": {
       "contracts": {
@@ -599,7 +599,7 @@
             }
           ]
         },
-        "BridgeAdapter0": {
+        "MetisAdapter": {
           "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
           "modifiers": [
             {
@@ -713,7 +713,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 9174979
+      "latestCCCBlockNumber": 9175083
     }
   }
 }

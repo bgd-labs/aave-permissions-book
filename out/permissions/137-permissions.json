@@ -492,7 +492,7 @@
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084"
         ]
       },
-      "latestBlockNumber": 49458391
+      "latestBlockNumber": 49458906
     },
     "govV3": {
       "contracts": {
@@ -611,7 +611,7 @@
             }
           ]
         },
-        "BridgeAdapter0": {
+        "CCIPAdapter": {
           "address": "0x95Fa2c817169E26956AB8795c84a225b55d7db5B",
           "modifiers": [
             {
@@ -629,7 +629,7 @@
             }
           ]
         },
-        "BridgeAdapter1": {
+        "LayerZeroAdapter": {
           "address": "0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5",
           "modifiers": [
             {
@@ -647,7 +647,7 @@
             }
           ]
         },
-        "BridgeAdapter2": {
+        "HyperLaneAdapter": {
           "address": "0x3c25b96fF62D21E90556869272a277eE2E229747",
           "modifiers": [
             {
@@ -665,7 +665,7 @@
             }
           ]
         },
-        "BridgeAdapter3": {
+        "PolygonAdapterPolygon": {
           "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
           "modifiers": [
             {
@@ -798,7 +798,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 49458398
+      "latestCCCBlockNumber": 49458913
     }
   },
   "V2": {

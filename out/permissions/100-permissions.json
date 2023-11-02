@@ -374,7 +374,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 30758709
+      "latestBlockNumber": 30758919
     },
     "govV3": {
       "contracts": {
@@ -476,7 +476,7 @@
             }
           ]
         },
-        "BridgeAdapter0": {
+        "LayerZeroAdapter": {
           "address": "0x7b62461a3570c6AC8a9f8330421576e417B71EE7",
           "modifiers": [
             {
@@ -494,7 +494,7 @@
             }
           ]
         },
-        "BridgeAdapter1": {
+        "HyperLaneAdapter": {
           "address": "0x4A4c73d563395ad827511F70097d4Ef82E653805",
           "modifiers": [
             {
@@ -512,7 +512,7 @@
             }
           ]
         },
-        "BridgeAdapter2": {
+        "GnosisChainAdapter": {
           "address": "0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b",
           "modifiers": [
             {
@@ -634,7 +634,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 30758711
+      "latestCCCBlockNumber": 30758920
     }
   },
   "TENDERLY": {

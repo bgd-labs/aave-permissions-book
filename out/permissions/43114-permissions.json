@@ -456,7 +456,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 37246096
+      "latestBlockNumber": 37246637
     },
     "govV3": {
       "contracts": {
@@ -575,7 +575,7 @@
             }
           ]
         },
-        "BridgeAdapter0": {
+        "CCIPAdapter": {
           "address": "0x3F006299eC88985c18E6e885EeA29A49eC579882",
           "modifiers": [
             {
@@ -593,7 +593,7 @@
             }
           ]
         },
-        "BridgeAdapter1": {
+        "LayerZeroAdapter": {
           "address": "0xf41193E25408F652AF878c47E4401A01B5E4B682",
           "modifiers": [
             {
@@ -611,7 +611,7 @@
             }
           ]
         },
-        "BridgeAdapter2": {
+        "HyperLaneAdapter": {
           "address": "0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04",
           "modifiers": [
             {
@@ -740,7 +740,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 37246102
+      "latestCCCBlockNumber": 37246643
     }
   },
   "V2": {

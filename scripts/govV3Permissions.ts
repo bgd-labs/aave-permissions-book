@@ -25,6 +25,7 @@ export const resolveGovV3Modifiers = async (
   chainId: ChainId | number,
   senders: string[],
   tenderly: boolean,
+  addressNames?: Record<string, string>,
 ) => {
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
@@ -429,7 +430,12 @@ export const resolveGovV3Modifiers = async (
         });
       }
 
-      obj[`BridgeAdapter${i}`] = {
+      let bridgeAdapterName = `BridgeAdapter${i}`;
+      if (addressNames && addressNames[receiverBridgesArray[i]] !== '') {
+        bridgeAdapterName = addressNames[receiverBridgesArray[i]];
+      }
+
+      obj[bridgeAdapterName] = {
         address: receiverBridgesArray[i],
         modifiers: [
           {
