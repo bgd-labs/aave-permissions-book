@@ -60,7 +60,6 @@ export const resolveGHOModifiers = async (
   for (const facilitator of facilitators) {
     facilitatorOwners[facilitator] = await getSafeOwners(provider, facilitator);
   }
-  console.log(facilitatorOwners);
 
   obj['GHO'] = {
     address: addressBook.GHO_TOKEN,

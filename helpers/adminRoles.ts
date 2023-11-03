@@ -67,6 +67,7 @@ export const getCurrentRoleAdmins = async (
       limit,
       timeout,
       maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock,
+      chainId,
     });
     const tenderlyProvider = new providers.StaticJsonRpcProvider(
       networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl,
@@ -87,6 +88,7 @@ export const getCurrentRoleAdmins = async (
       limit,
       timeout,
       tenderly: true,
+      chainId,
     });
 
     const logs = [...networkLogs.eventLogs, ...tenderlyLogs.eventLogs];
@@ -100,6 +102,7 @@ export const getCurrentRoleAdmins = async (
       logs: [],
       limit,
       timeout,
+      chainId,
     });
     eventLogs = logs.eventLogs;
     finalBlock = logs.finalBlock;

@@ -15,6 +15,7 @@ import {
   IRescuable_ABI,
 } from '@bgd-labs/aave-address-book';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
+import baseAdapter from '../abis/BaseAdapter.json' assert { type: 'json' };
 import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
 
 export const resolveGovV3Modifiers = async (
@@ -24,6 +25,7 @@ export const resolveGovV3Modifiers = async (
   chainId: ChainId | number,
   senders: string[],
   tenderly: boolean,
+  addressNames?: Record<string, string>,
 ) => {
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
@@ -405,6 +407,52 @@ export const resolveGovV3Modifiers = async (
       const bridges: string[] =
         await cccContract.getReceiverBridgeAdaptersByChain(supportedChains[i]);
       bridges.map((bridge) => receiverBridges.add(bridge));
+    }
+
+    const receiverBridgesArray = Array.from(receiverBridges);
+    for (let i = 0; i < receiverBridgesArray.length; i++) {
+      // get trusted remotes
+      const trustedRemotes: { address: string; chain: string }[] = [];
+      for (let i = 0; i < supportedChains.length; i++) {
+        const bridgeAdapterContract = new ethers.Contract(
+          receiverBridgesArray[i],
+          baseAdapter,
+          provider,
+        );
+        const trustedRemote: string =
+          await bridgeAdapterContract.getTrustedRemoteByChainId(
+            supportedChains[i],
+          );
+
+        trustedRemotes.push({
+          address: trustedRemote,
+          chain: supportedChains[i],
+        });
+      }
+
+      let bridgeAdapterName = `BridgeAdapter${i}`;
+      if (addressNames && addressNames[receiverBridgesArray[i]] !== '') {
+        bridgeAdapterName = addressNames[receiverBridgesArray[i]];
+      }
+
+      obj[bridgeAdapterName] = {
+        address: receiverBridgesArray[i],
+        modifiers: [
+          {
+            modifier: 'trustedRemote',
+            addresses: [
+              ...Array.from(trustedRemotes).map((trustedRemote) => {
+                return {
+                  address: trustedRemote.address,
+                  owners: [],
+                  chain: trustedRemote.chain.toString(),
+                };
+              }),
+            ],
+            functions: ['receiveMessage'],
+          },
+        ],
+      };
     }
 
     obj['CrossChainController'] = {

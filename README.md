@@ -33,13 +33,13 @@ These documents contain tables with the following information:
 | Network |System type |Tables |
 |----------|----------|----------|
 |  MAINNET |  V3 |  [Permissions](./out/MAINNET-V3.md#contracts) | |--------|--------|--------|
+|  MAINNET |  GHO |  [Permissions](./out/MAINNET-GHO.md#contracts) | |--------|--------|--------|
 |  MAINNET |  GOV_V2 |  [Permissions](./out/MAINNET-GOV_V2.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2 |  [Permissions](./out/MAINNET-V2.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_ARC |  [Permissions](./out/MAINNET-V2_ARC.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_AMM |  [Permissions](./out/MAINNET-V2_AMM.md#contracts) | |--------|--------|--------|
 |  MAINNET |  SAFETY_MODULE |  [Permissions](./out/MAINNET-SAFETY_MODULE.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_MISC |  [Permissions](./out/MAINNET-V2_MISC.md#contracts) | |--------|--------|--------|
-|  MAINNET |  GHO |  [Permissions](./out/MAINNET-GHO.md#contracts) | |--------|--------|--------|
 |  OPTIMISM |  V3 |  [Permissions](./out/OPTIMISM-V3.md#contracts) | |--------|--------|--------|
 |  BINANCE |  V3 |  [Permissions](./out/BINANCE-V3.md#contracts) | |--------|--------|--------|
 |  GNOSIS |  V3 |  [Permissions](./out/GNOSIS-V3.md#contracts) | |--------|--------|--------|

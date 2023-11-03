@@ -129,7 +129,7 @@ export const resolveV2Modifiers = async (
       provider,
     );
     const porExecutorOwner = await porExecutorContract.owner();
-    obj['ProofOfReserveExecutor'] = {
+    obj['ProofOfReserveExecutorV2'] = {
       address: addressBook.PROOF_OF_RESERVE,
       modifiers: [
         {
@@ -140,7 +140,7 @@ export const resolveV2Modifiers = async (
               owners: await getSafeOwners(provider, porExecutorOwner),
             },
           ],
-          functions: roles['ProofOfReserveExecutor']['onlyOwner'],
+          functions: roles['ProofOfReserveExecutorV2']['onlyOwner'],
         },
       ],
     };
@@ -150,7 +150,7 @@ export const resolveV2Modifiers = async (
       provider,
     );
     const porAggregatorOwner = await porAggregatorContract.owner();
-    obj['ProofOfReserveAggregator'] = {
+    obj['ProofOfReserveAggregatorV2'] = {
       address: addressBook.PROOF_OF_RESERVE_AGGREGATOR,
       modifiers: [
         {
@@ -161,7 +161,7 @@ export const resolveV2Modifiers = async (
               owners: await getSafeOwners(provider, porAggregatorOwner),
             },
           ],
-          functions: roles['ProofOfReserveAggregator']['onlyOwner'],
+          functions: roles['ProofOfReserveAggregatorV2']['onlyOwner'],
         },
       ],
     };
@@ -213,75 +213,67 @@ export const resolveV2Modifiers = async (
     ],
   };
 
-  // TODO: remove condition once avalanche collector is updated
-  if (chainId !== ChainId.avalanche) {
-    const collector = new ethers.Contract(
-      addressBook.COLLECTOR,
-      collectorAbi,
-      provider,
-    );
+  const collector = new ethers.Contract(
+    addressBook.COLLECTOR,
+    collectorAbi,
+    provider,
+  );
 
-    const fundsAdmin = await collector.getFundsAdmin();
-    const collectorProxyAdmin = await getProxyAdmin(
-      addressBook.COLLECTOR,
-      provider,
-    );
-    obj['Collector'] = {
-      address: addressBook.COLLECTOR,
-      modifiers: [
-        {
-          modifier: 'onlyFundsAdmin',
-          addresses: [
-            {
-              address: fundsAdmin,
-              owners: await getSafeOwners(provider, fundsAdmin),
-            },
-          ],
-          functions: roles['Collector']['onlyFundsAdmin'],
-        },
-        {
-          modifier: 'onlyAdminOrRecipient',
-          addresses: [
-            {
-              address: collectorProxyAdmin,
-              owners: await getSafeOwners(provider, collectorProxyAdmin),
-            },
-            {
-              address: fundsAdmin,
-              owners: await getSafeOwners(provider, fundsAdmin),
-            },
-          ],
-          functions: roles['Collector']['onlyAdminOrRecipient'],
-        },
-      ],
-    };
-    const proxyAdminContract = new ethers.Contract(
-      collectorProxyAdmin,
-      onlyOwnerAbi,
-      provider,
-    );
-    const proxyAdminOwner = await proxyAdminContract.owner();
-    obj['ProxyAdmin'] = {
-      address: utils.getAddress(collectorProxyAdmin),
-      modifiers: [
-        {
-          modifier: 'onlyOwner',
-          addresses: [
-            {
-              address: proxyAdminOwner,
-              owners: await getSafeOwners(provider, proxyAdminOwner),
-            },
-          ],
-          functions: roles['ProxyAdmin']['onlyOwner'],
-        },
-      ],
-    };
-  } else {
-    obj['Collector'] = {
-      address: addressBook.COLLECTOR,
-      modifiers: [],
-    };
-  }
+  const fundsAdmin = await collector.getFundsAdmin();
+  const collectorProxyAdmin = await getProxyAdmin(
+    addressBook.COLLECTOR,
+    provider,
+  );
+  obj['Collector'] = {
+    address: addressBook.COLLECTOR,
+    modifiers: [
+      {
+        modifier: 'onlyFundsAdmin',
+        addresses: [
+          {
+            address: fundsAdmin,
+            owners: await getSafeOwners(provider, fundsAdmin),
+          },
+        ],
+        functions: roles['Collector']['onlyFundsAdmin'],
+      },
+      {
+        modifier: 'onlyAdminOrRecipient',
+        addresses: [
+          {
+            address: collectorProxyAdmin,
+            owners: await getSafeOwners(provider, collectorProxyAdmin),
+          },
+          {
+            address: fundsAdmin,
+            owners: await getSafeOwners(provider, fundsAdmin),
+          },
+        ],
+        functions: roles['Collector']['onlyAdminOrRecipient'],
+      },
+    ],
+  };
+  const proxyAdminContract = new ethers.Contract(
+    collectorProxyAdmin,
+    onlyOwnerAbi,
+    provider,
+  );
+  const proxyAdminOwner = await proxyAdminContract.owner();
+  obj['ProxyAdmin'] = {
+    address: utils.getAddress(collectorProxyAdmin),
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: proxyAdminOwner,
+            owners: await getSafeOwners(provider, proxyAdminOwner),
+          },
+        ],
+        functions: roles['ProxyAdmin']['onlyOwner'],
+      },
+    ],
+  };
 
   // extra contracts for arc
   if (pool === Pools.V2_ARC || pool === Pools.V2_ARC_TENDERLY) {

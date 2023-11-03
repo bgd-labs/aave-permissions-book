@@ -1,3 +1,5 @@
+import { Pools } from './configs.js';
+
 export type ContractsByAddress = Record<string, string>;
 export type PoolGuardians = Record<string, string[]>;
 
@@ -23,6 +25,7 @@ export type GovV3 = {
 export type AddressInfo = {
   address: string;
   owners: string[];
+  chain?: string;
 };
 export type Roles = {
   latestBlockNumber: number;
@@ -49,6 +52,7 @@ export type PoolConfigs = {
 
   tenderlyBlock?: number;
   tenderlyRpcUrl?: string;
+  tenderlyBasePool?: string;
 
   ghoBlock?: number;
 

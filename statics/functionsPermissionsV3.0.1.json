@@ -417,5 +417,57 @@
         "roles": ["onlyPoolAdmin"]
       }
     ]
+  },
+  {
+    "contract": "CapPlusRiskSteward",
+    "functions": [
+      {
+        "name": "updateCaps",
+        "roles": ["onlyRiskCouncil"]
+      }
+    ]
+  },
+  {
+    "contract": "FreezeSteward",
+    "functions": [
+      {
+        "name": "setFreeze",
+        "roles": ["onlyEmergencyAdmin"]
+      }
+    ]
+  },
+  {
+    "contract": "AaveMerkleDistributor",
+    "functions": [
+      {
+        "name": "addDistributions",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "emergencyTokenTransfer",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "emergencyEtherTransfer",
+        "roles": ["onlyOwner"]
+      }
+    ]
+  },
+  {
+    "contract": "AavePolEthBridge",
+    "functions": [
+      {
+        "name": "bridge",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "emergencyTokenTransfer",
+        "roles": ["onlyRescueGuardian"]
+      },
+      {
+        "name": "emergencyEtherTransfer",
+        "roles": ["onlyRescueGuardian"]
+      }
+    ]
   }
 ]
