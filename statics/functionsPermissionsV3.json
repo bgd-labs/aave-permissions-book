@@ -439,5 +439,14 @@
         "roles": ["onlyRiskCouncil"]
       }
     ]
+  },
+  {
+    "contract": "FreezeSteward",
+    "functions": [
+      {
+        "name": "setFreeze",
+        "roles": ["onlyEmergencyAdmin"]
+      }
+    ]
   }
 ]

@@ -574,6 +574,32 @@ export const resolveV3Modifiers = async (
     };
   }
 
+  if (addressBook.FREEZING_STEWARD) {
+    const riskStewardContract = new ethers.Contract(
+      addressBook.CAPS_PLUS_RISK_STEWARD,
+      capsPlusRiskStewardABI,
+      provider,
+    );
+
+    obj['FreezeSteward'] = {
+      address: addressBook.CAPS_PLUS_RISK_STEWARD,
+      modifiers: [
+        {
+          modifier: 'onlyEmergencyAdmin',
+          addresses: [
+            ...adminRoles['EMERGENCY_ADMIN'].map((roleAddress) => {
+              return {
+                address: roleAddress,
+                owners: owners['EMERGENCY_ADMIN'][roleAddress] || [],
+              };
+            }),
+          ],
+          functions: roles['FreezeSteward']['onlyEmergencyAdmin'],
+        },
+      ],
+    };
+  }
+
   let bridgeExecutor = {};
   if (
     chainId === ChainId.polygon ||
