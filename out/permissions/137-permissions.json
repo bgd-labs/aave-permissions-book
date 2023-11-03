@@ -447,6 +447,52 @@
           }
         ]
       },
+      "AaveMerkleDistributor": {
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
+                "owners": []
+              }
+            ],
+            "functions": [
+              "addDistributions",
+              "emergencyTokenTransfer",
+              "emergencyEtherTransfer"
+            ]
+          }
+        ]
+      },
+      "AavePolEthBridge": {
+        "address": "0xc928002904Ec475663A83063D492EA2aE09EbDA1",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                "owners": []
+              }
+            ],
+            "functions": [
+              "addDistributions",
+              "emergencyTokenTransfer",
+              "emergencyEtherTransfer"
+            ]
+          },
+          {
+            "modifier": "onlyRescueGuardian",
+            "addresses": [
+              {
+                "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                "owners": []
+              }
+            ]
+          }
+        ]
+      },
       "PolygonBridgeExecutor": {
         "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
         "modifiers": [
@@ -540,7 +586,7 @@
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084"
         ]
       },
-      "latestBlockNumber": 49490695
+      "latestBlockNumber": 49493671
     },
     "govV3": {
       "contracts": {
@@ -846,7 +892,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 49490703
+      "latestCCCBlockNumber": 49493684
     }
   },
   "V2": {

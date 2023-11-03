@@ -465,5 +465,22 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "AavePolEthBridge",
+    "functions": [
+      {
+        "name": "bridge",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "emergencyTokenTransfer",
+        "roles": ["onlyRescueGuardian"]
+      },
+      {
+        "name": "emergencyEtherTransfer",
+        "roles": ["onlyRescueGuardian"]
+      }
+    ]
   }
 ]

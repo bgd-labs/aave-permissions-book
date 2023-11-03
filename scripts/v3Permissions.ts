@@ -10,6 +10,7 @@ import { ChainId } from '@aave/contract-helpers';
 import { getBridgeExecutor } from './bridgeExecutors.js';
 import { AddressInfo, Contracts, PermissionsJson } from '../helpers/types.js';
 import capsPlusRiskStewardABI from '../abis/capsPlusRiskSteward.json' assert { type: 'json' };
+import erc20Bridge from '../abis/Erc20Bridge.json' assert { type: 'json' };
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -614,6 +615,42 @@ export const resolveV3Modifiers = async (
             },
           ],
           functions: roles['AaveMerkleDistributor']['onlyOwner'],
+        },
+      ],
+    };
+  }
+
+  if (addressBook.AAVE_POL_ETH_BRIDGE) {
+    const polEthBridgeContract = new ethers.Contract(
+      addressBook.AAVE_POL_ETH_BRIDGE,
+      erc20Bridge,
+      provider,
+    );
+    const polEthBridgeOwner = await polEthBridgeContract.owner();
+    const polEthBridgeRescuer = await polEthBridgeContract.whoCanRescue();
+
+    obj['AavePolEthBridge'] = {
+      address: addressBook.AAVE_POL_ETH_BRIDGE,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: polEthBridgeOwner,
+              owners: await getSafeOwners(provider, polEthBridgeOwner),
+            },
+          ],
+          functions: roles['AaveMerkleDistributor']['onlyOwner'],
+        },
+        {
+          modifier: 'onlyRescueGuardian',
+          addresses: [
+            {
+              address: polEthBridgeRescuer,
+              owners: await getSafeOwners(provider, polEthBridgeRescuer),
+            },
+          ],
+          functions: roles['AaveMerkleDistributor']['onlyRescueGuardian'],
         },
       ],
     };

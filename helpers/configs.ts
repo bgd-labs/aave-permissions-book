@@ -238,8 +238,8 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 45029910,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Polygon,
-        governanceAddressBook: { ...GovernanceV3Polygon, ...MiscPolygon },
+        addressBook: { ...AaveV3Polygon, ...MiscPolygon },
+        governanceAddressBook: GovernanceV3Polygon,
         addresses: {
           '0x95Fa2c817169E26956AB8795c84a225b55d7db5B': 'CCIPAdapter',
           '0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5': 'LayerZeroAdapter',
@@ -263,8 +263,8 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 45029910,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Polygon,
-        governanceAddressBook: { ...GovernanceV3Polygon, ...MiscPolygon },
+        addressBook: { AaveV3Polygon, ...MiscPolygon },
+        governanceAddressBook: GovernanceV3Polygon,
         tenderlyBasePool: Pools.V3,
         tenderlyBlock: 49179380,
         tenderlyRpcUrl:

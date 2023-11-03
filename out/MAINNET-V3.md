@@ -28,6 +28,8 @@
 |  [CapPlusRiskSteward](https://etherscan.io/address/0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778) |  - |  onlyRiskCouncil |  [0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8 (Safe)](https://etherscan.io/address/0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://etherscan.io/address/0x2eE68ACb6A1319de1b49DC139894644E424fefD6) |  - |  onlyEmergencyAdmin |  [Aave Guardian Ethereum](https://etherscan.io/address/0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [AaveMerkleDistributor](null) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
+|  [AavePolEthBridge](https://etherscan.io/address/0xc928002904Ec475663A83063D492EA2aE09EbDA1) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
+|  [AavePolEthBridge](https://etherscan.io/address/0xc928002904Ec475663A83063D492EA2aE09EbDA1) |  - |  onlyRescueGuardian |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |   | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
