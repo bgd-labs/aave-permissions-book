@@ -575,12 +575,6 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.FREEZING_STEWARD) {
-    // const riskStewardContract = new ethers.Contract(
-    //   addressBook.FREEZING_STEWARD,
-    //   capsPlusRiskStewardABI,
-    //   provider,
-    // );
-
     obj['FreezeSteward'] = {
       address: addressBook.FREEZING_STEWARD,
       modifiers: [
