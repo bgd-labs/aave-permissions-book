@@ -23,6 +23,7 @@
 |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  - |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://gnosisscan.io//address/0xEc710f59005f48703908bC519D552Df5B8472614) |  - |  setRoleAdmin |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |   | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) |  - |  onlyRiskCouncil |  [0xF221B08dD10e0C68D74F035764931Baa3b030481 (Safe)](https://gnosisscan.io//address/0xF221B08dD10e0C68D74F035764931Baa3b030481) |  updateCaps | |--------|--------|--------|--------|--------|
+|  [FreezeSteward](https://gnosisscan.io//address/0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5) |  - |  onlyEmergencyAdmin |  [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D) |  setFreeze | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |

@@ -5,23 +5,6 @@
     "functions": []
   },
   {
-    "contract": "AaveMerkleDistributor",
-    "functions": [
-      {
-        "name": "addDistributions",
-        "roles": ["onlyOwner"]
-      },
-      {
-        "name": "emergencyTokenTransfer",
-        "roles": ["onlyOwner"]
-      },
-      {
-        "name": "emergencyEtherTransfer",
-        "roles": ["onlyOwner"]
-      }
-    ]
-  },
-  {
     "contract": "EcosystemReserve",
     "proxyAdmin": true,
     "functions": [

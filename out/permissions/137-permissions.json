@@ -419,6 +419,34 @@
           }
         ]
       },
+      "FreezeSteward": {
+        "address": "0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB",
+        "modifiers": [
+          {
+            "modifier": "onlyEmergencyAdmin",
+            "addresses": [
+              {
+                "address": "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
+                "owners": [
+                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                  "0x7390A48219636571408c58582F6F9175d7Cc9d77",
+                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                  "0xB0b42c4931e370c001B24AE0ef89443C84201991",
+                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
+                  "0xE8D848debB3A3e12AA815b15900c8E020B863F31",
+                  "0xf68142d964297aDB5866CF08885Dc299AA4058f5"
+                ]
+              }
+            ],
+            "functions": [
+              "setFreeze"
+            ]
+          }
+        ]
+      },
       "PolygonBridgeExecutor": {
         "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
         "modifiers": [
@@ -512,7 +540,7 @@
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084"
         ]
       },
-      "latestBlockNumber": 49486223
+      "latestBlockNumber": 49490695
     },
     "govV3": {
       "contracts": {
@@ -818,7 +846,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 49486231
+      "latestCCCBlockNumber": 49490703
     }
   },
   "V2": {

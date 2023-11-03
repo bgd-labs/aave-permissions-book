@@ -575,14 +575,14 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.FREEZING_STEWARD) {
-    const riskStewardContract = new ethers.Contract(
-      addressBook.CAPS_PLUS_RISK_STEWARD,
-      capsPlusRiskStewardABI,
-      provider,
-    );
+    // const riskStewardContract = new ethers.Contract(
+    //   addressBook.FREEZING_STEWARD,
+    //   capsPlusRiskStewardABI,
+    //   provider,
+    // );
 
     obj['FreezeSteward'] = {
-      address: addressBook.CAPS_PLUS_RISK_STEWARD,
+      address: addressBook.FREEZING_STEWARD,
       modifiers: [
         {
           modifier: 'onlyEmergencyAdmin',
@@ -595,6 +595,31 @@ export const resolveV3Modifiers = async (
             }),
           ],
           functions: roles['FreezeSteward']['onlyEmergencyAdmin'],
+        },
+      ],
+    };
+  }
+
+  if (addressBook.AAVE_MERKLE_DISTRIBUTOR) {
+    const merkleDistributorContract = new ethers.Contract(
+      addressBook.AAVE_MERKLE_DISTRIBUTOR,
+      onlyOwnerAbi,
+      provider,
+    );
+    const merkleDistributorOwner = await merkleDistributorContract.owner();
+
+    obj['AaveMerkleDistributor'] = {
+      address: addressBook.LEND_TO_AAVE_MIGRATOR,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: merkleDistributorOwner,
+              owners: await getSafeOwners(provider, merkleDistributorOwner),
+            },
+          ],
+          functions: roles['AaveMerkleDistributor']['onlyOwner'],
         },
       ],
     };

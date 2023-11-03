@@ -27,6 +27,8 @@
 |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://snowtrace.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  setRoleAdmin |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |   | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5) |  - |  onlyRiskCouncil |  [0xCa66149425E7DC8f81276F6D80C4b486B9503D1a (Safe)](https://snowtrace.io/address/0xCa66149425E7DC8f81276F6D80C4b486B9503D1a) |  updateCaps | |--------|--------|--------|--------|--------|
+|  [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) |  - |  onlyEmergencyAdmin |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  setFreeze | |--------|--------|--------|--------|--------|
+|  [AaveMerkleDistributor](null) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |

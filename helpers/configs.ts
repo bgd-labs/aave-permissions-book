@@ -28,6 +28,15 @@ import {
   GovernanceV3Base,
   GovernanceV3Metis,
   GovernanceV3Gnosis,
+  MiscEthereum,
+  MiscGnosis,
+  MiscArbitrum,
+  MiscBase,
+  MiscOptimism,
+  MiscPolygon,
+  MiscFantom,
+  MiscMetis,
+  MiscAvalanche,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -101,7 +110,7 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: GovernanceV3Ethereum,
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
-        addressBook: AaveV3Ethereum,
+        addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
         addresses: {
           '0xDB8953194810b1942544fA528791278D458719D5': 'CCIPAdapter',
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
@@ -181,7 +190,7 @@ export const networkConfigs: NetworkConfigs = {
       },
       [Pools.V2_MISC]: {
         permissionsJson: './statics/functionsPermissionsV2Misc.json',
-        addressBook: {},
+        addressBook: MiscEthereum,
         addresses: {
           LEND_TO_AAVE_MIGRATOR: '0x317625234562B1526Ea2FaC4030Ea499C5291de4',
           AAVE_MERKLE_DISTRIBUTOR: '0xa88c6D90eAe942291325f9ae3c66f3563B93FE10',
@@ -204,7 +213,7 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: GovernanceV3Ethereum,
         aclBlock: 16291117,
         crossChainControllerBlock: 17684650,
-        addressBook: AaveV3Ethereum,
+        addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
         tenderlyBasePool: Pools.V3,
         tenderlyBlock: 18435275,
         tenderlyRpcUrl:
@@ -230,7 +239,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Polygon,
-        governanceAddressBook: GovernanceV3Polygon,
+        governanceAddressBook: { ...GovernanceV3Polygon, ...MiscPolygon },
         addresses: {
           '0x95Fa2c817169E26956AB8795c84a225b55d7db5B': 'CCIPAdapter',
           '0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5': 'LayerZeroAdapter',
@@ -255,7 +264,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Polygon,
-        governanceAddressBook: GovernanceV3Polygon,
+        governanceAddressBook: { ...GovernanceV3Polygon, ...MiscPolygon },
         tenderlyBasePool: Pools.V3,
         tenderlyBlock: 49179380,
         tenderlyRpcUrl:
@@ -303,7 +312,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 32549880,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Avalanche,
+        addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
         governanceAddressBook: GovernanceV3Avalanche,
         addresses: {
           '0x3F006299eC88985c18E6e885EeA29A49eC579882': 'CCIPAdapter',
@@ -327,7 +336,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 32549880,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Avalanche,
+        addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
         governanceAddressBook: GovernanceV3Avalanche,
         tenderlyBasePool: Pools.V3,
         tenderlyBlock: 36949744,
@@ -350,7 +359,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 106996150,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Optimism,
+        addressBook: { ...AaveV3Optimism, ...MiscOptimism },
         governanceAddressBook: GovernanceV3Optimism,
         addresses: {
           '0x81d32B36380e6266e1BDd490eAC56cdB300afBe0': 'OpAdapter',
@@ -361,7 +370,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 106996150,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Optimism,
+        addressBook: { ...AaveV3Optimism, ...MiscOptimism },
         governanceAddressBook: GovernanceV3Optimism,
         tenderlyBasePool: Pools.V3,
         tenderlyBlock: 111367654,
@@ -384,7 +393,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 112113800,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Arbitrum,
+        addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum },
         governanceAddressBook: GovernanceV3Arbitrum,
         addresses: {
           '0x3829943c53F2d00e20B58475aF19716724bF90Ba': 'ArbAdapter',
@@ -395,7 +404,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 112113800,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Arbitrum,
+        addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum },
         governanceAddressBook: GovernanceV3Arbitrum,
         tenderlyBasePool: Pools.V3,
         tenderlyBlock: 144223807,
@@ -415,7 +424,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 33141475,
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Fantom,
+        addressBook: { ...AaveV3Fantom, ...MiscFantom },
       },
     },
   },
@@ -433,7 +442,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 8526247,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: AaveV3Metis,
+        addressBook: { ...AaveV3Metis, ...MiscMetis },
         governanceAddressBook: GovernanceV3Metis,
         addresses: {
           '0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf': 'MetisAdapter',
@@ -455,7 +464,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 3686170,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: AaveV3Base,
+        addressBook: { ...AaveV3Base, ...MiscBase },
         governanceAddressBook: GovernanceV3Base,
         addresses: {
           '0x7b62461a3570c6AC8a9f8330421576e417B71EE7': 'CBaseAdapter',
@@ -466,7 +475,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 3686170,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: AaveV3Base,
+        addressBook: { ...AaveV3Base, ...MiscBase },
         governanceAddressBook: GovernanceV3Base,
         tenderlyBasePool: Pools.V3,
         tenderlyBlock: 5772374,
@@ -488,7 +497,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 30373982,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: AaveV3Gnosis,
+        addressBook: { ...AaveV3Gnosis, ...MiscGnosis },
         governanceAddressBook: GovernanceV3Gnosis,
         addresses: {
           '0x7b62461a3570c6AC8a9f8330421576e417B71EE7': 'LayerZeroAdapter',
@@ -501,7 +510,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 30373982,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: AaveV3Gnosis,
+        addressBook: { ...AaveV3Gnosis, ...MiscGnosis },
         governanceAddressBook: GovernanceV3Gnosis,
         tenderlyBlock: 30706655,
         tenderlyRpcUrl:

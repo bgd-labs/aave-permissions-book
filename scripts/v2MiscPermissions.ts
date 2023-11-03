@@ -21,28 +21,28 @@ export const resolveV2MiscModifiers = async (
     modifiers: [],
   };
 
-  const merkleDistributorContract = new ethers.Contract(
-    addresses.AAVE_MERKLE_DISTRIBUTOR,
-    onlyOwnerAbi,
-    provider,
-  );
-  const merkleDistributorOwner = await merkleDistributorContract.owner();
-
-  obj['AaveMerkleDistributor'] = {
-    address: addresses.LEND_TO_AAVE_MIGRATOR,
-    modifiers: [
-      {
-        modifier: 'onlyOwner',
-        addresses: [
-          {
-            address: merkleDistributorOwner,
-            owners: await getSafeOwners(provider, merkleDistributorOwner),
-          },
-        ],
-        functions: roles['AaveMerkleDistributor']['onlyOwner'],
-      },
-    ],
-  };
+  // const merkleDistributorContract = new ethers.Contract(
+  //   addresses.AAVE_MERKLE_DISTRIBUTOR,
+  //   onlyOwnerAbi,
+  //   provider,
+  // );
+  // const merkleDistributorOwner = await merkleDistributorContract.owner();
+  //
+  // obj['AaveMerkleDistributor'] = {
+  //   address: addresses.LEND_TO_AAVE_MIGRATOR,
+  //   modifiers: [
+  //     {
+  //       modifier: 'onlyOwner',
+  //       addresses: [
+  //         {
+  //           address: merkleDistributorOwner,
+  //           owners: await getSafeOwners(provider, merkleDistributorOwner),
+  //         },
+  //       ],
+  //       functions: roles['AaveMerkleDistributor']['onlyOwner'],
+  //     },
+  //   ],
+  // };
 
   const ecosystemReserveContract = new ethers.Contract(
     MiscEthereum.ECOSYSTEM_RESERVE,
