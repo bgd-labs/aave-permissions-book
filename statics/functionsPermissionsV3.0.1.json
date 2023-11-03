@@ -417,5 +417,14 @@
         "roles": ["onlyPoolAdmin"]
       }
     ]
+  },
+  {
+    "contract": "CapPlusRiskSteward",
+    "functions": [
+      {
+        "name": "updateCaps",
+        "roles": ["onlyRiskCouncil"]
+      }
+    ]
   }
 ]

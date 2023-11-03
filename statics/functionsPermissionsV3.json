@@ -430,5 +430,14 @@
         "roles": ["onlyRole"]
       }
     ]
+  },
+  {
+    "contract": "CapPlusRiskSteward",
+    "functions": [
+      {
+        "name": "updateCaps",
+        "roles": ["onlyRiskCouncil"]
+      }
+    ]
   }
 ]

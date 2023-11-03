@@ -356,6 +356,26 @@
             ]
           }
         ]
+      },
+      "CapPlusRiskSteward": {
+        "address": "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658",
+        "modifiers": [
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0xF221B08dD10e0C68D74F035764931Baa3b030481",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                  "0x6A44dfA9277837BC910CeDa563389cDeB5F76855"
+                ]
+              }
+            ],
+            "functions": [
+              "updateCaps"
+            ]
+          }
+        ]
       }
     },
     "roles": {
@@ -374,7 +394,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 30758919
+      "latestBlockNumber": 30769789
     },
     "govV3": {
       "contracts": {
@@ -634,7 +654,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 30758920
+      "latestCCCBlockNumber": 30769791
     }
   },
   "TENDERLY": {

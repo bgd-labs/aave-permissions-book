@@ -9,6 +9,7 @@ import { getSafeOwners } from '../helpers/guardian.js';
 import { ChainId } from '@aave/contract-helpers';
 import { getBridgeExecutor } from './bridgeExecutors.js';
 import { AddressInfo, Contracts, PermissionsJson } from '../helpers/types.js';
+import capsPlusRiskStewardABI from '../abis/capsPlusRiskSteward.json' assert { type: 'json' };
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -548,6 +549,30 @@ export const resolveV3Modifiers = async (
       },
     ],
   };
+
+  if (addressBook.CAPS_PLUS_RISK_STEWARD) {
+    const riskStewardContract = new ethers.Contract(
+      addressBook.CAPS_PLUS_RISK_STEWARD,
+      capsPlusRiskStewardABI,
+      provider,
+    );
+    const riskCouncil = await riskStewardContract.RISK_COUNCIL();
+    obj['CapPlusRiskSteward'] = {
+      address: addressBook.CAPS_PLUS_RISK_STEWARD,
+      modifiers: [
+        {
+          modifier: 'onlyRiskCouncil',
+          addresses: [
+            {
+              address: riskCouncil,
+              owners: await getSafeOwners(provider, riskCouncil),
+            },
+          ],
+          functions: roles['CapPlusRiskSteward']['onlyRiskCouncil'],
+        },
+      ],
+    };
+  }
 
   let bridgeExecutor = {};
   if (

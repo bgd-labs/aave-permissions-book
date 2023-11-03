@@ -419,6 +419,26 @@
           }
         ]
       },
+      "CapPlusRiskSteward": {
+        "address": "0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731",
+        "modifiers": [
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa",
+                "owners": [
+                  "0x6A44dfA9277837BC910CeDa563389cDeB5F76855",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ]
+              }
+            ],
+            "functions": [
+              "updateCaps"
+            ]
+          }
+        ]
+      },
       "MetisBridgeExecutor": {
         "address": "0x8EC77963068474a45016938Deb95E603Ca82a029",
         "modifiers": [
@@ -497,7 +517,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 9175083
+      "latestBlockNumber": 9185661
     },
     "govV3": {
       "contracts": {
@@ -713,7 +733,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 9175083
+      "latestCCCBlockNumber": 9185663
     }
   }
 }
