@@ -110,7 +110,7 @@
                   "0x4C30E33758216aD0d676419c21CB8D014C68099f",
                   "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
-                  "0xE8D848debB3A3e12AA815b15900c8E020B863F31",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
               }
@@ -184,7 +184,7 @@
                   "0x4C30E33758216aD0d676419c21CB8D014C68099f",
                   "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
-                  "0xE8D848debB3A3e12AA815b15900c8E020B863F31",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
               }
@@ -436,7 +436,7 @@
                   "0x4C30E33758216aD0d676419c21CB8D014C68099f",
                   "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
-                  "0xE8D848debB3A3e12AA815b15900c8E020B863F31",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
               }
@@ -510,7 +510,7 @@
                   "0x4C30E33758216aD0d676419c21CB8D014C68099f",
                   "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
-                  "0xE8D848debB3A3e12AA815b15900c8E020B863F31",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
               }
@@ -586,7 +586,7 @@
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084"
         ]
       },
-      "latestBlockNumber": 49753460
+      "latestBlockNumber": 49793549
     },
     "govV3": {
       "contracts": {
@@ -623,7 +623,7 @@
                     "0x4C30E33758216aD0d676419c21CB8D014C68099f",
                     "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
-                    "0xE8D848debB3A3e12AA815b15900c8E020B863F31",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
                     "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                   ]
                 }
@@ -646,7 +646,7 @@
                     "0x4C30E33758216aD0d676419c21CB8D014C68099f",
                     "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
-                    "0xE8D848debB3A3e12AA815b15900c8E020B863F31",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
                     "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                   ]
                 },
@@ -892,7 +892,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 49753464
+      "latestCCCBlockNumber": 49793551
     }
   },
   "V2": {
@@ -988,7 +988,7 @@
                   "0x4C30E33758216aD0d676419c21CB8D014C68099f",
                   "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
-                  "0xE8D848debB3A3e12AA815b15900c8E020B863F31",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
               }
@@ -1214,7 +1214,7 @@
                   "0x4C30E33758216aD0d676419c21CB8D014C68099f",
                   "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
-                  "0xE8D848debB3A3e12AA815b15900c8E020B863F31",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
                 ]
               }
