@@ -586,7 +586,7 @@
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084"
         ]
       },
-      "latestBlockNumber": 49793549
+      "latestBlockNumber": 49833502
     },
     "govV3": {
       "contracts": {
@@ -892,7 +892,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 49793551
+      "latestCCCBlockNumber": 49833510
     }
   },
   "V2": {
