@@ -536,7 +536,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 18571336
+      "latestBlockNumber": 18571681
     },
     "govV3": {
       "contracts": {
@@ -992,7 +992,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 18571338
+      "latestCCCBlockNumber": 18571682
     }
   },
   "GOV_V2": {
@@ -2213,7 +2213,7 @@
           "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
         ]
       },
-      "latestBlockNumber": 18571339
+      "latestBlockNumber": 18571684
     },
     "govV3": {}
   },
@@ -2263,7 +2263,7 @@
         "FACILITATOR_MANAGER_ROLE": [],
         "BUCKET_MANAGER_ROLE": []
       },
-      "latestBlockNumber": 18435275
+      "latestBlockNumber": 18569841
     },
     "govV3": {}
   },
@@ -2345,7 +2345,7 @@
             "modifier": "onlyAdmin",
             "addresses": [
               {
-                "address": "0xEC568fffba86c094cf06b22134B23074DFE2252c",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2389,7 +2389,7 @@
             "modifier": "onlyAdmin",
             "addresses": [
               {
-                "address": "0xEC568fffba86c094cf06b22134B23074DFE2252c",
+                "address": "0x17Dd33Ed0e3dD2a80E37489B8A63063161BE6957",
                 "owners": []
               }
             ],
@@ -2414,7 +2414,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2462,7 +2462,7 @@
             "modifier": "onlyPoolAdmin",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2516,7 +2516,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2534,7 +2534,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2551,7 +2551,7 @@
             "modifier": "onlyFundsAdmin",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2570,7 +2570,7 @@
                 "owners": []
               },
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2589,7 +2589,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2608,7 +2608,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2672,7 +2672,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2849,7 +2849,7 @@
             "modifier": "onlyFundsAdmin",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2868,7 +2868,7 @@
                 "owners": []
               },
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2887,7 +2887,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2961,7 +2961,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3009,7 +3009,7 @@
             "modifier": "onlyPoolAdmin",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3059,7 +3059,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3077,7 +3077,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3094,7 +3094,7 @@
             "modifier": "onlyFundsAdmin",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3113,7 +3113,7 @@
                 "owners": []
               },
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3132,7 +3132,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3151,7 +3151,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3169,7 +3169,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3193,7 +3193,7 @@
             "modifier": "onlyEmissionManager",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3205,7 +3205,7 @@
             "modifier": "onlySlashingAdmin",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3219,7 +3219,7 @@
             "modifier": "onlyCooldownAdmin",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3231,7 +3231,7 @@
             "modifier": "onlyClaimHelper",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3264,7 +3264,7 @@
             "modifier": "onlySlashingAdmin",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3278,7 +3278,7 @@
             "modifier": "onlyCooldownAdmin",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3290,7 +3290,7 @@
             "modifier": "onlyClaimHelper",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3311,7 +3311,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
                 "owners": []
               }
             ],
@@ -3329,7 +3329,7 @@
             ]
           }
         ],
-        "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
+        "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
       },
       "BPT": {
         "address": "0xC697051d1C6296C24aE3bceF39acA743861D9A81",
@@ -3363,10 +3363,43 @@
       "LendToAaveMigrator": {
         "address": "0x317625234562B1526Ea2FaC4030Ea499C5291de4",
         "modifiers": [],
+        "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+      },
+      "EcosystemReserve": {
+        "address": "0x25F2226B597E8F9514B3F68F00f494cF4f286491",
+        "modifiers": [
+          {
+            "modifier": "onlyFundsAdmin",
+            "addresses": [
+              {
+                "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+                "owners": []
+              }
+            ],
+            "functions": [
+              "approve",
+              "transfer",
+              "createStream"
+            ]
+          },
+          {
+            "modifier": "onlyAdminOrRecipient",
+            "addresses": [
+              {
+                "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
+                "owners": []
+              }
+            ],
+            "functions": [
+              "withdrawFromStream",
+              "cancelStream"
+            ]
+          }
+        ],
         "proxyAdmin": "0xee56e2b3d491590b5b31738cc34d5232f378a8d5"
       },
-      "AaveMerkleDistributor": {
-        "address": "0x317625234562B1526Ea2FaC4030Ea499C5291de4",
+      "EcosystemReserveController": {
+        "address": "0x3d569673dAa0575c936c7c67c4E6AedA69CC630C",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -3377,9 +3410,11 @@
               }
             ],
             "functions": [
-              "addDistributions",
-              "emergencyTokenTransfer",
-              "emergencyEtherTransfer"
+              "approve",
+              "transfer",
+              "createStream",
+              "withdrawFromStream",
+              "cancelStream"
             ]
           }
         ]
@@ -3397,7 +3432,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3554,7 +3589,7 @@
             "modifier": "onlyFundsAdmin",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3573,7 +3608,7 @@
                 "owners": []
               },
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3613,7 +3648,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3631,7 +3666,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3648,7 +3683,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3665,7 +3700,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3684,7 +3719,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3707,7 +3742,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -3727,6 +3762,84 @@
             "addresses": []
           }
         ]
+      },
+      "CapPlusRiskSteward": {
+        "address": "0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778",
+        "modifiers": [
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+                "owners": [
+                  "0x6A44dfA9277837BC910CeDa563389cDeB5F76855",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ]
+              }
+            ],
+            "functions": [
+              "updateCaps"
+            ]
+          }
+        ]
+      },
+      "FreezeSteward": {
+        "address": "0x2eE68ACb6A1319de1b49DC139894644E424fefD6",
+        "modifiers": [
+          {
+            "modifier": "onlyEmergencyAdmin",
+            "addresses": [],
+            "functions": [
+              "setFreeze"
+            ]
+          }
+        ]
+      },
+      "AaveMerkleDistributor": {
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": []
+              }
+            ],
+            "functions": [
+              "addDistributions",
+              "emergencyTokenTransfer",
+              "emergencyEtherTransfer"
+            ]
+          }
+        ]
+      },
+      "AavePolEthBridge": {
+        "address": "0xc928002904Ec475663A83063D492EA2aE09EbDA1",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": []
+              }
+            ],
+            "functions": [
+              "addDistributions",
+              "emergencyTokenTransfer",
+              "emergencyEtherTransfer"
+            ]
+          },
+          {
+            "modifier": "onlyRescueGuardian",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": []
+              }
+            ]
+          }
+        ]
       }
     },
     "roles": {
@@ -3739,7 +3852,7 @@
         "POOL_ADMIN": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 18435275
+      "latestBlockNumber": 18569841
     },
     "govV3": {
       "contracts": {
@@ -3763,7 +3876,7 @@
               ]
             }
           ],
-          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+          "proxyAdmin": "0x86c3ffee349a7cff7ca88c449717b1b133bfb517"
         },
         "PayloadsController": {
           "address": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
@@ -3924,7 +4037,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "address": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
                   "owners": []
                 }
               ],
@@ -3941,7 +4054,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0x79426A1c24B2978D90d7A5070a46C65B07bC4299",
+                  "address": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
                   "owners": []
                 }
               ],
@@ -3976,11 +4089,13 @@
               "addresses": [
                 {
                   "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
-                  "owners": []
+                  "owners": [],
+                  "chain": "137"
                 },
                 {
                   "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
-                  "owners": []
+                  "owners": [],
+                  "chain": "43114"
                 }
               ],
               "functions": [
@@ -3997,11 +4112,13 @@
               "addresses": [
                 {
                   "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
-                  "owners": []
+                  "owners": [],
+                  "chain": "137"
                 },
                 {
                   "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
-                  "owners": []
+                  "owners": [],
+                  "chain": "43114"
                 }
               ],
               "functions": [
@@ -4018,11 +4135,13 @@
               "addresses": [
                 {
                   "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
-                  "owners": []
+                  "owners": [],
+                  "chain": "137"
                 },
                 {
                   "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
-                  "owners": []
+                  "owners": [],
+                  "chain": "43114"
                 }
               ],
               "functions": [
@@ -4039,11 +4158,13 @@
               "addresses": [
                 {
                   "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
-                  "owners": []
+                  "owners": [],
+                  "chain": "137"
                 },
                 {
                   "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
-                  "owners": []
+                  "owners": [],
+                  "chain": "43114"
                 }
               ],
               "functions": [
@@ -4126,28 +4247,7 @@
             },
             {
               "modifier": "onlyApprovedSenders",
-              "addresses": [
-                {
-                  "address": "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7",
-                  "owners": []
-                },
-                {
-                  "address": "0x617332a777780F546261247F621051d0b98975Eb",
-                  "owners": []
-                },
-                {
-                  "address": "0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f",
-                  "owners": []
-                },
-                {
-                  "address": "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
-                  "owners": []
-                },
-                {
-                  "address": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
-                  "owners": []
-                }
-              ],
+              "addresses": [],
               "functions": [
                 "forwardMessage"
               ]
@@ -4180,14 +4280,8 @@
           "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
         }
       },
-      "senders": [
-        "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7",
-        "0x617332a777780F546261247F621051d0b98975Eb",
-        "0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f",
-        "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
-        "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
-      ],
-      "latestCCCBlockNumber": 18435275
+      "senders": [],
+      "latestCCCBlockNumber": 18569841
     }
   }
 }

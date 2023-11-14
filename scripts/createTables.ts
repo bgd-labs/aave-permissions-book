@@ -114,7 +114,7 @@ export const generateTable = (network: string, pool: string): string => {
   }
 
   const v3Contracts = generateContractsByAddress({
-    ...poolPermitsByContract.contracts,
+    ...(poolPermitsByContract?.contracts || {}),
     ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
     ...getPermissionsByNetwork(network)['V3'].contracts,
   });
