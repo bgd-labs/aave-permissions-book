@@ -342,9 +342,9 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
         governanceAddressBook: GovernanceV3Avalanche,
         tenderlyBasePool: Pools.V3,
-        tenderlyBlock: 37750440,
+        tenderlyBlock: 37763272,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/816c495a-864e-49b2-b1b7-89688ecadd95',
+          'https://rpc.tenderly.co/fork/440bffa1-df4a-42e2-98dc-a6417e8da2bd',
       },
     },
   },

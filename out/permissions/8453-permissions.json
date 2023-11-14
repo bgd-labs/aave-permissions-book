@@ -601,7 +601,7 @@
           "0x4A4c73d563395ad827511F70097d4Ef82E653805"
         ]
       },
-      "latestBlockNumber": 6597797
+      "latestBlockNumber": 6598502
     },
     "govV3": {
       "contracts": {
@@ -817,7 +817,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 6597803
+      "latestCCCBlockNumber": 6598508
     }
   },
   "TENDERLY": {
@@ -1021,6 +1021,10 @@
               },
               {
                 "address": "0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6",
+                "owners": []
+              },
+              {
+                "address": "0x4A4c73d563395ad827511F70097d4Ef82E653805",
                 "owners": []
               }
             ],
@@ -1410,12 +1414,13 @@
         "EMERGENCY_ADMIN": [
           "0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A"
         ],
-        "RISK_ADMIN": [
-          "0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6"
-        ],
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": [],
-        "FLASH_BORROWER": []
+        "FLASH_BORROWER": [],
+        "RISK_ADMIN": [
+          "0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6",
+          "0x4A4c73d563395ad827511F70097d4Ef82E653805"
+        ]
       },
       "latestBlockNumber": 6585970
     },

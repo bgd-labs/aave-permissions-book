@@ -43,11 +43,10 @@ export const overwriteBaseTenderlyPool = async (
   network: string,
   basePoolKey: string,
 ) => {
-  const permissions = getPermissionsByNetwork(network);
+  const permissions = { ...getPermissionsByNetwork(network) };
 
-  const basePoolPermissions = permissions[basePoolKey];
   // copy base pool to destionation pool
-  permissions[destinationPoolKey] = basePoolPermissions;
+  permissions[destinationPoolKey] = { ...permissions[basePoolKey] };
 
   saveJson(
     `./out/permissions/${network}-permissions.json`,
