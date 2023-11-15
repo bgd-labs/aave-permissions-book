@@ -101,6 +101,11 @@ export const generateTable = (network: string, pool: string): string => {
 
   const poolGuardians: Record<string, string[]> = {};
   const poolPermitsByContract = networkPermits[pool];
+
+  if (!poolPermitsByContract?.contracts) {
+    return readmeDirectoryTable;
+  }
+
   // create pool table
   readmeByNetwork += `## ${pool} \n`;
 

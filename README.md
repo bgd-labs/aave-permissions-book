@@ -42,7 +42,6 @@ These documents contain tables with the following information:
 |  MAINNET |  V2_ARC |  [Permissions](./out/MAINNET-V2_ARC.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_ARC_TENDERLY |  [Permissions](./out/MAINNET-V2_ARC_TENDERLY.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_AMM |  [Permissions](./out/MAINNET-V2_AMM.md#contracts) | |--------|--------|--------|
-|  MAINNET |  V2_AMM_TENDERLY |  [Permissions](./out/MAINNET-V2_AMM_TENDERLY.md#contracts) | |--------|--------|--------|
 |  MAINNET |  SAFETY_MODULE |  [Permissions](./out/MAINNET-SAFETY_MODULE.md#contracts) | |--------|--------|--------|
 |  MAINNET |  SAFETY_MODULE_TENDERLY |  [Permissions](./out/MAINNET-SAFETY_MODULE_TENDERLY.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_MISC |  [Permissions](./out/MAINNET-V2_MISC.md#contracts) | |--------|--------|--------|
