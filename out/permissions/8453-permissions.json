@@ -1193,7 +1193,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
             ],
@@ -1210,7 +1210,7 @@
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
             ],
@@ -1422,7 +1422,7 @@
           "0x4A4c73d563395ad827511F70097d4Ef82E653805"
         ]
       },
-      "latestBlockNumber": 6585970
+      "latestBlockNumber": 6627913
     },
     "govV3": {
       "contracts": {
@@ -1638,7 +1638,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 6585970
+      "latestCCCBlockNumber": 6627913
     }
   }
 }
