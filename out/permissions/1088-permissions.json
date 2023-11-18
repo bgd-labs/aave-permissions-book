@@ -545,7 +545,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 9380809
+      "latestBlockNumber": 9394113
     },
     "govV3": {
       "contracts": {
@@ -761,7 +761,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 9380820
+      "latestCCCBlockNumber": 9394116
     }
   }
 }
