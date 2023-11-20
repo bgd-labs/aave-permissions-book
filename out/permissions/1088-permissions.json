@@ -201,6 +201,10 @@
               {
                 "address": "0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731",
                 "owners": []
+              },
+              {
+                "address": "0x2C77153fF4a1e83A8d8D750735FB101ECB55949f",
+                "owners": []
               }
             ],
             "functions": [
@@ -539,13 +543,14 @@
           "0xF6Db48C5968A9eBCB935786435530f28e32Cc501"
         ],
         "RISK_ADMIN": [
-          "0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731"
+          "0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731",
+          "0x2C77153fF4a1e83A8d8D750735FB101ECB55949f"
         ],
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 9404702
+      "latestBlockNumber": 9415509
     },
     "govV3": {
       "contracts": {
@@ -761,7 +766,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 9404703
+      "latestCCCBlockNumber": 9415513
     }
   }
 }
