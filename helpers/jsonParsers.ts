@@ -1,5 +1,9 @@
 import { Contracts, PermissionsJson } from './types.js';
-import { getAllPermissionsJson, saveJson } from './fileSystem.js';
+import {
+  getAllPermissionsJson,
+  getPermissionsByNetwork,
+  saveJson,
+} from './fileSystem.js';
 
 export type MethodsByModifier = Record<string, Record<string, string[]>>;
 
@@ -39,15 +43,13 @@ export const overwriteBaseTenderlyPool = async (
   network: string,
   basePoolKey: string,
 ) => {
-  const permissions = getAllPermissionsJson();
-
-  const basePoolPermissions = permissions[network][basePoolKey];
+  const permissions = { ...getPermissionsByNetwork(network) };
 
   // copy base pool to destionation pool
-  permissions[network][destinationPoolKey] = basePoolPermissions;
+  permissions[destinationPoolKey] = { ...permissions[basePoolKey] };
 
   saveJson(
-    './out/aavePermissionList.json',
+    `./out/permissions/${network}-permissions.json`,
     JSON.stringify(permissions, null, 2),
   );
 };

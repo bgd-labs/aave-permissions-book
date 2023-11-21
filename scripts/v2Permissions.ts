@@ -286,6 +286,8 @@ export const resolveV2Modifiers = async (
       await arcTimelock.getEthereumGovernanceExecutor();
     const arcTimelockGuardian = await arcTimelock.getGuardian();
 
+    console.log('executor: ', governanceExecutor);
+
     obj['ArcTimelock'] = {
       address: poolAdmin,
       modifiers: [
