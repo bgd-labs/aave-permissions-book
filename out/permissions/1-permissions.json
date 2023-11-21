@@ -3121,7 +3121,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 18576979
+      "latestBlockNumber": 18621050
     },
     "govV3": {
       "contracts": {
@@ -3577,7 +3577,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 18576979
+      "latestCCCBlockNumber": 18621050
     }
   },
   "V2_ARC_TENDERLY": {
