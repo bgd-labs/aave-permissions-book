@@ -295,6 +295,18 @@ export const networkConfigs: NetworkConfigs = {
           '0x118DFD5418890c0332042ab05173Db4A2C1d283c': 'HyperLaneAdapter',
         },
       },
+      [Pools.TENDERLY]: {
+        aclBlock: 31558150, // update with updated acl when deployed
+        crossChainControllerBlock: 31558150,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        addressBook: AaveV3Bnb,
+        governanceAddressBook: GovernanceV3BNB,
+        tenderlyBasePool: Pools.V3,
+        tenderlyBlock: 33689893,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/1eb44d80-5b7a-424c-bc4e-1bd3dfcde83d',
+      },
     },
   },
   [ChainId.avalanche]: {
