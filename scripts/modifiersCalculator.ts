@@ -135,6 +135,8 @@ const generateNetworkPermissions = async (network: string) => {
           network,
           pool.tenderlyBasePool,
         );
+        // get current permissions
+        fullJson = getPermissionsByNetwork(network);
         fromBlock = pool.tenderlyBlock;
       } else {
         fromBlock =
@@ -181,6 +183,8 @@ const generateNetworkPermissions = async (network: string) => {
           network,
           pool.tenderlyBasePool,
         );
+        // get current permissions
+        fullJson = getPermissionsByNetwork(network);
         fromBlock = pool.tenderlyBlock;
       } else {
         fromBlock =
