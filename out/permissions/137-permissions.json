@@ -586,7 +586,7 @@
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084"
         ]
       },
-      "latestBlockNumber": 50552606
+      "latestBlockNumber": 50592975
     },
     "govV3": {
       "contracts": {
@@ -892,7 +892,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 50552613
+      "latestCCCBlockNumber": 50592978
     }
   },
   "V2": {
@@ -1118,7 +1118,9 @@
               {
                 "address": "0x46DF4eb6f7A3B0AdF526f6955b15d3fE02c618b7",
                 "owners": [
-                  "0xef276C28691328A177BF26025e3Ab40381Ae7306",
+                  "0xe1068014b5dCb9aB9dDcddF39CB5db8137Bd143b",
+                  "0xcc46D0E4cAA83ad379fAfFbf6febC20817cCA040",
+                  "0xCA09C4C11162011caf40C18860E23e0b6f736b58",
                   "0x90dD83E62396D7385B1D70166Aafb8A9E528e813",
                   "0xcD6d1ae2237Efc04180845BE23fbA45508685634",
                   "0x450C01300B83bE379113256038b4Dd3b45d23B5e",
