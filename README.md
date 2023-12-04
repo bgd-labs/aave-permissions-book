@@ -47,22 +47,12 @@ These documents contain tables with the following information:
 |  MAINNET |  V2_MISC |  [Permissions](./out/MAINNET-V2_MISC.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_MISC_TENDERLY |  [Permissions](./out/MAINNET-V2_MISC_TENDERLY.md#contracts) | |--------|--------|--------|
 |  MAINNET |  TENDERLY |  [Permissions](./out/MAINNET-TENDERLY.md#contracts) | |--------|--------|--------|
-|  OPTIMISM |  V3 |  [Permissions](./out/OPTIMISM-V3.md#contracts) | |--------|--------|--------|
-|  BINANCE |  V3 |  [Permissions](./out/BINANCE-V3.md#contracts) | |--------|--------|--------|
-|  GNOSIS |  V3 |  [Permissions](./out/GNOSIS-V3.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V3 |  [Permissions](./out/POLYGON-V3.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V2 |  [Permissions](./out/POLYGON-V2.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V2_TENDERLY |  [Permissions](./out/POLYGON-V2_TENDERLY.md#contracts) | |--------|--------|--------|
 |  POLYGON |  TENDERLY |  [Permissions](./out/POLYGON-TENDERLY.md#contracts) | |--------|--------|--------|
-|  FANTOM_OPERA |  V3 |  [Permissions](./out/FANTOM_OPERA-V3.md#contracts) | |--------|--------|--------|
-|  METIS_ANDROMEDA |  V3 |  [Permissions](./out/METIS_ANDROMEDA-V3.md#contracts) | |--------|--------|--------|
 |  BASE |  V3 |  [Permissions](./out/BASE-V3.md#contracts) | |--------|--------|--------|
 |  BASE |  TENDERLY |  [Permissions](./out/BASE-TENDERLY.md#contracts) | |--------|--------|--------|
-|  ARBITRUM_ONE |  V3 |  [Permissions](./out/ARBITRUM_ONE-V3.md#contracts) | |--------|--------|--------|
-|  AVALANCHE |  V3 |  [Permissions](./out/AVALANCHE-V3.md#contracts) | |--------|--------|--------|
-|  AVALANCHE |  V2 |  [Permissions](./out/AVALANCHE-V2.md#contracts) | |--------|--------|--------|
-|  AVALANCHE |  V2_TENDERLY |  [Permissions](./out/AVALANCHE-V2_TENDERLY.md#contracts) | |--------|--------|--------|
-|  AVALANCHE |  TENDERLY |  [Permissions](./out/AVALANCHE-TENDERLY.md#contracts) | |--------|--------|--------|
        
     
 ## Usage
