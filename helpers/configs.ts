@@ -239,7 +239,8 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 25824416,
         crossChainControllerBlock: 45029910,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        crossChainPermissionsJson:
+          './statics/functionsPermissionsGovV3Emergency.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Polygon, ...MiscPolygon },
         governanceAddressBook: GovernanceV3Polygon,
@@ -264,7 +265,8 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.TENDERLY]: {
         aclBlock: 25824416,
         crossChainControllerBlock: 45029910,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        crossChainPermissionsJson:
+          './statics/functionsPermissionsGovV3Emergency.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { AaveV3Polygon, ...MiscPolygon },
         governanceAddressBook: GovernanceV3Polygon,
@@ -288,7 +290,8 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 31558150, // update with updated acl when deployed
         crossChainControllerBlock: 31558150,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        crossChainPermissionsJson:
+          './statics/functionsPermissionsGovV3Emergency.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Bnb,
         governanceAddressBook: GovernanceV3BNB,
@@ -301,7 +304,8 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.TENDERLY]: {
         aclBlock: 31558150, // update with updated acl when deployed
         crossChainControllerBlock: 31558150,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        crossChainPermissionsJson:
+          './statics/functionsPermissionsGovV3Emergency.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: AaveV3Bnb,
         governanceAddressBook: GovernanceV3BNB,
@@ -329,7 +333,8 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 11970456,
         crossChainControllerBlock: 32549880,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        crossChainPermissionsJson:
+          './statics/functionsPermissionsGovV3Emergency.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
         governanceAddressBook: GovernanceV3Avalanche,
@@ -353,7 +358,8 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.TENDERLY]: {
         aclBlock: 11970456,
         crossChainControllerBlock: 32549880,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        crossChainPermissionsJson:
+          './statics/functionsPermissionsGovV3Emergency.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
         governanceAddressBook: GovernanceV3Avalanche,
@@ -519,7 +525,8 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 30293056,
         crossChainControllerBlock: 30373982,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        crossChainPermissionsJson:
+          './statics/functionsPermissionsGovV3Emergency.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Gnosis, ...MiscGnosis },
         governanceAddressBook: GovernanceV3Gnosis,
@@ -532,7 +539,7 @@ export const networkConfigs: NetworkConfigs = {
       // [Pools.TENDERLY]: {
       //   aclBlock: 30293056,
       //   crossChainControllerBlock: 30373982,
-      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3Emergency.json',
       //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
       //   addressBook: { ...AaveV3Gnosis, ...MiscGnosis },
       //   governanceAddressBook: GovernanceV3Gnosis,

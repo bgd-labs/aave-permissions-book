@@ -529,7 +529,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 162079927
+      "latestBlockNumber": 162221936
     },
     "govV3": {
       "contracts": {
@@ -681,9 +681,6 @@
                     "0x0650302887619fa7727D8BD480Cda11A638B219B"
                   ]
                 }
-              ],
-              "functions": [
-                "solveEmergency"
               ]
             },
             {
@@ -745,7 +742,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 162079945
+      "latestCCCBlockNumber": 162222007
     }
   },
   "TENDERLY": {
