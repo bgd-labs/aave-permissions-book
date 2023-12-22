@@ -161,10 +161,6 @@
       {
         "name": "receiveCrossChainMessage",
         "roles": ["onlyApprovedBridges"]
-      },
-      {
-        "name": "solveEmergency",
-        "roles": ["onlyGuardian"]
       }
     ]
   }

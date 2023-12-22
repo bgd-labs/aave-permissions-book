@@ -469,16 +469,6 @@ export const resolveGovV3Modifiers = async (
           functions: roles['CrossChainController']['onlyOwner'],
         },
         {
-          modifier: 'onlyGuardian',
-          addresses: [
-            {
-              address: guardian,
-              owners: await getSafeOwners(provider, guardian),
-            },
-          ],
-          functions: roles['CrossChainController']['onlyGuardian'],
-        },
-        {
           modifier: 'onlyOwnerOrGuardian',
           addresses: [
             {
@@ -528,6 +518,23 @@ export const resolveGovV3Modifiers = async (
         },
       ],
     };
+    if (
+      chainId === ChainId.polygon ||
+      chainId === ChainId.avalanche ||
+      chainId === 56 ||
+      chainId === 100
+    ) {
+      obj['CrossChainController'].modifiers.push({
+        modifier: 'onlyGuardian',
+        addresses: [
+          {
+            address: guardian,
+            owners: await getSafeOwners(provider, guardian),
+          },
+        ],
+        functions: roles['CrossChainController']['onlyGuardian'],
+      });
+    }
   }
 
   // add proxy admins
