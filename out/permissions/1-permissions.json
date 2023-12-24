@@ -536,7 +536,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 18844993
+      "latestBlockNumber": 18852142
     },
     "govV3": {
       "contracts": {
@@ -976,7 +976,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 18844995
+      "latestCCCBlockNumber": 18852143
     }
   },
   "GOV_V2": {
@@ -2201,7 +2201,7 @@
           "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
         ]
       },
-      "latestBlockNumber": 18844996
+      "latestBlockNumber": 18852144
     },
     "govV3": {}
   },
