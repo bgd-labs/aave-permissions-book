@@ -9,7 +9,7 @@
 |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  - |  onlyPendingAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  acceptAdmin | |--------|--------|--------|--------|--------|
 |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  - |  onlyAdmin |  [AaveGovernanceV2](https://etherscan.io/address/0xEC568fffba86c094cf06b22134B23074DFE2252c) |  queueTransaction, cancelTransaction, executeTransaction | |--------|--------|--------|--------|--------|
 |  [LongExecutor](https://etherscan.io/address/0x79426A1c24B2978D90d7A5070a46C65B07bC4299) |  - |  onlyTimelock |  [LongExecutor](https://etherscan.io/address/0x79426A1c24B2978D90d7A5070a46C65B07bC4299) |  setDelay, setPendingAdmin | |--------|--------|--------|--------|--------|
-|  [LongExecutor](https://etherscan.io/address/0x79426A1c24B2978D90d7A5070a46C65B07bC4299) |  - |  onlyPendingAdmin |  [0x0000000000000000000000000000000000000000](https://etherscan.io/address/0x0000000000000000000000000000000000000000) |  acceptAdmin | |--------|--------|--------|--------|--------|
+|  [LongExecutor](https://etherscan.io/address/0x79426A1c24B2978D90d7A5070a46C65B07bC4299) |  - |  onlyPendingAdmin |  [Executor_lvl2](https://etherscan.io/address/0x17Dd33Ed0e3dD2a80E37489B8A63063161BE6957) |  acceptAdmin | |--------|--------|--------|--------|--------|
 |  [LongExecutor](https://etherscan.io/address/0x79426A1c24B2978D90d7A5070a46C65B07bC4299) |  - |  onlyAdmin |  [AaveGovernanceV2](https://etherscan.io/address/0xEC568fffba86c094cf06b22134B23074DFE2252c) |  queueTransaction, cancelTransaction, executeTransaction | |--------|--------|--------|--------|--------|
 
 ### Guardians 
