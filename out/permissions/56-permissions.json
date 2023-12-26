@@ -456,7 +456,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 34677014
+      "latestBlockNumber": 34694116
     },
     "govV3": {
       "contracts": {
@@ -499,7 +499,8 @@
                 }
               ],
               "functions": [
-                "rescueVotingPortal"
+                "rescueVotingPortal",
+                "cancelProposal"
               ]
             },
             {
@@ -713,7 +714,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 34677016
+      "latestCCCBlockNumber": 34694119
     }
   },
   "TENDERLY": {
@@ -1425,7 +1426,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 33689893
+      "latestCCCBlockNumber": 33691681
     }
   }
 }
