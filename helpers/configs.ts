@@ -280,6 +280,9 @@ export const networkConfigs: NetworkConfigs = {
     explorer: 'https://bscscan.com',
     addressesNames: {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0xE8C5ab722d0b1B7316Cc4034f2BE91A5B1d29964': 'BGD',
+      '0x25170e9Ed4077ABA7D3DD03cf4A9F45Dc6D0fcCD': 'Aave Guardian Binance',
+      '0x126dc589cc75f17385dD95516F3F1788d862E7bc': 'Risk Council',
     },
     pools: {
       [Pools.V3]: {
