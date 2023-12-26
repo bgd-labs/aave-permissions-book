@@ -104,6 +104,7 @@ export const networkConfigs: NetworkConfigs = {
       '0x00907f9921424583e7ffBfEdf84F92B7B2Be4977': 'GHO aToken',
       '0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF': 'BGD',
       '0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8': 'Risk Council',
+      '0xF60BDDE9077Be3226Db8109432d78afD92a8A003': 'Mediator',
     },
     pools: {
       [Pools.V3]: {
