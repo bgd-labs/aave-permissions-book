@@ -102,8 +102,11 @@ export const resolveGovV2Modifiers = async (
     executorWithTimelockAbi,
     provider,
   );
+  console.log('long exec: ', addressBook.LONG_EXECUTOR);
   const longPendingAdmin = await longExecutor.getPendingAdmin();
+  console.log('pending admin: ', longPendingAdmin);
   const longAdmin = await longExecutor.getAdmin();
+  console.log('admin: ', longAdmin);
 
   obj['LongExecutor'] = {
     address: addressBook.LONG_EXECUTOR,
