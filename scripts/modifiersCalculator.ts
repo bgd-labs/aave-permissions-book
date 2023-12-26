@@ -84,7 +84,7 @@ const generateNetworkPermissions = async (network: string) => {
             pool: ${poolKey}
           ------------------------------------
           `);
-      console.log('block: ', await provider.getBlockNumber());
+
       poolPermissions = await resolveGovV2Modifiers(
         pool.addressBook,
         poolKey === Pools.GOV_V2_TENDERLY
