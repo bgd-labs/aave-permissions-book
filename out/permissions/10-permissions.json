@@ -547,7 +547,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 113993001
+      "latestBlockNumber": 114001031
     },
     "govV3": {
       "contracts": {
@@ -590,7 +590,8 @@
                 }
               ],
               "functions": [
-                "rescueVotingPortal"
+                "rescueVotingPortal",
+                "cancelProposal"
               ]
             },
             {
@@ -747,7 +748,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 113993015
+      "latestCCCBlockNumber": 114001038
     }
   },
   "TENDERLY": {

@@ -509,7 +509,7 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 31633368
+      "latestBlockNumber": 31636386
     },
     "govV3": {
       "contracts": {
@@ -552,7 +552,8 @@
                 }
               ],
               "functions": [
-                "rescueVotingPortal"
+                "rescueVotingPortal",
+                "cancelProposal"
               ]
             },
             {
@@ -766,7 +767,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 31633370
+      "latestCCCBlockNumber": 31636387
     }
   },
   "TENDERLY": {

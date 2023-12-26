@@ -29,6 +29,10 @@
         "roles": ["onlyGuardian"]
       },
       {
+        "name": "cancelProposal",
+        "roles": ["onlyGuardian"]
+      },
+      {
         "name": "updateGuardian",
         "roles": ["onlyOwnerOrGuardian"]
       }

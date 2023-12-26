@@ -601,7 +601,7 @@
           "0x4A4c73d563395ad827511F70097d4Ef82E653805"
         ]
       },
-      "latestBlockNumber": 8397472
+      "latestBlockNumber": 8405746
     },
     "govV3": {
       "contracts": {
@@ -644,7 +644,8 @@
                 }
               ],
               "functions": [
-                "rescueVotingPortal"
+                "rescueVotingPortal",
+                "cancelProposal"
               ]
             },
             {
@@ -801,7 +802,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 8397478
+      "latestCCCBlockNumber": 8405752
     }
   },
   "TENDERLY": {
