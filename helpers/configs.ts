@@ -438,29 +438,29 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
-  // [ChainId.metis_andromeda]: {
-  //   rpcUrl: process.env.RPC_METIS,
-  //   explorer: 'https://andromeda-explorer.metis.io',
-  //   addressesNames: {
-  //     '0xF6Db48C5968A9eBCB935786435530f28e32Cc501': 'Aave Guardian Metis',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //     '0x9853589F951D724D9f7c6724E0fD63F9d888C429': 'BGD',
-  //     '0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa': 'Risk Council',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 5405900,
-  //       crossChainControllerBlock: 8526247,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //       addressBook: { ...AaveV3Metis, ...MiscMetis },
-  //       governanceAddressBook: GovernanceV3Metis,
-  //       addresses: {
-  //         '0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf': 'MetisAdapter',
-  //       },
-  //     },
-  //   },
-  // },
+  [ChainId.metis_andromeda]: {
+    rpcUrl: process.env.RPC_METIS,
+    explorer: 'https://andromeda-explorer.metis.io',
+    addressesNames: {
+      '0xF6Db48C5968A9eBCB935786435530f28e32Cc501': 'Aave Guardian Metis',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0x9853589F951D724D9f7c6724E0fD63F9d888C429': 'BGD',
+      '0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa': 'Risk Council',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 5405900,
+        crossChainControllerBlock: 8526247,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: { ...AaveV3Metis, ...MiscMetis },
+        governanceAddressBook: GovernanceV3Metis,
+        addresses: {
+          '0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf': 'MetisAdapter',
+        },
+      },
+    },
+  },
   ['8453']: {
     rpcUrl: process.env.RPC_BASE,
     explorer: 'https://basescan.org',

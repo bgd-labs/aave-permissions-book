@@ -536,7 +536,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 18869469
+      "latestBlockNumber": 18870595
     },
     "govV3": {
       "contracts": {
@@ -544,10 +544,10 @@
           "address": "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7",
           "modifiers": [
             {
-              "modifier": "onlyShortExecutor",
+              "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                   "owners": []
                 }
               ],
@@ -558,9 +558,60 @@
                 "setVotingConfigs",
                 "setPowerStrategy"
               ]
+            },
+            {
+              "modifier": "onlyGuardian",
+              "addresses": [
+                {
+                  "address": "0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633",
+                  "owners": [
+                    "0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707",
+                    "0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39",
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xe5d453700d99296c2c085B8119BD6c152Cf63FA6",
+                    "0xF1ba2231F373CffD47641540CfaEB1f21E50659B",
+                    "0x4C30E33758216aD0d676419c21CB8D014C68099f",
+                    "0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x9343dcB6A3A523510F3499004D8aa595Baa25bc5",
+                    "0x2BEDd8645B407B3B6447fbC09B269eC7a5794606"
+                  ]
+                }
+              ],
+              "functions": [
+                "rescueVotingPortal",
+                "cancelProposal"
+              ]
+            },
+            {
+              "modifier": "onlyOwnerOrGuardian",
+              "addresses": [
+                {
+                  "address": "0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633",
+                  "owners": [
+                    "0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707",
+                    "0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39",
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xe5d453700d99296c2c085B8119BD6c152Cf63FA6",
+                    "0xF1ba2231F373CffD47641540CfaEB1f21E50659B",
+                    "0x4C30E33758216aD0d676419c21CB8D014C68099f",
+                    "0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x9343dcB6A3A523510F3499004D8aa595Baa25bc5",
+                    "0x2BEDd8645B407B3B6447fbC09B269eC7a5794606"
+                  ]
+                },
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": []
+                }
+              ],
+              "functions": [
+                "updateGuardian"
+              ]
             }
           ],
-          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+          "proxyAdmin": "0x86c3ffee349a7cff7ca88c449717b1b133bfb517"
         },
         "PayloadsController": {
           "address": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
@@ -601,7 +652,8 @@
                 }
               ],
               "functions": [
-                "rescueVotingPortal"
+                "rescueVotingPortal",
+                "cancelProposal"
               ]
             },
             {
@@ -738,7 +790,7 @@
               "modifier": "onlyOwner",
               "addresses": [
                 {
-                  "address": "0xF60BDDE9077Be3226Db8109432d78afD92a8A003",
+                  "address": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
                   "owners": []
                 }
               ],
@@ -976,7 +1028,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 18869470
+      "latestCCCBlockNumber": 18870596
     }
   },
   "V2": {
@@ -1771,7 +1823,7 @@
             "modifier": "onlyEmissionManager",
             "addresses": [
               {
-                "address": "0xEE56e2B3D491590B5b31738cC34d5232F378a8D5",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2063,7 +2115,7 @@
           "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
         ]
       },
-      "latestBlockNumber": 18869471
+      "latestBlockNumber": 18870598
     },
     "govV3": {}
   },
@@ -2133,7 +2185,7 @@
             "modifier": "onlyPendingAdmin",
             "addresses": [
               {
-                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "address": "0x0000000000000000000000000000000000000000",
                 "owners": []
               }
             ],
@@ -2145,7 +2197,7 @@
             "modifier": "onlyAdmin",
             "addresses": [
               {
-                "address": "0xEC568fffba86c094cf06b22134B23074DFE2252c",
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": []
               }
             ],
@@ -2177,7 +2229,7 @@
             "modifier": "onlyPendingAdmin",
             "addresses": [
               {
-                "address": "0x17Dd33Ed0e3dD2a80E37489B8A63063161BE6957",
+                "address": "0x0000000000000000000000000000000000000000",
                 "owners": []
               }
             ],
@@ -2189,7 +2241,7 @@
             "modifier": "onlyAdmin",
             "addresses": [
               {
-                "address": "0xEC568fffba86c094cf06b22134B23074DFE2252c",
+                "address": "0x17Dd33Ed0e3dD2a80E37489B8A63063161BE6957",
                 "owners": []
               }
             ],
