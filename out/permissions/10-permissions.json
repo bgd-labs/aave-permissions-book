@@ -547,7 +547,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 112493341
+      "latestBlockNumber": 113992756
     },
     "govV3": {
       "contracts": {
@@ -689,22 +689,6 @@
               ]
             },
             {
-              "modifier": "onlyGuardian",
-              "addresses": [
-                {
-                  "address": "0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF",
-                  "owners": [
-                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7",
-                    "0x0650302887619fa7727D8BD480Cda11A638B219B"
-                  ]
-                }
-              ],
-              "functions": [
-                "solveEmergency"
-              ]
-            },
-            {
               "modifier": "onlyOwnerOrGuardian",
               "addresses": [
                 {
@@ -763,7 +747,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 112493350
+      "latestCCCBlockNumber": 113992766
     }
   },
   "TENDERLY": {
