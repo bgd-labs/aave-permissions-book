@@ -509,7 +509,7 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 31853125
+      "latestBlockNumber": 31869255
     },
     "govV3": {
       "contracts": {
@@ -767,7 +767,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 31853130
+      "latestCCCBlockNumber": 31869260
     }
   },
   "TENDERLY": {
