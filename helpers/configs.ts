@@ -37,7 +37,10 @@ import {
   MiscFantom,
   MiscMetis,
   MiscAvalanche,
-  AaveV3Bnb,
+  AaveV3BNB,
+  AaveV3PolygonZkEvm,
+  MiscPolygonZkEvm,
+  GovernanceV3PolygonZkEvm,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -291,7 +294,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 31558150,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Bnb,
+        addressBook: AaveV3BNB,
         governanceAddressBook: GovernanceV3BNB,
         addresses: {
           '0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf': 'CCIPAdapter',
@@ -529,6 +532,52 @@ export const networkConfigs: NetworkConfigs = {
       //   tenderlyRpcUrl:
       //     'https://rpc.tenderly.co/fork/7848428f-9ece-44f6-8958-0eae971c822b',
       // },
+    },
+  },
+  // ['534352']: {
+  //   rpcUrl: process.env.RPC_SCROLL,
+  //   explorer: 'https://scrollscan.com/',
+  //   addressesNames: {
+  //     '0x63B20270b695E44Ac94Ad7592D5f81E3575b93e7': 'Aave Guardian Scroll',
+  //     '0x4aAa03F0A61cf93eA252e987b585453578108358': 'BGD',
+  //     // '': 'Risk Council',
+  //   },
+  //   pools: {
+  //     [Pools.V3]: {
+  //       aclBlock: ,
+  //       crossChainControllerBlock: 2140900,
+  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+  //       addressBook: { ...AaveV3Scroll, ...MiscScroll },
+  //       governanceAddressBook: GovernanceV3Scroll,
+  //       addresses: {
+  //         '0x118DFD5418890c0332042ab05173Db4A2C1d283c': 'ScrollAdapter',
+  //       },
+  //     },
+  //   },
+  // },
+  ['1101']: {
+    rpcUrl: process.env.RPC_ZKEVM,
+    explorer: 'https://zkevm.polygonscan.com/',
+    addressesNames: {
+      '0x8C05474F1f0161F71276677De0a2d8a347583c45':
+        'Aave Guardian Polygon ZkEvm',
+      '0x07CD7D7866074FDFC4b8b86B126dD7199859483a': 'BGD',
+      '0xC165b4ae0dfB650E0123d4A70D260029Cb6e2C0f': 'Risk Council',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 9169630,
+        crossChainControllerBlock: 2140900,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: { ...AaveV3PolygonZkEvm, ...MiscPolygonZkEvm },
+        governanceAddressBook: GovernanceV3PolygonZkEvm,
+        addresses: {
+          '0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b': 'ZkEVMAdapter',
+        },
+      },
     },
   },
 };
