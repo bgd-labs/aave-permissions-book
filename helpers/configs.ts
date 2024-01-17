@@ -37,7 +37,7 @@ import {
   MiscFantom,
   MiscMetis,
   MiscAvalanche,
-  AaveV3Bnb,
+  AaveV3BNB,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -291,7 +291,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 31558150,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
-        addressBook: AaveV3Bnb,
+        addressBook: AaveV3BNB,
         governanceAddressBook: GovernanceV3BNB,
         addresses: {
           '0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf': 'CCIPAdapter',
