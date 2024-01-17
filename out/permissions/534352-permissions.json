@@ -240,7 +240,8 @@
               "setClaimer"
             ]
           }
-        ]
+        ],
+        "proxyAdmin": "0xdc5D225Df17df184d11015B91C4A10cd7834e2aC"
       },
       "WrappedTokenGatewayV3": {
         "address": "0x93c597e5229f76679d7646cC9161B59Cc0DE78B9",
@@ -389,7 +390,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 2479369
+      "latestBlockNumber": 2539113
     },
     "govV3": {
       "contracts": {
@@ -564,7 +565,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 2479371
+      "latestCCCBlockNumber": 2539116
     }
   }
 }
