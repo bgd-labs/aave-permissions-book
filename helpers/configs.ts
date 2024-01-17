@@ -290,7 +290,7 @@ export const networkConfigs: NetworkConfigs = {
         aclBlock: 31558150, // update with updated acl when deployed
         crossChainControllerBlock: 31558150,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: AaveV3BNB,
         governanceAddressBook: GovernanceV3BNB,
         addresses: {

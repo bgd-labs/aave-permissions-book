@@ -155,7 +155,8 @@
               "setEModeCategory",
               "setAssetEModeCategory",
               "setUnbackedMintCap",
-              "setReserveInterestRateStrategyAddress"
+              "setReserveInterestRateStrategyAddress",
+              "setReserveFlashLoaning"
             ]
           },
           {
@@ -262,7 +263,7 @@
             ]
           }
         ],
-        "proxyAdmin": "0x0000000000000000000000000000000000000000"
+        "proxyAdmin": "0xff75B6da14FfbbfD355Daf7a2731456b3562Ba6D"
       },
       "WrappedTokenGatewayV3": {
         "address": "0xd91d1331db4F436DaF47Ec9Dd86deCb8EEF946B4",
@@ -456,7 +457,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 35325547
+      "latestBlockNumber": 35326564
     },
     "govV3": {
       "contracts": {
@@ -714,7 +715,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 35325550
+      "latestCCCBlockNumber": 35326566
     }
   },
   "TENDERLY": {
