@@ -300,18 +300,18 @@ export const networkConfigs: NetworkConfigs = {
           '0x118DFD5418890c0332042ab05173Db4A2C1d283c': 'HyperLaneAdapter',
         },
       },
-      [Pools.TENDERLY]: {
-        aclBlock: 33571625,
-        crossChainControllerBlock: 31558150,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: { ...AaveV3BNB, ...MiscBNB },
-        governanceAddressBook: GovernanceV3BNB,
-        tenderlyBasePool: Pools.V3,
-        tenderlyBlock: 35351656,
-        tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/fb56675b-21f6-4d9c-8748-30379e30242a',
-      },
+      // [Pools.TENDERLY]: {
+      //   aclBlock: 33571625,
+      //   crossChainControllerBlock: 31558150,
+      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   addressBook: { ...AaveV3BNB, ...MiscBNB },
+      //   governanceAddressBook: GovernanceV3BNB,
+      //   tenderlyBasePool: Pools.V3,
+      //   tenderlyBlock: 35351656,
+      //   tenderlyRpcUrl:
+      //     'https://rpc.tenderly.co/fork/fb56675b-21f6-4d9c-8748-30379e30242a',
+      // },
     },
   },
   [ChainId.avalanche]: {
