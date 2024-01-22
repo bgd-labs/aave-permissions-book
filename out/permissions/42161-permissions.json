@@ -273,7 +273,7 @@
         "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
       },
       "WrappedTokenGatewayV3": {
-        "address": "0xB5Ee21786D28c5Ba61661550879475976B707099",
+        "address": "0xecD4bd3121F9FD604ffaC631bF6d41ec12f1fafb",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -529,7 +529,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 169196620
+      "latestBlockNumber": 172846877
     },
     "govV3": {
       "contracts": {
@@ -730,7 +730,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 169196638
+      "latestCCCBlockNumber": 172846901
     }
   },
   "TENDERLY": {

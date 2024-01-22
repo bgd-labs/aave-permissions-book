@@ -369,7 +369,10 @@ export const resolveV3Modifiers = async (
     chainId === ChainId.mainnet ||
     chainId === 1088 ||
     chainId === 534352 ||
-    chainId === 1101
+    chainId === 1101 ||
+    chainId === 100 ||
+    chainId === 8453 ||
+    chainId === 56
   ) {
     obj['RewardsController'].proxyAdmin = addressBook.POOL_ADDRESSES_PROVIDER;
   }

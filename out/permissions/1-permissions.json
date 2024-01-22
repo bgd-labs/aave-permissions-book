@@ -292,7 +292,7 @@
         "proxyAdmin": "0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e"
       },
       "WrappedTokenGatewayV3": {
-        "address": "0xD322A49006FC828F9B5B37Ab215F99B4E5caB19C",
+        "address": "0x893411580e590D62dDBca8a703d61Cc4A8c7b2b9",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -485,7 +485,7 @@
         ]
       },
       "AavePolEthBridge": {
-        "address": "0xc928002904Ec475663A83063D492EA2aE09EbDA1",
+        "address": "0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -536,7 +536,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 18980181
+      "latestBlockNumber": 19058794
     },
     "govV3": {
       "contracts": {
@@ -1028,7 +1028,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 18980182
+      "latestCCCBlockNumber": 19058794
     }
   },
   "V2": {
@@ -1228,7 +1228,7 @@
         ]
       },
       "WrappedTokenGatewayV2": {
-        "address": "0xEFFC18fC3b7eb8E676dac549E0c693ad50D1Ce31",
+        "address": "0xa0d9C1E9E48Ca30c8d8C3B5D69FF5dc1f6DFfC24",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -1775,7 +1775,7 @@
         ]
       },
       "WrappedTokenGatewayV2": {
-        "address": "0x1C4a4e31231F71Fc34867D034a9E68f6fC798249",
+        "address": "0xbe9a7B3F2f54E18D7C0a17B03ad84Ac2D1D28eAC",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -2115,7 +2115,7 @@
           "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
         ]
       },
-      "latestBlockNumber": 18980182
+      "latestBlockNumber": 19058795
     },
     "govV3": {}
   },

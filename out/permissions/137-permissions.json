@@ -273,7 +273,7 @@
         "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
       },
       "WrappedTokenGatewayV3": {
-        "address": "0x1e4b7A6b903680eab0c5dAbcb8fD429cD2a9598c",
+        "address": "0xC1E320966c485ebF2A0A2A6d3c0Dc860A156eB1B",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -466,13 +466,13 @@
         ]
       },
       "AavePolEthBridge": {
-        "address": "0xc928002904Ec475663A83063D492EA2aE09EbDA1",
+        "address": "0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36",
         "modifiers": [
           {
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
                 "owners": []
               }
             ],
@@ -486,7 +486,7 @@
             "modifier": "onlyRescueGuardian",
             "addresses": [
               {
-                "address": "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+                "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
                 "owners": []
               }
             ]
@@ -586,7 +586,7 @@
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084"
         ]
       },
-      "latestBlockNumber": 52179210
+      "latestBlockNumber": 52601395
     },
     "govV3": {
       "contracts": {
@@ -890,7 +890,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 52179212
+      "latestCCCBlockNumber": 52601399
     }
   },
   "V2": {
@@ -1090,7 +1090,7 @@
         ]
       },
       "WrappedTokenGatewayV2": {
-        "address": "0xAeBF56223F044a73A513FAD7E148A9075227eD9b",
+        "address": "0xf1e6d4347105138B51E2bacA9A22fA228309ebB1",
         "modifiers": [
           {
             "modifier": "onlyOwner",

@@ -2,7 +2,7 @@
   "V3": {
     "contracts": {
       "PoolAddressesProvider": {
-        "address": "0xdc5D225Df17df184d11015B91C4A10cd7834e2aC",
+        "address": "0x69850D0B276776781C063771b161bd8894BCdD04",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -28,14 +28,14 @@
         ]
       },
       "Pool": {
-        "address": "0xe37405957E371D07A1086a02ae33Ae443d4574F9",
-        "proxyAdmin": "0xdc5D225Df17df184d11015B91C4A10cd7834e2aC",
+        "address": "0x11fCfe756c05AD438e312a7fd934381537D3cFfe",
+        "proxyAdmin": "0x69850D0B276776781C063771b161bd8894BCdD04",
         "modifiers": [
           {
             "modifier": "onlyPoolConfigurator",
             "addresses": [
               {
-                "address": "0x81b161773CE43781A3E67d71f652E0E22f21e170",
+                "address": "0x32BCab42a2bb5AC577D24b425D46d8b8e0Df9b7f",
                 "owners": []
               }
             ],
@@ -73,8 +73,8 @@
         ]
       },
       "PoolConfigurator": {
-        "address": "0x81b161773CE43781A3E67d71f652E0E22f21e170",
-        "proxyAdmin": "0xdc5D225Df17df184d11015B91C4A10cd7834e2aC",
+        "address": "0x32BCab42a2bb5AC577D24b425D46d8b8e0Df9b7f",
+        "proxyAdmin": "0x69850D0B276776781C063771b161bd8894BCdD04",
         "modifiers": [
           {
             "modifier": "onlyPoolAdmin",
@@ -102,6 +102,21 @@
               {
                 "address": "0x6ec33534BE07d45cc4E02Fbd127F8ed2aE919a6b",
                 "owners": []
+              },
+              {
+                "address": "0x63B20270b695E44Ac94Ad7592D5f81E3575b93e7",
+                "owners": [
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
+                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
+                ]
               }
             ],
             "functions": [
@@ -158,6 +173,21 @@
               {
                 "address": "0x6ec33534BE07d45cc4E02Fbd127F8ed2aE919a6b",
                 "owners": []
+              },
+              {
+                "address": "0x63B20270b695E44Ac94Ad7592D5f81E3575b93e7",
+                "owners": [
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
+                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
+                ]
               }
             ],
             "functions": [
@@ -167,7 +197,7 @@
         ]
       },
       "AaveOracle": {
-        "address": "0xD936362a1960ECE6c99a89F0a6f1104f0873826A",
+        "address": "0x04421D8C506E2fA2371a08EfAaBf791F624054F3",
         "modifiers": [
           {
             "modifier": "onlyAssetListingOrPoolAdmins",
@@ -185,7 +215,7 @@
         ]
       },
       "Collector": {
-        "address": "0x83a9EFE0485e7C227F29fe376132EfF746B45E96",
+        "address": "0x90eB541e1a431D8a30ED85A77675D1F001128cb5",
         "modifiers": [
           {
             "modifier": "onlyFundsAdmin",
@@ -223,13 +253,13 @@
         "proxyAdmin": "0x782559e349b084bb7c07c08404ae6e3436cdae2e"
       },
       "RewardsController": {
-        "address": "0xB972ABEdB6047e0EfcfE1261c10F1a93C4daE29F",
+        "address": "0xa3f3100C4f1D0624DB9DB97b40C13885Ce297799",
         "modifiers": [
           {
             "modifier": "onlyEmissionManager",
             "addresses": [
               {
-                "address": "0x7417cB07350Cc50ad5d461648cA55E2405190887",
+                "address": "0x6091546836DAe0487A50E300da3F237727441D90",
                 "owners": []
               }
             ],
@@ -241,10 +271,10 @@
             ]
           }
         ],
-        "proxyAdmin": "0xdc5D225Df17df184d11015B91C4A10cd7834e2aC"
+        "proxyAdmin": "0x69850D0B276776781C063771b161bd8894BCdD04"
       },
       "WrappedTokenGatewayV3": {
-        "address": "0x93c597e5229f76679d7646cC9161B59Cc0DE78B9",
+        "address": "0xFF75A4B698E3Ec95E608ac0f22A03B8368E05F5D",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -262,7 +292,7 @@
         ]
       },
       "EmissionManager": {
-        "address": "0x7417cB07350Cc50ad5d461648cA55E2405190887",
+        "address": "0x6091546836DAe0487A50E300da3F237727441D90",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -281,7 +311,7 @@
         ]
       },
       "PoolAddressesProviderRegistry": {
-        "address": "0xb0633e01310a09C1Ee71a96c057DcF9c13fd6F62",
+        "address": "0xFBedc64AeE24921cb43004312B9eF367a4162b57",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -299,7 +329,7 @@
         ]
       },
       "RatesFactory": {
-        "address": "0xeF4d1F3F0dCe46C1Ad684F23Ea3aA542592A8cFe",
+        "address": "0xe48fb34452FaE3Cd5d906F748490FBE16c3Ce31b",
         "modifiers": [],
         "proxyAdmin": "0x782559e349b084bb7c07c08404ae6e3436cdae2e"
       },
@@ -323,7 +353,7 @@
         ]
       },
       "ACLManager": {
-        "address": "0xAF4646B0131af8fc0DC435AF7F7d303Ac131E072",
+        "address": "0x7633F981D87dC6307227de9383D2ce7243158081",
         "modifiers": [
           {
             "modifier": "setRoleAdmin",
@@ -337,7 +367,7 @@
         ]
       },
       "CapPlusRiskSteward": {
-        "address": "0x36a92f2373400050656256B03Fa189145b708921",
+        "address": "0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e",
         "modifiers": [
           {
             "modifier": "onlyRiskCouncil",
@@ -357,7 +387,7 @@
         ]
       },
       "FreezeSteward": {
-        "address": "0xCC3958a77c001a5608768537F628cA3b0A2A9386",
+        "address": "0xc68D0C511076283075bD5cc9aA61E43673135f37",
         "modifiers": [
           {
             "modifier": "onlyEmergencyAdmin",
@@ -365,6 +395,21 @@
               {
                 "address": "0x6ec33534BE07d45cc4E02Fbd127F8ed2aE919a6b",
                 "owners": []
+              },
+              {
+                "address": "0x63B20270b695E44Ac94Ad7592D5f81E3575b93e7",
+                "owners": [
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
+                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
+                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
+                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
+                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
+                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
+                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
+                ]
               }
             ],
             "functions": [
@@ -383,14 +428,15 @@
           "0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24"
         ],
         "EMERGENCY_ADMIN": [
-          "0x6ec33534BE07d45cc4E02Fbd127F8ed2aE919a6b"
+          "0x6ec33534BE07d45cc4E02Fbd127F8ed2aE919a6b",
+          "0x63B20270b695E44Ac94Ad7592D5f81E3575b93e7"
         ],
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": [],
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 2539113
+      "latestBlockNumber": 2674100
     },
     "govV3": {
       "contracts": {
@@ -565,7 +611,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 2539116
+      "latestCCCBlockNumber": 2674102
     }
   }
 }

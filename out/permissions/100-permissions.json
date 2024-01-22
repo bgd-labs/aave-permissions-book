@@ -345,10 +345,11 @@
               "setClaimer"
             ]
           }
-        ]
+        ],
+        "proxyAdmin": "0x36616cf17557639614c1cdDb356b1B83fc0B2132"
       },
       "WrappedTokenGatewayV3": {
-        "address": "0xb7E51aA2A5f4dD478F183A593F67637ed6F1d1D9",
+        "address": "0xfE76366A986B72c3f2923e05E6ba07b7de5401e4",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -509,7 +510,7 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 31885306
+      "latestBlockNumber": 32063732
     },
     "govV3": {
       "contracts": {
@@ -767,7 +768,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 31885312
+      "latestCCCBlockNumber": 32063737
     }
   },
   "TENDERLY": {
