@@ -529,7 +529,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 174204359
+      "latestBlockNumber": 174540931
     },
     "govV3": {
       "contracts": {
@@ -730,7 +730,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 174204408
+      "latestCCCBlockNumber": 174540954
     }
   },
   "TENDERLY": {
