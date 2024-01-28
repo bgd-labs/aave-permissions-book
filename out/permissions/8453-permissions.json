@@ -602,7 +602,7 @@
           "0x4A4c73d563395ad827511F70097d4Ef82E653805"
         ]
       },
-      "latestBlockNumber": 9763272
+      "latestBlockNumber": 9806561
     },
     "govV3": {
       "contracts": {
@@ -803,7 +803,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 9763281
+      "latestCCCBlockNumber": 9806575
     }
   },
   "TENDERLY": {
