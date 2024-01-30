@@ -536,7 +536,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 19108659
+      "latestBlockNumber": 19115796
     },
     "govV3": {
       "contracts": {
@@ -1028,7 +1028,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 19108660
+      "latestCCCBlockNumber": 19115797
     }
   },
   "V2": {
@@ -2068,6 +2068,14 @@
               {
                 "address": "0xb639D208Bcf0589D54FaC24E655C79EC529762B8",
                 "owners": []
+              },
+              {
+                "address": "0x0d8eFfC11dF3F229AA1EA0509BC9DFa632A13578",
+                "owners": []
+              },
+              {
+                "address": "0x686F8D21520f4ecEc7ba577be08354F4d1EB8262",
+                "owners": []
               }
             ],
             "functions": [
@@ -2115,7 +2123,7 @@
           "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
         ]
       },
-      "latestBlockNumber": 19108661
+      "latestBlockNumber": 19115798
     },
     "govV3": {}
   },
