@@ -66,12 +66,21 @@ export enum Pools {
   GHO = 'GHO',
   GHO_TENDERLY = 'GHO_TENDERLY',
   GOV_V2_TENDERLY = 'GOV_V2_TENDERLY',
+  GHO_GSM = 'GHO_GSM',
 }
 
 export const ghoRoleNames = [
   'DEFAULT_ADMIN',
   'FACILITATOR_MANAGER_ROLE',
   'BUCKET_MANAGER_ROLE',
+];
+
+export const ghoGSMRoleNames = [
+  'DEFAULT_ADMIN_ROLE',
+  'CONFIGURATOR_ROLE',
+  'TOKEN_RESCUER_ROLE',
+  'SWAP_FREEZER_ROLE',
+  'LIQUIDATOR_ROLE',
 ];
 
 export const protocolRoleNames = [
@@ -132,7 +141,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.GHO]: {
         permissionsJson: './statics/functionsPermissionsGHO.json',
         ghoBlock: 17698470,
-        addressBook: AaveV3Ethereum,
+        addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
       },
       // [Pools.GHO_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsGHO.json',
