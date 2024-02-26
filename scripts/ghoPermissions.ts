@@ -130,7 +130,7 @@ export const resolveGHOModifiers = async (
     }
 
     obj[key] = {
-      address: addressBook.GSM_USDC,
+      address: addressBook[key],
       modifiers: [
         {
           modifier: 'onlyRescuer',
