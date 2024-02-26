@@ -360,6 +360,43 @@ export const generateTable = (network: string, pool: string): string => {
     readmeByNetwork += adminTable + '\n';
   }
 
+  // gho gsms tables
+  if (networkConfigs[network].pools[pool] && poolPermitsByContract.gsmRoles) {
+    for (
+      let i = 0;
+      i < Object.keys(poolPermitsByContract.gsmRoles).length;
+      i++
+    ) {
+      const key = Object.keys(poolPermitsByContract.gsmRoles)[i];
+      const gsmRoles = poolPermitsByContract.gsmRoles[key];
+      let gsmAdminTable = `### Admins ${key}\n`;
+      const gsmAdminsHeaderTitles = ['Role', 'Contract'];
+      const gsmAdminHeader = getTableHeader(gsmAdminsHeaderTitles);
+      gsmAdminTable += gsmAdminHeader;
+
+      Object.keys(gsmRoles.role).forEach((role) => {
+        const roleAddresses = gsmRoles?.role[role] || [];
+        gsmAdminTable += getTableBody([
+          role,
+          `${roleAddresses
+            .map((roleAddress: string) =>
+              generateTableAddress(
+                roleAddress,
+                addressesNames,
+                contractsByAddress,
+                poolGuardians,
+                network,
+              ),
+            )
+            .join(', ')}`,
+        ]);
+        gsmAdminTable += getLineSeparator(gsmAdminsHeaderTitles.length);
+      });
+
+      readmeByNetwork += gsmAdminTable + '\n';
+    }
+  }
+
   saveJson(`./out/${networkName}-${pool}.md`, readmeByNetwork);
 
   return readmeDirectoryTable;
