@@ -510,8 +510,9 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 32641144
+      "latestBlockNumber": 32643977
     },
+    "gsmRoles": {},
     "govV3": {
       "contracts": {
         "PayloadsController": {
@@ -768,7 +769,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 32641145
+      "latestCCCBlockNumber": 32643981
     }
   },
   "TENDERLY": {

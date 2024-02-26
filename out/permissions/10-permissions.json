@@ -547,8 +547,9 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 116668794
+      "latestBlockNumber": 116676251
     },
+    "gsmRoles": {},
     "govV3": {
       "contracts": {
         "PayloadsController": {
@@ -748,7 +749,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 116668800
+      "latestCCCBlockNumber": 116676252
     }
   },
   "TENDERLY": {

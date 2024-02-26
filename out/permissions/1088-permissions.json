@@ -550,8 +550,9 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 13728165
+      "latestBlockNumber": 13739148
     },
+    "gsmRoles": {},
     "govV3": {
       "contracts": {
         "PayloadsController": {
@@ -751,7 +752,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 13728185
+      "latestCCCBlockNumber": 13739150
     }
   }
 }

@@ -501,8 +501,9 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 76312190
+      "latestBlockNumber": 76347596
     },
+    "gsmRoles": {},
     "govV3": {}
   }
 }
