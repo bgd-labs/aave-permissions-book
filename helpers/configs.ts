@@ -160,10 +160,10 @@ export const networkConfigs: NetworkConfigs = {
       //   tenderlyRpcUrl:
       //     'https://rpc.tenderly.co/fork/247e153a-3814-4cef-8dfa-dc0648a813c6',
       // },
-      // [Pools.GOV_V2]: {
-      //   permissionsJson: './statics/functionsPermissionsGov.json',
-      //   addressBook: AaveGovernanceV2,
-      // },
+      [Pools.GOV_V2]: {
+        permissionsJson: './statics/functionsPermissionsGov.json',
+        addressBook: AaveGovernanceV2,
+      },
       // [Pools.GOV_V2_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsGov.json',
       //   addressBook: AaveGovernanceV2,
