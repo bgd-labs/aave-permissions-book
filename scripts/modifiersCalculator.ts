@@ -1,5 +1,6 @@
 import { ethers, providers } from 'ethers';
 import {
+  ghoGSMRoleNames,
   ghoRoleNames,
   networkConfigs,
   Pools,
@@ -45,6 +46,7 @@ const generateNetworkPermissions = async (network: string) => {
     const permissionsJson = getStaticPermissionsJson(pool.permissionsJson);
     let poolPermissions: Contracts = {};
     let admins = {} as Roles;
+    let gsmAdmins = {} as Record<string, Roles>;
     let govV3 = {} as GovV3;
     if (
       poolKey !== Pools.GOV_V2 &&
@@ -129,6 +131,7 @@ const generateNetworkPermissions = async (network: string) => {
       );
     } else if (poolKey === Pools.GHO || poolKey === Pools.GHO_TENDERLY) {
       let fromBlock;
+      let gsmBlock;
       if (pool.tenderlyBasePool) {
         await overwriteBaseTenderlyPool(
           poolKey,
@@ -138,6 +141,7 @@ const generateNetworkPermissions = async (network: string) => {
         // get current permissions
         fullJson = getPermissionsByNetwork(network);
         fromBlock = pool.tenderlyBlock;
+        gsmBlock = pool.tenderlyBlock;
       } else {
         fromBlock =
           fullJson[poolKey]?.roles?.latestBlockNumber || pool.ghoBlock;
@@ -163,6 +167,35 @@ const generateNetworkPermissions = async (network: string) => {
             ghoRoleNames,
             pool.addressBook.GHO_TOKEN,
           );
+
+          // get gsms admin roles
+          if (pool.gsmBlocks) {
+            for (let i = 0; i < Object.keys(pool.gsmBlocks).length; i++) {
+              const key = Object.keys(pool.gsmBlocks)[i];
+              let gsmBlock = pool.gsmBlocks[key];
+              if (
+                fullJson[poolKey] &&
+                fullJson[poolKey].gsmRoles &&
+                !pool.tenderlyBasePool
+              ) {
+                gsmBlock =
+                  fullJson[poolKey].gsmRoles?.[key].latestBlockNumber || 0;
+              }
+
+              gsmAdmins[key] = await getCurrentRoleAdmins(
+                provider,
+                (fullJson[poolKey] &&
+                  fullJson[poolKey]?.gsmRoles?.[key].role) ||
+                  ({} as Record<string, string[]>),
+                gsmBlock,
+                Number(network),
+                Pools[poolKey as keyof typeof Pools],
+                ghoGSMRoleNames,
+                pool.addressBook[key],
+              );
+            }
+          }
+
           poolPermissions = await resolveGHOModifiers(
             pool.addressBook,
             poolKey === Pools.GHO_TENDERLY
@@ -172,6 +205,7 @@ const generateNetworkPermissions = async (network: string) => {
             Pools[poolKey as keyof typeof Pools],
             Number(network),
             admins.role,
+            gsmAdmins,
           );
         }
       }
@@ -269,12 +303,13 @@ const generateNetworkPermissions = async (network: string) => {
     } else {
       console.log(`pool not supported: ${poolKey}`);
     }
-
+    console.log(gsmAdmins);
     if (Object.keys(fullJson).length === 0) {
       fullJson = {
         [poolKey]: {
           contracts: poolPermissions,
           roles: admins,
+          gsmRoles: gsmAdmins,
           govV3: govV3,
         },
       };
@@ -283,6 +318,7 @@ const generateNetworkPermissions = async (network: string) => {
       fullJson[poolKey] = {
         contracts: poolPermissions,
         roles: admins,
+        gsmRoles: gsmAdmins,
         govV3: govV3,
       };
     }

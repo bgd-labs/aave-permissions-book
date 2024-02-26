@@ -34,6 +34,7 @@ export type Roles = {
 
 export type PoolInfo = {
   roles?: Roles;
+  gsmRoles?: Record<string, Roles>;
   contracts: Contracts;
   govV3?: GovV3;
 };
@@ -57,6 +58,8 @@ export type PoolConfigs = {
   ghoBlock?: number;
 
   addresses?: Record<string, string>;
+
+  gsmBlocks?: Record<string, number>;
 };
 export type Network = {
   rpcUrl: string | undefined;

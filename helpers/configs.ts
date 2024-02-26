@@ -66,12 +66,21 @@ export enum Pools {
   GHO = 'GHO',
   GHO_TENDERLY = 'GHO_TENDERLY',
   GOV_V2_TENDERLY = 'GOV_V2_TENDERLY',
+  GHO_GSM = 'GHO_GSM',
 }
 
 export const ghoRoleNames = [
   'DEFAULT_ADMIN',
   'FACILITATOR_MANAGER_ROLE',
   'BUCKET_MANAGER_ROLE',
+];
+
+export const ghoGSMRoleNames = [
+  'DEFAULT_ADMIN_ROLE',
+  'CONFIGURATOR_ROLE',
+  'TOKEN_RESCUER_ROLE',
+  'SWAP_FREEZER_ROLE',
+  'LIQUIDATOR_ROLE',
 ];
 
 export const protocolRoleNames = [
@@ -112,6 +121,10 @@ export const networkConfigs: NetworkConfigs = {
       '0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF': 'BGD',
       '0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8': 'Risk Council',
       '0xF60BDDE9077Be3226Db8109432d78afD92a8A003': 'Mediator',
+      '0xef6beCa8D9543eC007bceA835aF768B58F730C1f':
+        'GSM_USDC_ORACLE_SWAP_FREEZER',
+      '0x71381e6718b37C12155CB961Ca3D374A8BfFa0e5':
+        'GSM_USDT_ORACLE_SWAP_FREEZER',
     },
     pools: {
       [Pools.V3]: {
@@ -132,7 +145,11 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.GHO]: {
         permissionsJson: './statics/functionsPermissionsGHO.json',
         ghoBlock: 17698470,
-        addressBook: AaveV3Ethereum,
+        addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
+        gsmBlocks: {
+          GSM_USDC: 19037420,
+          GSM_USDT: 19037420,
+        },
       },
       // [Pools.GHO_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsGHO.json',
