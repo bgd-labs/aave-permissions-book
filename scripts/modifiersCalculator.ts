@@ -303,7 +303,7 @@ const generateNetworkPermissions = async (network: string) => {
     } else {
       console.log(`pool not supported: ${poolKey}`);
     }
-    console.log(gsmAdmins);
+
     if (Object.keys(fullJson).length === 0) {
       fullJson = {
         [poolKey]: {
