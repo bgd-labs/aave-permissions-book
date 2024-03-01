@@ -449,7 +449,6 @@
               {
                 "address": "0xCa66149425E7DC8f81276F6D80C4b486B9503D1a",
                 "owners": [
-                  "0x6A44dfA9277837BC910CeDa563389cDeB5F76855",
                   "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
                 ]
               }
@@ -527,7 +526,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 42274474
+      "latestBlockNumber": 42317054
     },
     "gsmRoles": {},
     "govV3": {
@@ -810,7 +809,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 42274477
+      "latestCCCBlockNumber": 42317056
     }
   },
   "V2": {

@@ -409,7 +409,6 @@
               {
                 "address": "0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1",
                 "owners": [
-                  "0x6A44dfA9277837BC910CeDa563389cDeB5F76855",
                   "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
                 ]
               }
@@ -526,7 +525,7 @@
           "0x4A4c73d563395ad827511F70097d4Ef82E653805"
         ]
       },
-      "latestBlockNumber": 11188869
+      "latestBlockNumber": 11232191
     },
     "gsmRoles": {},
     "govV3": {
@@ -728,7 +727,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 11188872
+      "latestCCCBlockNumber": 11232193
     }
   },
   "TENDERLY": {
