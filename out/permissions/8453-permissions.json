@@ -525,7 +525,7 @@
           "0x4A4c73d563395ad827511F70097d4Ef82E653805"
         ]
       },
-      "latestBlockNumber": 11836888
+      "latestBlockNumber": 11880025
     },
     "gsmRoles": {},
     "govV3": {
@@ -727,7 +727,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 11836911
+      "latestCCCBlockNumber": 11880027
     }
   },
   "TENDERLY": {

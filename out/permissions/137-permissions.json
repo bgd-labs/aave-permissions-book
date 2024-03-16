@@ -585,7 +585,7 @@
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084"
         ]
       },
-      "latestBlockNumber": 54667656
+      "latestBlockNumber": 54707362
     },
     "gsmRoles": {},
     "govV3": {
@@ -890,7 +890,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 54667668
+      "latestCCCBlockNumber": 54707365
     }
   },
   "V2": {
@@ -1119,7 +1119,7 @@
                   "0xe1068014b5dCb9aB9dDcddF39CB5db8137Bd143b",
                   "0xcc46D0E4cAA83ad379fAfFbf6febC20817cCA040",
                   "0xE6014b86F00E4e66ADAB1BF09d27e0da663CD823",
-                  "0x90dD83E62396D7385B1D70166Aafb8A9E528e813",
+                  "0xDA23b2E44bAf56BcB8E87a287d739a393B34F56d",
                   "0xcD6d1ae2237Efc04180845BE23fbA45508685634",
                   "0x450C01300B83bE379113256038b4Dd3b45d23B5e",
                   "0x8dc4fBeFad849b1853a6D473E7baeDa7673dB08F",
