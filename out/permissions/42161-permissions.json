@@ -528,7 +528,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 191820066
+      "latestBlockNumber": 192164202
     },
     "gsmRoles": {},
     "govV3": {
@@ -730,7 +730,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 191820088
+      "latestCCCBlockNumber": 192164221
     }
   },
   "TENDERLY": {
