@@ -526,7 +526,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 43418068
+      "latestBlockNumber": 43459965
     },
     "gsmRoles": {},
     "govV3": {
@@ -647,8 +647,8 @@
             }
           ]
         },
-        "CCIPAdapter": {
-          "address": "0x3F006299eC88985c18E6e885EeA29A49eC579882",
+        "HyperLaneAdapter": {
+          "address": "0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -683,8 +683,8 @@
             }
           ]
         },
-        "HyperLaneAdapter": {
-          "address": "0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04",
+        "undefined": {
+          "address": "0x2b88C83727B0E290B76EB3F6133994fF81B7f355",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -773,7 +773,7 @@
               "modifier": "onlyApprovedBridges",
               "addresses": [
                 {
-                  "address": "0x3F006299eC88985c18E6e885EeA29A49eC579882",
+                  "address": "0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04",
                   "owners": []
                 },
                 {
@@ -781,7 +781,7 @@
                   "owners": []
                 },
                 {
-                  "address": "0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04",
+                  "address": "0x2b88C83727B0E290B76EB3F6133994fF81B7f355",
                   "owners": []
                 }
               ],
@@ -809,7 +809,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 43418069
+      "latestCCCBlockNumber": 43459967
     }
   },
   "V2": {

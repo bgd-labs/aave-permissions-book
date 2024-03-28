@@ -585,7 +585,7 @@
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084"
         ]
       },
-      "latestBlockNumber": 55119206
+      "latestBlockNumber": 55157306
     },
     "gsmRoles": {},
     "govV3": {
@@ -706,8 +706,8 @@
             }
           ]
         },
-        "CCIPAdapter": {
-          "address": "0x95Fa2c817169E26956AB8795c84a225b55d7db5B",
+        "PolygonAdapterPolygon": {
+          "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -760,8 +760,8 @@
             }
           ]
         },
-        "PolygonAdapterPolygon": {
-          "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
+        "undefined": {
+          "address": "0xe79757D55a1600eF28D816a893E78E9FCDE2019E",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -850,7 +850,7 @@
               "modifier": "onlyApprovedBridges",
               "addresses": [
                 {
-                  "address": "0x95Fa2c817169E26956AB8795c84a225b55d7db5B",
+                  "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
                   "owners": []
                 },
                 {
@@ -862,7 +862,7 @@
                   "owners": []
                 },
                 {
-                  "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
+                  "address": "0xe79757D55a1600eF28D816a893E78E9FCDE2019E",
                   "owners": []
                 }
               ],
@@ -890,7 +890,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 55119208
+      "latestCCCBlockNumber": 55157309
     }
   },
   "V2": {
