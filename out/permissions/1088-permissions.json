@@ -473,7 +473,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 15988981
+      "latestBlockNumber": 16016223
     },
     "gsmRoles": {},
     "govV3": {
@@ -675,7 +675,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 15988981
+      "latestCCCBlockNumber": 16016224
     }
   }
 }
