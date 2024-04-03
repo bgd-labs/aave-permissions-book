@@ -427,13 +427,15 @@
         ],
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": [],
-        "FLASH_BORROWER": [],
+        "FLASH_BORROWER": [
+          "0xab515542d621574f9b5212d50593cD0C07e641bD"
+        ],
         "RISK_ADMIN": [
           "0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5",
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 33231358
+      "latestBlockNumber": 33247810
     },
     "gsmRoles": {},
     "govV3": {
@@ -692,7 +694,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 33231363
+      "latestCCCBlockNumber": 33247816
     }
   },
   "TENDERLY": {

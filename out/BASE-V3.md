@@ -60,6 +60,6 @@
 |  EMERGENCY_ADMIN |  [Aave Guardian Base](https://basescan.org/address/0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  BRIDGE |   | |--------|--------|
-|  FLASH_BORROWER |   | |--------|--------|
+|  FLASH_BORROWER |  [0xab515542d621574f9b5212d50593cD0C07e641bD](https://basescan.org/address/0xab515542d621574f9b5212d50593cD0C07e641bD) | |--------|--------|
 |  RISK_ADMIN |  [CapPlusRiskSteward](https://basescan.org/address/0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6), [FreezeSteward](https://basescan.org/address/0x4A4c73d563395ad827511F70097d4Ef82E653805) | |--------|--------|
 

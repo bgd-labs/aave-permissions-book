@@ -58,6 +58,6 @@
 |  EMERGENCY_ADMIN |  [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  BRIDGE |   | |--------|--------|
-|  FLASH_BORROWER |   | |--------|--------|
+|  FLASH_BORROWER |  [0xab515542d621574f9b5212d50593cD0C07e641bD](https://gnosisscan.io//address/0xab515542d621574f9b5212d50593cD0C07e641bD) | |--------|--------|
 |  RISK_ADMIN |  [FreezeSteward](https://gnosisscan.io//address/0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5), [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) | |--------|--------|
 

@@ -70,5 +70,5 @@
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  RISK_ADMIN |  [CapPlusRiskSteward](https://polygonscan.com/address/0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f), [FreezeSteward](https://polygonscan.com/address/0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB) | |--------|--------|
 |  BRIDGE |   | |--------|--------|
-|  FLASH_BORROWER |  [0xb58Fd91558fa213D97Ac94C97F831c7289278084](https://polygonscan.com/address/0xb58Fd91558fa213D97Ac94C97F831c7289278084) | |--------|--------|
+|  FLASH_BORROWER |  [0xb58Fd91558fa213D97Ac94C97F831c7289278084](https://polygonscan.com/address/0xb58Fd91558fa213D97Ac94C97F831c7289278084), [0xab515542d621574f9b5212d50593cD0C07e641bD](https://polygonscan.com/address/0xab515542d621574f9b5212d50593cD0C07e641bD) | |--------|--------|
 
