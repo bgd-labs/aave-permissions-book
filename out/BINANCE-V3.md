@@ -1,5 +1,31 @@
 # BINANCE 
 ## V3 
+### decentralization
+| contract |decentralization lvl |upgradeable |
+|----------|----------|----------|
+|  [PoolAddressesProvider](https://bscscan.com/address/0xff75B6da14FfbbfD355Daf7a2731456b3562Ba6D) |  5/5 |  false | |--------|--------|--------|
+|  [Pool](https://bscscan.com/address/0x6807dc923806fE8Fd134338EABCA509979a7e0cB) |  4/5 |  true | |--------|--------|--------|
+|  [PoolConfigurator](https://bscscan.com/address/0x67bdF23C7fCE7C65fF7415Ba3F2520B45D6f9584) |  4/5 |  true | |--------|--------|--------|
+|  [AaveOracle](https://bscscan.com/address/0x39bc1bfDa2130d6Bb6DBEfd366939b4c7aa7C697) |  5/5 |  false | |--------|--------|--------|
+|  [Collector](https://bscscan.com/address/0x25Ec457d1778b0E5316e7f38f3c22baF413F1A8C) |  4/5 |  true | |--------|--------|--------|
+|  [RewardsController](https://bscscan.com/address/0xC206C2764A9dBF27d599613b8F9A63ACd1160ab4) |  4/5 |  true | |--------|--------|--------|
+|  [WrappedTokenGatewayV3](https://bscscan.com/address/0xd91d1331db4F436DaF47Ec9Dd86deCb8EEF946B4) |  5/5 |  false | |--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://bscscan.com/address/0x33E0b3fc976DC9C516926BA48CfC0A9E10a2aAA5) |  5/5 |  false | |--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://bscscan.com/address/0x0727a6494095511078d63143A8a1E90b9f310880) |  5/5 |  false | |--------|--------|--------|
+|  [EmissionManager](https://bscscan.com/address/0x6eD1c70aa357fB8a7e1Eac85aa59e33287Df8f85) |  5/5 |  false | |--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://bscscan.com/address/0x117684358D990E42Eb1649E7e8C4691951dc1E71) |  5/5 |  false | |--------|--------|--------|
+|  [RatesFactory](https://bscscan.com/address/0x02e9b27599C4Bf8f789d34b6E65C51092c3d9FA6) |  4/5 |  true | |--------|--------|--------|
+|  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  5/5 |  false | |--------|--------|--------|
+|  [ACLManager](https://bscscan.com/address/0x2D97F8FA96886Fd923c065F5457F9DDd494e3877) |  5/5 |  false | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595) |  5/5 |  false | |--------|--------|--------|
+|  [FreezeSteward](https://bscscan.com/address/0x83f15Bc50d1A212576B202f80489502a7cc10412) |  5/5 |  false | |--------|--------|--------|
+|  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  4/5 |  true | |--------|--------|--------|
+|  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  5/5 |  false | |--------|--------|--------|
+|  [LayerZeroAdapter](https://bscscan.com/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  5/5 |  false | |--------|--------|--------|
+|  [HyperLaneAdapter](https://bscscan.com/address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  5/5 |  false | |--------|--------|--------|
+|  [CCIPAdapter](https://bscscan.com/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  5/5 |  false | |--------|--------|--------|
+|  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  4/5 |  true | |--------|--------|--------|
+
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|

@@ -1,5 +1,21 @@
 # FANTOM_OPERA 
 ## V3 
+### decentralization
+| contract |decentralization lvl |upgradeable |
+|----------|----------|----------|
+|  [PoolAddressesProvider](https://ftmscan.com/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  5/5 |  false | |--------|--------|--------|
+|  [Pool](https://ftmscan.com/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  4/5 |  true | |--------|--------|--------|
+|  [PoolConfigurator](https://ftmscan.com/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  4/5 |  true | |--------|--------|--------|
+|  [AaveOracle](https://ftmscan.com/address/0xfd6f3c1845604C8AE6c6E402ad17fb9885160754) |  5/5 |  false | |--------|--------|--------|
+|  [Collector](https://ftmscan.com/address/0xBe85413851D195fC6341619cD68BfDc26a25b928) |  4/5 |  true | |--------|--------|--------|
+|  [RewardsController](https://ftmscan.com/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  4/5 |  true | |--------|--------|--------|
+|  [WrappedTokenGatewayV3](https://ftmscan.com/address/0x1DcDA4de2Bf6c7AD9a34788D22aE6b7d55016e1f) |  5/5 |  false | |--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://ftmscan.com/address/0xE387c6053CE8EC9f8C3fa5cE085Af73114a695d3) |  5/5 |  false | |--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://ftmscan.com/address/0x1408401B2A7E28cB747b3e258D0831Fc926bAC51) |  5/5 |  false | |--------|--------|--------|
+|  [EmissionManager](https://ftmscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  5/5 |  false | |--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://ftmscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  5/5 |  false | |--------|--------|--------|
+|  [ACLManager](https://ftmscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  5/5 |  false | |--------|--------|--------|
+
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|

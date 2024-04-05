@@ -19,6 +19,10 @@ import {
   ContractsByAddress,
   PoolGuardians,
 } from '../helpers/types.js';
+import {
+  Decentralization,
+  getLevelOfDecentralization,
+} from '../helpers/decentralization.js';
 
 export const generateTableAddress = (
   address: string | undefined,
@@ -128,6 +132,62 @@ export const generateTable = (network: string, pool: string): string => {
     ...getPermissionsByNetwork(network)['V3'].contracts,
   });
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
+
+  let decentralizationTable = `### decentralization\n`;
+  const decentralizationHeaderTitles = [
+    'contract',
+    'decentralization lvl',
+    'upgradeable',
+  ];
+  const decentralizationHeader = getTableHeader(decentralizationHeaderTitles);
+  decentralizationTable += decentralizationHeader;
+
+  // fill pool table
+  let decentralizationTableBody = '';
+  // TODO: fill decentralization table body
+  for (let contractName of Object.keys(poolPermitsByContract.contracts)) {
+    const contract = poolPermitsByContract.contracts[contractName];
+    const { decentralizationPoints, upgradeable }: Decentralization =
+      getLevelOfDecentralization(contract, poolPermitsByContract);
+    decentralizationTableBody += getTableBody([
+      `[${contractName}](${explorerAddressUrlComposer(
+        contract.address,
+        network,
+      )})`,
+      `${decentralizationPoints}/5`,
+      `${upgradeable}`,
+    ]);
+    decentralizationTableBody += getLineSeparator(
+      decentralizationHeaderTitles.length,
+    );
+  }
+  if (
+    poolPermitsByContract.govV3 &&
+    Object.keys(poolPermitsByContract.govV3).length > 0
+  ) {
+    for (let contractName of Object.keys(
+      poolPermitsByContract.govV3.contracts,
+    )) {
+      const contract = poolPermitsByContract.govV3.contracts[contractName];
+      const { decentralizationPoints, upgradeable }: Decentralization =
+        getLevelOfDecentralization(contract, poolPermitsByContract);
+      decentralizationTableBody += getTableBody([
+        `[${contractName}](${explorerAddressUrlComposer(
+          contract.address,
+          network,
+        )})`,
+        `${decentralizationPoints}/5`,
+        `${upgradeable}`,
+      ]);
+      decentralizationTableBody += getLineSeparator(
+        decentralizationHeaderTitles.length,
+      );
+    }
+  }
+
+  decentralizationTable += decentralizationTableBody;
+  readmeByNetwork += decentralizationTable + '\n';
+
   let contractTable = `### contracts\n`;
   const contractsModifiersHeaderTitles = [
     'contract',
