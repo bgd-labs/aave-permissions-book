@@ -18,7 +18,7 @@ export type ContractInfo = {
 export type Contracts = Record<string, ContractInfo>;
 export type GovV3 = {
   latestCCCBlockNumber: number;
-  contracts: Record<string, ContractInfo>;
+  contracts: Contracts;
   senders: string[];
   // bridgeAdapters: string[];
 };

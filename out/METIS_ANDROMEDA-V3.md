@@ -1,26 +1,26 @@
 # METIS_ANDROMEDA 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |
-|----------|----------|----------|
-|  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  5/5 |  false | |--------|--------|--------|
-|  [Pool](https://andromeda-explorer.metis.io/address/0x90df02551bB792286e8D4f13E0e357b4Bf1D6a57) |  4/5 |  true | |--------|--------|--------|
-|  [PoolConfigurator](https://andromeda-explorer.metis.io/address/0x69FEE8F261E004453BE0800BC9039717528645A6) |  4/5 |  true | |--------|--------|--------|
-|  [AaveOracle](https://andromeda-explorer.metis.io/address/0x38D36e85E47eA6ff0d18B0adF12E5fC8984A6f8e) |  5/5 |  false | |--------|--------|--------|
-|  [Collector](https://andromeda-explorer.metis.io/address/0xB5b64c7E00374e766272f8B442Cd261412D4b118) |  4/5 |  true | |--------|--------|--------|
-|  [RewardsController](https://andromeda-explorer.metis.io/address/0x30C1b8F0490fa0908863d6Cbd2E36400b4310A6B) |  4/5 |  true | |--------|--------|--------|
-|  [EmissionManager](https://andromeda-explorer.metis.io/address/0xfDb2580A1ac4CDc67E4236738b28af59e2022Dd2) |  5/5 |  false | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://andromeda-explorer.metis.io/address/0x9E7B73ffD9D2026F3ff4212c29E209E09C8A91F5) |  5/5 |  false | |--------|--------|--------|
-|  [RatesFactory](https://andromeda-explorer.metis.io/address/0x87Aaba7cf8e1F319d0E3402d68017171201dEcd5) |  4/5 |  true | |--------|--------|--------|
-|  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  5/5 |  false | |--------|--------|--------|
-|  [ACLManager](https://andromeda-explorer.metis.io/address/0xcDCb65fc657B701a5100a12eFB663978E7e8fFB8) |  5/5 |  false | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  5/5 |  false | |--------|--------|--------|
-|  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  5/5 |  false | |--------|--------|--------|
-|  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  5/5 |  false | |--------|--------|--------|
-|  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  4/5 |  true | |--------|--------|--------|
-|  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  5/5 |  false | |--------|--------|--------|
-|  [MetisAdapter](https://andromeda-explorer.metis.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  5/5 |  false | |--------|--------|--------|
-|  [CrossChainController](https://andromeda-explorer.metis.io/address/0x6fDaFb26915ABD6065a1E1501a37Ac438D877f70) |  4/5 |  true | |--------|--------|--------|
+| contract |decentralization lvl |upgradeable |controlled by |
+|----------|----------|----------|----------|
+|  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [Pool](https://andromeda-explorer.metis.io/address/0x90df02551bB792286e8D4f13E0e357b4Bf1D6a57) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [PoolConfigurator](https://andromeda-explorer.metis.io/address/0x69FEE8F261E004453BE0800BC9039717528645A6) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [AaveOracle](https://andromeda-explorer.metis.io/address/0x38D36e85E47eA6ff0d18B0adF12E5fC8984A6f8e) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [Collector](https://andromeda-explorer.metis.io/address/0xB5b64c7E00374e766272f8B442Cd261412D4b118) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [RewardsController](https://andromeda-explorer.metis.io/address/0x30C1b8F0490fa0908863d6Cbd2E36400b4310A6B) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [EmissionManager](https://andromeda-explorer.metis.io/address/0xfDb2580A1ac4CDc67E4236738b28af59e2022Dd2) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://andromeda-explorer.metis.io/address/0x9E7B73ffD9D2026F3ff4212c29E209E09C8A91F5) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [RatesFactory](https://andromeda-explorer.metis.io/address/0x87Aaba7cf8e1F319d0E3402d68017171201dEcd5) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [ACLManager](https://andromeda-explorer.metis.io/address/0xcDCb65fc657B701a5100a12eFB663978E7e8fFB8) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [MetisAdapter](https://andromeda-explorer.metis.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [CrossChainController](https://andromeda-explorer.metis.io/address/0x6fDaFb26915ABD6065a1E1501a37Ac438D877f70) |  4/5 |  true |  0 | |--------|--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

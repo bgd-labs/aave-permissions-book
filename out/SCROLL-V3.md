@@ -1,26 +1,26 @@
 # SCROLL 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |
-|----------|----------|----------|
-|  [PoolAddressesProvider](https://scrollscan.com//address/0x69850D0B276776781C063771b161bd8894BCdD04) |  5/5 |  false | |--------|--------|--------|
-|  [Pool](https://scrollscan.com//address/0x11fCfe756c05AD438e312a7fd934381537D3cFfe) |  4/5 |  true | |--------|--------|--------|
-|  [PoolConfigurator](https://scrollscan.com//address/0x32BCab42a2bb5AC577D24b425D46d8b8e0Df9b7f) |  4/5 |  true | |--------|--------|--------|
-|  [AaveOracle](https://scrollscan.com//address/0x04421D8C506E2fA2371a08EfAaBf791F624054F3) |  5/5 |  false | |--------|--------|--------|
-|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  4/5 |  true | |--------|--------|--------|
-|  [RewardsController](https://scrollscan.com//address/0xa3f3100C4f1D0624DB9DB97b40C13885Ce297799) |  4/5 |  true | |--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://scrollscan.com//address/0xFF75A4B698E3Ec95E608ac0f22A03B8368E05F5D) |  5/5 |  false | |--------|--------|--------|
-|  [EmissionManager](https://scrollscan.com//address/0x6091546836DAe0487A50E300da3F237727441D90) |  5/5 |  false | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://scrollscan.com//address/0xFBedc64AeE24921cb43004312B9eF367a4162b57) |  5/5 |  false | |--------|--------|--------|
-|  [RatesFactory](https://scrollscan.com//address/0xe48fb34452FaE3Cd5d906F748490FBE16c3Ce31b) |  4/5 |  true | |--------|--------|--------|
-|  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  5/5 |  false | |--------|--------|--------|
-|  [ACLManager](https://scrollscan.com//address/0x7633F981D87dC6307227de9383D2ce7243158081) |  5/5 |  false | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  5/5 |  false | |--------|--------|--------|
-|  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  5/5 |  false | |--------|--------|--------|
-|  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  4/5 |  true | |--------|--------|--------|
-|  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  5/5 |  false | |--------|--------|--------|
-|  [ScrollAdapter](https://scrollscan.com//address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  5/5 |  false | |--------|--------|--------|
-|  [CrossChainController](https://scrollscan.com//address/0x03073D3F4769f6b6604d616238fD6c636C99AD0A) |  4/5 |  true | |--------|--------|--------|
+| contract |decentralization lvl |upgradeable |controlled by |
+|----------|----------|----------|----------|
+|  [PoolAddressesProvider](https://scrollscan.com//address/0x69850D0B276776781C063771b161bd8894BCdD04) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [Pool](https://scrollscan.com//address/0x11fCfe756c05AD438e312a7fd934381537D3cFfe) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [PoolConfigurator](https://scrollscan.com//address/0x32BCab42a2bb5AC577D24b425D46d8b8e0Df9b7f) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [AaveOracle](https://scrollscan.com//address/0x04421D8C506E2fA2371a08EfAaBf791F624054F3) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [RewardsController](https://scrollscan.com//address/0xa3f3100C4f1D0624DB9DB97b40C13885Ce297799) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [WrappedTokenGatewayV3](https://scrollscan.com//address/0xFF75A4B698E3Ec95E608ac0f22A03B8368E05F5D) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [EmissionManager](https://scrollscan.com//address/0x6091546836DAe0487A50E300da3F237727441D90) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://scrollscan.com//address/0xFBedc64AeE24921cb43004312B9eF367a4162b57) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [RatesFactory](https://scrollscan.com//address/0xe48fb34452FaE3Cd5d906F748490FBE16c3Ce31b) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [ACLManager](https://scrollscan.com//address/0x7633F981D87dC6307227de9383D2ce7243158081) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [ScrollAdapter](https://scrollscan.com//address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [CrossChainController](https://scrollscan.com//address/0x03073D3F4769f6b6604d616238fD6c636C99AD0A) |  4/5 |  true |  0 | |--------|--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
