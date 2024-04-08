@@ -3,27 +3,27 @@
 ### decentralization
 | contract |decentralization lvl |upgradeable |controlled by |
 |----------|----------|----------|----------|
-|  [PoolAddressesProvider](https://arbiscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [Pool](https://arbiscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [PoolConfigurator](https://arbiscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [AaveOracle](https://arbiscan.io/address/0xb56c2F0B653B2e0b10C9b928C8580Ac5Df02C7C7) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [Collector](https://arbiscan.io/address/0x053D55f9B5AF8694c503EB288a1B7E552f590710) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [RewardsController](https://arbiscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://arbiscan.io/address/0xecD4bd3121F9FD604ffaC631bF6d41ec12f1fafb) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://arbiscan.io/address/0xF3C3F14dd7BDb7E03e6EBc3bc5Ffc6D66De12251) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://arbiscan.io/address/0x28201C152DC5B69A86FA54FCfd21bcA4C0eff3BA) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [EmissionManager](https://arbiscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://arbiscan.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [RatesFactory](https://arbiscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ArbAdapter](https://arbiscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [CrossChainController](https://arbiscan.io/address/0xCbFB78a3Eeaa611b826E37c80E4126c8787D29f0) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [PoolAddressesProvider](https://arbiscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [Pool](https://arbiscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [PoolConfigurator](https://arbiscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [AaveOracle](https://arbiscan.io/address/0xb56c2F0B653B2e0b10C9b928C8580Ac5Df02C7C7) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [Collector](https://arbiscan.io/address/0x053D55f9B5AF8694c503EB288a1B7E552f590710) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [RewardsController](https://arbiscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [WrappedTokenGatewayV3](https://arbiscan.io/address/0xecD4bd3121F9FD604ffaC631bF6d41ec12f1fafb) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://arbiscan.io/address/0xF3C3F14dd7BDb7E03e6EBc3bc5Ffc6D66De12251) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://arbiscan.io/address/0x28201C152DC5B69A86FA54FCfd21bcA4C0eff3BA) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [EmissionManager](https://arbiscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://arbiscan.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [RatesFactory](https://arbiscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [ArbAdapter](https://arbiscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [CrossChainController](https://arbiscan.io/address/0xCbFB78a3Eeaa611b826E37c80E4126c8787D29f0) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

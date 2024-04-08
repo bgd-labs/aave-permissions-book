@@ -3,10 +3,10 @@
 ### decentralization
 | contract |decentralization lvl |upgradeable |controlled by |
 |----------|----------|----------|----------|
-|  [GHO](https://etherscan.io/address/0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [GSM_USDC](https://etherscan.io/address/0x0d8eFfC11dF3F229AA1EA0509BC9DFa632A13578) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [GSM_USDT](https://etherscan.io/address/0x686F8D21520f4ecEc7ba577be08354F4d1EB8262) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [GSMRegistry](https://etherscan.io/address/0x167527DB01325408696326e3580cd8e55D99Dc1A) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [GHO](https://etherscan.io/address/0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [GSM_USDC](https://etherscan.io/address/0x0d8eFfC11dF3F229AA1EA0509BC9DFa632A13578) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [GSM_USDT](https://etherscan.io/address/0x686F8D21520f4ecEc7ba577be08354F4d1EB8262) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [GSMRegistry](https://etherscan.io/address/0x167527DB01325408696326e3580cd8e55D99Dc1A) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

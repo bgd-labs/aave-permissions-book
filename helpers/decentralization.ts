@@ -7,10 +7,10 @@ export type Decentralization = {
 };
 
 export enum Controller {
-  NONE,
-  GOV_V3,
-  MULTI_SIG,
-  EOA,
+  NONE = 'Not owned',
+  GOV_V3 = 'Gov V3',
+  MULTI_SIG = 'Multisg',
+  EOA = 'EOA',
 }
 export const getLevelOfDecentralization = (
   contract: ContractInfo,
@@ -25,13 +25,14 @@ export const getLevelOfDecentralization = (
   if (contract.proxyAdmin) {
     decentralizationPoints -= 1;
     upgradeable = true;
-    //  - check if proxy admin is controlled by multisig
     let proxyOwnership = isOwnedAndByWho(
       contract.proxyAdmin,
       poolInfo,
       govInfo,
     );
+
     if (proxyOwnership.owned) {
+      controlledBy = proxyOwnership.ownedBy;
       if (proxyOwnership.ownedBy === Controller.MULTI_SIG) {
         decentralizationPoints -= 1;
       } else if (proxyOwnership.ownedBy === Controller.EOA) {
@@ -58,34 +59,35 @@ const isOwnedByGov = (
   govInfo: Contracts,
   initialAddress: string,
 ): boolean => {
+  let ownerFound = false;
   for (let contractName of Object.keys(govInfo)) {
     const contract = govInfo[contractName];
-    if (contract.address === address) {
+    if (contract.address.toLowerCase() === address.toLowerCase()) {
       contract.modifiers.forEach((modifierInfo) => {
         if (modifierInfo.modifier === 'onlyOwner') {
           if (modifierInfo.addresses[0].owners.length > 0) {
-            return false;
+            ownerFound = false;
           } else {
-            if (modifierInfo.addresses[0].address === initialAddress) {
-              console.log('----');
-              return true;
+            if (
+              modifierInfo.addresses[0].address.toLowerCase() ===
+              initialAddress.toLowerCase()
+            ) {
+              ownerFound = true;
             } else {
-              console.log('++++');
-              return isOwnedByGov(
+              let owned = isOwnedByGov(
                 modifierInfo.addresses[0].address,
                 govInfo,
                 initialAddress,
               );
+              ownerFound = owned;
             }
           }
         }
       });
-    } else {
-      console.log('=====');
     }
   }
 
-  return false;
+  return ownerFound;
 };
 
 const isOwnedAndByWho = (
@@ -93,24 +95,24 @@ const isOwnedAndByWho = (
   poolInfo: Contracts,
   govInfo: Contracts,
 ): { owned: boolean; ownedBy: Controller } => {
+  let ownerInfo = { owned: false, ownedBy: Controller.EOA };
   for (let contractName of Object.keys(poolInfo)) {
     const contract = poolInfo[contractName];
-    if (contract.address === address) {
+    if (contract.address?.toLowerCase() === address.toLowerCase()) {
       contract.modifiers.forEach((modifierInfo) => {
         if (modifierInfo.modifier === 'onlyOwner') {
           if (modifierInfo.addresses[0].owners.length > 0) {
-            return { owned: true, ownedBy: Controller.MULTI_SIG };
+            ownerInfo = { owned: true, ownedBy: Controller.MULTI_SIG };
           } else {
             const ownedByGov = isOwnedByGov(
               modifierInfo.addresses[0].address,
               govInfo,
               modifierInfo.addresses[0].address,
             );
-            console.log('controlled: ', ownedByGov);
             if (ownedByGov) {
-              return { owned: true, ownedBy: Controller.GOV_V3 };
+              ownerInfo = { owned: true, ownedBy: Controller.GOV_V3 };
             } else {
-              return { owned: true, ownedBy: Controller.EOA };
+              ownerInfo = { owned: true, ownedBy: Controller.EOA };
             }
           }
         }
@@ -118,5 +120,5 @@ const isOwnedAndByWho = (
     }
   }
 
-  return { owned: false, ownedBy: Controller.EOA };
+  return ownerInfo;
 };

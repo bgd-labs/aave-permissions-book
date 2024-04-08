@@ -58,17 +58,12 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           },
           {
             "modifier": "onlyBridge",
             "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
-            ]
+            "functions": ["mintUnbacked", "backUnbacked"]
           }
         ]
       },
@@ -115,9 +110,7 @@
                 ]
               }
             ],
-            "functions": [
-              "setPoolPause"
-            ]
+            "functions": ["setPoolPause"]
           },
           {
             "modifier": "onlyAssetListingOrPoolAdmins",
@@ -127,9 +120,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "initReserves"
-            ]
+            "functions": ["initReserves"]
           },
           {
             "modifier": "onlyRiskOrPoolAdmins",
@@ -193,9 +184,7 @@
                 ]
               }
             ],
-            "functions": [
-              "setReservePause"
-            ]
+            "functions": ["setReservePause"]
           }
         ]
       },
@@ -210,10 +199,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "enableAssets",
-              "disableAssets"
-            ]
+            "functions": ["enableAssets", "disableAssets"]
           }
         ]
       },
@@ -247,10 +233,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "setAssetSources",
-              "setFallbackOracle"
-            ]
+            "functions": ["setAssetSources", "setFallbackOracle"]
           }
         ]
       },
@@ -284,10 +267,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "withdrawFromStream",
-              "cancelStream"
-            ]
+            "functions": ["withdrawFromStream", "cancelStream"]
           }
         ],
         "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
@@ -324,10 +304,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "emergencyTokenTransfer",
-              "emergencyEtherTransfer"
-            ]
+            "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
           }
         ]
       },
@@ -342,9 +319,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           }
         ]
       },
@@ -359,9 +334,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           }
         ]
       },
@@ -418,11 +391,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "changeProxyAdmin",
-              "upgrade",
-              "upgradeAndCall"
-            ]
+            "functions": ["changeProxyAdmin", "upgrade", "upgradeAndCall"]
           }
         ]
       },
@@ -448,14 +417,10 @@
             "addresses": [
               {
                 "address": "0xCa66149425E7DC8f81276F6D80C4b486B9503D1a",
-                "owners": [
-                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
-                ]
+                "owners": ["0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"]
               }
             ],
-            "functions": [
-              "updateCaps"
-            ]
+            "functions": ["updateCaps"]
           }
         ]
       },
@@ -481,13 +446,12 @@
                 ]
               }
             ],
-            "functions": [
-              "setFreeze"
-            ]
+            "functions": ["setFreeze"]
           }
         ]
       },
       "AaveMerkleDistributor": {
+        "address": "0xA065d5A299E618CD84a87641d5eEbC7916Fdf32E",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -508,15 +472,9 @@
     },
     "roles": {
       "role": {
-        "DEFAULT_ADMIN": [
-          "0x3C06dce358add17aAf230f2234bCCC4afd50d090"
-        ],
-        "POOL_ADMIN": [
-          "0x3C06dce358add17aAf230f2234bCCC4afd50d090"
-        ],
-        "EMERGENCY_ADMIN": [
-          "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
-        ],
+        "DEFAULT_ADMIN": ["0x3C06dce358add17aAf230f2234bCCC4afd50d090"],
+        "POOL_ADMIN": ["0x3C06dce358add17aAf230f2234bCCC4afd50d090"],
+        "EMERGENCY_ADMIN": ["0xa35b76E4935449E33C56aB24b23fcd3246f13470"],
         "ASSET_LISTING_ADMIN": [],
         "RISK_ADMIN": [
           "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc",
@@ -524,9 +482,7 @@
           "0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99"
         ],
         "BRIDGE": [],
-        "FLASH_BORROWER": [
-          "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
-        ]
+        "FLASH_BORROWER": ["0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"]
       },
       "latestBlockNumber": 43793288
     },
@@ -571,10 +527,7 @@
                   ]
                 }
               ],
-              "functions": [
-                "rescueVotingPortal",
-                "cancelProposal"
-              ]
+              "functions": ["rescueVotingPortal", "cancelProposal"]
             },
             {
               "modifier": "onlyOwnerOrGuardian",
@@ -599,9 +552,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "updateGuardian"
-              ]
+              "functions": ["updateGuardian"]
             },
             {
               "modifier": "onlyRescueGuardian",
@@ -626,9 +577,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "updateGasLimit"
-              ]
+              "functions": ["updateGasLimit"]
             }
           ]
         },
@@ -643,9 +592,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "executeTransaction"
-              ]
+              "functions": ["executeTransaction"]
             }
           ]
         },
@@ -661,9 +608,7 @@
                   "chain": "1"
                 }
               ],
-              "functions": [
-                "receiveMessage"
-              ]
+              "functions": ["receiveMessage"]
             }
           ]
         },
@@ -679,9 +624,7 @@
                   "chain": "1"
                 }
               ],
-              "functions": [
-                "receiveMessage"
-              ]
+              "functions": ["receiveMessage"]
             }
           ]
         },
@@ -697,9 +640,7 @@
                   "chain": "1"
                 }
               ],
-              "functions": [
-                "receiveMessage"
-              ]
+              "functions": ["receiveMessage"]
             }
           ]
         },
@@ -754,10 +695,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "emergencyTokenTransfer",
-                "emergencyEtherTransfer"
-              ]
+              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
             },
             {
               "modifier": "onlyApprovedSenders",
@@ -767,9 +705,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "forwardMessage"
-              ]
+              "functions": ["forwardMessage"]
             },
             {
               "modifier": "onlyApprovedBridges",
@@ -787,9 +723,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "receiveCrossChainMessage"
-              ]
+              "functions": ["receiveCrossChainMessage"]
             },
             {
               "modifier": "onlyGuardian",
@@ -808,9 +742,7 @@
           "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
         }
       },
-      "senders": [
-        "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
-      ],
+      "senders": ["0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"],
       "latestCCCBlockNumber": 43793289
     }
   },
@@ -909,9 +841,7 @@
                 ]
               }
             ],
-            "functions": [
-              "setPoolPause"
-            ]
+            "functions": ["setPoolPause"]
           },
           {
             "modifier": "onlyPoolOrProofOfReserveAdmin",
@@ -944,10 +874,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "enableAssets",
-              "disableAssets"
-            ]
+            "functions": ["enableAssets", "disableAssets"]
           }
         ]
       },
@@ -981,10 +908,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "setAssetSources",
-              "setFallbackOracle"
-            ]
+            "functions": ["setAssetSources", "setFallbackOracle"]
           }
         ]
       },
@@ -999,9 +923,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "setMarketBorrowRate"
-            ]
+            "functions": ["setMarketBorrowRate"]
           }
         ]
       },
@@ -1035,10 +957,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "withdrawFromStream",
-              "cancelStream"
-            ]
+            "functions": ["withdrawFromStream", "cancelStream"]
           }
         ],
         "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
@@ -1054,11 +973,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "changeProxyAdmin",
-              "upgrade",
-              "upgradeAndCall"
-            ]
+            "functions": ["changeProxyAdmin", "upgrade", "upgradeAndCall"]
           }
         ]
       },
@@ -1073,10 +988,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "emergencyTokenTransfer",
-              "emergencyEtherTransfer"
-            ]
+            "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
           }
         ]
       },
@@ -1091,9 +1003,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           }
         ]
       },
@@ -1108,9 +1018,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           }
         ]
       },
@@ -1256,9 +1164,7 @@
                 ]
               }
             ],
-            "functions": [
-              "setPoolPause"
-            ]
+            "functions": ["setPoolPause"]
           },
           {
             "modifier": "onlyPoolOrProofOfReserveAdmin",
@@ -1291,10 +1197,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "enableAssets",
-              "disableAssets"
-            ]
+            "functions": ["enableAssets", "disableAssets"]
           }
         ]
       },
@@ -1328,10 +1231,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "setAssetSources",
-              "setFallbackOracle"
-            ]
+            "functions": ["setAssetSources", "setFallbackOracle"]
           }
         ]
       },
@@ -1346,9 +1246,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "setMarketBorrowRate"
-            ]
+            "functions": ["setMarketBorrowRate"]
           }
         ]
       },
@@ -1382,10 +1280,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "withdrawFromStream",
-              "cancelStream"
-            ]
+            "functions": ["withdrawFromStream", "cancelStream"]
           }
         ],
         "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
@@ -1401,11 +1296,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "changeProxyAdmin",
-              "upgrade",
-              "upgradeAndCall"
-            ]
+            "functions": ["changeProxyAdmin", "upgrade", "upgradeAndCall"]
           }
         ]
       },
@@ -1420,10 +1311,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "emergencyTokenTransfer",
-              "emergencyEtherTransfer"
-            ]
+            "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
           }
         ]
       },
@@ -1438,9 +1326,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           }
         ]
       },
@@ -1455,9 +1341,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           }
         ]
       },
@@ -1566,17 +1450,12 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           },
           {
             "modifier": "onlyBridge",
             "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
-            ]
+            "functions": ["mintUnbacked", "backUnbacked"]
           }
         ]
       },
@@ -1623,9 +1502,7 @@
                 ]
               }
             ],
-            "functions": [
-              "setPoolPause"
-            ]
+            "functions": ["setPoolPause"]
           },
           {
             "modifier": "onlyAssetListingOrPoolAdmins",
@@ -1635,9 +1512,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "initReserves"
-            ]
+            "functions": ["initReserves"]
           },
           {
             "modifier": "onlyRiskOrPoolAdmins",
@@ -1701,9 +1576,7 @@
                 ]
               }
             ],
-            "functions": [
-              "setReservePause"
-            ]
+            "functions": ["setReservePause"]
           }
         ]
       },
@@ -1718,10 +1591,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "enableAssets",
-              "disableAssets"
-            ]
+            "functions": ["enableAssets", "disableAssets"]
           }
         ]
       },
@@ -1755,10 +1625,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "setAssetSources",
-              "setFallbackOracle"
-            ]
+            "functions": ["setAssetSources", "setFallbackOracle"]
           }
         ]
       },
@@ -1792,10 +1659,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "withdrawFromStream",
-              "cancelStream"
-            ]
+            "functions": ["withdrawFromStream", "cancelStream"]
           }
         ],
         "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
@@ -1832,10 +1696,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "emergencyTokenTransfer",
-              "emergencyEtherTransfer"
-            ]
+            "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
           }
         ]
       },
@@ -1850,9 +1711,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           }
         ]
       },
@@ -1867,9 +1726,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           }
         ]
       },
@@ -1926,11 +1783,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "changeProxyAdmin",
-              "upgrade",
-              "upgradeAndCall"
-            ]
+            "functions": ["changeProxyAdmin", "upgrade", "upgradeAndCall"]
           }
         ]
       },
@@ -1962,9 +1815,7 @@
                 ]
               }
             ],
-            "functions": [
-              "updateCaps"
-            ]
+            "functions": ["updateCaps"]
           }
         ]
       },
@@ -1990,9 +1841,7 @@
                 ]
               }
             ],
-            "functions": [
-              "setFreeze"
-            ]
+            "functions": ["setFreeze"]
           }
         ]
       },
@@ -2017,15 +1866,9 @@
     },
     "roles": {
       "role": {
-        "DEFAULT_ADMIN": [
-          "0x3C06dce358add17aAf230f2234bCCC4afd50d090"
-        ],
-        "POOL_ADMIN": [
-          "0x3C06dce358add17aAf230f2234bCCC4afd50d090"
-        ],
-        "EMERGENCY_ADMIN": [
-          "0xa35b76E4935449E33C56aB24b23fcd3246f13470"
-        ],
+        "DEFAULT_ADMIN": ["0x3C06dce358add17aAf230f2234bCCC4afd50d090"],
+        "POOL_ADMIN": ["0x3C06dce358add17aAf230f2234bCCC4afd50d090"],
+        "EMERGENCY_ADMIN": ["0xa35b76E4935449E33C56aB24b23fcd3246f13470"],
         "ASSET_LISTING_ADMIN": [],
         "RISK_ADMIN": [
           "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc",
@@ -2077,9 +1920,7 @@
                   ]
                 }
               ],
-              "functions": [
-                "rescueVotingPortal"
-              ]
+              "functions": ["rescueVotingPortal"]
             },
             {
               "modifier": "onlyOwnerOrGuardian",
@@ -2104,9 +1945,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "updateGuardian"
-              ]
+              "functions": ["updateGuardian"]
             },
             {
               "modifier": "onlyRescueGuardian",
@@ -2131,9 +1970,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "updateGasLimit"
-              ]
+              "functions": ["updateGasLimit"]
             }
           ]
         },
@@ -2148,9 +1985,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "executeTransaction"
-              ]
+              "functions": ["executeTransaction"]
             }
           ]
         },
@@ -2166,9 +2001,7 @@
                   "chain": "1"
                 }
               ],
-              "functions": [
-                "receiveMessage"
-              ]
+              "functions": ["receiveMessage"]
             }
           ]
         },
@@ -2184,9 +2017,7 @@
                   "chain": "1"
                 }
               ],
-              "functions": [
-                "receiveMessage"
-              ]
+              "functions": ["receiveMessage"]
             }
           ]
         },
@@ -2202,9 +2033,7 @@
                   "chain": "1"
                 }
               ],
-              "functions": [
-                "receiveMessage"
-              ]
+              "functions": ["receiveMessage"]
             }
           ]
         },
@@ -2241,9 +2070,7 @@
                   ]
                 }
               ],
-              "functions": [
-                "solveEmergency"
-              ]
+              "functions": ["solveEmergency"]
             },
             {
               "modifier": "onlyOwnerOrGuardian",
@@ -2275,10 +2102,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "emergencyTokenTransfer",
-                "emergencyEtherTransfer"
-              ]
+              "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
             },
             {
               "modifier": "onlyApprovedSenders",
@@ -2288,9 +2112,7 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "forwardMessage"
-              ]
+              "functions": ["forwardMessage"]
             },
             {
               "modifier": "onlyApprovedBridges",
@@ -2308,17 +2130,13 @@
                   "owners": []
                 }
               ],
-              "functions": [
-                "receiveCrossChainMessage"
-              ]
+              "functions": ["receiveCrossChainMessage"]
             }
           ],
           "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
         }
       },
-      "senders": [
-        "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
-      ],
+      "senders": ["0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"],
       "latestCCCBlockNumber": 37792432
     }
   }

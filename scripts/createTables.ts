@@ -145,9 +145,9 @@ export const generateTable = (network: string, pool: string): string => {
 
   // fill pool table
   let decentralizationTableBody = '';
-  // TODO: fill decentralization table body
   for (let contractName of Object.keys(poolPermitsByContract.contracts)) {
     const contract = poolPermitsByContract.contracts[contractName];
+    console.log(network, ' ', pool, ' ', contractName);
     const {
       decentralizationPoints,
       upgradeable,
@@ -156,9 +156,12 @@ export const generateTable = (network: string, pool: string): string => {
       contract,
       {
         ...poolPermitsByContract.contracts,
+        ...getPermissionsByNetwork(network)['V3'].contracts,
         ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
       },
-      getPermissionsByNetwork(network)['V3'].govV3?.contracts || {},
+      {
+        ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+      },
     );
     decentralizationTableBody += getTableBody([
       `[${contractName}](${explorerAddressUrlComposer(

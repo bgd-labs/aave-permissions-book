@@ -612,7 +612,7 @@ export const resolveV3Modifiers = async (
     const merkleDistributorOwner = await merkleDistributorContract.owner();
 
     obj['AaveMerkleDistributor'] = {
-      address: addressBook.LEND_TO_AAVE_MIGRATOR,
+      address: addressBook.AAVE_MERKLE_DISTRIBUTOR,
       modifiers: [
         {
           modifier: 'onlyOwner',

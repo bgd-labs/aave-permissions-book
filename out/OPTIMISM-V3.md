@@ -3,28 +3,28 @@
 ### decentralization
 | contract |decentralization lvl |upgradeable |controlled by |
 |----------|----------|----------|----------|
-|  [PoolAddressesProvider](https://optimistic.etherscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [Pool](https://optimistic.etherscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [PoolConfigurator](https://optimistic.etherscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [AaveOracle](https://optimistic.etherscan.io/address/0xD81eb3728a631871a7eBBaD631b5f424909f0c77) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [Collector](https://optimistic.etherscan.io/address/0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [RewardsController](https://optimistic.etherscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://optimistic.etherscan.io/address/0xe9E52021f4e11DEAD8661812A0A6c8627abA2a54) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://optimistic.etherscan.io/address/0x830C5A67a0C95D69dA5fb7801Ac1773c6fB53857) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://optimistic.etherscan.io/address/0xa12734e64417f61f8442E7D5132EdBFdbDDeF0fa) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [EmissionManager](https://optimistic.etherscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://optimistic.etherscan.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [RatesFactory](https://optimistic.etherscan.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ACLManager](https://optimistic.etherscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [AaveMerkleDistributor](null) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [OpAdapter](https://optimistic.etherscan.io/address/0x81d32B36380e6266e1BDd490eAC56cdB300afBe0) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [CrossChainController](https://optimistic.etherscan.io/address/0x48A9FE90bce5EEd790f3F4Ce192d1C0B351fd4Ca) |  4/5 |  true |  0 | |--------|--------|--------|--------|
+|  [PoolAddressesProvider](https://optimistic.etherscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [Pool](https://optimistic.etherscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [PoolConfigurator](https://optimistic.etherscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [AaveOracle](https://optimistic.etherscan.io/address/0xD81eb3728a631871a7eBBaD631b5f424909f0c77) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [Collector](https://optimistic.etherscan.io/address/0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [RewardsController](https://optimistic.etherscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [WrappedTokenGatewayV3](https://optimistic.etherscan.io/address/0xe9E52021f4e11DEAD8661812A0A6c8627abA2a54) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://optimistic.etherscan.io/address/0x830C5A67a0C95D69dA5fb7801Ac1773c6fB53857) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://optimistic.etherscan.io/address/0xa12734e64417f61f8442E7D5132EdBFdbDDeF0fa) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [EmissionManager](https://optimistic.etherscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://optimistic.etherscan.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [RatesFactory](https://optimistic.etherscan.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [ACLManager](https://optimistic.etherscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [OpAdapter](https://optimistic.etherscan.io/address/0x81d32B36380e6266e1BDd490eAC56cdB300afBe0) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [CrossChainController](https://optimistic.etherscan.io/address/0x48A9FE90bce5EEd790f3F4Ce192d1C0B351fd4Ca) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -52,7 +52,7 @@
 |  [ACLManager](https://optimistic.etherscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  setRoleAdmin |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |   | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  - |  onlyRiskCouncil |  [Risk Council](https://optimistic.etherscan.io/address/0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  - |  onlyEmergencyAdmin |  [Aave Guardian Optimism](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c) |  setFreeze | |--------|--------|--------|--------|--------|
-|  [AaveMerkleDistributor](null) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
+|  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  - |  onlyGuardian |  [Aave Guardian Optimism](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c) |  cancel | |--------|--------|--------|--------|--------|
 |  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  - |  onlyThis |  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  updateEthereumGovernanceExecutor, updateGuardian, updateDelay, updateGracePeriod, updateMinimumDelay, updateMaximumDelay, executeDelegateCall | |--------|--------|--------|--------|--------|
 |  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  - |  onlyEthereumGovernanceExecutor |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  queue | |--------|--------|--------|--------|--------|

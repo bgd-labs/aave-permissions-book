@@ -3,20 +3,20 @@
 ### decentralization
 | contract |decentralization lvl |upgradeable |controlled by |
 |----------|----------|----------|----------|
-|  [LendingPoolAddressesProvider](https://snowtrace.io/address/0xb6A86025F0FE1862B372cb0ca18CE3EDe02A318f) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [LendingPool](https://snowtrace.io/address/0x4F01AeD16D97E3aB5ab2B501154DC9bb0F1A5A2C) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [LendingPoolConfigurator](https://snowtrace.io/address/0x230B618aD4C475393A7239aE03630042281BD86e) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [ProofOfReserveExecutorV2](https://snowtrace.io/address/0x7fc3FCb14eF04A48Bb0c12f0c39CD74C249c37d8) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ProofOfReserveAggregatorV2](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [AaveOracle](https://snowtrace.io/address/0xdC336Cd4769f4cC7E9d726DA53e6d3fC710cEB89) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [LendingRateOracle](https://snowtrace.io/address/0xc34254642B504484465F38Cb1CC396d45a9c7c80) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [WrappedTokenGatewayV2](https://snowtrace.io/address/0x68c815cB8C8390bc3F2CE99265044dEC9D350C49) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2EcF2a2e74B19Aab2a62312167aFF4B78E93B6C5) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x935b362EE3E1f342cc48118C528AAbee5118F6e6) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [LendingPoolAddressesProviderRegistry](https://snowtrace.io/address/0x4235E22d9C3f28DCDA82b58276cb6370B01265C2) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [DefaultIncentivesController](https://snowtrace.io/address/0x01D83Fe6A10D2f2B7AF17034343746188272cAc9) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [LendingPoolAddressesProvider](https://snowtrace.io/address/0xb6A86025F0FE1862B372cb0ca18CE3EDe02A318f) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [LendingPool](https://snowtrace.io/address/0x4F01AeD16D97E3aB5ab2B501154DC9bb0F1A5A2C) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [LendingPoolConfigurator](https://snowtrace.io/address/0x230B618aD4C475393A7239aE03630042281BD86e) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [ProofOfReserveExecutorV2](https://snowtrace.io/address/0x7fc3FCb14eF04A48Bb0c12f0c39CD74C249c37d8) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [ProofOfReserveAggregatorV2](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [AaveOracle](https://snowtrace.io/address/0xdC336Cd4769f4cC7E9d726DA53e6d3fC710cEB89) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [LendingRateOracle](https://snowtrace.io/address/0xc34254642B504484465F38Cb1CC396d45a9c7c80) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [WrappedTokenGatewayV2](https://snowtrace.io/address/0x68c815cB8C8390bc3F2CE99265044dEC9D350C49) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2EcF2a2e74B19Aab2a62312167aFF4B78E93B6C5) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x935b362EE3E1f342cc48118C528AAbee5118F6e6) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://snowtrace.io/address/0x4235E22d9C3f28DCDA82b58276cb6370B01265C2) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [DefaultIncentivesController](https://snowtrace.io/address/0x01D83Fe6A10D2f2B7AF17034343746188272cAc9) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

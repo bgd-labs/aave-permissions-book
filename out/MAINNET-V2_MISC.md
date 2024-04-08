@@ -3,9 +3,9 @@
 ### decentralization
 | contract |decentralization lvl |upgradeable |controlled by |
 |----------|----------|----------|----------|
-|  [LendToAaveMigrator](https://etherscan.io/address/0x317625234562B1526Ea2FaC4030Ea499C5291de4) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [EcosystemReserve](https://etherscan.io/address/0x25F2226B597E8F9514B3F68F00f494cF4f286491) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [EcosystemReserveController](https://etherscan.io/address/0x3d569673dAa0575c936c7c67c4E6AedA69CC630C) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [LendToAaveMigrator](https://etherscan.io/address/0x317625234562B1526Ea2FaC4030Ea499C5291de4) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [EcosystemReserve](https://etherscan.io/address/0x25F2226B597E8F9514B3F68F00f494cF4f286491) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [EcosystemReserveController](https://etherscan.io/address/0x3d569673dAa0575c936c7c67c4E6AedA69CC630C) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

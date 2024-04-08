@@ -3,19 +3,19 @@
 ### decentralization
 | contract |decentralization lvl |upgradeable |controlled by |
 |----------|----------|----------|----------|
-|  [LendingPoolAddressesProvider](https://polygonscan.com/address/0xd05e3E715d945B59290df0ae8eF85c1BdB684744) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [LendingPool](https://polygonscan.com/address/0x8dFf5E27EA6b7AC08EbFdf9eB090F32ee9a30fcf) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [LendingPoolConfigurator](https://polygonscan.com/address/0x26db2B833021583566323E3b8985999981b9F1F3) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [AaveOracle](https://polygonscan.com/address/0x0229F777B0fAb107F9591a41d5F02E4e98dB6f2d) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [LendingRateOracle](https://polygonscan.com/address/0x17F73aEaD876CC4059089ff815EDA37052960dFB) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [Collector](https://polygonscan.com/address/0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383) |  4/5 |  true |  0 | |--------|--------|--------|--------|
-|  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [WrappedTokenGatewayV2](https://polygonscan.com/address/0xf1e6d4347105138B51E2bacA9A22fA228309ebB1) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://polygonscan.com/address/0x35784a624D4FfBC3594f4d16fA3801FeF063241c) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE84cF064a0a65290Ae5673b500699f3753063936) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [LendingPoolAddressesProviderRegistry](https://polygonscan.com/address/0x3ac4e9aa29940770aeC38fe853a4bbabb2dA9C19) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [DefaultIncentivesController](https://polygonscan.com/address/0x357D51124f59836DeD84c8a1730D72B749d8BC23) |  5/5 |  false |  0 | |--------|--------|--------|--------|
-|  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  5/5 |  false |  0 | |--------|--------|--------|--------|
+|  [LendingPoolAddressesProvider](https://polygonscan.com/address/0xd05e3E715d945B59290df0ae8eF85c1BdB684744) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [LendingPool](https://polygonscan.com/address/0x8dFf5E27EA6b7AC08EbFdf9eB090F32ee9a30fcf) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [LendingPoolConfigurator](https://polygonscan.com/address/0x26db2B833021583566323E3b8985999981b9F1F3) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [AaveOracle](https://polygonscan.com/address/0x0229F777B0fAb107F9591a41d5F02E4e98dB6f2d) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [LendingRateOracle](https://polygonscan.com/address/0x17F73aEaD876CC4059089ff815EDA37052960dFB) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [Collector](https://polygonscan.com/address/0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+|  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [WrappedTokenGatewayV2](https://polygonscan.com/address/0xf1e6d4347105138B51E2bacA9A22fA228309ebB1) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://polygonscan.com/address/0x35784a624D4FfBC3594f4d16fA3801FeF063241c) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE84cF064a0a65290Ae5673b500699f3753063936) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://polygonscan.com/address/0x3ac4e9aa29940770aeC38fe853a4bbabb2dA9C19) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+|  [DefaultIncentivesController](https://polygonscan.com/address/0x357D51124f59836DeD84c8a1730D72B749d8BC23) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
