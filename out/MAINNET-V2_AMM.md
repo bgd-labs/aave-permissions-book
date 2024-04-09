@@ -1,17 +1,17 @@
 # MAINNET 
 ## V2_AMM 
 ### decentralization
-| contract |decentralization lvl |upgradeable |owned by |
-|----------|----------|----------|----------|
-|  [LendingPoolAddressesProvider](https://etherscan.io/address/0xAcc030EF66f9dFEAE9CbB0cd1B25654b82cFA8d5) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [LendingPool](https://etherscan.io/address/0x7937D4799803FbBe595ed57278Bc4cA21f3bFfCB) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [LendingPoolConfigurator](https://etherscan.io/address/0x23A875eDe3F1030138701683e42E9b16A7F87768) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [AaveOracle](https://etherscan.io/address/0xA50ba011c48153De246E5192C8f9258A2ba79Ca9) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [LendingRateOracle](https://etherscan.io/address/0x8A32f49FFbA88aba6EFF96F45D8BD1D4b3f35c7D) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [WrappedTokenGatewayV2](https://etherscan.io/address/0xbe9a7B3F2f54E18D7C0a17B03ad84Ac2D1D28eAC) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [LendingPoolAddressesProviderRegistry](https://etherscan.io/address/0x52D306e36E3B6B02c153d0266ff0f85d18BCD413) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
+| contract |upgradeable |owned by |
+|----------|----------|----------|
+|  [LendingPoolAddressesProvider](https://etherscan.io/address/0xAcc030EF66f9dFEAE9CbB0cd1B25654b82cFA8d5) |  false |  Gov V3 | |--------|--------|--------|
+|  [LendingPool](https://etherscan.io/address/0x7937D4799803FbBe595ed57278Bc4cA21f3bFfCB) |  true |  Gov V3 | |--------|--------|--------|
+|  [LendingPoolConfigurator](https://etherscan.io/address/0x23A875eDe3F1030138701683e42E9b16A7F87768) |  true |  Gov V3 | |--------|--------|--------|
+|  [AaveOracle](https://etherscan.io/address/0xA50ba011c48153De246E5192C8f9258A2ba79Ca9) |  false |  Not owned | |--------|--------|--------|
+|  [LendingRateOracle](https://etherscan.io/address/0x8A32f49FFbA88aba6EFF96F45D8BD1D4b3f35c7D) |  false |  Gov V3 | |--------|--------|--------|
+|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  true |  Gov V3 | |--------|--------|--------|
+|  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
+|  [WrappedTokenGatewayV2](https://etherscan.io/address/0xbe9a7B3F2f54E18D7C0a17B03ad84Ac2D1D28eAC) |  false |  Gov V3 | |--------|--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://etherscan.io/address/0x52D306e36E3B6B02c153d0266ff0f85d18BCD413) |  false |  Gov V3 | |--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

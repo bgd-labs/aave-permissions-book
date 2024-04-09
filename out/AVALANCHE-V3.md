@@ -1,34 +1,34 @@
 # AVALANCHE 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |owned by |
-|----------|----------|----------|----------|
-|  [PoolAddressesProvider](https://snowtrace.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [Pool](https://snowtrace.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [PoolConfigurator](https://snowtrace.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [ProofOfReserveExecutorV3](https://snowtrace.io/address/0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [ProofOfReserveAggregatorV3](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [AaveOracle](https://snowtrace.io/address/0xEBd36016B3eD09D4693Ed4251c67Bd858c3c7C9C) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [RewardsController](https://snowtrace.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://snowtrace.io/address/0x2DeC8BCE3471eD65B1bB558Fa28439D45bF446d0) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2Cf641F7C0eac2788A7924B82d6Ca8EB7bAa4E3A) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x49F5B996814fEd1dd39285B92A59CFb2dfd8D4f9) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [EmissionManager](https://snowtrace.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://snowtrace.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [RatesFactory](https://snowtrace.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [ACLManager](https://snowtrace.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [AaveMerkleDistributor](https://snowtrace.io/address/0xA065d5A299E618CD84a87641d5eEbC7916Fdf32E) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [VotingMachine](https://snowtrace.io/address/0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [HyperLaneAdapter](https://snowtrace.io/address/0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [LayerZeroAdapter](https://snowtrace.io/address/0xf41193E25408F652AF878c47E4401A01B5E4B682) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [undefined](https://snowtrace.io/address/0x2b88C83727B0E290B76EB3F6133994fF81B7f355) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [CrossChainController](https://snowtrace.io/address/0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
+| contract |upgradeable |owned by |
+|----------|----------|----------|
+|  [PoolAddressesProvider](https://snowtrace.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  false |  Gov V3 | |--------|--------|--------|
+|  [Pool](https://snowtrace.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  true |  Gov V3 | |--------|--------|--------|
+|  [PoolConfigurator](https://snowtrace.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  true |  Gov V3 | |--------|--------|--------|
+|  [ProofOfReserveExecutorV3](https://snowtrace.io/address/0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc) |  false |  Gov V3 | |--------|--------|--------|
+|  [ProofOfReserveAggregatorV3](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  false |  Gov V3 | |--------|--------|--------|
+|  [AaveOracle](https://snowtrace.io/address/0xEBd36016B3eD09D4693Ed4251c67Bd858c3c7C9C) |  false |  Not owned | |--------|--------|--------|
+|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  true |  Gov V3 | |--------|--------|--------|
+|  [RewardsController](https://snowtrace.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  true |  Gov V3 | |--------|--------|--------|
+|  [WrappedTokenGatewayV3](https://snowtrace.io/address/0x2DeC8BCE3471eD65B1bB558Fa28439D45bF446d0) |  false |  Gov V3 | |--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2Cf641F7C0eac2788A7924B82d6Ca8EB7bAa4E3A) |  false |  Gov V3 | |--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x49F5B996814fEd1dd39285B92A59CFb2dfd8D4f9) |  false |  Gov V3 | |--------|--------|--------|
+|  [EmissionManager](https://snowtrace.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  false |  Gov V3 | |--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://snowtrace.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  false |  Gov V3 | |--------|--------|--------|
+|  [RatesFactory](https://snowtrace.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  true |  Gov V3 | |--------|--------|--------|
+|  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
+|  [ACLManager](https://snowtrace.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5) |  false |  Not owned | |--------|--------|--------|
+|  [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) |  false |  Not owned | |--------|--------|--------|
+|  [AaveMerkleDistributor](https://snowtrace.io/address/0xA065d5A299E618CD84a87641d5eEbC7916Fdf32E) |  false |  Gov V3 | |--------|--------|--------|
+|  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  true |  Gov V3 | |--------|--------|--------|
+|  [VotingMachine](https://snowtrace.io/address/0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F) |  false |  Gov V3 | |--------|--------|--------|
+|  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  false |  Gov V3 | |--------|--------|--------|
+|  [HyperLaneAdapter](https://snowtrace.io/address/0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04) |  false |  Not owned | |--------|--------|--------|
+|  [LayerZeroAdapter](https://snowtrace.io/address/0xf41193E25408F652AF878c47E4401A01B5E4B682) |  false |  Not owned | |--------|--------|--------|
+|  [undefined](https://snowtrace.io/address/0x2b88C83727B0E290B76EB3F6133994fF81B7f355) |  false |  Not owned | |--------|--------|--------|
+|  [CrossChainController](https://snowtrace.io/address/0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928) |  true |  Gov V3 | |--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

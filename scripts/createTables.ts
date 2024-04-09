@@ -134,12 +134,7 @@ export const generateTable = (network: string, pool: string): string => {
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
 
   let decentralizationTable = `### decentralization\n`;
-  const decentralizationHeaderTitles = [
-    'contract',
-    'decentralization lvl',
-    'upgradeable',
-    'owned by',
-  ];
+  const decentralizationHeaderTitles = ['contract', 'upgradeable', 'owned by'];
   const decentralizationHeader = getTableHeader(decentralizationHeaderTitles);
   decentralizationTable += decentralizationHeader;
 
@@ -156,25 +151,21 @@ export const generateTable = (network: string, pool: string): string => {
         ...getPermissionsByNetwork(ChainId.mainnet)['V2_ARC'].contracts,
       };
     }
-    const {
-      decentralizationPoints,
-      upgradeable,
-      controlledBy,
-    }: Decentralization = getLevelOfDecentralization(
-      contract,
-      {
-        ...poolPermitsByContract.contracts,
-        ...getPermissionsByNetwork(network)['V3'].contracts,
-        ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
-      },
-      govPermissions,
-    );
+    const { upgradeable, controlledBy }: Decentralization =
+      getLevelOfDecentralization(
+        contract,
+        {
+          ...poolPermitsByContract.contracts,
+          ...getPermissionsByNetwork(network)['V3'].contracts,
+          ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+        },
+        govPermissions,
+      );
     decentralizationTableBody += getTableBody([
       `[${contractName}](${explorerAddressUrlComposer(
         contract.address,
         network,
       )})`,
-      `${decentralizationPoints}/5`,
       `${upgradeable}`,
       `${controlledBy}`,
     ]);
@@ -190,24 +181,20 @@ export const generateTable = (network: string, pool: string): string => {
       poolPermitsByContract.govV3.contracts,
     )) {
       const contract = poolPermitsByContract.govV3.contracts[contractName];
-      const {
-        decentralizationPoints,
-        upgradeable,
-        controlledBy,
-      }: Decentralization = getLevelOfDecentralization(
-        contract,
-        {
-          ...poolPermitsByContract.contracts,
-          ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
-        },
-        getPermissionsByNetwork(network)['V3'].govV3?.contracts || {},
-      );
+      const { upgradeable, controlledBy }: Decentralization =
+        getLevelOfDecentralization(
+          contract,
+          {
+            ...poolPermitsByContract.contracts,
+            ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+          },
+          getPermissionsByNetwork(network)['V3'].govV3?.contracts || {},
+        );
       decentralizationTableBody += getTableBody([
         `[${contractName}](${explorerAddressUrlComposer(
           contract.address,
           network,
         )})`,
-        `${decentralizationPoints}/5`,
         `${upgradeable}`,
         `${controlledBy}`,
       ]);

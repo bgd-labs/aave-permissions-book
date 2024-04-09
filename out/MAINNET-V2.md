@@ -1,20 +1,20 @@
 # MAINNET 
 ## V2 
 ### decentralization
-| contract |decentralization lvl |upgradeable |owned by |
-|----------|----------|----------|----------|
-|  [LendingPoolAddressesProvider](https://etherscan.io/address/0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [LendingPool](https://etherscan.io/address/0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [LendingPoolConfigurator](https://etherscan.io/address/0x311Bb771e4F8952E6Da169b425E7e92d6Ac45756) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [AaveOracle](https://etherscan.io/address/0xA50ba011c48153De246E5192C8f9258A2ba79Ca9) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [LendingRateOracle](https://etherscan.io/address/0x8A32f49FFbA88aba6EFF96F45D8BD1D4b3f35c7D) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
-|  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [WrappedTokenGatewayV2](https://etherscan.io/address/0xa0d9C1E9E48Ca30c8d8C3B5D69FF5dc1f6DFfC24) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://etherscan.io/address/0x135896DE8421be2ec868E0b811006171D9df802A) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://etherscan.io/address/0x80Aca0C645fEdABaa20fd2Bf0Daf57885A309FE6) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [LendingPoolAddressesProviderRegistry](https://etherscan.io/address/0x52D306e36E3B6B02c153d0266ff0f85d18BCD413) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [DefaultIncentivesController](https://etherscan.io/address/0xd784927Ff2f95ba542BfC824c8a8a98F3495f6b5) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+| contract |upgradeable |owned by |
+|----------|----------|----------|
+|  [LendingPoolAddressesProvider](https://etherscan.io/address/0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5) |  false |  Gov V3 | |--------|--------|--------|
+|  [LendingPool](https://etherscan.io/address/0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9) |  true |  Gov V3 | |--------|--------|--------|
+|  [LendingPoolConfigurator](https://etherscan.io/address/0x311Bb771e4F8952E6Da169b425E7e92d6Ac45756) |  true |  Gov V3 | |--------|--------|--------|
+|  [AaveOracle](https://etherscan.io/address/0xA50ba011c48153De246E5192C8f9258A2ba79Ca9) |  false |  Not owned | |--------|--------|--------|
+|  [LendingRateOracle](https://etherscan.io/address/0x8A32f49FFbA88aba6EFF96F45D8BD1D4b3f35c7D) |  false |  Gov V3 | |--------|--------|--------|
+|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  true |  Gov V3 | |--------|--------|--------|
+|  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
+|  [WrappedTokenGatewayV2](https://etherscan.io/address/0xa0d9C1E9E48Ca30c8d8C3B5D69FF5dc1f6DFfC24) |  false |  Gov V3 | |--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://etherscan.io/address/0x135896DE8421be2ec868E0b811006171D9df802A) |  false |  Not owned | |--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://etherscan.io/address/0x80Aca0C645fEdABaa20fd2Bf0Daf57885A309FE6) |  false |  Not owned | |--------|--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://etherscan.io/address/0x52D306e36E3B6B02c153d0266ff0f85d18BCD413) |  false |  Gov V3 | |--------|--------|--------|
+|  [DefaultIncentivesController](https://etherscan.io/address/0xd784927Ff2f95ba542BfC824c8a8a98F3495f6b5) |  false |  Not owned | |--------|--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
