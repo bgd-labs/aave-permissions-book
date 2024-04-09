@@ -4,6 +4,7 @@ export type Decentralization = {
   decentralizationPoints: number;
   upgradeable: boolean;
   controlledBy: Controller;
+  ownedBy: Controller;
 };
 
 export enum Controller {
@@ -20,6 +21,7 @@ export const getLevelOfDecentralization = (
   let decentralizationPoints = 5;
   let upgradeable = false;
   let controlledBy = Controller.NONE;
+  let ownedBy = Controller.NONE;
 
   // check if it has proxy admin (means upgradeable)
   if (contract.proxyAdmin) {
@@ -32,7 +34,7 @@ export const getLevelOfDecentralization = (
     );
 
     if (proxyOwnership.owned) {
-      controlledBy = proxyOwnership.ownedBy;
+      ownedBy = proxyOwnership.ownedBy;
       if (proxyOwnership.ownedBy === Controller.MULTI_SIG) {
         decentralizationPoints -= 1;
       } else if (proxyOwnership.ownedBy === Controller.EOA) {
@@ -42,7 +44,7 @@ export const getLevelOfDecentralization = (
   } else {
     let ownership = isOwnedAndByWho(contract.address, poolInfo, govInfo);
     if (ownership.owned) {
-      controlledBy = ownership.ownedBy;
+      ownedBy = ownership.ownedBy;
       if (ownership.ownedBy === Controller.MULTI_SIG) {
         decentralizationPoints -= 1;
       } else if (ownership.ownedBy === Controller.EOA) {
@@ -51,7 +53,7 @@ export const getLevelOfDecentralization = (
     }
   }
 
-  return { decentralizationPoints, upgradeable, controlledBy };
+  return { decentralizationPoints, upgradeable, ownedBy, controlledBy };
 };
 
 const isOwnedByGov = (

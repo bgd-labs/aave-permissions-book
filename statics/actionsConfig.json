@@ -1,0 +1,82 @@
+{
+  "poolConfiguration": [
+    "setMarketId",
+    "setAddress",
+    "setPriceOracle",
+    "setPriceOracleSentinel",
+    "setPoolDataProvider",
+    "updateBridgeProtocolFee",
+    "updateFlashloanPremiumTotal",
+    "updateFlashloanPremiumToProtocol",
+    "enableAssets",
+    "disableAssets",
+    "updateFlashloanPremiums"
+  ],
+  "poolActions": [
+    "initReserve",
+    "dropReserve",
+    "setPoolPause",
+    "initReserves",
+    "setReserveActive"
+  ],
+  "reserveConfiguration": [
+    "setReserveBorrowing",
+    "configureReserveAsCollateral",
+    "setReserveStableRateBorrowing",
+    "setReserveFreeze",
+    "setBorrowableInIsolation",
+    "setReserveFactor",
+    "setDebtCeiling",
+    "setSiloedBorrowing",
+    "setBorrowCap",
+    "setSupplyCap",
+    "setLiquidationProtocolFee",
+    "setEModeCategory",
+    "setAssetEModeCategory",
+    "setUnbackedMintCap",
+    "setReserveInterestRateStrategyAddress",
+    "setReserveInterestRateStrategyAddress",
+    "setConfiguration",
+    "configureEModeCategory",
+    "resetIsolationModeTotalDebt",
+    "setReservePause",
+    "setAssetSources",
+    "setFallbackOracle",
+    "updateCaps",
+    "setFreeze"
+  ],
+  "adminsConfiguration": ["setACLManager", "setACLAdmin"],
+  "upgradeability": [
+    "updateAToken",
+    "updateStableDebtToken",
+    "updateVariableDebtToken",
+    "setPoolImpl",
+    "setAddressAsProxy",
+    "setPoolConfiguratorImpl"
+  ],
+  "adiConfigurations": [
+    "approveSenders",
+    "removeSenders",
+    "enableBridgeAdapters",
+    "disableBridgeAdapters",
+    "updateMessagesValidityTimestamp",
+    "allowReceiverBridgeAdapters",
+    "disallowReceiverBridgeAdapters"
+  ],
+  "governanceConfigurations": [
+    "updateGuardian",
+    "rescueVotingPortal",
+    "updateGasLimit",
+    "addVotingPortals",
+    "removeVotingPortals",
+    "setVotingConfigs",
+    "setPowerStrategy",
+    "updateGasLimit",
+    "addVotingPortals",
+    "removeVotingPortals",
+    "setVotingConfigs",
+    "setPowerStrategy",
+    "rescueVotingPortal"
+  ],
+  "cancelGovActions": ["cancelProposal"]
+}

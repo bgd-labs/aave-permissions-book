@@ -134,7 +134,12 @@ export const generateTable = (network: string, pool: string): string => {
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
 
   let decentralizationTable = `### decentralization\n`;
-  const decentralizationHeaderTitles = ['contract', 'upgradeable', 'owned by'];
+  const decentralizationHeaderTitles = [
+    'contract',
+    'upgradeable',
+    'owned by',
+    // 'controlled by',
+  ];
   const decentralizationHeader = getTableHeader(decentralizationHeaderTitles);
   decentralizationTable += decentralizationHeader;
 
@@ -151,7 +156,7 @@ export const generateTable = (network: string, pool: string): string => {
         ...getPermissionsByNetwork(ChainId.mainnet)['V2_ARC'].contracts,
       };
     }
-    const { upgradeable, controlledBy }: Decentralization =
+    const { upgradeable, controlledBy, ownedBy }: Decentralization =
       getLevelOfDecentralization(
         contract,
         {
@@ -167,7 +172,8 @@ export const generateTable = (network: string, pool: string): string => {
         network,
       )})`,
       `${upgradeable}`,
-      `${controlledBy}`,
+      `${ownedBy}`,
+      // `${controlledBy}`,
     ]);
     decentralizationTableBody += getLineSeparator(
       decentralizationHeaderTitles.length,
@@ -181,7 +187,7 @@ export const generateTable = (network: string, pool: string): string => {
       poolPermitsByContract.govV3.contracts,
     )) {
       const contract = poolPermitsByContract.govV3.contracts[contractName];
-      const { upgradeable, controlledBy }: Decentralization =
+      const { upgradeable, controlledBy, ownedBy }: Decentralization =
         getLevelOfDecentralization(
           contract,
           {
@@ -196,7 +202,8 @@ export const generateTable = (network: string, pool: string): string => {
           network,
         )})`,
         `${upgradeable}`,
-        `${controlledBy}`,
+        `${ownedBy}`,
+        // `${controlledBy}`,
       ]);
       decentralizationTableBody += getLineSeparator(
         decentralizationHeaderTitles.length,
