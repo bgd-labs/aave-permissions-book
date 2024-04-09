@@ -138,7 +138,7 @@ export const generateTable = (network: string, pool: string): string => {
     'contract',
     'decentralization lvl',
     'upgradeable',
-    'controlled by',
+    'owned by',
   ];
   const decentralizationHeader = getTableHeader(decentralizationHeaderTitles);
   decentralizationTable += decentralizationHeader;
@@ -147,7 +147,15 @@ export const generateTable = (network: string, pool: string): string => {
   let decentralizationTableBody = '';
   for (let contractName of Object.keys(poolPermitsByContract.contracts)) {
     const contract = poolPermitsByContract.contracts[contractName];
-    console.log(network, ' ', pool, ' ', contractName);
+    let govPermissions = {
+      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+    };
+    if (pool === Pools.V2_ARC) {
+      govPermissions = {
+        ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+        ...getPermissionsByNetwork(ChainId.mainnet)['V2_ARC'].contracts,
+      };
+    }
     const {
       decentralizationPoints,
       upgradeable,
@@ -159,9 +167,7 @@ export const generateTable = (network: string, pool: string): string => {
         ...getPermissionsByNetwork(network)['V3'].contracts,
         ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
       },
-      {
-        ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
-      },
+      govPermissions,
     );
     decentralizationTableBody += getTableBody([
       `[${contractName}](${explorerAddressUrlComposer(

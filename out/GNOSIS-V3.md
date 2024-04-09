@@ -1,7 +1,7 @@
 # GNOSIS 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [Pool](https://gnosisscan.io//address/0xb50201558B00496A145fE76f7424749556E326D8) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|

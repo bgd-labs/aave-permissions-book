@@ -10,7 +10,7 @@ export enum Controller {
   NONE = 'Not owned',
   GOV_V3 = 'Gov V3',
   MULTI_SIG = 'Multisg',
-  EOA = 'EOA',
+  EOA = 'External Contract',
 }
 export const getLevelOfDecentralization = (
   contract: ContractInfo,
@@ -64,7 +64,10 @@ const isOwnedByGov = (
     const contract = govInfo[contractName];
     if (contract.address.toLowerCase() === address.toLowerCase()) {
       contract.modifiers.forEach((modifierInfo) => {
-        if (modifierInfo.modifier === 'onlyOwner') {
+        if (
+          modifierInfo.modifier === 'onlyOwner' ||
+          modifierInfo.modifier === 'onlyEthereumGovernanceExecutor'
+        ) {
           if (modifierInfo.addresses[0].owners.length > 0) {
             ownerFound = false;
           } else {
@@ -77,7 +80,7 @@ const isOwnedByGov = (
               let owned = isOwnedByGov(
                 modifierInfo.addresses[0].address,
                 govInfo,
-                initialAddress,
+                address,
               );
               ownerFound = owned;
             }
@@ -100,7 +103,10 @@ const isOwnedAndByWho = (
     const contract = poolInfo[contractName];
     if (contract.address?.toLowerCase() === address.toLowerCase()) {
       contract.modifiers.forEach((modifierInfo) => {
-        if (modifierInfo.modifier === 'onlyOwner') {
+        if (
+          modifierInfo.modifier === 'onlyOwner' ||
+          modifierInfo.modifier === 'onlyEthereumGovernanceExecutor'
+        ) {
           if (modifierInfo.addresses[0].owners.length > 0) {
             ownerInfo = { owned: true, ownedBy: Controller.MULTI_SIG };
           } else {

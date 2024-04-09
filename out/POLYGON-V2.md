@@ -1,7 +1,7 @@
 # POLYGON 
 ## V2 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [LendingPoolAddressesProvider](https://polygonscan.com/address/0xd05e3E715d945B59290df0ae8eF85c1BdB684744) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [LendingPool](https://polygonscan.com/address/0x8dFf5E27EA6b7AC08EbFdf9eB090F32ee9a30fcf) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|

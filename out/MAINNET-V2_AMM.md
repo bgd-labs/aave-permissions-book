@@ -1,7 +1,7 @@
 # MAINNET 
 ## V2_AMM 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [LendingPoolAddressesProvider](https://etherscan.io/address/0xAcc030EF66f9dFEAE9CbB0cd1B25654b82cFA8d5) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [LendingPool](https://etherscan.io/address/0x7937D4799803FbBe595ed57278Bc4cA21f3bFfCB) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|

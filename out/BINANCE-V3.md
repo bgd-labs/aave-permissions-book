@@ -1,7 +1,7 @@
 # BINANCE 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://bscscan.com/address/0xff75B6da14FfbbfD355Daf7a2731456b3562Ba6D) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [Pool](https://bscscan.com/address/0x6807dc923806fE8Fd134338EABCA509979a7e0cB) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|

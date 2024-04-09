@@ -1,7 +1,7 @@
 # FANTOM_OPERA 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://ftmscan.com/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  4/5 |  false |  Multisg | |--------|--------|--------|--------|
 |  [Pool](https://ftmscan.com/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  3/5 |  true |  Multisg | |--------|--------|--------|--------|
@@ -10,8 +10,8 @@
 |  [Collector](https://ftmscan.com/address/0xBe85413851D195fC6341619cD68BfDc26a25b928) |  4/5 |  true |  Not owned | |--------|--------|--------|--------|
 |  [RewardsController](https://ftmscan.com/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  3/5 |  true |  Multisg | |--------|--------|--------|--------|
 |  [WrappedTokenGatewayV3](https://ftmscan.com/address/0x1DcDA4de2Bf6c7AD9a34788D22aE6b7d55016e1f) |  4/5 |  false |  Multisg | |--------|--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://ftmscan.com/address/0xE387c6053CE8EC9f8C3fa5cE085Af73114a695d3) |  3/5 |  false |  EOA | |--------|--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://ftmscan.com/address/0x1408401B2A7E28cB747b3e258D0831Fc926bAC51) |  3/5 |  false |  EOA | |--------|--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://ftmscan.com/address/0xE387c6053CE8EC9f8C3fa5cE085Af73114a695d3) |  3/5 |  false |  External Contract | |--------|--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://ftmscan.com/address/0x1408401B2A7E28cB747b3e258D0831Fc926bAC51) |  3/5 |  false |  External Contract | |--------|--------|--------|--------|
 |  [EmissionManager](https://ftmscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  4/5 |  false |  Multisg | |--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://ftmscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  4/5 |  false |  Multisg | |--------|--------|--------|--------|
 |  [ACLManager](https://ftmscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|

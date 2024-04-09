@@ -1,7 +1,7 @@
 # MAINNET 
 ## GHO 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [GHO](https://etherscan.io/address/0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 |  [GSM_USDC](https://etherscan.io/address/0x0d8eFfC11dF3F229AA1EA0509BC9DFa632A13578) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|

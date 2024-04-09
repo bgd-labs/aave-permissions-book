@@ -1,7 +1,7 @@
 # AVALANCHE 
 ## V2 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [LendingPoolAddressesProvider](https://snowtrace.io/address/0xb6A86025F0FE1862B372cb0ca18CE3EDe02A318f) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [LendingPool](https://snowtrace.io/address/0x4F01AeD16D97E3aB5ab2B501154DC9bb0F1A5A2C) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|

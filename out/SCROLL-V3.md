@@ -1,7 +1,7 @@
 # SCROLL 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://scrollscan.com//address/0x69850D0B276776781C063771b161bd8894BCdD04) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [Pool](https://scrollscan.com//address/0x11fCfe756c05AD438e312a7fd934381537D3cFfe) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|

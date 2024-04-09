@@ -1,7 +1,7 @@
 # METIS_ANDROMEDA 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [Pool](https://andromeda-explorer.metis.io/address/0x90df02551bB792286e8D4f13E0e357b4Bf1D6a57) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
@@ -16,7 +16,7 @@
 |  [ACLManager](https://andromeda-explorer.metis.io/address/0xcDCb65fc657B701a5100a12eFB663978E7e8fFB8) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 |  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  3/5 |  false |  External Contract | |--------|--------|--------|--------|
 |  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
 |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [MetisAdapter](https://andromeda-explorer.metis.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|

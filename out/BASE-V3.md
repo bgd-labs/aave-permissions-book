@@ -1,7 +1,7 @@
 # BASE 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://basescan.org/address/0xe20fCBdBfFC4Dd138cE8b2E6FBb6CB49777ad64D) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [Pool](https://basescan.org/address/0xA238Dd80C259a72e81d7e4664a9801593F98d1c5) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
@@ -10,8 +10,8 @@
 |  [Collector](https://basescan.org/address/0xBA9424d650A4F5c80a0dA641254d1AcCE2A37057) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
 |  [RewardsController](https://basescan.org/address/0xf9cc4F0D883F1a1eb2c253bdb46c254Ca51E1F44) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
 |  [WrappedTokenGatewayV3](https://basescan.org/address/0x8be473dCfA93132658821E67CbEB684ec8Ea2E74) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://basescan.org/address/0x2E549104c516b8657A7D888494DfbAbD7C70b464) |  3/5 |  false |  EOA | |--------|--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://basescan.org/address/0x78F8Bd884C3D738B74B420540659c82f392820e0) |  3/5 |  false |  EOA | |--------|--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://basescan.org/address/0x2E549104c516b8657A7D888494DfbAbD7C70b464) |  3/5 |  false |  External Contract | |--------|--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://basescan.org/address/0x78F8Bd884C3D738B74B420540659c82f392820e0) |  3/5 |  false |  External Contract | |--------|--------|--------|--------|
 |  [EmissionManager](https://basescan.org/address/0x6533A273F3aC84Df91DCD654D6EBAbA73687e246) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://basescan.org/address/0x2f6571d3Eb9a4e350C68C36bCD2afe39530078E2) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [RatesFactory](https://basescan.org/address/0x0D1Fe8eAdb0a3e44C4Cc9D73De8dA50C1E475832) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
@@ -19,7 +19,7 @@
 |  [ACLManager](https://basescan.org/address/0x43955b0899Ab7232E3a454cf84AedD22Ad46FD33) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://basescan.org/address/0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 |  [FreezeSteward](https://basescan.org/address/0x4A4c73d563395ad827511F70097d4Ef82E653805) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [BaseBridgeExecutor](https://basescan.org/address/0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [BaseBridgeExecutor](https://basescan.org/address/0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45) |  3/5 |  false |  External Contract | |--------|--------|--------|--------|
 |  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
 |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [CBaseAdapter](https://basescan.org/address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|

@@ -1,7 +1,7 @@
 # ARBITRUM_ONE 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://arbiscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [Pool](https://arbiscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
@@ -19,7 +19,7 @@
 |  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 |  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
-|  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  3/5 |  false |  External Contract | |--------|--------|--------|--------|
 |  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
 |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [ArbAdapter](https://arbiscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|

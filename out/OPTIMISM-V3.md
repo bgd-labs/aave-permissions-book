@@ -1,7 +1,7 @@
 # OPTIMISM 
 ## V3 
 ### decentralization
-| contract |decentralization lvl |upgradeable |controlled by |
+| contract |decentralization lvl |upgradeable |owned by |
 |----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://optimistic.etherscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [Pool](https://optimistic.etherscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
@@ -20,7 +20,7 @@
 |  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 |  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
 |  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
-|  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
+|  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  3/5 |  false |  External Contract | |--------|--------|--------|--------|
 |  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  4/5 |  true |  Gov V3 | |--------|--------|--------|--------|
 |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  5/5 |  false |  Gov V3 | |--------|--------|--------|--------|
 |  [OpAdapter](https://optimistic.etherscan.io/address/0x81d32B36380e6266e1BDd490eAC56cdB300afBe0) |  5/5 |  false |  Not owned | |--------|--------|--------|--------|
