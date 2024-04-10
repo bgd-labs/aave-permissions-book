@@ -21,6 +21,7 @@ import {
 } from '../helpers/types.js';
 import {
   Decentralization,
+  getActionExecutors,
   getLevelOfDecentralization,
 } from '../helpers/decentralization.js';
 
@@ -156,7 +157,7 @@ export const generateTable = (network: string, pool: string): string => {
         ...getPermissionsByNetwork(ChainId.mainnet)['V2_ARC'].contracts,
       };
     }
-    const { upgradeable, controlledBy, ownedBy }: Decentralization =
+    const { upgradeable, ownedBy }: Decentralization =
       getLevelOfDecentralization(
         contract,
         {
@@ -187,7 +188,7 @@ export const generateTable = (network: string, pool: string): string => {
       poolPermitsByContract.govV3.contracts,
     )) {
       const contract = poolPermitsByContract.govV3.contracts[contractName];
-      const { upgradeable, controlledBy, ownedBy }: Decentralization =
+      const { upgradeable, ownedBy }: Decentralization =
         getLevelOfDecentralization(
           contract,
           {
@@ -213,6 +214,35 @@ export const generateTable = (network: string, pool: string): string => {
 
   decentralizationTable += decentralizationTableBody;
   readmeByNetwork += decentralizationTable + '\n';
+
+  let actionsTable = `### actions\n`;
+  const actionsHeaderTitles = ['action', 'can be executed by'];
+  const actionsHeader = getTableHeader(actionsHeaderTitles);
+  actionsTable += actionsHeader;
+
+  // fill pool table
+  let actionsTableBody = '';
+  console.log('network ', network, ' pool ', pool);
+  const actionExecutors = getActionExecutors(
+    {
+      ...poolPermitsByContract.contracts,
+      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+    },
+    getPermissionsByNetwork(network)['V3'].govV3?.contracts || {},
+  );
+  for (let actionName of Object.keys(actionExecutors)) {
+    if (Array.from(actionExecutors[actionName]).length > 0) {
+      actionsTableBody += getTableBody([
+        actionName,
+        `${Array.from(actionExecutors[actionName])}`,
+      ]);
+      actionsTableBody += getLineSeparator(actionsHeaderTitles.length);
+    }
+  }
+  if (actionsTableBody !== '') {
+    actionsTable += actionsTableBody;
+    readmeByNetwork += actionsTable + '\n';
+  }
 
   let contractTable = `### contracts\n`;
   const contractsModifiersHeaderTitles = [

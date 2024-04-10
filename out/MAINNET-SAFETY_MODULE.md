@@ -3,18 +3,26 @@
 ### decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
-|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  true |  Not owned | |--------|--------|--------|
+|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  true |  Gov V3 | |--------|--------|--------|
 |  [stkABPT](https://etherscan.io/address/0xa1116930326D21fB917d5A27F1E9943A9595fb47) |  true |  Gov V3 | |--------|--------|--------|
 |  [ABPT](https://etherscan.io/address/0x41A08648C3766F9F9d85598fF102a08f4ef84F84) |  true |  Gov V3 | |--------|--------|--------|
 |  [BPT](https://etherscan.io/address/0xC697051d1C6296C24aE3bceF39acA743861D9A81) |  false |  Not owned | |--------|--------|--------|
 
+### actions
+| action |can be executed by |
+|----------|----------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
+|  configureGovernance |  Gov V3 | |--------|--------|
+|  updateProposalState |  Multisg | |--------|--------|
+
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  [0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  onlyEmissionManager |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  configureAssets | |--------|--------|--------|--------|--------|
-|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  [0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  onlySlashingAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  slash, settleSlashing, setMaxSlashablePercentage | |--------|--------|--------|--------|--------|
-|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  [0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  onlyCooldownAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  setCooldownSeconds | |--------|--------|--------|--------|--------|
-|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  [0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  onlyClaimHelper |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  cooldownOnBehalfOf, redeemOnBehalf, claimRewardsOnBehalf, claimRewardsAndRedeemOnBehalf | |--------|--------|--------|--------|--------|
+|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  [ProxyAdminLong](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  onlyEmissionManager |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  configureAssets | |--------|--------|--------|--------|--------|
+|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  [ProxyAdminLong](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  onlySlashingAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  slash, settleSlashing, setMaxSlashablePercentage | |--------|--------|--------|--------|--------|
+|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  [ProxyAdminLong](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  onlyCooldownAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  setCooldownSeconds | |--------|--------|--------|--------|--------|
+|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  [ProxyAdminLong](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  onlyClaimHelper |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  cooldownOnBehalfOf, redeemOnBehalf, claimRewardsOnBehalf, claimRewardsAndRedeemOnBehalf | |--------|--------|--------|--------|--------|
 |  [stkABPT](https://etherscan.io/address/0xa1116930326D21fB917d5A27F1E9943A9595fb47) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyEmissionManager |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  configureAssets | |--------|--------|--------|--------|--------|
 |  [stkABPT](https://etherscan.io/address/0xa1116930326D21fB917d5A27F1E9943A9595fb47) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlySlashingAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  slash, settleSlashing, setMaxSlashablePercentage | |--------|--------|--------|--------|--------|
 |  [stkABPT](https://etherscan.io/address/0xa1116930326D21fB917d5A27F1E9943A9595fb47) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyCooldownAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  setCooldownSeconds | |--------|--------|--------|--------|--------|

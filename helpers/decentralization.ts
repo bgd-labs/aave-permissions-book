@@ -1,9 +1,9 @@
 import { ContractInfo, Contracts, GovV3, PoolInfo } from './types.js';
+import actionsConfig from '../statics/actionsConfig.json' assert { type: 'json' };
 
 export type Decentralization = {
   decentralizationPoints: number;
   upgradeable: boolean;
-  controlledBy: Controller;
   ownedBy: Controller;
 };
 
@@ -13,6 +13,48 @@ export enum Controller {
   MULTI_SIG = 'Multisg',
   EOA = 'External Contract',
 }
+
+export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
+  const actionsObject: Record<string, Set<string>> = {};
+  Object.keys(actionsConfig).forEach((action) => {
+    actionsObject[action] = new Set<string>();
+    for (let contractName of Object.keys(poolInfo)) {
+      const contract = poolInfo[contractName];
+      // search all modifiers
+      contract.modifiers.forEach((modifier) => {
+        const hasFunction = modifier.functions.some((functionName: string) =>
+          // @ts-ignore
+          actionsConfig[action].includes(functionName),
+        );
+        if (hasFunction) {
+          modifier.addresses.map((addressInfo) => {
+            if (addressInfo.owners.length > 0) {
+              actionsObject[action].add(Controller.MULTI_SIG);
+              // return Controller.MULTI_SIG;
+            } else {
+              const ownedInfo = isOwnedAndByWho(
+                addressInfo.address,
+                poolInfo,
+                govInfo,
+              );
+              if (ownedInfo.owned) {
+                actionsObject[action].add(ownedInfo.ownedBy);
+                // return ownedInfo.ownedBy;
+              } else {
+                actionsObject[action].add(addressInfo.address);
+                // return addressInfo.address;
+              }
+            }
+          });
+          // actionsObject[action] = [...actionsObject[action], ...ownersInfo];
+        }
+      });
+    }
+  });
+
+  return actionsObject;
+};
+
 export const getLevelOfDecentralization = (
   contract: ContractInfo,
   poolInfo: Contracts,
@@ -20,7 +62,6 @@ export const getLevelOfDecentralization = (
 ): Decentralization => {
   let decentralizationPoints = 5;
   let upgradeable = false;
-  let controlledBy = Controller.NONE;
   let ownedBy = Controller.NONE;
 
   // check if it has proxy admin (means upgradeable)
@@ -53,7 +94,7 @@ export const getLevelOfDecentralization = (
     }
   }
 
-  return { decentralizationPoints, upgradeable, ownedBy, controlledBy };
+  return { decentralizationPoints, upgradeable, ownedBy };
 };
 
 const isOwnedByGov = (
@@ -107,9 +148,13 @@ const isOwnedAndByWho = (
       contract.modifiers.forEach((modifierInfo) => {
         if (
           modifierInfo.modifier === 'onlyOwner' ||
-          modifierInfo.modifier === 'onlyEthereumGovernanceExecutor'
+          modifierInfo.modifier === 'onlyEthereumGovernanceExecutor' ||
+          modifierInfo.modifier === 'onlyRiskCouncil' ||
+          modifierInfo.modifier === 'onlyEmergencyAdmin'
         ) {
+          console.log('address::: ', modifierInfo.modifier);
           if (modifierInfo.addresses[0].owners.length > 0) {
+            console.log('--- is multisig');
             ownerInfo = { owned: true, ownedBy: Controller.MULTI_SIG };
           } else {
             const ownedByGov = isOwnedByGov(

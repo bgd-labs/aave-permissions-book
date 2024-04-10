@@ -512,27 +512,48 @@ export const resolveV3Modifiers = async (
       address: addressBook.RATES_FACTORY,
       modifiers: [],
     };
-    const proxyAdminContractAddress = await getProxyAdmin(
-      addressBook.RATES_FACTORY,
-      provider,
-    );
+  }
 
-    const proxyAdminContract = new ethers.Contract(
-      proxyAdminContractAddress,
+  const proxyAdminContract = new ethers.Contract(
+    addressBook.PROXY_ADMIN,
+    onlyOwnerAbi,
+    provider,
+  );
+  const proxyAdminOwner = await proxyAdminContract.owner();
+
+  obj['ProxyAdmin'] = {
+    address: addressBook.PROXY_ADMIN,
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: proxyAdminOwner,
+            owners: await getSafeOwners(provider, proxyAdminOwner),
+          },
+        ],
+        functions: roles['ProxyAdmin']['onlyOwner'],
+      },
+    ],
+  };
+
+  if (addressBook.PROXY_ADMIN_LONG) {
+    const proxyAdminLongContract = new ethers.Contract(
+      addressBook.PROXY_ADMIN_LONG,
       onlyOwnerAbi,
       provider,
     );
-    const proxyAdminOwner = await proxyAdminContract.owner();
+    const proxyAdminLongOwner = await proxyAdminLongContract.owner();
 
-    obj['ProxyAdmin'] = {
-      address: utils.getAddress(proxyAdminContractAddress),
+    obj['ProxyAdminLong'] = {
+      address: addressBook.PROXY_ADMIN_LONG,
       modifiers: [
         {
           modifier: 'onlyOwner',
           addresses: [
             {
-              address: proxyAdminOwner,
-              owners: await getSafeOwners(provider, proxyAdminOwner),
+              address: proxyAdminLongOwner,
+              owners: await getSafeOwners(provider, proxyAdminLongOwner),
             },
           ],
           functions: roles['ProxyAdmin']['onlyOwner'],
@@ -545,7 +566,7 @@ export const resolveV3Modifiers = async (
     address: addressBook.ACL_MANAGER,
     modifiers: [
       {
-        modifier: 'setRoleAdmin',
+        modifier: 'onlyRole',
         addresses: [
           ...adminRoles['DEFAULT_ADMIN'].map((roleAddress) => {
             return {
@@ -554,7 +575,7 @@ export const resolveV3Modifiers = async (
             };
           }),
         ],
-        functions: roles['ACLManager']['setRoleAdmin'],
+        functions: roles['ACLManager']['onlyRole'],
       },
     ],
   };
@@ -648,7 +669,7 @@ export const resolveV3Modifiers = async (
               owners: await getSafeOwners(provider, polEthBridgeOwner),
             },
           ],
-          functions: roles['AaveMerkleDistributor']['onlyOwner'],
+          functions: roles['AavePolEthBridge']['onlyOwner'],
         },
         {
           modifier: 'onlyRescueGuardian',
@@ -658,7 +679,7 @@ export const resolveV3Modifiers = async (
               owners: await getSafeOwners(provider, polEthBridgeRescuer),
             },
           ],
-          functions: roles['AaveMerkleDistributor']['onlyRescueGuardian'],
+          functions: roles['AavePolEthBridge']['onlyRescueGuardian'],
         },
       ],
     };

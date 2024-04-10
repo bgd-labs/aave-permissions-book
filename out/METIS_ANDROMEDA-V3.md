@@ -14,13 +14,26 @@
 |  [RatesFactory](https://andromeda-explorer.metis.io/address/0x87Aaba7cf8e1F319d0E3402d68017171201dEcd5) |  true |  Gov V3 | |--------|--------|--------|
 |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  false |  Gov V3 | |--------|--------|--------|
 |  [ACLManager](https://andromeda-explorer.metis.io/address/0xcDCb65fc657B701a5100a12eFB663978E7e8fFB8) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  false |  Not owned | |--------|--------|--------|
-|  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  false |  Not owned | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  false |  Multisg | |--------|--------|--------|
+|  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  false |  Multisg | |--------|--------|--------|
 |  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  false |  External Contract | |--------|--------|--------|
 |  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  true |  Gov V3 | |--------|--------|--------|
 |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  false |  Gov V3 | |--------|--------|--------|
 |  [MetisAdapter](https://andromeda-explorer.metis.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://andromeda-explorer.metis.io/address/0x6fDaFb26915ABD6065a1E1501a37Ac438D877f70) |  true |  Gov V3 | |--------|--------|--------|
+
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
+|  configureFees |  Multisg,Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3,Multisg | |--------|--------|
+|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  adminsConfiguration |  Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -42,7 +55,7 @@
 |  [PoolAddressesProviderRegistry](https://andromeda-explorer.metis.io/address/0x9E7B73ffD9D2026F3ff4212c29E209E09C8A91F5) |  - |  onlyOwner |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [RatesFactory](https://andromeda-explorer.metis.io/address/0x87Aaba7cf8e1F319d0E3402d68017171201dEcd5) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  - |  onlyOwner |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [ACLManager](https://andromeda-explorer.metis.io/address/0xcDCb65fc657B701a5100a12eFB663978E7e8fFB8) |  - |  setRoleAdmin |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |   | |--------|--------|--------|--------|--------|
+|  [ACLManager](https://andromeda-explorer.metis.io/address/0xcDCb65fc657B701a5100a12eFB663978E7e8fFB8) |  - |  onlyRole |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  - |  onlyRiskCouncil |  [Risk Council](https://andromeda-explorer.metis.io/address/0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  - |  onlyEmergencyAdmin |  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  - |  onlyGuardian |  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501) |  cancel | |--------|--------|--------|--------|--------|
@@ -52,10 +65,10 @@
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyOwner |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  updateGasLimit, addVotingPortals, removeVotingPortals, setVotingConfigs, setPowerStrategy | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyGuardian |  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501) |  rescueVotingPortal, cancelProposal | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyOwner |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  updateExecutors | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyGuardian |  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyOwnerOrGuardian |  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501), [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyRescueGuardian |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |   | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyRescueGuardian |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  - |  onlyOwner |  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [MetisAdapter](https://andromeda-explorer.metis.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  - |  trustedRemote |  [CrossChainController(Eth)](https://andromeda-explorer.metis.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://andromeda-explorer.metis.io/address/0x6fDaFb26915ABD6065a1E1501a37Ac438D877f70) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyOwner |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  approveSenders, removeSenders, enableBridgeAdapters, disableBridgeAdapters, updateMessagesValidityTimestamp, allowReceiverBridgeAdapters, disallowReceiverBridgeAdapters | |--------|--------|--------|--------|--------|

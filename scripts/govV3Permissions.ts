@@ -35,26 +35,6 @@ export const resolveGovV3Modifiers = async (
     addressBook.GOVERNANCE &&
     addressBook.GOVERNANCE !== constants.AddressZero
   ) {
-    const shortExecutor = AaveGovernanceV2.SHORT_EXECUTOR;
-
-    // obj['AaveGovernanceV3'] = {
-    //   address: addressBook.GOVERNANCE,
-    //   modifiers: [
-    //     {
-    //       modifier: 'onlyShortExecutor',
-    //       addresses: [
-    //         {
-    //           address: AaveGovernanceV2.SHORT_EXECUTOR,
-    //           owners: await getSafeOwners(
-    //             provider,
-    //             AaveGovernanceV2.SHORT_EXECUTOR,
-    //           ),
-    //         },
-    //       ],
-    //       functions: roles['AaveGovernanceV3']['onlyOwner'],
-    //     },
-    //   ],
-    // };
     const govContractGuardian = new ethers.Contract(
       addressBook.GOVERNANCE,
       IWithGuardian_ABI,
@@ -143,7 +123,7 @@ export const resolveGovV3Modifiers = async (
               owners: await getSafeOwners(provider, pcOwner),
             },
           ],
-          functions: roles['AaveGovernanceV3']['onlyOwner'],
+          functions: roles['PayloadsController']['onlyOwner'],
         },
         {
           modifier: 'onlyGuardian',
@@ -153,7 +133,7 @@ export const resolveGovV3Modifiers = async (
               owners: await getSafeOwners(provider, pcGuardian),
             },
           ],
-          functions: roles['AaveGovernanceV3']['onlyGuardian'],
+          functions: roles['PayloadsController']['onlyGuardian'],
         },
         {
           modifier: 'onlyOwnerOrGuardian',
@@ -167,7 +147,7 @@ export const resolveGovV3Modifiers = async (
               owners: await getSafeOwners(provider, pcOwner),
             },
           ],
-          functions: roles['AaveGovernanceV3']['onlyOwnerOrGuardian'],
+          functions: roles['PayloadsController']['onlyOwnerOrGuardian'],
         },
         {
           modifier: 'onlyRescueGuardian',
@@ -177,7 +157,7 @@ export const resolveGovV3Modifiers = async (
               owners: await getSafeOwners(provider, rescuer),
             },
           ],
-          functions: roles['AaveGovernanceV3']['onlyRescueGuardian'],
+          functions: roles['PayloadsController']['onlyRescueGuardian'],
         },
       ],
     };

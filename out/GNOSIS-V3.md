@@ -15,14 +15,27 @@
 |  [RatesFactory](https://gnosisscan.io//address/0x73dDE2A75c06a108912bf7Ff600eDdCE9d96Ed25) |  true |  Gov V3 | |--------|--------|--------|
 |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  false |  Gov V3 | |--------|--------|--------|
 |  [ACLManager](https://gnosisscan.io//address/0xEc710f59005f48703908bC519D552Df5B8472614) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) |  false |  Not owned | |--------|--------|--------|
-|  [FreezeSteward](https://gnosisscan.io//address/0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5) |  false |  Not owned | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) |  false |  Multisg | |--------|--------|--------|
+|  [FreezeSteward](https://gnosisscan.io//address/0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5) |  false |  Multisg | |--------|--------|--------|
 |  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  true |  Gov V3 | |--------|--------|--------|
 |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  false |  Gov V3 | |--------|--------|--------|
 |  [LayerZeroAdapter](https://gnosisscan.io//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) |  false |  Not owned | |--------|--------|--------|
 |  [HyperLaneAdapter](https://gnosisscan.io//address/0x4A4c73d563395ad827511F70097d4Ef82E653805) |  false |  Not owned | |--------|--------|--------|
 |  [GnosisChainAdapter](https://gnosisscan.io//address/0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://gnosisscan.io//address/0x8Dc5310fc9D3D7D1Bb3D1F686899c8F082316c9F) |  true |  Gov V3 | |--------|--------|--------|
+
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
+|  configureFees |  Multisg,Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3,Multisg | |--------|--------|
+|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  adminsConfiguration |  Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -45,17 +58,17 @@
 |  [PoolAddressesProviderRegistry](https://gnosisscan.io//address/0x1236010CECea55998384e795B59815D871f5f94d) |  - |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [RatesFactory](https://gnosisscan.io//address/0x73dDE2A75c06a108912bf7Ff600eDdCE9d96Ed25) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  - |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [ACLManager](https://gnosisscan.io//address/0xEc710f59005f48703908bC519D552Df5B8472614) |  - |  setRoleAdmin |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |   | |--------|--------|--------|--------|--------|
+|  [ACLManager](https://gnosisscan.io//address/0xEc710f59005f48703908bC519D552Df5B8472614) |  - |  onlyRole |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) |  - |  onlyRiskCouncil |  [Risk Council](https://gnosisscan.io//address/0xF221B08dD10e0C68D74F035764931Baa3b030481) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://gnosisscan.io//address/0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5) |  - |  onlyEmergencyAdmin |  [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D) |  setFreeze | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  updateGasLimit, addVotingPortals, removeVotingPortals, setVotingConfigs, setPowerStrategy | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyGuardian |  [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D) |  rescueVotingPortal, cancelProposal | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  updateExecutors | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyGuardian |  [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyOwnerOrGuardian |  [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D), [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyRescueGuardian |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |   | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyRescueGuardian |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  - |  onlyOwner |  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [LayerZeroAdapter](https://gnosisscan.io//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) |  - |  trustedRemote |  [CrossChainController(Eth)](https://gnosisscan.io//address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [HyperLaneAdapter](https://gnosisscan.io//address/0x4A4c73d563395ad827511F70097d4Ef82E653805) |  - |  trustedRemote |  [CrossChainController(Eth)](https://gnosisscan.io//address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
@@ -65,7 +78,7 @@
 |  [CrossChainController](https://gnosisscan.io//address/0x8Dc5310fc9D3D7D1Bb3D1F686899c8F082316c9F) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyRescueGuardian |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://gnosisscan.io//address/0x8Dc5310fc9D3D7D1Bb3D1F686899c8F082316c9F) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyApprovedSenders |   |  forwardMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://gnosisscan.io//address/0x8Dc5310fc9D3D7D1Bb3D1F686899c8F082316c9F) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyApprovedBridges |  [LayerZeroAdapter](https://gnosisscan.io//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7), [HyperLaneAdapter](https://gnosisscan.io//address/0x4A4c73d563395ad827511F70097d4Ef82E653805), [GnosisChainAdapter](https://gnosisscan.io//address/0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b) |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
-|  [CrossChainController](https://gnosisscan.io//address/0x8Dc5310fc9D3D7D1Bb3D1F686899c8F082316c9F) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyGuardian |  [BGD](https://gnosisscan.io//address/0xcb8a3E864D12190eD2b03cbA0833b15f2c314Ed8) |   | |--------|--------|--------|--------|--------|
+|  [CrossChainController](https://gnosisscan.io//address/0x8Dc5310fc9D3D7D1Bb3D1F686899c8F082316c9F) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyGuardian |  [BGD](https://gnosisscan.io//address/0xcb8a3E864D12190eD2b03cbA0833b15f2c314Ed8) |  solveEmergency | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Address |Owners |

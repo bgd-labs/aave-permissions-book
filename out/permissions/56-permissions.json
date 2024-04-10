@@ -390,12 +390,15 @@
         "address": "0x2D97F8FA96886Fd923c065F5457F9DDd494e3877",
         "modifiers": [
           {
-            "modifier": "setRoleAdmin",
+            "modifier": "onlyRole",
             "addresses": [
               {
                 "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                 "owners": []
               }
+            ],
+            "functions": [
+              "setRoleAdmin"
             ]
           }
         ]
@@ -461,13 +464,15 @@
         ],
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": [],
-        "FLASH_BORROWER": [],
+        "FLASH_BORROWER": [
+          "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
+        ],
         "RISK_ADMIN": [
           "0x83f15Bc50d1A212576B202f80489502a7cc10412",
           "0x971F1C94b139AdEdedA729DA636e2B0C433Ff595"
         ]
       },
-      "latestBlockNumber": 36918924
+      "latestBlockNumber": 37739420
     },
     "gsmRoles": {},
     "govV3": {
@@ -484,11 +489,7 @@
                 }
               ],
               "functions": [
-                "updateGasLimit",
-                "addVotingPortals",
-                "removeVotingPortals",
-                "setVotingConfigs",
-                "setPowerStrategy"
+                "updateExecutors"
               ]
             },
             {
@@ -511,8 +512,7 @@
                 }
               ],
               "functions": [
-                "rescueVotingPortal",
-                "cancelProposal"
+                "cancelPayload"
               ]
             },
             {
@@ -549,6 +549,10 @@
                   "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
                   "owners": []
                 }
+              ],
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
               ]
             }
           ],
@@ -607,8 +611,8 @@
             }
           ]
         },
-        "CCIPAdapter": {
-          "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+        "undefined": {
+          "address": "0xAE93BEa44dcbE52B625169588574d31e36fb3A67",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -700,7 +704,7 @@
                   "owners": []
                 },
                 {
-                  "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+                  "address": "0xAE93BEa44dcbE52B625169588574d31e36fb3A67",
                   "owners": []
                 }
               ],
@@ -719,6 +723,9 @@
                     "0x0650302887619fa7727D8BD480Cda11A638B219B"
                   ]
                 }
+              ],
+              "functions": [
+                "solveEmergency"
               ]
             }
           ],
@@ -726,7 +733,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 36918981
+      "latestCCCBlockNumber": 37739421
     }
   },
   "TENDERLY": {

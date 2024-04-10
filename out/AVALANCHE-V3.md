@@ -19,8 +19,8 @@
 |  [RatesFactory](https://snowtrace.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  true |  Gov V3 | |--------|--------|--------|
 |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
 |  [ACLManager](https://snowtrace.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5) |  false |  Not owned | |--------|--------|--------|
-|  [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) |  false |  Not owned | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5) |  false |  Multisg | |--------|--------|--------|
+|  [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) |  false |  Multisg | |--------|--------|--------|
 |  [AaveMerkleDistributor](https://snowtrace.io/address/0xA065d5A299E618CD84a87641d5eEbC7916Fdf32E) |  false |  Gov V3 | |--------|--------|--------|
 |  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  true |  Gov V3 | |--------|--------|--------|
 |  [VotingMachine](https://snowtrace.io/address/0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F) |  false |  Gov V3 | |--------|--------|--------|
@@ -29,6 +29,20 @@
 |  [LayerZeroAdapter](https://snowtrace.io/address/0xf41193E25408F652AF878c47E4401A01B5E4B682) |  false |  Not owned | |--------|--------|--------|
 |  [undefined](https://snowtrace.io/address/0x2b88C83727B0E290B76EB3F6133994fF81B7f355) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://snowtrace.io/address/0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928) |  true |  Gov V3 | |--------|--------|--------|
+
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
+|  configureFees |  Multisg,Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3,Multisg | |--------|--------|
+|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  adminsConfiguration |  Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
+|  configureGovernance |  Gov V3 | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -55,7 +69,7 @@
 |  [PoolAddressesProviderRegistry](https://snowtrace.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [RatesFactory](https://snowtrace.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [ACLManager](https://snowtrace.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  setRoleAdmin |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |   | |--------|--------|--------|--------|--------|
+|  [ACLManager](https://snowtrace.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  onlyRole |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5) |  - |  onlyRiskCouncil |  [Risk Council](https://snowtrace.io/address/0xCa66149425E7DC8f81276F6D80C4b486B9503D1a) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) |  - |  onlyEmergencyAdmin |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [AaveMerkleDistributor](https://snowtrace.io/address/0xA065d5A299E618CD84a87641d5eEbC7916Fdf32E) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
@@ -63,10 +77,10 @@
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  updateGasLimit, addVotingPortals, removeVotingPortals, setVotingConfigs, setPowerStrategy | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  rescueVotingPortal, cancelProposal | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  updateExecutors | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwnerOrGuardian |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470), [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |   | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [VotingMachine](https://snowtrace.io/address/0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  updateGasLimit | |--------|--------|--------|--------|--------|
 |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  - |  onlyOwner |  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [HyperLaneAdapter](https://snowtrace.io/address/0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04) |  - |  trustedRemote |  [CrossChainController(Eth)](https://snowtrace.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
@@ -77,7 +91,7 @@
 |  [CrossChainController](https://snowtrace.io/address/0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://snowtrace.io/address/0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyApprovedSenders |  [VotingMachine](https://snowtrace.io/address/0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F) |  forwardMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://snowtrace.io/address/0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyApprovedBridges |  [HyperLaneAdapter](https://snowtrace.io/address/0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04), [LayerZeroAdapter](https://snowtrace.io/address/0xf41193E25408F652AF878c47E4401A01B5E4B682), [undefined](https://snowtrace.io/address/0x2b88C83727B0E290B76EB3F6133994fF81B7f355) |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
-|  [CrossChainController](https://snowtrace.io/address/0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [BGD](https://snowtrace.io/address/0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36) |   | |--------|--------|--------|--------|--------|
+|  [CrossChainController](https://snowtrace.io/address/0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [BGD](https://snowtrace.io/address/0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36) |  solveEmergency | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Address |Owners |

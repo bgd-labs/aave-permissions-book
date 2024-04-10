@@ -34,7 +34,8 @@ const generateNetworkPermissions = async (network: string) => {
 
   const pools = networkConfigs[network].pools;
   const poolsKeys = Object.keys(pools).map((pool) => pool);
-  for (const poolKey of poolsKeys) {
+  for (let i = 0; i < poolsKeys.length; i++) {
+    const poolKey = poolsKeys[i];
     if (
       (!process.env.TENDERLY || process.env.TENDERLY === 'false') &&
       poolKey.toLowerCase().indexOf('tenderly') > -1
@@ -167,7 +168,10 @@ const generateNetworkPermissions = async (network: string) => {
             ghoRoleNames,
             pool.addressBook.GHO_TOKEN,
           );
-
+          console.log(
+            '-------------------------------a;sldkjfa;lsdkjf;asd',
+            admins,
+          );
           // get gsms admin roles
           if (pool.gsmBlocks) {
             for (let i = 0; i < Object.keys(pool.gsmBlocks).length; i++) {
@@ -175,16 +179,18 @@ const generateNetworkPermissions = async (network: string) => {
               let gsmBlock = pool.gsmBlocks[key];
               if (
                 fullJson[poolKey] &&
-                fullJson[poolKey].gsmRoles &&
+                // @ts-ignore
+                Object.keys(fullJson[poolKey].gsmRoles).length > 0 &&
                 !pool.tenderlyBasePool
               ) {
                 gsmBlock =
                   fullJson[poolKey].gsmRoles?.[key].latestBlockNumber || 0;
               }
-
               gsmAdmins[key] = await getCurrentRoleAdmins(
                 provider,
                 (fullJson[poolKey] &&
+                  // @ts-ignore
+                  Object.keys(fullJson[poolKey].gsmRoles).length > 0 &&
                   fullJson[poolKey]?.gsmRoles?.[key].role) ||
                   ({} as Record<string, string[]>),
                 gsmBlock,
@@ -325,7 +331,9 @@ const generateNetworkPermissions = async (network: string) => {
   }
 
   // save permissions in json object
-
+  console.log(
+    '--------------------------------SAVE JSON-----------------------------------',
+  );
   saveJson(
     `out/permissions/${network}-permissions.json`,
     JSON.stringify(fullJson, null, 2),

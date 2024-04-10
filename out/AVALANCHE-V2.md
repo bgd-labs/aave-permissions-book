@@ -18,6 +18,18 @@
 |  [LendingPoolAddressesProviderRegistry](https://snowtrace.io/address/0x4235E22d9C3f28DCDA82b58276cb6370B01265C2) |  false |  Gov V3 | |--------|--------|--------|
 |  [DefaultIncentivesController](https://snowtrace.io/address/0x01D83Fe6A10D2f2B7AF17034343746188272cAc9) |  false |  Not owned | |--------|--------|--------|
 
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureFees |  Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3 | |--------|--------|
+|  reserveConfiguration |  Multisg | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
+|  configureGovernance |  Gov V3 | |--------|--------|
+
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|

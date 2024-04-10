@@ -15,12 +15,25 @@
 |  [RatesFactory](https://scrollscan.com//address/0xe48fb34452FaE3Cd5d906F748490FBE16c3Ce31b) |  true |  Gov V3 | |--------|--------|--------|
 |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  false |  Gov V3 | |--------|--------|--------|
 |  [ACLManager](https://scrollscan.com//address/0x7633F981D87dC6307227de9383D2ce7243158081) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  false |  Not owned | |--------|--------|--------|
-|  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  false |  Not owned | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  false |  Multisg | |--------|--------|--------|
+|  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  false |  Multisg | |--------|--------|--------|
 |  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  true |  Gov V3 | |--------|--------|--------|
 |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  false |  Gov V3 | |--------|--------|--------|
 |  [ScrollAdapter](https://scrollscan.com//address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://scrollscan.com//address/0x03073D3F4769f6b6604d616238fD6c636C99AD0A) |  true |  Gov V3 | |--------|--------|--------|
+
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
+|  configureFees |  Multisg,Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3,Multisg | |--------|--------|
+|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  adminsConfiguration |  Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -43,17 +56,17 @@
 |  [PoolAddressesProviderRegistry](https://scrollscan.com//address/0xFBedc64AeE24921cb43004312B9eF367a4162b57) |  - |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [RatesFactory](https://scrollscan.com//address/0xe48fb34452FaE3Cd5d906F748490FBE16c3Ce31b) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  - |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [ACLManager](https://scrollscan.com//address/0x7633F981D87dC6307227de9383D2ce7243158081) |  - |  setRoleAdmin |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |   | |--------|--------|--------|--------|--------|
+|  [ACLManager](https://scrollscan.com//address/0x7633F981D87dC6307227de9383D2ce7243158081) |  - |  onlyRole |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  - |  onlyRiskCouncil |  [Risk Council](https://scrollscan.com//address/0x611439a74546888c3535B4dd119A5Cbb9f5332EA) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  - |  onlyEmergencyAdmin |  [Aave Guardian Scroll](https://scrollscan.com//address/0x63B20270b695E44Ac94Ad7592D5f81E3575b93e7) |  setFreeze | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  updateGasLimit, addVotingPortals, removeVotingPortals, setVotingConfigs, setPowerStrategy | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyGuardian |  [Aave Guardian Scroll](https://scrollscan.com//address/0x63B20270b695E44Ac94Ad7592D5f81E3575b93e7) |  rescueVotingPortal, cancelProposal | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  updateExecutors | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyGuardian |  [Aave Guardian Scroll](https://scrollscan.com//address/0x63B20270b695E44Ac94Ad7592D5f81E3575b93e7) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyOwnerOrGuardian |  [Aave Guardian Scroll](https://scrollscan.com//address/0x63B20270b695E44Ac94Ad7592D5f81E3575b93e7), [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyRescueGuardian |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |   | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyRescueGuardian |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  - |  onlyOwner |  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [ScrollAdapter](https://scrollscan.com//address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  - |  trustedRemote |  [CrossChainController(Eth)](https://scrollscan.com//address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://scrollscan.com//address/0x03073D3F4769f6b6604d616238fD6c636C99AD0A) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  approveSenders, removeSenders, enableBridgeAdapters, disableBridgeAdapters, updateMessagesValidityTimestamp, allowReceiverBridgeAdapters, disallowReceiverBridgeAdapters | |--------|--------|--------|--------|--------|

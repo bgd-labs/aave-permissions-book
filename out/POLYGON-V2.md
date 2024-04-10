@@ -17,6 +17,18 @@
 |  [DefaultIncentivesController](https://polygonscan.com/address/0x357D51124f59836DeD84c8a1730D72B749d8BC23) |  false |  Not owned | |--------|--------|--------|
 |  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  false |  Not owned | |--------|--------|--------|
 
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureFees |  Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3 | |--------|--------|
+|  reserveConfiguration |  Multisg | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
+|  configureGovernance |  Gov V3 | |--------|--------|
+
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|

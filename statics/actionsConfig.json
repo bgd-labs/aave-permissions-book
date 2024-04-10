@@ -1,49 +1,44 @@
 {
-  "poolConfiguration": [
-    "setMarketId",
-    "setAddress",
-    "setPriceOracle",
-    "setPriceOracleSentinel",
-    "setPoolDataProvider",
-    "updateBridgeProtocolFee",
-    "updateFlashloanPremiumTotal",
-    "updateFlashloanPremiumToProtocol",
-    "enableAssets",
-    "disableAssets",
-    "updateFlashloanPremiums"
-  ],
-  "poolActions": [
-    "initReserve",
-    "dropReserve",
-    "setPoolPause",
-    "initReserves",
-    "setReserveActive"
-  ],
-  "reserveConfiguration": [
+  "configureBorrows": [
     "setReserveBorrowing",
-    "configureReserveAsCollateral",
     "setReserveStableRateBorrowing",
-    "setReserveFreeze",
     "setBorrowableInIsolation",
-    "setReserveFactor",
     "setDebtCeiling",
     "setSiloedBorrowing",
     "setBorrowCap",
-    "setSupplyCap",
+    "resetIsolationModeTotalDebt"
+  ],
+  "configureFees": [
+    "setReserveFactor",
     "setLiquidationProtocolFee",
+    "updateBridgeProtocolFee",
+    "updateFlashloanPremiumTotal",
+    "updateFlashloanPremiumToProtocol",
+    "updateFlashloanPremiums"
+  ],
+  "configureCollateral": [
+    "setSupplyCap",
+    "configureReserveAsCollateral",
+    "setUnbackedMintCap"
+  ],
+  "reserveConfiguration": [
+    "setConfiguration",
+    "updateCaps",
     "setEModeCategory",
     "setAssetEModeCategory",
-    "setUnbackedMintCap",
-    "setReserveInterestRateStrategyAddress",
-    "setReserveInterestRateStrategyAddress",
-    "setConfiguration",
-    "configureEModeCategory",
-    "resetIsolationModeTotalDebt",
+    "configureEModeCategory"
+  ],
+  "reserveState": [
+    "setReserveFreeze",
     "setReservePause",
-    "setAssetSources",
-    "setFallbackOracle",
-    "updateCaps",
-    "setFreeze"
+    "setFreeze",
+    "initReserves",
+    "enableAssets",
+    "disableAssets",
+    "setPoolPause",
+    "initReserve",
+    "dropReserve",
+    "setReserveActive"
   ],
   "adminsConfiguration": ["setACLManager", "setACLAdmin"],
   "upgradeability": [
@@ -52,31 +47,34 @@
     "updateVariableDebtToken",
     "setPoolImpl",
     "setAddressAsProxy",
-    "setPoolConfiguratorImpl"
+    "setPoolConfiguratorImpl",
+    "setPriceOracle",
+    "setPriceOracleSentinel",
+    "setPoolDataProvider",
+    "setReserveInterestRateStrategyAddress",
+    "setAssetSources",
+    "setFallbackOracle",
+    "setAddress"
   ],
   "adiConfigurations": [
     "approveSenders",
     "removeSenders",
     "enableBridgeAdapters",
     "disableBridgeAdapters",
-    "updateMessagesValidityTimestamp",
     "allowReceiverBridgeAdapters",
     "disallowReceiverBridgeAdapters"
   ],
-  "governanceConfigurations": [
-    "updateGuardian",
-    "rescueVotingPortal",
-    "updateGasLimit",
-    "addVotingPortals",
-    "removeVotingPortals",
-    "setVotingConfigs",
-    "setPowerStrategy",
-    "updateGasLimit",
-    "addVotingPortals",
-    "removeVotingPortals",
-    "setVotingConfigs",
-    "setPowerStrategy",
-    "rescueVotingPortal"
+  "updateAdiMessageState": [
+    "updateMessagesValidityTimestamp",
+    "retryEnvelope",
+    "retryTransaction"
   ],
-  "cancelGovActions": ["cancelProposal"]
+  "configureGovernance": [
+    "updateGasLimit",
+    "addVotingPortals",
+    "removeVotingPortals",
+    "setVotingConfigs",
+    "setPowerStrategy"
+  ],
+  "updateProposalState": ["cancelProposal"]
 }

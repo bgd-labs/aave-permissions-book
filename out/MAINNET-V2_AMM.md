@@ -13,6 +13,19 @@
 |  [WrappedTokenGatewayV2](https://etherscan.io/address/0xbe9a7B3F2f54E18D7C0a17B03ad84Ac2D1D28eAC) |  false |  Gov V3 | |--------|--------|--------|
 |  [LendingPoolAddressesProviderRegistry](https://etherscan.io/address/0x52D306e36E3B6B02c153d0266ff0f85d18BCD413) |  false |  Gov V3 | |--------|--------|--------|
 
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureFees |  Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3 | |--------|--------|
+|  reserveConfiguration |  Multisg | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
+|  configureGovernance |  Gov V3 | |--------|--------|
+|  updateProposalState |  Multisg | |--------|--------|
+
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|

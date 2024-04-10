@@ -13,6 +13,19 @@
 |  [ArcTimelock](https://etherscan.io/address/0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218) |  false |  Gov V3 | |--------|--------|--------|
 |  [PermissionManager](https://etherscan.io/address/0xF4a1F5fEA79C3609514A417425971FadC10eCfBE) |  false |  Gov V3 | |--------|--------|--------|
 
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureFees |  Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3 | |--------|--------|
+|  reserveConfiguration |  Multisg | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  upgradeability |  Multisg,Gov V3 | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
+|  configureGovernance |  Gov V3 | |--------|--------|
+|  updateProposalState |  Multisg | |--------|--------|
+
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|

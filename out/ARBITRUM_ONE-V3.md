@@ -17,13 +17,26 @@
 |  [RatesFactory](https://arbiscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  true |  Gov V3 | |--------|--------|--------|
 |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
 |  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  false |  Not owned | |--------|--------|--------|
-|  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  false |  Not owned | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  false |  Multisg | |--------|--------|--------|
+|  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  false |  Multisg | |--------|--------|--------|
 |  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  false |  External Contract | |--------|--------|--------|
 |  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  true |  Gov V3 | |--------|--------|--------|
 |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  false |  Gov V3 | |--------|--------|--------|
 |  [ArbAdapter](https://arbiscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://arbiscan.io/address/0xCbFB78a3Eeaa611b826E37c80E4126c8787D29f0) |  true |  Gov V3 | |--------|--------|--------|
+
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
+|  configureFees |  Multisg,Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3,Multisg | |--------|--------|
+|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  adminsConfiguration |  Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -48,7 +61,7 @@
 |  [PoolAddressesProviderRegistry](https://arbiscan.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  - |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [RatesFactory](https://arbiscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  setRoleAdmin |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |   | |--------|--------|--------|--------|--------|
+|  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  onlyRole |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  - |  onlyRiskCouncil |  [Risk Council](https://arbiscan.io/address/0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  - |  onlyEmergencyAdmin |  [Aave Guardian Arbitrum](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  - |  onlyGuardian |  [Aave Guardian Arbitrum](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb) |  cancel | |--------|--------|--------|--------|--------|
@@ -58,10 +71,10 @@
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  updateGasLimit, addVotingPortals, removeVotingPortals, setVotingConfigs, setPowerStrategy | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [Aave Guardian Arbitrum](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb) |  rescueVotingPortal, cancelProposal | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  updateExecutors | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [Aave Guardian Arbitrum](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwnerOrGuardian |  [Aave Guardian Arbitrum](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb), [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |   | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  - |  onlyOwner |  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [ArbAdapter](https://arbiscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  - |  trustedRemote |  [CrossChainController(Eth)](https://arbiscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://arbiscan.io/address/0xCbFB78a3Eeaa611b826E37c80E4126c8787D29f0) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  approveSenders, removeSenders, enableBridgeAdapters, disableBridgeAdapters, updateMessagesValidityTimestamp, allowReceiverBridgeAdapters, disallowReceiverBridgeAdapters | |--------|--------|--------|--------|--------|

@@ -80,17 +80,12 @@
                 ]
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           },
           {
             "modifier": "onlyBridge",
             "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
-            ]
+            "functions": ["mintUnbacked", "backUnbacked"]
           }
         ]
       },
@@ -148,9 +143,7 @@
                 ]
               }
             ],
-            "functions": [
-              "setPoolPause"
-            ]
+            "functions": ["setPoolPause"]
           },
           {
             "modifier": "onlyAssetListingOrPoolAdmins",
@@ -171,9 +164,7 @@
                 ]
               }
             ],
-            "functions": [
-              "initReserves"
-            ]
+            "functions": ["initReserves"]
           },
           {
             "modifier": "onlyRiskOrPoolAdmins",
@@ -232,9 +223,7 @@
                 ]
               }
             ],
-            "functions": [
-              "setReservePause"
-            ]
+            "functions": ["setReservePause"]
           }
         ]
       },
@@ -260,10 +249,7 @@
                 ]
               }
             ],
-            "functions": [
-              "setAssetSources",
-              "setFallbackOracle"
-            ]
+            "functions": ["setAssetSources", "setFallbackOracle"]
           }
         ]
       },
@@ -308,10 +294,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "withdrawFromStream",
-              "cancelStream"
-            ]
+            "functions": ["withdrawFromStream", "cancelStream"]
           }
         ],
         "proxyAdmin": "0x39cb97b105173b56b5a2b4b33ad25d6a50e6c949"
@@ -359,10 +342,7 @@
                 ]
               }
             ],
-            "functions": [
-              "emergencyTokenTransfer",
-              "emergencyEtherTransfer"
-            ]
+            "functions": ["emergencyTokenTransfer", "emergencyEtherTransfer"]
           }
         ]
       },
@@ -377,9 +357,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           }
         ]
       },
@@ -394,9 +372,7 @@
                 "owners": []
               }
             ],
-            "functions": [
-              "rescueTokens"
-            ]
+            "functions": ["rescueTokens"]
           }
         ]
       },
@@ -463,7 +439,7 @@
         "address": "0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B",
         "modifiers": [
           {
-            "modifier": "setRoleAdmin",
+            "modifier": "onlyRole",
             "addresses": [
               {
                 "address": "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
@@ -480,22 +456,17 @@
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
                 ]
               }
-            ]
+            ],
+            "functions": ["setRoleAdmin"]
           }
         ]
       }
     },
     "roles": {
       "role": {
-        "DEFAULT_ADMIN": [
-          "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"
-        ],
-        "POOL_ADMIN": [
-          "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"
-        ],
-        "EMERGENCY_ADMIN": [
-          "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"
-        ],
+        "DEFAULT_ADMIN": ["0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"],
+        "POOL_ADMIN": ["0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"],
+        "EMERGENCY_ADMIN": ["0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949"],
         "ASSET_LISTING_ADMIN": [],
         "RISK_ADMIN": [],
         "BRIDGE": [],

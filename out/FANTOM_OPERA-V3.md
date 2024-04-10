@@ -16,6 +16,17 @@
 |  [PoolAddressesProviderRegistry](https://ftmscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  false |  Multisg | |--------|--------|--------|
 |  [ACLManager](https://ftmscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
 
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureBorrows |  Multisg | |--------|--------|
+|  configureFees |  Multisg | |--------|--------|
+|  configureCollateral |  Multisg | |--------|--------|
+|  reserveConfiguration |  Multisg | |--------|--------|
+|  reserveState |  Multisg | |--------|--------|
+|  adminsConfiguration |  Multisg | |--------|--------|
+|  upgradeability |  Multisg | |--------|--------|
+
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
@@ -37,7 +48,7 @@
 |  [ParaSwapRepayAdapter](https://ftmscan.com/address/0x1408401B2A7E28cB747b3e258D0831Fc926bAC51) |  - |  onlyOwner |  [0x4365F8e70CF38C6cA67DE41448508F2da8825500](https://ftmscan.com/address/0x4365F8e70CF38C6cA67DE41448508F2da8825500) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://ftmscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyOwner |  [Aave Guardian Fantom](https://ftmscan.com/address/0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://ftmscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  - |  onlyOwner |  [Aave Guardian Fantom](https://ftmscan.com/address/0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
-|  [ACLManager](https://ftmscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  setRoleAdmin |  [Aave Guardian Fantom](https://ftmscan.com/address/0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949) |   | |--------|--------|--------|--------|--------|
+|  [ACLManager](https://ftmscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  onlyRole |  [Aave Guardian Fantom](https://ftmscan.com/address/0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Address |Owners |

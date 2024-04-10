@@ -431,12 +431,15 @@
         "address": "0x7633F981D87dC6307227de9383D2ce7243158081",
         "modifiers": [
           {
-            "modifier": "setRoleAdmin",
+            "modifier": "onlyRole",
             "addresses": [
               {
                 "address": "0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24",
                 "owners": []
               }
+            ],
+            "functions": [
+              "setRoleAdmin"
             ]
           }
         ]
@@ -511,7 +514,7 @@
           "0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e"
         ]
       },
-      "latestBlockNumber": 4655101
+      "latestBlockNumber": 4766761
     },
     "gsmRoles": {},
     "govV3": {
@@ -528,11 +531,7 @@
                 }
               ],
               "functions": [
-                "updateGasLimit",
-                "addVotingPortals",
-                "removeVotingPortals",
-                "setVotingConfigs",
-                "setPowerStrategy"
+                "updateExecutors"
               ]
             },
             {
@@ -555,8 +554,7 @@
                 }
               ],
               "functions": [
-                "rescueVotingPortal",
-                "cancelProposal"
+                "cancelPayload"
               ]
             },
             {
@@ -593,6 +591,10 @@
                   "address": "0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24",
                   "owners": []
                 }
+              ],
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
               ]
             }
           ],
@@ -713,7 +715,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 4655102
+      "latestCCCBlockNumber": 4766762
     }
   }
 }

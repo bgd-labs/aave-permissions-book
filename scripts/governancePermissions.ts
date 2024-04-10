@@ -19,16 +19,15 @@ export const resolveGovV2Modifiers = async (
   const roles = generateRoles(permissionsObject);
 
   const govContract = new ethers.Contract(
-    addressBook.GOV,
+    '0xec568fffba86c094cf06b22134b23074dfe2252c',
     AaveGovernanceV2ABI,
     provider,
   );
 
   const guardian = await govContract.getGuardian();
   const govOwner = await govContract.owner();
-
   obj['AaveGovernanceV2'] = {
-    address: addressBook.GOV,
+    address: '0xEC568fffba86c094cf06b22134B23074DFE2252c',
     modifiers: [
       {
         modifier: 'onlyGuardian',

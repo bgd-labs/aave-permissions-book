@@ -17,14 +17,27 @@
 |  [RatesFactory](https://optimistic.etherscan.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  true |  Gov V3 | |--------|--------|--------|
 |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
 |  [ACLManager](https://optimistic.etherscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  false |  Not owned | |--------|--------|--------|
-|  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  false |  Not owned | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  false |  Multisg | |--------|--------|--------|
+|  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  false |  Multisg | |--------|--------|--------|
 |  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  false |  Gov V3 | |--------|--------|--------|
 |  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  false |  External Contract | |--------|--------|--------|
 |  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  true |  Gov V3 | |--------|--------|--------|
 |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  false |  Gov V3 | |--------|--------|--------|
 |  [OpAdapter](https://optimistic.etherscan.io/address/0x81d32B36380e6266e1BDd490eAC56cdB300afBe0) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://optimistic.etherscan.io/address/0x48A9FE90bce5EEd790f3F4Ce192d1C0B351fd4Ca) |  true |  Gov V3 | |--------|--------|--------|
+
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
+|  configureFees |  Multisg,Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3,Multisg | |--------|--------|
+|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  adminsConfiguration |  Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -49,7 +62,7 @@
 |  [PoolAddressesProviderRegistry](https://optimistic.etherscan.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [RatesFactory](https://optimistic.etherscan.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [ACLManager](https://optimistic.etherscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  setRoleAdmin |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |   | |--------|--------|--------|--------|--------|
+|  [ACLManager](https://optimistic.etherscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  onlyRole |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  - |  onlyRiskCouncil |  [Risk Council](https://optimistic.etherscan.io/address/0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  - |  onlyEmergencyAdmin |  [Aave Guardian Optimism](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
@@ -60,10 +73,10 @@
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  updateGasLimit, addVotingPortals, removeVotingPortals, setVotingConfigs, setPowerStrategy | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [Aave Guardian Optimism](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c) |  rescueVotingPortal, cancelProposal | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  updateExecutors | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [Aave Guardian Optimism](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwnerOrGuardian |  [Aave Guardian Optimism](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c), [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |   | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  - |  onlyOwner |  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [OpAdapter](https://optimistic.etherscan.io/address/0x81d32B36380e6266e1BDd490eAC56cdB300afBe0) |  - |  trustedRemote |  [CrossChainController(Eth)](https://optimistic.etherscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://optimistic.etherscan.io/address/0x48A9FE90bce5EEd790f3F4Ce192d1C0B351fd4Ca) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  approveSenders, removeSenders, enableBridgeAdapters, disableBridgeAdapters, updateMessagesValidityTimestamp, allowReceiverBridgeAdapters, disallowReceiverBridgeAdapters | |--------|--------|--------|--------|--------|

@@ -17,8 +17,8 @@
 |  [RatesFactory](https://polygonscan.com/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  true |  Gov V3 | |--------|--------|--------|
 |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
 |  [ACLManager](https://polygonscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://polygonscan.com/address/0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f) |  false |  Not owned | |--------|--------|--------|
-|  [FreezeSteward](https://polygonscan.com/address/0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB) |  false |  Not owned | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://polygonscan.com/address/0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f) |  false |  Multisg | |--------|--------|--------|
+|  [FreezeSteward](https://polygonscan.com/address/0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB) |  false |  Multisg | |--------|--------|--------|
 |  [AaveMerkleDistributor](https://polygonscan.com/address/0x7A9ff54A6eE4a21223036890bB8c4ea2D62c686b) |  false |  Gov V3 | |--------|--------|--------|
 |  [AavePolEthBridge](https://polygonscan.com/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  false |  Gov V3 | |--------|--------|--------|
 |  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  false |  Not owned | |--------|--------|--------|
@@ -30,6 +30,20 @@
 |  [HyperLaneAdapter](https://polygonscan.com/address/0x3c25b96fF62D21E90556869272a277eE2E229747) |  false |  Not owned | |--------|--------|--------|
 |  [undefined](https://polygonscan.com/address/0xe79757D55a1600eF28D816a893E78E9FCDE2019E) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://polygonscan.com/address/0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d) |  true |  Gov V3 | |--------|--------|--------|
+
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
+|  configureFees |  Multisg,Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3,Multisg | |--------|--------|
+|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  adminsConfiguration |  Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
+|  configureGovernance |  Gov V3 | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -54,12 +68,12 @@
 |  [PoolAddressesProviderRegistry](https://polygonscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [RatesFactory](https://polygonscan.com/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [ACLManager](https://polygonscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  setRoleAdmin |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |   | |--------|--------|--------|--------|--------|
+|  [ACLManager](https://polygonscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  onlyRole |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://polygonscan.com/address/0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f) |  - |  onlyRiskCouncil |  [Risk Council](https://polygonscan.com/address/0x2C40FB1ACe63084fc0bB95F83C31B5854C6C4cB5) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://polygonscan.com/address/0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB) |  - |  onlyEmergencyAdmin |  [Aave Guardian Polygon](https://polygonscan.com/address/0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [AaveMerkleDistributor](https://polygonscan.com/address/0x7A9ff54A6eE4a21223036890bB8c4ea2D62c686b) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
-|  [AavePolEthBridge](https://polygonscan.com/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
-|  [AavePolEthBridge](https://polygonscan.com/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  - |  onlyRescueGuardian |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |   | |--------|--------|--------|--------|--------|
+|  [AavePolEthBridge](https://polygonscan.com/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  bridge | |--------|--------|--------|--------|--------|
+|  [AavePolEthBridge](https://polygonscan.com/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  - |  onlyRescueGuardian |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  - |  onlyGuardian |  [Aave Guardian Polygon](https://polygonscan.com/address/0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58) |  cancel | |--------|--------|--------|--------|--------|
 |  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  - |  onlyThis |  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  updateFxRootSender, updateFxChild, updateGuardian, updateDelay, updateGracePeriod, updateMinimumDelay, updateMaximumDelay, executeDelegateCall | |--------|--------|--------|--------|--------|
 |  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  - |  onlyFxChild |  [0x8397259c983751DAf40400790063935a11afa28a](https://polygonscan.com/address/0x8397259c983751DAf40400790063935a11afa28a) |  processMessageFromRoot | |--------|--------|--------|--------|--------|
@@ -68,10 +82,10 @@
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  updateGasLimit, addVotingPortals, removeVotingPortals, setVotingConfigs, setPowerStrategy | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [Aave Guardian Polygon](https://polygonscan.com/address/0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58) |  rescueVotingPortal, cancelProposal | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  updateExecutors | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [Aave Guardian Polygon](https://polygonscan.com/address/0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwnerOrGuardian |  [Aave Guardian Polygon](https://polygonscan.com/address/0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58), [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |   | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [VotingMachine](https://polygonscan.com/address/0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  updateGasLimit | |--------|--------|--------|--------|--------|
 |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  - |  onlyOwner |  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [PolygonAdapterPolygon](https://polygonscan.com/address/0xb13712De579E1f9943502FFCf72eab6ec348cF79) |  - |  trustedRemote |  [CrossChainController(Eth)](https://polygonscan.com/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
@@ -83,7 +97,7 @@
 |  [CrossChainController](https://polygonscan.com/address/0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyRescueGuardian |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://polygonscan.com/address/0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyApprovedSenders |  [VotingMachine](https://polygonscan.com/address/0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d) |  forwardMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://polygonscan.com/address/0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyApprovedBridges |  [PolygonAdapterPolygon](https://polygonscan.com/address/0xb13712De579E1f9943502FFCf72eab6ec348cF79), [LayerZeroAdapter](https://polygonscan.com/address/0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5), [HyperLaneAdapter](https://polygonscan.com/address/0x3c25b96fF62D21E90556869272a277eE2E229747), [undefined](https://polygonscan.com/address/0xe79757D55a1600eF28D816a893E78E9FCDE2019E) |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
-|  [CrossChainController](https://polygonscan.com/address/0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [BGD](https://polygonscan.com/address/0xbCEB4f363f2666E2E8E430806F37e97C405c130b) |   | |--------|--------|--------|--------|--------|
+|  [CrossChainController](https://polygonscan.com/address/0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [BGD](https://polygonscan.com/address/0xbCEB4f363f2666E2E8E430806F37e97C405c130b) |  solveEmergency | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Address |Owners |

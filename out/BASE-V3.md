@@ -17,13 +17,26 @@
 |  [RatesFactory](https://basescan.org/address/0x0D1Fe8eAdb0a3e44C4Cc9D73De8dA50C1E475832) |  true |  Gov V3 | |--------|--------|--------|
 |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  false |  Gov V3 | |--------|--------|--------|
 |  [ACLManager](https://basescan.org/address/0x43955b0899Ab7232E3a454cf84AedD22Ad46FD33) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://basescan.org/address/0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6) |  false |  Not owned | |--------|--------|--------|
-|  [FreezeSteward](https://basescan.org/address/0x4A4c73d563395ad827511F70097d4Ef82E653805) |  false |  Not owned | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://basescan.org/address/0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6) |  false |  Multisg | |--------|--------|--------|
+|  [FreezeSteward](https://basescan.org/address/0x4A4c73d563395ad827511F70097d4Ef82E653805) |  false |  Multisg | |--------|--------|--------|
 |  [BaseBridgeExecutor](https://basescan.org/address/0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45) |  false |  External Contract | |--------|--------|--------|
 |  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  true |  Gov V3 | |--------|--------|--------|
 |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  false |  Gov V3 | |--------|--------|--------|
 |  [CBaseAdapter](https://basescan.org/address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://basescan.org/address/0x529467C76f234F2bD359d7ecF7c660A2846b04e2) |  true |  Gov V3 | |--------|--------|--------|
+
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
+|  configureFees |  Multisg,Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3,Multisg | |--------|--------|
+|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  adminsConfiguration |  Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -48,7 +61,7 @@
 |  [PoolAddressesProviderRegistry](https://basescan.org/address/0x2f6571d3Eb9a4e350C68C36bCD2afe39530078E2) |  - |  onlyOwner |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [RatesFactory](https://basescan.org/address/0x0D1Fe8eAdb0a3e44C4Cc9D73De8dA50C1E475832) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  - |  onlyOwner |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [ACLManager](https://basescan.org/address/0x43955b0899Ab7232E3a454cf84AedD22Ad46FD33) |  - |  setRoleAdmin |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |   | |--------|--------|--------|--------|--------|
+|  [ACLManager](https://basescan.org/address/0x43955b0899Ab7232E3a454cf84AedD22Ad46FD33) |  - |  onlyRole |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://basescan.org/address/0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6) |  - |  onlyRiskCouncil |  [Risk Council](https://basescan.org/address/0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://basescan.org/address/0x4A4c73d563395ad827511F70097d4Ef82E653805) |  - |  onlyEmergencyAdmin |  [Aave Guardian Base](https://basescan.org/address/0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [BaseBridgeExecutor](https://basescan.org/address/0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45) |  - |  onlyGuardian |  [Aave Guardian Base](https://basescan.org/address/0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A) |  cancel | |--------|--------|--------|--------|--------|
@@ -58,10 +71,10 @@
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  onlyOwner |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  updateGasLimit, addVotingPortals, removeVotingPortals, setVotingConfigs, setPowerStrategy | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  onlyGuardian |  [Aave Guardian Base](https://basescan.org/address/0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A) |  rescueVotingPortal, cancelProposal | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  onlyOwner |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  updateExecutors | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  onlyGuardian |  [Aave Guardian Base](https://basescan.org/address/0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  onlyOwnerOrGuardian |  [Aave Guardian Base](https://basescan.org/address/0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A), [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  onlyRescueGuardian |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |   | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  onlyRescueGuardian |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  - |  onlyOwner |  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [CBaseAdapter](https://basescan.org/address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) |  - |  trustedRemote |  [CrossChainController(Eth)](https://basescan.org/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://basescan.org/address/0x529467C76f234F2bD359d7ecF7c660A2846b04e2) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  onlyOwner |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  approveSenders, removeSenders, enableBridgeAdapters, disableBridgeAdapters, updateMessagesValidityTimestamp, allowReceiverBridgeAdapters, disallowReceiverBridgeAdapters | |--------|--------|--------|--------|--------|

@@ -17,14 +17,27 @@
 |  [RatesFactory](https://bscscan.com/address/0x02e9b27599C4Bf8f789d34b6E65C51092c3d9FA6) |  true |  Gov V3 | |--------|--------|--------|
 |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  false |  Gov V3 | |--------|--------|--------|
 |  [ACLManager](https://bscscan.com/address/0x2D97F8FA96886Fd923c065F5457F9DDd494e3877) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595) |  false |  Not owned | |--------|--------|--------|
-|  [FreezeSteward](https://bscscan.com/address/0x83f15Bc50d1A212576B202f80489502a7cc10412) |  false |  Not owned | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595) |  false |  Multisg | |--------|--------|--------|
+|  [FreezeSteward](https://bscscan.com/address/0x83f15Bc50d1A212576B202f80489502a7cc10412) |  false |  Multisg | |--------|--------|--------|
 |  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  true |  Gov V3 | |--------|--------|--------|
 |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  false |  Gov V3 | |--------|--------|--------|
 |  [LayerZeroAdapter](https://bscscan.com/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  false |  Not owned | |--------|--------|--------|
 |  [HyperLaneAdapter](https://bscscan.com/address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  false |  Not owned | |--------|--------|--------|
-|  [CCIPAdapter](https://bscscan.com/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  false |  Not owned | |--------|--------|--------|
+|  [undefined](https://bscscan.com/address/0xAE93BEa44dcbE52B625169588574d31e36fb3A67) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  true |  Gov V3 | |--------|--------|--------|
+
+### actions
+| action |can be executed by |
+|----------|----------|
+|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
+|  configureFees |  Multisg,Gov V3 | |--------|--------|
+|  configureCollateral |  Gov V3,Multisg | |--------|--------|
+|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
+|  reserveState |  Multisg,Gov V3 | |--------|--------|
+|  adminsConfiguration |  Gov V3 | |--------|--------|
+|  upgradeability |  Gov V3,Multisg | |--------|--------|
+|  adiConfigurations |  Gov V3 | |--------|--------|
+|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -49,27 +62,27 @@
 |  [PoolAddressesProviderRegistry](https://bscscan.com/address/0x117684358D990E42Eb1649E7e8C4691951dc1E71) |  - |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [RatesFactory](https://bscscan.com/address/0x02e9b27599C4Bf8f789d34b6E65C51092c3d9FA6) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  - |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [ACLManager](https://bscscan.com/address/0x2D97F8FA96886Fd923c065F5457F9DDd494e3877) |  - |  setRoleAdmin |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |   | |--------|--------|--------|--------|--------|
+|  [ACLManager](https://bscscan.com/address/0x2D97F8FA96886Fd923c065F5457F9DDd494e3877) |  - |  onlyRole |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595) |  - |  onlyRiskCouncil |  [Risk Council](https://bscscan.com/address/0x126dc589cc75f17385dD95516F3F1788d862E7bc) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://bscscan.com/address/0x83f15Bc50d1A212576B202f80489502a7cc10412) |  - |  onlyEmergencyAdmin |  [Aave Guardian Binance](https://bscscan.com/address/0x25170e9Ed4077ABA7D3DD03cf4A9F45Dc6D0fcCD) |  setFreeze | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  updateGasLimit, addVotingPortals, removeVotingPortals, setVotingConfigs, setPowerStrategy | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyGuardian |  [Aave Guardian Binance](https://bscscan.com/address/0x25170e9Ed4077ABA7D3DD03cf4A9F45Dc6D0fcCD) |  rescueVotingPortal, cancelProposal | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  updateExecutors | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyGuardian |  [Aave Guardian Binance](https://bscscan.com/address/0x25170e9Ed4077ABA7D3DD03cf4A9F45Dc6D0fcCD) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyOwnerOrGuardian |  [Aave Guardian Binance](https://bscscan.com/address/0x25170e9Ed4077ABA7D3DD03cf4A9F45Dc6D0fcCD), [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyRescueGuardian |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |   | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyRescueGuardian |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  - |  onlyOwner |  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [LayerZeroAdapter](https://bscscan.com/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  - |  trustedRemote |  [CrossChainController(Eth)](https://bscscan.com/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [HyperLaneAdapter](https://bscscan.com/address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  - |  trustedRemote |  [CrossChainController(Eth)](https://bscscan.com/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
-|  [CCIPAdapter](https://bscscan.com/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  - |  trustedRemote |  [CrossChainController(Eth)](https://bscscan.com/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
+|  [undefined](https://bscscan.com/address/0xAE93BEa44dcbE52B625169588574d31e36fb3A67) |  - |  trustedRemote |  [CrossChainController(Eth)](https://bscscan.com/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  approveSenders, removeSenders, enableBridgeAdapters, disableBridgeAdapters, updateMessagesValidityTimestamp, allowReceiverBridgeAdapters, disallowReceiverBridgeAdapters | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyOwnerOrGuardian |  [BGD](https://bscscan.com/address/0xE8C5ab722d0b1B7316Cc4034f2BE91A5B1d29964), [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  retryEnvelope, retryTransaction, updateGuardian | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyRescueGuardian |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyApprovedSenders |   |  forwardMessage | |--------|--------|--------|--------|--------|
-|  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyApprovedBridges |  [LayerZeroAdapter](https://bscscan.com/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327), [HyperLaneAdapter](https://bscscan.com/address/0x118DFD5418890c0332042ab05173Db4A2C1d283c), [CCIPAdapter](https://bscscan.com/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
-|  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyGuardian |  [BGD](https://bscscan.com/address/0xE8C5ab722d0b1B7316Cc4034f2BE91A5B1d29964) |   | |--------|--------|--------|--------|--------|
+|  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyApprovedBridges |  [LayerZeroAdapter](https://bscscan.com/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327), [HyperLaneAdapter](https://bscscan.com/address/0x118DFD5418890c0332042ab05173Db4A2C1d283c), [undefined](https://bscscan.com/address/0xAE93BEa44dcbE52B625169588574d31e36fb3A67) |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
+|  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyGuardian |  [BGD](https://bscscan.com/address/0xE8C5ab722d0b1B7316Cc4034f2BE91A5B1d29964) |  solveEmergency | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Address |Owners |
@@ -86,6 +99,6 @@
 |  EMERGENCY_ADMIN |  [Aave Guardian Binance](https://bscscan.com/address/0x25170e9Ed4077ABA7D3DD03cf4A9F45Dc6D0fcCD) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  BRIDGE |   | |--------|--------|
-|  FLASH_BORROWER |   | |--------|--------|
+|  FLASH_BORROWER |  [0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3](https://bscscan.com/address/0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3) | |--------|--------|
 |  RISK_ADMIN |  [FreezeSteward](https://bscscan.com/address/0x83f15Bc50d1A212576B202f80489502a7cc10412), [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595) | |--------|--------|
 

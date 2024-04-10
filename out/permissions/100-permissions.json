@@ -356,12 +356,15 @@
         "address": "0xEc710f59005f48703908bC519D552Df5B8472614",
         "modifiers": [
           {
-            "modifier": "setRoleAdmin",
+            "modifier": "onlyRole",
             "addresses": [
               {
                 "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
                 "owners": []
               }
+            ],
+            "functions": [
+              "setRoleAdmin"
             ]
           }
         ]
@@ -435,7 +438,7 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 33280823
+      "latestBlockNumber": 33373097
     },
     "gsmRoles": {},
     "govV3": {
@@ -452,11 +455,7 @@
                 }
               ],
               "functions": [
-                "updateGasLimit",
-                "addVotingPortals",
-                "removeVotingPortals",
-                "setVotingConfigs",
-                "setPowerStrategy"
+                "updateExecutors"
               ]
             },
             {
@@ -479,8 +478,7 @@
                 }
               ],
               "functions": [
-                "rescueVotingPortal",
-                "cancelProposal"
+                "cancelPayload"
               ]
             },
             {
@@ -517,6 +515,10 @@
                   "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
                   "owners": []
                 }
+              ],
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
               ]
             }
           ],
@@ -687,6 +689,9 @@
                     "0x0650302887619fa7727D8BD480Cda11A638B219B"
                   ]
                 }
+              ],
+              "functions": [
+                "solveEmergency"
               ]
             }
           ],
@@ -694,7 +699,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 33280832
+      "latestCCCBlockNumber": 33373098
     }
   },
   "TENDERLY": {
