@@ -156,7 +156,6 @@ const generateNetworkPermissions = async (network: string) => {
             fromBlock: ${fromBlock}
           ------------------------------------
           `);
-
         if (Object.keys(pool.addressBook).length > 0) {
           admins = await getCurrentRoleAdmins(
             provider,
@@ -167,10 +166,6 @@ const generateNetworkPermissions = async (network: string) => {
             Pools[poolKey as keyof typeof Pools],
             ghoRoleNames,
             pool.addressBook.GHO_TOKEN,
-          );
-          console.log(
-            '-------------------------------a;sldkjfa;lsdkjf;asd',
-            admins,
           );
           // get gsms admin roles
           if (pool.gsmBlocks) {

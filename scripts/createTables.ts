@@ -131,6 +131,7 @@ export const generateTable = (network: string, pool: string): string => {
     ...(poolPermitsByContract?.contracts || {}),
     ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
     ...getPermissionsByNetwork(network)['V3'].contracts,
+    ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
   });
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
 
@@ -222,11 +223,11 @@ export const generateTable = (network: string, pool: string): string => {
 
   // fill pool table
   let actionsTableBody = '';
-  console.log('network ', network, ' pool ', pool);
   const actionExecutors = getActionExecutors(
     {
       ...poolPermitsByContract.contracts,
       ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+      ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
     },
     getPermissionsByNetwork(network)['V3'].govV3?.contracts || {},
   );

@@ -30,7 +30,6 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
           modifier.addresses.map((addressInfo) => {
             if (addressInfo.owners.length > 0) {
               actionsObject[action].add(Controller.MULTI_SIG);
-              // return Controller.MULTI_SIG;
             } else {
               const ownedInfo = isOwnedAndByWho(
                 addressInfo.address,
@@ -39,14 +38,11 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
               );
               if (ownedInfo.owned) {
                 actionsObject[action].add(ownedInfo.ownedBy);
-                // return ownedInfo.ownedBy;
               } else {
                 actionsObject[action].add(addressInfo.address);
-                // return addressInfo.address;
               }
             }
           });
-          // actionsObject[action] = [...actionsObject[action], ...ownersInfo];
         }
       });
     }
@@ -152,9 +148,7 @@ const isOwnedAndByWho = (
           modifierInfo.modifier === 'onlyRiskCouncil' ||
           modifierInfo.modifier === 'onlyEmergencyAdmin'
         ) {
-          console.log('address::: ', modifierInfo.modifier);
           if (modifierInfo.addresses[0].owners.length > 0) {
-            console.log('--- is multisig');
             ownerInfo = { owned: true, ownedBy: Controller.MULTI_SIG };
           } else {
             const ownedByGov = isOwnedByGov(

@@ -514,7 +514,7 @@
           "0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e"
         ]
       },
-      "latestBlockNumber": 4766761
+      "latestBlockNumber": 4767870
     },
     "gsmRoles": {},
     "govV3": {
@@ -635,6 +635,24 @@
             }
           ]
         },
+        "undefined": {
+          "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+          "modifiers": [
+            {
+              "modifier": "trustedRemote",
+              "addresses": [
+                {
+                  "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
+                  "owners": [],
+                  "chain": "1"
+                }
+              ],
+              "functions": [
+                "receiveMessage"
+              ]
+            }
+          ]
+        },
         "CrossChainController": {
           "address": "0x03073D3F4769f6b6604d616238fD6c636C99AD0A",
           "modifiers": [
@@ -704,6 +722,10 @@
                 {
                   "address": "0x118DFD5418890c0332042ab05173Db4A2C1d283c",
                   "owners": []
+                },
+                {
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                  "owners": []
                 }
               ],
               "functions": [
@@ -715,7 +737,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 4766762
+      "latestCCCBlockNumber": 4767871
     }
   }
 }

@@ -1212,6 +1212,44 @@
             ]
           }
         ]
+      },
+      "GhoStewardV2": {
+        "address": "0x8F2411a538381aae2b464499005F0211e867d84f",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": []
+              }
+            ],
+            "functions": [
+              "setControlledFacilitator"
+            ]
+          },
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x8513e6F37dBc52De87b166980Fa3F50639694B60",
+                "owners": [
+                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x818C277dBE886b934e60aa047250A73529E26A99",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ]
+              }
+            ],
+            "functions": [
+              "updateGsmBuySellFees",
+              "updateGsmExposureCap",
+              "updateGhoBorrowRate",
+              "updateGhoBorrowCap",
+              "updateFacilitatorBucketCapacity"
+            ]
+          }
+        ]
       }
     },
     "roles": {
@@ -1227,7 +1265,7 @@
           "0x8F2411a538381aae2b464499005F0211e867d84f"
         ]
       },
-      "latestBlockNumber": 19626083
+      "latestBlockNumber": 19626324
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -1247,7 +1285,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 19626084
+        "latestBlockNumber": 19626314
       },
       "GSM_USDT": {
         "role": {
@@ -1266,7 +1304,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 19626084
+        "latestBlockNumber": 19626314
       }
     },
     "govV3": {}

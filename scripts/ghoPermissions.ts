@@ -11,6 +11,7 @@ import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners } from '../helpers/guardian.js';
 import ghoABI from '../abis/ghoABI.json' assert { type: 'json' };
 import { IOwnable_ABI } from '@bgd-labs/aave-address-book';
+import ghoStewardV2 from '../abis/ghoStewardV2.json' assert { type: 'json' };
 
 const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
   const cleanAddresses: AddressInfo[] = [];
@@ -37,7 +38,6 @@ export const resolveGHOModifiers = async (
 ): Promise<Contracts> => {
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
-
   const owners: Record<string, Record<string, string[]>> = {};
   // owners
   for (const roleName of Object.keys(adminRoles)) {
@@ -203,6 +203,40 @@ export const resolveGHOModifiers = async (
           },
         ],
         functions: roles['GSMRegistry']['onlyOwner'],
+      },
+    ],
+  };
+
+  const ghoStewardContract = new ethers.Contract(
+    '0x8F2411a538381aae2b464499005F0211e867d84f',
+    ghoStewardV2,
+    provider,
+  );
+  const ghoStewardOwner = await ghoStewardContract.owner();
+  const riskCouncil = await ghoStewardContract.RISK_COUNCIL();
+
+  obj['GhoStewardV2'] = {
+    address: '0x8F2411a538381aae2b464499005F0211e867d84f',
+    modifiers: [
+      {
+        modifier: 'onlyOwner',
+        addresses: [
+          {
+            address: ghoStewardOwner,
+            owners: await getSafeOwners(provider, ghoStewardOwner),
+          },
+        ],
+        functions: roles['GhoStewardV2']['onlyOwner'],
+      },
+      {
+        modifier: 'onlyRiskCouncil',
+        addresses: [
+          {
+            address: riskCouncil,
+            owners: await getSafeOwners(provider, riskCouncil),
+          },
+        ],
+        functions: roles['GhoStewardV2']['onlyRiskCouncil'],
       },
     ],
   };
