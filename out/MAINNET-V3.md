@@ -1,6 +1,6 @@
 # MAINNET 
 ## V3 
-### decentralization
+### Decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
 |  [PoolAddressesProvider](https://etherscan.io/address/0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e) |  false |  Governance | |--------|--------|--------|
@@ -38,8 +38,8 @@
 |  [Polygon native adapter](https://etherscan.io/address/0x1562F1b2487F892BBA8Ef325aF054Fd157510a71) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://etherscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  true |  Governance | |--------|--------|--------|
 
-### actions
-| action |can be executed by |
+### Actions type
+| type |can be executed by |
 |----------|----------|
 |  configureBorrows |  Governance | |--------|--------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
@@ -59,7 +59,7 @@
 |  configureGovernance |  Governance | |--------|--------|
 |  cancelPermissions |  Multi-sig | |--------|--------|
 
-### contracts
+### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://etherscan.io/address/0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  setMarketId, setAddress, setAddressAsProxy, setPoolImpl, setPoolConfiguratorImpl, setPriceOracle, setACLManager, setACLAdmin, setPriceOracleSentinel, setPoolDataProvider | |--------|--------|--------|--------|--------|
@@ -119,11 +119,31 @@
 |  [CrossChainController](https://etherscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyApprovedBridges |  [CCIP adapter](https://etherscan.io/address/0xB7a6618df58626C3a122ABAFD6Ee63Af63f3Ef29), [LayerZeroAdapter](https://etherscan.io/address/0x2a323be63e08E08536Fc3b5d8C6f24825e68895e), [HyperLaneAdapter](https://etherscan.io/address/0x6Abb61beb5848B476d026C4934E8a6415e2E75a8), [Polygon native adapter](https://etherscan.io/address/0x1562F1b2487F892BBA8Ef325aF054Fd157510a71) |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
 
 ### Guardians 
-| Guardian |Address |Owners |
-|----------|----------|----------|
-|  [Aave Guardian Ethereum](https://etherscan.io/address/0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633) |  0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633 |  [0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707](https://etherscan.io/address/0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707), [0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39](https://etherscan.io/address/0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39), [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://etherscan.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0xe5d453700d99296c2c085B8119BD6c152Cf63FA6](https://etherscan.io/address/0xe5d453700d99296c2c085B8119BD6c152Cf63FA6), [0xF1ba2231F373CffD47641540CfaEB1f21E50659B](https://etherscan.io/address/0xF1ba2231F373CffD47641540CfaEB1f21E50659B), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://etherscan.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0x936CD9654271083cCF93A975919Da0aB3Bc99EF3](https://etherscan.io/address/0x936CD9654271083cCF93A975919Da0aB3Bc99EF3), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://etherscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x9343dcB6A3A523510F3499004D8aa595Baa25bc5](https://etherscan.io/address/0x9343dcB6A3A523510F3499004D8aa595Baa25bc5), [0x2BEDd8645B407B3B6447fbC09B269eC7a5794606](https://etherscan.io/address/0x2BEDd8645B407B3B6447fbC09B269eC7a5794606) | |--------|--------|--------|
-|  [Risk Council](https://etherscan.io/address/0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8) |  0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8 |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://etherscan.io/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|
-|  [BGD](https://etherscan.io/address/0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF) |  0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF |  [0x0650302887619fa7727D8BD480Cda11A638B219B](https://etherscan.io/address/0x0650302887619fa7727D8BD480Cda11A638B219B), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://etherscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://etherscan.io/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7) | |--------|--------|--------|
+| Guardian |Threshold |Address |Owners |
+|----------|----------|----------|----------|
+|  [0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A (Safe)](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  0/0 |  0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A |   | |--------|--------|--------|--------|
+|  [0x64b761D848206f447Fe2dd461b0c635Ec39EbB27 (Safe)](https://etherscan.io/address/0x64b761D848206f447Fe2dd461b0c635Ec39EbB27) |  0/0 |  0x64b761D848206f447Fe2dd461b0c635Ec39EbB27 |   | |--------|--------|--------|--------|
+|  [0x8F2411a538381aae2b464499005F0211e867d84f (Safe)](https://etherscan.io/address/0x8F2411a538381aae2b464499005F0211e867d84f) |  0/0 |  0x8F2411a538381aae2b464499005F0211e867d84f |   | |--------|--------|--------|--------|
+|  [Aave Guardian Ethereum](https://etherscan.io/address/0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633) |  undefined/10 |  0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633 |  [0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707](https://etherscan.io/address/0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707), [0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39](https://etherscan.io/address/0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39), [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://etherscan.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0xe5d453700d99296c2c085B8119BD6c152Cf63FA6](https://etherscan.io/address/0xe5d453700d99296c2c085B8119BD6c152Cf63FA6), [0xF1ba2231F373CffD47641540CfaEB1f21E50659B](https://etherscan.io/address/0xF1ba2231F373CffD47641540CfaEB1f21E50659B), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://etherscan.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0x936CD9654271083cCF93A975919Da0aB3Bc99EF3](https://etherscan.io/address/0x936CD9654271083cCF93A975919Da0aB3Bc99EF3), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://etherscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x9343dcB6A3A523510F3499004D8aa595Baa25bc5](https://etherscan.io/address/0x9343dcB6A3A523510F3499004D8aa595Baa25bc5), [0x2BEDd8645B407B3B6447fbC09B269eC7a5794606](https://etherscan.io/address/0x2BEDd8645B407B3B6447fbC09B269eC7a5794606) | |--------|--------|--------|--------|
+|  [0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778 (Safe)](https://etherscan.io/address/0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778) |  0/0 |  0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778 |   | |--------|--------|--------|--------|
+|  [0x2eE68ACb6A1319de1b49DC139894644E424fefD6 (Safe)](https://etherscan.io/address/0x2eE68ACb6A1319de1b49DC139894644E424fefD6) |  0/0 |  0x2eE68ACb6A1319de1b49DC139894644E424fefD6 |   | |--------|--------|--------|--------|
+|  [0xD3cF979e676265e4f6379749DECe4708B9A22476 (Safe)](https://etherscan.io/address/0xd3cf979e676265e4f6379749dece4708b9a22476) |  0/0 |  0xd3cf979e676265e4f6379749dece4708b9a22476 |   | |--------|--------|--------|--------|
+|  [0x223d844fc4B006D67c0cDbd39371A9F73f69d974 (Safe)](https://etherscan.io/address/0x223d844fc4B006D67c0cDbd39371A9F73f69d974) |  0/0 |  0x223d844fc4B006D67c0cDbd39371A9F73f69d974 |   | |--------|--------|--------|--------|
+|  [0x17Dd33Ed0e3dD2a80E37489B8A63063161BE6957 (Safe)](https://etherscan.io/address/0x17Dd33Ed0e3dD2a80E37489B8A63063161BE6957) |  0/0 |  0x17Dd33Ed0e3dD2a80E37489B8A63063161BE6957 |   | |--------|--------|--------|--------|
+|  [Risk Council](https://etherscan.io/address/0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8) |  1/1 |  0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8 |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://etherscan.io/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|--------|
+|  [0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5 (Safe)](https://etherscan.io/address/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5) |  0/0 |  0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5 |   | |--------|--------|--------|--------|
+|  [0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d (Safe)](https://etherscan.io/address/0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d) |  0/0 |  0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d |   | |--------|--------|--------|--------|
+|  [0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928 (Safe)](https://etherscan.io/address/0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928) |  0/0 |  0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928 |   | |--------|--------|--------|--------|
+|  [BGD](https://etherscan.io/address/0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF) |  2/3 |  0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF |  [0x0650302887619fa7727D8BD480Cda11A638B219B](https://etherscan.io/address/0x0650302887619fa7727D8BD480Cda11A638B219B), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://etherscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://etherscan.io/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7) | |--------|--------|--------|--------|
+|  [0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7 (Safe)](https://etherscan.io/address/0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7) |  0/0 |  0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7 |   | |--------|--------|--------|--------|
+|  [0x617332a777780F546261247F621051d0b98975Eb (Safe)](https://etherscan.io/address/0x617332a777780F546261247F621051d0b98975Eb) |  0/0 |  0x617332a777780F546261247F621051d0b98975Eb |   | |--------|--------|--------|--------|
+|  [0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f (Safe)](https://etherscan.io/address/0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f) |  0/0 |  0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f |   | |--------|--------|--------|--------|
+|  [0x33aCEf7365809218485873B7d0d67FeE411B5D79 (Safe)](https://etherscan.io/address/0x33aCEf7365809218485873B7d0d67FeE411B5D79) |  0/0 |  0x33aCEf7365809218485873B7d0d67FeE411B5D79 |   | |--------|--------|--------|--------|
+|  [0x9b24C168d6A76b5459B1d47071a54962a4df36c3 (Safe)](https://etherscan.io/address/0x9b24C168d6A76b5459B1d47071a54962a4df36c3) |  0/0 |  0x9b24C168d6A76b5459B1d47071a54962a4df36c3 |   | |--------|--------|--------|--------|
+|  [0xB7a6618df58626C3a122ABAFD6Ee63Af63f3Ef29 (Safe)](https://etherscan.io/address/0xB7a6618df58626C3a122ABAFD6Ee63Af63f3Ef29) |  0/0 |  0xB7a6618df58626C3a122ABAFD6Ee63Af63f3Ef29 |   | |--------|--------|--------|--------|
+|  [0x2a323be63e08E08536Fc3b5d8C6f24825e68895e (Safe)](https://etherscan.io/address/0x2a323be63e08E08536Fc3b5d8C6f24825e68895e) |  0/0 |  0x2a323be63e08E08536Fc3b5d8C6f24825e68895e |   | |--------|--------|--------|--------|
+|  [0x6Abb61beb5848B476d026C4934E8a6415e2E75a8 (Safe)](https://etherscan.io/address/0x6Abb61beb5848B476d026C4934E8a6415e2E75a8) |  0/0 |  0x6Abb61beb5848B476d026C4934E8a6415e2E75a8 |   | |--------|--------|--------|--------|
+|  [0x1562F1b2487F892BBA8Ef325aF054Fd157510a71 (Safe)](https://etherscan.io/address/0x1562F1b2487F892BBA8Ef325aF054Fd157510a71) |  0/0 |  0x1562F1b2487F892BBA8Ef325aF054Fd157510a71 |   | |--------|--------|--------|--------|
 
 ### Admins 
 | Role |Contract |

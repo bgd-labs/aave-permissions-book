@@ -1,6 +1,7 @@
 import {
   AddressInfo,
   Contracts,
+  Guardian,
   PermissionsJson,
   Roles,
 } from '../helpers/types.js';
@@ -8,7 +9,7 @@ import { Pools } from '../helpers/configs.js';
 import { ChainId } from '@aave/contract-helpers';
 import { ethers, providers, utils } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
-import { getSafeOwners } from '../helpers/guardian.js';
+import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import ghoABI from '../abis/ghoABI.json' assert { type: 'json' };
 import { IOwnable_ABI } from '@bgd-labs/aave-address-book';
 import ghoStewardV2 from '../abis/ghoStewardV2.json' assert { type: 'json' };
@@ -38,19 +39,22 @@ export const resolveGHOModifiers = async (
 ): Promise<Contracts> => {
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
-  const owners: Record<string, Record<string, string[]>> = {};
+  const owners: Record<string, Record<string, Guardian>> = {};
   // owners
   for (const roleName of Object.keys(adminRoles)) {
     for (const roleAddress of adminRoles[roleName]) {
       if (!owners[roleName]) {
         owners[roleName] = {
-          [roleAddress]: await getSafeOwners(provider, roleAddress),
+          [roleAddress]: {
+            owners: await getSafeOwners(provider, roleAddress),
+            threshold: await getSafeThreshold(provider, roleAddress),
+          },
         };
       } else if (owners[roleName] && !owners[roleName][roleAddress]) {
-        owners[roleName][roleAddress] = await getSafeOwners(
-          provider,
-          roleAddress,
-        );
+        owners[roleName][roleAddress] = {
+          owners: await getSafeOwners(provider, roleAddress),
+          threshold: await getSafeThreshold(provider, roleAddress),
+        };
       }
     }
   }
@@ -88,7 +92,10 @@ export const resolveGHOModifiers = async (
           ...adminRoles['FACILITATOR_MANAGER_ROLE'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['FACILITATOR_MANAGER_ROLE'][roleAddress] || [],
+              owners:
+                owners['FACILITATOR_MANAGER_ROLE'][roleAddress].owners || [],
+              signersThreshold:
+                owners['FACILITATOR_MANAGER_ROLE'][roleAddress].threshold || 0,
             };
           }),
         ]),
@@ -100,7 +107,9 @@ export const resolveGHOModifiers = async (
           ...adminRoles['BUCKET_MANAGER_ROLE'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['BUCKET_MANAGER_ROLE'][roleAddress] || [],
+              owners: owners['BUCKET_MANAGER_ROLE'][roleAddress].owners || [],
+              signersThreshold:
+                owners['BUCKET_MANAGER_ROLE'][roleAddress].threshold || 0,
             };
           }),
         ]),
@@ -112,19 +121,22 @@ export const resolveGHOModifiers = async (
   for (let i = 0; i < Object.keys(gsmAdminRoles).length; i++) {
     const key = Object.keys(gsmAdminRoles)[i];
     const gsmRoles = gsmAdminRoles[key].role;
-    const gsmOwners: Record<string, Record<string, string[]>> = {};
+    const gsmOwners: Record<string, Record<string, Guardian>> = {};
     // owners
     for (const roleName of Object.keys(gsmRoles)) {
       for (const roleAddress of gsmRoles[roleName]) {
         if (!gsmOwners[roleName]) {
           gsmOwners[roleName] = {
-            [roleAddress]: await getSafeOwners(provider, roleAddress),
+            [roleAddress]: {
+              owners: await getSafeOwners(provider, roleAddress),
+              threshold: await getSafeThreshold(provider, roleAddress),
+            },
           };
         } else if (gsmOwners[roleName] && !gsmOwners[roleName][roleAddress]) {
-          gsmOwners[roleName][roleAddress] = await getSafeOwners(
-            provider,
-            roleAddress,
-          );
+          gsmOwners[roleName][roleAddress] = {
+            owners: await getSafeOwners(provider, roleAddress),
+            threshold: await getSafeThreshold(provider, roleAddress),
+          };
         }
       }
     }
@@ -138,7 +150,10 @@ export const resolveGHOModifiers = async (
             ...gsmRoles['TOKEN_RESCUER_ROLE'].map((roleAddress) => {
               return {
                 address: roleAddress,
-                owners: gsmOwners['TOKEN_RESCUER_ROLE'][roleAddress] || [],
+                owners:
+                  gsmOwners['TOKEN_RESCUER_ROLE'][roleAddress].owners || [],
+                signersThreshold:
+                  gsmOwners['TOKEN_RESCUER_ROLE'][roleAddress].threshold || 0,
               };
             }),
           ]),
@@ -150,7 +165,10 @@ export const resolveGHOModifiers = async (
             ...gsmRoles['SWAP_FREEZER_ROLE'].map((roleAddress) => {
               return {
                 address: roleAddress,
-                owners: gsmOwners['SWAP_FREEZER_ROLE'][roleAddress] || [],
+                owners:
+                  gsmOwners['SWAP_FREEZER_ROLE'][roleAddress].owners || [],
+                signersThreshold:
+                  gsmOwners['SWAP_FREEZER_ROLE'][roleAddress].threshold || 0,
               };
             }),
           ]),
@@ -162,7 +180,9 @@ export const resolveGHOModifiers = async (
             ...gsmRoles['LIQUIDATOR_ROLE'].map((roleAddress) => {
               return {
                 address: roleAddress,
-                owners: gsmOwners['LIQUIDATOR_ROLE'][roleAddress] || [],
+                owners: gsmOwners['LIQUIDATOR_ROLE'][roleAddress].owners || [],
+                signersThreshold:
+                  gsmOwners['LIQUIDATOR_ROLE'][roleAddress].threshold || 0,
               };
             }),
           ]),
@@ -174,7 +194,10 @@ export const resolveGHOModifiers = async (
             ...gsmRoles['CONFIGURATOR_ROLE'].map((roleAddress) => {
               return {
                 address: roleAddress,
-                owners: gsmOwners['CONFIGURATOR_ROLE'][roleAddress] || [],
+                owners:
+                  gsmOwners['CONFIGURATOR_ROLE'][roleAddress].owners || [],
+                signersThreshold:
+                  gsmOwners['CONFIGURATOR_ROLE'][roleAddress].threshold || 0,
               };
             }),
           ]),
@@ -200,6 +223,10 @@ export const resolveGHOModifiers = async (
           {
             address: gsmRegistryOwner,
             owners: await getSafeOwners(provider, gsmRegistryOwner),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              gsmRegistryOwner,
+            ),
           },
         ],
         functions: roles['GSMRegistry']['onlyOwner'],
@@ -224,6 +251,7 @@ export const resolveGHOModifiers = async (
           {
             address: ghoStewardOwner,
             owners: await getSafeOwners(provider, ghoStewardOwner),
+            signersThreshold: await getSafeThreshold(provider, ghoStewardOwner),
           },
         ],
         functions: roles['GhoStewardV2']['onlyOwner'],
@@ -234,6 +262,7 @@ export const resolveGHOModifiers = async (
           {
             address: riskCouncil,
             owners: await getSafeOwners(provider, riskCouncil),
+            signersThreshold: await getSafeThreshold(provider, riskCouncil),
           },
         ],
         functions: roles['GhoStewardV2']['onlyRiskCouncil'],

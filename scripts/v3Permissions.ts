@@ -5,10 +5,16 @@ import { Pools } from '../helpers/configs.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import poolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json' assert { type: 'json' };
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
-import { getSafeOwners } from '../helpers/guardian.js';
+import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import { ChainId } from '@aave/contract-helpers';
 import { getBridgeExecutor } from './bridgeExecutors.js';
-import { AddressInfo, Contracts, PermissionsJson } from '../helpers/types.js';
+import {
+  AddressInfo,
+  Contracts,
+  Guardian,
+  PermissionsJson,
+  PoolGuardians,
+} from '../helpers/types.js';
 import capsPlusRiskStewardABI from '../abis/capsPlusRiskSteward.json' assert { type: 'json' };
 import erc20Bridge from '../abis/Erc20Bridge.json' assert { type: 'json' };
 
@@ -49,23 +55,25 @@ export const resolveV3Modifiers = async (
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
 
-  const owners: Record<string, Record<string, string[]>> = {};
+  const owners: Record<string, Record<string, Guardian>> = {};
   // owners
   for (const roleName of Object.keys(adminRoles)) {
     for (const roleAddress of adminRoles[roleName]) {
       if (!owners[roleName]) {
         owners[roleName] = {
-          [roleAddress]: await getSafeOwners(provider, roleAddress),
+          [roleAddress]: {
+            owners: await getSafeOwners(provider, roleAddress),
+            threshold: await getSafeThreshold(provider, roleAddress),
+          },
         };
       } else if (owners[roleName] && !owners[roleName][roleAddress]) {
-        owners[roleName][roleAddress] = await getSafeOwners(
-          provider,
-          roleAddress,
-        );
+        owners[roleName][roleAddress] = {
+          owners: await getSafeOwners(provider, roleAddress),
+          threshold: await getSafeThreshold(provider, roleAddress),
+        };
       }
     }
   }
-
   const poolAddressesProvider = new ethers.Contract(
     addressBook.POOL_ADDRESSES_PROVIDER,
     poolAddressProviderAbi,
@@ -83,6 +91,10 @@ export const resolveV3Modifiers = async (
           {
             address: poolAddressesProviderOwner,
             owners: await getSafeOwners(provider, poolAddressesProviderOwner),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              poolAddressesProviderOwner,
+            ),
           },
         ],
         functions: roles['PoolAddressesProvider']['onlyOwner'],
@@ -110,7 +122,9 @@ export const resolveV3Modifiers = async (
           ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['POOL_ADMIN'][roleAddress] || [],
+              owners: owners['POOL_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['POOL_ADMIN'][roleAddress].threshold || 0,
             };
           }),
         ],
@@ -122,7 +136,8 @@ export const resolveV3Modifiers = async (
           ...adminRoles['BRIDGE'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['BRIDGE'][roleAddress] || [],
+              owners: owners['BRIDGE'][roleAddress].owners || [],
+              signersThreshold: owners['BRIDGE'][roleAddress].threshold || 0,
             };
           }),
         ],
@@ -141,7 +156,9 @@ export const resolveV3Modifiers = async (
           ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['POOL_ADMIN'][roleAddress] || [],
+              owners: owners['POOL_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['POOL_ADMIN'][roleAddress].threshold || 0,
             };
           }),
         ],
@@ -153,7 +170,9 @@ export const resolveV3Modifiers = async (
           ...adminRoles['EMERGENCY_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['EMERGENCY_ADMIN'][roleAddress] || [],
+              owners: owners['EMERGENCY_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['EMERGENCY_ADMIN'][roleAddress].threshold || 0,
             };
           }),
         ],
@@ -165,13 +184,17 @@ export const resolveV3Modifiers = async (
           ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['POOL_ADMIN'][roleAddress] || [],
+              owners: owners['POOL_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['POOL_ADMIN'][roleAddress].threshold || 0,
             };
           }),
           ...adminRoles['ASSET_LISTING_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['ASSET_LISTING_ADMIN'][roleAddress] || [],
+              owners: owners['ASSET_LISTING_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['ASSET_LISTING_ADMIN'][roleAddress].threshold || 0,
             };
           }),
         ]),
@@ -183,13 +206,17 @@ export const resolveV3Modifiers = async (
           ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['POOL_ADMIN'][roleAddress] || [],
+              owners: owners['POOL_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['POOL_ADMIN'][roleAddress].threshold || 0,
             };
           }),
           ...adminRoles['RISK_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['RISK_ADMIN'][roleAddress] || [],
+              owners: owners['RISK_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['POOL_ADMIN'][roleAddress].threshold || 0,
             };
           }),
         ]),
@@ -202,13 +229,17 @@ export const resolveV3Modifiers = async (
           ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['POOL_ADMIN'][roleAddress] || [],
+              owners: owners['POOL_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['POOL_ADMIN'][roleAddress].threshold || 0,
             };
           }),
           ...adminRoles['EMERGENCY_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['EMERGENCY_ADMIN'][roleAddress] || [],
+              owners: owners['EMERGENCY_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['EMERGENCY_ADMIN'][roleAddress].threshold || 0,
             };
           }),
         ]),
@@ -228,7 +259,9 @@ export const resolveV3Modifiers = async (
             ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
               return {
                 address: roleAddress,
-                owners: owners['POOL_ADMIN'][roleAddress] || [],
+                owners: owners['POOL_ADMIN'][roleAddress].owners || [],
+                signersThreshold:
+                  owners['POOL_ADMIN'][roleAddress].threshold || 0,
               };
             }),
           ]),
@@ -254,6 +287,10 @@ export const resolveV3Modifiers = async (
             {
               address: porExecutorOwner,
               owners: await getSafeOwners(provider, porExecutorOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                porExecutorOwner,
+              ),
             },
           ],
           functions: roles['ProofOfReserveExecutorV3']['onlyOwner'],
@@ -275,6 +312,10 @@ export const resolveV3Modifiers = async (
             {
               address: porAggregatorOwner,
               owners: await getSafeOwners(provider, porAggregatorOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                porAggregatorOwner,
+              ),
             },
           ],
           functions: roles['ProofOfReserveAggregatorV3']['onlyOwner'],
@@ -292,13 +333,17 @@ export const resolveV3Modifiers = async (
           ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['POOL_ADMIN'][roleAddress] || [],
+              owners: owners['POOL_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['POOL_ADMIN'][roleAddress].threshold || 0,
             };
           }),
           ...adminRoles['ASSET_LISTING_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['ASSET_LISTING_ADMIN'][roleAddress] || [],
+              owners: owners['ASSET_LISTING_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['ASSET_LISTING_ADMIN'][roleAddress].threshold || 0,
             };
           }),
         ]),
@@ -327,6 +372,7 @@ export const resolveV3Modifiers = async (
           {
             address: fundsAdmin,
             owners: await getSafeOwners(provider, fundsAdmin),
+            signersThreshold: await getSafeThreshold(provider, fundsAdmin),
           },
         ],
         functions: roles['Collector']['onlyFundsAdmin'],
@@ -337,10 +383,15 @@ export const resolveV3Modifiers = async (
           {
             address: collectorProxyAdmin,
             owners: await getSafeOwners(provider, collectorProxyAdmin),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              collectorProxyAdmin,
+            ),
           },
           {
             address: fundsAdmin,
             owners: await getSafeOwners(provider, fundsAdmin),
+            signersThreshold: await getSafeThreshold(provider, fundsAdmin),
           },
         ],
         functions: roles['Collector']['onlyAdminOrRecipient'],
@@ -359,6 +410,10 @@ export const resolveV3Modifiers = async (
           {
             address: addressBook.EMISSION_MANAGER,
             owners: await getSafeOwners(provider, addressBook.EMISSION_MANAGER),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              addressBook.EMISSION_MANAGER,
+            ),
           },
         ],
         functions: roles['RewardsController']['onlyEmissionManager'],
@@ -394,6 +449,10 @@ export const resolveV3Modifiers = async (
             {
               address: wethGatewayOwner,
               owners: await getSafeOwners(provider, wethGatewayOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                wethGatewayOwner,
+              ),
             },
           ],
           functions: roles['WrappedTokenGatewayV3']['onlyOwner'],
@@ -418,6 +477,10 @@ export const resolveV3Modifiers = async (
             {
               address: liquiditySwapOwner,
               owners: await getSafeOwners(provider, liquiditySwapOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                liquiditySwapOwner,
+              ),
             },
           ],
           functions: roles['ParaSwapLiquiditySwapAdapter']['onlyOwner'],
@@ -442,6 +505,10 @@ export const resolveV3Modifiers = async (
             {
               address: repaySwapOwner,
               owners: await getSafeOwners(provider, repaySwapOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                repaySwapOwner,
+              ),
             },
           ],
           functions: roles['ParaSwapRepayAdapter']['onlyOwner'],
@@ -466,6 +533,10 @@ export const resolveV3Modifiers = async (
           {
             address: emissionManagerOwner,
             owners: await getSafeOwners(provider, emissionManagerOwner),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              emissionManagerOwner,
+            ),
           },
         ],
         functions: roles['EmissionManager']['onlyOwner'],
@@ -500,6 +571,10 @@ export const resolveV3Modifiers = async (
           {
             address: addressRegistryOwner,
             owners: await getSafeOwners(provider, addressRegistryOwner),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              addressRegistryOwner,
+            ),
           },
         ],
         functions: roles['PoolAddressesProviderRegistry']['onlyOwner'],
@@ -530,6 +605,7 @@ export const resolveV3Modifiers = async (
           {
             address: proxyAdminOwner,
             owners: await getSafeOwners(provider, proxyAdminOwner),
+            signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
           },
         ],
         functions: roles['ProxyAdmin']['onlyOwner'],
@@ -554,6 +630,10 @@ export const resolveV3Modifiers = async (
             {
               address: proxyAdminLongOwner,
               owners: await getSafeOwners(provider, proxyAdminLongOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                proxyAdminLongOwner,
+              ),
             },
           ],
           functions: roles['ProxyAdmin']['onlyOwner'],
@@ -571,7 +651,9 @@ export const resolveV3Modifiers = async (
           ...adminRoles['DEFAULT_ADMIN'].map((roleAddress) => {
             return {
               address: roleAddress,
-              owners: owners['DEFAULT_ADMIN'][roleAddress] || [],
+              owners: owners['DEFAULT_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['DEFAULT_ADMIN'][roleAddress].threshold || 0,
             };
           }),
         ],
@@ -596,6 +678,7 @@ export const resolveV3Modifiers = async (
             {
               address: riskCouncil,
               owners: await getSafeOwners(provider, riskCouncil),
+              signersThreshold: await getSafeThreshold(provider, riskCouncil),
             },
           ],
           functions: roles['CapPlusRiskSteward']['onlyRiskCouncil'],
@@ -614,7 +697,9 @@ export const resolveV3Modifiers = async (
             ...adminRoles['EMERGENCY_ADMIN'].map((roleAddress) => {
               return {
                 address: roleAddress,
-                owners: owners['EMERGENCY_ADMIN'][roleAddress] || [],
+                owners: owners['EMERGENCY_ADMIN'][roleAddress].owners || [],
+                signersThreshold:
+                  owners['EMERGENCY_ADMIN'][roleAddress].threshold || 0,
               };
             }),
           ],
@@ -641,6 +726,10 @@ export const resolveV3Modifiers = async (
             {
               address: merkleDistributorOwner,
               owners: await getSafeOwners(provider, merkleDistributorOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                merkleDistributorOwner,
+              ),
             },
           ],
           functions: roles['AaveMerkleDistributor']['onlyOwner'],
@@ -667,6 +756,10 @@ export const resolveV3Modifiers = async (
             {
               address: polEthBridgeOwner,
               owners: await getSafeOwners(provider, polEthBridgeOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                polEthBridgeOwner,
+              ),
             },
           ],
           functions: roles['AavePolEthBridge']['onlyOwner'],
@@ -677,6 +770,10 @@ export const resolveV3Modifiers = async (
             {
               address: polEthBridgeRescuer,
               owners: await getSafeOwners(provider, polEthBridgeRescuer),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                polEthBridgeRescuer,
+              ),
             },
           ],
           functions: roles['AavePolEthBridge']['onlyRescueGuardian'],

@@ -1,7 +1,7 @@
 import { ethers, providers } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
-import { getSafeOwners } from '../helpers/guardian.js';
+import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
 import { Contracts, PermissionsJson } from '../helpers/types.js';
 import { MiscEthereum } from '@bgd-labs/aave-address-book';
@@ -37,6 +37,7 @@ export const resolveV2MiscModifiers = async (
           {
             address: erFundsAdmin,
             owners: await getSafeOwners(provider, erFundsAdmin),
+            signersThreshold: await getSafeThreshold(provider, erFundsAdmin),
           },
         ],
         functions: roles['EcosystemReserve']['onlyFundsAdmin'],
@@ -47,6 +48,7 @@ export const resolveV2MiscModifiers = async (
           {
             address: erFundsAdmin,
             owners: await getSafeOwners(provider, erFundsAdmin),
+            signersThreshold: await getSafeThreshold(provider, erFundsAdmin),
           },
         ],
         functions: roles['EcosystemReserve']['onlyAdminOrRecipient'],
@@ -70,6 +72,10 @@ export const resolveV2MiscModifiers = async (
           {
             address: erControllerOwner,
             owners: await getSafeOwners(provider, erControllerOwner),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              erControllerOwner,
+            ),
           },
         ],
         functions: roles['EcosystemReserveController']['onlyOwner'],

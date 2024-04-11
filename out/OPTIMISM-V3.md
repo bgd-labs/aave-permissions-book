@@ -1,6 +1,6 @@
 # OPTIMISM 
 ## V3 
-### decentralization
+### Decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
 |  [PoolAddressesProvider](https://optimistic.etherscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  false |  Governance | |--------|--------|--------|
@@ -27,8 +27,8 @@
 |  [Optimism native adapter](https://optimistic.etherscan.io/address/0xAE93BEa44dcbE52B625169588574d31e36fb3A67) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://optimistic.etherscan.io/address/0x48A9FE90bce5EEd790f3F4Ce192d1C0B351fd4Ca) |  true |  Governance | |--------|--------|--------|
 
-### actions
-| action |can be executed by |
+### Actions type
+| type |can be executed by |
 |----------|----------|
 |  configureBorrows |  Governance | |--------|--------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
@@ -46,7 +46,7 @@
 |  adiConfigurations |  Governance | |--------|--------|
 |  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
 
-### contracts
+### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://optimistic.etherscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  setMarketId, setAddress, setAddressAsProxy, setPoolImpl, setPoolConfiguratorImpl, setPriceOracle, setACLManager, setACLAdmin, setPriceOracleSentinel, setPoolDataProvider | |--------|--------|--------|--------|--------|
@@ -94,11 +94,23 @@
 |  [CrossChainController](https://optimistic.etherscan.io/address/0x48A9FE90bce5EEd790f3F4Ce192d1C0B351fd4Ca) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyApprovedBridges |  [OpAdapter](https://optimistic.etherscan.io/address/0x81d32B36380e6266e1BDd490eAC56cdB300afBe0), [Optimism native adapter](https://optimistic.etherscan.io/address/0xAE93BEa44dcbE52B625169588574d31e36fb3A67) |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
 
 ### Guardians 
-| Guardian |Address |Owners |
-|----------|----------|----------|
-|  [Aave Guardian Optimism](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c) |  0xE50c8C619d05ff98b22Adf991F17602C774F785c |  [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://optimistic.etherscan.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0xb647055A9915bF9c8021a684E175A353525b9890](https://optimistic.etherscan.io/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://optimistic.etherscan.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://optimistic.etherscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://optimistic.etherscan.io/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://optimistic.etherscan.io/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://optimistic.etherscan.io/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://optimistic.etherscan.io/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://optimistic.etherscan.io/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://optimistic.etherscan.io/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7) | |--------|--------|--------|
-|  [Risk Council](https://optimistic.etherscan.io/address/0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56) |  0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56 |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://optimistic.etherscan.io/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|
-|  [BGD](https://optimistic.etherscan.io/address/0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF) |  0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://optimistic.etherscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://optimistic.etherscan.io/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7), [0x0650302887619fa7727D8BD480Cda11A638B219B](https://optimistic.etherscan.io/address/0x0650302887619fa7727D8BD480Cda11A638B219B) | |--------|--------|--------|
+| Guardian |Threshold |Address |Owners |
+|----------|----------|----------|----------|
+|  [0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf (Safe)](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  0/0 |  0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf |   | |--------|--------|--------|--------|
+|  [0x8145eddDf43f50276641b55bd3AD95944510021E (Safe)](https://optimistic.etherscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  0/0 |  0x8145eddDf43f50276641b55bd3AD95944510021E |   | |--------|--------|--------|--------|
+|  [Aave Guardian Optimism](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c) |  undefined/10 |  0xE50c8C619d05ff98b22Adf991F17602C774F785c |  [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://optimistic.etherscan.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0xb647055A9915bF9c8021a684E175A353525b9890](https://optimistic.etherscan.io/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://optimistic.etherscan.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://optimistic.etherscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://optimistic.etherscan.io/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://optimistic.etherscan.io/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://optimistic.etherscan.io/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://optimistic.etherscan.io/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://optimistic.etherscan.io/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://optimistic.etherscan.io/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7) | |--------|--------|--------|--------|
+|  [0x5E76E98E0963EcDC6A065d1435F84065b7523f39 (Safe)](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  0/0 |  0x5E76E98E0963EcDC6A065d1435F84065b7523f39 |   | |--------|--------|--------|--------|
+|  [0x3829943c53F2d00e20B58475aF19716724bF90Ba (Safe)](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  0/0 |  0x3829943c53F2d00e20B58475aF19716724bF90Ba |   | |--------|--------|--------|--------|
+|  [0xD3cF979e676265e4f6379749DECe4708B9A22476 (Safe)](https://optimistic.etherscan.io/address/0xd3cf979e676265e4f6379749dece4708b9a22476) |  0/0 |  0xd3cf979e676265e4f6379749dece4708b9a22476 |   | |--------|--------|--------|--------|
+|  [0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73 (Safe)](https://optimistic.etherscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  0/0 |  0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73 |   | |--------|--------|--------|--------|
+|  [Risk Council](https://optimistic.etherscan.io/address/0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56) |  1/1 |  0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56 |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://optimistic.etherscan.io/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|--------|
+|  [0x7d9103572bE58FfE99dc390E8246f02dcAe6f611 (Safe)](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  0/0 |  0x7d9103572bE58FfE99dc390E8246f02dcAe6f611 |   | |--------|--------|--------|--------|
+|  [0xEE56e2B3D491590B5b31738cC34d5232F378a8D5 (Safe)](https://optimistic.etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  0/0 |  0xEE56e2B3D491590B5b31738cC34d5232F378a8D5 |   | |--------|--------|--------|--------|
+|  [0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4 (Safe)](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  0/0 |  0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4 |   | |--------|--------|--------|--------|
+|  [0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1 (Safe)](https://optimistic.etherscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  0/0 |  0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1 |   | |--------|--------|--------|--------|
+|  [BGD](https://optimistic.etherscan.io/address/0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF) |  2/3 |  0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://optimistic.etherscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://optimistic.etherscan.io/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7), [0x0650302887619fa7727D8BD480Cda11A638B219B](https://optimistic.etherscan.io/address/0x0650302887619fa7727D8BD480Cda11A638B219B) | |--------|--------|--------|--------|
+|  [0x81d32B36380e6266e1BDd490eAC56cdB300afBe0 (Safe)](https://optimistic.etherscan.io/address/0x81d32B36380e6266e1BDd490eAC56cdB300afBe0) |  0/0 |  0x81d32B36380e6266e1BDd490eAC56cdB300afBe0 |   | |--------|--------|--------|--------|
+|  [0xAE93BEa44dcbE52B625169588574d31e36fb3A67 (Safe)](https://optimistic.etherscan.io/address/0xAE93BEa44dcbE52B625169588574d31e36fb3A67) |  0/0 |  0xAE93BEa44dcbE52B625169588574d31e36fb3A67 |   | |--------|--------|--------|--------|
 
 ### Admins 
 | Role |Contract |

@@ -6,7 +6,7 @@ import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
 import arcTimelockAbi from '../abis/arcTimelockAbi.json' assert { type: 'json' };
 import { AaveV2EthereumArc } from '@bgd-labs/aave-address-book';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
-import { getSafeOwners } from '../helpers/guardian.js';
+import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import collectorAbi from '../abis/collectorAbi.json' assert { type: 'json' };
 import { ChainId } from '@aave/contract-helpers';
 import { Contracts, PermissionsJson } from '../helpers/types.js';
@@ -47,6 +47,10 @@ export const resolveV2Modifiers = async (
               provider,
               lendingPoolAddressesProviderOwner,
             ),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              lendingPoolAddressesProviderOwner,
+            ),
           },
         ],
         functions: roles['LendingPoolAddressesProvider']['onlyOwner'],
@@ -81,6 +85,7 @@ export const resolveV2Modifiers = async (
           {
             address: poolAdmin,
             owners: await getSafeOwners(provider, poolAdmin),
+            signersThreshold: await getSafeThreshold(provider, poolAdmin),
           },
         ],
         functions: roles['LendingPoolConfigurator']['onlyPoolAdmin'],
@@ -91,6 +96,7 @@ export const resolveV2Modifiers = async (
           {
             address: emergencyAdmin,
             owners: await getSafeOwners(provider, emergencyAdmin),
+            signersThreshold: await getSafeThreshold(provider, emergencyAdmin),
           },
         ],
         functions: roles['LendingPoolConfigurator']['onlyEmergencyAdmin'],
@@ -113,10 +119,15 @@ export const resolveV2Modifiers = async (
         {
           address: poolAdmin,
           owners: await getSafeOwners(provider, poolAdmin),
+          signersThreshold: await getSafeThreshold(provider, poolAdmin),
         },
         {
           address: addressBook.PROOF_OF_RESERVE,
           owners: await getSafeOwners(provider, addressBook.PROOF_OF_RESERVE),
+          signersThreshold: await getSafeThreshold(
+            provider,
+            addressBook.PROOF_OF_RESERVE,
+          ),
         },
       ],
       functions:
@@ -138,6 +149,10 @@ export const resolveV2Modifiers = async (
             {
               address: porExecutorOwner,
               owners: await getSafeOwners(provider, porExecutorOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                porExecutorOwner,
+              ),
             },
           ],
           functions: roles['ProofOfReserveExecutorV2']['onlyOwner'],
@@ -159,6 +174,10 @@ export const resolveV2Modifiers = async (
             {
               address: porAggregatorOwner,
               owners: await getSafeOwners(provider, porAggregatorOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                porAggregatorOwner,
+              ),
             },
           ],
           functions: roles['ProofOfReserveAggregatorV2']['onlyOwner'],
@@ -183,6 +202,7 @@ export const resolveV2Modifiers = async (
           {
             address: aaveOracleOwner,
             owners: await getSafeOwners(provider, aaveOracleOwner),
+            signersThreshold: await getSafeThreshold(provider, aaveOracleOwner),
           },
         ],
         functions: roles['AaveOracle']['onlyOwner'],
@@ -206,6 +226,10 @@ export const resolveV2Modifiers = async (
           {
             address: lendingRateOracleOwner,
             owners: await getSafeOwners(provider, lendingRateOracleOwner),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              lendingRateOracleOwner,
+            ),
           },
         ],
         functions: roles['LendingRateOracle']['onlyOwner'],
@@ -233,6 +257,7 @@ export const resolveV2Modifiers = async (
           {
             address: fundsAdmin,
             owners: await getSafeOwners(provider, fundsAdmin),
+            signersThreshold: await getSafeThreshold(provider, fundsAdmin),
           },
         ],
         functions: roles['Collector']['onlyFundsAdmin'],
@@ -243,10 +268,15 @@ export const resolveV2Modifiers = async (
           {
             address: collectorProxyAdmin,
             owners: await getSafeOwners(provider, collectorProxyAdmin),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              collectorProxyAdmin,
+            ),
           },
           {
             address: fundsAdmin,
             owners: await getSafeOwners(provider, fundsAdmin),
+            signersThreshold: await getSafeThreshold(provider, fundsAdmin),
           },
         ],
         functions: roles['Collector']['onlyAdminOrRecipient'],
@@ -268,6 +298,7 @@ export const resolveV2Modifiers = async (
           {
             address: proxyAdminOwner,
             owners: await getSafeOwners(provider, proxyAdminOwner),
+            signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
           },
         ],
         functions: roles['ProxyAdmin']['onlyOwner'],
@@ -295,6 +326,10 @@ export const resolveV2Modifiers = async (
             {
               address: governanceExecutor,
               owners: await getSafeOwners(provider, governanceExecutor),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                governanceExecutor,
+              ),
             },
           ],
           functions: roles['ArcTimelock']['onlyEthereumGovernanceExecutor'],
@@ -305,6 +340,10 @@ export const resolveV2Modifiers = async (
             {
               address: arcTimelockGuardian,
               owners: await getSafeOwners(provider, arcTimelockGuardian),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                arcTimelockGuardian,
+              ),
             },
           ],
           functions: roles['ArcTimelock']['onlyGuardian'],
@@ -328,6 +367,10 @@ export const resolveV2Modifiers = async (
             {
               address: permissionManagerOwner,
               owners: await getSafeOwners(provider, permissionManagerOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                permissionManagerOwner,
+              ),
             },
           ],
           functions: roles['PermissionManager']['onlyOwner'],
@@ -353,6 +396,10 @@ export const resolveV2Modifiers = async (
             {
               address: wethGatewayOwner,
               owners: await getSafeOwners(provider, wethGatewayOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                wethGatewayOwner,
+              ),
             },
           ],
           functions: roles['WrappedTokenGatewayV2']['onlyOwner'],
@@ -383,6 +430,10 @@ export const resolveV2Modifiers = async (
             {
               address: liquiditySwapOwner,
               owners: await getSafeOwners(provider, liquiditySwapOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                liquiditySwapOwner,
+              ),
             },
           ],
           functions: roles['ParaSwapLiquiditySwapAdapter']['onlyOwner'],
@@ -406,6 +457,10 @@ export const resolveV2Modifiers = async (
             {
               address: repaySwapOwner,
               owners: await getSafeOwners(provider, repaySwapOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                repaySwapOwner,
+              ),
             },
           ],
           functions: roles['ParaSwapRepayAdapter']['onlyOwner'],
@@ -431,6 +486,10 @@ export const resolveV2Modifiers = async (
             {
               address: addressRegistryOwner,
               owners: await getSafeOwners(provider, addressRegistryOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                addressRegistryOwner,
+              ),
             },
           ],
           functions: roles['LendingPoolAddressesProviderRegistry']['onlyOwner'],
@@ -453,6 +512,10 @@ export const resolveV2Modifiers = async (
             {
               address: addressBook.EMISSION_MANAGER,
               owners: await getSafeOwners(
+                provider,
+                addressBook.EMISSION_MANAGER,
+              ),
+              signersThreshold: await getSafeThreshold(
                 provider,
                 addressBook.EMISSION_MANAGER,
               ),

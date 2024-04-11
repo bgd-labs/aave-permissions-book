@@ -14,3 +14,17 @@ export const getSafeOwners = async (
     return [];
   }
 };
+
+export const getSafeThreshold = async (
+  provider: providers.Provider,
+  address: string,
+): Promise<number> => {
+  const gnosisContract = new ethers.Contract(address, gnosisSafeABI, provider);
+
+  try {
+    const signersThreshold = await gnosisContract.getThreshold();
+    return Number(signersThreshold.toString());
+  } catch (error) {
+    return 0;
+  }
+};

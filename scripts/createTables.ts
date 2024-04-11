@@ -58,7 +58,8 @@ export const generateTableAddress = (
           ? addressesNames[checkSummedAddress]
           : contractsByAddress[checkSummedAddress]
           ? contractsByAddress[checkSummedAddress]
-          : poolGuardians[checkSummedAddress]
+          : poolGuardians[checkSummedAddress] &&
+            poolGuardians[checkSummedAddress].owners.length > 0
           ? addressesNames[checkSummedAddress]
             ? addressesNames[checkSummedAddress]
             : `${checkSummedAddress} (Safe)`
@@ -108,7 +109,7 @@ export const generateTable = (network: string, pool: string): string => {
   // create network Readme with pool tables
   let readmeByNetwork = `# ${networkName} \n`;
 
-  const poolGuardians: Record<string, string[]> = {};
+  const poolGuardians: PoolGuardians = {};
   const poolPermitsByContract = networkPermits[pool];
 
   if (!poolPermitsByContract?.contracts) {
@@ -135,7 +136,7 @@ export const generateTable = (network: string, pool: string): string => {
   });
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
 
-  let decentralizationTable = `### decentralization\n`;
+  let decentralizationTable = `### Decentralization\n`;
   const decentralizationHeaderTitles = [
     'contract',
     'upgradeable',
@@ -175,7 +176,6 @@ export const generateTable = (network: string, pool: string): string => {
       )})`,
       `${upgradeable}`,
       `${ownedBy}`,
-      // `${controlledBy}`,
     ]);
     decentralizationTableBody += getLineSeparator(
       decentralizationHeaderTitles.length,
@@ -205,7 +205,6 @@ export const generateTable = (network: string, pool: string): string => {
         )})`,
         `${upgradeable}`,
         `${ownedBy}`,
-        // `${controlledBy}`,
       ]);
       decentralizationTableBody += getLineSeparator(
         decentralizationHeaderTitles.length,
@@ -216,8 +215,8 @@ export const generateTable = (network: string, pool: string): string => {
   decentralizationTable += decentralizationTableBody;
   readmeByNetwork += decentralizationTable + '\n';
 
-  let actionsTable = `### actions\n`;
-  const actionsHeaderTitles = ['action', 'can be executed by'];
+  let actionsTable = `### Actions type\n`;
+  const actionsHeaderTitles = ['type', 'can be executed by'];
   const actionsHeader = getTableHeader(actionsHeaderTitles);
   actionsTable += actionsHeader;
 
@@ -248,7 +247,7 @@ export const generateTable = (network: string, pool: string): string => {
     readmeByNetwork += actionsTable + '\n';
   }
 
-  let contractTable = `### contracts\n`;
+  let contractTable = `### Contracts\n`;
   const contractsModifiersHeaderTitles = [
     'contract',
     'proxyAdmin',
@@ -286,8 +285,15 @@ export const generateTable = (network: string, pool: string): string => {
     for (let modifier of contract.modifiers) {
       for (let modifierAddress of modifier.addresses) {
         if (!poolGuardians[modifierAddress.address]) {
+          poolGuardians[modifierAddress.address] = {
+            owners: [],
+            threshold: 0,
+          };
           if (modifierAddress.owners.length > 0) {
-            poolGuardians[modifierAddress.address] = modifierAddress.owners;
+            poolGuardians[modifierAddress.address].owners =
+              modifierAddress.owners;
+            poolGuardians[modifierAddress.address].threshold =
+              modifierAddress.signersThreshold;
           }
         }
       }
@@ -379,8 +385,15 @@ export const generateTable = (network: string, pool: string): string => {
       for (let modifier of contract.modifiers) {
         for (let modifierAddress of modifier.addresses) {
           if (!poolGuardians[modifierAddress.address]) {
+            poolGuardians[modifierAddress.address] = {
+              owners: [],
+              threshold: 0,
+            };
             if (modifierAddress.owners.length > 0) {
-              poolGuardians[modifierAddress.address] = modifierAddress.owners;
+              poolGuardians[modifierAddress.address].owners =
+                modifierAddress.owners;
+              poolGuardians[modifierAddress.address].threshold =
+                modifierAddress.signersThreshold;
             }
           }
         }
@@ -424,7 +437,7 @@ export const generateTable = (network: string, pool: string): string => {
 
   if (Object.keys(poolGuardians).length > 0) {
     let guardianTable = `### Guardians \n`;
-    const guardianHeaderTitles = ['Guardian', 'Address', 'Owners'];
+    const guardianHeaderTitles = ['Guardian', 'Threshold', 'Address', 'Owners'];
     const guardianHeader = getTableHeader(guardianHeaderTitles);
     guardianTable += guardianHeader;
 
@@ -435,8 +448,9 @@ export const generateTable = (network: string, pool: string): string => {
             ? addressesNames[utils.getAddress(guardian)]
             : `${utils.getAddress(guardian)} (Safe)`
         }](${explorerAddressUrlComposer(guardian, network)})`,
+        `${poolGuardians[guardian].threshold}/${poolGuardians[guardian].owners.length}`,
         guardian,
-        `${poolGuardians[guardian]
+        `${poolGuardians[guardian].owners
           .map(
             (owner) =>
               `[${owner}](${explorerAddressUrlComposer(owner, network)})`,

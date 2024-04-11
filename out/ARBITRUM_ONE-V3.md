@@ -1,6 +1,6 @@
 # ARBITRUM_ONE 
 ## V3 
-### decentralization
+### Decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
 |  [PoolAddressesProvider](https://arbiscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  false |  Governance | |--------|--------|--------|
@@ -26,8 +26,8 @@
 |  [Arbitrum native adapter](https://arbiscan.io/address/0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://arbiscan.io/address/0xCbFB78a3Eeaa611b826E37c80E4126c8787D29f0) |  true |  Governance | |--------|--------|--------|
 
-### actions
-| action |can be executed by |
+### Actions type
+| type |can be executed by |
 |----------|----------|
 |  configureBorrows |  Governance | |--------|--------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
@@ -45,7 +45,7 @@
 |  adiConfigurations |  Governance | |--------|--------|
 |  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
 
-### contracts
+### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://arbiscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  - |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  setMarketId, setAddress, setAddressAsProxy, setPoolImpl, setPoolConfiguratorImpl, setPriceOracle, setACLManager, setACLAdmin, setPriceOracleSentinel, setPoolDataProvider | |--------|--------|--------|--------|--------|
@@ -92,11 +92,23 @@
 |  [CrossChainController](https://arbiscan.io/address/0xCbFB78a3Eeaa611b826E37c80E4126c8787D29f0) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyApprovedBridges |  [ArbAdapter](https://arbiscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba), [Arbitrum native adapter](https://arbiscan.io/address/0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d) |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
 
 ### Guardians 
-| Guardian |Address |Owners |
-|----------|----------|----------|
-|  [Aave Guardian Arbitrum](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb) |  0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://arbiscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://arbiscan.io/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://arbiscan.io/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://arbiscan.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://arbiscan.io/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://arbiscan.io/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0xb647055A9915bF9c8021a684E175A353525b9890](https://arbiscan.io/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://arbiscan.io/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://arbiscan.io/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://arbiscan.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f) | |--------|--------|--------|
-|  [Risk Council](https://arbiscan.io/address/0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2) |  0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2 |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://arbiscan.io/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|
-|  [BGD](https://arbiscan.io/address/0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959) |  0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959 |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://arbiscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://arbiscan.io/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7), [0x0650302887619fa7727D8BD480Cda11A638B219B](https://arbiscan.io/address/0x0650302887619fa7727D8BD480Cda11A638B219B) | |--------|--------|--------|
+| Guardian |Threshold |Address |Owners |
+|----------|----------|----------|----------|
+|  [0xFF1137243698CaA18EE364Cc966CF0e02A4e6327 (Safe)](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  0/0 |  0xFF1137243698CaA18EE364Cc966CF0e02A4e6327 |   | |--------|--------|--------|--------|
+|  [0x8145eddDf43f50276641b55bd3AD95944510021E (Safe)](https://arbiscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  0/0 |  0x8145eddDf43f50276641b55bd3AD95944510021E |   | |--------|--------|--------|--------|
+|  [Aave Guardian Arbitrum](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb) |  undefined/10 |  0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://arbiscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://arbiscan.io/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://arbiscan.io/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://arbiscan.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://arbiscan.io/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://arbiscan.io/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0xb647055A9915bF9c8021a684E175A353525b9890](https://arbiscan.io/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://arbiscan.io/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://arbiscan.io/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://arbiscan.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f) | |--------|--------|--------|--------|
+|  [0xADf86b537eF08591c2777E144322E8b0Ca7E82a7 (Safe)](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  0/0 |  0xADf86b537eF08591c2777E144322E8b0Ca7E82a7 |   | |--------|--------|--------|--------|
+|  [0xe59470B3BE3293534603487E00A44C72f2CD466d (Safe)](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  0/0 |  0xe59470B3BE3293534603487E00A44C72f2CD466d |   | |--------|--------|--------|--------|
+|  [0xD3cF979e676265e4f6379749DECe4708B9A22476 (Safe)](https://arbiscan.io/address/0xd3cf979e676265e4f6379749dece4708b9a22476) |  0/0 |  0xd3cf979e676265e4f6379749dece4708b9a22476 |   | |--------|--------|--------|--------|
+|  [0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73 (Safe)](https://arbiscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  0/0 |  0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73 |   | |--------|--------|--------|--------|
+|  [Risk Council](https://arbiscan.io/address/0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2) |  1/1 |  0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2 |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://arbiscan.io/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|--------|
+|  [0x7d9103572bE58FfE99dc390E8246f02dcAe6f611 (Safe)](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  0/0 |  0x7d9103572bE58FfE99dc390E8246f02dcAe6f611 |   | |--------|--------|--------|--------|
+|  [0xEE56e2B3D491590B5b31738cC34d5232F378a8D5 (Safe)](https://arbiscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  0/0 |  0xEE56e2B3D491590B5b31738cC34d5232F378a8D5 |   | |--------|--------|--------|--------|
+|  [0x89644CA1bB8064760312AE4F03ea41b05dA3637C (Safe)](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  0/0 |  0x89644CA1bB8064760312AE4F03ea41b05dA3637C |   | |--------|--------|--------|--------|
+|  [0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1 (Safe)](https://arbiscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  0/0 |  0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1 |   | |--------|--------|--------|--------|
+|  [BGD](https://arbiscan.io/address/0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959) |  2/3 |  0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959 |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://arbiscan.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://arbiscan.io/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7), [0x0650302887619fa7727D8BD480Cda11A638B219B](https://arbiscan.io/address/0x0650302887619fa7727D8BD480Cda11A638B219B) | |--------|--------|--------|--------|
+|  [0x3829943c53F2d00e20B58475aF19716724bF90Ba (Safe)](https://arbiscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  0/0 |  0x3829943c53F2d00e20B58475aF19716724bF90Ba |   | |--------|--------|--------|--------|
+|  [0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d (Safe)](https://arbiscan.io/address/0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d) |  0/0 |  0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d |   | |--------|--------|--------|--------|
 
 ### Admins 
 | Role |Contract |

@@ -1,6 +1,6 @@
 # METIS_ANDROMEDA 
 ## V3 
-### decentralization
+### Decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
 |  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  false |  Governance | |--------|--------|--------|
@@ -23,8 +23,8 @@
 |  [Metis native adapter](https://andromeda-explorer.metis.io/address/0xf41193E25408F652AF878c47E4401A01B5E4B682) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://andromeda-explorer.metis.io/address/0x6fDaFb26915ABD6065a1E1501a37Ac438D877f70) |  true |  Governance | |--------|--------|--------|
 
-### actions
-| action |can be executed by |
+### Actions type
+| type |can be executed by |
 |----------|----------|
 |  configureBorrows |  Governance | |--------|--------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
@@ -42,7 +42,7 @@
 |  adiConfigurations |  Governance | |--------|--------|
 |  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
 
-### contracts
+### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  - |  onlyOwner |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  setMarketId, setAddress, setAddressAsProxy, setPoolImpl, setPoolConfiguratorImpl, setPriceOracle, setACLManager, setACLAdmin, setPriceOracleSentinel, setPoolDataProvider | |--------|--------|--------|--------|--------|
@@ -86,11 +86,23 @@
 |  [CrossChainController](https://andromeda-explorer.metis.io/address/0x6fDaFb26915ABD6065a1E1501a37Ac438D877f70) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyApprovedBridges |  [MetisAdapter](https://andromeda-explorer.metis.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf), [Metis native adapter](https://andromeda-explorer.metis.io/address/0xf41193E25408F652AF878c47E4401A01B5E4B682) |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
 
 ### Guardians 
-| Guardian |Address |Owners |
-|----------|----------|----------|
-|  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501) |  0xF6Db48C5968A9eBCB935786435530f28e32Cc501 |  [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://andromeda-explorer.metis.io/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://andromeda-explorer.metis.io/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://andromeda-explorer.metis.io/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://andromeda-explorer.metis.io/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://andromeda-explorer.metis.io/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://andromeda-explorer.metis.io/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://andromeda-explorer.metis.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://andromeda-explorer.metis.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0xb647055A9915bF9c8021a684E175A353525b9890](https://andromeda-explorer.metis.io/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://andromeda-explorer.metis.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4) | |--------|--------|--------|
-|  [Risk Council](https://andromeda-explorer.metis.io/address/0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa) |  0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://andromeda-explorer.metis.io/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|
-|  [BGD](https://andromeda-explorer.metis.io/address/0x9853589F951D724D9f7c6724E0fD63F9d888C429) |  0x9853589F951D724D9f7c6724E0fD63F9d888C429 |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://andromeda-explorer.metis.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://andromeda-explorer.metis.io/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7), [0x0650302887619fa7727D8BD480Cda11A638B219B](https://andromeda-explorer.metis.io/address/0x0650302887619fa7727D8BD480Cda11A638B219B) | |--------|--------|--------|
+| Guardian |Threshold |Address |Owners |
+|----------|----------|----------|----------|
+|  [0x6fD45D32375d5aDB8D76275A3932c740F03a8718 (Safe)](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  0/0 |  0x6fD45D32375d5aDB8D76275A3932c740F03a8718 |   | |--------|--------|--------|--------|
+|  [0x69FEE8F261E004453BE0800BC9039717528645A6 (Safe)](https://andromeda-explorer.metis.io/address/0x69FEE8F261E004453BE0800BC9039717528645A6) |  0/0 |  0x69FEE8F261E004453BE0800BC9039717528645A6 |   | |--------|--------|--------|--------|
+|  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501) |  undefined/10 |  0xF6Db48C5968A9eBCB935786435530f28e32Cc501 |  [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://andromeda-explorer.metis.io/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://andromeda-explorer.metis.io/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://andromeda-explorer.metis.io/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://andromeda-explorer.metis.io/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://andromeda-explorer.metis.io/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://andromeda-explorer.metis.io/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://andromeda-explorer.metis.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://andromeda-explorer.metis.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0xb647055A9915bF9c8021a684E175A353525b9890](https://andromeda-explorer.metis.io/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://andromeda-explorer.metis.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4) | |--------|--------|--------|--------|
+|  [0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731 (Safe)](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  0/0 |  0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731 |   | |--------|--------|--------|--------|
+|  [0x2C77153fF4a1e83A8d8D750735FB101ECB55949f (Safe)](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  0/0 |  0x2C77153fF4a1e83A8d8D750735FB101ECB55949f |   | |--------|--------|--------|--------|
+|  [0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97 (Safe)](https://andromeda-explorer.metis.io/address/0x1cabd986cbabdf12e00128dff03c80ee62c4fd97) |  0/0 |  0x1cabd986cbabdf12e00128dff03c80ee62c4fd97 |   | |--------|--------|--------|--------|
+|  [0xfDb2580A1ac4CDc67E4236738b28af59e2022Dd2 (Safe)](https://andromeda-explorer.metis.io/address/0xfDb2580A1ac4CDc67E4236738b28af59e2022Dd2) |  0/0 |  0xfDb2580A1ac4CDc67E4236738b28af59e2022Dd2 |   | |--------|--------|--------|--------|
+|  [Risk Council](https://andromeda-explorer.metis.io/address/0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa) |  1/1 |  0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://andromeda-explorer.metis.io/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|--------|
+|  [0x8EC77963068474a45016938Deb95E603Ca82a029 (Safe)](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  0/0 |  0x8EC77963068474a45016938Deb95E603Ca82a029 |   | |--------|--------|--------|--------|
+|  [0xEE56e2B3D491590B5b31738cC34d5232F378a8D5 (Safe)](https://andromeda-explorer.metis.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  0/0 |  0xEE56e2B3D491590B5b31738cC34d5232F378a8D5 |   | |--------|--------|--------|--------|
+|  [0x2233F8A66A728FBa6E1dC95570B25360D07D5524 (Safe)](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  0/0 |  0x2233F8A66A728FBa6E1dC95570B25360D07D5524 |   | |--------|--------|--------|--------|
+|  [0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1 (Safe)](https://andromeda-explorer.metis.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  0/0 |  0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1 |   | |--------|--------|--------|--------|
+|  [BGD](https://andromeda-explorer.metis.io/address/0x9853589F951D724D9f7c6724E0fD63F9d888C429) |  2/3 |  0x9853589F951D724D9f7c6724E0fD63F9d888C429 |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://andromeda-explorer.metis.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://andromeda-explorer.metis.io/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7), [0x0650302887619fa7727D8BD480Cda11A638B219B](https://andromeda-explorer.metis.io/address/0x0650302887619fa7727D8BD480Cda11A638B219B) | |--------|--------|--------|--------|
+|  [0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf (Safe)](https://andromeda-explorer.metis.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  0/0 |  0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf |   | |--------|--------|--------|--------|
+|  [0xf41193E25408F652AF878c47E4401A01B5E4B682 (Safe)](https://andromeda-explorer.metis.io/address/0xf41193E25408F652AF878c47E4401A01B5E4B682) |  0/0 |  0xf41193E25408F652AF878c47E4401A01B5E4B682 |   | |--------|--------|--------|--------|
 
 ### Admins 
 | Role |Contract |

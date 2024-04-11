@@ -1,7 +1,8 @@
 import { Pools } from './configs.js';
 
 export type ContractsByAddress = Record<string, string>;
-export type PoolGuardians = Record<string, string[]>;
+export type Guardian = { owners: string[]; threshold: number | undefined };
+export type PoolGuardians = Record<string, Guardian>;
 
 export type Modifier = {
   modifier: string;
@@ -25,6 +26,7 @@ export type GovV3 = {
 export type AddressInfo = {
   address: string;
   owners: string[];
+  signersThreshold?: number;
   chain?: string;
 };
 export type Roles = {

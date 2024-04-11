@@ -1,6 +1,6 @@
 # BASE 
 ## V3 
-### decentralization
+### Decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
 |  [PoolAddressesProvider](https://basescan.org/address/0xe20fCBdBfFC4Dd138cE8b2E6FBb6CB49777ad64D) |  false |  Governance | |--------|--------|--------|
@@ -26,8 +26,8 @@
 |  [Base native adapter](https://basescan.org/address/0x7120b1f8e5b73c0C0DC99C6e52Fe4937E7EA11e0) |  false |  Not owned | |--------|--------|--------|
 |  [CrossChainController](https://basescan.org/address/0x529467C76f234F2bD359d7ecF7c660A2846b04e2) |  true |  Governance | |--------|--------|--------|
 
-### actions
-| action |can be executed by |
+### Actions type
+| type |can be executed by |
 |----------|----------|
 |  configureBorrows |  Governance | |--------|--------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
@@ -45,7 +45,7 @@
 |  adiConfigurations |  Governance | |--------|--------|
 |  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
 
-### contracts
+### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
 |  [PoolAddressesProvider](https://basescan.org/address/0xe20fCBdBfFC4Dd138cE8b2E6FBb6CB49777ad64D) |  - |  onlyOwner |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  setMarketId, setAddress, setAddressAsProxy, setPoolImpl, setPoolConfiguratorImpl, setPriceOracle, setACLManager, setACLAdmin, setPriceOracleSentinel, setPoolDataProvider | |--------|--------|--------|--------|--------|
@@ -92,11 +92,23 @@
 |  [CrossChainController](https://basescan.org/address/0x529467C76f234F2bD359d7ecF7c660A2846b04e2) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  onlyApprovedBridges |  [CBaseAdapter](https://basescan.org/address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7), [Base native adapter](https://basescan.org/address/0x7120b1f8e5b73c0C0DC99C6e52Fe4937E7EA11e0) |  receiveCrossChainMessage | |--------|--------|--------|--------|--------|
 
 ### Guardians 
-| Guardian |Address |Owners |
-|----------|----------|----------|
-|  [Aave Guardian Base](https://basescan.org/address/0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A) |  0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A |  [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://basescan.org/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://basescan.org/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://basescan.org/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://basescan.org/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://basescan.org/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://basescan.org/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://basescan.org/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://basescan.org/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0xb647055A9915bF9c8021a684E175A353525b9890](https://basescan.org/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://basescan.org/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4) | |--------|--------|--------|
-|  [Risk Council](https://basescan.org/address/0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1) |  0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1 |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://basescan.org/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|
-|  [BGD](https://basescan.org/address/0x7FDA7C3528ad8f05e62148a700D456898b55f8d2) |  0x7FDA7C3528ad8f05e62148a700D456898b55f8d2 |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://basescan.org/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://basescan.org/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7), [0x0650302887619fa7727D8BD480Cda11A638B219B](https://basescan.org/address/0x0650302887619fa7727D8BD480Cda11A638B219B) | |--------|--------|--------|
+| Guardian |Threshold |Address |Owners |
+|----------|----------|----------|----------|
+|  [0x9390B1735def18560c509E2d0bc090E9d6BA257a (Safe)](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  0/0 |  0x9390B1735def18560c509E2d0bc090E9d6BA257a |   | |--------|--------|--------|--------|
+|  [0x5731a04B1E775f0fdd454Bf70f3335886e9A96be (Safe)](https://basescan.org/address/0x5731a04B1E775f0fdd454Bf70f3335886e9A96be) |  0/0 |  0x5731a04B1E775f0fdd454Bf70f3335886e9A96be |   | |--------|--------|--------|--------|
+|  [Aave Guardian Base](https://basescan.org/address/0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A) |  undefined/10 |  0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A |  [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://basescan.org/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://basescan.org/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://basescan.org/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://basescan.org/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://basescan.org/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://basescan.org/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://basescan.org/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://basescan.org/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0xb647055A9915bF9c8021a684E175A353525b9890](https://basescan.org/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://basescan.org/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4) | |--------|--------|--------|--------|
+|  [0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6 (Safe)](https://basescan.org/address/0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6) |  0/0 |  0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6 |   | |--------|--------|--------|--------|
+|  [0x4A4c73d563395ad827511F70097d4Ef82E653805 (Safe)](https://basescan.org/address/0x4A4c73d563395ad827511F70097d4Ef82E653805) |  0/0 |  0x4A4c73d563395ad827511F70097d4Ef82E653805 |   | |--------|--------|--------|--------|
+|  [0xc85b1E333aecc99340b2320493Fe2d22b8734795 (Safe)](https://basescan.org/address/0xc85b1e333aecc99340b2320493fe2d22b8734795) |  0/0 |  0xc85b1e333aecc99340b2320493fe2d22b8734795 |   | |--------|--------|--------|--------|
+|  [0x6533A273F3aC84Df91DCD654D6EBAbA73687e246 (Safe)](https://basescan.org/address/0x6533A273F3aC84Df91DCD654D6EBAbA73687e246) |  0/0 |  0x6533A273F3aC84Df91DCD654D6EBAbA73687e246 |   | |--------|--------|--------|--------|
+|  [0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45 (Safe)](https://basescan.org/address/0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45) |  0/0 |  0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45 |   | |--------|--------|--------|--------|
+|  [Risk Council](https://basescan.org/address/0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1) |  1/1 |  0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1 |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://basescan.org/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|--------|
+|  [0xEE56e2B3D491590B5b31738cC34d5232F378a8D5 (Safe)](https://basescan.org/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  0/0 |  0xEE56e2B3D491590B5b31738cC34d5232F378a8D5 |   | |--------|--------|--------|--------|
+|  [0x2DC219E716793fb4b21548C0f009Ba3Af753ab01 (Safe)](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  0/0 |  0x2DC219E716793fb4b21548C0f009Ba3Af753ab01 |   | |--------|--------|--------|--------|
+|  [0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1 (Safe)](https://basescan.org/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  0/0 |  0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1 |   | |--------|--------|--------|--------|
+|  [BGD](https://basescan.org/address/0x7FDA7C3528ad8f05e62148a700D456898b55f8d2) |  2/3 |  0x7FDA7C3528ad8f05e62148a700D456898b55f8d2 |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://basescan.org/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://basescan.org/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7), [0x0650302887619fa7727D8BD480Cda11A638B219B](https://basescan.org/address/0x0650302887619fa7727D8BD480Cda11A638B219B) | |--------|--------|--------|--------|
+|  [0x7b62461a3570c6AC8a9f8330421576e417B71EE7 (Safe)](https://basescan.org/address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) |  0/0 |  0x7b62461a3570c6AC8a9f8330421576e417B71EE7 |   | |--------|--------|--------|--------|
+|  [0x7120b1f8e5b73c0C0DC99C6e52Fe4937E7EA11e0 (Safe)](https://basescan.org/address/0x7120b1f8e5b73c0C0DC99C6e52Fe4937E7EA11e0) |  0/0 |  0x7120b1f8e5b73c0C0DC99C6e52Fe4937E7EA11e0 |   | |--------|--------|--------|--------|
 
 ### Admins 
 | Role |Contract |
