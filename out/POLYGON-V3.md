@@ -42,12 +42,13 @@
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
-|  emergencyReserveState |  Governance,Multi-sig | |--------|--------|
+|  pausePool |  Multi-sig | |--------|--------|
+|  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
 |  reserveState |  Governance | |--------|--------|
 |  adminsConfiguration |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
-|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
+|  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|
 
 ### contracts

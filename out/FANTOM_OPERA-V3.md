@@ -27,7 +27,8 @@
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Multi-sig | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
-|  emergencyReserveState |  Multi-sig | |--------|--------|
+|  pausePool |  Multi-sig | |--------|--------|
+|  pauseAndFreezeReserve |  Multi-sig | |--------|--------|
 |  reserveState |  Multi-sig | |--------|--------|
 |  adminsConfiguration |  Multi-sig | |--------|--------|
 |  protocolUpgradeablity |  Multi-sig | |--------|--------|

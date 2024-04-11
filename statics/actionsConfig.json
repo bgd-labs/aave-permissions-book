@@ -18,7 +18,11 @@
   "updateReserveCaps": ["setBorrowCap", "setSupplyCap"],
   "updateReserveSettings": ["setEModeCategory", "setAssetEModeCategory"],
   "configureCollateral": ["configureReserveAsCollateral"],
-  "setReserveConfiguration": ["setConfiguration", "configureEModeCategory"],
+  "setReserveConfiguration": [
+    "setConfiguration",
+    "configureEModeCategory",
+    "setReserveActive"
+  ],
   "reserveUpgradeability": [
     "updateAToken",
     "updateVariableDebtToken",
@@ -26,14 +30,8 @@
     "setAssetSources",
     "setFallbackOracle"
   ],
-
-  "emergencyReserveState": [
-    "setReserveFreeze",
-    "setReservePause",
-    "setPoolPause",
-    "setFreeze",
-    "setReserveActive"
-  ],
+  "pausePool": ["setPoolPause"],
+  "pauseAndFreezeReserve": ["setReserveFreeze", "setReservePause"],
   "reserveState": [
     "initReserves",
     "enableAssets",
@@ -59,7 +57,7 @@
     "allowReceiverBridgeAdapters",
     "disallowReceiverBridgeAdapters"
   ],
-  "updateAdiMessageState": [
+  "retryAndInvalidateMessages": [
     "updateMessagesValidityTimestamp",
     "retryEnvelope",
     "retryTransaction"
@@ -71,5 +69,5 @@
     "setVotingConfigs",
     "setPowerStrategy"
   ],
-  "updateProposalState": ["cancelProposal"]
+  "cancelPermissions": ["cancelProposal"]
 }

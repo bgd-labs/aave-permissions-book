@@ -25,11 +25,11 @@
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
-|  emergencyReserveState |  Multi-sig | |--------|--------|
+|  pausePool |  Multi-sig | |--------|--------|
 |  reserveState |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
-|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
+|  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|
 
 ### contracts

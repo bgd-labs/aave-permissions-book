@@ -32,14 +32,15 @@
 |  updateReserveCaps |  Governance,Multi-sig | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
-|  setReserveConfiguration |  Governance | |--------|--------|
+|  setReserveConfiguration |  Governance,Multi-sig | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
-|  emergencyReserveState |  Governance,Multi-sig | |--------|--------|
+|  pausePool |  Multi-sig | |--------|--------|
+|  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
 |  reserveState |  Governance,Multi-sig | |--------|--------|
 |  adminsConfiguration |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
-|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
+|  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

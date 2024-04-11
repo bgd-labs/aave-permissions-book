@@ -17,9 +17,9 @@
 |  configureCollateral |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
-|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
+|  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|
-|  updateProposalState |  Multi-sig | |--------|--------|
+|  cancelPermissions |  Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
