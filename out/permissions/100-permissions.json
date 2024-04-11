@@ -438,7 +438,7 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 33374447
+      "latestBlockNumber": 33386842
     },
     "gsmRoles": {},
     "govV3": {
@@ -577,7 +577,7 @@
             }
           ]
         },
-        "undefined": {
+        "Gnosis native adapter": {
           "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
           "modifiers": [
             {
@@ -699,7 +699,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 33374447
+      "latestCCCBlockNumber": 33386843
     }
   },
   "TENDERLY": {

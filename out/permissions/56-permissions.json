@@ -472,7 +472,7 @@
           "0x971F1C94b139AdEdedA729DA636e2B0C433Ff595"
         ]
       },
-      "latestBlockNumber": 37741758
+      "latestBlockNumber": 37762982
     },
     "gsmRoles": {},
     "govV3": {
@@ -611,7 +611,7 @@
             }
           ]
         },
-        "undefined": {
+        "CCIP adapter": {
           "address": "0xAE93BEa44dcbE52B625169588574d31e36fb3A67",
           "modifiers": [
             {
@@ -733,7 +733,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 37741759
+      "latestCCCBlockNumber": 37762984
     }
   },
   "TENDERLY": {

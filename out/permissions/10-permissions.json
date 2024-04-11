@@ -551,7 +551,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 118582909
+      "latestBlockNumber": 118614810
     },
     "gsmRoles": {},
     "govV3": {
@@ -672,7 +672,7 @@
             }
           ]
         },
-        "undefined": {
+        "Optimism native adapter": {
           "address": "0xAE93BEa44dcbE52B625169588574d31e36fb3A67",
           "modifiers": [
             {
@@ -774,7 +774,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 118582915
+      "latestCCCBlockNumber": 118614817
     }
   },
   "TENDERLY": {

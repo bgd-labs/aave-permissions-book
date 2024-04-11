@@ -476,7 +476,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 16434685
+      "latestBlockNumber": 16504592
     },
     "gsmRoles": {},
     "govV3": {
@@ -597,7 +597,7 @@
             }
           ]
         },
-        "undefined": {
+        "Metis native adapter": {
           "address": "0xf41193E25408F652AF878c47E4401A01B5E4B682",
           "modifiers": [
             {
@@ -699,7 +699,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 16434691
+      "latestCCCBlockNumber": 16504598
     }
   }
 }

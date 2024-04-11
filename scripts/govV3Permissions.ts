@@ -6,17 +6,11 @@ import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners } from '../helpers/guardian.js';
 import {
   ICrossChainController_ABI,
-  IGovernanceCore_ABI,
-  IVotingPortal_ABI,
-  IVotingMachineWithProofs_ABI,
-  IPayloadsControllerCore_ABI,
   IWithGuardian_ABI,
   IOwnable_ABI,
   IRescuable_ABI,
 } from '@bgd-labs/aave-address-book';
-import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
 import baseAdapter from '../abis/BaseAdapter.json' assert { type: 'json' };
-import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
 
 export const resolveGovV3Modifiers = async (
   addressBook: any,
@@ -411,8 +405,18 @@ export const resolveGovV3Modifiers = async (
       }
 
       let bridgeAdapterName = `BridgeAdapter${i}`;
-      if (addressNames && addressNames[receiverBridgesArray[i]] !== '') {
-        bridgeAdapterName = addressNames[receiverBridgesArray[i]];
+
+      try {
+        const bridgeAdapterContract = new ethers.Contract(
+          receiverBridgesArray[i],
+          baseAdapter,
+          provider,
+        );
+        bridgeAdapterName = await bridgeAdapterContract.adapterName();
+      } catch (error) {
+        if (addressNames && addressNames[receiverBridgesArray[i]] !== '') {
+          bridgeAdapterName = addressNames[receiverBridgesArray[i]];
+        }
       }
 
       obj[bridgeAdapterName] = {

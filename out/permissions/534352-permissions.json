@@ -514,7 +514,7 @@
           "0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e"
         ]
       },
-      "latestBlockNumber": 4767870
+      "latestBlockNumber": 4779441
     },
     "gsmRoles": {},
     "govV3": {
@@ -635,7 +635,7 @@
             }
           ]
         },
-        "undefined": {
+        "Scroll native adapter": {
           "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
           "modifiers": [
             {
@@ -737,7 +737,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 4767871
+      "latestCCCBlockNumber": 4779442
     }
   }
 }

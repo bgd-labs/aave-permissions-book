@@ -531,7 +531,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 199610843
+      "latestBlockNumber": 199864621
     },
     "gsmRoles": {},
     "govV3": {
@@ -652,7 +652,7 @@
             }
           ]
         },
-        "undefined": {
+        "Arbitrum native adapter": {
           "address": "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d",
           "modifiers": [
             {
@@ -754,7 +754,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 199610886
+      "latestCCCBlockNumber": 199864679
     }
   },
   "TENDERLY": {

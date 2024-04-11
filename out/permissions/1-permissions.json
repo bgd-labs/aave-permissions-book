@@ -1265,7 +1265,7 @@
           "0x8F2411a538381aae2b464499005F0211e867d84f"
         ]
       },
-      "latestBlockNumber": 19626324
+      "latestBlockNumber": 19631548
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -1285,7 +1285,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 19626314
+        "latestBlockNumber": 19631548
       },
       "GSM_USDT": {
         "role": {
@@ -1304,7 +1304,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 19626314
+        "latestBlockNumber": 19631548
       }
     },
     "govV3": {}
@@ -2045,7 +2045,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 19625865
+      "latestBlockNumber": 19631545
     },
     "gsmRoles": {},
     "govV3": {
@@ -2326,8 +2326,8 @@
             }
           ]
         },
-        "PolygonAdapterEthereum": {
-          "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
+        "CCIP adapter": {
+          "address": "0xB7a6618df58626C3a122ABAFD6Ee63Af63f3Ef29",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -2395,8 +2395,8 @@
             }
           ]
         },
-        "undefined": {
-          "address": "0xB7a6618df58626C3a122ABAFD6Ee63Af63f3Ef29",
+        "Polygon native adapter": {
+          "address": "0x1562F1b2487F892BBA8Ef325aF054Fd157510a71",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -2506,7 +2506,7 @@
               "modifier": "onlyApprovedBridges",
               "addresses": [
                 {
-                  "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
+                  "address": "0xB7a6618df58626C3a122ABAFD6Ee63Af63f3Ef29",
                   "owners": []
                 },
                 {
@@ -2518,7 +2518,7 @@
                   "owners": []
                 },
                 {
-                  "address": "0xB7a6618df58626C3a122ABAFD6Ee63Af63f3Ef29",
+                  "address": "0x1562F1b2487F892BBA8Ef325aF054Fd157510a71",
                   "owners": []
                 }
               ],
@@ -2537,7 +2537,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 19625866
+      "latestCCCBlockNumber": 19631547
     }
   }
 }
