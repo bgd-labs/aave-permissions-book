@@ -20,12 +20,13 @@
 | action |can be executed by |
 |----------|----------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
+|  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance | |--------|--------|
+|  reserveUpgradeability |  Governance | |--------|--------|
 |  emergencyReserveState |  Multi-sig | |--------|--------|
 |  reserveState |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
-|  reserveUpgradeability |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
 |  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|

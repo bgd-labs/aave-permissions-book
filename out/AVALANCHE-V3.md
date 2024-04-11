@@ -34,16 +34,17 @@
 | action |can be executed by |
 |----------|----------|
 |  configureBorrows |  Governance | |--------|--------|
-|  updateReserveBorrowSettings |  Governance,Multi-sig | |--------|--------|
+|  updateReserveBorrowSettings |  Governance | |--------|--------|
 |  configureProtocolFees |  Governance | |--------|--------|
-|  updateReserveSettings |  Governance,Multi-sig | |--------|--------|
-|  configureCollateral |  Governance,Multi-sig | |--------|--------|
+|  updateReserveCaps |  Governance,Multi-sig | |--------|--------|
+|  updateReserveSettings |  Governance | |--------|--------|
+|  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance | |--------|--------|
+|  reserveUpgradeability |  Governance | |--------|--------|
 |  emergencyReserveState |  Governance,Multi-sig | |--------|--------|
 |  reserveState |  Governance | |--------|--------|
 |  adminsConfiguration |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
-|  reserveUpgradeability |  Governance,Multi-sig | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
 |  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|

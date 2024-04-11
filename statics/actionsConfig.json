@@ -7,7 +7,6 @@
     "setReserveBorrowing",
     "setBorrowableInIsolation",
     "setDebtCeiling",
-    "setBorrowCap",
     "setReserveFactor",
     "setLiquidationProtocolFee"
   ],
@@ -16,13 +15,18 @@
     "updateFlashloanPremiumTotal",
     "updateFlashloanPremiumToProtocol"
   ],
-  "updateReserveSettings": [
-    "updateCaps",
-    "setEModeCategory",
-    "setAssetEModeCategory"
-  ],
-  "configureCollateral": ["setSupplyCap", "configureReserveAsCollateral"],
+  "updateReserveCaps": ["setBorrowCap", "setSupplyCap"],
+  "updateReserveSettings": ["setEModeCategory", "setAssetEModeCategory"],
+  "configureCollateral": ["configureReserveAsCollateral"],
   "setReserveConfiguration": ["setConfiguration", "configureEModeCategory"],
+  "reserveUpgradeability": [
+    "updateAToken",
+    "updateVariableDebtToken",
+    "setReserveInterestRateStrategyAddress",
+    "setAssetSources",
+    "setFallbackOracle"
+  ],
+
   "emergencyReserveState": [
     "setReserveFreeze",
     "setReservePause",
@@ -46,13 +50,6 @@
     "setPriceOracleSentinel",
     "setPoolDataProvider",
     "setPriceOracle"
-  ],
-  "reserveUpgradeability": [
-    "updateAToken",
-    "updateVariableDebtToken",
-    "setReserveInterestRateStrategyAddress",
-    "setAssetSources",
-    "setFallbackOracle"
   ],
   "adiConfigurations": [
     "approveSenders",

@@ -10,6 +10,10 @@
 ### actions
 | action |can be executed by |
 |----------|----------|
+|  updateReserveBorrowSettings |  Governance | |--------|--------|
+|  updateReserveSettings |  Governance | |--------|--------|
+|  configureCollateral |  Governance | |--------|--------|
+|  reserveUpgradeability |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
 |  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|

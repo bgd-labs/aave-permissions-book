@@ -18,34 +18,43 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
   const actionsObject: Record<string, Set<string>> = {};
   Object.keys(actionsConfig).forEach((action) => {
     actionsObject[action] = new Set<string>();
-    for (let contractName of Object.keys(poolInfo)) {
-      const contract = poolInfo[contractName];
+    if (
+      action === 'updateReserveBorrowSettings' ||
+      action === 'configureCollateral' ||
+      action === 'updateReserveSettings' ||
+      action === 'reserveUpgradeability'
+    ) {
+      actionsObject[action].add(Controller.GOV_V3);
+    } else {
+      for (let contractName of Object.keys(poolInfo)) {
+        const contract = poolInfo[contractName];
 
-      // search all modifiers
-      contract.modifiers.forEach((modifier) => {
-        const hasFunction = modifier.functions.some((functionName: string) =>
-          // @ts-ignore
-          actionsConfig[action].includes(functionName),
-        );
-        if (hasFunction) {
-          modifier.addresses.map((addressInfo) => {
-            if (addressInfo.owners.length > 0) {
-              actionsObject[action].add(Controller.MULTI_SIG);
-            } else {
-              const ownedInfo = isOwnedAndByWho(
-                addressInfo.address,
-                poolInfo,
-                govInfo,
-              );
-              if (ownedInfo.owned) {
-                actionsObject[action].add(ownedInfo.ownedBy);
+        // search all modifiers
+        contract.modifiers.forEach((modifier) => {
+          const hasFunction = modifier.functions.some((functionName: string) =>
+            // @ts-ignore
+            actionsConfig[action].includes(functionName),
+          );
+          if (hasFunction) {
+            modifier.addresses.map((addressInfo) => {
+              if (addressInfo.owners.length > 0) {
+                actionsObject[action].add(Controller.MULTI_SIG);
               } else {
-                actionsObject[action].add(Controller.EOA);
+                const ownedInfo = isOwnedAndByWho(
+                  addressInfo.address,
+                  poolInfo,
+                  govInfo,
+                );
+                if (ownedInfo.owned) {
+                  actionsObject[action].add(ownedInfo.ownedBy);
+                } else {
+                  actionsObject[action].add(Controller.EOA);
+                }
               }
-            }
-          });
-        }
-      });
+            });
+          }
+        });
+      }
     }
   });
 

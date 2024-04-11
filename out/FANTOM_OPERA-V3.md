@@ -20,16 +20,17 @@
 | action |can be executed by |
 |----------|----------|
 |  configureBorrows |  Multi-sig | |--------|--------|
-|  updateReserveBorrowSettings |  Multi-sig | |--------|--------|
+|  updateReserveBorrowSettings |  Governance | |--------|--------|
 |  configureProtocolFees |  Multi-sig | |--------|--------|
-|  updateReserveSettings |  Multi-sig | |--------|--------|
-|  configureCollateral |  Multi-sig | |--------|--------|
+|  updateReserveCaps |  Multi-sig | |--------|--------|
+|  updateReserveSettings |  Governance | |--------|--------|
+|  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Multi-sig | |--------|--------|
+|  reserveUpgradeability |  Governance | |--------|--------|
 |  emergencyReserveState |  Multi-sig | |--------|--------|
 |  reserveState |  Multi-sig | |--------|--------|
 |  adminsConfiguration |  Multi-sig | |--------|--------|
 |  protocolUpgradeablity |  Multi-sig | |--------|--------|
-|  reserveUpgradeability |  Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
