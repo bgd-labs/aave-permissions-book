@@ -435,7 +435,7 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 33363468
+      "latestBlockNumber": 33380136
     },
     "gsmRoles": {},
     "govV3": {
@@ -575,8 +575,8 @@
             }
           ]
         },
-        "GnosisChainAdapter": {
-          "address": "0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b",
+        "undefined": {
+          "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -668,7 +668,7 @@
                   "owners": []
                 },
                 {
-                  "address": "0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b",
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
                   "owners": []
                 }
               ],
@@ -694,7 +694,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 33363479
+      "latestCCCBlockNumber": 33380150
     }
   },
   "TENDERLY": {

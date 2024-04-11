@@ -586,7 +586,7 @@
           "0xab515542d621574f9b5212d50593cD0C07e641bD"
         ]
       },
-      "latestBlockNumber": 55644752
+      "latestBlockNumber": 55682305
     },
     "gsmRoles": {},
     "govV3": {
@@ -707,8 +707,8 @@
             }
           ]
         },
-        "PolygonAdapterPolygon": {
-          "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
+        "undefined": {
+          "address": "0x853649f897383f89d8441346Cf26a9ed02720B02",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -745,24 +745,6 @@
         },
         "HyperLaneAdapter": {
           "address": "0x3c25b96fF62D21E90556869272a277eE2E229747",
-          "modifiers": [
-            {
-              "modifier": "trustedRemote",
-              "addresses": [
-                {
-                  "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
-                  "owners": [],
-                  "chain": "1"
-                }
-              ],
-              "functions": [
-                "receiveMessage"
-              ]
-            }
-          ]
-        },
-        "undefined": {
-          "address": "0xe79757D55a1600eF28D816a893E78E9FCDE2019E",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -851,7 +833,7 @@
               "modifier": "onlyApprovedBridges",
               "addresses": [
                 {
-                  "address": "0xb13712De579E1f9943502FFCf72eab6ec348cF79",
+                  "address": "0xe79757D55a1600eF28D816a893E78E9FCDE2019E",
                   "owners": []
                 },
                 {
@@ -863,7 +845,7 @@
                   "owners": []
                 },
                 {
-                  "address": "0xe79757D55a1600eF28D816a893E78E9FCDE2019E",
+                  "address": "0x853649f897383f89d8441346Cf26a9ed02720B02",
                   "owners": []
                 }
               ],
@@ -891,7 +873,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 55644754
+      "latestCCCBlockNumber": 55682307
     }
   },
   "V2": {
