@@ -285,15 +285,11 @@ export const generateTable = (network: string, pool: string): string => {
     for (let modifier of contract.modifiers) {
       for (let modifierAddress of modifier.addresses) {
         if (!poolGuardians[modifierAddress.address]) {
-          poolGuardians[modifierAddress.address] = {
-            owners: [],
-            threshold: 0,
-          };
           if (modifierAddress.owners.length > 0) {
-            poolGuardians[modifierAddress.address].owners =
-              modifierAddress.owners;
-            poolGuardians[modifierAddress.address].threshold =
-              modifierAddress.signersThreshold;
+            poolGuardians[modifierAddress.address] = {
+              owners: modifierAddress.owners,
+              threshold: modifierAddress.signersThreshold,
+            };
           }
         }
       }
@@ -385,15 +381,11 @@ export const generateTable = (network: string, pool: string): string => {
       for (let modifier of contract.modifiers) {
         for (let modifierAddress of modifier.addresses) {
           if (!poolGuardians[modifierAddress.address]) {
-            poolGuardians[modifierAddress.address] = {
-              owners: [],
-              threshold: 0,
-            };
             if (modifierAddress.owners.length > 0) {
-              poolGuardians[modifierAddress.address].owners =
-                modifierAddress.owners;
-              poolGuardians[modifierAddress.address].threshold =
-                modifierAddress.signersThreshold;
+              poolGuardians[modifierAddress.address] = {
+                owners: modifierAddress.owners,
+                threshold: modifierAddress.signersThreshold,
+              };
             }
           }
         }

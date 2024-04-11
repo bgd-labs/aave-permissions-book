@@ -34,10 +34,3 @@
 |  [ABPT](https://etherscan.io/address/0x41A08648C3766F9F9d85598fF102a08f4ef84F84) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  setCap, setPublicSwap, createPool, updateWeight, updateWeightsGradually, commitAddToken, applyAddToken, removeToken, whitelistLiquidityProvider, removeWhitelistedLiquidityProvider | |--------|--------|--------|--------|--------|
 |  [BPT](https://etherscan.io/address/0xC697051d1C6296C24aE3bceF39acA743861D9A81) |  - |  onlyController |  [ABPT](https://etherscan.io/address/0x41A08648C3766F9F9d85598fF102a08f4ef84F84) |  setSwapFee, setController, setPublicSwap, finalize, bind, rebind, unbind | |--------|--------|--------|--------|--------|
 
-### Guardians 
-| Guardian |Threshold |Address |Owners |
-|----------|----------|----------|----------|
-|  [0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A (Safe)](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  0/0 |  0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A |   | |--------|--------|--------|--------|
-|  [0xD3cF979e676265e4f6379749DECe4708B9A22476 (Safe)](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  0/0 |  0xD3cF979e676265e4f6379749DECe4708B9A22476 |   | |--------|--------|--------|--------|
-|  [0x41A08648C3766F9F9d85598fF102a08f4ef84F84 (Safe)](https://etherscan.io/address/0x41A08648C3766F9F9d85598fF102a08f4ef84F84) |  0/0 |  0x41A08648C3766F9F9d85598fF102a08f4ef84F84 |   | |--------|--------|--------|--------|
-

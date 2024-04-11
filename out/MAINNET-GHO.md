@@ -42,14 +42,6 @@
 ### Guardians 
 | Guardian |Threshold |Address |Owners |
 |----------|----------|----------|----------|
-|  [GHO aToken](https://etherscan.io/address/0x00907f9921424583e7ffBfEdf84F92B7B2Be4977) |  0/0 |  0x00907f9921424583e7ffBfEdf84F92B7B2Be4977 |   | |--------|--------|--------|--------|
-|  [0xb639D208Bcf0589D54FaC24E655C79EC529762B8 (Safe)](https://etherscan.io/address/0xb639D208Bcf0589D54FaC24E655C79EC529762B8) |  0/0 |  0xb639D208Bcf0589D54FaC24E655C79EC529762B8 |   | |--------|--------|--------|--------|
-|  [0x0d8eFfC11dF3F229AA1EA0509BC9DFa632A13578 (Safe)](https://etherscan.io/address/0x0d8eFfC11dF3F229AA1EA0509BC9DFa632A13578) |  0/0 |  0x0d8eFfC11dF3F229AA1EA0509BC9DFa632A13578 |   | |--------|--------|--------|--------|
-|  [0x686F8D21520f4ecEc7ba577be08354F4d1EB8262 (Safe)](https://etherscan.io/address/0x686F8D21520f4ecEc7ba577be08354F4d1EB8262) |  0/0 |  0x686F8D21520f4ecEc7ba577be08354F4d1EB8262 |   | |--------|--------|--------|--------|
-|  [0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A (Safe)](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  0/0 |  0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A |   | |--------|--------|--------|--------|
-|  [0x8F2411a538381aae2b464499005F0211e867d84f (Safe)](https://etherscan.io/address/0x8F2411a538381aae2b464499005F0211e867d84f) |  0/0 |  0x8F2411a538381aae2b464499005F0211e867d84f |   | |--------|--------|--------|--------|
-|  [GSM_USDC_ORACLE_SWAP_FREEZER](https://etherscan.io/address/0xef6beCa8D9543eC007bceA835aF768B58F730C1f) |  0/0 |  0xef6beCa8D9543eC007bceA835aF768B58F730C1f |   | |--------|--------|--------|--------|
-|  [GSM_USDT_ORACLE_SWAP_FREEZER](https://etherscan.io/address/0x71381e6718b37C12155CB961Ca3D374A8BfFa0e5) |  0/0 |  0x71381e6718b37C12155CB961Ca3D374A8BfFa0e5 |   | |--------|--------|--------|--------|
 |  [0x8513e6F37dBc52De87b166980Fa3F50639694B60 (Safe)](https://etherscan.io/address/0x8513e6F37dBc52De87b166980Fa3F50639694B60) |  3/4 |  0x8513e6F37dBc52De87b166980Fa3F50639694B60 |  [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://etherscan.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0xb647055A9915bF9c8021a684E175A353525b9890](https://etherscan.io/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x818C277dBE886b934e60aa047250A73529E26A99](https://etherscan.io/address/0x818C277dBE886b934e60aa047250A73529E26A99), [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://etherscan.io/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|--------|
 
 ### Admins 

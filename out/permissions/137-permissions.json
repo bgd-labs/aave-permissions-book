@@ -56,7 +56,8 @@
             "addresses": [
               {
                 "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -82,7 +83,8 @@
             "addresses": [
               {
                 "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -113,7 +115,8 @@
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
-                ]
+                ],
+                "signersThreshold": 6
               }
             ],
             "functions": [
@@ -125,7 +128,8 @@
             "addresses": [
               {
                 "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -137,15 +141,18 @@
             "addresses": [
               {
                 "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               },
               {
                 "address": "0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               },
               {
                 "address": "0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -172,7 +179,8 @@
             "addresses": [
               {
                 "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               },
               {
                 "address": "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
@@ -187,7 +195,8 @@
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
-                ]
+                ],
+                "signersThreshold": 6
               }
             ],
             "functions": [
@@ -204,7 +213,8 @@
             "addresses": [
               {
                 "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -404,7 +414,8 @@
             "addresses": [
               {
                 "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -452,7 +463,8 @@
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
-                ]
+                ],
+                "signersThreshold": 6
               }
             ],
             "functions": [
@@ -607,7 +619,7 @@
           "0xab515542d621574f9b5212d50593cD0C07e641bD"
         ]
       },
-      "latestBlockNumber": 55707243
+      "latestBlockNumber": 55708655
     },
     "gsmRoles": {},
     "govV3": {
@@ -926,7 +938,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 55707254
+      "latestCCCBlockNumber": 55708666
     }
   },
   "V2": {

@@ -216,7 +216,7 @@ export const resolveV3Modifiers = async (
               address: roleAddress,
               owners: owners['RISK_ADMIN'][roleAddress].owners || [],
               signersThreshold:
-                owners['POOL_ADMIN'][roleAddress].threshold || 0,
+                owners['RISK_ADMIN'][roleAddress].threshold || 0,
             };
           }),
         ]),

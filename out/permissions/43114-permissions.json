@@ -56,7 +56,8 @@
             "addresses": [
               {
                 "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -82,7 +83,8 @@
             "addresses": [
               {
                 "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -113,7 +115,8 @@
                   "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
                   "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                ],
+                "signersThreshold": 6
               }
             ],
             "functions": [
@@ -125,7 +128,8 @@
             "addresses": [
               {
                 "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -137,19 +141,23 @@
             "addresses": [
               {
                 "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               },
               {
                 "address": "0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               },
               {
                 "address": "0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               },
               {
                 "address": "0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -176,7 +184,8 @@
             "addresses": [
               {
                 "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               },
               {
                 "address": "0xa35b76E4935449E33C56aB24b23fcd3246f13470",
@@ -191,7 +200,8 @@
                   "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
                   "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                ],
+                "signersThreshold": 6
               }
             ],
             "functions": [
@@ -247,7 +257,8 @@
             "addresses": [
               {
                 "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -447,7 +458,8 @@
             "addresses": [
               {
                 "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
-                "owners": []
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -495,7 +507,8 @@
                   "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
                   "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
                   "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ]
+                ],
+                "signersThreshold": 6
               }
             ],
             "functions": [
@@ -547,7 +560,7 @@
           "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
         ]
       },
-      "latestBlockNumber": 44071809
+      "latestBlockNumber": 44073350
     },
     "gsmRoles": {},
     "govV3": {
@@ -844,7 +857,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 44071815
+      "latestCCCBlockNumber": 44073356
     }
   },
   "V2": {
