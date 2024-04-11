@@ -3,18 +3,18 @@
 ### decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
-|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  true |  Gov V3 | |--------|--------|--------|
-|  [stkABPT](https://etherscan.io/address/0xa1116930326D21fB917d5A27F1E9943A9595fb47) |  true |  Gov V3 | |--------|--------|--------|
-|  [ABPT](https://etherscan.io/address/0x41A08648C3766F9F9d85598fF102a08f4ef84F84) |  true |  Gov V3 | |--------|--------|--------|
+|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  true |  Governance | |--------|--------|--------|
+|  [stkABPT](https://etherscan.io/address/0xa1116930326D21fB917d5A27F1E9943A9595fb47) |  true |  Governance | |--------|--------|--------|
+|  [ABPT](https://etherscan.io/address/0x41A08648C3766F9F9d85598fF102a08f4ef84F84) |  true |  Governance | |--------|--------|--------|
 |  [BPT](https://etherscan.io/address/0xC697051d1C6296C24aE3bceF39acA743861D9A81) |  false |  Not owned | |--------|--------|--------|
 
 ### actions
 | action |can be executed by |
 |----------|----------|
-|  adiConfigurations |  Gov V3 | |--------|--------|
-|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
-|  configureGovernance |  Gov V3 | |--------|--------|
-|  updateProposalState |  Multisg | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
+|  configureGovernance |  Governance | |--------|--------|
+|  updateProposalState |  Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

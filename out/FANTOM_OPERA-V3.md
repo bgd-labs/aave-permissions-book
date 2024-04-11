@@ -3,29 +3,33 @@
 ### decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
-|  [PoolAddressesProvider](https://ftmscan.com/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  false |  Multisg | |--------|--------|--------|
-|  [Pool](https://ftmscan.com/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  true |  Multisg | |--------|--------|--------|
-|  [PoolConfigurator](https://ftmscan.com/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  true |  Multisg | |--------|--------|--------|
+|  [PoolAddressesProvider](https://ftmscan.com/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  false |  Multi-sig | |--------|--------|--------|
+|  [Pool](https://ftmscan.com/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  true |  Multi-sig | |--------|--------|--------|
+|  [PoolConfigurator](https://ftmscan.com/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  true |  Multi-sig | |--------|--------|--------|
 |  [AaveOracle](https://ftmscan.com/address/0xfd6f3c1845604C8AE6c6E402ad17fb9885160754) |  false |  Not owned | |--------|--------|--------|
 |  [Collector](https://ftmscan.com/address/0xBe85413851D195fC6341619cD68BfDc26a25b928) |  true |  Not owned | |--------|--------|--------|
-|  [RewardsController](https://ftmscan.com/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  true |  Multisg | |--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://ftmscan.com/address/0x1DcDA4de2Bf6c7AD9a34788D22aE6b7d55016e1f) |  false |  Multisg | |--------|--------|--------|
+|  [RewardsController](https://ftmscan.com/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  true |  Multi-sig | |--------|--------|--------|
+|  [WrappedTokenGatewayV3](https://ftmscan.com/address/0x1DcDA4de2Bf6c7AD9a34788D22aE6b7d55016e1f) |  false |  Multi-sig | |--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://ftmscan.com/address/0xE387c6053CE8EC9f8C3fa5cE085Af73114a695d3) |  false |  External Contract | |--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://ftmscan.com/address/0x1408401B2A7E28cB747b3e258D0831Fc926bAC51) |  false |  External Contract | |--------|--------|--------|
-|  [EmissionManager](https://ftmscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  false |  Multisg | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://ftmscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  false |  Multisg | |--------|--------|--------|
+|  [EmissionManager](https://ftmscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  false |  Multi-sig | |--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://ftmscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  false |  Multi-sig | |--------|--------|--------|
 |  [ACLManager](https://ftmscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
 
 ### actions
 | action |can be executed by |
 |----------|----------|
-|  configureBorrows |  Multisg | |--------|--------|
-|  configureFees |  Multisg | |--------|--------|
-|  configureCollateral |  Multisg | |--------|--------|
-|  reserveConfiguration |  Multisg | |--------|--------|
-|  reserveState |  Multisg | |--------|--------|
-|  adminsConfiguration |  Multisg | |--------|--------|
-|  upgradeability |  Multisg | |--------|--------|
+|  configureBorrows |  Multi-sig | |--------|--------|
+|  updateReserveBorrowSettings |  Multi-sig | |--------|--------|
+|  configureProtocolFees |  Multi-sig | |--------|--------|
+|  updateReserveSettings |  Multi-sig | |--------|--------|
+|  configureCollateral |  Multi-sig | |--------|--------|
+|  setReserveConfiguration |  Multi-sig | |--------|--------|
+|  emergencyReserveState |  Multi-sig | |--------|--------|
+|  reserveState |  Multi-sig | |--------|--------|
+|  adminsConfiguration |  Multi-sig | |--------|--------|
+|  protocolUpgradeablity |  Multi-sig | |--------|--------|
+|  reserveUpgradeability |  Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

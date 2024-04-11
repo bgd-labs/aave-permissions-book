@@ -3,38 +3,42 @@
 ### decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
-|  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  false |  Gov V3 | |--------|--------|--------|
-|  [Pool](https://andromeda-explorer.metis.io/address/0x90df02551bB792286e8D4f13E0e357b4Bf1D6a57) |  true |  Gov V3 | |--------|--------|--------|
-|  [PoolConfigurator](https://andromeda-explorer.metis.io/address/0x69FEE8F261E004453BE0800BC9039717528645A6) |  true |  Gov V3 | |--------|--------|--------|
+|  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  false |  Governance | |--------|--------|--------|
+|  [Pool](https://andromeda-explorer.metis.io/address/0x90df02551bB792286e8D4f13E0e357b4Bf1D6a57) |  true |  Governance | |--------|--------|--------|
+|  [PoolConfigurator](https://andromeda-explorer.metis.io/address/0x69FEE8F261E004453BE0800BC9039717528645A6) |  true |  Governance | |--------|--------|--------|
 |  [AaveOracle](https://andromeda-explorer.metis.io/address/0x38D36e85E47eA6ff0d18B0adF12E5fC8984A6f8e) |  false |  Not owned | |--------|--------|--------|
-|  [Collector](https://andromeda-explorer.metis.io/address/0xB5b64c7E00374e766272f8B442Cd261412D4b118) |  true |  Gov V3 | |--------|--------|--------|
-|  [RewardsController](https://andromeda-explorer.metis.io/address/0x30C1b8F0490fa0908863d6Cbd2E36400b4310A6B) |  true |  Gov V3 | |--------|--------|--------|
-|  [EmissionManager](https://andromeda-explorer.metis.io/address/0xfDb2580A1ac4CDc67E4236738b28af59e2022Dd2) |  false |  Gov V3 | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://andromeda-explorer.metis.io/address/0x9E7B73ffD9D2026F3ff4212c29E209E09C8A91F5) |  false |  Gov V3 | |--------|--------|--------|
-|  [RatesFactory](https://andromeda-explorer.metis.io/address/0x87Aaba7cf8e1F319d0E3402d68017171201dEcd5) |  true |  Gov V3 | |--------|--------|--------|
-|  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  false |  Gov V3 | |--------|--------|--------|
+|  [Collector](https://andromeda-explorer.metis.io/address/0xB5b64c7E00374e766272f8B442Cd261412D4b118) |  true |  Governance | |--------|--------|--------|
+|  [RewardsController](https://andromeda-explorer.metis.io/address/0x30C1b8F0490fa0908863d6Cbd2E36400b4310A6B) |  true |  Governance | |--------|--------|--------|
+|  [EmissionManager](https://andromeda-explorer.metis.io/address/0xfDb2580A1ac4CDc67E4236738b28af59e2022Dd2) |  false |  Governance | |--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://andromeda-explorer.metis.io/address/0x9E7B73ffD9D2026F3ff4212c29E209E09C8A91F5) |  false |  Governance | |--------|--------|--------|
+|  [RatesFactory](https://andromeda-explorer.metis.io/address/0x87Aaba7cf8e1F319d0E3402d68017171201dEcd5) |  true |  Governance | |--------|--------|--------|
+|  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  false |  Governance | |--------|--------|--------|
 |  [ACLManager](https://andromeda-explorer.metis.io/address/0xcDCb65fc657B701a5100a12eFB663978E7e8fFB8) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  false |  Multisg | |--------|--------|--------|
-|  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  false |  Multisg | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  false |  Multi-sig | |--------|--------|--------|
+|  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  false |  Multi-sig | |--------|--------|--------|
 |  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  false |  External Contract | |--------|--------|--------|
-|  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  true |  Gov V3 | |--------|--------|--------|
-|  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  false |  Gov V3 | |--------|--------|--------|
+|  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  true |  Governance | |--------|--------|--------|
+|  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  false |  Governance | |--------|--------|--------|
 |  [MetisAdapter](https://andromeda-explorer.metis.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  false |  Not owned | |--------|--------|--------|
 |  [undefined](https://andromeda-explorer.metis.io/address/0xf41193E25408F652AF878c47E4401A01B5E4B682) |  false |  Not owned | |--------|--------|--------|
-|  [CrossChainController](https://andromeda-explorer.metis.io/address/0x6fDaFb26915ABD6065a1E1501a37Ac438D877f70) |  true |  Gov V3 | |--------|--------|--------|
+|  [CrossChainController](https://andromeda-explorer.metis.io/address/0x6fDaFb26915ABD6065a1E1501a37Ac438D877f70) |  true |  Governance | |--------|--------|--------|
 
 ### actions
 | action |can be executed by |
 |----------|----------|
-|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
-|  configureFees |  Multisg,Gov V3 | |--------|--------|
-|  configureCollateral |  Gov V3,Multisg | |--------|--------|
-|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
-|  reserveState |  Multisg,Gov V3 | |--------|--------|
-|  adminsConfiguration |  Gov V3 | |--------|--------|
-|  upgradeability |  Gov V3,Multisg | |--------|--------|
-|  adiConfigurations |  Gov V3 | |--------|--------|
-|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
+|  configureBorrows |  Governance | |--------|--------|
+|  updateReserveBorrowSettings |  Governance,Multi-sig | |--------|--------|
+|  configureProtocolFees |  Governance | |--------|--------|
+|  updateReserveSettings |  Governance,Multi-sig | |--------|--------|
+|  configureCollateral |  Governance,Multi-sig | |--------|--------|
+|  setReserveConfiguration |  Governance | |--------|--------|
+|  emergencyReserveState |  Governance,Multi-sig | |--------|--------|
+|  reserveState |  Governance | |--------|--------|
+|  adminsConfiguration |  Governance | |--------|--------|
+|  protocolUpgradeablity |  Governance | |--------|--------|
+|  reserveUpgradeability |  Governance,Multi-sig | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

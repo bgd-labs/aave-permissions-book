@@ -10,10 +10,10 @@
 ### actions
 | action |can be executed by |
 |----------|----------|
-|  adiConfigurations |  Gov V3 | |--------|--------|
-|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
-|  configureGovernance |  Gov V3 | |--------|--------|
-|  updateProposalState |  Multisg | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
+|  configureGovernance |  Governance | |--------|--------|
+|  updateProposalState |  Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

@@ -3,41 +3,45 @@
 ### decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
-|  [PoolAddressesProvider](https://basescan.org/address/0xe20fCBdBfFC4Dd138cE8b2E6FBb6CB49777ad64D) |  false |  Gov V3 | |--------|--------|--------|
-|  [Pool](https://basescan.org/address/0xA238Dd80C259a72e81d7e4664a9801593F98d1c5) |  true |  Gov V3 | |--------|--------|--------|
-|  [PoolConfigurator](https://basescan.org/address/0x5731a04B1E775f0fdd454Bf70f3335886e9A96be) |  true |  Gov V3 | |--------|--------|--------|
+|  [PoolAddressesProvider](https://basescan.org/address/0xe20fCBdBfFC4Dd138cE8b2E6FBb6CB49777ad64D) |  false |  Governance | |--------|--------|--------|
+|  [Pool](https://basescan.org/address/0xA238Dd80C259a72e81d7e4664a9801593F98d1c5) |  true |  Governance | |--------|--------|--------|
+|  [PoolConfigurator](https://basescan.org/address/0x5731a04B1E775f0fdd454Bf70f3335886e9A96be) |  true |  Governance | |--------|--------|--------|
 |  [AaveOracle](https://basescan.org/address/0x2Cc0Fc26eD4563A5ce5e8bdcfe1A2878676Ae156) |  false |  Not owned | |--------|--------|--------|
-|  [Collector](https://basescan.org/address/0xBA9424d650A4F5c80a0dA641254d1AcCE2A37057) |  true |  Gov V3 | |--------|--------|--------|
-|  [RewardsController](https://basescan.org/address/0xf9cc4F0D883F1a1eb2c253bdb46c254Ca51E1F44) |  true |  Gov V3 | |--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://basescan.org/address/0x8be473dCfA93132658821E67CbEB684ec8Ea2E74) |  false |  Gov V3 | |--------|--------|--------|
+|  [Collector](https://basescan.org/address/0xBA9424d650A4F5c80a0dA641254d1AcCE2A37057) |  true |  Governance | |--------|--------|--------|
+|  [RewardsController](https://basescan.org/address/0xf9cc4F0D883F1a1eb2c253bdb46c254Ca51E1F44) |  true |  Governance | |--------|--------|--------|
+|  [WrappedTokenGatewayV3](https://basescan.org/address/0x8be473dCfA93132658821E67CbEB684ec8Ea2E74) |  false |  Governance | |--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://basescan.org/address/0x2E549104c516b8657A7D888494DfbAbD7C70b464) |  false |  External Contract | |--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://basescan.org/address/0x78F8Bd884C3D738B74B420540659c82f392820e0) |  false |  External Contract | |--------|--------|--------|
-|  [EmissionManager](https://basescan.org/address/0x6533A273F3aC84Df91DCD654D6EBAbA73687e246) |  false |  Gov V3 | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://basescan.org/address/0x2f6571d3Eb9a4e350C68C36bCD2afe39530078E2) |  false |  Gov V3 | |--------|--------|--------|
-|  [RatesFactory](https://basescan.org/address/0x0D1Fe8eAdb0a3e44C4Cc9D73De8dA50C1E475832) |  true |  Gov V3 | |--------|--------|--------|
-|  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  false |  Gov V3 | |--------|--------|--------|
+|  [EmissionManager](https://basescan.org/address/0x6533A273F3aC84Df91DCD654D6EBAbA73687e246) |  false |  Governance | |--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://basescan.org/address/0x2f6571d3Eb9a4e350C68C36bCD2afe39530078E2) |  false |  Governance | |--------|--------|--------|
+|  [RatesFactory](https://basescan.org/address/0x0D1Fe8eAdb0a3e44C4Cc9D73De8dA50C1E475832) |  true |  Governance | |--------|--------|--------|
+|  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  false |  Governance | |--------|--------|--------|
 |  [ACLManager](https://basescan.org/address/0x43955b0899Ab7232E3a454cf84AedD22Ad46FD33) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://basescan.org/address/0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6) |  false |  Multisg | |--------|--------|--------|
-|  [FreezeSteward](https://basescan.org/address/0x4A4c73d563395ad827511F70097d4Ef82E653805) |  false |  Multisg | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://basescan.org/address/0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6) |  false |  Multi-sig | |--------|--------|--------|
+|  [FreezeSteward](https://basescan.org/address/0x4A4c73d563395ad827511F70097d4Ef82E653805) |  false |  Multi-sig | |--------|--------|--------|
 |  [BaseBridgeExecutor](https://basescan.org/address/0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45) |  false |  External Contract | |--------|--------|--------|
-|  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  true |  Gov V3 | |--------|--------|--------|
-|  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  false |  Gov V3 | |--------|--------|--------|
+|  [PayloadsController](https://basescan.org/address/0x2DC219E716793fb4b21548C0f009Ba3Af753ab01) |  true |  Governance | |--------|--------|--------|
+|  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  false |  Governance | |--------|--------|--------|
 |  [CBaseAdapter](https://basescan.org/address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) |  false |  Not owned | |--------|--------|--------|
 |  [undefined](https://basescan.org/address/0x7120b1f8e5b73c0C0DC99C6e52Fe4937E7EA11e0) |  false |  Not owned | |--------|--------|--------|
-|  [CrossChainController](https://basescan.org/address/0x529467C76f234F2bD359d7ecF7c660A2846b04e2) |  true |  Gov V3 | |--------|--------|--------|
+|  [CrossChainController](https://basescan.org/address/0x529467C76f234F2bD359d7ecF7c660A2846b04e2) |  true |  Governance | |--------|--------|--------|
 
 ### actions
 | action |can be executed by |
 |----------|----------|
-|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
-|  configureFees |  Multisg,Gov V3 | |--------|--------|
-|  configureCollateral |  Gov V3,Multisg | |--------|--------|
-|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
-|  reserveState |  Multisg,Gov V3 | |--------|--------|
-|  adminsConfiguration |  Gov V3 | |--------|--------|
-|  upgradeability |  Gov V3,Multisg | |--------|--------|
-|  adiConfigurations |  Gov V3 | |--------|--------|
-|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
+|  configureBorrows |  Governance | |--------|--------|
+|  updateReserveBorrowSettings |  Governance,Multi-sig | |--------|--------|
+|  configureProtocolFees |  Governance | |--------|--------|
+|  updateReserveSettings |  Governance,Multi-sig | |--------|--------|
+|  configureCollateral |  Governance,Multi-sig | |--------|--------|
+|  setReserveConfiguration |  Governance | |--------|--------|
+|  emergencyReserveState |  Governance,Multi-sig | |--------|--------|
+|  reserveState |  Governance | |--------|--------|
+|  adminsConfiguration |  Governance | |--------|--------|
+|  protocolUpgradeablity |  Governance | |--------|--------|
+|  reserveUpgradeability |  Governance,Multi-sig | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

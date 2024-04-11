@@ -1,60 +1,58 @@
 {
   "configureBorrows": [
-    "setReserveBorrowing",
-    "setReserveStableRateBorrowing",
-    "setBorrowableInIsolation",
-    "setDebtCeiling",
-    "setSiloedBorrowing",
-    "setBorrowCap",
-    "resetIsolationModeTotalDebt"
-  ],
-  "configureFees": [
-    "setReserveFactor",
-    "setLiquidationProtocolFee",
-    "updateBridgeProtocolFee",
-    "updateFlashloanPremiumTotal",
-    "updateFlashloanPremiumToProtocol",
+    "resetIsolationModeTotalDebt",
     "updateFlashloanPremiums"
   ],
-  "configureCollateral": [
-    "setSupplyCap",
-    "configureReserveAsCollateral",
-    "setUnbackedMintCap"
+  "updateReserveBorrowSettings": [
+    "setReserveBorrowing",
+    "setBorrowableInIsolation",
+    "setDebtCeiling",
+    "setBorrowCap",
+    "setReserveFactor",
+    "setLiquidationProtocolFee"
   ],
-  "reserveConfiguration": [
-    "setConfiguration",
+  "configureProtocolFees": [
+    "updateBridgeProtocolFee",
+    "updateFlashloanPremiumTotal",
+    "updateFlashloanPremiumToProtocol"
+  ],
+  "updateReserveSettings": [
     "updateCaps",
     "setEModeCategory",
-    "setAssetEModeCategory",
-    "configureEModeCategory"
+    "setAssetEModeCategory"
   ],
-  "reserveState": [
+  "configureCollateral": ["setSupplyCap", "configureReserveAsCollateral"],
+  "setReserveConfiguration": ["setConfiguration", "configureEModeCategory"],
+  "emergencyReserveState": [
     "setReserveFreeze",
     "setReservePause",
+    "setPoolPause",
     "setFreeze",
+    "setReserveActive"
+  ],
+  "reserveState": [
     "initReserves",
     "enableAssets",
     "disableAssets",
-    "setPoolPause",
     "initReserve",
-    "dropReserve",
-    "setReserveActive"
+    "dropReserve"
   ],
   "adminsConfiguration": ["setACLManager", "setACLAdmin"],
-  "upgradeability": [
-    "updateAToken",
-    "updateStableDebtToken",
-    "updateVariableDebtToken",
+  "protocolUpgradeablity": [
+    "setAddress",
     "setPoolImpl",
     "setAddressAsProxy",
     "setPoolConfiguratorImpl",
-    "setPriceOracle",
     "setPriceOracleSentinel",
     "setPoolDataProvider",
+    "setPriceOracle"
+  ],
+  "reserveUpgradeability": [
+    "updateAToken",
+    "updateVariableDebtToken",
     "setReserveInterestRateStrategyAddress",
     "setAssetSources",
-    "setFallbackOracle",
-    "setAddress"
+    "setFallbackOracle"
   ],
   "adiConfigurations": [
     "approveSenders",

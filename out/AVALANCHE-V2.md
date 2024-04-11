@@ -3,32 +3,34 @@
 ### decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
-|  [LendingPoolAddressesProvider](https://snowtrace.io/address/0xb6A86025F0FE1862B372cb0ca18CE3EDe02A318f) |  false |  Gov V3 | |--------|--------|--------|
-|  [LendingPool](https://snowtrace.io/address/0x4F01AeD16D97E3aB5ab2B501154DC9bb0F1A5A2C) |  true |  Gov V3 | |--------|--------|--------|
-|  [LendingPoolConfigurator](https://snowtrace.io/address/0x230B618aD4C475393A7239aE03630042281BD86e) |  true |  Gov V3 | |--------|--------|--------|
-|  [ProofOfReserveExecutorV2](https://snowtrace.io/address/0x7fc3FCb14eF04A48Bb0c12f0c39CD74C249c37d8) |  false |  Gov V3 | |--------|--------|--------|
-|  [ProofOfReserveAggregatorV2](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  false |  Gov V3 | |--------|--------|--------|
+|  [LendingPoolAddressesProvider](https://snowtrace.io/address/0xb6A86025F0FE1862B372cb0ca18CE3EDe02A318f) |  false |  Governance | |--------|--------|--------|
+|  [LendingPool](https://snowtrace.io/address/0x4F01AeD16D97E3aB5ab2B501154DC9bb0F1A5A2C) |  true |  Governance | |--------|--------|--------|
+|  [LendingPoolConfigurator](https://snowtrace.io/address/0x230B618aD4C475393A7239aE03630042281BD86e) |  true |  Governance | |--------|--------|--------|
+|  [ProofOfReserveExecutorV2](https://snowtrace.io/address/0x7fc3FCb14eF04A48Bb0c12f0c39CD74C249c37d8) |  false |  Governance | |--------|--------|--------|
+|  [ProofOfReserveAggregatorV2](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  false |  Governance | |--------|--------|--------|
 |  [AaveOracle](https://snowtrace.io/address/0xdC336Cd4769f4cC7E9d726DA53e6d3fC710cEB89) |  false |  Not owned | |--------|--------|--------|
-|  [LendingRateOracle](https://snowtrace.io/address/0xc34254642B504484465F38Cb1CC396d45a9c7c80) |  false |  Gov V3 | |--------|--------|--------|
-|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  true |  Gov V3 | |--------|--------|--------|
-|  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
-|  [WrappedTokenGatewayV2](https://snowtrace.io/address/0x68c815cB8C8390bc3F2CE99265044dEC9D350C49) |  false |  Gov V3 | |--------|--------|--------|
+|  [LendingRateOracle](https://snowtrace.io/address/0xc34254642B504484465F38Cb1CC396d45a9c7c80) |  false |  Governance | |--------|--------|--------|
+|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  true |  Governance | |--------|--------|--------|
+|  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Governance | |--------|--------|--------|
+|  [WrappedTokenGatewayV2](https://snowtrace.io/address/0x68c815cB8C8390bc3F2CE99265044dEC9D350C49) |  false |  Governance | |--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2EcF2a2e74B19Aab2a62312167aFF4B78E93B6C5) |  false |  Not owned | |--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x935b362EE3E1f342cc48118C528AAbee5118F6e6) |  false |  Not owned | |--------|--------|--------|
-|  [LendingPoolAddressesProviderRegistry](https://snowtrace.io/address/0x4235E22d9C3f28DCDA82b58276cb6370B01265C2) |  false |  Gov V3 | |--------|--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://snowtrace.io/address/0x4235E22d9C3f28DCDA82b58276cb6370B01265C2) |  false |  Governance | |--------|--------|--------|
 |  [DefaultIncentivesController](https://snowtrace.io/address/0x01D83Fe6A10D2f2B7AF17034343746188272cAc9) |  false |  Not owned | |--------|--------|--------|
 
 ### actions
 | action |can be executed by |
 |----------|----------|
-|  configureFees |  Gov V3 | |--------|--------|
-|  configureCollateral |  Gov V3 | |--------|--------|
-|  reserveConfiguration |  Multisg | |--------|--------|
-|  reserveState |  Multisg,Gov V3 | |--------|--------|
-|  upgradeability |  Gov V3,Multisg | |--------|--------|
-|  adiConfigurations |  Gov V3 | |--------|--------|
-|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
-|  configureGovernance |  Gov V3 | |--------|--------|
+|  updateReserveBorrowSettings |  Governance | |--------|--------|
+|  configureCollateral |  Governance | |--------|--------|
+|  setReserveConfiguration |  Governance | |--------|--------|
+|  emergencyReserveState |  Multi-sig | |--------|--------|
+|  reserveState |  Governance | |--------|--------|
+|  protocolUpgradeablity |  Governance | |--------|--------|
+|  reserveUpgradeability |  Governance | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
+|  configureGovernance |  Governance | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

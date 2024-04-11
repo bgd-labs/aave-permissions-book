@@ -3,17 +3,17 @@
 ### decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
-|  [LendToAaveMigrator](https://etherscan.io/address/0x317625234562B1526Ea2FaC4030Ea499C5291de4) |  true |  Gov V3 | |--------|--------|--------|
-|  [EcosystemReserve](https://etherscan.io/address/0x25F2226B597E8F9514B3F68F00f494cF4f286491) |  true |  Gov V3 | |--------|--------|--------|
-|  [EcosystemReserveController](https://etherscan.io/address/0x3d569673dAa0575c936c7c67c4E6AedA69CC630C) |  false |  Gov V3 | |--------|--------|--------|
+|  [LendToAaveMigrator](https://etherscan.io/address/0x317625234562B1526Ea2FaC4030Ea499C5291de4) |  true |  Governance | |--------|--------|--------|
+|  [EcosystemReserve](https://etherscan.io/address/0x25F2226B597E8F9514B3F68F00f494cF4f286491) |  true |  Governance | |--------|--------|--------|
+|  [EcosystemReserveController](https://etherscan.io/address/0x3d569673dAa0575c936c7c67c4E6AedA69CC630C) |  false |  Governance | |--------|--------|--------|
 
 ### actions
 | action |can be executed by |
 |----------|----------|
-|  adiConfigurations |  Gov V3 | |--------|--------|
-|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
-|  configureGovernance |  Gov V3 | |--------|--------|
-|  updateProposalState |  Multisg | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
+|  configureGovernance |  Governance | |--------|--------|
+|  updateProposalState |  Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

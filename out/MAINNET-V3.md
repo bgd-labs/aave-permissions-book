@@ -3,55 +3,59 @@
 ### decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
-|  [PoolAddressesProvider](https://etherscan.io/address/0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e) |  false |  Gov V3 | |--------|--------|--------|
-|  [Pool](https://etherscan.io/address/0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2) |  true |  Gov V3 | |--------|--------|--------|
-|  [PoolConfigurator](https://etherscan.io/address/0x64b761D848206f447Fe2dd461b0c635Ec39EbB27) |  true |  Gov V3 | |--------|--------|--------|
+|  [PoolAddressesProvider](https://etherscan.io/address/0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e) |  false |  Governance | |--------|--------|--------|
+|  [Pool](https://etherscan.io/address/0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2) |  true |  Governance | |--------|--------|--------|
+|  [PoolConfigurator](https://etherscan.io/address/0x64b761D848206f447Fe2dd461b0c635Ec39EbB27) |  true |  Governance | |--------|--------|--------|
 |  [GHOFlashMinter](https://etherscan.io/address/0xb639D208Bcf0589D54FaC24E655C79EC529762B8) |  false |  Not owned | |--------|--------|--------|
 |  [AaveOracle](https://etherscan.io/address/0x54586bE62E3c3580375aE3723C145253060Ca0C2) |  false |  Not owned | |--------|--------|--------|
-|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  true |  Gov V3 | |--------|--------|--------|
-|  [RewardsController](https://etherscan.io/address/0x8164Cc65827dcFe994AB23944CBC90e0aa80bFcb) |  true |  Gov V3 | |--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://etherscan.io/address/0x893411580e590D62dDBca8a703d61Cc4A8c7b2b9) |  false |  Gov V3 | |--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://etherscan.io/address/0xADC0A53095A0af87F3aa29FE0715B5c28016364e) |  false |  Gov V3 | |--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://etherscan.io/address/0x02e7B8511831B1b02d9018215a0f8f500Ea5c6B3) |  false |  Gov V3 | |--------|--------|--------|
-|  [EmissionManager](https://etherscan.io/address/0x223d844fc4B006D67c0cDbd39371A9F73f69d974) |  false |  Gov V3 | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://etherscan.io/address/0xbaA999AC55EAce41CcAE355c77809e68Bb345170) |  false |  Gov V3 | |--------|--------|--------|
-|  [RatesFactory](https://etherscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  true |  Gov V3 | |--------|--------|--------|
-|  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
-|  [ProxyAdminLong](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  false |  Gov V3 | |--------|--------|--------|
+|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  true |  Governance | |--------|--------|--------|
+|  [RewardsController](https://etherscan.io/address/0x8164Cc65827dcFe994AB23944CBC90e0aa80bFcb) |  true |  Governance | |--------|--------|--------|
+|  [WrappedTokenGatewayV3](https://etherscan.io/address/0x893411580e590D62dDBca8a703d61Cc4A8c7b2b9) |  false |  Governance | |--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://etherscan.io/address/0xADC0A53095A0af87F3aa29FE0715B5c28016364e) |  false |  Governance | |--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://etherscan.io/address/0x02e7B8511831B1b02d9018215a0f8f500Ea5c6B3) |  false |  Governance | |--------|--------|--------|
+|  [EmissionManager](https://etherscan.io/address/0x223d844fc4B006D67c0cDbd39371A9F73f69d974) |  false |  Governance | |--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://etherscan.io/address/0xbaA999AC55EAce41CcAE355c77809e68Bb345170) |  false |  Governance | |--------|--------|--------|
+|  [RatesFactory](https://etherscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  true |  Governance | |--------|--------|--------|
+|  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Governance | |--------|--------|--------|
+|  [ProxyAdminLong](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  false |  Governance | |--------|--------|--------|
 |  [ACLManager](https://etherscan.io/address/0xc2aaCf6553D20d1e9d78E365AAba8032af9c85b0) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://etherscan.io/address/0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778) |  false |  Multisg | |--------|--------|--------|
-|  [FreezeSteward](https://etherscan.io/address/0x2eE68ACb6A1319de1b49DC139894644E424fefD6) |  false |  Multisg | |--------|--------|--------|
-|  [AaveMerkleDistributor](https://etherscan.io/address/0xa88c6D90eAe942291325f9ae3c66f3563B93FE10) |  false |  Gov V3 | |--------|--------|--------|
-|  [AavePolEthBridge](https://etherscan.io/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  false |  Gov V3 | |--------|--------|--------|
-|  [AaveGovernanceV3](https://etherscan.io/address/0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7) |  true |  Gov V3 | |--------|--------|--------|
-|  [PayloadsController](https://etherscan.io/address/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5) |  true |  Gov V3 | |--------|--------|--------|
-|  [VotingMachine](https://etherscan.io/address/0x617332a777780F546261247F621051d0b98975Eb) |  false |  Gov V3 | |--------|--------|--------|
-|  [VotingPortal_Eth_Eth](https://etherscan.io/address/0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f) |  false |  Gov V3 | |--------|--------|--------|
-|  [VotingPortal_Eth_Avax](https://etherscan.io/address/0x33aCEf7365809218485873B7d0d67FeE411B5D79) |  false |  Gov V3 | |--------|--------|--------|
-|  [VotingPortal_Eth_Pol](https://etherscan.io/address/0x9b24C168d6A76b5459B1d47071a54962a4df36c3) |  false |  Gov V3 | |--------|--------|--------|
-|  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  false |  Gov V3 | |--------|--------|--------|
-|  [Executor_lvl2](https://etherscan.io/address/0x17Dd33Ed0e3dD2a80E37489B8A63063161BE6957) |  false |  Gov V3 | |--------|--------|--------|
-|  [EmergencyRegistry](https://etherscan.io/address/0x73C6Fb358dDA8e84D50e98A98F7c0dF32e15C7e9) |  false |  Gov V3 | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://etherscan.io/address/0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778) |  false |  Multi-sig | |--------|--------|--------|
+|  [FreezeSteward](https://etherscan.io/address/0x2eE68ACb6A1319de1b49DC139894644E424fefD6) |  false |  Multi-sig | |--------|--------|--------|
+|  [AaveMerkleDistributor](https://etherscan.io/address/0xa88c6D90eAe942291325f9ae3c66f3563B93FE10) |  false |  Governance | |--------|--------|--------|
+|  [AavePolEthBridge](https://etherscan.io/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  false |  Governance | |--------|--------|--------|
+|  [AaveGovernanceV3](https://etherscan.io/address/0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7) |  true |  Governance | |--------|--------|--------|
+|  [PayloadsController](https://etherscan.io/address/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5) |  true |  Governance | |--------|--------|--------|
+|  [VotingMachine](https://etherscan.io/address/0x617332a777780F546261247F621051d0b98975Eb) |  false |  Governance | |--------|--------|--------|
+|  [VotingPortal_Eth_Eth](https://etherscan.io/address/0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f) |  false |  Governance | |--------|--------|--------|
+|  [VotingPortal_Eth_Avax](https://etherscan.io/address/0x33aCEf7365809218485873B7d0d67FeE411B5D79) |  false |  Governance | |--------|--------|--------|
+|  [VotingPortal_Eth_Pol](https://etherscan.io/address/0x9b24C168d6A76b5459B1d47071a54962a4df36c3) |  false |  Governance | |--------|--------|--------|
+|  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  false |  Governance | |--------|--------|--------|
+|  [Executor_lvl2](https://etherscan.io/address/0x17Dd33Ed0e3dD2a80E37489B8A63063161BE6957) |  false |  Governance | |--------|--------|--------|
+|  [EmergencyRegistry](https://etherscan.io/address/0x73C6Fb358dDA8e84D50e98A98F7c0dF32e15C7e9) |  false |  Governance | |--------|--------|--------|
 |  [PolygonAdapterEthereum](https://etherscan.io/address/0xb13712De579E1f9943502FFCf72eab6ec348cF79) |  false |  Not owned | |--------|--------|--------|
 |  [LayerZeroAdapter](https://etherscan.io/address/0x2a323be63e08E08536Fc3b5d8C6f24825e68895e) |  false |  Not owned | |--------|--------|--------|
 |  [HyperLaneAdapter](https://etherscan.io/address/0x6Abb61beb5848B476d026C4934E8a6415e2E75a8) |  false |  Not owned | |--------|--------|--------|
 |  [undefined](https://etherscan.io/address/0xB7a6618df58626C3a122ABAFD6Ee63Af63f3Ef29) |  false |  Not owned | |--------|--------|--------|
-|  [CrossChainController](https://etherscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  true |  Gov V3 | |--------|--------|--------|
+|  [CrossChainController](https://etherscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  true |  Governance | |--------|--------|--------|
 
 ### actions
 | action |can be executed by |
 |----------|----------|
-|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
-|  configureFees |  Multisg,Gov V3 | |--------|--------|
-|  configureCollateral |  Gov V3,Multisg | |--------|--------|
-|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
-|  reserveState |  Multisg,Gov V3 | |--------|--------|
-|  adminsConfiguration |  Gov V3 | |--------|--------|
-|  upgradeability |  Gov V3,Multisg | |--------|--------|
-|  adiConfigurations |  Gov V3 | |--------|--------|
-|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
-|  configureGovernance |  Gov V3 | |--------|--------|
-|  updateProposalState |  Multisg | |--------|--------|
+|  configureBorrows |  Governance | |--------|--------|
+|  updateReserveBorrowSettings |  Governance,Multi-sig | |--------|--------|
+|  configureProtocolFees |  Governance | |--------|--------|
+|  updateReserveSettings |  Governance,Multi-sig | |--------|--------|
+|  configureCollateral |  Governance,Multi-sig | |--------|--------|
+|  setReserveConfiguration |  Governance | |--------|--------|
+|  emergencyReserveState |  Governance,Multi-sig | |--------|--------|
+|  reserveState |  Governance | |--------|--------|
+|  adminsConfiguration |  Governance | |--------|--------|
+|  protocolUpgradeablity |  Governance | |--------|--------|
+|  reserveUpgradeability |  Governance,Multi-sig | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
+|  configureGovernance |  Governance | |--------|--------|
+|  updateProposalState |  Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

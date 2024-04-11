@@ -9,8 +9,8 @@ export type Decentralization = {
 
 export enum Controller {
   NONE = 'Not owned',
-  GOV_V3 = 'Gov V3',
-  MULTI_SIG = 'Multisg',
+  GOV_V3 = 'Governance',
+  MULTI_SIG = 'Multi-sig',
   EOA = 'External Contract',
 }
 
@@ -20,6 +20,7 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
     actionsObject[action] = new Set<string>();
     for (let contractName of Object.keys(poolInfo)) {
       const contract = poolInfo[contractName];
+
       // search all modifiers
       contract.modifiers.forEach((modifier) => {
         const hasFunction = modifier.functions.some((functionName: string) =>
@@ -39,7 +40,7 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
               if (ownedInfo.owned) {
                 actionsObject[action].add(ownedInfo.ownedBy);
               } else {
-                actionsObject[action].add(addressInfo.address);
+                actionsObject[action].add(Controller.EOA);
               }
             }
           });
@@ -141,29 +142,34 @@ const isOwnedAndByWho = (
   for (let contractName of Object.keys(poolInfo)) {
     const contract = poolInfo[contractName];
     if (contract.address?.toLowerCase() === address.toLowerCase()) {
-      contract.modifiers.forEach((modifierInfo) => {
-        if (
-          modifierInfo.modifier === 'onlyOwner' ||
-          modifierInfo.modifier === 'onlyEthereumGovernanceExecutor' ||
-          modifierInfo.modifier === 'onlyRiskCouncil' ||
-          modifierInfo.modifier === 'onlyEmergencyAdmin'
-        ) {
-          if (modifierInfo.addresses[0].owners.length > 0) {
-            ownerInfo = { owned: true, ownedBy: Controller.MULTI_SIG };
-          } else {
-            const ownedByGov = isOwnedByGov(
-              modifierInfo.addresses[0].address,
-              govInfo,
-              modifierInfo.addresses[0].address,
-            );
-            if (ownedByGov) {
-              ownerInfo = { owned: true, ownedBy: Controller.GOV_V3 };
+      if (contract.proxyAdmin) {
+        ownerInfo = isOwnedAndByWho(contract.proxyAdmin, poolInfo, govInfo);
+      } else {
+        contract.modifiers.forEach((modifierInfo) => {
+          if (
+            modifierInfo.modifier === 'onlyOwner' ||
+            modifierInfo.modifier === 'onlyEthereumGovernanceExecutor' ||
+            (modifierInfo.modifier === 'onlyRiskCouncil' &&
+              contractName !== 'GhoStewardV2') ||
+            modifierInfo.modifier === 'onlyEmergencyAdmin'
+          ) {
+            if (modifierInfo.addresses[0].owners.length > 0) {
+              ownerInfo = { owned: true, ownedBy: Controller.MULTI_SIG };
             } else {
-              ownerInfo = { owned: true, ownedBy: Controller.EOA };
+              const ownedByGov = isOwnedByGov(
+                modifierInfo.addresses[0].address,
+                govInfo,
+                modifierInfo.addresses[0].address,
+              );
+              if (ownedByGov) {
+                ownerInfo = { owned: true, ownedBy: Controller.GOV_V3 };
+              } else {
+                ownerInfo = { owned: true, ownedBy: Controller.EOA };
+              }
             }
           }
-        }
-      });
+        });
+      }
     }
   }
 

@@ -3,41 +3,45 @@
 ### decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
-|  [PoolAddressesProvider](https://arbiscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  false |  Gov V3 | |--------|--------|--------|
-|  [Pool](https://arbiscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  true |  Gov V3 | |--------|--------|--------|
-|  [PoolConfigurator](https://arbiscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  true |  Gov V3 | |--------|--------|--------|
+|  [PoolAddressesProvider](https://arbiscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  false |  Governance | |--------|--------|--------|
+|  [Pool](https://arbiscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  true |  Governance | |--------|--------|--------|
+|  [PoolConfigurator](https://arbiscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  true |  Governance | |--------|--------|--------|
 |  [AaveOracle](https://arbiscan.io/address/0xb56c2F0B653B2e0b10C9b928C8580Ac5Df02C7C7) |  false |  Not owned | |--------|--------|--------|
-|  [Collector](https://arbiscan.io/address/0x053D55f9B5AF8694c503EB288a1B7E552f590710) |  true |  Gov V3 | |--------|--------|--------|
-|  [RewardsController](https://arbiscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  true |  Gov V3 | |--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://arbiscan.io/address/0xecD4bd3121F9FD604ffaC631bF6d41ec12f1fafb) |  false |  Gov V3 | |--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://arbiscan.io/address/0xF3C3F14dd7BDb7E03e6EBc3bc5Ffc6D66De12251) |  false |  Gov V3 | |--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://arbiscan.io/address/0x28201C152DC5B69A86FA54FCfd21bcA4C0eff3BA) |  false |  Gov V3 | |--------|--------|--------|
-|  [EmissionManager](https://arbiscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  false |  Gov V3 | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://arbiscan.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  false |  Gov V3 | |--------|--------|--------|
-|  [RatesFactory](https://arbiscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  true |  Gov V3 | |--------|--------|--------|
-|  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
+|  [Collector](https://arbiscan.io/address/0x053D55f9B5AF8694c503EB288a1B7E552f590710) |  true |  Governance | |--------|--------|--------|
+|  [RewardsController](https://arbiscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  true |  Governance | |--------|--------|--------|
+|  [WrappedTokenGatewayV3](https://arbiscan.io/address/0xecD4bd3121F9FD604ffaC631bF6d41ec12f1fafb) |  false |  Governance | |--------|--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://arbiscan.io/address/0xF3C3F14dd7BDb7E03e6EBc3bc5Ffc6D66De12251) |  false |  Governance | |--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://arbiscan.io/address/0x28201C152DC5B69A86FA54FCfd21bcA4C0eff3BA) |  false |  Governance | |--------|--------|--------|
+|  [EmissionManager](https://arbiscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  false |  Governance | |--------|--------|--------|
+|  [PoolAddressesProviderRegistry](https://arbiscan.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  false |  Governance | |--------|--------|--------|
+|  [RatesFactory](https://arbiscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  true |  Governance | |--------|--------|--------|
+|  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Governance | |--------|--------|--------|
 |  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  false |  Multisg | |--------|--------|--------|
-|  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  false |  Multisg | |--------|--------|--------|
+|  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  false |  Multi-sig | |--------|--------|--------|
+|  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  false |  Multi-sig | |--------|--------|--------|
 |  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  false |  External Contract | |--------|--------|--------|
-|  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  true |  Gov V3 | |--------|--------|--------|
-|  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  false |  Gov V3 | |--------|--------|--------|
+|  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  true |  Governance | |--------|--------|--------|
+|  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  false |  Governance | |--------|--------|--------|
 |  [ArbAdapter](https://arbiscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  false |  Not owned | |--------|--------|--------|
 |  [undefined](https://arbiscan.io/address/0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d) |  false |  Not owned | |--------|--------|--------|
-|  [CrossChainController](https://arbiscan.io/address/0xCbFB78a3Eeaa611b826E37c80E4126c8787D29f0) |  true |  Gov V3 | |--------|--------|--------|
+|  [CrossChainController](https://arbiscan.io/address/0xCbFB78a3Eeaa611b826E37c80E4126c8787D29f0) |  true |  Governance | |--------|--------|--------|
 
 ### actions
 | action |can be executed by |
 |----------|----------|
-|  configureBorrows |  Multisg,Gov V3 | |--------|--------|
-|  configureFees |  Multisg,Gov V3 | |--------|--------|
-|  configureCollateral |  Gov V3,Multisg | |--------|--------|
-|  reserveConfiguration |  Multisg,Gov V3 | |--------|--------|
-|  reserveState |  Multisg,Gov V3 | |--------|--------|
-|  adminsConfiguration |  Gov V3 | |--------|--------|
-|  upgradeability |  Gov V3,Multisg | |--------|--------|
-|  adiConfigurations |  Gov V3 | |--------|--------|
-|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
+|  configureBorrows |  Governance | |--------|--------|
+|  updateReserveBorrowSettings |  Governance,Multi-sig | |--------|--------|
+|  configureProtocolFees |  Governance | |--------|--------|
+|  updateReserveSettings |  Governance,Multi-sig | |--------|--------|
+|  configureCollateral |  Governance,Multi-sig | |--------|--------|
+|  setReserveConfiguration |  Governance | |--------|--------|
+|  emergencyReserveState |  Governance,Multi-sig | |--------|--------|
+|  reserveState |  Governance | |--------|--------|
+|  adminsConfiguration |  Governance | |--------|--------|
+|  protocolUpgradeablity |  Governance | |--------|--------|
+|  reserveUpgradeability |  Governance,Multi-sig | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

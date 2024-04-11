@@ -229,7 +229,10 @@ export const generateTable = (network: string, pool: string): string => {
       ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
       ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
     },
-    getPermissionsByNetwork(network)['V3'].govV3?.contracts || {},
+    {
+      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+      ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
+    } || {},
   );
   for (let actionName of Object.keys(actionExecutors)) {
     if (Array.from(actionExecutors[actionName]).length > 0) {

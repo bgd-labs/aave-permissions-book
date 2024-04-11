@@ -3,31 +3,33 @@
 ### decentralization
 | contract |upgradeable |owned by |
 |----------|----------|----------|
-|  [LendingPoolAddressesProvider](https://polygonscan.com/address/0xd05e3E715d945B59290df0ae8eF85c1BdB684744) |  false |  Gov V3 | |--------|--------|--------|
-|  [LendingPool](https://polygonscan.com/address/0x8dFf5E27EA6b7AC08EbFdf9eB090F32ee9a30fcf) |  true |  Gov V3 | |--------|--------|--------|
-|  [LendingPoolConfigurator](https://polygonscan.com/address/0x26db2B833021583566323E3b8985999981b9F1F3) |  true |  Gov V3 | |--------|--------|--------|
+|  [LendingPoolAddressesProvider](https://polygonscan.com/address/0xd05e3E715d945B59290df0ae8eF85c1BdB684744) |  false |  Governance | |--------|--------|--------|
+|  [LendingPool](https://polygonscan.com/address/0x8dFf5E27EA6b7AC08EbFdf9eB090F32ee9a30fcf) |  true |  Governance | |--------|--------|--------|
+|  [LendingPoolConfigurator](https://polygonscan.com/address/0x26db2B833021583566323E3b8985999981b9F1F3) |  true |  Governance | |--------|--------|--------|
 |  [AaveOracle](https://polygonscan.com/address/0x0229F777B0fAb107F9591a41d5F02E4e98dB6f2d) |  false |  Not owned | |--------|--------|--------|
-|  [LendingRateOracle](https://polygonscan.com/address/0x17F73aEaD876CC4059089ff815EDA37052960dFB) |  false |  Gov V3 | |--------|--------|--------|
-|  [Collector](https://polygonscan.com/address/0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383) |  true |  Gov V3 | |--------|--------|--------|
-|  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Gov V3 | |--------|--------|--------|
-|  [WrappedTokenGatewayV2](https://polygonscan.com/address/0xf1e6d4347105138B51E2bacA9A22fA228309ebB1) |  false |  Gov V3 | |--------|--------|--------|
+|  [LendingRateOracle](https://polygonscan.com/address/0x17F73aEaD876CC4059089ff815EDA37052960dFB) |  false |  Governance | |--------|--------|--------|
+|  [Collector](https://polygonscan.com/address/0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383) |  true |  Governance | |--------|--------|--------|
+|  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Governance | |--------|--------|--------|
+|  [WrappedTokenGatewayV2](https://polygonscan.com/address/0xf1e6d4347105138B51E2bacA9A22fA228309ebB1) |  false |  Governance | |--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://polygonscan.com/address/0x35784a624D4FfBC3594f4d16fA3801FeF063241c) |  false |  Not owned | |--------|--------|--------|
 |  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE84cF064a0a65290Ae5673b500699f3753063936) |  false |  Not owned | |--------|--------|--------|
-|  [LendingPoolAddressesProviderRegistry](https://polygonscan.com/address/0x3ac4e9aa29940770aeC38fe853a4bbabb2dA9C19) |  false |  Gov V3 | |--------|--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://polygonscan.com/address/0x3ac4e9aa29940770aeC38fe853a4bbabb2dA9C19) |  false |  Governance | |--------|--------|--------|
 |  [DefaultIncentivesController](https://polygonscan.com/address/0x357D51124f59836DeD84c8a1730D72B749d8BC23) |  false |  Not owned | |--------|--------|--------|
 |  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  false |  Not owned | |--------|--------|--------|
 
 ### actions
 | action |can be executed by |
 |----------|----------|
-|  configureFees |  Gov V3 | |--------|--------|
-|  configureCollateral |  Gov V3 | |--------|--------|
-|  reserveConfiguration |  Multisg | |--------|--------|
-|  reserveState |  Multisg,Gov V3 | |--------|--------|
-|  upgradeability |  Gov V3,Multisg | |--------|--------|
-|  adiConfigurations |  Gov V3 | |--------|--------|
-|  updateAdiMessageState |  Gov V3,Multisg | |--------|--------|
-|  configureGovernance |  Gov V3 | |--------|--------|
+|  updateReserveBorrowSettings |  Governance | |--------|--------|
+|  configureCollateral |  Governance | |--------|--------|
+|  setReserveConfiguration |  Governance | |--------|--------|
+|  emergencyReserveState |  Multi-sig | |--------|--------|
+|  reserveState |  Governance | |--------|--------|
+|  protocolUpgradeablity |  Governance | |--------|--------|
+|  reserveUpgradeability |  Governance | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  updateAdiMessageState |  Governance,Multi-sig | |--------|--------|
+|  configureGovernance |  Governance | |--------|--------|
 
 ### contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
