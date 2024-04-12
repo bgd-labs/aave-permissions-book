@@ -136,7 +136,7 @@ export const generateTable = (network: string, pool: string): string => {
   });
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
 
-  let decentralizationTable = `### Contracts Upgradeability\n`;
+  let decentralizationTable = `### Contracts upgradeability\n`;
   const decentralizationHeaderTitles = ['contract', 'upgradeable by'];
   const decentralizationHeader = getTableHeader(decentralizationHeaderTitles);
   decentralizationTable += decentralizationHeader;

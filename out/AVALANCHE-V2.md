@@ -1,6 +1,6 @@
 # AVALANCHE 
 ## V2 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [LendingPoolAddressesProvider](https://snowtrace.io/address/0xb6A86025F0FE1862B372cb0ca18CE3EDe02A318f) |  not upgradeable | |--------|--------|

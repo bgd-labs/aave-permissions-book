@@ -1,6 +1,6 @@
 # MAINNET 
 ## SAFETY_MODULE 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  Governance | |--------|--------|

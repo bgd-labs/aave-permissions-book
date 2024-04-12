@@ -1,6 +1,6 @@
 # METIS_ANDROMEDA 
 ## V3 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  not upgradeable | |--------|--------|

@@ -1,6 +1,6 @@
 # BINANCE 
 ## V3 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [PoolAddressesProvider](https://bscscan.com/address/0xff75B6da14FfbbfD355Daf7a2731456b3562Ba6D) |  not upgradeable | |--------|--------|

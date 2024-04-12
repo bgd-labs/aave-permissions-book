@@ -1,6 +1,6 @@
 # MAINNET 
 ## V2_MISC 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [LendToAaveMigrator](https://etherscan.io/address/0x317625234562B1526Ea2FaC4030Ea499C5291de4) |  Governance | |--------|--------|

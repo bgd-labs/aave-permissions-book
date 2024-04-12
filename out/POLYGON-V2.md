@@ -1,6 +1,6 @@
 # POLYGON 
 ## V2 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [LendingPoolAddressesProvider](https://polygonscan.com/address/0xd05e3E715d945B59290df0ae8eF85c1BdB684744) |  not upgradeable | |--------|--------|

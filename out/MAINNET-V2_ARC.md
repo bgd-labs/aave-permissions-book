@@ -1,6 +1,6 @@
 # MAINNET 
 ## V2_ARC 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [LendingPoolAddressesProvider](https://etherscan.io/address/0x6FdfafB66d39cD72CFE7984D3Bbcc76632faAb00) |  not upgradeable | |--------|--------|

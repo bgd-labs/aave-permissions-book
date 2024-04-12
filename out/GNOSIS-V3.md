@@ -1,6 +1,6 @@
 # GNOSIS 
 ## V3 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  not upgradeable | |--------|--------|

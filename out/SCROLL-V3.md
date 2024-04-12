@@ -1,6 +1,6 @@
 # SCROLL 
 ## V3 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [PoolAddressesProvider](https://scrollscan.com//address/0x69850D0B276776781C063771b161bd8894BCdD04) |  not upgradeable | |--------|--------|

@@ -1,6 +1,6 @@
 # MAINNET 
 ## V2_AMM 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [LendingPoolAddressesProvider](https://etherscan.io/address/0xAcc030EF66f9dFEAE9CbB0cd1B25654b82cFA8d5) |  not upgradeable | |--------|--------|

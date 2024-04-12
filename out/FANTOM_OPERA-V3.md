@@ -1,6 +1,6 @@
 # FANTOM_OPERA 
 ## V3 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [PoolAddressesProvider](https://ftmscan.com/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  not upgradeable | |--------|--------|

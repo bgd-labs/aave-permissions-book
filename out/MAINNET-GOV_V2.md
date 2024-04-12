@@ -1,6 +1,6 @@
 # MAINNET 
 ## GOV_V2 
-### Contracts Upgradeability
+### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
 |  [AaveGovernanceV2](https://etherscan.io/address/0xEC568fffba86c094cf06b22134B23074DFE2252c) |  not upgradeable | |--------|--------|

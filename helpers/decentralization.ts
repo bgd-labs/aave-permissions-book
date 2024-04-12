@@ -2,7 +2,6 @@ import { ContractInfo, Contracts, GovV3, PoolInfo } from './types.js';
 import actionsConfig from '../statics/actionsConfig.json' assert { type: 'json' };
 
 export type Decentralization = {
-  decentralizationPoints: number;
   upgradeable: boolean;
   ownedBy: Controller;
 };
@@ -40,7 +39,7 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
               if (addressInfo.owners.length > 0) {
                 actionsObject[action].add(Controller.MULTI_SIG);
               } else {
-                const ownedInfo = isOwnedAndByWho(
+                const ownedInfo = isAdministeredAndByWho(
                   addressInfo.address,
                   poolInfo,
                   govInfo,
@@ -66,13 +65,11 @@ export const getLevelOfDecentralization = (
   poolInfo: Contracts,
   govInfo: Contracts,
 ): Decentralization => {
-  let decentralizationPoints = 5;
   let upgradeable = false;
   let ownedBy = Controller.NONE;
 
   // check if it has proxy admin (means upgradeable)
   if (contract.proxyAdmin) {
-    decentralizationPoints -= 1;
     upgradeable = true;
     let proxyOwnership = isOwnedAndByWho(
       contract.proxyAdmin,
@@ -82,25 +79,15 @@ export const getLevelOfDecentralization = (
 
     if (proxyOwnership.owned) {
       ownedBy = proxyOwnership.ownedBy;
-      if (proxyOwnership.ownedBy === Controller.MULTI_SIG) {
-        decentralizationPoints -= 1;
-      } else if (proxyOwnership.ownedBy === Controller.EOA) {
-        decentralizationPoints -= 2;
-      }
     }
   } else {
     let ownership = isOwnedAndByWho(contract.address, poolInfo, govInfo);
     if (ownership.owned) {
       ownedBy = ownership.ownedBy;
-      if (ownership.ownedBy === Controller.MULTI_SIG) {
-        decentralizationPoints -= 1;
-      } else if (ownership.ownedBy === Controller.EOA) {
-        decentralizationPoints -= 2;
-      }
     }
   }
 
-  return { decentralizationPoints, upgradeable, ownedBy };
+  return { upgradeable, ownedBy };
 };
 
 const isOwnedByGov = (
@@ -143,6 +130,43 @@ const isOwnedByGov = (
 };
 
 const isOwnedAndByWho = (
+  address: string,
+  poolInfo: Contracts,
+  govInfo: Contracts,
+): { owned: boolean; ownedBy: Controller } => {
+  let ownerInfo = { owned: false, ownedBy: Controller.EOA };
+  for (let contractName of Object.keys(poolInfo)) {
+    const contract = poolInfo[contractName];
+    if (contract.address?.toLowerCase() === address.toLowerCase()) {
+      if (contract.proxyAdmin) {
+        ownerInfo = isOwnedAndByWho(contract.proxyAdmin, poolInfo, govInfo);
+      } else {
+        contract.modifiers.forEach((modifierInfo) => {
+          if (modifierInfo.modifier === 'onlyOwner') {
+            if (modifierInfo.addresses[0].owners.length > 0) {
+              ownerInfo = { owned: true, ownedBy: Controller.MULTI_SIG };
+            } else {
+              const ownedByGov = isOwnedByGov(
+                modifierInfo.addresses[0].address,
+                govInfo,
+                modifierInfo.addresses[0].address,
+              );
+              if (ownedByGov) {
+                ownerInfo = { owned: true, ownedBy: Controller.GOV_V3 };
+              } else {
+                ownerInfo = { owned: true, ownedBy: Controller.EOA };
+              }
+            }
+          }
+        });
+      }
+    }
+  }
+
+  return ownerInfo;
+};
+
+const isAdministeredAndByWho = (
   address: string,
   poolInfo: Contracts,
   govInfo: Contracts,
