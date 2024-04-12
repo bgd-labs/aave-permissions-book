@@ -33,6 +33,7 @@
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance,Multi-sig | |--------|--------|
+|  upgradeAaveTokens (a/v/s) |  Governance,Multi-sig | |--------|--------|
 |  upgradeAaveOracles |  Governance,Multi-sig | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
