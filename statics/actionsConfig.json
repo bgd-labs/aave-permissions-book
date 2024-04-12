@@ -1,34 +1,35 @@
 {
-  "configureBorrows": [
-    "resetIsolationModeTotalDebt",
-    "updateFlashloanPremiums"
-  ],
   "updateReserveBorrowSettings": [
     "setReserveBorrowing",
     "setBorrowableInIsolation",
-    "setDebtCeiling",
-    "setReserveFactor",
-    "setLiquidationProtocolFee"
+    "setReserveFactor"
   ],
   "configureProtocolFees": [
     "updateBridgeProtocolFee",
     "updateFlashloanPremiumTotal",
-    "updateFlashloanPremiumToProtocol"
+    "updateFlashloanPremiumToProtocol",
+    "updateFlashloanPremiums"
   ],
   "updateReserveCaps": ["setBorrowCap", "setSupplyCap"],
-  "updateReserveSettings": ["setEModeCategory", "setAssetEModeCategory"],
-  "configureCollateral": ["configureReserveAsCollateral"],
-  "setReserveConfiguration": [
+  "updateReserveSettings": [
+    "setEModeCategory",
+    "setAssetEModeCategory",
     "setConfiguration",
     "configureEModeCategory",
     "setReserveActive"
+  ],
+  "configureCollateral": [
+    "configureReserveAsCollateral",
+    "resetIsolationModeTotalDebt",
+    "setLiquidationProtocolFee",
+    "setDebtCeiling"
   ],
   "upgradeAaveTokens (a/v/s)": ["updateAToken", "updateVariableDebtToken"],
   "upgradeAaveOracles": ["setAssetSources", "setFallbackOracle"],
   "reserveUpgradeability": ["setReserveInterestRateStrategyAddress"],
   "pausePool": ["setPoolPause"],
   "pauseAndFreezeReserve": ["setReserveFreeze", "setReservePause"],
-  "reserveState": [
+  "reserveListing": [
     "initReserves",
     "enableAssets",
     "disableAssets",
@@ -65,5 +66,5 @@
     "setVotingConfigs",
     "setPowerStrategy"
   ],
-  "cancelPermissions": ["cancelProposal"]
+  "cancelProposal": ["cancelProposal"]
 }

@@ -19,19 +19,17 @@
 ### Actions type
 | type |can be executed by |
 |----------|----------|
-|  configureBorrows |  Multi-sig | |--------|--------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
 |  configureProtocolFees |  Multi-sig | |--------|--------|
 |  updateReserveCaps |  Multi-sig | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
-|  setReserveConfiguration |  Multi-sig | |--------|--------|
 |  upgradeAaveTokens (a/v/s) |  Multi-sig | |--------|--------|
 |  upgradeAaveOracles |  Multi-sig | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
 |  pauseAndFreezeReserve |  Multi-sig | |--------|--------|
-|  reserveState |  Multi-sig | |--------|--------|
+|  reserveListing |  Multi-sig | |--------|--------|
 |  adminsConfiguration |  Multi-sig | |--------|--------|
 |  protocolUpgradeablity |  Multi-sig | |--------|--------|
 

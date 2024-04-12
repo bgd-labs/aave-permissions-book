@@ -26,19 +26,17 @@
 ### Actions type
 | type |can be executed by |
 |----------|----------|
-|  configureBorrows |  Governance | |--------|--------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
 |  configureProtocolFees |  Governance,Multi-sig | |--------|--------|
 |  updateReserveCaps |  Governance,Multi-sig | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
-|  setReserveConfiguration |  Governance,Multi-sig | |--------|--------|
 |  upgradeAaveTokens (a/v/s) |  Governance,Multi-sig | |--------|--------|
 |  upgradeAaveOracles |  Governance,Multi-sig | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
 |  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
-|  reserveState |  Governance,Multi-sig | |--------|--------|
+|  reserveListing |  Governance,Multi-sig | |--------|--------|
 |  adminsConfiguration |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|

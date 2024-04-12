@@ -17,7 +17,7 @@
 |  adiConfigurations |  Governance | |--------|--------|
 |  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|
-|  cancelPermissions |  Multi-sig | |--------|--------|
+|  cancelProposal |  Multi-sig | |--------|--------|
 
 ### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
