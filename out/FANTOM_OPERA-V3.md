@@ -1,20 +1,20 @@
 # FANTOM_OPERA 
 ## V3 
-### Decentralization
-| contract |upgradeable |owned by |
-|----------|----------|----------|
-|  [PoolAddressesProvider](https://ftmscan.com/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  false |  Multi-sig | |--------|--------|--------|
-|  [Pool](https://ftmscan.com/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  true |  Multi-sig | |--------|--------|--------|
-|  [PoolConfigurator](https://ftmscan.com/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  true |  Multi-sig | |--------|--------|--------|
-|  [AaveOracle](https://ftmscan.com/address/0xfd6f3c1845604C8AE6c6E402ad17fb9885160754) |  false |  Not owned | |--------|--------|--------|
-|  [Collector](https://ftmscan.com/address/0xBe85413851D195fC6341619cD68BfDc26a25b928) |  true |  Not owned | |--------|--------|--------|
-|  [RewardsController](https://ftmscan.com/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  true |  Multi-sig | |--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://ftmscan.com/address/0x1DcDA4de2Bf6c7AD9a34788D22aE6b7d55016e1f) |  false |  Multi-sig | |--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://ftmscan.com/address/0xE387c6053CE8EC9f8C3fa5cE085Af73114a695d3) |  false |  External Contract | |--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://ftmscan.com/address/0x1408401B2A7E28cB747b3e258D0831Fc926bAC51) |  false |  External Contract | |--------|--------|--------|
-|  [EmissionManager](https://ftmscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  false |  Multi-sig | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://ftmscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  false |  Multi-sig | |--------|--------|--------|
-|  [ACLManager](https://ftmscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
+### Contracts Upgradeability
+| contract |upgradeable by |
+|----------|----------|
+|  [PoolAddressesProvider](https://ftmscan.com/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  not upgradeable | |--------|--------|
+|  [Pool](https://ftmscan.com/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  Multi-sig | |--------|--------|
+|  [PoolConfigurator](https://ftmscan.com/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  Multi-sig | |--------|--------|
+|  [AaveOracle](https://ftmscan.com/address/0xfd6f3c1845604C8AE6c6E402ad17fb9885160754) |  not upgradeable | |--------|--------|
+|  [Collector](https://ftmscan.com/address/0xBe85413851D195fC6341619cD68BfDc26a25b928) |  Not owned | |--------|--------|
+|  [RewardsController](https://ftmscan.com/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  Multi-sig | |--------|--------|
+|  [WrappedTokenGatewayV3](https://ftmscan.com/address/0x1DcDA4de2Bf6c7AD9a34788D22aE6b7d55016e1f) |  not upgradeable | |--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://ftmscan.com/address/0xE387c6053CE8EC9f8C3fa5cE085Af73114a695d3) |  not upgradeable | |--------|--------|
+|  [ParaSwapRepayAdapter](https://ftmscan.com/address/0x1408401B2A7E28cB747b3e258D0831Fc926bAC51) |  not upgradeable | |--------|--------|
+|  [EmissionManager](https://ftmscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  not upgradeable | |--------|--------|
+|  [PoolAddressesProviderRegistry](https://ftmscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  not upgradeable | |--------|--------|
+|  [ACLManager](https://ftmscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  not upgradeable | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
@@ -26,6 +26,7 @@
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Multi-sig | |--------|--------|
+|  upgradeAaveOracles |  Multi-sig | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
 |  pauseAndFreezeReserve |  Multi-sig | |--------|--------|

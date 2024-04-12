@@ -136,13 +136,8 @@ export const generateTable = (network: string, pool: string): string => {
   });
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
 
-  let decentralizationTable = `### Decentralization\n`;
-  const decentralizationHeaderTitles = [
-    'contract',
-    'upgradeable',
-    'owned by',
-    // 'controlled by',
-  ];
+  let decentralizationTable = `### Contracts Upgradeability\n`;
+  const decentralizationHeaderTitles = ['contract', 'upgradeable by'];
   const decentralizationHeader = getTableHeader(decentralizationHeaderTitles);
   decentralizationTable += decentralizationHeader;
 
@@ -174,8 +169,7 @@ export const generateTable = (network: string, pool: string): string => {
         contract.address,
         network,
       )})`,
-      `${upgradeable}`,
-      `${ownedBy}`,
+      `${upgradeable ? ownedBy : 'not upgradeable'}`,
     ]);
     decentralizationTableBody += getLineSeparator(
       decentralizationHeaderTitles.length,
@@ -203,8 +197,7 @@ export const generateTable = (network: string, pool: string): string => {
           contract.address,
           network,
         )})`,
-        `${upgradeable}`,
-        `${ownedBy}`,
+        `${upgradeable ? ownedBy : 'not upgradeable'}`,
       ]);
       decentralizationTableBody += getLineSeparator(
         decentralizationHeaderTitles.length,

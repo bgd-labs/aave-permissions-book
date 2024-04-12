@@ -1,12 +1,12 @@
 # MAINNET 
 ## SAFETY_MODULE 
-### Decentralization
-| contract |upgradeable |owned by |
-|----------|----------|----------|
-|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  true |  Governance | |--------|--------|--------|
-|  [stkABPT](https://etherscan.io/address/0xa1116930326D21fB917d5A27F1E9943A9595fb47) |  true |  Governance | |--------|--------|--------|
-|  [ABPT](https://etherscan.io/address/0x41A08648C3766F9F9d85598fF102a08f4ef84F84) |  true |  Governance | |--------|--------|--------|
-|  [BPT](https://etherscan.io/address/0xC697051d1C6296C24aE3bceF39acA743861D9A81) |  false |  Not owned | |--------|--------|--------|
+### Contracts Upgradeability
+| contract |upgradeable by |
+|----------|----------|
+|  [stkAave](https://etherscan.io/address/0x4da27a545c0c5B758a6BA100e3a049001de870f5) |  Governance | |--------|--------|
+|  [stkABPT](https://etherscan.io/address/0xa1116930326D21fB917d5A27F1E9943A9595fb47) |  Governance | |--------|--------|
+|  [ABPT](https://etherscan.io/address/0x41A08648C3766F9F9d85598fF102a08f4ef84F84) |  Governance | |--------|--------|
+|  [BPT](https://etherscan.io/address/0xC697051d1C6296C24aE3bceF39acA743861D9A81) |  not upgradeable | |--------|--------|
 
 ### Actions type
 | type |can be executed by |

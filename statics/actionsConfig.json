@@ -23,12 +23,11 @@
     "configureEModeCategory",
     "setReserveActive"
   ],
+  "upgradeAaveOracles": ["setAssetSources", "setFallbackOracle"],
   "reserveUpgradeability": [
     "updateAToken",
     "updateVariableDebtToken",
-    "setReserveInterestRateStrategyAddress",
-    "setAssetSources",
-    "setFallbackOracle"
+    "setReserveInterestRateStrategyAddress"
   ],
   "pausePool": ["setPoolPause"],
   "pauseAndFreezeReserve": ["setReserveFreeze", "setReservePause"],

@@ -1,17 +1,17 @@
 # MAINNET 
 ## V2_AMM 
-### Decentralization
-| contract |upgradeable |owned by |
-|----------|----------|----------|
-|  [LendingPoolAddressesProvider](https://etherscan.io/address/0xAcc030EF66f9dFEAE9CbB0cd1B25654b82cFA8d5) |  false |  Governance | |--------|--------|--------|
-|  [LendingPool](https://etherscan.io/address/0x7937D4799803FbBe595ed57278Bc4cA21f3bFfCB) |  true |  Governance | |--------|--------|--------|
-|  [LendingPoolConfigurator](https://etherscan.io/address/0x23A875eDe3F1030138701683e42E9b16A7F87768) |  true |  Governance | |--------|--------|--------|
-|  [AaveOracle](https://etherscan.io/address/0xA50ba011c48153De246E5192C8f9258A2ba79Ca9) |  false |  Not owned | |--------|--------|--------|
-|  [LendingRateOracle](https://etherscan.io/address/0x8A32f49FFbA88aba6EFF96F45D8BD1D4b3f35c7D) |  false |  Governance | |--------|--------|--------|
-|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  true |  Governance | |--------|--------|--------|
-|  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Governance | |--------|--------|--------|
-|  [WrappedTokenGatewayV2](https://etherscan.io/address/0xbe9a7B3F2f54E18D7C0a17B03ad84Ac2D1D28eAC) |  false |  Governance | |--------|--------|--------|
-|  [LendingPoolAddressesProviderRegistry](https://etherscan.io/address/0x52D306e36E3B6B02c153d0266ff0f85d18BCD413) |  false |  Governance | |--------|--------|--------|
+### Contracts Upgradeability
+| contract |upgradeable by |
+|----------|----------|
+|  [LendingPoolAddressesProvider](https://etherscan.io/address/0xAcc030EF66f9dFEAE9CbB0cd1B25654b82cFA8d5) |  not upgradeable | |--------|--------|
+|  [LendingPool](https://etherscan.io/address/0x7937D4799803FbBe595ed57278Bc4cA21f3bFfCB) |  Governance | |--------|--------|
+|  [LendingPoolConfigurator](https://etherscan.io/address/0x23A875eDe3F1030138701683e42E9b16A7F87768) |  Governance | |--------|--------|
+|  [AaveOracle](https://etherscan.io/address/0xA50ba011c48153De246E5192C8f9258A2ba79Ca9) |  not upgradeable | |--------|--------|
+|  [LendingRateOracle](https://etherscan.io/address/0x8A32f49FFbA88aba6EFF96F45D8BD1D4b3f35c7D) |  not upgradeable | |--------|--------|
+|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  Governance | |--------|--------|
+|  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  not upgradeable | |--------|--------|
+|  [WrappedTokenGatewayV2](https://etherscan.io/address/0xbe9a7B3F2f54E18D7C0a17B03ad84Ac2D1D28eAC) |  not upgradeable | |--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://etherscan.io/address/0x52D306e36E3B6B02c153d0266ff0f85d18BCD413) |  not upgradeable | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
@@ -20,6 +20,7 @@
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance | |--------|--------|
+|  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
 |  reserveState |  Governance | |--------|--------|

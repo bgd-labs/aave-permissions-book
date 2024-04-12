@@ -1,30 +1,30 @@
 # BINANCE 
 ## V3 
-### Decentralization
-| contract |upgradeable |owned by |
-|----------|----------|----------|
-|  [PoolAddressesProvider](https://bscscan.com/address/0xff75B6da14FfbbfD355Daf7a2731456b3562Ba6D) |  false |  Governance | |--------|--------|--------|
-|  [Pool](https://bscscan.com/address/0x6807dc923806fE8Fd134338EABCA509979a7e0cB) |  true |  Governance | |--------|--------|--------|
-|  [PoolConfigurator](https://bscscan.com/address/0x67bdF23C7fCE7C65fF7415Ba3F2520B45D6f9584) |  true |  Governance | |--------|--------|--------|
-|  [AaveOracle](https://bscscan.com/address/0x39bc1bfDa2130d6Bb6DBEfd366939b4c7aa7C697) |  false |  Not owned | |--------|--------|--------|
-|  [Collector](https://bscscan.com/address/0x25Ec457d1778b0E5316e7f38f3c22baF413F1A8C) |  true |  Governance | |--------|--------|--------|
-|  [RewardsController](https://bscscan.com/address/0xC206C2764A9dBF27d599613b8F9A63ACd1160ab4) |  true |  Governance | |--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://bscscan.com/address/0xd91d1331db4F436DaF47Ec9Dd86deCb8EEF946B4) |  false |  Governance | |--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://bscscan.com/address/0x33E0b3fc976DC9C516926BA48CfC0A9E10a2aAA5) |  false |  Governance | |--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://bscscan.com/address/0x0727a6494095511078d63143A8a1E90b9f310880) |  false |  Governance | |--------|--------|--------|
-|  [EmissionManager](https://bscscan.com/address/0x6eD1c70aa357fB8a7e1Eac85aa59e33287Df8f85) |  false |  Governance | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://bscscan.com/address/0x117684358D990E42Eb1649E7e8C4691951dc1E71) |  false |  Governance | |--------|--------|--------|
-|  [RatesFactory](https://bscscan.com/address/0x02e9b27599C4Bf8f789d34b6E65C51092c3d9FA6) |  true |  Governance | |--------|--------|--------|
-|  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  false |  Governance | |--------|--------|--------|
-|  [ACLManager](https://bscscan.com/address/0x2D97F8FA96886Fd923c065F5457F9DDd494e3877) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595) |  false |  Multi-sig | |--------|--------|--------|
-|  [FreezeSteward](https://bscscan.com/address/0x83f15Bc50d1A212576B202f80489502a7cc10412) |  false |  Multi-sig | |--------|--------|--------|
-|  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  true |  Governance | |--------|--------|--------|
-|  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  false |  Governance | |--------|--------|--------|
-|  [LayerZeroAdapter](https://bscscan.com/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  false |  Not owned | |--------|--------|--------|
-|  [HyperLaneAdapter](https://bscscan.com/address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  false |  Not owned | |--------|--------|--------|
-|  [CCIP adapter](https://bscscan.com/address/0xAE93BEa44dcbE52B625169588574d31e36fb3A67) |  false |  Not owned | |--------|--------|--------|
-|  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  true |  Governance | |--------|--------|--------|
+### Contracts Upgradeability
+| contract |upgradeable by |
+|----------|----------|
+|  [PoolAddressesProvider](https://bscscan.com/address/0xff75B6da14FfbbfD355Daf7a2731456b3562Ba6D) |  not upgradeable | |--------|--------|
+|  [Pool](https://bscscan.com/address/0x6807dc923806fE8Fd134338EABCA509979a7e0cB) |  Governance | |--------|--------|
+|  [PoolConfigurator](https://bscscan.com/address/0x67bdF23C7fCE7C65fF7415Ba3F2520B45D6f9584) |  Governance | |--------|--------|
+|  [AaveOracle](https://bscscan.com/address/0x39bc1bfDa2130d6Bb6DBEfd366939b4c7aa7C697) |  not upgradeable | |--------|--------|
+|  [Collector](https://bscscan.com/address/0x25Ec457d1778b0E5316e7f38f3c22baF413F1A8C) |  Governance | |--------|--------|
+|  [RewardsController](https://bscscan.com/address/0xC206C2764A9dBF27d599613b8F9A63ACd1160ab4) |  Governance | |--------|--------|
+|  [WrappedTokenGatewayV3](https://bscscan.com/address/0xd91d1331db4F436DaF47Ec9Dd86deCb8EEF946B4) |  not upgradeable | |--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://bscscan.com/address/0x33E0b3fc976DC9C516926BA48CfC0A9E10a2aAA5) |  not upgradeable | |--------|--------|
+|  [ParaSwapRepayAdapter](https://bscscan.com/address/0x0727a6494095511078d63143A8a1E90b9f310880) |  not upgradeable | |--------|--------|
+|  [EmissionManager](https://bscscan.com/address/0x6eD1c70aa357fB8a7e1Eac85aa59e33287Df8f85) |  not upgradeable | |--------|--------|
+|  [PoolAddressesProviderRegistry](https://bscscan.com/address/0x117684358D990E42Eb1649E7e8C4691951dc1E71) |  not upgradeable | |--------|--------|
+|  [RatesFactory](https://bscscan.com/address/0x02e9b27599C4Bf8f789d34b6E65C51092c3d9FA6) |  Governance | |--------|--------|
+|  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  not upgradeable | |--------|--------|
+|  [ACLManager](https://bscscan.com/address/0x2D97F8FA96886Fd923c065F5457F9DDd494e3877) |  not upgradeable | |--------|--------|
+|  [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595) |  not upgradeable | |--------|--------|
+|  [FreezeSteward](https://bscscan.com/address/0x83f15Bc50d1A212576B202f80489502a7cc10412) |  not upgradeable | |--------|--------|
+|  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  Governance | |--------|--------|
+|  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  not upgradeable | |--------|--------|
+|  [LayerZeroAdapter](https://bscscan.com/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  not upgradeable | |--------|--------|
+|  [HyperLaneAdapter](https://bscscan.com/address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  not upgradeable | |--------|--------|
+|  [CCIP adapter](https://bscscan.com/address/0xAE93BEa44dcbE52B625169588574d31e36fb3A67) |  not upgradeable | |--------|--------|
+|  [CrossChainController](https://bscscan.com/address/0x9d33ee6543C9b2C8c183b8fb58fB089266cffA19) |  Governance | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
@@ -36,6 +36,7 @@
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance | |--------|--------|
+|  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
 |  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|

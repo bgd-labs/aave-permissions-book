@@ -1,27 +1,27 @@
 # SCROLL 
 ## V3 
-### Decentralization
-| contract |upgradeable |owned by |
-|----------|----------|----------|
-|  [PoolAddressesProvider](https://scrollscan.com//address/0x69850D0B276776781C063771b161bd8894BCdD04) |  false |  Governance | |--------|--------|--------|
-|  [Pool](https://scrollscan.com//address/0x11fCfe756c05AD438e312a7fd934381537D3cFfe) |  true |  Governance | |--------|--------|--------|
-|  [PoolConfigurator](https://scrollscan.com//address/0x32BCab42a2bb5AC577D24b425D46d8b8e0Df9b7f) |  true |  Governance | |--------|--------|--------|
-|  [AaveOracle](https://scrollscan.com//address/0x04421D8C506E2fA2371a08EfAaBf791F624054F3) |  false |  Not owned | |--------|--------|--------|
-|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  true |  Governance | |--------|--------|--------|
-|  [RewardsController](https://scrollscan.com//address/0xa3f3100C4f1D0624DB9DB97b40C13885Ce297799) |  true |  Governance | |--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://scrollscan.com//address/0xFF75A4B698E3Ec95E608ac0f22A03B8368E05F5D) |  false |  Governance | |--------|--------|--------|
-|  [EmissionManager](https://scrollscan.com//address/0x6091546836DAe0487A50E300da3F237727441D90) |  false |  Governance | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://scrollscan.com//address/0xFBedc64AeE24921cb43004312B9eF367a4162b57) |  false |  Governance | |--------|--------|--------|
-|  [RatesFactory](https://scrollscan.com//address/0xe48fb34452FaE3Cd5d906F748490FBE16c3Ce31b) |  true |  Governance | |--------|--------|--------|
-|  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  false |  Governance | |--------|--------|--------|
-|  [ACLManager](https://scrollscan.com//address/0x7633F981D87dC6307227de9383D2ce7243158081) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  false |  Multi-sig | |--------|--------|--------|
-|  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  false |  Multi-sig | |--------|--------|--------|
-|  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  true |  Governance | |--------|--------|--------|
-|  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  false |  Governance | |--------|--------|--------|
-|  [ScrollAdapter](https://scrollscan.com//address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  false |  Not owned | |--------|--------|--------|
-|  [Scroll native adapter](https://scrollscan.com//address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  false |  Not owned | |--------|--------|--------|
-|  [CrossChainController](https://scrollscan.com//address/0x03073D3F4769f6b6604d616238fD6c636C99AD0A) |  true |  Governance | |--------|--------|--------|
+### Contracts Upgradeability
+| contract |upgradeable by |
+|----------|----------|
+|  [PoolAddressesProvider](https://scrollscan.com//address/0x69850D0B276776781C063771b161bd8894BCdD04) |  not upgradeable | |--------|--------|
+|  [Pool](https://scrollscan.com//address/0x11fCfe756c05AD438e312a7fd934381537D3cFfe) |  Governance | |--------|--------|
+|  [PoolConfigurator](https://scrollscan.com//address/0x32BCab42a2bb5AC577D24b425D46d8b8e0Df9b7f) |  Governance | |--------|--------|
+|  [AaveOracle](https://scrollscan.com//address/0x04421D8C506E2fA2371a08EfAaBf791F624054F3) |  not upgradeable | |--------|--------|
+|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  Governance | |--------|--------|
+|  [RewardsController](https://scrollscan.com//address/0xa3f3100C4f1D0624DB9DB97b40C13885Ce297799) |  Governance | |--------|--------|
+|  [WrappedTokenGatewayV3](https://scrollscan.com//address/0xFF75A4B698E3Ec95E608ac0f22A03B8368E05F5D) |  not upgradeable | |--------|--------|
+|  [EmissionManager](https://scrollscan.com//address/0x6091546836DAe0487A50E300da3F237727441D90) |  not upgradeable | |--------|--------|
+|  [PoolAddressesProviderRegistry](https://scrollscan.com//address/0xFBedc64AeE24921cb43004312B9eF367a4162b57) |  not upgradeable | |--------|--------|
+|  [RatesFactory](https://scrollscan.com//address/0xe48fb34452FaE3Cd5d906F748490FBE16c3Ce31b) |  Governance | |--------|--------|
+|  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  not upgradeable | |--------|--------|
+|  [ACLManager](https://scrollscan.com//address/0x7633F981D87dC6307227de9383D2ce7243158081) |  not upgradeable | |--------|--------|
+|  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  not upgradeable | |--------|--------|
+|  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  not upgradeable | |--------|--------|
+|  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  Governance | |--------|--------|
+|  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  not upgradeable | |--------|--------|
+|  [ScrollAdapter](https://scrollscan.com//address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  not upgradeable | |--------|--------|
+|  [Scroll native adapter](https://scrollscan.com//address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  not upgradeable | |--------|--------|
+|  [CrossChainController](https://scrollscan.com//address/0x03073D3F4769f6b6604d616238fD6c636C99AD0A) |  Governance | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
@@ -33,6 +33,7 @@
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance,Multi-sig | |--------|--------|
+|  upgradeAaveOracles |  Governance,Multi-sig | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
 |  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|

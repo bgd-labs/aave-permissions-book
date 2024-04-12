@@ -1,35 +1,35 @@
 # POLYGON 
 ## V3 
-### Decentralization
-| contract |upgradeable |owned by |
-|----------|----------|----------|
-|  [PoolAddressesProvider](https://polygonscan.com/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  false |  Governance | |--------|--------|--------|
-|  [Pool](https://polygonscan.com/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  true |  Governance | |--------|--------|--------|
-|  [PoolConfigurator](https://polygonscan.com/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  true |  Governance | |--------|--------|--------|
-|  [AaveOracle](https://polygonscan.com/address/0xb023e699F5a33916Ea823A16485e259257cA8Bd1) |  false |  Not owned | |--------|--------|--------|
-|  [Collector](https://polygonscan.com/address/0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383) |  true |  Governance | |--------|--------|--------|
-|  [RewardsController](https://polygonscan.com/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  true |  Governance | |--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://polygonscan.com/address/0xC1E320966c485ebF2A0A2A6d3c0Dc860A156eB1B) |  false |  Governance | |--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://polygonscan.com/address/0xC4aff49fCeD8ac1D818a6DCAB063f9f97E66ec5E) |  false |  Governance | |--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE3090207A2de94A856EA10a7e1Bd36dD6145712B) |  false |  Governance | |--------|--------|--------|
-|  [EmissionManager](https://polygonscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  false |  Governance | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://polygonscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  false |  Governance | |--------|--------|--------|
-|  [RatesFactory](https://polygonscan.com/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  true |  Governance | |--------|--------|--------|
-|  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Governance | |--------|--------|--------|
-|  [ACLManager](https://polygonscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://polygonscan.com/address/0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f) |  false |  Multi-sig | |--------|--------|--------|
-|  [FreezeSteward](https://polygonscan.com/address/0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB) |  false |  Multi-sig | |--------|--------|--------|
-|  [AaveMerkleDistributor](https://polygonscan.com/address/0x7A9ff54A6eE4a21223036890bB8c4ea2D62c686b) |  false |  Governance | |--------|--------|--------|
-|  [AavePolEthBridge](https://polygonscan.com/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  false |  Governance | |--------|--------|--------|
-|  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  false |  Not owned | |--------|--------|--------|
-|  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  true |  Governance | |--------|--------|--------|
-|  [VotingMachine](https://polygonscan.com/address/0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d) |  false |  Governance | |--------|--------|--------|
-|  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  false |  Governance | |--------|--------|--------|
-|  [CCIP adapter](https://polygonscan.com/address/0xe79757D55a1600eF28D816a893E78E9FCDE2019E) |  false |  Not owned | |--------|--------|--------|
-|  [LayerZeroAdapter](https://polygonscan.com/address/0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5) |  false |  Not owned | |--------|--------|--------|
-|  [HyperLaneAdapter](https://polygonscan.com/address/0x3c25b96fF62D21E90556869272a277eE2E229747) |  false |  Not owned | |--------|--------|--------|
-|  [Polygon native adapter](https://polygonscan.com/address/0x853649f897383f89d8441346Cf26a9ed02720B02) |  false |  Not owned | |--------|--------|--------|
-|  [CrossChainController](https://polygonscan.com/address/0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d) |  true |  Governance | |--------|--------|--------|
+### Contracts Upgradeability
+| contract |upgradeable by |
+|----------|----------|
+|  [PoolAddressesProvider](https://polygonscan.com/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  not upgradeable | |--------|--------|
+|  [Pool](https://polygonscan.com/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  Governance | |--------|--------|
+|  [PoolConfigurator](https://polygonscan.com/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  Governance | |--------|--------|
+|  [AaveOracle](https://polygonscan.com/address/0xb023e699F5a33916Ea823A16485e259257cA8Bd1) |  not upgradeable | |--------|--------|
+|  [Collector](https://polygonscan.com/address/0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383) |  Governance | |--------|--------|
+|  [RewardsController](https://polygonscan.com/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  Governance | |--------|--------|
+|  [WrappedTokenGatewayV3](https://polygonscan.com/address/0xC1E320966c485ebF2A0A2A6d3c0Dc860A156eB1B) |  not upgradeable | |--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://polygonscan.com/address/0xC4aff49fCeD8ac1D818a6DCAB063f9f97E66ec5E) |  not upgradeable | |--------|--------|
+|  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE3090207A2de94A856EA10a7e1Bd36dD6145712B) |  not upgradeable | |--------|--------|
+|  [EmissionManager](https://polygonscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  not upgradeable | |--------|--------|
+|  [PoolAddressesProviderRegistry](https://polygonscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  not upgradeable | |--------|--------|
+|  [RatesFactory](https://polygonscan.com/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  Governance | |--------|--------|
+|  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  not upgradeable | |--------|--------|
+|  [ACLManager](https://polygonscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  not upgradeable | |--------|--------|
+|  [CapPlusRiskSteward](https://polygonscan.com/address/0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f) |  not upgradeable | |--------|--------|
+|  [FreezeSteward](https://polygonscan.com/address/0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB) |  not upgradeable | |--------|--------|
+|  [AaveMerkleDistributor](https://polygonscan.com/address/0x7A9ff54A6eE4a21223036890bB8c4ea2D62c686b) |  not upgradeable | |--------|--------|
+|  [AavePolEthBridge](https://polygonscan.com/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  not upgradeable | |--------|--------|
+|  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  not upgradeable | |--------|--------|
+|  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  Governance | |--------|--------|
+|  [VotingMachine](https://polygonscan.com/address/0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d) |  not upgradeable | |--------|--------|
+|  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  not upgradeable | |--------|--------|
+|  [CCIP adapter](https://polygonscan.com/address/0xe79757D55a1600eF28D816a893E78E9FCDE2019E) |  not upgradeable | |--------|--------|
+|  [LayerZeroAdapter](https://polygonscan.com/address/0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5) |  not upgradeable | |--------|--------|
+|  [HyperLaneAdapter](https://polygonscan.com/address/0x3c25b96fF62D21E90556869272a277eE2E229747) |  not upgradeable | |--------|--------|
+|  [Polygon native adapter](https://polygonscan.com/address/0x853649f897383f89d8441346Cf26a9ed02720B02) |  not upgradeable | |--------|--------|
+|  [CrossChainController](https://polygonscan.com/address/0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d) |  Governance | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
@@ -41,6 +41,7 @@
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance | |--------|--------|
+|  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
 |  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|

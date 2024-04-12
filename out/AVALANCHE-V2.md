@@ -1,22 +1,22 @@
 # AVALANCHE 
 ## V2 
-### Decentralization
-| contract |upgradeable |owned by |
-|----------|----------|----------|
-|  [LendingPoolAddressesProvider](https://snowtrace.io/address/0xb6A86025F0FE1862B372cb0ca18CE3EDe02A318f) |  false |  Governance | |--------|--------|--------|
-|  [LendingPool](https://snowtrace.io/address/0x4F01AeD16D97E3aB5ab2B501154DC9bb0F1A5A2C) |  true |  Governance | |--------|--------|--------|
-|  [LendingPoolConfigurator](https://snowtrace.io/address/0x230B618aD4C475393A7239aE03630042281BD86e) |  true |  Governance | |--------|--------|--------|
-|  [ProofOfReserveExecutorV2](https://snowtrace.io/address/0x7fc3FCb14eF04A48Bb0c12f0c39CD74C249c37d8) |  false |  Governance | |--------|--------|--------|
-|  [ProofOfReserveAggregatorV2](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  false |  Governance | |--------|--------|--------|
-|  [AaveOracle](https://snowtrace.io/address/0xdC336Cd4769f4cC7E9d726DA53e6d3fC710cEB89) |  false |  Not owned | |--------|--------|--------|
-|  [LendingRateOracle](https://snowtrace.io/address/0xc34254642B504484465F38Cb1CC396d45a9c7c80) |  false |  Governance | |--------|--------|--------|
-|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  true |  Governance | |--------|--------|--------|
-|  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Governance | |--------|--------|--------|
-|  [WrappedTokenGatewayV2](https://snowtrace.io/address/0x68c815cB8C8390bc3F2CE99265044dEC9D350C49) |  false |  Governance | |--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2EcF2a2e74B19Aab2a62312167aFF4B78E93B6C5) |  false |  Not owned | |--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x935b362EE3E1f342cc48118C528AAbee5118F6e6) |  false |  Not owned | |--------|--------|--------|
-|  [LendingPoolAddressesProviderRegistry](https://snowtrace.io/address/0x4235E22d9C3f28DCDA82b58276cb6370B01265C2) |  false |  Governance | |--------|--------|--------|
-|  [DefaultIncentivesController](https://snowtrace.io/address/0x01D83Fe6A10D2f2B7AF17034343746188272cAc9) |  false |  Not owned | |--------|--------|--------|
+### Contracts Upgradeability
+| contract |upgradeable by |
+|----------|----------|
+|  [LendingPoolAddressesProvider](https://snowtrace.io/address/0xb6A86025F0FE1862B372cb0ca18CE3EDe02A318f) |  not upgradeable | |--------|--------|
+|  [LendingPool](https://snowtrace.io/address/0x4F01AeD16D97E3aB5ab2B501154DC9bb0F1A5A2C) |  Governance | |--------|--------|
+|  [LendingPoolConfigurator](https://snowtrace.io/address/0x230B618aD4C475393A7239aE03630042281BD86e) |  Governance | |--------|--------|
+|  [ProofOfReserveExecutorV2](https://snowtrace.io/address/0x7fc3FCb14eF04A48Bb0c12f0c39CD74C249c37d8) |  not upgradeable | |--------|--------|
+|  [ProofOfReserveAggregatorV2](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  not upgradeable | |--------|--------|
+|  [AaveOracle](https://snowtrace.io/address/0xdC336Cd4769f4cC7E9d726DA53e6d3fC710cEB89) |  not upgradeable | |--------|--------|
+|  [LendingRateOracle](https://snowtrace.io/address/0xc34254642B504484465F38Cb1CC396d45a9c7c80) |  not upgradeable | |--------|--------|
+|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  Governance | |--------|--------|
+|  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  not upgradeable | |--------|--------|
+|  [WrappedTokenGatewayV2](https://snowtrace.io/address/0x68c815cB8C8390bc3F2CE99265044dEC9D350C49) |  not upgradeable | |--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2EcF2a2e74B19Aab2a62312167aFF4B78E93B6C5) |  not upgradeable | |--------|--------|
+|  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x935b362EE3E1f342cc48118C528AAbee5118F6e6) |  not upgradeable | |--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://snowtrace.io/address/0x4235E22d9C3f28DCDA82b58276cb6370B01265C2) |  not upgradeable | |--------|--------|
+|  [DefaultIncentivesController](https://snowtrace.io/address/0x01D83Fe6A10D2f2B7AF17034343746188272cAc9) |  not upgradeable | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
@@ -25,6 +25,7 @@
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance | |--------|--------|
+|  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
 |  reserveState |  Governance | |--------|--------|

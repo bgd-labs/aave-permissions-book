@@ -1,31 +1,31 @@
 # OPTIMISM 
 ## V3 
-### Decentralization
-| contract |upgradeable |owned by |
-|----------|----------|----------|
-|  [PoolAddressesProvider](https://optimistic.etherscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  false |  Governance | |--------|--------|--------|
-|  [Pool](https://optimistic.etherscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  true |  Governance | |--------|--------|--------|
-|  [PoolConfigurator](https://optimistic.etherscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  true |  Governance | |--------|--------|--------|
-|  [AaveOracle](https://optimistic.etherscan.io/address/0xD81eb3728a631871a7eBBaD631b5f424909f0c77) |  false |  Not owned | |--------|--------|--------|
-|  [Collector](https://optimistic.etherscan.io/address/0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf) |  true |  Governance | |--------|--------|--------|
-|  [RewardsController](https://optimistic.etherscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  true |  Governance | |--------|--------|--------|
-|  [WrappedTokenGatewayV3](https://optimistic.etherscan.io/address/0xe9E52021f4e11DEAD8661812A0A6c8627abA2a54) |  false |  Governance | |--------|--------|--------|
-|  [ParaSwapLiquiditySwapAdapter](https://optimistic.etherscan.io/address/0x830C5A67a0C95D69dA5fb7801Ac1773c6fB53857) |  false |  Governance | |--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://optimistic.etherscan.io/address/0xa12734e64417f61f8442E7D5132EdBFdbDDeF0fa) |  false |  Governance | |--------|--------|--------|
-|  [EmissionManager](https://optimistic.etherscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  false |  Governance | |--------|--------|--------|
-|  [PoolAddressesProviderRegistry](https://optimistic.etherscan.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  false |  Governance | |--------|--------|--------|
-|  [RatesFactory](https://optimistic.etherscan.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  true |  Governance | |--------|--------|--------|
-|  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Governance | |--------|--------|--------|
-|  [ACLManager](https://optimistic.etherscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  false |  Not owned | |--------|--------|--------|
-|  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  false |  Multi-sig | |--------|--------|--------|
-|  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  false |  Multi-sig | |--------|--------|--------|
-|  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  false |  Governance | |--------|--------|--------|
-|  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  false |  External Contract | |--------|--------|--------|
-|  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  true |  Governance | |--------|--------|--------|
-|  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  false |  Governance | |--------|--------|--------|
-|  [OpAdapter](https://optimistic.etherscan.io/address/0x81d32B36380e6266e1BDd490eAC56cdB300afBe0) |  false |  Not owned | |--------|--------|--------|
-|  [Optimism native adapter](https://optimistic.etherscan.io/address/0xAE93BEa44dcbE52B625169588574d31e36fb3A67) |  false |  Not owned | |--------|--------|--------|
-|  [CrossChainController](https://optimistic.etherscan.io/address/0x48A9FE90bce5EEd790f3F4Ce192d1C0B351fd4Ca) |  true |  Governance | |--------|--------|--------|
+### Contracts Upgradeability
+| contract |upgradeable by |
+|----------|----------|
+|  [PoolAddressesProvider](https://optimistic.etherscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  not upgradeable | |--------|--------|
+|  [Pool](https://optimistic.etherscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  Governance | |--------|--------|
+|  [PoolConfigurator](https://optimistic.etherscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  Governance | |--------|--------|
+|  [AaveOracle](https://optimistic.etherscan.io/address/0xD81eb3728a631871a7eBBaD631b5f424909f0c77) |  not upgradeable | |--------|--------|
+|  [Collector](https://optimistic.etherscan.io/address/0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf) |  Governance | |--------|--------|
+|  [RewardsController](https://optimistic.etherscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  Governance | |--------|--------|
+|  [WrappedTokenGatewayV3](https://optimistic.etherscan.io/address/0xe9E52021f4e11DEAD8661812A0A6c8627abA2a54) |  not upgradeable | |--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://optimistic.etherscan.io/address/0x830C5A67a0C95D69dA5fb7801Ac1773c6fB53857) |  not upgradeable | |--------|--------|
+|  [ParaSwapRepayAdapter](https://optimistic.etherscan.io/address/0xa12734e64417f61f8442E7D5132EdBFdbDDeF0fa) |  not upgradeable | |--------|--------|
+|  [EmissionManager](https://optimistic.etherscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  not upgradeable | |--------|--------|
+|  [PoolAddressesProviderRegistry](https://optimistic.etherscan.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  not upgradeable | |--------|--------|
+|  [RatesFactory](https://optimistic.etherscan.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  Governance | |--------|--------|
+|  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  not upgradeable | |--------|--------|
+|  [ACLManager](https://optimistic.etherscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  not upgradeable | |--------|--------|
+|  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  not upgradeable | |--------|--------|
+|  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  not upgradeable | |--------|--------|
+|  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  not upgradeable | |--------|--------|
+|  [OptimismBridgeExecutor](https://optimistic.etherscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  not upgradeable | |--------|--------|
+|  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  Governance | |--------|--------|
+|  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  not upgradeable | |--------|--------|
+|  [OpAdapter](https://optimistic.etherscan.io/address/0x81d32B36380e6266e1BDd490eAC56cdB300afBe0) |  not upgradeable | |--------|--------|
+|  [Optimism native adapter](https://optimistic.etherscan.io/address/0xAE93BEa44dcbE52B625169588574d31e36fb3A67) |  not upgradeable | |--------|--------|
+|  [CrossChainController](https://optimistic.etherscan.io/address/0x48A9FE90bce5EEd790f3F4Ce192d1C0B351fd4Ca) |  Governance | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
@@ -37,6 +37,7 @@
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Governance | |--------|--------|
+|  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
 |  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|

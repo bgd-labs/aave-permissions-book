@@ -1,17 +1,17 @@
 # MAINNET 
 ## V2_ARC 
-### Decentralization
-| contract |upgradeable |owned by |
-|----------|----------|----------|
-|  [LendingPoolAddressesProvider](https://etherscan.io/address/0x6FdfafB66d39cD72CFE7984D3Bbcc76632faAb00) |  false |  Multi-sig | |--------|--------|--------|
-|  [LendingPool](https://etherscan.io/address/0x37D7306019a38Af123e4b245Eb6C28AF552e0bB0) |  true |  Multi-sig | |--------|--------|--------|
-|  [LendingPoolConfigurator](https://etherscan.io/address/0x4e1c7865e7BE78A7748724Fa0409e88dc14E67aA) |  true |  Multi-sig | |--------|--------|--------|
-|  [AaveOracle](https://etherscan.io/address/0xB8a7bc0d13B1f5460513040a97F404b4fea7D2f3) |  false |  Not owned | |--------|--------|--------|
-|  [LendingRateOracle](https://etherscan.io/address/0xfA3c34d734fe0106C87917683ca45dffBe3b3B00) |  false |  Governance | |--------|--------|--------|
-|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  true |  Governance | |--------|--------|--------|
-|  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  false |  Governance | |--------|--------|--------|
-|  [ArcTimelock](https://etherscan.io/address/0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218) |  false |  Governance | |--------|--------|--------|
-|  [PermissionManager](https://etherscan.io/address/0xF4a1F5fEA79C3609514A417425971FadC10eCfBE) |  false |  Governance | |--------|--------|--------|
+### Contracts Upgradeability
+| contract |upgradeable by |
+|----------|----------|
+|  [LendingPoolAddressesProvider](https://etherscan.io/address/0x6FdfafB66d39cD72CFE7984D3Bbcc76632faAb00) |  not upgradeable | |--------|--------|
+|  [LendingPool](https://etherscan.io/address/0x37D7306019a38Af123e4b245Eb6C28AF552e0bB0) |  Multi-sig | |--------|--------|
+|  [LendingPoolConfigurator](https://etherscan.io/address/0x4e1c7865e7BE78A7748724Fa0409e88dc14E67aA) |  Multi-sig | |--------|--------|
+|  [AaveOracle](https://etherscan.io/address/0xB8a7bc0d13B1f5460513040a97F404b4fea7D2f3) |  not upgradeable | |--------|--------|
+|  [LendingRateOracle](https://etherscan.io/address/0xfA3c34d734fe0106C87917683ca45dffBe3b3B00) |  not upgradeable | |--------|--------|
+|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  Governance | |--------|--------|
+|  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  not upgradeable | |--------|--------|
+|  [ArcTimelock](https://etherscan.io/address/0xAce1d11d836cb3F51Ef658FD4D353fFb3c301218) |  not upgradeable | |--------|--------|
+|  [PermissionManager](https://etherscan.io/address/0xF4a1F5fEA79C3609514A417425971FadC10eCfBE) |  not upgradeable | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
@@ -20,6 +20,7 @@
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  setReserveConfiguration |  Multi-sig | |--------|--------|
+|  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Multi-sig | |--------|--------|
 |  reserveState |  Multi-sig,Governance | |--------|--------|
