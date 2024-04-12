@@ -22,6 +22,7 @@
 |  [AaveMerkleDistributor](https://polygonscan.com/address/0x7A9ff54A6eE4a21223036890bB8c4ea2D62c686b) |  not upgradeable | |--------|--------|
 |  [AavePolEthBridge](https://polygonscan.com/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  not upgradeable | |--------|--------|
 |  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  not upgradeable | |--------|--------|
+|  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [PayloadsController](https://polygonscan.com/address/0x401B5D0294E23637c18fcc38b1Bca814CDa2637C) |  Governance | |--------|--------|
 |  [VotingMachine](https://polygonscan.com/address/0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d) |  not upgradeable | |--------|--------|
 |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  not upgradeable | |--------|--------|

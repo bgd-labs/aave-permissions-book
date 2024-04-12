@@ -23,6 +23,7 @@
 |  [FreezeSteward](https://etherscan.io/address/0x2eE68ACb6A1319de1b49DC139894644E424fefD6) |  not upgradeable | |--------|--------|
 |  [AaveMerkleDistributor](https://etherscan.io/address/0xa88c6D90eAe942291325f9ae3c66f3563B93FE10) |  not upgradeable | |--------|--------|
 |  [AavePolEthBridge](https://etherscan.io/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  not upgradeable | |--------|--------|
+|  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [AaveGovernanceV3](https://etherscan.io/address/0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7) |  Governance | |--------|--------|
 |  [PayloadsController](https://etherscan.io/address/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5) |  Governance | |--------|--------|
 |  [VotingMachine](https://etherscan.io/address/0x617332a777780F546261247F621051d0b98975Eb) |  not upgradeable | |--------|--------|

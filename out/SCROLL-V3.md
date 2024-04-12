@@ -17,6 +17,7 @@
 |  [ACLManager](https://scrollscan.com//address/0x7633F981D87dC6307227de9383D2ce7243158081) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  not upgradeable | |--------|--------|
+|  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  Governance | |--------|--------|
 |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  not upgradeable | |--------|--------|
 |  [ScrollAdapter](https://scrollscan.com//address/0x118DFD5418890c0332042ab05173Db4A2C1d283c) |  not upgradeable | |--------|--------|

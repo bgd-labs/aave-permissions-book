@@ -17,6 +17,7 @@
 |  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  not upgradeable | |--------|--------|
 |  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  not upgradeable | |--------|--------|
+|  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  Governance | |--------|--------|
 |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  not upgradeable | |--------|--------|
 |  [MetisAdapter](https://andromeda-explorer.metis.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  not upgradeable | |--------|--------|

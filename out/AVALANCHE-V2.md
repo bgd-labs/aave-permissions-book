@@ -17,6 +17,7 @@
 |  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x935b362EE3E1f342cc48118C528AAbee5118F6e6) |  not upgradeable | |--------|--------|
 |  [LendingPoolAddressesProviderRegistry](https://snowtrace.io/address/0x4235E22d9C3f28DCDA82b58276cb6370B01265C2) |  not upgradeable | |--------|--------|
 |  [DefaultIncentivesController](https://snowtrace.io/address/0x01D83Fe6A10D2f2B7AF17034343746188272cAc9) |  not upgradeable | |--------|--------|
+|  Aave a/v/s tokens |  Governance | |--------|--------|
 
 ### Actions type
 | type |can be executed by |

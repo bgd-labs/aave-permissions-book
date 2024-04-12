@@ -20,6 +20,7 @@
 |  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  not upgradeable | |--------|--------|
 |  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  not upgradeable | |--------|--------|
+|  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  Governance | |--------|--------|
 |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  not upgradeable | |--------|--------|
 |  [ArbAdapter](https://arbiscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  not upgradeable | |--------|--------|

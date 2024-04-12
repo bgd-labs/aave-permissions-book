@@ -175,6 +175,15 @@ export const generateTable = (network: string, pool: string): string => {
       decentralizationHeaderTitles.length,
     );
   }
+  // hardcode aave a/v/s tokens
+  decentralizationTableBody += getTableBody([
+    `Aave a/v/s tokens`,
+    `Governance`,
+  ]);
+  decentralizationTableBody += getLineSeparator(
+    decentralizationHeaderTitles.length,
+  );
+
   if (
     poolPermitsByContract.govV3 &&
     Object.keys(poolPermitsByContract.govV3).length > 0
