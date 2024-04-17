@@ -1,6 +1,41 @@
 # AVALANCHE 
 ## V2 
-### contracts
+### Contracts upgradeability
+| contract |upgradeable by |
+|----------|----------|
+|  [LendingPoolAddressesProvider](https://snowtrace.io/address/0xb6A86025F0FE1862B372cb0ca18CE3EDe02A318f) |  not upgradeable | |--------|--------|
+|  [LendingPool](https://snowtrace.io/address/0x4F01AeD16D97E3aB5ab2B501154DC9bb0F1A5A2C) |  Governance | |--------|--------|
+|  [LendingPoolConfigurator](https://snowtrace.io/address/0x230B618aD4C475393A7239aE03630042281BD86e) |  Governance | |--------|--------|
+|  [ProofOfReserveExecutorV2](https://snowtrace.io/address/0x7fc3FCb14eF04A48Bb0c12f0c39CD74C249c37d8) |  not upgradeable | |--------|--------|
+|  [ProofOfReserveAggregatorV2](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  not upgradeable | |--------|--------|
+|  [AaveOracle](https://snowtrace.io/address/0xdC336Cd4769f4cC7E9d726DA53e6d3fC710cEB89) |  not upgradeable | |--------|--------|
+|  [LendingRateOracle](https://snowtrace.io/address/0xc34254642B504484465F38Cb1CC396d45a9c7c80) |  not upgradeable | |--------|--------|
+|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  Governance | |--------|--------|
+|  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  not upgradeable | |--------|--------|
+|  [WrappedTokenGatewayV2](https://snowtrace.io/address/0x68c815cB8C8390bc3F2CE99265044dEC9D350C49) |  not upgradeable | |--------|--------|
+|  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2EcF2a2e74B19Aab2a62312167aFF4B78E93B6C5) |  not upgradeable | |--------|--------|
+|  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x935b362EE3E1f342cc48118C528AAbee5118F6e6) |  not upgradeable | |--------|--------|
+|  [LendingPoolAddressesProviderRegistry](https://snowtrace.io/address/0x4235E22d9C3f28DCDA82b58276cb6370B01265C2) |  not upgradeable | |--------|--------|
+|  [DefaultIncentivesController](https://snowtrace.io/address/0x01D83Fe6A10D2f2B7AF17034343746188272cAc9) |  not upgradeable | |--------|--------|
+|  Aave a/v/s tokens |  Governance | |--------|--------|
+
+### Actions type
+| type |can be executed by |
+|----------|----------|
+|  updateReserveBorrowSettings |  Governance | |--------|--------|
+|  updateReserveSettings |  Governance | |--------|--------|
+|  configureCollateral |  Governance | |--------|--------|
+|  upgradeAaveTokens (a/v/s) |  Governance | |--------|--------|
+|  upgradeAaveOracles |  Governance | |--------|--------|
+|  reserveUpgradeability |  Governance | |--------|--------|
+|  pausePool |  Multi-sig | |--------|--------|
+|  reserveListing |  Governance | |--------|--------|
+|  protocolUpgradeablity |  Governance | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
+|  configureGovernance |  Governance | |--------|--------|
+
+### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
 |  [LendingPoolAddressesProvider](https://snowtrace.io/address/0xb6A86025F0FE1862B372cb0ca18CE3EDe02A318f) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  setMarketId, setAddressAsProxy, setAddress, setLendingPoolImpl, setLendingPoolConfiguratorImpl, setLendingPoolCollateralManager, setPoolAdmin, setEmergencyAdmin, setPriceOracle, setLendingRateOracle | |--------|--------|--------|--------|--------|
@@ -22,8 +57,8 @@
 |  [DefaultIncentivesController](https://snowtrace.io/address/0x01D83Fe6A10D2f2B7AF17034343746188272cAc9) |  - |  onlyEmissionManager |  [Avalanche v2 incentives admin](https://snowtrace.io/address/0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26) |  setDistributionEnd, configureAssets, setClaimer, setRewardsVault | |--------|--------|--------|--------|--------|
 
 ### Guardians 
-| Guardian |Address |Owners |
-|----------|----------|----------|
-|  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  0xa35b76E4935449E33C56aB24b23fcd3246f13470 |  [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://snowtrace.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0xb647055A9915bF9c8021a684E175A353525b9890](https://snowtrace.io/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://snowtrace.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://snowtrace.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://snowtrace.io/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://snowtrace.io/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://snowtrace.io/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://snowtrace.io/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://snowtrace.io/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://snowtrace.io/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7) | |--------|--------|--------|
-|  [Avalanche v2 incentives admin](https://snowtrace.io/address/0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26) |  0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26 |  [0xb87F46f6B7589B6a777be7230D19Beb0b6229aa1](https://snowtrace.io/address/0xb87F46f6B7589B6a777be7230D19Beb0b6229aa1), [0xfb1C51EEC9F0ADbb0ed5E8795aAc325eDC358149](https://snowtrace.io/address/0xfb1C51EEC9F0ADbb0ed5E8795aAc325eDC358149), [0xe79CA1B546774eEc2cd1e07cA6626eB2D435cdc7](https://snowtrace.io/address/0xe79CA1B546774eEc2cd1e07cA6626eB2D435cdc7) | |--------|--------|--------|
+| Guardian |Threshold |Address |Owners |
+|----------|----------|----------|----------|
+|  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  6/10 |  0xa35b76E4935449E33C56aB24b23fcd3246f13470 |  [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://snowtrace.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0xb647055A9915bF9c8021a684E175A353525b9890](https://snowtrace.io/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://snowtrace.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://snowtrace.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://snowtrace.io/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://snowtrace.io/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://snowtrace.io/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://snowtrace.io/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://snowtrace.io/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://snowtrace.io/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7) | |--------|--------|--------|--------|
+|  [Avalanche v2 incentives admin](https://snowtrace.io/address/0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26) |  0/3 |  0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26 |  [0xb87F46f6B7589B6a777be7230D19Beb0b6229aa1](https://snowtrace.io/address/0xb87F46f6B7589B6a777be7230D19Beb0b6229aa1), [0xfb1C51EEC9F0ADbb0ed5E8795aAc325eDC358149](https://snowtrace.io/address/0xfb1C51EEC9F0ADbb0ed5E8795aAc325eDC358149), [0xe79CA1B546774eEc2cd1e07cA6626eB2D435cdc7](https://snowtrace.io/address/0xe79CA1B546774eEc2cd1e07cA6626eB2D435cdc7) | |--------|--------|--------|--------|
 

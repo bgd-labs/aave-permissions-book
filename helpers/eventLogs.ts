@@ -20,7 +20,7 @@ export type GetLogsType = {
   chainId?: ChainId | string;
 };
 
-const MAX_RETRIES = 3;
+const MAX_RETRIES = 5;
 export const getLogs = async ({
   provider,
   address,

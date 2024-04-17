@@ -71,5 +71,34 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "GhoStewardV2",
+    "functions": [
+      {
+        "name": "setControlledFacilitator",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "updateGsmBuySellFees",
+        "roles": ["onlyRiskCouncil"]
+      },
+      {
+        "name": "updateGsmExposureCap",
+        "roles": ["onlyRiskCouncil"]
+      },
+      {
+        "name": "updateGhoBorrowRate",
+        "roles": ["onlyRiskCouncil"]
+      },
+      {
+        "name": "updateGhoBorrowCap",
+        "roles": ["onlyRiskCouncil"]
+      },
+      {
+        "name": "updateFacilitatorBucketCapacity",
+        "roles": ["onlyRiskCouncil"]
+      }
+    ]
   }
 ]

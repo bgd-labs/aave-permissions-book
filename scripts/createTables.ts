@@ -19,6 +19,11 @@ import {
   ContractsByAddress,
   PoolGuardians,
 } from '../helpers/types.js';
+import {
+  Decentralization,
+  getActionExecutors,
+  getLevelOfDecentralization,
+} from '../helpers/decentralization.js';
 
 export const generateTableAddress = (
   address: string | undefined,
@@ -53,7 +58,8 @@ export const generateTableAddress = (
           ? addressesNames[checkSummedAddress]
           : contractsByAddress[checkSummedAddress]
           ? contractsByAddress[checkSummedAddress]
-          : poolGuardians[checkSummedAddress]
+          : poolGuardians[checkSummedAddress] &&
+            poolGuardians[checkSummedAddress].owners.length > 0
           ? addressesNames[checkSummedAddress]
             ? addressesNames[checkSummedAddress]
             : `${checkSummedAddress} (Safe)`
@@ -103,7 +109,7 @@ export const generateTable = (network: string, pool: string): string => {
   // create network Readme with pool tables
   let readmeByNetwork = `# ${networkName} \n`;
 
-  const poolGuardians: Record<string, string[]> = {};
+  const poolGuardians: PoolGuardians = {};
   const poolPermitsByContract = networkPermits[pool];
 
   if (!poolPermitsByContract?.contracts) {
@@ -126,9 +132,124 @@ export const generateTable = (network: string, pool: string): string => {
     ...(poolPermitsByContract?.contracts || {}),
     ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
     ...getPermissionsByNetwork(network)['V3'].contracts,
+    ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
   });
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
-  let contractTable = `### contracts\n`;
+
+  let decentralizationTable = `### Contracts upgradeability\n`;
+  const decentralizationHeaderTitles = ['contract', 'upgradeable by'];
+  const decentralizationHeader = getTableHeader(decentralizationHeaderTitles);
+  decentralizationTable += decentralizationHeader;
+
+  // fill pool table
+  let decentralizationTableBody = '';
+  for (let contractName of Object.keys(poolPermitsByContract.contracts)) {
+    const contract = poolPermitsByContract.contracts[contractName];
+    let govPermissions = {
+      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+    };
+    if (pool === Pools.V2_ARC) {
+      govPermissions = {
+        ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+        ...getPermissionsByNetwork(ChainId.mainnet)['V2_ARC'].contracts,
+      };
+    }
+    const { upgradeable, ownedBy }: Decentralization =
+      getLevelOfDecentralization(
+        contract,
+        {
+          ...poolPermitsByContract.contracts,
+          ...getPermissionsByNetwork(network)['V3'].contracts,
+          ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+        },
+        govPermissions,
+      );
+    decentralizationTableBody += getTableBody([
+      `[${contractName}](${explorerAddressUrlComposer(
+        contract.address,
+        network,
+      )})`,
+      `${upgradeable ? ownedBy : 'not upgradeable'}`,
+    ]);
+    decentralizationTableBody += getLineSeparator(
+      decentralizationHeaderTitles.length,
+    );
+  }
+  // hardcode aave a/v/s tokens
+  decentralizationTableBody += getTableBody([
+    `Aave a/v/s tokens`,
+    `Governance`,
+  ]);
+  decentralizationTableBody += getLineSeparator(
+    decentralizationHeaderTitles.length,
+  );
+
+  if (
+    poolPermitsByContract.govV3 &&
+    Object.keys(poolPermitsByContract.govV3).length > 0
+  ) {
+    for (let contractName of Object.keys(
+      poolPermitsByContract.govV3.contracts,
+    )) {
+      const contract = poolPermitsByContract.govV3.contracts[contractName];
+      const { upgradeable, ownedBy }: Decentralization =
+        getLevelOfDecentralization(
+          contract,
+          {
+            ...poolPermitsByContract.contracts,
+            ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+          },
+          getPermissionsByNetwork(network)['V3'].govV3?.contracts || {},
+        );
+      decentralizationTableBody += getTableBody([
+        `[${contractName}](${explorerAddressUrlComposer(
+          contract.address,
+          network,
+        )})`,
+        `${upgradeable ? ownedBy : 'not upgradeable'}`,
+      ]);
+      decentralizationTableBody += getLineSeparator(
+        decentralizationHeaderTitles.length,
+      );
+    }
+  }
+
+  decentralizationTable += decentralizationTableBody;
+  readmeByNetwork += decentralizationTable + '\n';
+
+  let actionsTable = `### Actions type\n`;
+  const actionsHeaderTitles = ['type', 'can be executed by'];
+  const actionsHeader = getTableHeader(actionsHeaderTitles);
+  actionsTable += actionsHeader;
+
+  // fill pool table
+  let actionsTableBody = '';
+  const actionExecutors = getActionExecutors(
+    {
+      ...poolPermitsByContract.contracts,
+      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+      ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
+    },
+    {
+      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+      ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
+    } || {},
+  );
+  for (let actionName of Object.keys(actionExecutors)) {
+    if (Array.from(actionExecutors[actionName]).length > 0) {
+      actionsTableBody += getTableBody([
+        actionName,
+        `${Array.from(actionExecutors[actionName])}`,
+      ]);
+      actionsTableBody += getLineSeparator(actionsHeaderTitles.length);
+    }
+  }
+  if (actionsTableBody !== '') {
+    actionsTable += actionsTableBody;
+    readmeByNetwork += actionsTable + '\n';
+  }
+
+  let contractTable = `### Contracts\n`;
   const contractsModifiersHeaderTitles = [
     'contract',
     'proxyAdmin',
@@ -167,7 +288,10 @@ export const generateTable = (network: string, pool: string): string => {
       for (let modifierAddress of modifier.addresses) {
         if (!poolGuardians[modifierAddress.address]) {
           if (modifierAddress.owners.length > 0) {
-            poolGuardians[modifierAddress.address] = modifierAddress.owners;
+            poolGuardians[modifierAddress.address] = {
+              owners: modifierAddress.owners,
+              threshold: modifierAddress.signersThreshold,
+            };
           }
         }
       }
@@ -260,7 +384,10 @@ export const generateTable = (network: string, pool: string): string => {
         for (let modifierAddress of modifier.addresses) {
           if (!poolGuardians[modifierAddress.address]) {
             if (modifierAddress.owners.length > 0) {
-              poolGuardians[modifierAddress.address] = modifierAddress.owners;
+              poolGuardians[modifierAddress.address] = {
+                owners: modifierAddress.owners,
+                threshold: modifierAddress.signersThreshold,
+              };
             }
           }
         }
@@ -304,7 +431,7 @@ export const generateTable = (network: string, pool: string): string => {
 
   if (Object.keys(poolGuardians).length > 0) {
     let guardianTable = `### Guardians \n`;
-    const guardianHeaderTitles = ['Guardian', 'Address', 'Owners'];
+    const guardianHeaderTitles = ['Guardian', 'Threshold', 'Address', 'Owners'];
     const guardianHeader = getTableHeader(guardianHeaderTitles);
     guardianTable += guardianHeader;
 
@@ -315,8 +442,9 @@ export const generateTable = (network: string, pool: string): string => {
             ? addressesNames[utils.getAddress(guardian)]
             : `${utils.getAddress(guardian)} (Safe)`
         }](${explorerAddressUrlComposer(guardian, network)})`,
+        `${poolGuardians[guardian].threshold}/${poolGuardians[guardian].owners.length}`,
         guardian,
-        `${poolGuardians[guardian]
+        `${poolGuardians[guardian].owners
           .map(
             (owner) =>
               `[${owner}](${explorerAddressUrlComposer(owner, network)})`,

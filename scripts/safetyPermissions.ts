@@ -2,7 +2,7 @@ import { ethers, providers } from 'ethers';
 
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
-import { getSafeOwners } from '../helpers/guardian.js';
+import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import stkAaveABI from '../abis/stkAaveABI.json' assert { type: 'json' };
 import stkToken from '../abis/stkToken.json' assert { type: 'json' };
 import abptABI from '../abis/abptABI.json' assert { type: 'json' };
@@ -42,6 +42,10 @@ export const resolveSafetyV2Modifiers = async (
           {
             address: stkAaveEmissionManager,
             owners: await getSafeOwners(provider, stkAaveEmissionManager),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              stkAaveEmissionManager,
+            ),
           },
         ],
         functions: roles['stkAave']['onlyEmissionManager'],
@@ -52,6 +56,7 @@ export const resolveSafetyV2Modifiers = async (
           {
             address: slashAdmin,
             owners: await getSafeOwners(provider, slashAdmin),
+            signersThreshold: await getSafeThreshold(provider, slashAdmin),
           },
         ],
         functions: roles['stkAave']['onlySlashingAdmin'],
@@ -62,6 +67,7 @@ export const resolveSafetyV2Modifiers = async (
           {
             address: cooldDownAdmin,
             owners: await getSafeOwners(provider, cooldDownAdmin),
+            signersThreshold: await getSafeThreshold(provider, cooldDownAdmin),
           },
         ],
         functions: roles['stkAave']['onlyCooldownAdmin'],
@@ -72,6 +78,10 @@ export const resolveSafetyV2Modifiers = async (
           {
             address: claimHelperAdmin,
             owners: await getSafeOwners(provider, claimHelperAdmin),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              claimHelperAdmin,
+            ),
           },
         ],
         functions: roles['stkAave']['onlyClaimHelper'],
@@ -105,6 +115,10 @@ export const resolveSafetyV2Modifiers = async (
           {
             address: stkABPTEmissionManager,
             owners: await getSafeOwners(provider, stkABPTEmissionManager),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              stkABPTEmissionManager,
+            ),
           },
         ],
         functions: roles['stkABPT']['onlyEmissionManager'],
@@ -115,6 +129,10 @@ export const resolveSafetyV2Modifiers = async (
           {
             address: stkABPTslashAdmin,
             owners: await getSafeOwners(provider, stkABPTslashAdmin),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              stkABPTslashAdmin,
+            ),
           },
         ],
         functions: roles['stkAave']['onlySlashingAdmin'],
@@ -125,6 +143,10 @@ export const resolveSafetyV2Modifiers = async (
           {
             address: stkABPTcooldDownAdmin,
             owners: await getSafeOwners(provider, stkABPTcooldDownAdmin),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              stkABPTcooldDownAdmin,
+            ),
           },
         ],
         functions: roles['stkAave']['onlyCooldownAdmin'],
@@ -135,6 +157,10 @@ export const resolveSafetyV2Modifiers = async (
           {
             address: stkABPTclaimHelperAdmin,
             owners: await getSafeOwners(provider, stkABPTclaimHelperAdmin),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              stkABPTclaimHelperAdmin,
+            ),
           },
         ],
         functions: roles['stkAave']['onlyClaimHelper'],
@@ -155,6 +181,7 @@ export const resolveSafetyV2Modifiers = async (
           {
             address: abptController,
             owners: await getSafeOwners(provider, abptController),
+            signersThreshold: await getSafeThreshold(provider, abptController),
           },
         ],
         functions: roles['ABPT']['onlyOwner'],
@@ -173,6 +200,7 @@ export const resolveSafetyV2Modifiers = async (
           {
             address: bptController,
             owners: await getSafeOwners(provider, bptController),
+            signersThreshold: await getSafeThreshold(provider, bptController),
           },
         ],
         functions: roles['BPT']['onlyController'],

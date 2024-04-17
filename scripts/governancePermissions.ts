@@ -2,7 +2,7 @@ import { ethers, providers } from 'ethers';
 
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
-import { getSafeOwners } from '../helpers/guardian.js';
+import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import AaveGovernanceV2ABI from '../abis/AaveGovernanceV2.json' assert { type: 'json' };
 import executorWithTimelockAbi from '../abis/executorWithTimelockAbi.json' assert { type: 'json' };
 import {
@@ -19,16 +19,15 @@ export const resolveGovV2Modifiers = async (
   const roles = generateRoles(permissionsObject);
 
   const govContract = new ethers.Contract(
-    addressBook.GOV,
+    '0xec568fffba86c094cf06b22134b23074dfe2252c',
     AaveGovernanceV2ABI,
     provider,
   );
 
   const guardian = await govContract.getGuardian();
   const govOwner = await govContract.owner();
-
   obj['AaveGovernanceV2'] = {
-    address: addressBook.GOV,
+    address: '0xEC568fffba86c094cf06b22134B23074DFE2252c',
     modifiers: [
       {
         modifier: 'onlyGuardian',
@@ -36,6 +35,7 @@ export const resolveGovV2Modifiers = async (
           {
             address: guardian,
             owners: await getSafeOwners(provider, guardian),
+            signersThreshold: await getSafeThreshold(provider, guardian),
           },
         ],
         functions: roles['AaveGovernanceV2']['onlyGuardian'],
@@ -46,6 +46,7 @@ export const resolveGovV2Modifiers = async (
           {
             address: govOwner,
             owners: await getSafeOwners(provider, govOwner),
+            signersThreshold: await getSafeThreshold(provider, govOwner),
           },
         ],
         functions: roles['AaveGovernanceV2']['onlyOwner'],
@@ -80,6 +81,7 @@ export const resolveGovV2Modifiers = async (
           {
             address: pendingAdmin,
             owners: await getSafeOwners(provider, pendingAdmin),
+            signersThreshold: await getSafeThreshold(provider, pendingAdmin),
           },
         ],
         functions: roles['ExecutorWithTimelock']['onlyPendingAdmin'],
@@ -90,6 +92,7 @@ export const resolveGovV2Modifiers = async (
           {
             address: admin,
             owners: await getSafeOwners(provider, admin),
+            signersThreshold: await getSafeThreshold(provider, admin),
           },
         ],
         functions: roles['ExecutorWithTimelock']['onlyAdmin'],
@@ -124,6 +127,10 @@ export const resolveGovV2Modifiers = async (
           {
             address: longPendingAdmin,
             owners: await getSafeOwners(provider, longPendingAdmin),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              longPendingAdmin,
+            ),
           },
         ],
         functions: roles['ExecutorWithTimelock']['onlyPendingAdmin'],
@@ -134,6 +141,7 @@ export const resolveGovV2Modifiers = async (
           {
             address: longAdmin,
             owners: await getSafeOwners(provider, longAdmin),
+            signersThreshold: await getSafeThreshold(provider, longAdmin),
           },
         ],
         functions: roles['ExecutorWithTimelock']['onlyAdmin'],

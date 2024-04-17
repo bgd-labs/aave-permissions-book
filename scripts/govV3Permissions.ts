@@ -3,20 +3,14 @@ import { ethers, providers, constants } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
-import { getSafeOwners } from '../helpers/guardian.js';
+import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import {
   ICrossChainController_ABI,
-  IGovernanceCore_ABI,
-  IVotingPortal_ABI,
-  IVotingMachineWithProofs_ABI,
-  IPayloadsControllerCore_ABI,
   IWithGuardian_ABI,
   IOwnable_ABI,
   IRescuable_ABI,
 } from '@bgd-labs/aave-address-book';
-import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
 import baseAdapter from '../abis/BaseAdapter.json' assert { type: 'json' };
-import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
 
 export const resolveGovV3Modifiers = async (
   addressBook: any,
@@ -35,26 +29,6 @@ export const resolveGovV3Modifiers = async (
     addressBook.GOVERNANCE &&
     addressBook.GOVERNANCE !== constants.AddressZero
   ) {
-    const shortExecutor = AaveGovernanceV2.SHORT_EXECUTOR;
-
-    // obj['AaveGovernanceV3'] = {
-    //   address: addressBook.GOVERNANCE,
-    //   modifiers: [
-    //     {
-    //       modifier: 'onlyShortExecutor',
-    //       addresses: [
-    //         {
-    //           address: AaveGovernanceV2.SHORT_EXECUTOR,
-    //           owners: await getSafeOwners(
-    //             provider,
-    //             AaveGovernanceV2.SHORT_EXECUTOR,
-    //           ),
-    //         },
-    //       ],
-    //       functions: roles['AaveGovernanceV3']['onlyOwner'],
-    //     },
-    //   ],
-    // };
     const govContractGuardian = new ethers.Contract(
       addressBook.GOVERNANCE,
       IWithGuardian_ABI,
@@ -77,6 +51,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: govOwner,
               owners: await getSafeOwners(provider, govOwner),
+              signersThreshold: await getSafeThreshold(provider, govOwner),
             },
           ],
           functions: roles['AaveGovernanceV3']['onlyOwner'],
@@ -87,6 +62,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: govGuardian,
               owners: await getSafeOwners(provider, govGuardian),
+              signersThreshold: await getSafeThreshold(provider, govGuardian),
             },
           ],
           functions: roles['AaveGovernanceV3']['onlyGuardian'],
@@ -97,10 +73,12 @@ export const resolveGovV3Modifiers = async (
             {
               address: govGuardian,
               owners: await getSafeOwners(provider, govGuardian),
+              signersThreshold: await getSafeThreshold(provider, govGuardian),
             },
             {
               address: govOwner,
               owners: await getSafeOwners(provider, govOwner),
+              signersThreshold: await getSafeThreshold(provider, govOwner),
             },
           ],
           functions: roles['AaveGovernanceV3']['onlyOwnerOrGuardian'],
@@ -141,9 +119,10 @@ export const resolveGovV3Modifiers = async (
             {
               address: pcOwner,
               owners: await getSafeOwners(provider, pcOwner),
+              signersThreshold: await getSafeThreshold(provider, pcOwner),
             },
           ],
-          functions: roles['AaveGovernanceV3']['onlyOwner'],
+          functions: roles['PayloadsController']['onlyOwner'],
         },
         {
           modifier: 'onlyGuardian',
@@ -151,9 +130,10 @@ export const resolveGovV3Modifiers = async (
             {
               address: pcGuardian,
               owners: await getSafeOwners(provider, pcGuardian),
+              signersThreshold: await getSafeThreshold(provider, pcGuardian),
             },
           ],
-          functions: roles['AaveGovernanceV3']['onlyGuardian'],
+          functions: roles['PayloadsController']['onlyGuardian'],
         },
         {
           modifier: 'onlyOwnerOrGuardian',
@@ -161,13 +141,15 @@ export const resolveGovV3Modifiers = async (
             {
               address: pcGuardian,
               owners: await getSafeOwners(provider, pcGuardian),
+              signersThreshold: await getSafeThreshold(provider, pcGuardian),
             },
             {
               address: pcOwner,
               owners: await getSafeOwners(provider, pcOwner),
+              signersThreshold: await getSafeThreshold(provider, pcOwner),
             },
           ],
-          functions: roles['AaveGovernanceV3']['onlyOwnerOrGuardian'],
+          functions: roles['PayloadsController']['onlyOwnerOrGuardian'],
         },
         {
           modifier: 'onlyRescueGuardian',
@@ -175,9 +157,10 @@ export const resolveGovV3Modifiers = async (
             {
               address: rescuer,
               owners: await getSafeOwners(provider, rescuer),
+              signersThreshold: await getSafeThreshold(provider, rescuer),
             },
           ],
-          functions: roles['AaveGovernanceV3']['onlyRescueGuardian'],
+          functions: roles['PayloadsController']['onlyRescueGuardian'],
         },
       ],
     };
@@ -202,6 +185,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: owner,
               owners: await getSafeOwners(provider, owner),
+              signersThreshold: await getSafeThreshold(provider, owner),
             },
           ],
           functions: roles['VotingMachine']['onlyOwner'],
@@ -229,6 +213,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: owner,
               owners: await getSafeOwners(provider, owner),
+              signersThreshold: await getSafeThreshold(provider, owner),
             },
           ],
           functions: roles['VotingPortal']['onlyOwner'],
@@ -256,6 +241,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: owner,
               owners: await getSafeOwners(provider, owner),
+              signersThreshold: await getSafeThreshold(provider, owner),
             },
           ],
           functions: roles['VotingPortal']['onlyOwner'],
@@ -283,6 +269,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: owner,
               owners: await getSafeOwners(provider, owner),
+              signersThreshold: await getSafeThreshold(provider, owner),
             },
           ],
           functions: roles['VotingPortal']['onlyOwner'],
@@ -310,6 +297,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: owner,
               owners: await getSafeOwners(provider, owner),
+              signersThreshold: await getSafeThreshold(provider, owner),
             },
           ],
           functions: roles['Executor']['onlyOwner'],
@@ -337,6 +325,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: owner,
               owners: await getSafeOwners(provider, owner),
+              signersThreshold: await getSafeThreshold(provider, owner),
             },
           ],
           functions: roles['Executor']['onlyOwner'],
@@ -364,6 +353,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: owner,
               owners: await getSafeOwners(provider, owner),
+              signersThreshold: await getSafeThreshold(provider, owner),
             },
           ],
           functions: roles['EmergencyRegistry']['onlyOwner'],
@@ -431,8 +421,18 @@ export const resolveGovV3Modifiers = async (
       }
 
       let bridgeAdapterName = `BridgeAdapter${i}`;
-      if (addressNames && addressNames[receiverBridgesArray[i]] !== '') {
-        bridgeAdapterName = addressNames[receiverBridgesArray[i]];
+
+      try {
+        const bridgeAdapterContract = new ethers.Contract(
+          receiverBridgesArray[i],
+          baseAdapter,
+          provider,
+        );
+        bridgeAdapterName = await bridgeAdapterContract.adapterName();
+      } catch (error) {
+        if (addressNames && addressNames[receiverBridgesArray[i]] !== '') {
+          bridgeAdapterName = addressNames[receiverBridgesArray[i]];
+        }
       }
 
       obj[bridgeAdapterName] = {
@@ -464,6 +464,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: owner,
               owners: await getSafeOwners(provider, owner),
+              signersThreshold: await getSafeThreshold(provider, owner),
             },
           ],
           functions: roles['CrossChainController']['onlyOwner'],
@@ -474,10 +475,12 @@ export const resolveGovV3Modifiers = async (
             {
               address: guardian,
               owners: await getSafeOwners(provider, guardian),
+              signersThreshold: await getSafeThreshold(provider, guardian),
             },
             {
               address: owner,
               owners: await getSafeOwners(provider, owner),
+              signersThreshold: await getSafeThreshold(provider, owner),
             },
           ],
           functions: roles['CrossChainController']['onlyOwnerOrGuardian'],
@@ -488,6 +491,7 @@ export const resolveGovV3Modifiers = async (
             {
               address: rescuer,
               owners: await getSafeOwners(provider, rescuer),
+              signersThreshold: await getSafeThreshold(provider, rescuer),
             },
           ],
           functions: roles['CrossChainController']['onlyRescueGuardian'],
@@ -530,6 +534,7 @@ export const resolveGovV3Modifiers = async (
           {
             address: guardian,
             owners: await getSafeOwners(provider, guardian),
+            signersThreshold: await getSafeThreshold(provider, guardian),
           },
         ],
         functions: roles['CrossChainController']['onlyGuardian'],

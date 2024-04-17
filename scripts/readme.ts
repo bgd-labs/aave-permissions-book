@@ -21,6 +21,8 @@ This repository contains and easy directory of tables showing which permissions 
 
 A [permissions document](./out) has been created for every pool of every network where the Aave Protocol has been deployed. 
 These documents contain tables with the following information:
+- **Contracts upgradeability**: Aave uses quite frequently upgradeable proxies, meaning that the logic of several smart contracts can change after deployment, it is not immutable. On this table we indicate for each smart contract if it is upgradeable or not, and who can do the upgrade.
+- **Actions type**: This table shows an aggregation of actions that can affect change on the Aave protocol and who can execute them.
 - **Contracts**: This table has information about the contracts of the Aave protocol.
   - contract: Name of the contract.
   - proxyAdmin: If the contract follows the Proxy Pattern, it will show the proxyAdmin address. The proxyAdmin has permissions to upgrade the implementation.

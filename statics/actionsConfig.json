@@ -1,0 +1,70 @@
+{
+  "updateReserveBorrowSettings": [
+    "setReserveBorrowing",
+    "setBorrowableInIsolation",
+    "setReserveFactor"
+  ],
+  "configureProtocolFees": [
+    "updateBridgeProtocolFee",
+    "updateFlashloanPremiumTotal",
+    "updateFlashloanPremiumToProtocol",
+    "updateFlashloanPremiums"
+  ],
+  "updateReserveCaps": ["setBorrowCap", "setSupplyCap"],
+  "updateReserveSettings": [
+    "setEModeCategory",
+    "setAssetEModeCategory",
+    "setConfiguration",
+    "configureEModeCategory",
+    "setReserveActive"
+  ],
+  "configureCollateral": [
+    "configureReserveAsCollateral",
+    "resetIsolationModeTotalDebt",
+    "setLiquidationProtocolFee",
+    "setDebtCeiling"
+  ],
+  "upgradeAaveTokens (a/v/s)": ["updateAToken", "updateVariableDebtToken"],
+  "upgradeAaveOracles": ["setAssetSources", "setFallbackOracle"],
+  "reserveUpgradeability": ["setReserveInterestRateStrategyAddress"],
+  "pausePool": ["setPoolPause"],
+  "pauseAndFreezeReserve": ["setReserveFreeze", "setReservePause"],
+  "reserveListing": [
+    "initReserves",
+    "enableAssets",
+    "disableAssets",
+    "initReserve",
+    "dropReserve"
+  ],
+  "adminsConfiguration": ["setACLManager", "setACLAdmin"],
+  "protocolUpgradeablity": [
+    "setAddress",
+    "setPoolImpl",
+    "setAddressAsProxy",
+    "setPoolConfiguratorImpl",
+    "setPriceOracleSentinel",
+    "setPoolDataProvider",
+    "setPriceOracle"
+  ],
+  "adiConfigurations": [
+    "approveSenders",
+    "removeSenders",
+    "enableBridgeAdapters",
+    "disableBridgeAdapters",
+    "allowReceiverBridgeAdapters",
+    "disallowReceiverBridgeAdapters"
+  ],
+  "retryAndInvalidateMessages": [
+    "updateMessagesValidityTimestamp",
+    "retryEnvelope",
+    "retryTransaction"
+  ],
+  "configureGovernance": [
+    "updateGasLimit",
+    "addVotingPortals",
+    "removeVotingPortals",
+    "setVotingConfigs",
+    "setPowerStrategy"
+  ],
+  "cancelProposal": ["cancelProposal"]
+}

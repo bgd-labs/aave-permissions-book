@@ -135,11 +135,8 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 18090380,
         addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
         addresses: {
-          '0xDB8953194810b1942544fA528791278D458719D5': 'CCIPAdapter',
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
           '0x6Abb61beb5848B476d026C4934E8a6415e2E75a8': 'HyperLaneAdapter',
-          '0xb13712De579E1f9943502FFCf72eab6ec348cF79':
-            'PolygonAdapterEthereum',
         },
       },
       [Pools.GHO]: {
@@ -269,10 +266,8 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: { ...AaveV3Polygon, ...MiscPolygon },
         governanceAddressBook: GovernanceV3Polygon,
         addresses: {
-          '0x95Fa2c817169E26956AB8795c84a225b55d7db5B': 'CCIPAdapter',
           '0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5': 'LayerZeroAdapter',
           '0x3c25b96fF62D21E90556869272a277eE2E229747': 'HyperLaneAdapter',
-          '0xb13712De579E1f9943502FFCf72eab6ec348cF79': 'PolygonAdapterPolygon',
         },
       },
       [Pools.V2]: {
@@ -318,7 +313,6 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: { ...AaveV3BNB, ...MiscBNB },
         governanceAddressBook: GovernanceV3BNB,
         addresses: {
-          '0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf': 'CCIPAdapter',
           '0xFF1137243698CaA18EE364Cc966CF0e02A4e6327': 'LayerZeroAdapter',
           '0x118DFD5418890c0332042ab05173Db4A2C1d283c': 'HyperLaneAdapter',
         },

@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "modifiers:generate": "ts-node scripts/modifiersCalculator.ts",
-    "tables:create": "ts-node scripts/createTables.ts"
+    "modifiers:generate": "node --no-warnings=ExperimentalWarning --loader ts-node/esm scripts/modifiersCalculator.ts",
+    "tables:create": "node --no-warnings=ExperimentalWarning --loader ts-node/esm scripts/createTables.ts"
   },
   "repository": {
     "type": "git",
