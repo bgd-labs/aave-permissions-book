@@ -119,7 +119,7 @@ export const resolveV2Modifiers = async (
       },
     ],
   };
-  if (pool === Pools.V2 && chainId !== ChainId.avalanche) {
+  if (pool === Pools.V2) {
     obj['LendingPoolConfigurator'].modifiers.push({
       modifier: 'onlyPoolOrEmergencyAdmin',
       addresses: [

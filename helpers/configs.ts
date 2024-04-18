@@ -358,10 +358,10 @@ export const networkConfigs: NetworkConfigs = {
           '0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04': 'HyperLaneAdapter',
         },
       },
-      // [Pools.V2]: {
-      //   permissionsJson: './statics/functionsPermissionsV2PoR.json',
-      //   addressBook: AaveV2Avalanche,
-      // },
+      [Pools.V2]: {
+        permissionsJson: './statics/functionsPermissionsV2PoR.json',
+        addressBook: AaveV2Avalanche,
+      },
       // [Pools.V2_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsV2PoR.json',
       //   addressBook: AaveV2Avalanche,
@@ -584,28 +584,28 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
-  // ['1101']: {
-  //   rpcUrl: process.env.RPC_ZKEVM,
-  //   explorer: 'https://zkevm.polygonscan.com/',
-  //   addressesNames: {
-  //     '0x8C05474F1f0161F71276677De0a2d8a347583c45':
-  //       'Aave Guardian Polygon ZkEvm',
-  //     '0x07CD7D7866074FDFC4b8b86B126dD7199859483a': 'BGD',
-  //     '0xC165b4ae0dfB650E0123d4A70D260029Cb6e2C0f': 'Risk Council',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 9169630,
-  //       crossChainControllerBlock: 6314218,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //       addressBook: { ...AaveV3PolygonZkEvm, ...MiscPolygonZkEvm },
-  //       governanceAddressBook: GovernanceV3PolygonZkEvm,
-  //       addresses: {
-  //         '0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b': 'ZkEVMAdapter',
-  //       },
-  //     },
-  //   },
-  // },
 };
+// ['1101']: {
+//   rpcUrl: process.env.RPC_ZKEVM,
+//   explorer: 'https://zkevm.polygonscan.com/',
+//   addressesNames: {
+//     '0x8C05474F1f0161F71276677De0a2d8a347583c45':
+//       'Aave Guardian Polygon ZkEvm',
+//     '0x07CD7D7866074FDFC4b8b86B126dD7199859483a': 'BGD',
+//     '0xC165b4ae0dfB650E0123d4A70D260029Cb6e2C0f': 'Risk Council',
+//     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+//   },
+//   pools: {
+//     [Pools.V3]: {
+//       aclBlock: 9169630,
+//       crossChainControllerBlock: 6314218,
+//       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+//       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+//       addressBook: { ...AaveV3PolygonZkEvm, ...MiscPolygonZkEvm },
+//       governanceAddressBook: GovernanceV3PolygonZkEvm,
+//       addresses: {
+//         '0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b': 'ZkEVMAdapter',
+//       },
+//     },
+//   },
+// },
