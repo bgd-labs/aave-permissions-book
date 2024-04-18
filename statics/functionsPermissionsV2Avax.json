@@ -104,7 +104,7 @@
       },
       {
         "name": "disableBorrowingOnReserve",
-        "roles": ["onlyPoolAdmin"]
+        "roles": ["onlyPoolOrProofOfReserveAdmin"]
       },
       {
         "name": "configureReserveAsCollateral",
@@ -116,7 +116,7 @@
       },
       {
         "name": "disableReserveStableRate",
-        "roles": ["onlyPoolAdmin"]
+        "roles": ["onlyPoolOrProofOfReserveAdmin"]
       },
       {
         "name": "activateReserve",
@@ -128,7 +128,7 @@
       },
       {
         "name": "freezeReserve",
-        "roles": ["onlyPoolOrEmergencyAdmin"]
+        "roles": ["onlyPoolOrProofOfReserveAdmin"]
       },
       {
         "name": "unfreezeReserve",

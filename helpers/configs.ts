@@ -191,11 +191,11 @@ export const networkConfigs: NetworkConfigs = {
       //     'https://rpc.tenderly.co/fork/247e153a-3814-4cef-8dfa-dc0648a813c6',
       // },
       [Pools.V2_AMM]: {
-        permissionsJson: './statics/functionsPermissionsV2.json',
+        permissionsJson: './statics/functionsPermissionsV2AMM.json',
         addressBook: AaveV2EthereumAMM,
       },
       // [Pools.V2_AMM_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV2.json',
+      //   permissionsJson: './statics/functionsPermissionsV2AMM.json',
       //   addressBook: AaveV2EthereumAMM,
       //   tenderlyBasePool: Pools.V2_AMM,
       //   tenderlyRpcUrl:
@@ -358,10 +358,10 @@ export const networkConfigs: NetworkConfigs = {
           '0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04': 'HyperLaneAdapter',
         },
       },
-      [Pools.V2]: {
-        permissionsJson: './statics/functionsPermissionsV2PoR.json',
-        addressBook: AaveV2Avalanche,
-      },
+      // [Pools.V2]: {
+      //   permissionsJson: './statics/functionsPermissionsV2PoR.json',
+      //   addressBook: AaveV2Avalanche,
+      // },
       // [Pools.V2_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsV2PoR.json',
       //   addressBook: AaveV2Avalanche,
