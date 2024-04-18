@@ -27,7 +27,6 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
     } else {
       for (let contractName of Object.keys(poolInfo)) {
         const contract = poolInfo[contractName];
-
         // search all modifiers
         contract.modifiers.forEach((modifier) => {
           const hasFunction = modifier.functions.some((functionName: string) =>

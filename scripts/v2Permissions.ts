@@ -2,6 +2,7 @@ import { ethers, providers, utils } from 'ethers';
 import { Pools } from '../helpers/configs.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import lendingPoolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json' assert { type: 'json' };
+import lendingPoolConfigurator from '../abis/lendingPoolConfigurator.json' assert { type: 'json' };
 import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
 import arcTimelockAbi from '../abis/arcTimelockAbi.json' assert { type: 'json' };
 import { AaveV2EthereumArc } from '@bgd-labs/aave-address-book';
@@ -75,6 +76,15 @@ export const resolveV2Modifiers = async (
     ],
   };
 
+  const lendingPoolConfiguratorContract = new ethers.Contract(
+    addressBook.POOL_ADDRESSES_PROVIDER,
+    lendingPoolConfigurator,
+    provider,
+  );
+  const poolConfiguratorAdmin: string =
+    await lendingPoolConfiguratorContract.getPoolAdmin();
+  const emergencyAdminConfigurator: string =
+    await lendingPoolConfiguratorContract.getEmergencyAdmin();
   obj['LendingPoolConfigurator'] = {
     address: addressBook.POOL_CONFIGURATOR,
     proxyAdmin: addressBook.POOL_ADDRESSES_PROVIDER,
@@ -83,9 +93,12 @@ export const resolveV2Modifiers = async (
         modifier: 'onlyPoolAdmin',
         addresses: [
           {
-            address: poolAdmin,
-            owners: await getSafeOwners(provider, poolAdmin),
-            signersThreshold: await getSafeThreshold(provider, poolAdmin),
+            address: poolConfiguratorAdmin,
+            owners: await getSafeOwners(provider, poolConfiguratorAdmin),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              poolConfiguratorAdmin,
+            ),
           },
         ],
         functions: roles['LendingPoolConfigurator']['onlyPoolAdmin'],
@@ -94,15 +107,42 @@ export const resolveV2Modifiers = async (
         modifier: 'onlyEmergencyAdmin',
         addresses: [
           {
-            address: emergencyAdmin,
-            owners: await getSafeOwners(provider, emergencyAdmin),
-            signersThreshold: await getSafeThreshold(provider, emergencyAdmin),
+            address: emergencyAdminConfigurator,
+            owners: await getSafeOwners(provider, emergencyAdminConfigurator),
+            signersThreshold: await getSafeThreshold(
+              provider,
+              emergencyAdminConfigurator,
+            ),
           },
         ],
         functions: roles['LendingPoolConfigurator']['onlyEmergencyAdmin'],
       },
     ],
   };
+  if (pool === Pools.V2) {
+    obj['LendingPoolConfigurator'].modifiers.push({
+      modifier: 'onlyPoolOrEmergencyAdmin',
+      addresses: [
+        {
+          address: poolConfiguratorAdmin,
+          owners: await getSafeOwners(provider, poolConfiguratorAdmin),
+          signersThreshold: await getSafeThreshold(
+            provider,
+            poolConfiguratorAdmin,
+          ),
+        },
+        {
+          address: emergencyAdminConfigurator,
+          owners: await getSafeOwners(provider, emergencyAdminConfigurator),
+          signersThreshold: await getSafeThreshold(
+            provider,
+            emergencyAdminConfigurator,
+          ),
+        },
+      ],
+      functions: roles['LendingPoolConfigurator']['onlyPoolOrEmergencyAdmin'],
+    });
+  }
 
   // Proof of reserve contracts
   if (chainId === ChainId.avalanche) {

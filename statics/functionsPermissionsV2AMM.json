@@ -128,11 +128,11 @@
       },
       {
         "name": "freezeReserve",
-        "roles": ["onlyPoolOrEmergencyAdmin"]
+        "roles": ["onlyPoolAdmin"]
       },
       {
         "name": "unfreezeReserve",
-        "roles": ["onlyPoolOrEmergencyAdmin"]
+        "roles": ["onlyPoolAdmin"]
       },
       {
         "name": "setReserveFactor",
