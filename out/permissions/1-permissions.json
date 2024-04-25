@@ -506,7 +506,7 @@
           "0x8F2411a538381aae2b464499005F0211e867d84f"
         ]
       },
-      "latestBlockNumber": 19721557
+      "latestBlockNumber": 19728704
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -526,7 +526,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 19721557
+        "latestBlockNumber": 19728704
       },
       "GSM_USDT": {
         "role": {
@@ -545,7 +545,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 19721557
+        "latestBlockNumber": 19728704
       }
     },
     "govV3": {}
@@ -1328,7 +1328,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 19721557
+      "latestBlockNumber": 19728694
     },
     "gsmRoles": {},
     "govV3": {
@@ -1637,53 +1637,7 @@
                   "chain": "137"
                 },
                 {
-                  "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
-                  "owners": [],
-                  "chain": "43114"
-                }
-              ],
-              "functions": [
-                "receiveMessage"
-              ]
-            }
-          ]
-        },
-        "LayerZeroAdapter": {
-          "address": "0x2a323be63e08E08536Fc3b5d8C6f24825e68895e",
-          "modifiers": [
-            {
-              "modifier": "trustedRemote",
-              "addresses": [
-                {
-                  "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
-                  "owners": [],
-                  "chain": "137"
-                },
-                {
-                  "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
-                  "owners": [],
-                  "chain": "43114"
-                }
-              ],
-              "functions": [
-                "receiveMessage"
-              ]
-            }
-          ]
-        },
-        "HyperLaneAdapter": {
-          "address": "0x6Abb61beb5848B476d026C4934E8a6415e2E75a8",
-          "modifiers": [
-            {
-              "modifier": "trustedRemote",
-              "addresses": [
-                {
-                  "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
-                  "owners": [],
-                  "chain": "137"
-                },
-                {
-                  "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
+                  "address": "0x0000000000000000000000000000000000000000",
                   "owners": [],
                   "chain": "43114"
                 }
@@ -1706,7 +1660,53 @@
                   "chain": "137"
                 },
                 {
-                  "address": "0x27FC7D54C893dA63C0AE6d57e1B2B13A70690928",
+                  "address": "0x0000000000000000000000000000000000000000",
+                  "owners": [],
+                  "chain": "43114"
+                }
+              ],
+              "functions": [
+                "receiveMessage"
+              ]
+            }
+          ]
+        },
+        "HyperLaneAdapter": {
+          "address": "0x6Abb61beb5848B476d026C4934E8a6415e2E75a8",
+          "modifiers": [
+            {
+              "modifier": "trustedRemote",
+              "addresses": [
+                {
+                  "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
+                  "owners": [],
+                  "chain": "137"
+                },
+                {
+                  "address": "0x0000000000000000000000000000000000000000",
+                  "owners": [],
+                  "chain": "43114"
+                }
+              ],
+              "functions": [
+                "receiveMessage"
+              ]
+            }
+          ]
+        },
+        "LayerZero adapter": {
+          "address": "0x8410d9BD353b420ebA8C48ff1B0518426C280FCC",
+          "modifiers": [
+            {
+              "modifier": "trustedRemote",
+              "addresses": [
+                {
+                  "address": "0xF6B99959F0b5e79E1CC7062E12aF632CEb18eF0d",
+                  "owners": [],
+                  "chain": "137"
+                },
+                {
+                  "address": "0x0000000000000000000000000000000000000000",
                   "owners": [],
                   "chain": "43114"
                 }
@@ -1813,7 +1813,7 @@
                   "owners": []
                 },
                 {
-                  "address": "0x2a323be63e08E08536Fc3b5d8C6f24825e68895e",
+                  "address": "0x1562F1b2487F892BBA8Ef325aF054Fd157510a71",
                   "owners": []
                 },
                 {
@@ -1821,7 +1821,7 @@
                   "owners": []
                 },
                 {
-                  "address": "0x1562F1b2487F892BBA8Ef325aF054Fd157510a71",
+                  "address": "0x8410d9BD353b420ebA8C48ff1B0518426C280FCC",
                   "owners": []
                 }
               ],
@@ -1840,7 +1840,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 19721557
+      "latestCCCBlockNumber": 19728699
     }
   },
   "V2": {
