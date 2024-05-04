@@ -554,7 +554,7 @@
           "0x4A4c73d563395ad827511F70097d4Ef82E653805"
         ]
       },
-      "latestBlockNumber": 13952739
+      "latestBlockNumber": 13995944
     },
     "gsmRoles": {},
     "govV3": {
@@ -663,24 +663,6 @@
             }
           ]
         },
-        "CBaseAdapter": {
-          "address": "0x7b62461a3570c6AC8a9f8330421576e417B71EE7",
-          "modifiers": [
-            {
-              "modifier": "trustedRemote",
-              "addresses": [
-                {
-                  "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
-                  "owners": [],
-                  "chain": "1"
-                }
-              ],
-              "functions": [
-                "receiveMessage"
-              ]
-            }
-          ]
-        },
         "Base native adapter": {
           "address": "0x7120b1f8e5b73c0C0DC99C6e52Fe4937E7EA11e0",
           "modifiers": [
@@ -770,10 +752,6 @@
               "modifier": "onlyApprovedBridges",
               "addresses": [
                 {
-                  "address": "0x7b62461a3570c6AC8a9f8330421576e417B71EE7",
-                  "owners": []
-                },
-                {
                   "address": "0x7120b1f8e5b73c0C0DC99C6e52Fe4937E7EA11e0",
                   "owners": []
                 }
@@ -787,7 +765,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 13952746
+      "latestCCCBlockNumber": 13995976
     }
   },
   "TENDERLY": {

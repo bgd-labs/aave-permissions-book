@@ -576,7 +576,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 119548013
+      "latestBlockNumber": 119591207
     },
     "gsmRoles": {},
     "govV3": {
@@ -685,24 +685,6 @@
             }
           ]
         },
-        "OpAdapter": {
-          "address": "0x81d32B36380e6266e1BDd490eAC56cdB300afBe0",
-          "modifiers": [
-            {
-              "modifier": "trustedRemote",
-              "addresses": [
-                {
-                  "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
-                  "owners": [],
-                  "chain": "1"
-                }
-              ],
-              "functions": [
-                "receiveMessage"
-              ]
-            }
-          ]
-        },
         "Optimism native adapter": {
           "address": "0xAE93BEa44dcbE52B625169588574d31e36fb3A67",
           "modifiers": [
@@ -792,10 +774,6 @@
               "modifier": "onlyApprovedBridges",
               "addresses": [
                 {
-                  "address": "0x81d32B36380e6266e1BDd490eAC56cdB300afBe0",
-                  "owners": []
-                },
-                {
                   "address": "0xAE93BEa44dcbE52B625169588574d31e36fb3A67",
                   "owners": []
                 }
@@ -809,7 +787,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 119548018
+      "latestCCCBlockNumber": 119591231
     }
   },
   "TENDERLY": {

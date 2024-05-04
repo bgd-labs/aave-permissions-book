@@ -460,7 +460,7 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 33747218
+      "latestBlockNumber": 33764012
     },
     "gsmRoles": {},
     "govV3": {
@@ -587,8 +587,8 @@
             }
           ]
         },
-        "HyperLaneAdapter": {
-          "address": "0x4A4c73d563395ad827511F70097d4Ef82E653805",
+        "LayerZero adapter": {
+          "address": "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -605,8 +605,8 @@
             }
           ]
         },
-        "LayerZero adapter": {
-          "address": "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F",
+        "Hyperlane adapter": {
+          "address": "0xA806DA549FcB2B4912a7dFFE4c1aA7A1ed0Bd5C9",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -698,11 +698,11 @@
                   "owners": []
                 },
                 {
-                  "address": "0x4A4c73d563395ad827511F70097d4Ef82E653805",
+                  "address": "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F",
                   "owners": []
                 },
                 {
-                  "address": "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F",
+                  "address": "0xA806DA549FcB2B4912a7dFFE4c1aA7A1ed0Bd5C9",
                   "owners": []
                 }
               ],
@@ -732,7 +732,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 33747226
+      "latestCCCBlockNumber": 33764023
     }
   },
   "TENDERLY": {

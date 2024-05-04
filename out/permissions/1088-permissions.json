@@ -497,7 +497,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 16897577
+      "latestBlockNumber": 16909759
     },
     "gsmRoles": {},
     "govV3": {
@@ -606,24 +606,6 @@
             }
           ]
         },
-        "MetisAdapter": {
-          "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
-          "modifiers": [
-            {
-              "modifier": "trustedRemote",
-              "addresses": [
-                {
-                  "address": "0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1",
-                  "owners": [],
-                  "chain": "1"
-                }
-              ],
-              "functions": [
-                "receiveMessage"
-              ]
-            }
-          ]
-        },
         "Metis native adapter": {
           "address": "0xf41193E25408F652AF878c47E4401A01B5E4B682",
           "modifiers": [
@@ -713,10 +695,6 @@
               "modifier": "onlyApprovedBridges",
               "addresses": [
                 {
-                  "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
-                  "owners": []
-                },
-                {
                   "address": "0xf41193E25408F652AF878c47E4401A01B5E4B682",
                   "owners": []
                 }
@@ -730,7 +708,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 16897579
+      "latestCCCBlockNumber": 16909759
     }
   }
 }

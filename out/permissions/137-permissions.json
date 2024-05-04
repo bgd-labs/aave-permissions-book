@@ -619,7 +619,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 56511692
+      "latestBlockNumber": 56547821
     },
     "gsmRoles": {},
     "govV3": {
@@ -782,8 +782,8 @@
             }
           ]
         },
-        "HyperLaneAdapter": {
-          "address": "0x3c25b96fF62D21E90556869272a277eE2E229747",
+        "LayerZero adapter": {
+          "address": "0x7FAE7765abB4c8f778d57337bB720d0BC53057e3",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -800,8 +800,8 @@
             }
           ]
         },
-        "LayerZero adapter": {
-          "address": "0x7FAE7765abB4c8f778d57337bB720d0BC53057e3",
+        "Hyperlane adapter": {
+          "address": "0x3e72665008dC237bdd91C04C10782Ed1987a4019",
           "modifiers": [
             {
               "modifier": "trustedRemote",
@@ -902,11 +902,11 @@
                   "owners": []
                 },
                 {
-                  "address": "0x3c25b96fF62D21E90556869272a277eE2E229747",
+                  "address": "0x7FAE7765abB4c8f778d57337bB720d0BC53057e3",
                   "owners": []
                 },
                 {
-                  "address": "0x7FAE7765abB4c8f778d57337bB720d0BC53057e3",
+                  "address": "0x3e72665008dC237bdd91C04C10782Ed1987a4019",
                   "owners": []
                 }
               ],
@@ -938,7 +938,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 56511693
+      "latestCCCBlockNumber": 56547837
     }
   },
   "V2": {
