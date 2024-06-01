@@ -619,7 +619,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 57584924
+      "latestBlockNumber": 57623169
     },
     "gsmRoles": {},
     "govV3": {
@@ -938,7 +938,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 57584928
+      "latestCCCBlockNumber": 57623178
     }
   },
   "V2": {
