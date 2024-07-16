@@ -239,7 +239,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         governanceAddressBook: GovernanceV3Ethereum,
         aclBlock: 16291117,
-        crossChainControllerBlock: 17684650,
+        crossChainControllerBlock: 18090380,
         addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
         tenderlyBasePool: Pools.V3,
         tenderlyBlock: 20283951,
