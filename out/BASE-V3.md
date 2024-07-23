@@ -14,7 +14,6 @@
 |  [ParaSwapRepayAdapter](https://basescan.org/address/0x78F8Bd884C3D738B74B420540659c82f392820e0) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://basescan.org/address/0x6533A273F3aC84Df91DCD654D6EBAbA73687e246) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://basescan.org/address/0x2f6571d3Eb9a4e350C68C36bCD2afe39530078E2) |  not upgradeable | |--------|--------|
-|  [RatesFactory](https://basescan.org/address/0x0D1Fe8eAdb0a3e44C4Cc9D73De8dA50C1E475832) |  Governance | |--------|--------|
 |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://basescan.org/address/0x43955b0899Ab7232E3a454cf84AedD22Ad46FD33) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://basescan.org/address/0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6) |  not upgradeable | |--------|--------|
@@ -66,7 +65,6 @@
 |  [ParaSwapRepayAdapter](https://basescan.org/address/0x78F8Bd884C3D738B74B420540659c82f392820e0) |  - |  onlyOwner |  [BaseBridgeExecutor](https://basescan.org/address/0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://basescan.org/address/0x6533A273F3aC84Df91DCD654D6EBAbA73687e246) |  - |  onlyOwner |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://basescan.org/address/0x2f6571d3Eb9a4e350C68C36bCD2afe39530078E2) |  - |  onlyOwner |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
-|  [RatesFactory](https://basescan.org/address/0x0D1Fe8eAdb0a3e44C4Cc9D73De8dA50C1E475832) |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://basescan.org/address/0xc85b1E333aecc99340b2320493Fe2d22b8734795) |  - |  onlyOwner |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://basescan.org/address/0x43955b0899Ab7232E3a454cf84AedD22Ad46FD33) |  - |  onlyRole |  [Executor_lvl1](https://basescan.org/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://basescan.org/address/0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6) |  - |  onlyRiskCouncil |  [Risk Council](https://basescan.org/address/0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1) |  updateCaps | |--------|--------|--------|--------|--------|

@@ -12,6 +12,7 @@ import {
   AaveV3Arbitrum,
   AaveV3Avalanche,
   AaveV3Ethereum,
+  AaveV3EthereumLido,
   AaveV3Fantom,
   AaveV3Harmony,
   AaveV3Optimism,
@@ -67,6 +68,7 @@ export enum Pools {
   GHO_TENDERLY = 'GHO_TENDERLY',
   GOV_V2_TENDERLY = 'GOV_V2_TENDERLY',
   GHO_GSM = 'GHO_GSM',
+  LIDO = 'LIDO',
 }
 
 export const ghoRoleNames = [
@@ -111,7 +113,7 @@ export const networkConfigs: NetworkConfigs = {
     rpcUrl: process.env.RPC_MAINNET,
     explorer: 'https://etherscan.io',
     addressesNames: {
-      '0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633': 'Aave Guardian Ethereum',
+      '0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633': 'Aave Guardian Ethereum', // Delete after aip execution
       '0x23c155C1c1ecB18a86921Da29802292f1d282c68': 'Aave Arc DAO',
       '0x33B09130b035d6D7e57d76fEa0873d9545FA7557': 'Aave Arc Guardian',
       '0xB9062896ec3A615a4e4444DF183F0531a77218AE': 'Legacy Emergency Admin',
@@ -125,6 +127,8 @@ export const networkConfigs: NetworkConfigs = {
         'GSM_USDC_ORACLE_SWAP_FREEZER',
       '0x71381e6718b37C12155CB961Ca3D374A8BfFa0e5':
         'GSM_USDT_ORACLE_SWAP_FREEZER',
+      '0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30':
+        'New Aave Guardian Ethereum',
     },
     pools: {
       [Pools.V3]: {
@@ -137,6 +141,16 @@ export const networkConfigs: NetworkConfigs = {
         addresses: {
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
           '0x6Abb61beb5848B476d026C4934E8a6415e2E75a8': 'HyperLaneAdapter',
+        },
+      },
+      [Pools.LIDO]: {
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        aclBlock: 20262410,
+        addressBook: {
+          ...AaveV3EthereumLido,
+          ...MiscEthereum,
+          COLLECTOR: AaveV3Ethereum.COLLECTOR,
         },
       },
       [Pools.GHO]: {

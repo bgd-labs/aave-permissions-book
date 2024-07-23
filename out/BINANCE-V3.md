@@ -14,7 +14,6 @@
 |  [ParaSwapRepayAdapter](https://bscscan.com/address/0x0727a6494095511078d63143A8a1E90b9f310880) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://bscscan.com/address/0x6eD1c70aa357fB8a7e1Eac85aa59e33287Df8f85) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://bscscan.com/address/0x117684358D990E42Eb1649E7e8C4691951dc1E71) |  not upgradeable | |--------|--------|
-|  [RatesFactory](https://bscscan.com/address/0x02e9b27599C4Bf8f789d34b6E65C51092c3d9FA6) |  Governance | |--------|--------|
 |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://bscscan.com/address/0x2D97F8FA96886Fd923c065F5457F9DDd494e3877) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595) |  not upgradeable | |--------|--------|
@@ -67,7 +66,6 @@
 |  [ParaSwapRepayAdapter](https://bscscan.com/address/0x0727a6494095511078d63143A8a1E90b9f310880) |  - |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://bscscan.com/address/0x6eD1c70aa357fB8a7e1Eac85aa59e33287Df8f85) |  - |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://bscscan.com/address/0x117684358D990E42Eb1649E7e8C4691951dc1E71) |  - |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
-|  [RatesFactory](https://bscscan.com/address/0x02e9b27599C4Bf8f789d34b6E65C51092c3d9FA6) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  - |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://bscscan.com/address/0x2D97F8FA96886Fd923c065F5457F9DDd494e3877) |  - |  onlyRole |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595) |  - |  onlyRiskCouncil |  [Risk Council](https://bscscan.com/address/0x126dc589cc75f17385dD95516F3F1788d862E7bc) |  updateCaps | |--------|--------|--------|--------|--------|

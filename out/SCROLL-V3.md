@@ -12,7 +12,6 @@
 |  [WrappedTokenGatewayV3](https://scrollscan.com//address/0xFF75A4B698E3Ec95E608ac0f22A03B8368E05F5D) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://scrollscan.com//address/0x6091546836DAe0487A50E300da3F237727441D90) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://scrollscan.com//address/0xFBedc64AeE24921cb43004312B9eF367a4162b57) |  not upgradeable | |--------|--------|
-|  [RatesFactory](https://scrollscan.com//address/0xe48fb34452FaE3Cd5d906F748490FBE16c3Ce31b) |  Governance | |--------|--------|
 |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://scrollscan.com//address/0x7633F981D87dC6307227de9383D2ce7243158081) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  not upgradeable | |--------|--------|
@@ -61,7 +60,6 @@
 |  [WrappedTokenGatewayV3](https://scrollscan.com//address/0xFF75A4B698E3Ec95E608ac0f22A03B8368E05F5D) |  - |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://scrollscan.com//address/0x6091546836DAe0487A50E300da3F237727441D90) |  - |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://scrollscan.com//address/0xFBedc64AeE24921cb43004312B9eF367a4162b57) |  - |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
-|  [RatesFactory](https://scrollscan.com//address/0xe48fb34452FaE3Cd5d906F748490FBE16c3Ce31b) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  - |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://scrollscan.com//address/0x7633F981D87dC6307227de9383D2ce7243158081) |  - |  onlyRole |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  - |  onlyRiskCouncil |  [Risk Council](https://scrollscan.com//address/0x611439a74546888c3535B4dd119A5Cbb9f5332EA) |  updateCaps | |--------|--------|--------|--------|--------|

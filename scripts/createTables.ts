@@ -127,13 +127,20 @@ export const generateTable = (network: string, pool: string): string => {
       ...mainnetPermissions[Pools.GOV_V2].contracts,
     });
   }
-
-  const v3Contracts = generateContractsByAddress({
-    ...(poolPermitsByContract?.contracts || {}),
-    ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
-    ...getPermissionsByNetwork(network)['V3'].contracts,
-    ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
-  });
+  let v3Contracts;
+  if (pool === Pools.LIDO) {
+    v3Contracts = generateContractsByAddress({
+      ...(poolPermitsByContract?.contracts || {}),
+      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+    });
+  } else {
+    v3Contracts = generateContractsByAddress({
+      ...(poolPermitsByContract?.contracts || {}),
+      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+      ...getPermissionsByNetwork(network)['V3'].contracts,
+      ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
+    });
+  }
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
 
   let decentralizationTable = `### Contracts upgradeability\n`;
@@ -157,11 +164,16 @@ export const generateTable = (network: string, pool: string): string => {
     const { upgradeable, ownedBy }: Decentralization =
       getLevelOfDecentralization(
         contract,
-        {
-          ...poolPermitsByContract.contracts,
-          ...getPermissionsByNetwork(network)['V3'].contracts,
-          ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
-        },
+        pool === Pools.LIDO
+          ? {
+              ...poolPermitsByContract.contracts,
+              ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+            }
+          : {
+              ...poolPermitsByContract.contracts,
+              ...getPermissionsByNetwork(network)['V3'].contracts,
+              ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+            },
         govPermissions,
       );
     decentralizationTableBody += getTableBody([

@@ -327,11 +327,6 @@
           }
         ]
       },
-      "RatesFactory": {
-        "address": "0x87Aaba7cf8e1F319d0E3402d68017171201dEcd5",
-        "modifiers": [],
-        "proxyAdmin": "0x1cabd986cbabdf12e00128dff03c80ee62c4fd97"
-      },
       "ProxyAdmin": {
         "address": "0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97",
         "modifiers": [
@@ -497,7 +492,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 17777840
+      "latestBlockNumber": 17784198
     },
     "gsmRoles": {},
     "govV3": {
@@ -708,7 +703,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 17777841
+      "latestCCCBlockNumber": 17784206
     }
   }
 }
