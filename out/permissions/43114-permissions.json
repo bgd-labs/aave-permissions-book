@@ -555,7 +555,7 @@
           "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
         ]
       },
-      "latestBlockNumber": 48335079
+      "latestBlockNumber": 48338183
     },
     "gsmRoles": {},
     "govV3": {
@@ -852,7 +852,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 48335116
+      "latestCCCBlockNumber": 48338187
     }
   },
   "V2": {
