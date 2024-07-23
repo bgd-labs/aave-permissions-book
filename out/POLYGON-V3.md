@@ -14,7 +14,6 @@
 |  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE3090207A2de94A856EA10a7e1Bd36dD6145712B) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://polygonscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://polygonscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  not upgradeable | |--------|--------|
-|  [RatesFactory](https://polygonscan.com/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  Governance | |--------|--------|
 |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://polygonscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://polygonscan.com/address/0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f) |  not upgradeable | |--------|--------|
@@ -73,7 +72,6 @@
 |  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE3090207A2de94A856EA10a7e1Bd36dD6145712B) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://polygonscan.com/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://polygonscan.com/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
-|  [RatesFactory](https://polygonscan.com/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://polygonscan.com/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  onlyRole |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://polygonscan.com/address/0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f) |  - |  onlyRiskCouncil |  [Risk Council](https://polygonscan.com/address/0x2C40FB1ACe63084fc0bB95F83C31B5854C6C4cB5) |  updateCaps | |--------|--------|--------|--------|--------|
