@@ -16,7 +16,6 @@
 |  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x49F5B996814fEd1dd39285B92A59CFb2dfd8D4f9) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://snowtrace.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://snowtrace.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  not upgradeable | |--------|--------|
-|  [RatesFactory](https://snowtrace.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  Governance | |--------|--------|
 |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://snowtrace.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5) |  not upgradeable | |--------|--------|
@@ -74,7 +73,6 @@
 |  [ParaSwapRepayAdapter](https://snowtrace.io/address/0x49F5B996814fEd1dd39285B92A59CFb2dfd8D4f9) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://snowtrace.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://snowtrace.io/address/0x770ef9f4fe897e59daCc474EF11238303F9552b6) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
-|  [RatesFactory](https://snowtrace.io/address/0xDd81E6F85358292075B78fc8D5830BE8434aF8BA) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://snowtrace.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  onlyRole |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5) |  - |  onlyRiskCouncil |  [Risk Council](https://snowtrace.io/address/0xCa66149425E7DC8f81276F6D80C4b486B9503D1a) |  updateCaps | |--------|--------|--------|--------|--------|

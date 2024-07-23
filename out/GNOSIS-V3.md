@@ -12,7 +12,6 @@
 |  [WrappedTokenGatewayV3](https://gnosisscan.io//address/0xfE76366A986B72c3f2923e05E6ba07b7de5401e4) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://gnosisscan.io//address/0x41585C50524fb8c3899B43D7D797d9486AAc94DB) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://gnosisscan.io//address/0x1236010CECea55998384e795B59815D871f5f94d) |  not upgradeable | |--------|--------|
-|  [RatesFactory](https://gnosisscan.io//address/0x73dDE2A75c06a108912bf7Ff600eDdCE9d96Ed25) |  Governance | |--------|--------|
 |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://gnosisscan.io//address/0xEc710f59005f48703908bC519D552Df5B8472614) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) |  not upgradeable | |--------|--------|
@@ -63,7 +62,6 @@
 |  [WrappedTokenGatewayV3](https://gnosisscan.io//address/0xfE76366A986B72c3f2923e05E6ba07b7de5401e4) |  - |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://gnosisscan.io//address/0x41585C50524fb8c3899B43D7D797d9486AAc94DB) |  - |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://gnosisscan.io//address/0x1236010CECea55998384e795B59815D871f5f94d) |  - |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
-|  [RatesFactory](https://gnosisscan.io//address/0x73dDE2A75c06a108912bf7Ff600eDdCE9d96Ed25) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  - |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://gnosisscan.io//address/0xEc710f59005f48703908bC519D552Df5B8472614) |  - |  onlyRole |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) |  - |  onlyRiskCouncil |  [Risk Council](https://gnosisscan.io//address/0xF221B08dD10e0C68D74F035764931Baa3b030481) |  updateCaps | |--------|--------|--------|--------|--------|
