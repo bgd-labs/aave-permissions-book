@@ -327,7 +327,7 @@ const generateNetworkPermissions = async (network: string) => {
 
   // save permissions in json object
   console.log(
-    '--------------------------------SAVE JSON-----------------------------------',
+    `-----------${network} : ------------------SAVE JSON-----------------------------------`,
   );
   saveJson(
     `out/permissions/${network}-permissions.json`,
