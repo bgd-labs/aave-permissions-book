@@ -540,8 +540,9 @@ export const resolveV2Modifiers = async (
 
   // TODO: for now we use the first encountered as default
   if (
+    addressBook.DEFAULT_INCENTIVES_CONTROLLER != undefined &&
     addressBook.DEFAULT_INCENTIVES_CONTROLLER !==
-    '0x0000000000000000000000000000000000000000'
+      '0x0000000000000000000000000000000000000000'
   ) {
     obj['DefaultIncentivesController'] = {
       address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,

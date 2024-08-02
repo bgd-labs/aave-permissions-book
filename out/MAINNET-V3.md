@@ -15,7 +15,6 @@
 |  [ParaSwapRepayAdapter](https://etherscan.io/address/0x02e7B8511831B1b02d9018215a0f8f500Ea5c6B3) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://etherscan.io/address/0x223d844fc4B006D67c0cDbd39371A9F73f69d974) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://etherscan.io/address/0xbaA999AC55EAce41CcAE355c77809e68Bb345170) |  not upgradeable | |--------|--------|
-|  [RatesFactory](https://etherscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  Governance | |--------|--------|
 |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  not upgradeable | |--------|--------|
 |  [ProxyAdminLong](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://etherscan.io/address/0xc2aaCf6553D20d1e9d78E365AAba8032af9c85b0) |  not upgradeable | |--------|--------|
@@ -82,7 +81,6 @@
 |  [ParaSwapRepayAdapter](https://etherscan.io/address/0x02e7B8511831B1b02d9018215a0f8f500Ea5c6B3) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://etherscan.io/address/0x223d844fc4B006D67c0cDbd39371A9F73f69d974) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://etherscan.io/address/0xbaA999AC55EAce41CcAE355c77809e68Bb345170) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
-|  [RatesFactory](https://etherscan.io/address/0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  - |  - | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ProxyAdminLong](https://etherscan.io/address/0x86C3FfeE349A7cFf7cA88C449717B1b133bfb517) |  - |  onlyOwner |  [Executor_lvl2](https://etherscan.io/address/0x17Dd33Ed0e3dD2a80E37489B8A63063161BE6957) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://etherscan.io/address/0xc2aaCf6553D20d1e9d78E365AAba8032af9c85b0) |  - |  onlyRole |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  setRoleAdmin | |--------|--------|--------|--------|--------|

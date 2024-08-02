@@ -506,7 +506,7 @@
           "0xb9481a29f0f996BCAc759aB201FB3844c81866c4"
         ]
       },
-      "latestBlockNumber": 20365548
+      "latestBlockNumber": 20439789
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -526,7 +526,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 20365548
+        "latestBlockNumber": 20439789
       },
       "GSM_USDT": {
         "role": {
@@ -545,7 +545,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 20365548
+        "latestBlockNumber": 20439789
       }
     },
     "govV3": {}
@@ -1102,11 +1102,6 @@
           }
         ]
       },
-      "RatesFactory": {
-        "address": "0xcC47c4Fe1F7f29ff31A8b62197023aC8553C7896",
-        "modifiers": [],
-        "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
-      },
       "ProxyAdmin": {
         "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
         "modifiers": [
@@ -1298,7 +1293,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 20365546
+      "latestBlockNumber": 20439784
     },
     "gsmRoles": {},
     "govV3": {
@@ -1810,7 +1805,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 20365547
+      "latestCCCBlockNumber": 20439786
     }
   },
   "V2": {
@@ -2723,6 +2718,21 @@
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x818C277dBE886b934e60aa047250A73529E26A99",
+                  "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
+                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
+                ],
+                "signersThreshold": 5
               }
             ],
             "functions": [
@@ -2750,6 +2760,21 @@
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x818C277dBE886b934e60aa047250A73529E26A99",
+                  "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
+                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
+                ],
+                "signersThreshold": 5
               }
             ],
             "functions": [
@@ -2794,6 +2819,21 @@
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x818C277dBE886b934e60aa047250A73529E26A99",
+                  "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
+                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
+                ],
+                "signersThreshold": 5
               }
             ],
             "functions": [
@@ -2805,6 +2845,26 @@
             "addresses": [
               {
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x818C277dBE886b934e60aa047250A73529E26A99",
+                  "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
+                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
+                ],
+                "signersThreshold": 5
+              },
+              {
+                "address": "0x3843b29118fFC18d5d12EE079d0324E1bF115e69",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -2869,6 +2929,21 @@
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x818C277dBE886b934e60aa047250A73529E26A99",
+                  "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
+                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
+                ],
+                "signersThreshold": 5
               }
             ],
             "functions": [
@@ -2888,6 +2963,21 @@
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x818C277dBE886b934e60aa047250A73529E26A99",
+                  "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
+                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
+                ],
+                "signersThreshold": 5
               }
             ],
             "functions": [
@@ -2939,13 +3029,13 @@
         "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
       },
       "RewardsController": {
-        "address": "0x428E3747BC60B76c20EE7CF89510072C24b544D3",
+        "address": "0x8164Cc65827dcFe994AB23944CBC90e0aa80bFcb",
         "modifiers": [
           {
             "modifier": "onlyEmissionManager",
             "addresses": [
               {
-                "address": "0x0982B6B8839D589621Bd1BC87BF072864926a97D",
+                "address": "0x223d844fc4B006D67c0cDbd39371A9F73f69d974",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -3016,7 +3106,7 @@
         ]
       },
       "EmissionManager": {
-        "address": "0x0982B6B8839D589621Bd1BC87BF072864926a97D",
+        "address": "0x223d844fc4B006D67c0cDbd39371A9F73f69d974",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -3112,6 +3202,26 @@
           }
         ]
       },
+      "CapPlusRiskSteward": {
+        "address": "0x3843b29118fFC18d5d12EE079d0324E1bF115e69",
+        "modifiers": [
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 1
+              }
+            ],
+            "functions": [
+              "updateCaps"
+            ]
+          }
+        ]
+      },
       "AaveMerkleDistributor": {
         "address": "0xa88c6D90eAe942291325f9ae3c66f3563B93FE10",
         "modifiers": [
@@ -3171,7 +3281,8 @@
           "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
         ],
         "POOL_ADMIN": [
-          "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+          "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30"
         ],
         "EMERGENCY_ADMIN": [
           "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30"
@@ -3179,9 +3290,11 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": [],
         "FLASH_BORROWER": [],
-        "RISK_ADMIN": []
+        "RISK_ADMIN": [
+          "0x3843b29118fFC18d5d12EE079d0324E1bF115e69"
+        ]
       },
-      "latestBlockNumber": 20332963
+      "latestBlockNumber": 20439788
     },
     "gsmRoles": {},
     "govV3": {}
