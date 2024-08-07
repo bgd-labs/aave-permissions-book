@@ -102,6 +102,8 @@ export const generateTable = (network: string, pool: string): string => {
       ? 'SCROLL'
       : network == '1101'
       ? 'POLYGON_ZK_EVM'
+      : network == '324'
+      ? 'ZK_SYNC'
       : ChainIdToNetwork[Number(network)].toUpperCase();
 
   const addressesNames = networkConfigs[network].addressesNames || {};

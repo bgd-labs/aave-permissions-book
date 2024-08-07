@@ -46,6 +46,9 @@ import {
   MiscScroll,
   GovernanceV3Scroll,
   MiscBNB,
+  GovernanceV3ZkSync,
+  MiscZkSync,
+  AaveV3ZkSync,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -106,6 +109,7 @@ export const getNetowkName: Record<string | number, string> = {
   1088: 'Met',
   56: 'BNB',
   8453: 'Bas',
+  324: 'ZkSync',
 };
 
 export const networkConfigs: NetworkConfigs = {
@@ -596,6 +600,28 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: GovernanceV3Scroll,
         addresses: {
           '0x118DFD5418890c0332042ab05173Db4A2C1d283c': 'ScrollAdapter',
+        },
+      },
+    },
+  },
+  ['324']: {
+    rpcUrl: process.env.RPC_ZK_SYNC,
+    explorer: 'https://era.zksync.network/',
+    addressesNames: {
+      '0xba845c27903F7dDB5c676e5b74728C871057E000': 'Aave Guardian ZkSync',
+      '0x2451337aD5fE8b563bEB3b9c4A2B8789294879Ec': 'BGD',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 39265120,
+        crossChainControllerBlock: 40068400,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: { ...AaveV3ZkSync, ...MiscZkSync },
+        governanceAddressBook: GovernanceV3ZkSync,
+        addresses: {
+          '0x1BC5C10CAe378fDbd7D52ec4F9f34590a619c68E': 'ZkSyncAdapter',
         },
       },
     },
