@@ -17,6 +17,7 @@
 |  [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://gnosisscan.io//address/0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
+|  [GranularGuardian](https://gnosisscan.io//address/0x4A9F571E3C1f2F13567bb59e38988e74d7d72602) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  Governance | |--------|--------|
 |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  not upgradeable | |--------|--------|
 |  [Gnosis native adapter](https://gnosisscan.io//address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  not upgradeable | |--------|--------|
@@ -35,7 +36,7 @@
 |  upgradeAaveTokens (a/v/s) |  Governance | |--------|--------|
 |  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
-|  pausePool |  Multi-sig | |--------|--------|
+|  pausePool |  Governance,Multi-sig | |--------|--------|
 |  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
 |  reserveListing |  Governance | |--------|--------|
 |  adminsConfiguration |  Governance | |--------|--------|
@@ -51,10 +52,10 @@
 |  [Pool](https://gnosisscan.io//address/0xb50201558B00496A145fE76f7424749556E326D8) |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  onlyPoolAdmin |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [Pool](https://gnosisscan.io//address/0xb50201558B00496A145fE76f7424749556E326D8) |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  onlyBridge |   |  mintUnbacked, backUnbacked | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://gnosisscan.io//address/0x7304979ec9E4EaA0273b6A037a31c4e9e5A75D16) |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  onlyPoolAdmin |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  dropReserve, dropReserve, updateAToken, updateStableDebtToken, updateVariableDebtToken, setReserveActive, updateBridgeProtocolFee, updateFlashloanPremiumTotal, updateFlashloanPremiumToProtocol | |--------|--------|--------|--------|--------|
-|  [PoolConfigurator](https://gnosisscan.io//address/0x7304979ec9E4EaA0273b6A037a31c4e9e5A75D16) |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  onlyEmergencyAdmin |  [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D) |  setPoolPause | |--------|--------|--------|--------|--------|
+|  [PoolConfigurator](https://gnosisscan.io//address/0x7304979ec9E4EaA0273b6A037a31c4e9e5A75D16) |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  onlyEmergencyAdmin |  [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D) |   | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://gnosisscan.io//address/0x7304979ec9E4EaA0273b6A037a31c4e9e5A75D16) |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  initReserves | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://gnosisscan.io//address/0x7304979ec9E4EaA0273b6A037a31c4e9e5A75D16) |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  onlyRiskOrPoolAdmins |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D), [FreezeSteward](https://gnosisscan.io//address/0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5), [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) |  setReserveBorrowing, setReserveBorrowing, configureReserveAsCollateral, setReserveStableRateBorrowing, setReserveFreeze, setBorrowableInIsolation, setReserveFactor, setDebtCeiling, setSiloedBorrowing, setBorrowCap, setSupplyCap, setLiquidationProtocolFee, setEModeCategory, setAssetEModeCategory, setUnbackedMintCap, setReserveInterestRateStrategyAddress, setReserveFlashLoaning | |--------|--------|--------|--------|--------|
-|  [PoolConfigurator](https://gnosisscan.io//address/0x7304979ec9E4EaA0273b6A037a31c4e9e5A75D16) |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D), [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D) |  setReservePause | |--------|--------|--------|--------|--------|
+|  [PoolConfigurator](https://gnosisscan.io//address/0x7304979ec9E4EaA0273b6A037a31c4e9e5A75D16) |  [PoolAddressesProvider](https://gnosisscan.io//address/0x36616cf17557639614c1cdDb356b1B83fc0B2132) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D), [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://gnosisscan.io//address/0xeb0a051be10228213BAEb449db63719d6742F7c4) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
 |  [Collector](https://gnosisscan.io//address/0x3e652E97ff339B73421f824F5b03d75b62F1Fb51) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyFundsAdmin |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
 |  [Collector](https://gnosisscan.io//address/0x3e652E97ff339B73421f824F5b03d75b62F1Fb51) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyAdminOrRecipient |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75), [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
@@ -70,6 +71,9 @@
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
+|  [GranularGuardian](https://gnosisscan.io//address/0x4A9F571E3C1f2F13567bb59e38988e74d7d72602) |  - |  onlyRetryGuardian |   |  retryEnvelope, retryTransaction | |--------|--------|--------|--------|--------|
+|  [GranularGuardian](https://gnosisscan.io//address/0x4A9F571E3C1f2F13567bb59e38988e74d7d72602) |  - |  onlyEmergencyGuardian |   |  solveEmergency | |--------|--------|--------|--------|--------|
+|  [GranularGuardian](https://gnosisscan.io//address/0x4A9F571E3C1f2F13567bb59e38988e74d7d72602) |  - |  onlyDefaultAdmin |   |  updateGuardian | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  updateExecutors | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyGuardian |  [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  [ProxyAdmin](https://gnosisscan.io//address/0xe892E40C92c2E4D281Be59b2E6300F271d824E75) |  onlyOwnerOrGuardian |  [Aave Guardian Gnosis](https://gnosisscan.io//address/0xF163b8698821cefbD33Cf449764d69Ea445cE23D), [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  updateGuardian | |--------|--------|--------|--------|--------|
@@ -102,4 +106,11 @@
 |  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |  [0xab515542d621574f9b5212d50593cD0C07e641bD](https://gnosisscan.io//address/0xab515542d621574f9b5212d50593cD0C07e641bD) | |--------|--------|
 |  RISK_ADMIN |  [FreezeSteward](https://gnosisscan.io//address/0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5), [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) | |--------|--------|
+
+### Granular Guardian Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |   | |--------|--------|
+|  RETRY_ROLE |   | |--------|--------|
+|  SOLVE_EMERGENCY_ROLE |   | |--------|--------|
 

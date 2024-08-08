@@ -176,7 +176,7 @@ export const resolveV3Modifiers = async (
             };
           }),
         ],
-        functions: roles['PoolConfigurator']['onlyEmergencyAdmin'],
+        functions: roles['PoolConfigurator']['onlyEmergencyAdmin'] || [],
       },
       {
         modifier: 'onlyAssetListingOrPoolAdmins',

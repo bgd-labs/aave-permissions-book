@@ -200,7 +200,8 @@ export const generateTable = (network: string, pool: string): string => {
 
   if (
     poolPermitsByContract.govV3 &&
-    Object.keys(poolPermitsByContract.govV3).length > 0
+    Object.keys(poolPermitsByContract.govV3).length > 0 &&
+    poolPermitsByContract.govV3.contracts
   ) {
     for (let contractName of Object.keys(
       poolPermitsByContract.govV3.contracts,
@@ -354,7 +355,8 @@ export const generateTable = (network: string, pool: string): string => {
 
   if (
     poolPermitsByContract.govV3 &&
-    Object.keys(poolPermitsByContract.govV3).length > 0
+    Object.keys(poolPermitsByContract.govV3).length > 0 &&
+    poolPermitsByContract.govV3.contracts
   ) {
     let govV3Table = `### Governance V3 Contracts \n`;
     const govV3HeaderTitles = [

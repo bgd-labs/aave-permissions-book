@@ -147,6 +147,7 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: GovernanceV3Ethereum,
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
+        granularGuardianBlock: 20324867,
         addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
         addresses: {
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
@@ -285,6 +286,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 25824416,
         crossChainControllerBlock: 45029910,
+        granularGuardianBlock: 59461826,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Polygon, ...MiscPolygon },
@@ -332,6 +334,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 33571625,
         crossChainControllerBlock: 31558150,
+        granularGuardianBlock: 40546332,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3BNB, ...MiscBNB },
@@ -372,6 +375,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 11970456,
         crossChainControllerBlock: 32549880,
+        granularGuardianBlock: 48074792,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
@@ -420,6 +424,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 4365546,
         crossChainControllerBlock: 106996150,
+        granularGuardianBlock: 122802392,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Optimism, ...MiscOptimism },
@@ -455,6 +460,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 7740502,
         crossChainControllerBlock: 112113800,
+        granularGuardianBlock: 233088975,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum },
@@ -507,6 +513,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 5405900,
         crossChainControllerBlock: 8526247,
+        granularGuardianBlock: 17700310,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Metis, ...MiscMetis },
@@ -530,6 +537,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 2357130,
         crossChainControllerBlock: 3686170,
+        granularGuardianBlock: 17207502,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Base, ...MiscBase },
@@ -564,6 +572,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 30293056,
         crossChainControllerBlock: 30373982,
+        granularGuardianBlock: 35008853,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Gnosis, ...MiscGnosis },
@@ -600,6 +609,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3]: {
         aclBlock: 2618760,
         crossChainControllerBlock: 2140900,
+        granularGuardianBlock: 7517784,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Scroll, ...MiscScroll },

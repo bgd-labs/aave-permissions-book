@@ -27,7 +27,7 @@
 |  reserveListing |  Multi-sig,Governance | |--------|--------|
 |  protocolUpgradeablity |  Multi-sig | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
-|  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
+|  retryAndInvalidateMessages |  Multi-sig,Governance | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|
 |  cancelProposal |  Multi-sig | |--------|--------|
 

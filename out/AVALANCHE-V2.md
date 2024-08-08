@@ -32,7 +32,7 @@
 |  reserveListing |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
-|  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
+|  retryAndInvalidateMessages |  Multi-sig,Governance | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|
 
 ### Contracts

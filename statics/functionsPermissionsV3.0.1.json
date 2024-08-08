@@ -93,7 +93,7 @@
       },
       {
         "name": "setPoolPause",
-        "roles": ["onlyEmergencyAdmin"]
+        "roles": ["onlyEmergencyOrPoolAdmin"]
       },
       {
         "name": "setReserveBorrowing",

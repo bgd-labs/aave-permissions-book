@@ -119,9 +119,7 @@
                 "signersThreshold": 6
               }
             ],
-            "functions": [
-              "setPoolPause"
-            ]
+            "functions": []
           },
           {
             "modifier": "onlyAssetListingOrPoolAdmins",
@@ -201,6 +199,7 @@
               }
             ],
             "functions": [
+              "setPoolPause",
               "setReservePause"
             ]
           }
@@ -455,11 +454,46 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 35370627
+      "latestBlockNumber": 35380773
     },
     "gsmRoles": {},
     "govV3": {
+      "ggRoles": {
+        "role": {
+          "DEFAULT_ADMIN": [],
+          "RETRY_ROLE": [],
+          "SOLVE_EMERGENCY_ROLE": []
+        },
+        "latestBlockNumber": 35380774
+      },
       "contracts": {
+        "GranularGuardian": {
+          "address": "0x4A9F571E3C1f2F13567bb59e38988e74d7d72602",
+          "modifiers": [
+            {
+              "modifier": "onlyRetryGuardian",
+              "addresses": [],
+              "functions": [
+                "retryEnvelope",
+                "retryTransaction"
+              ]
+            },
+            {
+              "modifier": "onlyEmergencyGuardian",
+              "addresses": [],
+              "functions": [
+                "solveEmergency"
+              ]
+            },
+            {
+              "modifier": "onlyDefaultAdmin",
+              "addresses": [],
+              "functions": [
+                "updateGuardian"
+              ]
+            }
+          ]
+        },
         "PayloadsController": {
           "address": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
           "modifiers": [
@@ -727,7 +761,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 35370633
+      "latestCCCBlockNumber": 35380774
     }
   },
   "TENDERLY": {

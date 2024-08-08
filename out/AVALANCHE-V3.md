@@ -22,6 +22,7 @@
 |  [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) |  not upgradeable | |--------|--------|
 |  [AaveMerkleDistributor](https://snowtrace.io/address/0xA065d5A299E618CD84a87641d5eEbC7916Fdf32E) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
+|  [GranularGuardian](https://snowtrace.io/address/0xc1162BCb2E5E3ca4725512008c7522dF8C8B7B65) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  Governance | |--------|--------|
 |  [VotingMachine](https://snowtrace.io/address/0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F) |  not upgradeable | |--------|--------|
 |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  not upgradeable | |--------|--------|
@@ -47,7 +48,7 @@
 |  adminsConfiguration |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
-|  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
+|  retryAndInvalidateMessages |  Multi-sig,Governance | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|
 
 ### Contracts
@@ -82,6 +83,9 @@
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
+|  [GranularGuardian](https://snowtrace.io/address/0xc1162BCb2E5E3ca4725512008c7522dF8C8B7B65) |  - |  onlyRetryGuardian |  [BGD](https://snowtrace.io/address/0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36) |  retryEnvelope, retryTransaction | |--------|--------|--------|--------|--------|
+|  [GranularGuardian](https://snowtrace.io/address/0xc1162BCb2E5E3ca4725512008c7522dF8C8B7B65) |  - |  onlyEmergencyGuardian |  [0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe (Safe)](https://snowtrace.io/address/0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe) |  solveEmergency | |--------|--------|--------|--------|--------|
+|  [GranularGuardian](https://snowtrace.io/address/0xc1162BCb2E5E3ca4725512008c7522dF8C8B7B65) |  - |  onlyDefaultAdmin |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  updateGuardian | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  updateExecutors | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyGuardian |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwnerOrGuardian |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470), [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  updateGuardian | |--------|--------|--------|--------|--------|
@@ -104,6 +108,7 @@
 |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  6/10 |  0xa35b76E4935449E33C56aB24b23fcd3246f13470 |  [0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4](https://snowtrace.io/address/0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4), [0xb647055A9915bF9c8021a684E175A353525b9890](https://snowtrace.io/address/0xb647055A9915bF9c8021a684E175A353525b9890), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://snowtrace.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f), [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://snowtrace.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0xF0BA0fF18498F6fab57b8286006F9512D6aE2565](https://snowtrace.io/address/0xF0BA0fF18498F6fab57b8286006F9512D6aE2565), [0x80F11A20cd3855cAe3640558Ff320401EE970cFa](https://snowtrace.io/address/0x80F11A20cd3855cAe3640558Ff320401EE970cFa), [0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d](https://snowtrace.io/address/0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d), [0x585E06CA576D0565a035301819FD2cfD7104c1E8](https://snowtrace.io/address/0x585E06CA576D0565a035301819FD2cfD7104c1E8), [0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1](https://snowtrace.io/address/0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://snowtrace.io/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7) | |--------|--------|--------|--------|
 |  [Risk Council](https://snowtrace.io/address/0xCa66149425E7DC8f81276F6D80C4b486B9503D1a) |  1/1 |  0xCa66149425E7DC8f81276F6D80C4b486B9503D1a |  [0x5d49dBcdd300aECc2C311cFB56593E71c445d60d](https://snowtrace.io/address/0x5d49dBcdd300aECc2C311cFB56593E71c445d60d) | |--------|--------|--------|--------|
 |  [BGD](https://snowtrace.io/address/0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36) |  2/3 |  0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36 |  [0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02](https://snowtrace.io/address/0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02), [0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7](https://snowtrace.io/address/0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7), [0x0650302887619fa7727D8BD480Cda11A638B219B](https://snowtrace.io/address/0x0650302887619fa7727D8BD480Cda11A638B219B) | |--------|--------|--------|--------|
+|  [0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe (Safe)](https://snowtrace.io/address/0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe) |  5/9 |  0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe |  [0xDA5Ae43e179987a66B9831F92223567e1F38BE7D](https://snowtrace.io/address/0xDA5Ae43e179987a66B9831F92223567e1F38BE7D), [0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272](https://snowtrace.io/address/0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272), [0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9](https://snowtrace.io/address/0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9), [0xfd639f49Da6cadc98f01B60900C8BE30C38c4B27](https://snowtrace.io/address/0xfd639f49Da6cadc98f01B60900C8BE30C38c4B27), [0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7](https://snowtrace.io/address/0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7), [0xA3103D0ED00d24795Faa2d641ACf6A320EeD7396](https://snowtrace.io/address/0xA3103D0ED00d24795Faa2d641ACf6A320EeD7396), [0x936CD9654271083cCF93A975919Da0aB3Bc99EF3](https://snowtrace.io/address/0x936CD9654271083cCF93A975919Da0aB3Bc99EF3), [0x0D2394C027602Dc4c3832Ffd849b5df45DBac0E9](https://snowtrace.io/address/0x0D2394C027602Dc4c3832Ffd849b5df45DBac0E9), [0x4C30E33758216aD0d676419c21CB8D014C68099f](https://snowtrace.io/address/0x4C30E33758216aD0d676419c21CB8D014C68099f) | |--------|--------|--------|--------|
 
 ### Admins 
 | Role |Contract |
@@ -115,4 +120,11 @@
 |  RISK_ADMIN |  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5), [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) | |--------|--------|
 |  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |  [0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3](https://snowtrace.io/address/0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3) | |--------|--------|
+
+### Granular Guardian Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) | |--------|--------|
+|  SOLVE_EMERGENCY_ROLE |  [0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe (Safe)](https://snowtrace.io/address/0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe) | |--------|--------|
+|  RETRY_ROLE |  [BGD](https://snowtrace.io/address/0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36) | |--------|--------|
 

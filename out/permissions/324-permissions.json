@@ -118,9 +118,7 @@
                 "signersThreshold": 5
               }
             ],
-            "functions": [
-              "setPoolPause"
-            ]
+            "functions": []
           },
           {
             "modifier": "onlyAssetListingOrPoolAdmins",
@@ -189,6 +187,7 @@
               }
             ],
             "functions": [
+              "setPoolPause",
               "setReservePause"
             ]
           }
@@ -388,7 +387,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 41167333
+      "latestBlockNumber": 41180432
     },
     "gsmRoles": {},
     "govV3": {
@@ -404,7 +403,7 @@
             "0x2451337aD5fE8b563bEB3b9c4A2B8789294879Ec"
           ]
         },
-        "latestBlockNumber": 41167346
+        "latestBlockNumber": 41180444
       },
       "contracts": {
         "GranularGuardian": {
@@ -666,7 +665,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 41167345
+      "latestCCCBlockNumber": 41180444
     }
   }
 }
