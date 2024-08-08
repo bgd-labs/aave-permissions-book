@@ -284,7 +284,7 @@
       },
       "RewardsController": {
         "address": "0x929EC64c34a17401F460460D4B9390518E5B473e",
-        "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb",
+        "proxyAdmin": "0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb",
         "modifiers": [
           {
             "modifier": "onlyEmissionManager",
@@ -527,7 +527,7 @@
           "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
         ]
       },
-      "latestBlockNumber": 49008698
+      "latestBlockNumber": 49009288
     },
     "gsmRoles": {},
     "govV3": {
@@ -543,7 +543,7 @@
             "0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36"
           ]
         },
-        "latestBlockNumber": 49008709
+        "latestBlockNumber": 49009300
       },
       "contracts": {
         "GranularGuardian": {
@@ -897,7 +897,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 49008708
+      "latestCCCBlockNumber": 49009299
     }
   },
   "V2": {
