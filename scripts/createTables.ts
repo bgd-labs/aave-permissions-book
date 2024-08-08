@@ -502,6 +502,41 @@ export const generateTable = (network: string, pool: string): string => {
     readmeByNetwork += adminTable + '\n';
   }
 
+  // TODO: add granular guardian admin table
+  let ggAdminTable = `### Granular Guardian Admins \n`;
+  const ggAdminsHeaderTitles = ['Role', 'Contract'];
+  const ggAdminHeader = getTableHeader(ggAdminsHeaderTitles);
+  ggAdminTable += ggAdminHeader;
+
+  if (
+    networkConfigs[network].pools[pool] &&
+    poolPermitsByContract.govV3 &&
+    poolPermitsByContract.govV3.ggRoles &&
+    poolPermitsByContract.govV3.ggRoles.role
+  ) {
+    Object.keys(poolPermitsByContract.govV3.ggRoles.role).forEach((role) => {
+      const roleAddresses =
+        poolPermitsByContract.govV3?.ggRoles?.role[role] || [];
+      ggAdminTable += getTableBody([
+        role,
+        `${roleAddresses
+          .map((roleAddress: string) =>
+            generateTableAddress(
+              roleAddress,
+              addressesNames,
+              contractsByAddress,
+              poolGuardians,
+              network,
+            ),
+          )
+          .join(', ')}`,
+      ]);
+      ggAdminTable += getLineSeparator(ggAdminsHeaderTitles.length);
+    });
+
+    readmeByNetwork += ggAdminTable + '\n';
+  }
+
   // gho gsms tables
   if (networkConfigs[network].pools[pool] && poolPermitsByContract.gsmRoles) {
     for (

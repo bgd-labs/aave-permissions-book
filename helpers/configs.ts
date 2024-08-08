@@ -98,6 +98,12 @@ export const protocolRoleNames = [
   'RISK_ADMIN',
 ];
 
+export const granularGuardianRoleNames = [
+  'DEFAULT_ADMIN',
+  'RETRY_ROLE',
+  'SOLVE_EMERGENCY_ROLE',
+];
+
 export const getNetowkName: Record<string | number, string> = {
   1: 'Eth',
   100: 'Gno',
@@ -611,11 +617,14 @@ export const networkConfigs: NetworkConfigs = {
       '0xba845c27903F7dDB5c676e5b74728C871057E000': 'Aave Guardian ZkSync',
       '0x2451337aD5fE8b563bEB3b9c4A2B8789294879Ec': 'BGD',
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0x4257bf0746D783f0D962913d7d8AFA408B62547E':
+        'Aave Governance Guardian ZkSync',
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 39265120,
         crossChainControllerBlock: 40068400,
+        granularGuardianBlock: 40095020,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3ZkSync, ...MiscZkSync },

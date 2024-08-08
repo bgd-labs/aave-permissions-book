@@ -2,6 +2,7 @@ import { ethers, providers } from 'ethers';
 import {
   ghoGSMRoleNames,
   ghoRoleNames,
+  granularGuardianRoleNames,
   networkConfigs,
   Pools,
   protocolRoleNames,
@@ -49,6 +50,8 @@ const generateNetworkPermissions = async (network: string) => {
     let admins = {} as Roles;
     let gsmAdmins = {} as Record<string, Roles>;
     let govV3 = {} as GovV3;
+    govV3.ggRoles = {} as Roles;
+
     if (
       poolKey !== Pools.GOV_V2 &&
       poolKey !== Pools.GOV_V2_TENDERLY &&
@@ -282,6 +285,32 @@ const generateNetworkPermissions = async (network: string) => {
                 Pools[poolKey as keyof typeof Pools],
               );
 
+            if (pool.granularGuardianBlock) {
+              let ggFromBlock;
+              if (pool.tenderlyBasePool) {
+                ggFromBlock = pool.tenderlyBlock;
+              } else {
+                ggFromBlock =
+                  fullJson[poolKey]?.govV3?.ggRoles?.latestBlockNumber ||
+                  pool.granularGuardianBlock;
+              }
+              if (ggFromBlock) {
+                const ggRoles = await getCurrentRoleAdmins(
+                  provider,
+                  (fullJson[poolKey] &&
+                    fullJson[poolKey]?.govV3?.ggRoles?.role) ||
+                    ({} as Record<string, string[]>),
+                  ggFromBlock,
+                  Number(network),
+                  Pools[poolKey as keyof typeof Pools],
+                  granularGuardianRoleNames,
+                  pool.governanceAddressBook.GRANULAR_GUARDIAN,
+                );
+                govV3.ggRoles.role = ggRoles.role;
+                govV3.ggRoles.latestBlockNumber = ggRoles.latestBlockNumber;
+              }
+            }
+
             const permissionsGovV3Json = getStaticPermissionsJson(
               pool.crossChainPermissionsJson,
             );
@@ -294,6 +323,7 @@ const generateNetworkPermissions = async (network: string) => {
               Number(network),
               senders,
               poolKey === Pools.TENDERLY,
+              govV3.ggRoles.role,
               pool.addresses,
             );
             govV3.senders = senders;
