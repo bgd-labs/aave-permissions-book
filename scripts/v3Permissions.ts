@@ -278,6 +278,7 @@ export const resolveV3Modifiers = async (
       provider,
     );
     const porExecutorOwner = await porExecutorContract.owner();
+
     obj['ProofOfReserveExecutorV3'] = {
       address: addressBook.PROOF_OF_RESERVE,
       modifiers: [
@@ -297,12 +298,14 @@ export const resolveV3Modifiers = async (
         },
       ],
     };
+
     const porAggregatorContract = new ethers.Contract(
       addressBook.PROOF_OF_RESERVE_AGGREGATOR,
       onlyOwnerAbi,
       provider,
     );
     const porAggregatorOwner = await porAggregatorContract.owner();
+
     obj['ProofOfReserveAggregatorV3'] = {
       address: addressBook.PROOF_OF_RESERVE_AGGREGATOR,
       modifiers: [
@@ -420,6 +423,7 @@ export const resolveV3Modifiers = async (
       },
     ],
   };
+
   if (
     chainId === ChainId.mainnet ||
     chainId === 1088 ||
