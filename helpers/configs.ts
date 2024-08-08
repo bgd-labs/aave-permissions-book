@@ -139,6 +139,8 @@ export const networkConfigs: NetworkConfigs = {
         'GSM_USDT_ORACLE_SWAP_FREEZER',
       '0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30':
         'New Aave Guardian Ethereum',
+      '0xCe52ab41C40575B072A18C9700091Ccbe4A06710':
+        'Aave Governance Guardian Ethereum',
     },
     pools: {
       [Pools.V3]: {
@@ -281,6 +283,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0xbCEB4f363f2666E2E8E430806F37e97C405c130b': 'BGD',
       '0x2C40FB1ACe63084fc0bB95F83C31B5854C6C4cB5': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Polygon',
     },
     pools: {
       [Pools.V3]: {
@@ -329,6 +333,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xE8C5ab722d0b1B7316Cc4034f2BE91A5B1d29964': 'BGD',
       '0x25170e9Ed4077ABA7D3DD03cf4A9F45Dc6D0fcCD': 'Aave Guardian Binance',
       '0x126dc589cc75f17385dD95516F3F1788d862E7bc': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Binance',
     },
     pools: {
       [Pools.V3]: {
@@ -370,6 +376,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36': 'BGD',
       '0xCa66149425E7DC8f81276F6D80C4b486B9503D1a': 'Risk Council',
+      '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
+        'Aave Governance Guardian Avalanche',
     },
     pools: {
       [Pools.V3]: {
@@ -419,6 +427,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF': 'BGD',
       '0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56': 'Risk Council',
+      '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
+        'Aave Governance Guardian Optimism',
     },
     pools: {
       [Pools.V3]: {
@@ -455,6 +465,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959': 'BGD',
       '0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Arbitrum',
     },
     pools: {
       [Pools.V3]: {
@@ -508,6 +520,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x9853589F951D724D9f7c6724E0fD63F9d888C429': 'BGD',
       '0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa': 'Risk Council',
+      '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
+        'Aave Governance Guardian Metis',
     },
     pools: {
       [Pools.V3]: {
@@ -532,6 +546,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x7FDA7C3528ad8f05e62148a700D456898b55f8d2': 'BGD',
       '0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1': 'Risk Council',
+      '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
+        'Aave Governance Guardian Base',
     },
     pools: {
       [Pools.V3]: {
@@ -567,6 +583,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xF163b8698821cefbD33Cf449764d69Ea445cE23D': 'Aave Guardian Gnosis',
       '0xcb8a3E864D12190eD2b03cbA0833b15f2c314Ed8': 'BGD',
       '0xF221B08dD10e0C68D74F035764931Baa3b030481': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Gnosis',
     },
     pools: {
       [Pools.V3]: {
@@ -604,6 +622,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x4aAa03F0A61cf93eA252e987b585453578108358': 'BGD',
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x611439a74546888c3535B4dd119A5Cbb9f5332EA': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Scroll',
     },
     pools: {
       [Pools.V3]: {
