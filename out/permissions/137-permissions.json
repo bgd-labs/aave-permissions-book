@@ -119,9 +119,7 @@
                 "signersThreshold": 6
               }
             ],
-            "functions": [
-              "setPoolPause"
-            ]
+            "functions": []
           },
           {
             "modifier": "onlyAssetListingOrPoolAdmins",
@@ -171,7 +169,8 @@
               "setEModeCategory",
               "setAssetEModeCategory",
               "setUnbackedMintCap",
-              "setReserveInterestRateStrategyAddress"
+              "setReserveInterestRateStrategyAddress",
+              "setReserveFlashLoaning"
             ]
           },
           {
@@ -200,6 +199,7 @@
               }
             ],
             "functions": [
+              "setPoolPause",
               "setReservePause"
             ]
           }
@@ -284,8 +284,7 @@
               "setClaimer"
             ]
           }
-        ],
-        "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb"
+        ]
       },
       "WrappedTokenGatewayV3": {
         "address": "0xC1E320966c485ebF2A0A2A6d3c0Dc860A156eB1B",
@@ -614,7 +613,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 60343398
+      "latestBlockNumber": 60344193
     },
     "gsmRoles": {},
     "govV3": {
@@ -630,7 +629,7 @@
             "0xbCEB4f363f2666E2E8E430806F37e97C405c130b"
           ]
         },
-        "latestBlockNumber": 60343409
+        "latestBlockNumber": 60344205
       },
       "contracts": {
         "GranularGuardian": {
@@ -1006,7 +1005,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 60343408
+      "latestCCCBlockNumber": 60344204
     }
   },
   "V2": {

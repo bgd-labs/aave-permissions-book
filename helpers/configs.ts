@@ -292,7 +292,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 45029910,
         granularGuardianBlock: 59461826,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Polygon, ...MiscPolygon },
         governanceAddressBook: GovernanceV3Polygon,
         addresses: {
@@ -385,7 +385,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 32549880,
         granularGuardianBlock: 48074792,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
         governanceAddressBook: GovernanceV3Avalanche,
         addresses: {
@@ -474,7 +474,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 112113800,
         granularGuardianBlock: 233088975,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum },
         governanceAddressBook: GovernanceV3Arbitrum,
         addresses: {
