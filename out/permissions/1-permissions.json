@@ -510,7 +510,7 @@
           "0xb9481a29f0f996BCAc759aB201FB3844c81866c4"
         ]
       },
-      "latestBlockNumber": 20484714
+      "latestBlockNumber": 20484946
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -530,7 +530,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 20484715
+        "latestBlockNumber": 20484946
       },
       "GSM_USDT": {
         "role": {
@@ -549,7 +549,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 20484715
+        "latestBlockNumber": 20484946
       }
     },
     "govV3": {
@@ -973,6 +973,7 @@
       },
       "RewardsController": {
         "address": "0x8164Cc65827dcFe994AB23944CBC90e0aa80bFcb",
+        "proxyAdmin": "0x0000000000000000000000000000000000000000",
         "modifiers": [
           {
             "modifier": "onlyEmissionManager",
@@ -990,8 +991,7 @@
               "setClaimer"
             ]
           }
-        ],
-        "proxyAdmin": "0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e"
+        ]
       },
       "WrappedTokenGatewayV3": {
         "address": "0x893411580e590D62dDBca8a703d61Cc4A8c7b2b9",
@@ -1278,7 +1278,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 20484709
+      "latestBlockNumber": 20484940
     },
     "gsmRoles": {},
     "govV3": {
@@ -1294,7 +1294,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 20484711
+        "latestBlockNumber": 20484942
       },
       "contracts": {
         "GranularGuardian": {
@@ -1863,7 +1863,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 20484711
+      "latestCCCBlockNumber": 20484942
     }
   },
   "V2": {
@@ -3072,6 +3072,7 @@
       },
       "RewardsController": {
         "address": "0x8164Cc65827dcFe994AB23944CBC90e0aa80bFcb",
+        "proxyAdmin": "0x0000000000000000000000000000000000000000",
         "modifiers": [
           {
             "modifier": "onlyEmissionManager",
@@ -3089,8 +3090,7 @@
               "setClaimer"
             ]
           }
-        ],
-        "proxyAdmin": "0xcfBf336fe147D643B9Cb705648500e101504B16d"
+        ]
       },
       "WrappedTokenGatewayV3": {
         "address": "0x702B6770A81f75964cA5D479F369eFB31dfa7C32",
@@ -3336,7 +3336,7 @@
           "0x3843b29118fFC18d5d12EE079d0324E1bF115e69"
         ]
       },
-      "latestBlockNumber": 20484713
+      "latestBlockNumber": 20484945
     },
     "gsmRoles": {},
     "govV3": {

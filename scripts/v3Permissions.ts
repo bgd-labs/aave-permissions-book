@@ -406,6 +406,7 @@ export const resolveV3Modifiers = async (
   // but could be that there is one of these for every token
   obj['RewardsController'] = {
     address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
+    proxyAdmin: addressBook.POOL_ADDRESSES_PROVIDER,
     modifiers: [
       {
         modifier: 'onlyEmissionManager',
@@ -424,17 +425,17 @@ export const resolveV3Modifiers = async (
     ],
   };
 
-  if (
-    chainId === ChainId.mainnet ||
-    chainId === 1088 ||
-    chainId === 534352 ||
-    chainId === 1101 ||
-    chainId === 100 ||
-    chainId === 8453 ||
-    chainId === 56
-  ) {
-    obj['RewardsController'].proxyAdmin = addressBook.POOL_ADDRESSES_PROVIDER;
-  }
+  // if (
+  //   chainId === ChainId.mainnet ||
+  //   chainId === 1088 ||
+  //   chainId === 534352 ||
+  //   chainId === 1101 ||
+  //   chainId === 100 ||
+  //   chainId === 8453 ||
+  //   chainId === 56
+  // ) {
+  //   obj['RewardsController'].proxyAdmin = addressBook.POOL_ADDRESSES_PROVIDER;
+  // }
 
   if (addressBook.WETH_GATEWAY) {
     const wethGatewayContract = new ethers.Contract(

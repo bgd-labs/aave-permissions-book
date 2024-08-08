@@ -245,6 +245,7 @@
       },
       "RewardsController": {
         "address": "0xaD4F91D26254B6B0C6346b390dDA2991FDE2F20d",
+        "proxyAdmin": "0x0000000000000000000000000000000000000000",
         "modifiers": [
           {
             "modifier": "onlyEmissionManager",
@@ -262,8 +263,7 @@
               "setClaimer"
             ]
           }
-        ],
-        "proxyAdmin": "0x36616cf17557639614c1cdDb356b1B83fc0B2132"
+        ]
       },
       "WrappedTokenGatewayV3": {
         "address": "0xfE76366A986B72c3f2923e05E6ba07b7de5401e4",
@@ -432,7 +432,7 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 35381153
+      "latestBlockNumber": 35381689
     },
     "gsmRoles": {},
     "govV3": {
@@ -442,7 +442,7 @@
           "RETRY_ROLE": [],
           "SOLVE_EMERGENCY_ROLE": []
         },
-        "latestBlockNumber": 35381155
+        "latestBlockNumber": 35381690
       },
       "contracts": {
         "GranularGuardian": {
@@ -739,7 +739,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 35381155
+      "latestCCCBlockNumber": 35381690
     }
   },
   "TENDERLY": {

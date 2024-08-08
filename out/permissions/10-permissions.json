@@ -245,6 +245,7 @@
       },
       "RewardsController": {
         "address": "0x929EC64c34a17401F460460D4B9390518E5B473e",
+        "proxyAdmin": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb",
         "modifiers": [
           {
             "modifier": "onlyEmissionManager",
@@ -548,7 +549,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 123766649
+      "latestBlockNumber": 123767130
     },
     "gsmRoles": {},
     "govV3": {
@@ -564,7 +565,7 @@
             "0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF"
           ]
         },
-        "latestBlockNumber": 123766661
+        "latestBlockNumber": 123767141
       },
       "contracts": {
         "GranularGuardian": {
@@ -832,7 +833,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 123766661
+      "latestCCCBlockNumber": 123767140
     }
   },
   "TENDERLY": {
