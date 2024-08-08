@@ -63,6 +63,28 @@
     ]
   },
   {
+    "contract": "GranularGuardian",
+    "proxyAdmin": false,
+    "functions": [
+      {
+        "name": "retryEnvelope",
+        "roles": ["onlyRetryGuardian"]
+      },
+      {
+        "name": "retryTransaction",
+        "roles": ["onlyRetryGuardian"]
+      },
+      {
+        "name": "solveEmergency",
+        "roles": ["onlyEmergencyGuardian"]
+      },
+      {
+        "name": "updateGuardian",
+        "roles": ["onlyDefaultAdmin"]
+      }
+    ]
+  },
+  {
     "contract": "PayloadsController",
     "proxyAdmin": true,
     "functions": [

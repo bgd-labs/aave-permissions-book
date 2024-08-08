@@ -21,6 +21,7 @@ export type GovV3 = {
   latestCCCBlockNumber: number;
   contracts: Contracts;
   senders: string[];
+  ggRoles?: Roles;
   // bridgeAdapters: string[];
 };
 export type AddressInfo = {
@@ -51,6 +52,7 @@ export type PoolConfigs = {
   addressBook: any;
   aclBlock?: number;
   crossChainControllerBlock?: number;
+  granularGuardianBlock?: number;
   governanceAddressBook?: any;
 
   tenderlyBlock?: number;

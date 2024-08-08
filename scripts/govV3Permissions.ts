@@ -1,4 +1,9 @@
-import { Contracts, PermissionsJson } from '../helpers/types.js';
+import {
+  Contracts,
+  Guardian,
+  PermissionsJson,
+  Roles,
+} from '../helpers/types.js';
 import { ethers, providers, constants } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
@@ -19,10 +24,84 @@ export const resolveGovV3Modifiers = async (
   chainId: ChainId | number,
   senders: string[],
   tenderly: boolean,
+  ggAdminRoles: Record<string, string[]>,
   addressNames?: Record<string, string>,
 ) => {
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
+
+  const owners: Record<string, Record<string, Guardian>> = {};
+  // owners
+  for (const roleName of Object.keys(ggAdminRoles)) {
+    for (const roleAddress of ggAdminRoles[roleName]) {
+      if (!owners[roleName]) {
+        owners[roleName] = {
+          [roleAddress]: {
+            owners: await getSafeOwners(provider, roleAddress),
+            threshold: await getSafeThreshold(provider, roleAddress),
+          },
+        };
+      } else if (owners[roleName] && !owners[roleName][roleAddress]) {
+        owners[roleName][roleAddress] = {
+          owners: await getSafeOwners(provider, roleAddress),
+          threshold: await getSafeThreshold(provider, roleAddress),
+        };
+      }
+    }
+  }
+  if (
+    addressBook.GRANULAR_GUARDIAN &&
+    addressBook.GRANULAR_GUARDIAN !== constants.AddressZero
+  ) {
+    obj['GranularGuardian'] = {
+      address: addressBook.GRANULAR_GUARDIAN,
+      modifiers: [
+        {
+          modifier: 'onlyRetryGuardian',
+          addresses: [
+            ...ggAdminRoles['RETRY_ROLE'].map((roleAddress) => {
+              return {
+                address: roleAddress,
+                owners: owners['RETRY_ROLE'][roleAddress].owners || [],
+                signersThreshold:
+                  owners['RETRY_ROLE'][roleAddress].threshold || 0,
+              };
+            }),
+          ],
+          functions: roles['GranularGuardian']['onlyRetryGuardian'],
+        },
+        {
+          modifier: 'onlyEmergencyGuardian',
+          addresses: [
+            ...ggAdminRoles['SOLVE_EMERGENCY_ROLE'].map((roleAddress) => {
+              return {
+                address: roleAddress,
+                owners:
+                  owners['SOLVE_EMERGENCY_ROLE'][roleAddress].owners || [],
+                signersThreshold:
+                  owners['SOLVE_EMERGENCY_ROLE'][roleAddress].threshold || 0,
+              };
+            }),
+          ],
+          functions: roles['GranularGuardian']['onlyEmergencyGuardian'],
+        },
+        {
+          modifier: 'onlyDefaultAdmin',
+          addresses: [
+            ...ggAdminRoles['DEFAULT_ADMIN'].map((roleAddress) => {
+              return {
+                address: roleAddress,
+                owners: owners['DEFAULT_ADMIN'][roleAddress].owners || [],
+                signersThreshold:
+                  owners['DEFAULT_ADMIN'][roleAddress].threshold || 0,
+              };
+            }),
+          ],
+          functions: roles['GranularGuardian']['onlyDefaultAdmin'],
+        },
+      ],
+    };
+  }
 
   // only valid while 2.5 is active
   if (

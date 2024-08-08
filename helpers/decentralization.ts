@@ -183,7 +183,8 @@ const isAdministeredAndByWho = (
             modifierInfo.modifier === 'onlyEthereumGovernanceExecutor' ||
             (modifierInfo.modifier === 'onlyRiskCouncil' &&
               contractName !== 'GhoStewardV2') ||
-            modifierInfo.modifier === 'onlyEmergencyAdmin'
+            modifierInfo.modifier === 'onlyEmergencyAdmin' ||
+            modifierInfo.modifier === 'onlyDefaultAdmin'
           ) {
             if (modifierInfo.addresses[0].owners.length > 0) {
               ownerInfo = { owned: true, ownedBy: Controller.MULTI_SIG };

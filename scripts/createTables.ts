@@ -102,6 +102,8 @@ export const generateTable = (network: string, pool: string): string => {
       ? 'SCROLL'
       : network == '1101'
       ? 'POLYGON_ZK_EVM'
+      : network == '324'
+      ? 'ZK_SYNC'
       : ChainIdToNetwork[Number(network)].toUpperCase();
 
   const addressesNames = networkConfigs[network].addressesNames || {};
@@ -198,7 +200,8 @@ export const generateTable = (network: string, pool: string): string => {
 
   if (
     poolPermitsByContract.govV3 &&
-    Object.keys(poolPermitsByContract.govV3).length > 0
+    Object.keys(poolPermitsByContract.govV3).length > 0 &&
+    poolPermitsByContract.govV3.contracts
   ) {
     for (let contractName of Object.keys(
       poolPermitsByContract.govV3.contracts,
@@ -352,7 +355,8 @@ export const generateTable = (network: string, pool: string): string => {
 
   if (
     poolPermitsByContract.govV3 &&
-    Object.keys(poolPermitsByContract.govV3).length > 0
+    Object.keys(poolPermitsByContract.govV3).length > 0 &&
+    poolPermitsByContract.govV3.contracts
   ) {
     let govV3Table = `### Governance V3 Contracts \n`;
     const govV3HeaderTitles = [
@@ -498,6 +502,41 @@ export const generateTable = (network: string, pool: string): string => {
     });
 
     readmeByNetwork += adminTable + '\n';
+  }
+
+  // TODO: add granular guardian admin table
+  let ggAdminTable = `### Granular Guardian Admins \n`;
+  const ggAdminsHeaderTitles = ['Role', 'Contract'];
+  const ggAdminHeader = getTableHeader(ggAdminsHeaderTitles);
+  ggAdminTable += ggAdminHeader;
+
+  if (
+    networkConfigs[network].pools[pool] &&
+    poolPermitsByContract.govV3 &&
+    poolPermitsByContract.govV3.ggRoles &&
+    poolPermitsByContract.govV3.ggRoles.role
+  ) {
+    Object.keys(poolPermitsByContract.govV3.ggRoles.role).forEach((role) => {
+      const roleAddresses =
+        poolPermitsByContract.govV3?.ggRoles?.role[role] || [];
+      ggAdminTable += getTableBody([
+        role,
+        `${roleAddresses
+          .map((roleAddress: string) =>
+            generateTableAddress(
+              roleAddress,
+              addressesNames,
+              contractsByAddress,
+              poolGuardians,
+              network,
+            ),
+          )
+          .join(', ')}`,
+      ]);
+      ggAdminTable += getLineSeparator(ggAdminsHeaderTitles.length);
+    });
+
+    readmeByNetwork += ggAdminTable + '\n';
   }
 
   // gho gsms tables

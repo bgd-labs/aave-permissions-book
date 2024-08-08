@@ -46,6 +46,9 @@ import {
   MiscScroll,
   GovernanceV3Scroll,
   MiscBNB,
+  GovernanceV3ZkSync,
+  MiscZkSync,
+  AaveV3ZkSync,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -95,6 +98,12 @@ export const protocolRoleNames = [
   'RISK_ADMIN',
 ];
 
+export const granularGuardianRoleNames = [
+  'DEFAULT_ADMIN',
+  'RETRY_ROLE',
+  'SOLVE_EMERGENCY_ROLE',
+];
+
 export const getNetowkName: Record<string | number, string> = {
   1: 'Eth',
   100: 'Gno',
@@ -106,6 +115,7 @@ export const getNetowkName: Record<string | number, string> = {
   1088: 'Met',
   56: 'BNB',
   8453: 'Bas',
+  324: 'ZkSync',
 };
 
 export const networkConfigs: NetworkConfigs = {
@@ -129,6 +139,8 @@ export const networkConfigs: NetworkConfigs = {
         'GSM_USDT_ORACLE_SWAP_FREEZER',
       '0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30':
         'New Aave Guardian Ethereum',
+      '0xCe52ab41C40575B072A18C9700091Ccbe4A06710':
+        'Aave Governance Guardian Ethereum',
     },
     pools: {
       [Pools.V3]: {
@@ -137,6 +149,7 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: GovernanceV3Ethereum,
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
+        granularGuardianBlock: 20324867,
         addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
         addresses: {
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
@@ -270,13 +283,16 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0xbCEB4f363f2666E2E8E430806F37e97C405c130b': 'BGD',
       '0x2C40FB1ACe63084fc0bB95F83C31B5854C6C4cB5': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Polygon',
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 25824416,
         crossChainControllerBlock: 45029910,
+        granularGuardianBlock: 59461826,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Polygon, ...MiscPolygon },
         governanceAddressBook: GovernanceV3Polygon,
         addresses: {
@@ -317,11 +333,14 @@ export const networkConfigs: NetworkConfigs = {
       '0xE8C5ab722d0b1B7316Cc4034f2BE91A5B1d29964': 'BGD',
       '0x25170e9Ed4077ABA7D3DD03cf4A9F45Dc6D0fcCD': 'Aave Guardian Binance',
       '0x126dc589cc75f17385dD95516F3F1788d862E7bc': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Binance',
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 33571625,
         crossChainControllerBlock: 31558150,
+        granularGuardianBlock: 40546332,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3BNB, ...MiscBNB },
@@ -357,13 +376,16 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36': 'BGD',
       '0xCa66149425E7DC8f81276F6D80C4b486B9503D1a': 'Risk Council',
+      '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
+        'Aave Governance Guardian Avalanche',
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 11970456,
         crossChainControllerBlock: 32549880,
+        granularGuardianBlock: 48074792,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
         governanceAddressBook: GovernanceV3Avalanche,
         addresses: {
@@ -405,13 +427,16 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF': 'BGD',
       '0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56': 'Risk Council',
+      '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
+        'Aave Governance Guardian Optimism',
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 4365546,
         crossChainControllerBlock: 106996150,
+        granularGuardianBlock: 122802392,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Optimism, ...MiscOptimism },
         governanceAddressBook: GovernanceV3Optimism,
         addresses: {
@@ -440,13 +465,16 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959': 'BGD',
       '0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Arbitrum',
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 7740502,
         crossChainControllerBlock: 112113800,
+        granularGuardianBlock: 233088975,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum },
         governanceAddressBook: GovernanceV3Arbitrum,
         addresses: {
@@ -467,23 +495,6 @@ export const networkConfigs: NetworkConfigs = {
       // },
     },
   },
-  // ---------------------- DEPRECATED --------------------------------------
-  // [ChainId.fantom]: {
-  //   rpcUrl: process.env.RPC_FANTOM,
-  //   explorer: 'https://ftmscan.com',
-  //   addressesNames: {
-  //     '0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949': 'Aave Guardian Fantom',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 33141475,
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: { ...AaveV3Fantom, ...MiscFantom },
-  //     },
-  //   },
-  // },
-  // -----------------------------------------------------------
   [ChainId.metis_andromeda]: {
     rpcUrl: process.env.RPC_METIS,
     explorer: 'https://andromeda-explorer.metis.io',
@@ -492,11 +503,14 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x9853589F951D724D9f7c6724E0fD63F9d888C429': 'BGD',
       '0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa': 'Risk Council',
+      '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
+        'Aave Governance Guardian Metis',
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 5405900,
         crossChainControllerBlock: 8526247,
+        granularGuardianBlock: 17700310,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Metis, ...MiscMetis },
@@ -515,11 +529,14 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x7FDA7C3528ad8f05e62148a700D456898b55f8d2': 'BGD',
       '0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1': 'Risk Council',
+      '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
+        'Aave Governance Guardian Base',
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 2357130,
         crossChainControllerBlock: 3686170,
+        granularGuardianBlock: 17207502,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Base, ...MiscBase },
@@ -549,11 +566,14 @@ export const networkConfigs: NetworkConfigs = {
       '0xF163b8698821cefbD33Cf449764d69Ea445cE23D': 'Aave Guardian Gnosis',
       '0xcb8a3E864D12190eD2b03cbA0833b15f2c314Ed8': 'BGD',
       '0xF221B08dD10e0C68D74F035764931Baa3b030481': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Gnosis',
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 30293056,
         crossChainControllerBlock: 30373982,
+        granularGuardianBlock: 35008853,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Gnosis, ...MiscGnosis },
@@ -585,11 +605,14 @@ export const networkConfigs: NetworkConfigs = {
       '0x4aAa03F0A61cf93eA252e987b585453578108358': 'BGD',
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x611439a74546888c3535B4dd119A5Cbb9f5332EA': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Scroll',
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 2618760,
         crossChainControllerBlock: 2140900,
+        granularGuardianBlock: 7517784,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Scroll, ...MiscScroll },
@@ -600,7 +623,48 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
+  ['324']: {
+    rpcUrl: process.env.RPC_ZKSYNC,
+    explorer: 'https://era.zksync.network/',
+    addressesNames: {
+      '0xba845c27903F7dDB5c676e5b74728C871057E000': 'Aave Guardian ZkSync',
+      '0x2451337aD5fE8b563bEB3b9c4A2B8789294879Ec': 'BGD',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0x4257bf0746D783f0D962913d7d8AFA408B62547E':
+        'Aave Governance Guardian ZkSync',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 39265120,
+        crossChainControllerBlock: 40068400,
+        granularGuardianBlock: 40095020,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: { ...AaveV3ZkSync, ...MiscZkSync },
+        governanceAddressBook: GovernanceV3ZkSync,
+        addresses: {
+          '0x1BC5C10CAe378fDbd7D52ec4F9f34590a619c68E': 'ZkSyncAdapter',
+        },
+      },
+    },
+  },
 };
+// ---------------------- DEPRECATED --------------------------------------
+// [ChainId.fantom]: {
+//   rpcUrl: process.env.RPC_FANTOM,
+//   explorer: 'https://ftmscan.com',
+//   addressesNames: {
+//     '0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949': 'Aave Guardian Fantom',
+//     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+//   },
+//   pools: {
+//     [Pools.V3]: {
+//       aclBlock: 33141475,
+//       permissionsJson: './statics/functionsPermissionsV3.json',
+//       addressBook: { ...AaveV3Fantom, ...MiscFantom },
+//     },
+//   },
+// },
 // ['1101']: {
 //   rpcUrl: process.env.RPC_ZKEVM,
 //   explorer: 'https://zkevm.polygonscan.com/',
