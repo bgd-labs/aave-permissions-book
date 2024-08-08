@@ -323,7 +323,7 @@ const generateNetworkPermissions = async (network: string) => {
               Number(network),
               senders,
               poolKey === Pools.TENDERLY,
-              govV3.ggRoles.role,
+              govV3.ggRoles.role || {},
               pool.addresses,
             );
             govV3.senders = senders;

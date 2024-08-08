@@ -49,7 +49,6 @@ export const resolveGovV3Modifiers = async (
       }
     }
   }
-
   if (
     addressBook.GRANULAR_GUARDIAN &&
     addressBook.GRANULAR_GUARDIAN !== constants.AddressZero

@@ -100,30 +100,6 @@
             ]
           },
           {
-            "modifier": "onlyEmergencyAdmin",
-            "addresses": [
-              {
-                "address": "0xF163b8698821cefbD33Cf449764d69Ea445cE23D",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0xF0BA0fF18498F6fab57b8286006F9512D6aE2565",
-                  "0x80F11A20cd3855cAe3640558Ff320401EE970cFa",
-                  "0x5bE3E96Cdc3A97628bD7308d3588B9a474F4A54d",
-                  "0x585E06CA576D0565a035301819FD2cfD7104c1E8",
-                  "0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1",
-                  "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7"
-                ],
-                "signersThreshold": 6
-              }
-            ],
-            "functions": [
-              "setPoolPause"
-            ]
-          },
-          {
             "modifier": "onlyAssetListingOrPoolAdmins",
             "addresses": [
               {
@@ -201,6 +177,7 @@
               }
             ],
             "functions": [
+              "setPoolPause",
               "setReservePause"
             ]
           }
@@ -268,6 +245,7 @@
       },
       "RewardsController": {
         "address": "0xaD4F91D26254B6B0C6346b390dDA2991FDE2F20d",
+        "proxyAdmin": "0x36616cf17557639614c1cdDb356b1B83fc0B2132",
         "modifiers": [
           {
             "modifier": "onlyEmissionManager",
@@ -285,8 +263,7 @@
               "setClaimer"
             ]
           }
-        ],
-        "proxyAdmin": "0x36616cf17557639614c1cdDb356b1B83fc0B2132"
+        ]
       },
       "WrappedTokenGatewayV3": {
         "address": "0xfE76366A986B72c3f2923e05E6ba07b7de5401e4",
@@ -455,11 +432,46 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 35370627
+      "latestBlockNumber": 35381926
     },
     "gsmRoles": {},
     "govV3": {
+      "ggRoles": {
+        "role": {
+          "DEFAULT_ADMIN": [],
+          "RETRY_ROLE": [],
+          "SOLVE_EMERGENCY_ROLE": []
+        },
+        "latestBlockNumber": 35381926
+      },
       "contracts": {
+        "GranularGuardian": {
+          "address": "0x4A9F571E3C1f2F13567bb59e38988e74d7d72602",
+          "modifiers": [
+            {
+              "modifier": "onlyRetryGuardian",
+              "addresses": [],
+              "functions": [
+                "retryEnvelope",
+                "retryTransaction"
+              ]
+            },
+            {
+              "modifier": "onlyEmergencyGuardian",
+              "addresses": [],
+              "functions": [
+                "solveEmergency"
+              ]
+            },
+            {
+              "modifier": "onlyDefaultAdmin",
+              "addresses": [],
+              "functions": [
+                "updateGuardian"
+              ]
+            }
+          ]
+        },
         "PayloadsController": {
           "address": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
           "modifiers": [
@@ -727,7 +739,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 35370633
+      "latestCCCBlockNumber": 35381926
     }
   },
   "TENDERLY": {

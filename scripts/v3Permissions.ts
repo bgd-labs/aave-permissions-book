@@ -165,20 +165,6 @@ export const resolveV3Modifiers = async (
         functions: roles['PoolConfigurator']['onlyPoolAdmin'],
       },
       {
-        modifier: 'onlyEmergencyAdmin',
-        addresses: [
-          ...adminRoles['EMERGENCY_ADMIN'].map((roleAddress) => {
-            return {
-              address: roleAddress,
-              owners: owners['EMERGENCY_ADMIN'][roleAddress].owners || [],
-              signersThreshold:
-                owners['EMERGENCY_ADMIN'][roleAddress].threshold || 0,
-            };
-          }),
-        ],
-        functions: roles['PoolConfigurator']['onlyEmergencyAdmin'],
-      },
-      {
         modifier: 'onlyAssetListingOrPoolAdmins',
         addresses: uniqueAddresses([
           ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
@@ -278,6 +264,7 @@ export const resolveV3Modifiers = async (
       provider,
     );
     const porExecutorOwner = await porExecutorContract.owner();
+
     obj['ProofOfReserveExecutorV3'] = {
       address: addressBook.PROOF_OF_RESERVE,
       modifiers: [
@@ -297,12 +284,14 @@ export const resolveV3Modifiers = async (
         },
       ],
     };
+
     const porAggregatorContract = new ethers.Contract(
       addressBook.PROOF_OF_RESERVE_AGGREGATOR,
       onlyOwnerAbi,
       provider,
     );
     const porAggregatorOwner = await porAggregatorContract.owner();
+
     obj['ProofOfReserveAggregatorV3'] = {
       address: addressBook.PROOF_OF_RESERVE_AGGREGATOR,
       modifiers: [
@@ -403,6 +392,7 @@ export const resolveV3Modifiers = async (
   // but could be that there is one of these for every token
   obj['RewardsController'] = {
     address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
+    proxyAdmin: addressBook.POOL_ADDRESSES_PROVIDER,
     modifiers: [
       {
         modifier: 'onlyEmissionManager',
@@ -420,17 +410,6 @@ export const resolveV3Modifiers = async (
       },
     ],
   };
-  if (
-    chainId === ChainId.mainnet ||
-    chainId === 1088 ||
-    chainId === 534352 ||
-    chainId === 1101 ||
-    chainId === 100 ||
-    chainId === 8453 ||
-    chainId === 56
-  ) {
-    obj['RewardsController'].proxyAdmin = addressBook.POOL_ADDRESSES_PROVIDER;
-  }
 
   if (addressBook.WETH_GATEWAY) {
     const wethGatewayContract = new ethers.Contract(
