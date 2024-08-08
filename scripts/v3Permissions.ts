@@ -164,20 +164,20 @@ export const resolveV3Modifiers = async (
         ],
         functions: roles['PoolConfigurator']['onlyPoolAdmin'],
       },
-      {
-        modifier: 'onlyEmergencyAdmin',
-        addresses: [
-          ...adminRoles['EMERGENCY_ADMIN'].map((roleAddress) => {
-            return {
-              address: roleAddress,
-              owners: owners['EMERGENCY_ADMIN'][roleAddress].owners || [],
-              signersThreshold:
-                owners['EMERGENCY_ADMIN'][roleAddress].threshold || 0,
-            };
-          }),
-        ],
-        functions: roles['PoolConfigurator']['onlyEmergencyAdmin'] || [],
-      },
+      // {
+      //   modifier: 'onlyEmergencyAdmin',
+      //   addresses: [
+      //     ...adminRoles['EMERGENCY_ADMIN'].map((roleAddress) => {
+      //       return {
+      //         address: roleAddress,
+      //         owners: owners['EMERGENCY_ADMIN'][roleAddress].owners || [],
+      //         signersThreshold:
+      //           owners['EMERGENCY_ADMIN'][roleAddress].threshold || 0,
+      //       };
+      //     }),
+      //   ],
+      //   functions: roles['PoolConfigurator']['onlyEmergencyAdmin'] || [],
+      // },
       {
         modifier: 'onlyAssetListingOrPoolAdmins',
         addresses: uniqueAddresses([

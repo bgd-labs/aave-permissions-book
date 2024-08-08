@@ -510,7 +510,7 @@
           "0xb9481a29f0f996BCAc759aB201FB3844c81866c4"
         ]
       },
-      "latestBlockNumber": 20484692
+      "latestBlockNumber": 20484714
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -530,7 +530,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 20484692
+        "latestBlockNumber": 20484715
       },
       "GSM_USDT": {
         "role": {
@@ -549,7 +549,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 20484693
+        "latestBlockNumber": 20484715
       }
     },
     "govV3": {
@@ -802,28 +802,6 @@
               "updateFlashloanPremiumTotal",
               "updateFlashloanPremiumToProtocol"
             ]
-          },
-          {
-            "modifier": "onlyEmergencyAdmin",
-            "addresses": [
-              {
-                "address": "0xCA76Ebd8617a03126B6FB84F9b1c1A0fB71C2633",
-                "owners": [
-                  "0xB43fAaD03f85A4Ac18B11d2e3F0397D18535e707",
-                  "0x911716aaE8745F38Bf91A639eF641B1f3ce3Ac39",
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xe5d453700d99296c2c085B8119BD6c152Cf63FA6",
-                  "0xF1ba2231F373CffD47641540CfaEB1f21E50659B",
-                  "0x4C30E33758216aD0d676419c21CB8D014C68099f",
-                  "0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
-                  "0x9343dcB6A3A523510F3499004D8aa595Baa25bc5",
-                  "0x2BEDd8645B407B3B6447fbC09B269eC7a5794606"
-                ],
-                "signersThreshold": 5
-              }
-            ],
-            "functions": []
           },
           {
             "modifier": "onlyAssetListingOrPoolAdmins",
@@ -1300,7 +1278,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 20484687
+      "latestBlockNumber": 20484709
     },
     "gsmRoles": {},
     "govV3": {
@@ -1316,7 +1294,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 20484689
+        "latestBlockNumber": 20484711
       },
       "contracts": {
         "GranularGuardian": {
@@ -1885,7 +1863,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 20484689
+      "latestCCCBlockNumber": 20484711
     }
   },
   "V2": {
@@ -2876,27 +2854,6 @@
             ]
           },
           {
-            "modifier": "onlyEmergencyAdmin",
-            "addresses": [
-              {
-                "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
-                "owners": [
-                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
-                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
-                  "0x818C277dBE886b934e60aa047250A73529E26A99",
-                  "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
-                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
-                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
-                ],
-                "signersThreshold": 5
-              }
-            ],
-            "functions": []
-          },
-          {
             "modifier": "onlyAssetListingOrPoolAdmins",
             "addresses": [
               {
@@ -3379,7 +3336,7 @@
           "0x3843b29118fFC18d5d12EE079d0324E1bF115e69"
         ]
       },
-      "latestBlockNumber": 20484691
+      "latestBlockNumber": 20484713
     },
     "gsmRoles": {},
     "govV3": {
