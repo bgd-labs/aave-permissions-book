@@ -624,7 +624,7 @@ export const networkConfigs: NetworkConfigs = {
     },
   },
   ['324']: {
-    rpcUrl: process.env.RPC_ZK_SYNC,
+    rpcUrl: process.env.RPC_ZKSYNC,
     explorer: 'https://era.zksync.network/',
     addressesNames: {
       '0xba845c27903F7dDB5c676e5b74728C871057E000': 'Aave Guardian ZkSync',
