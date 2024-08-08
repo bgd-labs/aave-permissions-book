@@ -436,7 +436,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 106996150,
         granularGuardianBlock: 122802392,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Optimism, ...MiscOptimism },
         governanceAddressBook: GovernanceV3Optimism,
         addresses: {
@@ -495,23 +495,6 @@ export const networkConfigs: NetworkConfigs = {
       // },
     },
   },
-  // ---------------------- DEPRECATED --------------------------------------
-  // [ChainId.fantom]: {
-  //   rpcUrl: process.env.RPC_FANTOM,
-  //   explorer: 'https://ftmscan.com',
-  //   addressesNames: {
-  //     '0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949': 'Aave Guardian Fantom',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       aclBlock: 33141475,
-  //       permissionsJson: './statics/functionsPermissionsV3.json',
-  //       addressBook: { ...AaveV3Fantom, ...MiscFantom },
-  //     },
-  //   },
-  // },
-  // -----------------------------------------------------------
   [ChainId.metis_andromeda]: {
     rpcUrl: process.env.RPC_METIS,
     explorer: 'https://andromeda-explorer.metis.io',
@@ -666,6 +649,22 @@ export const networkConfigs: NetworkConfigs = {
     },
   },
 };
+// ---------------------- DEPRECATED --------------------------------------
+// [ChainId.fantom]: {
+//   rpcUrl: process.env.RPC_FANTOM,
+//   explorer: 'https://ftmscan.com',
+//   addressesNames: {
+//     '0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949': 'Aave Guardian Fantom',
+//     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+//   },
+//   pools: {
+//     [Pools.V3]: {
+//       aclBlock: 33141475,
+//       permissionsJson: './statics/functionsPermissionsV3.json',
+//       addressBook: { ...AaveV3Fantom, ...MiscFantom },
+//     },
+//   },
+// },
 // ['1101']: {
 //   rpcUrl: process.env.RPC_ZKEVM,
 //   explorer: 'https://zkevm.polygonscan.com/',
