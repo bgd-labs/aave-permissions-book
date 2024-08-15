@@ -36,14 +36,14 @@
 |----------|----------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
 |  configureProtocolFees |  Governance | |--------|--------|
-|  updateReserveCaps |  Governance,Multi-sig | |--------|--------|
+|  updateReserveCaps |  Governance,Multi-sig,External Contract | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  upgradeAaveTokens (a/v/s) |  Governance | |--------|--------|
 |  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Governance,Multi-sig | |--------|--------|
-|  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
+|  pauseAndFreezeReserve |  Governance,Multi-sig,External Contract | |--------|--------|
 |  reserveListing |  Governance | |--------|--------|
 |  adminsConfiguration |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
@@ -60,7 +60,7 @@
 |  [Pool](https://snowtrace.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  [PoolAddressesProvider](https://snowtrace.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyBridge |   |  mintUnbacked, backUnbacked | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://snowtrace.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  [PoolAddressesProvider](https://snowtrace.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyPoolAdmin |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  dropReserve, dropReserve, updateAToken, updateStableDebtToken, updateVariableDebtToken, setReserveActive, updateBridgeProtocolFee, updateFlashloanPremiumTotal, updateFlashloanPremiumToProtocol | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://snowtrace.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  [PoolAddressesProvider](https://snowtrace.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  initReserves | |--------|--------|--------|--------|--------|
-|  [PoolConfigurator](https://snowtrace.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  [PoolAddressesProvider](https://snowtrace.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyRiskOrPoolAdmins |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090), [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5), [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) |  setReserveBorrowing, setReserveBorrowing, configureReserveAsCollateral, setReserveStableRateBorrowing, setReserveFreeze, setBorrowableInIsolation, setReserveFactor, setDebtCeiling, setSiloedBorrowing, setBorrowCap, setSupplyCap, setLiquidationProtocolFee, setEModeCategory, setAssetEModeCategory, setUnbackedMintCap, setReserveInterestRateStrategyAddress, setReserveFlashLoaning | |--------|--------|--------|--------|--------|
+|  [PoolConfigurator](https://snowtrace.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  [PoolAddressesProvider](https://snowtrace.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyRiskOrPoolAdmins |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090), [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5), [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99), [0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4](https://snowtrace.io/address/0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4) |  setReserveBorrowing, setReserveBorrowing, configureReserveAsCollateral, setReserveStableRateBorrowing, setReserveFreeze, setBorrowableInIsolation, setReserveFactor, setDebtCeiling, setSiloedBorrowing, setBorrowCap, setSupplyCap, setLiquidationProtocolFee, setEModeCategory, setAssetEModeCategory, setUnbackedMintCap, setReserveInterestRateStrategyAddress, setReserveFlashLoaning | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://snowtrace.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  [PoolAddressesProvider](https://snowtrace.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090), [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [ProofOfReserveExecutorV3](https://snowtrace.io/address/0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  enableAssets, disableAssets | |--------|--------|--------|--------|--------|
 |  [ProofOfReserveAggregatorV3](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  enableProofOfReserveFeed, enableProofOfReserveFeedWithBridgeWrapper, disableProofOfReserveFeed | |--------|--------|--------|--------|--------|
@@ -116,7 +116,7 @@
 |  POOL_ADMIN |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) | |--------|--------|
 |  EMERGENCY_ADMIN |  [Aave Guardian Avalanche](https://snowtrace.io/address/0xa35b76E4935449E33C56aB24b23fcd3246f13470) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  RISK_ADMIN |  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5), [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) | |--------|--------|
+|  RISK_ADMIN |  [CapPlusRiskSteward](https://snowtrace.io/address/0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5), [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99), [0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4](https://snowtrace.io/address/0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4) | |--------|--------|
 |  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |  [0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3](https://snowtrace.io/address/0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3) | |--------|--------|
 

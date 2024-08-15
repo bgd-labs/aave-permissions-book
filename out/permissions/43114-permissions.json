@@ -129,6 +129,11 @@
                 "address": "0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4",
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -520,14 +525,15 @@
         "ASSET_LISTING_ADMIN": [],
         "RISK_ADMIN": [
           "0xD2C92b5A793e196aB11dBefBe3Af6BddeD6c3DD5",
-          "0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99"
+          "0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99",
+          "0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4"
         ],
         "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
         ]
       },
-      "latestBlockNumber": 49226505
+      "latestBlockNumber": 49267356
     },
     "gsmRoles": {},
     "govV3": {
@@ -543,7 +549,7 @@
             "0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36"
           ]
         },
-        "latestBlockNumber": 49226514
+        "latestBlockNumber": 49267370
       },
       "contracts": {
         "GranularGuardian": {
@@ -897,7 +903,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 49226514
+      "latestCCCBlockNumber": 49267367
     }
   },
   "V2": {
