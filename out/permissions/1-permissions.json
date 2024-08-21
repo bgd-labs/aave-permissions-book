@@ -510,7 +510,7 @@
           "0xb9481a29f0f996BCAc759aB201FB3844c81866c4"
         ]
       },
-      "latestBlockNumber": 20566154
+      "latestBlockNumber": 20573309
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -530,7 +530,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 20566154
+        "latestBlockNumber": 20573309
       },
       "GSM_USDT": {
         "role": {
@@ -549,7 +549,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 20566154
+        "latestBlockNumber": 20573309
       }
     },
     "govV3": {
@@ -1278,7 +1278,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 20566151
+      "latestBlockNumber": 20573307
     },
     "gsmRoles": {},
     "govV3": {
@@ -1294,7 +1294,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 20566152
+        "latestBlockNumber": 20573308
       },
       "contracts": {
         "GranularGuardian": {
@@ -1863,7 +1863,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 20566152
+      "latestCCCBlockNumber": 20573308
     }
   },
   "V2": {
@@ -2792,8 +2792,8 @@
                   "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
-                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
-                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xC5bE5c0134857B4b96F45AA6f6B77DB96Ac1487e",
+                  "0xd4af2E86a27F8F77B0556E081F97B215C9cA8f2E",
                   "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
                 ],
                 "signersThreshold": 5
@@ -2834,8 +2834,8 @@
                   "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
-                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
-                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xC5bE5c0134857B4b96F45AA6f6B77DB96Ac1487e",
+                  "0xd4af2E86a27F8F77B0556E081F97B215C9cA8f2E",
                   "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
                 ],
                 "signersThreshold": 5
@@ -2870,8 +2870,8 @@
                   "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
-                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
-                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xC5bE5c0134857B4b96F45AA6f6B77DB96Ac1487e",
+                  "0xd4af2E86a27F8F77B0556E081F97B215C9cA8f2E",
                   "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
                 ],
                 "signersThreshold": 5
@@ -2898,8 +2898,8 @@
                   "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
-                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
-                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xC5bE5c0134857B4b96F45AA6f6B77DB96Ac1487e",
+                  "0xd4af2E86a27F8F77B0556E081F97B215C9cA8f2E",
                   "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
                 ],
                 "signersThreshold": 5
@@ -2947,8 +2947,8 @@
                   "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
-                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
-                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xC5bE5c0134857B4b96F45AA6f6B77DB96Ac1487e",
+                  "0xd4af2E86a27F8F77B0556E081F97B215C9cA8f2E",
                   "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
                 ],
                 "signersThreshold": 5
@@ -2981,8 +2981,8 @@
                   "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
-                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
-                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xC5bE5c0134857B4b96F45AA6f6B77DB96Ac1487e",
+                  "0xd4af2E86a27F8F77B0556E081F97B215C9cA8f2E",
                   "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
                 ],
                 "signersThreshold": 5
@@ -3015,8 +3015,8 @@
                   "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
-                  "0x8659D0BB123Da6D16D9394C7838BA286c2207d0E",
-                  "0xECC2a9240268BC7a26386ecB49E1Befca2706AC9",
+                  "0xC5bE5c0134857B4b96F45AA6f6B77DB96Ac1487e",
+                  "0xd4af2E86a27F8F77B0556E081F97B215C9cA8f2E",
                   "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
                 ],
                 "signersThreshold": 5
@@ -3336,7 +3336,7 @@
           "0x3843b29118fFC18d5d12EE079d0324E1bF115e69"
         ]
       },
-      "latestBlockNumber": 20566153
+      "latestBlockNumber": 20573309
     },
     "gsmRoles": {},
     "govV3": {
