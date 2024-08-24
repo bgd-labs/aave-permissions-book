@@ -533,7 +533,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 245694042
+      "latestBlockNumber": 246038377
     },
     "gsmRoles": {},
     "govV3": {
@@ -549,7 +549,7 @@
             "0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959"
           ]
         },
-        "latestBlockNumber": 245694118
+        "latestBlockNumber": 246038432
       },
       "contracts": {
         "GranularGuardian": {
@@ -817,7 +817,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 245694115
+      "latestCCCBlockNumber": 246038430
     }
   },
   "TENDERLY": {

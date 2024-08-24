@@ -443,7 +443,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 42359734
+      "latestBlockNumber": 42442561
     },
     "gsmRoles": {},
     "govV3": {
@@ -459,7 +459,7 @@
             "0x2451337aD5fE8b563bEB3b9c4A2B8789294879Ec"
           ]
         },
-        "latestBlockNumber": 42359742
+        "latestBlockNumber": 42442567
       },
       "contracts": {
         "GranularGuardian": {
@@ -721,7 +721,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 42359742
+      "latestCCCBlockNumber": 42442567
     }
   }
 }
