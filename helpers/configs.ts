@@ -13,6 +13,7 @@ import {
   AaveV3Avalanche,
   AaveV3Ethereum,
   AaveV3EthereumLido,
+  AaveV3EthereumEtherFi,
   AaveV3Fantom,
   AaveV3Harmony,
   AaveV3Optimism,
@@ -72,6 +73,7 @@ export enum Pools {
   GOV_V2_TENDERLY = 'GOV_V2_TENDERLY',
   GHO_GSM = 'GHO_GSM',
   LIDO = 'LIDO',
+  ETHERFI = 'ETHERFI',
 }
 
 export const ghoRoleNames = [
@@ -162,6 +164,16 @@ export const networkConfigs: NetworkConfigs = {
         aclBlock: 20262410,
         addressBook: {
           ...AaveV3EthereumLido,
+          ...MiscEthereum,
+          COLLECTOR: AaveV3Ethereum.COLLECTOR,
+        },
+      },
+      [Pools.ETHERFI]: {
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        aclBlock: 20625515,
+        addressBook: {
+          ...AaveV3EthereumEtherFi,
           ...MiscEthereum,
           COLLECTOR: AaveV3Ethereum.COLLECTOR,
         },
