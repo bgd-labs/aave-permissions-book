@@ -52,7 +52,6 @@ export const getCurrentRoleAdmins = async (
   contract: string,
 ): Promise<Roles> => {
   const roleHexToNameMap = initializeRoleCodeMap(roleNames);
-
   let limit = getLimit(chainId);
   let timeout = undefined;
 

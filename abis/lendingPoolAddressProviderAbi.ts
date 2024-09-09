@@ -1,4 +1,4 @@
-[
+export const poolAddressProviderAbi = [
   {
     "inputs": [
       { "internalType": "string", "name": "marketId", "type": "string" }

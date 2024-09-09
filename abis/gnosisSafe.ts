@@ -1,4 +1,4 @@
-[
+export const gnosisSafeABI = [
   {
     "anonymous": false,
     "inputs": [

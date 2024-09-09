@@ -1,4 +1,4 @@
-[
+export const bptABI =[
   {
     "inputs": [],
     "payable": false,

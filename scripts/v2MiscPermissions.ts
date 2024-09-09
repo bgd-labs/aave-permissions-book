@@ -2,10 +2,10 @@ import { ethers, providers } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
-import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
+import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
 import { Contracts, PermissionsJson } from '../helpers/types.js';
 import { MiscEthereum } from '@bgd-labs/aave-address-book';
-import erABI from '../abis/EcosystemReserve.json' assert { type: 'json' };
+import { erABI } from '../abis/EcosystemReserve.js';
 
 export const resolveV2MiscModifiers = async (
   addressBook: any,

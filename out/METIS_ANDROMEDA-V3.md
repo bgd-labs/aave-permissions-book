@@ -15,7 +15,6 @@
 |  [ACLManager](https://andromeda-explorer.metis.io/address/0xcDCb65fc657B701a5100a12eFB663978E7e8fFB8) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  not upgradeable | |--------|--------|
-|  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://andromeda-explorer.metis.io/address/0x61BE97d3a0550549f67CA7421725fA73Fa2036B5) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  Governance | |--------|--------|
@@ -63,9 +62,6 @@
 |  [ACLManager](https://andromeda-explorer.metis.io/address/0xcDCb65fc657B701a5100a12eFB663978E7e8fFB8) |  - |  onlyRole |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  - |  onlyRiskCouncil |  [Risk Council](https://andromeda-explorer.metis.io/address/0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  - |  onlyEmergencyAdmin |  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501) |  setFreeze | |--------|--------|--------|--------|--------|
-|  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  - |  onlyGuardian |  [Aave Guardian Metis](https://andromeda-explorer.metis.io/address/0xF6Db48C5968A9eBCB935786435530f28e32Cc501) |  cancel | |--------|--------|--------|--------|--------|
-|  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  - |  onlyThis |  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  updateEthereumGovernanceExecutor, updateGuardian, updateDelay, updateGracePeriod, updateMinimumDelay, updateMaximumDelay, executeDelegateCall | |--------|--------|--------|--------|--------|
-|  [MetisBridgeExecutor](https://andromeda-explorer.metis.io/address/0x8EC77963068474a45016938Deb95E603Ca82a029) |  - |  onlyEthereumGovernanceExecutor |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  queue | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |

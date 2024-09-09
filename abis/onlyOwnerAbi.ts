@@ -1,4 +1,4 @@
-[
+export const onlyOwnerAbi = [
     {
         "inputs": [],
         "name": "owner",

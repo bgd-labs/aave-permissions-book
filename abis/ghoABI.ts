@@ -1,4 +1,4 @@
-[
+export const ghoABI = [
   {
     "inputs": [
       { "internalType": "address", "name": "admin", "type": "address" }

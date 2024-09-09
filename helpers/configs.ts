@@ -179,19 +179,19 @@ export const networkConfigs: NetworkConfigs = {
           COLLECTOR: AaveV3Ethereum.COLLECTOR,
         },
       },
-      // [Pools.ETHERFI_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   aclBlock: 20625515,
-      //   tenderlyBlock: 20712164,
-      //   addressBook: {
-      //     ...AaveV3EthereumEtherFi,
-      //     ...MiscEthereum,
-      //     COLLECTOR: AaveV3Ethereum.COLLECTOR,
-      //   },
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/8c6f6783-656a-4445-aa3f-c82079803a39',
-      // },
+      [Pools.ETHERFI_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        aclBlock: 20625515,
+        tenderlyBlock: 20712164,
+        addressBook: {
+          ...AaveV3EthereumEtherFi,
+          ...MiscEthereum,
+          COLLECTOR: AaveV3Ethereum.COLLECTOR,
+        },
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/8c6f6783-656a-4445-aa3f-c82079803a39',
+      },
       [Pools.GHO]: {
         permissionsJson: './statics/functionsPermissionsGHO.json',
         ghoBlock: 17698470,

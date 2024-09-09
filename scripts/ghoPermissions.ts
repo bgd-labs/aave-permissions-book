@@ -10,9 +10,9 @@ import { ChainId } from '@aave/contract-helpers';
 import { ethers, providers, utils } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
-import ghoABI from '../abis/ghoABI.json' assert { type: 'json' };
+import { ghoABI } from '../abis/ghoABI.js';
 import { IOwnable_ABI } from '@bgd-labs/aave-address-book';
-import ghoStewardV2 from '../abis/ghoStewardV2.json' assert { type: 'json' };
+import { ghoStewardV2 } from '../abis/ghoStewardV2.js';
 
 const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
   const cleanAddresses: AddressInfo[] = [];

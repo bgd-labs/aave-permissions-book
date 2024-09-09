@@ -1,4 +1,4 @@
-[
+export const baseAdapter = [
   {
     "inputs": [
       {

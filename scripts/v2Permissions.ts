@@ -1,17 +1,16 @@
 import { ethers, providers, utils } from 'ethers';
 import { Pools } from '../helpers/configs.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
-import lendingPoolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json' assert { type: 'json' };
-import lendingPoolConfigurator from '../abis/lendingPoolConfigurator.json' assert { type: 'json' };
-import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
-import arcTimelockAbi from '../abis/arcTimelockAbi.json' assert { type: 'json' };
+import { poolAddressProviderAbi } from '../abis/lendingPoolAddressProviderAbi.js';
+import { lendingPoolConfigurator } from '../abis/lendingPoolConfigurator.js';
+import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
+import { arcTimelockAbi } from '../abis/arcTimelockAbi.js';
 import { AaveV2EthereumArc } from '@bgd-labs/aave-address-book';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
-import collectorAbi from '../abis/collectorAbi.json' assert { type: 'json' };
+import { collectorAbi } from '../abis/collectorAbi.js';
 import { ChainId } from '@aave/contract-helpers';
 import { Contracts, PermissionsJson } from '../helpers/types.js';
-import { getBridgeExecutor } from './bridgeExecutors.js';
 
 export const resolveV2Modifiers = async (
   addressBook: any,
@@ -25,7 +24,7 @@ export const resolveV2Modifiers = async (
 
   const lendingPoolAddressesProvider = new ethers.Contract(
     addressBook.POOL_ADDRESSES_PROVIDER,
-    lendingPoolAddressProviderAbi,
+    poolAddressProviderAbi,
     provider,
   );
   const lendingPoolAddressesProviderOwner: string =
@@ -572,12 +571,6 @@ export const resolveV2Modifiers = async (
       ],
     };
   }
-
-  let bridgeExecutor = {};
-  if (chainId === ChainId.polygon) {
-    bridgeExecutor = await getBridgeExecutor(provider, chainId);
-  }
-  obj = { ...obj, ...bridgeExecutor };
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
