@@ -37,7 +37,6 @@ These documents contain tables with the following information:
 |  MAINNET |  V3 |  [Permissions](./out/MAINNET-V3.md#contracts) | |--------|--------|--------|
 |  MAINNET |  LIDO |  [Permissions](./out/MAINNET-LIDO.md#contracts) | |--------|--------|--------|
 |  MAINNET |  ETHERFI |  [Permissions](./out/MAINNET-ETHERFI.md#contracts) | |--------|--------|--------|
-|  MAINNET |  ETHERFI_TENDERLY |  [Permissions](./out/MAINNET-ETHERFI_TENDERLY.md#contracts) | |--------|--------|--------|
 |  MAINNET |  GHO |  [Permissions](./out/MAINNET-GHO.md#contracts) | |--------|--------|--------|
 |  MAINNET |  GOV_V2 |  [Permissions](./out/MAINNET-GOV_V2.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2 |  [Permissions](./out/MAINNET-V2.md#contracts) | |--------|--------|--------|
