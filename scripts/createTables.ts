@@ -130,7 +130,11 @@ export const generateTable = (network: string, pool: string): string => {
     });
   }
   let v3Contracts;
-  if (pool === Pools.LIDO || pool === Pools.ETHERFI) {
+  if (
+    pool === Pools.LIDO ||
+    pool === Pools.ETHERFI ||
+    pool === Pools.ETHERFI_TENDERLY
+  ) {
     v3Contracts = generateContractsByAddress({
       ...(poolPermitsByContract?.contracts || {}),
       ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
@@ -166,7 +170,9 @@ export const generateTable = (network: string, pool: string): string => {
     const { upgradeable, ownedBy }: Decentralization =
       getLevelOfDecentralization(
         contract,
-        pool === Pools.LIDO || pool === Pools.ETHERFI
+        pool === Pools.LIDO ||
+          pool === Pools.ETHERFI ||
+          pool === Pools.ETHERFI_TENDERLY
           ? {
               ...poolPermitsByContract.contracts,
               ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
