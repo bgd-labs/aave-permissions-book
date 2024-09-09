@@ -57,7 +57,11 @@ export const getCurrentRoleAdmins = async (
 
   let eventLogs: providers.Log[] = [];
   let finalBlock: number = 0;
-  if (pool === Pools.TENDERLY || pool === Pools.GHO_TENDERLY) {
+  if (
+    pool === Pools.TENDERLY ||
+    pool === Pools.GHO_TENDERLY ||
+    pool == Pools.ETHERFI_TENDERLY
+  ) {
     const networkLogs = await getLogs({
       provider,
       address: contract,
