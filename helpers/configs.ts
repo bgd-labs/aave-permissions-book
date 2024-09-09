@@ -13,6 +13,7 @@ import {
   AaveV3Avalanche,
   AaveV3Ethereum,
   AaveV3EthereumLido,
+  AaveV3EthereumEtherFi,
   AaveV3Fantom,
   AaveV3Harmony,
   AaveV3Optimism,
@@ -48,7 +49,7 @@ import {
   MiscBNB,
   GovernanceV3ZkSync,
   MiscZkSync,
-  AaveV3ZkSync,
+  // AaveV3ZkSync,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -72,6 +73,8 @@ export enum Pools {
   GOV_V2_TENDERLY = 'GOV_V2_TENDERLY',
   GHO_GSM = 'GHO_GSM',
   LIDO = 'LIDO',
+  ETHERFI = 'ETHERFI',
+  ETHERFI_TENDERLY = 'ETHERFI_TENDERLY',
 }
 
 export const ghoRoleNames = [
@@ -166,6 +169,29 @@ export const networkConfigs: NetworkConfigs = {
           COLLECTOR: AaveV3Ethereum.COLLECTOR,
         },
       },
+      [Pools.ETHERFI]: {
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        aclBlock: 20625515,
+        addressBook: {
+          ...AaveV3EthereumEtherFi,
+          ...MiscEthereum,
+          COLLECTOR: AaveV3Ethereum.COLLECTOR,
+        },
+      },
+      // [Pools.ETHERFI_TENDERLY]: {
+      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //   aclBlock: 20625515,
+      //   tenderlyBlock: 20712160,
+      //   addressBook: {
+      //     ...AaveV3EthereumEtherFi,
+      //     ...MiscEthereum,
+      //     COLLECTOR: AaveV3Ethereum.COLLECTOR,
+      //   },
+      //   tenderlyRpcUrl:
+      //     'https://rpc.tenderly.co/fork/8c6f6783-656a-4445-aa3f-c82079803a39',
+      // },
       [Pools.GHO]: {
         permissionsJson: './statics/functionsPermissionsGHO.json',
         ghoBlock: 17698470,
@@ -623,31 +649,31 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
-  ['324']: {
-    rpcUrl: process.env.RPC_ZKSYNC,
-    explorer: 'https://era.zksync.network/',
-    addressesNames: {
-      '0xba845c27903F7dDB5c676e5b74728C871057E000': 'Aave Guardian ZkSync',
-      '0x2451337aD5fE8b563bEB3b9c4A2B8789294879Ec': 'BGD',
-      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-      '0x4257bf0746D783f0D962913d7d8AFA408B62547E':
-        'Aave Governance Guardian ZkSync',
-    },
-    pools: {
-      [Pools.V3]: {
-        aclBlock: 39265120,
-        crossChainControllerBlock: 40068400,
-        granularGuardianBlock: 40095020,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: { ...AaveV3ZkSync, ...MiscZkSync },
-        governanceAddressBook: GovernanceV3ZkSync,
-        addresses: {
-          '0x1BC5C10CAe378fDbd7D52ec4F9f34590a619c68E': 'ZkSyncAdapter',
-        },
-      },
-    },
-  },
+  // ['324']: {
+  //   rpcUrl: process.env.RPC_ZKSYNC,
+  //   explorer: 'https://era.zksync.network/',
+  //   addressesNames: {
+  //     '0xba845c27903F7dDB5c676e5b74728C871057E000': 'Aave Guardian ZkSync',
+  //     '0x2451337aD5fE8b563bEB3b9c4A2B8789294879Ec': 'BGD',
+  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+  //     '0x4257bf0746D783f0D962913d7d8AFA408B62547E':
+  //       'Aave Governance Guardian ZkSync',
+  //   },
+  //   pools: {
+  //     [Pools.V3]: {
+  //       aclBlock: 39265120,
+  //       crossChainControllerBlock: 40068400,
+  //       granularGuardianBlock: 40095020,
+  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+  //       addressBook: { ...AaveV3ZkSync, ...MiscZkSync },
+  //       governanceAddressBook: GovernanceV3ZkSync,
+  //       addresses: {
+  //         '0x1BC5C10CAe378fDbd7D52ec4F9f34590a619c68E': 'ZkSyncAdapter',
+  //       },
+  //     },
+  //   },
+  // },
 };
 // ---------------------- DEPRECATED --------------------------------------
 // [ChainId.fantom]: {

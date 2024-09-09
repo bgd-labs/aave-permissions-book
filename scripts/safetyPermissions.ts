@@ -3,10 +3,9 @@ import { ethers, providers } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
-import stkAaveABI from '../abis/stkAaveABI.json' assert { type: 'json' };
-import stkToken from '../abis/stkToken.json' assert { type: 'json' };
-import abptABI from '../abis/abptABI.json' assert { type: 'json' };
-import bptABI from '../abis/bptABI.json' assert { type: 'json' };
+import { stkToken } from '../abis/stkToken.js';
+import { abptABI } from '../abis/abptABI.js';
+import { bptABI } from '../abis/bptABI.js';
 import { Contracts, PermissionsJson } from '../helpers/types.js';
 
 export const resolveSafetyV2Modifiers = async (

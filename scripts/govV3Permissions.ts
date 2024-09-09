@@ -15,7 +15,7 @@ import {
   IOwnable_ABI,
   IRescuable_ABI,
 } from '@bgd-labs/aave-address-book';
-import baseAdapter from '../abis/BaseAdapter.json' assert { type: 'json' };
+import { baseAdapter } from '../abis/BaseAdapter.js';
 
 export const resolveGovV3Modifiers = async (
   addressBook: any,

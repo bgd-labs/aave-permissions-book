@@ -3,12 +3,9 @@ import { ethers, providers } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
-import AaveGovernanceV2ABI from '../abis/AaveGovernanceV2.json' assert { type: 'json' };
-import executorWithTimelockAbi from '../abis/executorWithTimelockAbi.json' assert { type: 'json' };
-import {
-  Contracts,
-  PermissionsJson,
-} from '../helpers/types.js' assert { type: 'json' };
+import { AaveGovernanceV2ABI } from '../abis/AaveGovernanceV2.js';
+import { executorWithTimelockAbi } from '../abis/executorWithTimelockAbi.js';
+import { Contracts, PermissionsJson } from '../helpers/types.js';
 
 export const resolveGovV2Modifiers = async (
   addressBook: any,

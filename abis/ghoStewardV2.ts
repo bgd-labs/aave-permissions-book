@@ -1,4 +1,4 @@
-[
+export const ghoStewardV2 = [
   {
     "inputs": [
       { "internalType": "address", "name": "owner", "type": "address" },

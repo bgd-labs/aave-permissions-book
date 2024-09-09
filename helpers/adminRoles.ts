@@ -52,13 +52,16 @@ export const getCurrentRoleAdmins = async (
   contract: string,
 ): Promise<Roles> => {
   const roleHexToNameMap = initializeRoleCodeMap(roleNames);
-
   let limit = getLimit(chainId);
   let timeout = undefined;
 
   let eventLogs: providers.Log[] = [];
   let finalBlock: number = 0;
-  if (pool === Pools.TENDERLY || pool === Pools.GHO_TENDERLY) {
+  if (
+    pool === Pools.TENDERLY ||
+    pool === Pools.GHO_TENDERLY ||
+    pool == Pools.ETHERFI_TENDERLY
+  ) {
     const networkLogs = await getLogs({
       provider,
       address: contract,

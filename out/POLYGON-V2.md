@@ -15,7 +15,6 @@
 |  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE84cF064a0a65290Ae5673b500699f3753063936) |  not upgradeable | |--------|--------|
 |  [LendingPoolAddressesProviderRegistry](https://polygonscan.com/address/0x3ac4e9aa29940770aeC38fe853a4bbabb2dA9C19) |  not upgradeable | |--------|--------|
 |  [DefaultIncentivesController](https://polygonscan.com/address/0x357D51124f59836DeD84c8a1730D72B749d8BC23) |  not upgradeable | |--------|--------|
-|  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 
 ### Actions type
@@ -52,10 +51,6 @@
 |  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE84cF064a0a65290Ae5673b500699f3753063936) |  - |  onlyOwner |  [0x05182E579FDfCf69E4390c3411D8FeA1fb6467cf](https://polygonscan.com/address/0x05182E579FDfCf69E4390c3411D8FeA1fb6467cf) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [LendingPoolAddressesProviderRegistry](https://polygonscan.com/address/0x3ac4e9aa29940770aeC38fe853a4bbabb2dA9C19) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [DefaultIncentivesController](https://polygonscan.com/address/0x357D51124f59836DeD84c8a1730D72B749d8BC23) |  - |  onlyEmissionManager |  [Polygon v2 incentives admin](https://polygonscan.com/address/0x2bB25175d9B0F8965780209EB558Cc3b56cA6d32) |  setDistributionEnd, configureAssets, setClaimer, setRewardsVault | |--------|--------|--------|--------|--------|
-|  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  - |  onlyGuardian |  [Aave Guardian Polygon](https://polygonscan.com/address/0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58) |  cancel | |--------|--------|--------|--------|--------|
-|  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  - |  onlyThis |  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  updateFxRootSender, updateFxChild, updateGuardian, updateDelay, updateGracePeriod, updateMinimumDelay, updateMaximumDelay, executeDelegateCall | |--------|--------|--------|--------|--------|
-|  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  - |  onlyFxChild |  [0x8397259c983751DAf40400790063935a11afa28a](https://polygonscan.com/address/0x8397259c983751DAf40400790063935a11afa28a) |  processMessageFromRoot | |--------|--------|--------|--------|--------|
-|  [PolygonBridgeExecutor](https://polygonscan.com/address/0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772) |  - |  onlyFxRootSender |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  processMessageFromRoot | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Threshold |Address |Owners |

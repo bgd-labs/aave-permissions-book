@@ -19,7 +19,6 @@
 |  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  not upgradeable | |--------|--------|
-|  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://arbiscan.io/address/0x4922093c476CfbCF903C7C4082d2D64bAE8A37cE) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  Governance | |--------|--------|
@@ -71,9 +70,6 @@
 |  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  onlyRole |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  - |  onlyRiskCouncil |  [Risk Council](https://arbiscan.io/address/0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  - |  onlyEmergencyAdmin |  [Aave Guardian Arbitrum](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb) |  setFreeze | |--------|--------|--------|--------|--------|
-|  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  - |  onlyGuardian |  [Aave Guardian Arbitrum](https://arbiscan.io/address/0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb) |  cancel | |--------|--------|--------|--------|--------|
-|  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  - |  onlyThis |  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  updateEthereumGovernanceExecutor, updateGuardian, updateDelay, updateGracePeriod, updateMinimumDelay, updateMaximumDelay, executeDelegateCall | |--------|--------|--------|--------|--------|
-|  [ArbitrumBridgeExecutor](https://arbiscan.io/address/0x7d9103572bE58FfE99dc390E8246f02dcAe6f611) |  - |  onlyEthereumGovernanceExecutor |  [ShortExecutor](https://etherscan.io/address/0xEE56e2B3D491590B5b31738cC34d5232F378a8D5) |  queue | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |

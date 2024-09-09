@@ -1,13 +1,12 @@
 import { ethers, providers, utils } from 'ethers';
-import onlyOwnerAbi from '../abis/onlyOwnerAbi.json' assert { type: 'json' };
-import collectorAbi from '../abis/collectorAbi.json' assert { type: 'json' };
+import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
+import { collectorAbi } from '../abis/collectorAbi.js';
 import { Pools } from '../helpers/configs.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
-import poolAddressProviderAbi from '../abis/lendingPoolAddressProviderAbi.json' assert { type: 'json' };
+import { poolAddressProviderAbi } from '../abis/lendingPoolAddressProviderAbi.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import { ChainId } from '@aave/contract-helpers';
-import { getBridgeExecutor } from './bridgeExecutors.js';
 import {
   AddressInfo,
   Contracts,
@@ -15,8 +14,8 @@ import {
   PermissionsJson,
   PoolGuardians,
 } from '../helpers/types.js';
-import capsPlusRiskStewardABI from '../abis/capsPlusRiskSteward.json' assert { type: 'json' };
-import erc20Bridge from '../abis/Erc20Bridge.json' assert { type: 'json' };
+import { capsPlusRiskStewardABI } from '../abis/capsPlusRiskSteward.js';
+import { erc20Bridge } from '../abis/Erc20Bridge.js';
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -74,6 +73,7 @@ export const resolveV3Modifiers = async (
       }
     }
   }
+
   const poolAddressesProvider = new ethers.Contract(
     addressBook.POOL_ADDRESSES_PROVIDER,
     poolAddressProviderAbi,
@@ -760,18 +760,6 @@ export const resolveV3Modifiers = async (
       ],
     };
   }
-
-  let bridgeExecutor = {};
-  if (
-    chainId === ChainId.polygon ||
-    chainId === ChainId.optimism ||
-    chainId === ChainId.arbitrum_one ||
-    chainId === ChainId.metis_andromeda ||
-    chainId === 8453
-  ) {
-    bridgeExecutor = await getBridgeExecutor(provider, chainId);
-  }
-  obj = { ...obj, ...bridgeExecutor };
 
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject

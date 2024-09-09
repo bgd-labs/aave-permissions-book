@@ -36,6 +36,7 @@ These documents contain tables with the following information:
 |----------|----------|----------|
 |  MAINNET |  V3 |  [Permissions](./out/MAINNET-V3.md#contracts) | |--------|--------|--------|
 |  MAINNET |  LIDO |  [Permissions](./out/MAINNET-LIDO.md#contracts) | |--------|--------|--------|
+|  MAINNET |  ETHERFI |  [Permissions](./out/MAINNET-ETHERFI.md#contracts) | |--------|--------|--------|
 |  MAINNET |  GHO |  [Permissions](./out/MAINNET-GHO.md#contracts) | |--------|--------|--------|
 |  MAINNET |  GOV_V2 |  [Permissions](./out/MAINNET-GOV_V2.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2 |  [Permissions](./out/MAINNET-V2.md#contracts) | |--------|--------|--------|
@@ -48,7 +49,6 @@ These documents contain tables with the following information:
 |  GNOSIS |  V3 |  [Permissions](./out/GNOSIS-V3.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V3 |  [Permissions](./out/POLYGON-V3.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V2 |  [Permissions](./out/POLYGON-V2.md#contracts) | |--------|--------|--------|
-|  ZK_SYNC |  V3 |  [Permissions](./out/ZK_SYNC-V3.md#contracts) | |--------|--------|--------|
 |  METIS_ANDROMEDA |  V3 |  [Permissions](./out/METIS_ANDROMEDA-V3.md#contracts) | |--------|--------|--------|
 |  BASE |  V3 |  [Permissions](./out/BASE-V3.md#contracts) | |--------|--------|--------|
 |  ARBITRUM_ONE |  V3 |  [Permissions](./out/ARBITRUM_ONE-V3.md#contracts) | |--------|--------|--------|
