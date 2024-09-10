@@ -2,7 +2,7 @@
   "V3": {
     "contracts": {
       "PoolAddressesProvider": {
-        "address": "0xeFD2d8E445391BCD1543ce5Af3ed004DF200BeaD",
+        "address": "0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -29,14 +29,14 @@
         ]
       },
       "Pool": {
-        "address": "0x75Bb7792be39f9CA9E7F4c7a6AFcF53e7F614Cb2",
-        "proxyAdmin": "0xeFD2d8E445391BCD1543ce5Af3ed004DF200BeaD",
+        "address": "0x78e30497a3c7527d953c6B1E3541b021A98Ac43c",
+        "proxyAdmin": "0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7",
         "modifiers": [
           {
             "modifier": "onlyPoolConfigurator",
             "addresses": [
               {
-                "address": "0xFC7F20e641A8Df945Aca10091059036c36DDdD2f",
+                "address": "0x0207d31b4377C74bEC37356aaD83E3dCc979F40E",
                 "owners": []
               }
             ],
@@ -90,8 +90,8 @@
         ]
       },
       "PoolConfigurator": {
-        "address": "0xFC7F20e641A8Df945Aca10091059036c36DDdD2f",
-        "proxyAdmin": "0xeFD2d8E445391BCD1543ce5Af3ed004DF200BeaD",
+        "address": "0x0207d31b4377C74bEC37356aaD83E3dCc979F40E",
+        "proxyAdmin": "0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7",
         "modifiers": [
           {
             "modifier": "onlyPoolAdmin",
@@ -233,7 +233,7 @@
         ]
       },
       "AaveOracle": {
-        "address": "0xEe2Ed473Df336bFA993009F1CcE5AAF6cF20bb2f",
+        "address": "0xC7F58Fca663a8d377B6D0c9703C697f56dC40088",
         "modifiers": [
           {
             "modifier": "onlyAssetListingOrPoolAdmins",
@@ -267,7 +267,7 @@
         ]
       },
       "Collector": {
-        "address": "0x7A0f281b41Cc9da52D2CAB2D23D3343277EbAf96",
+        "address": "0xd69Cbda644c6be817AaFb5Fd9174f50C33803B6b",
         "modifiers": [
           {
             "modifier": "onlyFundsAdmin",
@@ -308,14 +308,14 @@
         "proxyAdmin": "0x158d6c497317367cea3cbab0bd84e6de236f060d"
       },
       "RewardsController": {
-        "address": "0xA0A6587a2291C63Bcb8ee9F3cB4C583e20ca4c42",
-        "proxyAdmin": "0xeFD2d8E445391BCD1543ce5Af3ed004DF200BeaD",
+        "address": "0x37c972C9dDfC2138EBe33eC19dba063AB9f8966e",
+        "proxyAdmin": "0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7",
         "modifiers": [
           {
             "modifier": "onlyEmissionManager",
             "addresses": [
               {
-                "address": "0x403622110c4B8Fd7eDAe600C6cBD75Ad97B3E919",
+                "address": "0x92AA83Ce0CC590E6B0627a9E22e84Ef43F389D1f",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -330,7 +330,7 @@
         ]
       },
       "WrappedTokenGatewayV3": {
-        "address": "0x9F07eEBdf3675f60dCeC65a092F1821Fb99726F3",
+        "address": "0xA72d2e6C79F3e19b5cF51069e5eD1c0177b548EB",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -349,7 +349,7 @@
         ]
       },
       "EmissionManager": {
-        "address": "0x403622110c4B8Fd7eDAe600C6cBD75Ad97B3E919",
+        "address": "0x92AA83Ce0CC590E6B0627a9E22e84Ef43F389D1f",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -369,7 +369,7 @@
         ]
       },
       "PoolAddressesProviderRegistry": {
-        "address": "0xd18cEba655fA0A3C3f00Bb6C990de602AbbE2dB3",
+        "address": "0x0753E3637ddC6efc40759D9c347251046644F25F",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -408,7 +408,7 @@
         ]
       },
       "ACLManager": {
-        "address": "0xa1A966D108424530D4b7d2b78EEE182dB8b6fB56",
+        "address": "0xc6150b63c2F02528d4A969a248710A4658ed7928",
         "modifiers": [
           {
             "modifier": "onlyRole",
@@ -443,7 +443,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 43747444
+      "latestBlockNumber": 43869260
     },
     "gsmRoles": {},
     "govV3": {
@@ -459,7 +459,7 @@
             "0x2451337aD5fE8b563bEB3b9c4A2B8789294879Ec"
           ]
         },
-        "latestBlockNumber": 43747449
+        "latestBlockNumber": 43869297
       },
       "contracts": {
         "GranularGuardian": {
@@ -721,7 +721,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 43747449
+      "latestCCCBlockNumber": 43869295
     }
   }
 }
