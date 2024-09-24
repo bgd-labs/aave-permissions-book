@@ -404,6 +404,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xCa66149425E7DC8f81276F6D80C4b486B9503D1a': 'Risk Council',
       '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
         'Aave Governance Guardian Avalanche',
+      '0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4':
+        'Proof Of Reserve Executor V3',
     },
     pools: {
       [Pools.V3]: {
