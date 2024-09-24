@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "modifiers:generate": "tsx --env-file=.env scripts/modifiersCalculator.ts",
+    "modifiers:generate": "tsx scripts/modifiersCalculator.ts",
     "tables:create": "tsx scripts/createTables.ts"
   },
   "repository": {
