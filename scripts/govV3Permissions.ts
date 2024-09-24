@@ -470,7 +470,6 @@ export const resolveGovV3Modifiers = async (
     const rescuer = await cccContractRescue.whoCanRescue();
 
     const supportedChains = await cccContract.getSupportedChains();
-
     const receiverBridges: Set<string> = new Set();
     for (let i = 0; i < supportedChains.length; i++) {
       const bridges: string[] =
@@ -482,7 +481,7 @@ export const resolveGovV3Modifiers = async (
     for (let i = 0; i < receiverBridgesArray.length; i++) {
       // get trusted remotes
       const trustedRemotes: { address: string; chain: string }[] = [];
-      for (let i = 0; i < supportedChains.length; i++) {
+      for (let j = 0; j < supportedChains.length; j++) {
         const bridgeAdapterContract = new ethers.Contract(
           receiverBridgesArray[i],
           baseAdapter,
@@ -490,12 +489,15 @@ export const resolveGovV3Modifiers = async (
         );
         const trustedRemote: string =
           await bridgeAdapterContract.getTrustedRemoteByChainId(
-            supportedChains[i],
+            supportedChains[j],
           );
 
+        if (trustedRemote === constants.AddressZero) {
+          break;
+        }
         trustedRemotes.push({
           address: trustedRemote,
-          chain: supportedChains[i],
+          chain: supportedChains[j],
         });
       }
 
