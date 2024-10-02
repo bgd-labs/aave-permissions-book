@@ -60,7 +60,8 @@ export const getCurrentRoleAdmins = async (
   if (
     pool === Pools.TENDERLY ||
     pool === Pools.GHO_TENDERLY ||
-    pool == Pools.ETHERFI_TENDERLY
+    pool == Pools.ETHERFI_TENDERLY ||
+    pool == Pools.LIDO_TENDERLY
   ) {
     const networkLogs = await getLogs({
       provider,

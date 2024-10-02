@@ -134,7 +134,8 @@ export const generateTable = (network: string, pool: string): string => {
   if (
     pool === Pools.LIDO ||
     pool === Pools.ETHERFI ||
-    pool === Pools.ETHERFI_TENDERLY
+    pool === Pools.ETHERFI_TENDERLY ||
+    pool === Pools.LIDO_TENDERLY
   ) {
     v3Contracts = generateContractsByAddress({
       ...(poolPermitsByContract?.contracts || {}),
@@ -173,7 +174,8 @@ export const generateTable = (network: string, pool: string): string => {
         contract,
         pool === Pools.LIDO ||
           pool === Pools.ETHERFI ||
-          pool === Pools.ETHERFI_TENDERLY
+          pool === Pools.ETHERFI_TENDERLY ||
+          pool === Pools.LIDO_TENDERLY
           ? {
               ...poolPermitsByContract.contracts,
               ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
