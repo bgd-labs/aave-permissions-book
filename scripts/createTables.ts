@@ -598,7 +598,7 @@ const checkForTenderlyPool = (
   pools: Record<string, PoolConfigs>,
   selectedPool: string,
 ): boolean => {
-  if (!process.env.TENDERLY) {
+  if (!process.env.TENDERLY || process.env.TENDERLY === 'false') {
     return false;
   }
 
@@ -637,6 +637,7 @@ export const generateAllTables = () => {
         networkConfigs[network].pools,
         pool,
       );
+      console.log(hasTenderlyTable);
       if (!hasTenderlyTable) {
         readmeDirectoryTable += generateTable(network, pool);
       }

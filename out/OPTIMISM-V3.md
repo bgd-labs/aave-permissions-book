@@ -1,5 +1,5 @@
 # OPTIMISM 
-## TENDERLY 
+## V3 
 ### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
