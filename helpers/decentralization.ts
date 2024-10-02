@@ -29,6 +29,10 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
         const contract = poolInfo[contractName];
         // search all modifiers
         contract.modifiers.forEach((modifier) => {
+          if (modifier.functions === undefined) {
+            console.log(contractName);
+            console.log('modifier: ', modifier);
+          }
           const hasFunction = modifier.functions.some((functionName: string) =>
             // @ts-ignore
             actionsConfig[action].includes(functionName),
