@@ -17,6 +17,7 @@ import { getPrincipalReadme } from './readme.js';
 import {
   AddressInfo,
   ContractsByAddress,
+  PoolConfigs,
   PoolGuardians,
 } from '../helpers/types.js';
 import {
@@ -582,9 +583,35 @@ export const generateTable = (network: string, pool: string): string => {
     }
   }
 
-  saveJson(`./out/${networkName}-${pool}.md`, readmeByNetwork);
+  let poolName = pool;
+  if (networkConfigs[network].pools[pool].tenderlyBasePool) {
+    poolName = networkConfigs[network].pools[pool].tenderlyBasePool;
+  }
+  saveJson(`./out/${networkName}-${poolName}.md`, readmeByNetwork);
 
   return readmeDirectoryTable;
+};
+
+const checkForTenderlyPool = (
+  pools: Record<string, PoolConfigs>,
+  selectedPool: string,
+): boolean => {
+  if (!process.env.TENDERLY) {
+    return false;
+  }
+
+  const poolNames = Object.keys(pools).map((pool) => pool);
+  for (const poolName of poolNames) {
+    if (
+      poolName !== selectedPool &&
+      pools[poolName].tenderlyBasePool &&
+      pools[poolName].tenderlyBasePool === selectedPool
+    ) {
+      return true;
+    }
+  }
+
+  return false;
 };
 
 export const generateAllTables = () => {
@@ -603,7 +630,14 @@ export const generateAllTables = () => {
       (pool) => pool,
     );
     for (let pool of pools) {
-      readmeDirectoryTable += generateTable(network, pool);
+      // if pool has a tenderly pool enabled only generate tenderly
+      const hasTenderlyTable = checkForTenderlyPool(
+        networkConfigs[network].pools,
+        pool,
+      );
+      if (!hasTenderlyTable) {
+        readmeDirectoryTable += generateTable(network, pool);
+      }
     }
   }
 

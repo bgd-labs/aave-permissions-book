@@ -34,7 +34,6 @@ These documents contain tables with the following information:
 ### Permissions directory
 | Network |System type |Tables |
 |----------|----------|----------|
-|  MAINNET |  V3 |  [Permissions](./out/MAINNET-V3.md#contracts) | |--------|--------|--------|
 |  MAINNET |  LIDO |  [Permissions](./out/MAINNET-LIDO.md#contracts) | |--------|--------|--------|
 |  MAINNET |  ETHERFI |  [Permissions](./out/MAINNET-ETHERFI.md#contracts) | |--------|--------|--------|
 |  MAINNET |  GHO |  [Permissions](./out/MAINNET-GHO.md#contracts) | |--------|--------|--------|
@@ -45,22 +44,16 @@ These documents contain tables with the following information:
 |  MAINNET |  SAFETY_MODULE |  [Permissions](./out/MAINNET-SAFETY_MODULE.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_MISC |  [Permissions](./out/MAINNET-V2_MISC.md#contracts) | |--------|--------|--------|
 |  MAINNET |  TENDERLY |  [Permissions](./out/MAINNET-TENDERLY.md#contracts) | |--------|--------|--------|
-|  OPTIMISM |  V3 |  [Permissions](./out/OPTIMISM-V3.md#contracts) | |--------|--------|--------|
 |  OPTIMISM |  TENDERLY |  [Permissions](./out/OPTIMISM-TENDERLY.md#contracts) | |--------|--------|--------|
-|  BINANCE |  V3 |  [Permissions](./out/BINANCE-V3.md#contracts) | |--------|--------|--------|
 |  BINANCE |  TENDERLY |  [Permissions](./out/BINANCE-TENDERLY.md#contracts) | |--------|--------|--------|
 |  GNOSIS |  V3 |  [Permissions](./out/GNOSIS-V3.md#contracts) | |--------|--------|--------|
 |  GNOSIS |  TENDERLY |  [Permissions](./out/GNOSIS-TENDERLY.md#contracts) | |--------|--------|--------|
-|  POLYGON |  V3 |  [Permissions](./out/POLYGON-V3.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V2 |  [Permissions](./out/POLYGON-V2.md#contracts) | |--------|--------|--------|
 |  POLYGON |  TENDERLY |  [Permissions](./out/POLYGON-TENDERLY.md#contracts) | |--------|--------|--------|
 |  ZK_SYNC |  V3 |  [Permissions](./out/ZK_SYNC-V3.md#contracts) | |--------|--------|--------|
 |  METIS_ANDROMEDA |  V3 |  [Permissions](./out/METIS_ANDROMEDA-V3.md#contracts) | |--------|--------|--------|
-|  BASE |  V3 |  [Permissions](./out/BASE-V3.md#contracts) | |--------|--------|--------|
 |  BASE |  TENDERLY |  [Permissions](./out/BASE-TENDERLY.md#contracts) | |--------|--------|--------|
-|  ARBITRUM_ONE |  V3 |  [Permissions](./out/ARBITRUM_ONE-V3.md#contracts) | |--------|--------|--------|
 |  ARBITRUM_ONE |  TENDERLY |  [Permissions](./out/ARBITRUM_ONE-TENDERLY.md#contracts) | |--------|--------|--------|
-|  AVALANCHE |  V3 |  [Permissions](./out/AVALANCHE-V3.md#contracts) | |--------|--------|--------|
 |  AVALANCHE |  V2 |  [Permissions](./out/AVALANCHE-V2.md#contracts) | |--------|--------|--------|
 |  AVALANCHE |  TENDERLY |  [Permissions](./out/AVALANCHE-TENDERLY.md#contracts) | |--------|--------|--------|
 |  SCROLL |  V3 |  [Permissions](./out/SCROLL-V3.md#contracts) | |--------|--------|--------|
