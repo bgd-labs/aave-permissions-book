@@ -487,11 +487,12 @@
           "0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85",
           "0xE668197A175E7A2143222a028470c6ABBBD183F6",
           "0xcFaE0D8c5707FCc6478D6a65fFA31efADeF8b8EC",
-          "0xab515542d621574f9b5212d50593cD0C07e641bD"
+          "0xab515542d621574f9b5212d50593cD0C07e641bD",
+          "0x49d9409111a6363d82C4371fFa43fAEA660C917B"
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 126072715
+      "latestBlockNumber": 126115761
     },
     "gsmRoles": {},
     "govV3": {
@@ -507,7 +508,7 @@
             "0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF"
           ]
         },
-        "latestBlockNumber": 126072720
+        "latestBlockNumber": 126115767
       },
       "contracts": {
         "GranularGuardian": {
@@ -775,7 +776,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 126072720
+      "latestCCCBlockNumber": 126115767
     }
   },
   "TENDERLY": {

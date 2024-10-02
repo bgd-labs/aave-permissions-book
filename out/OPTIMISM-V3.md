@@ -105,7 +105,7 @@
 |  EMERGENCY_ADMIN |  [Aave Guardian Optimism](https://optimistic.etherscan.io/address/0xE50c8C619d05ff98b22Adf991F17602C774F785c) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  RISK_ADMIN |  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39), [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) | |--------|--------|
-|  FLASH_BORROWER |  [0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85](https://optimistic.etherscan.io/address/0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85), [0xE668197A175E7A2143222a028470c6ABBBD183F6](https://optimistic.etherscan.io/address/0xE668197A175E7A2143222a028470c6ABBBD183F6), [0xcFaE0D8c5707FCc6478D6a65fFA31efADeF8b8EC](https://optimistic.etherscan.io/address/0xcFaE0D8c5707FCc6478D6a65fFA31efADeF8b8EC), [0xab515542d621574f9b5212d50593cD0C07e641bD](https://optimistic.etherscan.io/address/0xab515542d621574f9b5212d50593cD0C07e641bD) | |--------|--------|
+|  FLASH_BORROWER |  [0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85](https://optimistic.etherscan.io/address/0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85), [0xE668197A175E7A2143222a028470c6ABBBD183F6](https://optimistic.etherscan.io/address/0xE668197A175E7A2143222a028470c6ABBBD183F6), [0xcFaE0D8c5707FCc6478D6a65fFA31efADeF8b8EC](https://optimistic.etherscan.io/address/0xcFaE0D8c5707FCc6478D6a65fFA31efADeF8b8EC), [0xab515542d621574f9b5212d50593cD0C07e641bD](https://optimistic.etherscan.io/address/0xab515542d621574f9b5212d50593cD0C07e641bD), [0x49d9409111a6363d82C4371fFa43fAEA660C917B](https://optimistic.etherscan.io/address/0x49d9409111a6363d82C4371fFa43fAEA660C917B) | |--------|--------|
 |  BRIDGE |   | |--------|--------|
 
 ### Granular Guardian Admins 

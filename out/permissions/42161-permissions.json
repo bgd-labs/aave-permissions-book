@@ -471,11 +471,12 @@
         "FLASH_BORROWER": [
           "0x219ac6dA971dE6d943cffD1BD62abde71525d382",
           "0x1561EAF39c98d45C55C7dC605E627672F4406819",
-          "0x9E8e9D6b0D24216F59043db68BDda1620892f549"
+          "0x9E8e9D6b0D24216F59043db68BDda1620892f549",
+          "0x49d9409111a6363d82C4371fFa43fAEA660C917B"
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 259099094
+      "latestBlockNumber": 259440696
     },
     "gsmRoles": {},
     "govV3": {
@@ -491,7 +492,7 @@
             "0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959"
           ]
         },
-        "latestBlockNumber": 259099130
+        "latestBlockNumber": 259440733
       },
       "contracts": {
         "GranularGuardian": {
@@ -759,7 +760,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 259099128
+      "latestCCCBlockNumber": 259440731
     }
   },
   "TENDERLY": {
