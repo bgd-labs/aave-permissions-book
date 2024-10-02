@@ -75,6 +75,7 @@ export enum Pools {
   LIDO = 'LIDO',
   ETHERFI = 'ETHERFI',
   ETHERFI_TENDERLY = 'ETHERFI_TENDERLY',
+  LIDO_TENDERLY = 'LIDO_TENDERLY',
 }
 
 export const ghoRoleNames = [
@@ -169,6 +170,20 @@ export const networkConfigs: NetworkConfigs = {
           COLLECTOR: AaveV3Ethereum.COLLECTOR,
         },
       },
+      [Pools.LIDO_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        aclBlock: 20262410,
+        addressBook: {
+          ...AaveV3EthereumLido,
+          ...MiscEthereum,
+          COLLECTOR: AaveV3Ethereum.COLLECTOR,
+        },
+        tenderlyBasePool: Pools.LIDO,
+        tenderlyBlock: 20877495,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/245d2e17-e86d-40ed-bb8e-bce065346d39',
+      },
       [Pools.ETHERFI]: {
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
@@ -179,19 +194,20 @@ export const networkConfigs: NetworkConfigs = {
           COLLECTOR: AaveV3Ethereum.COLLECTOR,
         },
       },
-      // [Pools.ETHERFI_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   aclBlock: 20625515,
-      //   tenderlyBlock: 20712160,
-      //   addressBook: {
-      //     ...AaveV3EthereumEtherFi,
-      //     ...MiscEthereum,
-      //     COLLECTOR: AaveV3Ethereum.COLLECTOR,
-      //   },
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/8c6f6783-656a-4445-aa3f-c82079803a39',
-      // },
+      [Pools.ETHERFI_TENDERLY]: {
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        aclBlock: 20625515,
+        addressBook: {
+          ...AaveV3EthereumEtherFi,
+          ...MiscEthereum,
+          COLLECTOR: AaveV3Ethereum.COLLECTOR,
+        },
+        tenderlyBasePool: Pools.ETHERFI,
+        tenderlyBlock: 20877495,
+        tenderlyRpcUrl:
+          'https://rpc.tenderly.co/fork/245d2e17-e86d-40ed-bb8e-bce065346d39',
+      },
       [Pools.GHO]: {
         permissionsJson: './statics/functionsPermissionsGHO.json',
         ghoBlock: 17698470,
@@ -620,9 +636,9 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: { ...AaveV3Gnosis, ...MiscGnosis },
         tenderlyBasePool: Pools.V3,
         governanceAddressBook: GovernanceV3Gnosis,
-        tenderlyBlock: 36298526,
+        tenderlyBlock: 36299907,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/40fcc75f-e9ef-4657-95dc-65ddf11ce8ba',
+          'https://rpc.tenderly.co/fork/ec4761f8-0f8e-4ad9-b60c-e2f64b49d34f',
       },
     },
   },
