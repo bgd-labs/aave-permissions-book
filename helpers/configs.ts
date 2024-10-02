@@ -618,6 +618,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
         addressBook: { ...AaveV3Gnosis, ...MiscGnosis },
+        tenderlyBasePool: Pools.V3,
         governanceAddressBook: GovernanceV3Gnosis,
         tenderlyBlock: 36298526,
         tenderlyRpcUrl:

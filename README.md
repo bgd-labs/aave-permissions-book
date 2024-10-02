@@ -46,7 +46,6 @@ These documents contain tables with the following information:
 |  MAINNET |  TENDERLY |  [Permissions](./out/MAINNET-TENDERLY.md#contracts) | |--------|--------|--------|
 |  OPTIMISM |  TENDERLY |  [Permissions](./out/OPTIMISM-TENDERLY.md#contracts) | |--------|--------|--------|
 |  BINANCE |  TENDERLY |  [Permissions](./out/BINANCE-TENDERLY.md#contracts) | |--------|--------|--------|
-|  GNOSIS |  V3 |  [Permissions](./out/GNOSIS-V3.md#contracts) | |--------|--------|--------|
 |  GNOSIS |  TENDERLY |  [Permissions](./out/GNOSIS-TENDERLY.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V2 |  [Permissions](./out/POLYGON-V2.md#contracts) | |--------|--------|--------|
 |  POLYGON |  TENDERLY |  [Permissions](./out/POLYGON-TENDERLY.md#contracts) | |--------|--------|--------|
