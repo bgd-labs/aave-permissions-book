@@ -26,7 +26,7 @@
 |  upgradeAaveTokens (a/v/s) |  Governance | |--------|--------|
 |  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
-|  pausePool |  External Contract | |--------|--------|
+|  pausePool |  Multi-sig | |--------|--------|
 |  reserveListing |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
