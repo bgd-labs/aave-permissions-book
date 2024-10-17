@@ -510,7 +510,7 @@
           "0xb9481a29f0f996BCAc759aB201FB3844c81866c4"
         ]
       },
-      "latestBlockNumber": 20981605
+      "latestBlockNumber": 20984850
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -530,7 +530,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 20981605
+        "latestBlockNumber": 20984850
       },
       "GSM_USDT": {
         "role": {
@@ -549,7 +549,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 20981606
+        "latestBlockNumber": 20984850
       }
     },
     "govV3": {
@@ -994,7 +994,7 @@
         ]
       },
       "WrappedTokenGatewayV3": {
-        "address": "0x893411580e590D62dDBca8a703d61Cc4A8c7b2b9",
+        "address": "0xA434D495249abE33E031Fe71a969B81f3c07950D",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -1031,7 +1031,7 @@
         ]
       },
       "ParaSwapRepayAdapter": {
-        "address": "0x02e7B8511831B1b02d9018215a0f8f500Ea5c6B3",
+        "address": "0x35bb522b102326ea3F1141661dF4626C87000e3E",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -1279,7 +1279,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 20981599
+      "latestBlockNumber": 20984842
     },
     "gsmRoles": {},
     "govV3": {
@@ -1295,7 +1295,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 20981601
+        "latestBlockNumber": 20984845
       },
       "contracts": {
         "GranularGuardian": {
@@ -1859,7 +1859,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 20981601
+      "latestCCCBlockNumber": 20984845
     }
   },
   "V2": {
@@ -3090,7 +3090,7 @@
         ]
       },
       "WrappedTokenGatewayV3": {
-        "address": "0x702B6770A81f75964cA5D479F369eFB31dfa7C32",
+        "address": "0x0B8C700917a6991FEa7198dDFC80bc8962b5055D",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -3127,7 +3127,7 @@
         ]
       },
       "ParaSwapRepayAdapter": {
-        "address": "0xd0EAE3B730AE736614c66Cb40aFd1e0063f74286",
+        "address": "0x66E1aBdb06e7363a618D65a910c540dfED23754f",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -3337,7 +3337,7 @@
           "0x3843b29118fFC18d5d12EE079d0324E1bF115e69"
         ]
       },
-      "latestBlockNumber": 20981603
+      "latestBlockNumber": 20984847
     },
     "gsmRoles": {},
     "govV3": {
@@ -3751,7 +3751,7 @@
         ]
       },
       "ParaSwapRepayAdapter": {
-        "address": "0x8831a5EEB5e10D2E5148Ca91ee9E4716a00c2CB2",
+        "address": "0x23b282c49C88d9161aae14b5eD777B976A5Ae65D",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -3961,7 +3961,7 @@
           "0x1EBdbE77bbDDD284BdCE8D7981D7eD26D6af58cA"
         ]
       },
-      "latestBlockNumber": 20981604
+      "latestBlockNumber": 20984848
     },
     "gsmRoles": {},
     "govV3": {

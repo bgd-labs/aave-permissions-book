@@ -266,7 +266,7 @@
         ]
       },
       "WrappedTokenGatewayV3": {
-        "address": "0xC1E320966c485ebF2A0A2A6d3c0Dc860A156eB1B",
+        "address": "0xF5f61a1ab3488fCB6d86451846bcFa9cdc108eB0",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -303,7 +303,7 @@
         ]
       },
       "ParaSwapRepayAdapter": {
-        "address": "0xE3090207A2de94A856EA10a7e1Bd36dD6145712B",
+        "address": "0x5d4D4007A4c6336550DdAa2a7c0d5e7972eebd16",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -521,7 +521,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 63128261
+      "latestBlockNumber": 63146597
     },
     "gsmRoles": {},
     "govV3": {
@@ -537,7 +537,7 @@
             "0xbCEB4f363f2666E2E8E430806F37e97C405c130b"
           ]
         },
-        "latestBlockNumber": 63128270
+        "latestBlockNumber": 63146607
       },
       "contracts": {
         "GranularGuardian": {
@@ -913,7 +913,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 63128269
+      "latestCCCBlockNumber": 63146607
     }
   },
   "V2": {
@@ -985,10 +985,8 @@
               "updateStableDebtToken",
               "updateVariableDebtToken",
               "enableBorrowingOnReserve",
-              "disableBorrowingOnReserve",
               "configureReserveAsCollateral",
               "enableReserveStableRate",
-              "disableReserveStableRate",
               "activateReserve",
               "deactivateReserve",
               "setReserveFactor",
@@ -1045,7 +1043,6 @@
               }
             ],
             "functions": [
-              "freezeReserve",
               "unfreezeReserve"
             ]
           }
