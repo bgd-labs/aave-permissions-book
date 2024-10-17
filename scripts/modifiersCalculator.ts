@@ -70,6 +70,13 @@ const generateNetworkPermissions = async (network: string) => {
             pool: ${poolKey}
           ------------------------------------
           `);
+      if (pool.tenderlyBasePool) {
+        await overwriteBaseTenderlyPool(
+          poolKey,
+          network,
+          pool.tenderlyBasePool,
+        );
+      }
       if (Object.keys(pool.addressBook).length > 0) {
         poolPermissions = await resolveV2Modifiers(
           pool.addressBook,
@@ -252,7 +259,9 @@ const generateNetworkPermissions = async (network: string) => {
 
           poolPermissions = await resolveV3Modifiers(
             pool.addressBook,
-            poolKey === Pools.TENDERLY || poolKey === Pools.V2_TENDERLY
+            poolKey === Pools.TENDERLY ||
+              poolKey === Pools.LIDO_TENDERLY ||
+              poolKey === Pools.ETHERFI_TENDERLY
               ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
               : provider,
             permissionsJson,
@@ -277,7 +286,11 @@ const generateNetworkPermissions = async (network: string) => {
           if (cccFromBlock) {
             const { senders, latestCCCBlockNumber } =
               await getCCCSendersAndAdapters(
-                provider,
+                poolKey === Pools.TENDERLY ||
+                  poolKey === Pools.LIDO_TENDERLY ||
+                  poolKey === Pools.ETHERFI_TENDERLY
+                  ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+                  : provider,
                 (fullJson[poolKey] && fullJson[poolKey]?.govV3?.senders) || [],
                 cccFromBlock,
                 pool.governanceAddressBook,
@@ -294,9 +307,14 @@ const generateNetworkPermissions = async (network: string) => {
                   fullJson[poolKey]?.govV3?.ggRoles?.latestBlockNumber ||
                   pool.granularGuardianBlock;
               }
+
               if (ggFromBlock) {
                 const ggRoles = await getCurrentRoleAdmins(
-                  provider,
+                  poolKey === Pools.TENDERLY ||
+                    poolKey === Pools.LIDO_TENDERLY ||
+                    poolKey === Pools.ETHERFI_TENDERLY
+                    ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+                    : provider,
                   (fullJson[poolKey] &&
                     fullJson[poolKey]?.govV3?.ggRoles?.role) ||
                     ({} as Record<string, string[]>),
@@ -306,6 +324,7 @@ const generateNetworkPermissions = async (network: string) => {
                   granularGuardianRoleNames,
                   pool.governanceAddressBook.GRANULAR_GUARDIAN,
                 );
+
                 govV3.ggRoles.role = ggRoles.role;
                 govV3.ggRoles.latestBlockNumber = ggRoles.latestBlockNumber;
               }
@@ -314,18 +333,24 @@ const generateNetworkPermissions = async (network: string) => {
             const permissionsGovV3Json = getStaticPermissionsJson(
               pool.crossChainPermissionsJson,
             );
+
             govV3.contracts = await resolveGovV3Modifiers(
               pool.governanceAddressBook,
-              poolKey === Pools.TENDERLY
+              poolKey === Pools.TENDERLY ||
+                poolKey === Pools.LIDO_TENDERLY ||
+                poolKey === Pools.ETHERFI_TENDERLY
                 ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
                 : provider,
               permissionsGovV3Json,
               Number(network),
               senders,
-              poolKey === Pools.TENDERLY,
+              poolKey === Pools.TENDERLY ||
+                poolKey === Pools.LIDO_TENDERLY ||
+                poolKey === Pools.ETHERFI_TENDERLY,
               govV3.ggRoles.role || {},
               pool.addresses,
             );
+
             govV3.senders = senders;
             govV3.latestCCCBlockNumber = latestCCCBlockNumber;
           }
@@ -353,6 +378,7 @@ const generateNetworkPermissions = async (network: string) => {
         govV3: govV3,
       };
     }
+    console.log(`----${network} : ${poolKey} finished`);
   }
 
   // save permissions in json object

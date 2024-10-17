@@ -14,7 +14,7 @@ import {
   IWithGuardian_ABI,
   IOwnable_ABI,
   IRescuable_ABI,
-} from '@bgd-labs/aave-address-book';
+} from '@bgd-labs/aave-address-book/abis';
 import { baseAdapter } from '../abis/BaseAdapter.js';
 
 export const resolveGovV3Modifiers = async (
@@ -49,6 +49,7 @@ export const resolveGovV3Modifiers = async (
       }
     }
   }
+
   if (
     addressBook.GRANULAR_GUARDIAN &&
     addressBook.GRANULAR_GUARDIAN !== constants.AddressZero
@@ -244,6 +245,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
+
   if (
     addressBook.VOTING_MACHINE &&
     addressBook.VOTING_MACHINE !== constants.AddressZero
