@@ -1,5 +1,5 @@
 # MAINNET 
-## LIDO_TENDERLY 
+## LIDO 
 ### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
