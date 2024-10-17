@@ -1,5 +1,5 @@
 # POLYGON 
-## V2 
+## V2_TENDERLY 
 ### Contracts upgradeability
 | contract |upgradeable by |
 |----------|----------|
