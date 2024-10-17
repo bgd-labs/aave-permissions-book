@@ -14,7 +14,7 @@ import {
   IWithGuardian_ABI,
   IOwnable_ABI,
   IRescuable_ABI,
-} from '@bgd-labs/aave-address-book';
+} from '@bgd-labs/aave-address-book/abis';
 import { baseAdapter } from '../abis/BaseAdapter.js';
 
 export const resolveGovV3Modifiers = async (
