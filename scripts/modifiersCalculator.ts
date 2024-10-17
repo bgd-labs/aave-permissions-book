@@ -70,6 +70,13 @@ const generateNetworkPermissions = async (network: string) => {
             pool: ${poolKey}
           ------------------------------------
           `);
+      if (pool.tenderlyBasePool) {
+        await overwriteBaseTenderlyPool(
+          poolKey,
+          network,
+          pool.tenderlyBasePool,
+        );
+      }
       if (Object.keys(pool.addressBook).length > 0) {
         poolPermissions = await resolveV2Modifiers(
           pool.addressBook,
