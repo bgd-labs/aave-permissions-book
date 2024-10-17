@@ -256,7 +256,7 @@ const generateNetworkPermissions = async (network: string) => {
             protocolRoleNames,
             pool.addressBook.ACL_MANAGER,
           );
-          console.log('=====================');
+
           poolPermissions = await resolveV3Modifiers(
             pool.addressBook,
             poolKey === Pools.TENDERLY ||
@@ -269,8 +269,6 @@ const generateNetworkPermissions = async (network: string) => {
             Number(network),
             admins.role,
           );
-
-          console.log('=====================2');
         }
         if (
           pool.crossChainControllerBlock &&
@@ -299,7 +297,7 @@ const generateNetworkPermissions = async (network: string) => {
                 Number(network),
                 Pools[poolKey as keyof typeof Pools],
               );
-            console.log('---------------------');
+
             if (pool.granularGuardianBlock) {
               let ggFromBlock;
               if (pool.tenderlyBasePool) {
@@ -309,8 +307,8 @@ const generateNetworkPermissions = async (network: string) => {
                   fullJson[poolKey]?.govV3?.ggRoles?.latestBlockNumber ||
                   pool.granularGuardianBlock;
               }
+
               if (ggFromBlock) {
-                console.log('======');
                 const ggRoles = await getCurrentRoleAdmins(
                   poolKey === Pools.TENDERLY ||
                     poolKey === Pools.LIDO_TENDERLY ||
@@ -326,7 +324,7 @@ const generateNetworkPermissions = async (network: string) => {
                   granularGuardianRoleNames,
                   pool.governanceAddressBook.GRANULAR_GUARDIAN,
                 );
-                console.log('======2');
+
                 govV3.ggRoles.role = ggRoles.role;
                 govV3.ggRoles.latestBlockNumber = ggRoles.latestBlockNumber;
               }
@@ -335,7 +333,7 @@ const generateNetworkPermissions = async (network: string) => {
             const permissionsGovV3Json = getStaticPermissionsJson(
               pool.crossChainPermissionsJson,
             );
-            console.log('9999999');
+
             govV3.contracts = await resolveGovV3Modifiers(
               pool.governanceAddressBook,
               poolKey === Pools.TENDERLY ||
@@ -352,7 +350,7 @@ const generateNetworkPermissions = async (network: string) => {
               govV3.ggRoles.role || {},
               pool.addresses,
             );
-            console.log('888888');
+
             govV3.senders = senders;
             govV3.latestCCCBlockNumber = latestCCCBlockNumber;
           }
