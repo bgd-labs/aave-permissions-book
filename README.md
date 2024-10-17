@@ -42,6 +42,17 @@ These documents contain tables with the following information:
 |  MAINNET |  SAFETY_MODULE |  [Permissions](./out/MAINNET-SAFETY_MODULE.md#contracts) | |--------|--------|--------|
 |  MAINNET |  V2_MISC |  [Permissions](./out/MAINNET-V2_MISC.md#contracts) | |--------|--------|--------|
 |  MAINNET |  TENDERLY |  [Permissions](./out/MAINNET-TENDERLY.md#contracts) | |--------|--------|--------|
+|  OPTIMISM |  TENDERLY |  [Permissions](./out/OPTIMISM-TENDERLY.md#contracts) | |--------|--------|--------|
+|  BINANCE |  TENDERLY |  [Permissions](./out/BINANCE-TENDERLY.md#contracts) | |--------|--------|--------|
+|  GNOSIS |  TENDERLY |  [Permissions](./out/GNOSIS-TENDERLY.md#contracts) | |--------|--------|--------|
+|  POLYGON |  TENDERLY |  [Permissions](./out/POLYGON-TENDERLY.md#contracts) | |--------|--------|--------|
+|  ZK_SYNC |  V3 |  [Permissions](./out/ZK_SYNC-V3.md#contracts) | |--------|--------|--------|
+|  METIS_ANDROMEDA |  V3 |  [Permissions](./out/METIS_ANDROMEDA-V3.md#contracts) | |--------|--------|--------|
+|  BASE |  TENDERLY |  [Permissions](./out/BASE-TENDERLY.md#contracts) | |--------|--------|--------|
+|  ARBITRUM_ONE |  TENDERLY |  [Permissions](./out/ARBITRUM_ONE-TENDERLY.md#contracts) | |--------|--------|--------|
+|  AVALANCHE |  V2_TENDERLY |  [Permissions](./out/AVALANCHE-V2_TENDERLY.md#contracts) | |--------|--------|--------|
+|  AVALANCHE |  TENDERLY |  [Permissions](./out/AVALANCHE-TENDERLY.md#contracts) | |--------|--------|--------|
+|  SCROLL |  V3 |  [Permissions](./out/SCROLL-V3.md#contracts) | |--------|--------|--------|
        
     
 ## Usage
