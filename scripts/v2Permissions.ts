@@ -118,7 +118,7 @@ export const resolveV2Modifiers = async (
       },
     ],
   };
-  if (pool === Pools.V2) {
+  if (pool === Pools.V2 || pool === Pools.V2_TENDERLY) {
     obj['LendingPoolConfigurator'].modifiers.push({
       modifier: 'onlyPoolOrEmergencyAdmin',
       addresses: [
