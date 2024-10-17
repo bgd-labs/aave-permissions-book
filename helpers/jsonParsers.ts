@@ -52,4 +52,5 @@ export const overwriteBaseTenderlyPool = async (
     `./out/permissions/${network}-permissions.json`,
     JSON.stringify(permissions, null, 2),
   );
+  console.log(`Copied ${basePoolKey} to ${destinationPoolKey}`);
 };

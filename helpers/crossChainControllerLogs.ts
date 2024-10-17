@@ -36,7 +36,12 @@ export const getCCCSendersAndAdapters = async (
   // get sender updated event
   const senderUpdatedTopic0 = utils.id('SenderUpdated(address,bool)');
 
-  if (pool === Pools.TENDERLY || pool === Pools.GHO_TENDERLY) {
+  if (
+    pool === Pools.TENDERLY ||
+    pool === Pools.GHO_TENDERLY ||
+    pool == Pools.ETHERFI_TENDERLY ||
+    pool == Pools.LIDO_TENDERLY
+  ) {
     const networkLogs = await getLogs({
       provider,
       address: addressBook.CROSS_CHAIN_CONTROLLER,

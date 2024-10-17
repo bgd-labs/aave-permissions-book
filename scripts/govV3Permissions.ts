@@ -49,6 +49,7 @@ export const resolveGovV3Modifiers = async (
       }
     }
   }
+  console.log('1', ggAdminRoles);
   if (
     addressBook.GRANULAR_GUARDIAN &&
     addressBook.GRANULAR_GUARDIAN !== constants.AddressZero
@@ -103,6 +104,7 @@ export const resolveGovV3Modifiers = async (
     };
   }
 
+  console.log('2');
   // only valid while 2.5 is active
   if (
     addressBook.GOVERNANCE &&
@@ -166,6 +168,7 @@ export const resolveGovV3Modifiers = async (
     };
   }
 
+  console.log('3');
   if (
     addressBook.PAYLOADS_CONTROLLER &&
     addressBook.PAYLOADS_CONTROLLER !== constants.AddressZero
@@ -244,6 +247,8 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
+
+  console.log('3');
   if (
     addressBook.VOTING_MACHINE &&
     addressBook.VOTING_MACHINE !== constants.AddressZero
@@ -623,6 +628,7 @@ export const resolveGovV3Modifiers = async (
     }
   }
 
+  console.log('10');
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
     .filter((contract) => contract.proxyAdmin)

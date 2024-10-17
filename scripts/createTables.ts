@@ -637,7 +637,7 @@ export const generateAllTables = () => {
         networkConfigs[network].pools,
         pool,
       );
-      console.log(hasTenderlyTable);
+
       if (!hasTenderlyTable) {
         readmeDirectoryTable += generateTable(network, pool);
       }
