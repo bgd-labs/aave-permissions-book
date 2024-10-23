@@ -409,7 +409,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 18782880
+      "latestBlockNumber": 18783092
     },
     "gsmRoles": {},
     "govV3": {
@@ -425,7 +425,7 @@
             "0x9853589F951D724D9f7c6724E0fD63F9d888C429"
           ]
         },
-        "latestBlockNumber": 18782881
+        "latestBlockNumber": 18783093
       },
       "contracts": {
         "GranularGuardian": {
@@ -691,7 +691,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 18782880
+      "latestCCCBlockNumber": 18783093
     }
   }
 }
