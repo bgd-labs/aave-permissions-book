@@ -139,7 +139,7 @@ export const networkConfigs: NetworkConfigs = {
       '0x71381e6718b37C12155CB961Ca3D374A8BfFa0e5':
         'GSM_USDT_ORACLE_SWAP_FREEZER',
       '0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30':
-        'New Aave Guardian Ethereum',
+        'Aave Protocol Guardian Ethereum',
       '0xCe52ab41C40575B072A18C9700091Ccbe4A06710':
         'Aave Governance Guardian Ethereum',
       '0xb9481a29f0f996BCAc759aB201FB3844c81866c4': 'GHO Steward v2',
@@ -328,7 +328,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x2C40FB1ACe63084fc0bB95F83C31B5854C6C4cB5': 'Risk Council',
       '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
         'Aave Governance Guardian Polygon',
-      '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6': 'New Aave Guardian Polygon',
+      '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
+        'Aave Protocol Guardian Polygon',
     },
     pools: {
       [Pools.V3]: {
@@ -381,7 +382,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x126dc589cc75f17385dD95516F3F1788d862E7bc': 'Risk Council',
       '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
         'Aave Governance Guardian Binance',
-      '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6': 'New Aave Guardian Binance',
+      '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
+        'Aave Protocol Guardian Binance',
     },
     pools: {
       [Pools.V3]: {
@@ -429,7 +431,7 @@ export const networkConfigs: NetworkConfigs = {
       '0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4':
         'Proof Of Reserve Executor V3',
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
-        'New Aave Guardian Avalanche',
+        'Aave Protocol Guardian Avalanche',
     },
     pools: {
       [Pools.V3]: {
@@ -484,7 +486,7 @@ export const networkConfigs: NetworkConfigs = {
       '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
         'Aave Governance Guardian Optimism',
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
-        'New Aave Guardian Optimism',
+        'Aave Protocol Guardian Optimism',
     },
     pools: {
       [Pools.V3]: {
@@ -525,7 +527,7 @@ export const networkConfigs: NetworkConfigs = {
       '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
         'Aave Governance Guardian Arbitrum',
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
-        'New Aave Guardian Arbitrum',
+        'Aave Protocol Guardian Arbitrum',
     },
     pools: {
       [Pools.V3]: {
@@ -565,7 +567,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa': 'Risk Council',
       '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
         'Aave Governance Guardian Metis',
-      '0x56C1a4b54921DEA9A344967a8693C7E661D72968': 'New Aave Guardian Metis',
+      '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
+        'Aave Protocol Guardian Metis',
     },
     pools: {
       [Pools.V3]: {
@@ -592,7 +595,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1': 'Risk Council',
       '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
         'Aave Governance Guardian Base',
-      '0x56C1a4b54921DEA9A344967a8693C7E661D72968': 'New Aave Guardian Base',
+      '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
+        'Aave Protocol Guardian Base',
     },
     pools: {
       [Pools.V3]: {
@@ -631,7 +635,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xF221B08dD10e0C68D74F035764931Baa3b030481': 'Risk Council',
       '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
         'Aave Governance Guardian Gnosis',
-      '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6': 'New Aave Guardian Gnosis',
+      '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
+        'Aave Protocol Guardian Gnosis',
     },
     pools: {
       [Pools.V3]: {
@@ -673,7 +678,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x611439a74546888c3535B4dd119A5Cbb9f5332EA': 'Risk Council',
       '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
         'Aave Governance Guardian Scroll',
-      '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6': 'New Aave Guardian Scroll',
+      '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
+        'Aave Protocol Guardian Scroll',
     },
     pools: {
       [Pools.V3]: {
