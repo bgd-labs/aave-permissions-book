@@ -113,7 +113,7 @@
       },
       {
         "name": "setReserveFreeze",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": ["onlyRiskOrPoolOrEmergencyAdmins"]
       },
       {
         "name": "setBorrowableInIsolation",
