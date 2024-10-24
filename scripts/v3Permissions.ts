@@ -210,6 +210,37 @@ export const resolveV3Modifiers = async (
         functions: roles['PoolConfigurator']['onlyRiskOrPoolAdmins'],
       },
       {
+        modifier: 'onlyRiskOrPoolOrEmergencyAdmins',
+        addresses: uniqueAddresses([
+          ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['POOL_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['POOL_ADMIN'][roleAddress].threshold || 0,
+            };
+          }),
+          ...adminRoles['RISK_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['RISK_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['RISK_ADMIN'][roleAddress].threshold || 0,
+            };
+          }),
+          ...adminRoles['EMERGENCY_ADMIN'].map((roleAddress) => {
+            return {
+              address: roleAddress,
+              owners: owners['EMERGENCY_ADMIN'][roleAddress].owners || [],
+              signersThreshold:
+                owners['EMERGENCY_ADMIN'][roleAddress].threshold || 0,
+            };
+          }),
+        ]),
+
+        functions: roles['PoolConfigurator']['onlyRiskOrPoolOrEmergencyAdmins'],
+      },
+      {
         modifier: 'onlyEmergencyOrPoolAdmin',
         addresses: uniqueAddresses([
           ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
