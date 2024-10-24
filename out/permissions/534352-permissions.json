@@ -430,7 +430,7 @@
           "0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e"
         ]
       },
-      "latestBlockNumber": 10455198
+      "latestBlockNumber": 10472514
     },
     "gsmRoles": {},
     "govV3": {
@@ -446,7 +446,7 @@
             "0x4aAa03F0A61cf93eA252e987b585453578108358"
           ]
         },
-        "latestBlockNumber": 10455200
+        "latestBlockNumber": 10472516
       },
       "contracts": {
         "GranularGuardian": {
@@ -712,7 +712,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 10455200
+      "latestCCCBlockNumber": 10472516
     }
   }
 }
