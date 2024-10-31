@@ -510,7 +510,7 @@
           "0xb9481a29f0f996BCAc759aB201FB3844c81866c4"
         ]
       },
-      "latestBlockNumber": 21074786
+      "latestBlockNumber": 21081940
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -530,7 +530,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 21074786
+        "latestBlockNumber": 21081940
       },
       "GSM_USDT": {
         "role": {
@@ -549,7 +549,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 21074786
+        "latestBlockNumber": 21081940
       }
     },
     "govV3": {
@@ -1319,7 +1319,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 21074778
+      "latestBlockNumber": 21081936
     },
     "gsmRoles": {},
     "govV3": {
@@ -1335,7 +1335,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 21074780
+        "latestBlockNumber": 21081937
       },
       "contracts": {
         "GranularGuardian": {
@@ -1895,7 +1895,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 21074780
+      "latestCCCBlockNumber": 21081937
     }
   },
   "V2": {
@@ -3311,7 +3311,7 @@
           "0x3843b29118fFC18d5d12EE079d0324E1bF115e69"
         ]
       },
-      "latestBlockNumber": 21074782
+      "latestBlockNumber": 21081938
     },
     "gsmRoles": {},
     "govV3": {
@@ -3876,7 +3876,7 @@
           "0x1EBdbE77bbDDD284BdCE8D7981D7eD26D6af58cA"
         ]
       },
-      "latestBlockNumber": 21074784
+      "latestBlockNumber": 21081939
     },
     "gsmRoles": {},
     "govV3": {
