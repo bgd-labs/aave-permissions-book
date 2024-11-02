@@ -478,9 +478,9 @@
               {
                 "address": "0x8513e6F37dBc52De87b166980Fa3F50639694B60",
                 "owners": [
+                  "0x320A4e54e3641A7a9dAF47016a93CDe6F848A340",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x818C277dBE886b934e60aa047250A73529E26A99",
                   "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
                 ],
                 "signersThreshold": 3
@@ -510,7 +510,7 @@
           "0xb9481a29f0f996BCAc759aB201FB3844c81866c4"
         ]
       },
-      "latestBlockNumber": 21089121
+      "latestBlockNumber": 21096280
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -530,7 +530,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 21089121
+        "latestBlockNumber": 21096280
       },
       "GSM_USDT": {
         "role": {
@@ -549,7 +549,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 21089121
+        "latestBlockNumber": 21096280
       }
     },
     "govV3": {
@@ -1319,7 +1319,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 21089112
+      "latestBlockNumber": 21096277
     },
     "gsmRoles": {},
     "govV3": {
@@ -1335,7 +1335,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 21089115
+        "latestBlockNumber": 21096278
       },
       "contracts": {
         "GranularGuardian": {
@@ -1895,7 +1895,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 21089115
+      "latestCCCBlockNumber": 21096278
     }
   },
   "V2": {
@@ -3311,7 +3311,7 @@
           "0x3843b29118fFC18d5d12EE079d0324E1bF115e69"
         ]
       },
-      "latestBlockNumber": 21089117
+      "latestBlockNumber": 21096278
     },
     "gsmRoles": {},
     "govV3": {
@@ -3876,7 +3876,7 @@
           "0x1EBdbE77bbDDD284BdCE8D7981D7eD26D6af58cA"
         ]
       },
-      "latestBlockNumber": 21089119
+      "latestBlockNumber": 21096279
     },
     "gsmRoles": {},
     "govV3": {
