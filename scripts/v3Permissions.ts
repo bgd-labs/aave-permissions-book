@@ -16,6 +16,7 @@ import {
 } from '../helpers/types.js';
 import { capsPlusRiskStewardABI } from '../abis/capsPlusRiskSteward.js';
 import { erc20Bridge } from '../abis/Erc20Bridge.js';
+import { RISK_STEWARDS_ABI } from '../abis/riskStewards.js';
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -787,6 +788,44 @@ export const resolveV3Modifiers = async (
             },
           ],
           functions: roles['AavePolEthBridge']['onlyRescueGuardian'],
+        },
+      ],
+    };
+  }
+
+  if (addressBook.RISK_STEWARD) {
+    const riskStewardsContract = new ethers.Contract(
+      addressBook.RISK_STEWARD,
+      RISK_STEWARDS_ABI,
+      provider,
+    );
+    const riskOwner = await riskStewardsContract.owner();
+    const riskCouncil = await riskStewardsContract.RISK_COUNCIL();
+
+    obj['GeneralizedRiskSteward'] = {
+      address: addressBook.PROOF_OF_RESERVE_AGGREGATOR,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: riskOwner,
+              owners: await getSafeOwners(provider, riskOwner),
+              signersThreshold: await getSafeThreshold(provider, riskOwner),
+            },
+          ],
+          functions: roles['GeneralizedRiskSteward']['onlyOwner'],
+        },
+        {
+          modifier: 'onlyRiskCouncil',
+          addresses: [
+            {
+              address: riskCouncil,
+              owners: await getSafeOwners(provider, riskCouncil),
+              signersThreshold: await getSafeThreshold(provider, riskCouncil),
+            },
+          ],
+          functions: roles['GeneralizedRiskSteward']['onlyRiskCouncil'],
         },
       ],
     };

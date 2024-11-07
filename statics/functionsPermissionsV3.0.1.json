@@ -499,5 +499,38 @@
         "roles": ["onlyOwner"]
       }
     ]
+  },
+  {
+    "contract": "GeneralizedRiskSteward",
+    "functions": [
+      {
+        "name": "setRiskConfig",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "setAddressRestricted",
+        "roles": ["onlyOwner"]
+      },
+      {
+        "name": "updateCaps",
+        "roles": ["onlyRiskCouncil"]
+      },
+      {
+        "name": "updateRates",
+        "roles": ["onlyRiskCouncil"]
+      },
+      {
+        "name": "updateCollateralSide",
+        "roles": ["onlyRiskCouncil"]
+      },
+      {
+        "name": "updateLstPriceCaps",
+        "roles": ["onlyRiskCouncil"]
+      },
+      {
+        "name": "updateStablePriceCaps",
+        "roles": ["onlyRiskCouncil"]
+      }
+    ]
   }
 ]
