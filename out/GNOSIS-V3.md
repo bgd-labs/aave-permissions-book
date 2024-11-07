@@ -16,7 +16,7 @@
 |  [ACLManager](https://gnosisscan.io//address/0xEc710f59005f48703908bC519D552Df5B8472614) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://gnosisscan.io//address/0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5) |  not upgradeable | |--------|--------|
-|  [GeneralizedRiskSteward](https://gnosisscan.io//address/0x677c9f358dA5DC83aF6760a839E4448D72840d04) |  not upgradeable | |--------|--------|
+|  [Manual AGRS](https://gnosisscan.io//address/0x677c9f358dA5DC83aF6760a839E4448D72840d04) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://gnosisscan.io//address/0x4A9F571E3C1f2F13567bb59e38988e74d7d72602) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://gnosisscan.io//address/0x9A1F491B86D09fC1484b5fab10041B189B60756b) |  Governance | |--------|--------|
@@ -69,8 +69,8 @@
 |  [ACLManager](https://gnosisscan.io//address/0xEc710f59005f48703908bC519D552Df5B8472614) |  - |  onlyRole |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://gnosisscan.io//address/0x33AE1f41546a2e05368Bf789b3d868813c0Ae658) |  - |  onlyRiskCouncil |  [Risk Council](https://gnosisscan.io//address/0xF221B08dD10e0C68D74F035764931Baa3b030481) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://gnosisscan.io//address/0x3Ceaf9b6CAb92dFe6302D0CC3F1BA880C28d35e5) |  - |  onlyEmergencyAdmin |  [Aave Protocol Guardian Gnosis](https://gnosisscan.io//address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setFreeze | |--------|--------|--------|--------|--------|
-|  [GeneralizedRiskSteward](https://gnosisscan.io//address/0x677c9f358dA5DC83aF6760a839E4448D72840d04) |  - |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
-|  [GeneralizedRiskSteward](https://gnosisscan.io//address/0x677c9f358dA5DC83aF6760a839E4448D72840d04) |  - |  onlyRiskCouncil |  [Risk Council](https://gnosisscan.io//address/0xF221B08dD10e0C68D74F035764931Baa3b030481) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Manual AGRS](https://gnosisscan.io//address/0x677c9f358dA5DC83aF6760a839E4448D72840d04) |  - |  onlyOwner |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
+|  [Manual AGRS](https://gnosisscan.io//address/0x677c9f358dA5DC83aF6760a839E4448D72840d04) |  - |  onlyRiskCouncil |  [Risk Council](https://gnosisscan.io//address/0xF221B08dD10e0C68D74F035764931Baa3b030481) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |

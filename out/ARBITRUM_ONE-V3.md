@@ -19,7 +19,7 @@
 |  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  not upgradeable | |--------|--------|
 |  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  not upgradeable | |--------|--------|
-|  [GeneralizedRiskSteward](https://arbiscan.io/address/0x14568979093FFF97aeBD73F58051a4f0e297b1eB) |  not upgradeable | |--------|--------|
+|  [Manual AGRS](https://arbiscan.io/address/0x14568979093FFF97aeBD73F58051a4f0e297b1eB) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://arbiscan.io/address/0x4922093c476CfbCF903C7C4082d2D64bAE8A37cE) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  Governance | |--------|--------|
@@ -73,8 +73,8 @@
 |  [ACLManager](https://arbiscan.io/address/0xa72636CbcAa8F5FF95B2cc47F3CDEe83F3294a0B) |  - |  onlyRole |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  - |  onlyRiskCouncil |  [Risk Council](https://arbiscan.io/address/0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  - |  onlyEmergencyAdmin |  [Aave Protocol Guardian Arbitrum](https://arbiscan.io/address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setFreeze | |--------|--------|--------|--------|--------|
-|  [GeneralizedRiskSteward](https://arbiscan.io/address/0x14568979093FFF97aeBD73F58051a4f0e297b1eB) |  - |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
-|  [GeneralizedRiskSteward](https://arbiscan.io/address/0x14568979093FFF97aeBD73F58051a4f0e297b1eB) |  - |  onlyRiskCouncil |  [Risk Council](https://arbiscan.io/address/0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Manual AGRS](https://arbiscan.io/address/0x14568979093FFF97aeBD73F58051a4f0e297b1eB) |  - |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
+|  [Manual AGRS](https://arbiscan.io/address/0x14568979093FFF97aeBD73F58051a4f0e297b1eB) |  - |  onlyRiskCouncil |  [Risk Council](https://arbiscan.io/address/0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |

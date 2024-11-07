@@ -14,7 +14,7 @@
 |  [PoolAddressesProviderRegistry](https://era.zksync.network//address/0x0753E3637ddC6efc40759D9c347251046644F25F) |  not upgradeable | |--------|--------|
 |  [ProxyAdmin](https://era.zksync.network//address/0x158d6c497317367CEa3CBAb0BD84E6de236F060D) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://era.zksync.network//address/0xc6150b63c2F02528d4A969a248710A4658ed7928) |  not upgradeable | |--------|--------|
-|  [GeneralizedRiskSteward](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) |  not upgradeable | |--------|--------|
+|  [Manual AGRS](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://era.zksync.network//address/0xe0e23196D42b54F262a3DE952e6B34B197D1A228) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://era.zksync.network//address/0x2E79349c3F5e4751E87b966812C9E65E805996F1) |  Governance | |--------|--------|
@@ -63,8 +63,8 @@
 |  [PoolAddressesProviderRegistry](https://era.zksync.network//address/0x0753E3637ddC6efc40759D9c347251046644F25F) |  - |  onlyOwner |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://era.zksync.network//address/0x158d6c497317367CEa3CBAb0BD84E6de236F060D) |  - |  onlyOwner |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://era.zksync.network//address/0xc6150b63c2F02528d4A969a248710A4658ed7928) |  - |  onlyRole |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  setRoleAdmin | |--------|--------|--------|--------|--------|
-|  [GeneralizedRiskSteward](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) |  - |  onlyOwner |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
-|  [GeneralizedRiskSteward](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) |  - |  onlyRiskCouncil |  [0x5BF14aeaFe54A9dE94D0C4CeA73A9B4C46F94F2D (Safe)](https://era.zksync.network//address/0x5BF14aeaFe54A9dE94D0C4CeA73A9B4C46F94F2D) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Manual AGRS](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) |  - |  onlyOwner |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
+|  [Manual AGRS](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) |  - |  onlyRiskCouncil |  [0x5BF14aeaFe54A9dE94D0C4CeA73A9B4C46F94F2D (Safe)](https://era.zksync.network//address/0x5BF14aeaFe54A9dE94D0C4CeA73A9B4C46F94F2D) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |

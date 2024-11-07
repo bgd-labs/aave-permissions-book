@@ -802,7 +802,7 @@ export const resolveV3Modifiers = async (
     const riskOwner = await riskStewardsContract.owner();
     const riskCouncil = await riskStewardsContract.RISK_COUNCIL();
 
-    obj['GeneralizedRiskSteward'] = {
+    obj['Manual AGRS'] = {
       address: addressBook.RISK_STEWARD,
       modifiers: [
         {
@@ -814,7 +814,7 @@ export const resolveV3Modifiers = async (
               signersThreshold: await getSafeThreshold(provider, riskOwner),
             },
           ],
-          functions: roles['GeneralizedRiskSteward']['onlyOwner'],
+          functions: roles['Manual_AGRS']['onlyOwner'],
         },
         {
           modifier: 'onlyRiskCouncil',
@@ -825,7 +825,7 @@ export const resolveV3Modifiers = async (
               signersThreshold: await getSafeThreshold(provider, riskCouncil),
             },
           ],
-          functions: roles['GeneralizedRiskSteward']['onlyRiskCouncil'],
+          functions: roles['Manual_AGRS']['onlyRiskCouncil'],
         },
       ],
     };

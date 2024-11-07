@@ -501,7 +501,7 @@
     ]
   },
   {
-    "contract": "GeneralizedRiskSteward",
+    "contract": "Manual_AGRS",
     "functions": [
       {
         "name": "setRiskConfig",

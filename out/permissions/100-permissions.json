@@ -445,7 +445,7 @@
           }
         ]
       },
-      "GeneralizedRiskSteward": {
+      "Manual AGRS": {
         "address": "0x677c9f358dA5DC83aF6760a839E4448D72840d04",
         "modifiers": [
           {
@@ -505,7 +505,7 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 36895515
+      "latestBlockNumber": 36903017
     },
     "gsmRoles": {},
     "govV3": {
@@ -515,7 +515,7 @@
           "RETRY_ROLE": [],
           "SOLVE_EMERGENCY_ROLE": []
         },
-        "latestBlockNumber": 36895530
+        "latestBlockNumber": 36903033
       },
       "contracts": {
         "GranularGuardian": {
@@ -810,7 +810,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 36895529
+      "latestCCCBlockNumber": 36903032
     }
   },
   "TENDERLY": {
