@@ -60,6 +60,7 @@
 |  retryAndInvalidateMessages |  Multi-sig,Governance | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|
 |  cancelProposal |  Multi-sig | |--------|--------|
+|  updateRiskParameters |  Multi-sig | |--------|--------|
 
 ### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |

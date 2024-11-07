@@ -66,5 +66,12 @@
     "setVotingConfigs",
     "setPowerStrategy"
   ],
-  "cancelProposal": ["cancelProposal"]
+  "cancelProposal": ["cancelProposal"],
+  "updateRiskParameters": [
+    "updateCaps",
+    "updateRates",
+    "updateCollateralSide",
+    "updateLstPriceCaps",
+    "updateStablePriceCaps"
+  ]
 }
