@@ -803,7 +803,7 @@ export const resolveV3Modifiers = async (
     const riskCouncil = await riskStewardsContract.RISK_COUNCIL();
 
     obj['GeneralizedRiskSteward'] = {
-      address: addressBook.PROOF_OF_RESERVE_AGGREGATOR,
+      address: addressBook.RISK_STEWARD,
       modifiers: [
         {
           modifier: 'onlyOwner',

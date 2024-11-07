@@ -19,6 +19,7 @@
 |  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  not upgradeable | |--------|--------|
 |  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  not upgradeable | |--------|--------|
+|  [GeneralizedRiskSteward](https://optimistic.etherscan.io/address/0x928807b90A74210268B590D0159FCf1340Ad76Bd) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://optimistic.etherscan.io/address/0x6c5264C380C7022e54f585c4E354ffb6f221a03b) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  Governance | |--------|--------|
@@ -71,6 +72,8 @@
 |  [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39) |  - |  onlyRiskCouncil |  [Risk Council](https://optimistic.etherscan.io/address/0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56) |  updateCaps | |--------|--------|--------|--------|--------|
 |  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  - |  onlyEmergencyAdmin |  [Aave Protocol Guardian Optimism](https://optimistic.etherscan.io/address/0x56C1a4b54921DEA9A344967a8693C7E661D72968) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
+|  [GeneralizedRiskSteward](https://optimistic.etherscan.io/address/0x928807b90A74210268B590D0159FCf1340Ad76Bd) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
+|  [GeneralizedRiskSteward](https://optimistic.etherscan.io/address/0x928807b90A74210268B590D0159FCf1340Ad76Bd) |  - |  onlyRiskCouncil |  [Risk Council](https://optimistic.etherscan.io/address/0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |

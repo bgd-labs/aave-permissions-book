@@ -425,6 +425,44 @@
             ]
           }
         ]
+      },
+      "GeneralizedRiskSteward": {
+        "address": "0x58226D26658F19724cB881E9F747EeDC846BB1c9",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x6fD45D32375d5aDB8D76275A3932c740F03a8718",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "setRiskConfig",
+              "setAddressRestricted"
+            ]
+          },
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 1
+              }
+            ],
+            "functions": [
+              "updateCaps",
+              "updateRates",
+              "updateCollateralSide",
+              "updateLstPriceCaps",
+              "updateStablePriceCaps"
+            ]
+          }
+        ]
       }
     },
     "roles": {
@@ -446,7 +484,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 18892603
+      "latestBlockNumber": 18893595
     },
     "gsmRoles": {},
     "govV3": {
@@ -462,7 +500,7 @@
             "0x9853589F951D724D9f7c6724E0fD63F9d888C429"
           ]
         },
-        "latestBlockNumber": 18892603
+        "latestBlockNumber": 18893599
       },
       "contracts": {
         "GranularGuardian": {
@@ -728,7 +766,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 18892603
+      "latestCCCBlockNumber": 18893599
     }
   }
 }

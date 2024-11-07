@@ -302,7 +302,7 @@
         ]
       },
       "WrappedTokenGatewayV3": {
-        "address": "0x90127A46207e97e4205db5CCC1Ec9D6D43633FD4",
+        "address": "0x7B9c12915c594a68dE96201Cbdc79147F09da278",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -444,6 +444,44 @@
             ]
           }
         ]
+      },
+      "GeneralizedRiskSteward": {
+        "address": "0x677c9f358dA5DC83aF6760a839E4448D72840d04",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "setRiskConfig",
+              "setAddressRestricted"
+            ]
+          },
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0xF221B08dD10e0C68D74F035764931Baa3b030481",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 1
+              }
+            ],
+            "functions": [
+              "updateCaps",
+              "updateRates",
+              "updateCollateralSide",
+              "updateLstPriceCaps",
+              "updateStablePriceCaps"
+            ]
+          }
+        ]
       }
     },
     "roles": {
@@ -467,7 +505,7 @@
           "0x33AE1f41546a2e05368Bf789b3d868813c0Ae658"
         ]
       },
-      "latestBlockNumber": 36893025
+      "latestBlockNumber": 36895515
     },
     "gsmRoles": {},
     "govV3": {
@@ -477,7 +515,7 @@
           "RETRY_ROLE": [],
           "SOLVE_EMERGENCY_ROLE": []
         },
-        "latestBlockNumber": 36893032
+        "latestBlockNumber": 36895530
       },
       "contracts": {
         "GranularGuardian": {
@@ -772,7 +810,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 36893032
+      "latestCCCBlockNumber": 36895529
     }
   },
   "TENDERLY": {

@@ -480,6 +480,44 @@
             ]
           }
         ]
+      },
+      "GeneralizedRiskSteward": {
+        "address": "0xD3DE4b3571744EB77946d65aBF01408902E92c4E",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "setRiskConfig",
+              "setAddressRestricted"
+            ]
+          },
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 1
+              }
+            ],
+            "functions": [
+              "updateCaps",
+              "updateRates",
+              "updateCollateralSide",
+              "updateLstPriceCaps",
+              "updateStablePriceCaps"
+            ]
+          }
+        ]
       }
     },
     "roles": {
@@ -503,7 +541,7 @@
           "0x4A4c73d563395ad827511F70097d4Ef82E653805"
         ]
       },
-      "latestBlockNumber": 22074365
+      "latestBlockNumber": 22080796
     },
     "gsmRoles": {},
     "govV3": {
@@ -519,7 +557,7 @@
             "0x7FDA7C3528ad8f05e62148a700D456898b55f8d2"
           ]
         },
-        "latestBlockNumber": 22074368
+        "latestBlockNumber": 22080818
       },
       "contracts": {
         "GranularGuardian": {
@@ -785,7 +823,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 22074367
+      "latestCCCBlockNumber": 22080817
     }
   },
   "TENDERLY": {
