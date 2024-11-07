@@ -975,6 +975,16 @@
                 "address": "0xe59470B3BE3293534603487E00A44C72f2CD466d",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0xCd04D93bEA13921DaD05240D577090b5AC36DfCA",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -982,7 +992,6 @@
               "setReserveBorrowing",
               "configureReserveAsCollateral",
               "setReserveStableRateBorrowing",
-              "setReserveFreeze",
               "setBorrowableInIsolation",
               "setReserveFactor",
               "setDebtCeiling",
@@ -995,6 +1004,54 @@
               "setUnbackedMintCap",
               "setReserveInterestRateStrategyAddress",
               "setReserveFlashLoaning"
+            ]
+          },
+          {
+            "modifier": "onlyRiskOrPoolOrEmergencyAdmins",
+            "addresses": [
+              {
+                "address": "0xFF1137243698CaA18EE364Cc966CF0e02A4e6327",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0xADf86b537eF08591c2777E144322E8b0Ca7E82a7",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0xe59470B3BE3293534603487E00A44C72f2CD466d",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0xCd04D93bEA13921DaD05240D577090b5AC36DfCA",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x818C277dBE886b934e60aa047250A73529E26A99",
+                  "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+                  "0xC5bE5c0134857B4b96F45AA6f6B77DB96Ac1487e",
+                  "0xd4af2E86a27F8F77B0556E081F97B215C9cA8f2E",
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
+                ],
+                "signersThreshold": 5
+              }
+            ],
+            "functions": [
+              "setReserveFreeze"
             ]
           },
           {
@@ -1294,6 +1351,44 @@
             ]
           }
         ]
+      },
+      "GeneralizedRiskSteward": {
+        "address": "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0xFF1137243698CaA18EE364Cc966CF0e02A4e6327",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "setRiskConfig",
+              "setAddressRestricted"
+            ]
+          },
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 1
+              }
+            ],
+            "functions": [
+              "updateCaps",
+              "updateRates",
+              "updateCollateralSide",
+              "updateLstPriceCaps",
+              "updateStablePriceCaps"
+            ]
+          }
+        ]
       }
     },
     "roles": {
@@ -1310,7 +1405,9 @@
         "ASSET_LISTING_ADMIN": [],
         "RISK_ADMIN": [
           "0xADf86b537eF08591c2777E144322E8b0Ca7E82a7",
-          "0xe59470B3BE3293534603487E00A44C72f2CD466d"
+          "0xe59470B3BE3293534603487E00A44C72f2CD466d",
+          "0xCd04D93bEA13921DaD05240D577090b5AC36DfCA",
+          "0x14568979093FFF97aeBD73F58051a4f0e297b1eB"
         ],
         "FLASH_BORROWER": [
           "0x219ac6dA971dE6d943cffD1BD62abde71525d382",
@@ -1320,7 +1417,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 264687509
+      "latestBlockNumber": 271936113
     },
     "gsmRoles": {},
     "govV3": {
@@ -1336,7 +1433,7 @@
             "0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959"
           ]
         },
-        "latestBlockNumber": 264687509
+        "latestBlockNumber": 271936113
       },
       "contracts": {
         "GranularGuardian": {
@@ -1602,7 +1699,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 264687509
+      "latestCCCBlockNumber": 271936113
     }
   }
 }
