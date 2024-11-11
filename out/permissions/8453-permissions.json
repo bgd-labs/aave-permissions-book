@@ -541,7 +541,7 @@
           "0x4A4c73d563395ad827511F70097d4Ef82E653805"
         ]
       },
-      "latestBlockNumber": 22203985
+      "latestBlockNumber": 22247168
     },
     "gsmRoles": {},
     "govV3": {
@@ -557,7 +557,7 @@
             "0x7FDA7C3528ad8f05e62148a700D456898b55f8d2"
           ]
         },
-        "latestBlockNumber": 22203991
+        "latestBlockNumber": 22247175
       },
       "contracts": {
         "GranularGuardian": {
@@ -823,7 +823,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 22203991
+      "latestCCCBlockNumber": 22247175
     }
   },
   "TENDERLY": {
