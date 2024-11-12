@@ -129,6 +129,11 @@
                 "address": "0x3829943c53F2d00e20B58475aF19716724bF90Ba",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0x928807b90A74210268B590D0159FCf1340Ad76Bd",
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -165,6 +170,11 @@
               },
               {
                 "address": "0x3829943c53F2d00e20B58475aF19716724bF90Ba",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x928807b90A74210268B590D0159FCf1340Ad76Bd",
                 "owners": [],
                 "signersThreshold": 0
               },
@@ -442,9 +452,10 @@
               {
                 "address": "0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56",
                 "owners": [
+                  "0xc2cf0387f2a83A7F5C6675F4CDe7F367ea1B989a",
                   "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
                 ],
-                "signersThreshold": 1
+                "signersThreshold": 2
               }
             ],
             "functions": [
@@ -524,9 +535,10 @@
               {
                 "address": "0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56",
                 "owners": [
+                  "0xc2cf0387f2a83A7F5C6675F4CDe7F367ea1B989a",
                   "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
                 ],
-                "signersThreshold": 1
+                "signersThreshold": 2
               }
             ],
             "functions": [
@@ -554,7 +566,8 @@
         "ASSET_LISTING_ADMIN": [],
         "RISK_ADMIN": [
           "0x5E76E98E0963EcDC6A065d1435F84065b7523f39",
-          "0x3829943c53F2d00e20B58475aF19716724bF90Ba"
+          "0x3829943c53F2d00e20B58475aF19716724bF90Ba",
+          "0x928807b90A74210268B590D0159FCf1340Ad76Bd"
         ],
         "FLASH_BORROWER": [
           "0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85",
@@ -565,7 +578,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 127842454
+      "latestBlockNumber": 127885647
     },
     "gsmRoles": {},
     "govV3": {
@@ -581,7 +594,7 @@
             "0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF"
           ]
         },
-        "latestBlockNumber": 127842462
+        "latestBlockNumber": 127885652
       },
       "contracts": {
         "GranularGuardian": {
@@ -847,7 +860,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 127842462
+      "latestCCCBlockNumber": 127885652
     }
   },
   "TENDERLY": {

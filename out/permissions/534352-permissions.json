@@ -406,9 +406,10 @@
               {
                 "address": "0x611439a74546888c3535B4dd119A5Cbb9f5332EA",
                 "owners": [
+                  "0xc2cf0387f2a83A7F5C6675F4CDe7F367ea1B989a",
                   "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
                 ],
-                "signersThreshold": 1
+                "signersThreshold": 2
               }
             ],
             "functions": [
@@ -468,9 +469,10 @@
               {
                 "address": "0x611439a74546888c3535B4dd119A5Cbb9f5332EA",
                 "owners": [
+                  "0xc2cf0387f2a83A7F5C6675F4CDe7F367ea1B989a",
                   "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
                 ],
-                "signersThreshold": 1
+                "signersThreshold": 2
               }
             ],
             "functions": [
@@ -505,7 +507,7 @@
           "0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e"
         ]
       },
-      "latestBlockNumber": 10989988
+      "latestBlockNumber": 11018712
     },
     "gsmRoles": {},
     "govV3": {
@@ -521,7 +523,7 @@
             "0x4aAa03F0A61cf93eA252e987b585453578108358"
           ]
         },
-        "latestBlockNumber": 10989992
+        "latestBlockNumber": 11018714
       },
       "contracts": {
         "GranularGuardian": {
@@ -787,7 +789,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 10989992
+      "latestCCCBlockNumber": 11018714
     }
   }
 }
