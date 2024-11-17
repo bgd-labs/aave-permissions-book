@@ -415,10 +415,7 @@
             "addresses": [
               {
                 "address": "0xF221B08dD10e0C68D74F035764931Baa3b030481",
-                "owners": [
-                  "0xc2cf0387f2a83A7F5C6675F4CDe7F367ea1B989a",
-                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
-                ],
+                "owners": [],
                 "signersThreshold": 2
               }
             ],
@@ -518,7 +515,7 @@
           "0x677c9f358dA5DC83aF6760a839E4448D72840d04"
         ]
       },
-      "latestBlockNumber": 37043402
+      "latestBlockNumber": 37060227
     },
     "gsmRoles": {},
     "govV3": {
@@ -528,7 +525,7 @@
           "RETRY_ROLE": [],
           "SOLVE_EMERGENCY_ROLE": []
         },
-        "latestBlockNumber": 37043414
+        "latestBlockNumber": 37060235
       },
       "contracts": {
         "GranularGuardian": {
@@ -823,7 +820,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 37043413
+      "latestCCCBlockNumber": 37060235
     }
   },
   "TENDERLY": {
