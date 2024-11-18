@@ -31,20 +31,20 @@
 |----------|----------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
 |  configureProtocolFees |  Governance | |--------|--------|
-|  updateReserveCaps |  Governance,Multi-sig,External Contract | |--------|--------|
+|  updateReserveCaps |  Governance,Multi-sig | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  upgradeAaveTokens (a/v/s) |  Governance | |--------|--------|
 |  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Governance,Multi-sig | |--------|--------|
-|  pauseAndFreezeReserve |  Governance,Multi-sig,External Contract | |--------|--------|
+|  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
 |  reserveListing |  Governance | |--------|--------|
 |  adminsConfiguration |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
 |  retryAndInvalidateMessages |  Governance,Multi-sig | |--------|--------|
-|  updateRiskParameters |  External Contract,Multi-sig | |--------|--------|
+|  updateRiskParameters |  Multi-sig | |--------|--------|
 
 ### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
