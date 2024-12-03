@@ -518,7 +518,7 @@
           "0x677c9f358dA5DC83aF6760a839E4448D72840d04"
         ]
       },
-      "latestBlockNumber": 37310988
+      "latestBlockNumber": 37327789
     },
     "gsmRoles": {},
     "govV3": {
@@ -528,7 +528,7 @@
           "RETRY_ROLE": [],
           "SOLVE_EMERGENCY_ROLE": []
         },
-        "latestBlockNumber": 37310999
+        "latestBlockNumber": 37327796
       },
       "contracts": {
         "GranularGuardian": {
@@ -811,7 +811,7 @@
                     "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7",
                     "0x0650302887619fa7727D8BD480Cda11A638B219B"
                   ],
-                  "signersThreshold": 2
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -823,7 +823,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 37310998
+      "latestCCCBlockNumber": 37327796
     }
   },
   "TENDERLY": {
