@@ -569,11 +569,22 @@
           "0x219ac6dA971dE6d943cffD1BD62abde71525d382",
           "0x1561EAF39c98d45C55C7dC605E627672F4406819",
           "0x9E8e9D6b0D24216F59043db68BDda1620892f549",
-          "0x49d9409111a6363d82C4371fFa43fAEA660C917B"
+          "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
+          "0x27D8FDb0251B48D8EdD1Ad7bEDf553cF99AbE7B0",
+          "0xe3254397f5D9C0B69917EBb49B49e103367B406f",
+          "0xaD38255fEbd566809aE387d5bE66ECD287947cb9",
+          "0x40d30B13666c55B1F41eE11645B5ea3Ea2CA31f8",
+          "0x696f6d66C2da2AA4A400a4317EEC8da88f7A378c",
+          "0xF715724abba480D4D45f4cb52BEF5ce5E3513CCC",
+          "0xe9b5260D99d283ff887859C569bAF8aD1bd12AAc",
+          "0x43DA9b0aB53242c55A9Ff9c722FfC2a373D639c7",
+          "0x678569FC403EA2BA46B549a4D0E15E883D7cAdF5",
+          "0xc3198eb5102fB3335C0E911eF1DA4BC07e403Dd1",
+          "0xDDd6b1f34e12C0230ab23cbd4514560b24438514"
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 280730901
+      "latestBlockNumber": 281073892
     },
     "gsmRoles": {},
     "govV3": {
@@ -589,7 +600,7 @@
             "0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959"
           ]
         },
-        "latestBlockNumber": 280730943
+        "latestBlockNumber": 281073943
       },
       "contracts": {
         "GranularGuardian": {
@@ -855,7 +866,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 280730942
+      "latestCCCBlockNumber": 281073941
     }
   },
   "TENDERLY": {

@@ -603,11 +603,15 @@
         ],
         "FLASH_BORROWER": [
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084",
-          "0xab515542d621574f9b5212d50593cD0C07e641bD"
+          "0xab515542d621574f9b5212d50593cD0C07e641bD",
+          "0x86C3Dd18bAF4370495d9228b58fD959771285C55",
+          "0xdB88AB5b485b38EDbEEf866314F9E49d095BCe39",
+          "0x79D2aeFE6A21b26B024d9341A51f6b7897852499",
+          "0x460b60565cb73845d56564384ab84BF84c13e47D"
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 65012026
+      "latestBlockNumber": 65052025
     },
     "gsmRoles": {},
     "govV3": {
@@ -623,7 +627,7 @@
             "0xbCEB4f363f2666E2E8E430806F37e97C405c130b"
           ]
         },
-        "latestBlockNumber": 65012031
+        "latestBlockNumber": 65052034
       },
       "contracts": {
         "GranularGuardian": {
@@ -997,7 +1001,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 65012031
+      "latestCCCBlockNumber": 65052033
     }
   },
   "V2": {

@@ -574,11 +574,25 @@
           "0xE668197A175E7A2143222a028470c6ABBBD183F6",
           "0xcFaE0D8c5707FCc6478D6a65fFA31efADeF8b8EC",
           "0xab515542d621574f9b5212d50593cD0C07e641bD",
-          "0x49d9409111a6363d82C4371fFa43fAEA660C917B"
+          "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
+          "0x83d1Fa384EC44C2769A3562EDe372484f26E141B",
+          "0x32Ad28356EF70adC3EC051D8AAcdEEaA10135296",
+          "0xB03818de4992388260b62259361778CF98485dFE",
+          "0x11b55966527FF030ca9c7B1c548B4bE5e7EaEe6D",
+          "0xcACb5A722a36cFf6bAeB359e21C098a4ACbffDfa",
+          "0x9573c7b691cDcEbBFa9D655181f291799dfB7Cf5",
+          "0x32b1D1bFd4B3b0CB9FF2DcD9DAc757aA64d4cb69",
+          "0x7D3c9C6566375d7ad6e89169cA5C01B5Edc15364",
+          "0xcC7d6ED524760539311ed0Cdb41D0852b4eb77eb",
+          "0xB9243C495117343981EC9f8AA2ABfFEe54396Fc0",
+          "0x1eC50880101022C11530A069690F5446d1464592",
+          "0x49bF093277Bf4dDe49c48c6AA55A3bDA3eeDEF68",
+          "0xb2cFb909e8657C0EC44D3dD898C1053b87804755",
+          "0x59bAbc14Dd73761e38E5bdA171b2298DC14da92d"
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 128792909
+      "latestBlockNumber": 128836076
     },
     "gsmRoles": {},
     "govV3": {
@@ -594,7 +608,7 @@
             "0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF"
           ]
         },
-        "latestBlockNumber": 128792914
+        "latestBlockNumber": 128836084
       },
       "contracts": {
         "GranularGuardian": {
@@ -860,7 +874,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 128792914
+      "latestCCCBlockNumber": 128836083
     }
   },
   "TENDERLY": {

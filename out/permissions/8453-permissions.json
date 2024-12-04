@@ -546,7 +546,17 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": [],
         "FLASH_BORROWER": [
-          "0xab515542d621574f9b5212d50593cD0C07e641bD"
+          "0xab515542d621574f9b5212d50593cD0C07e641bD",
+          "0xA672e882aCBB96486393D43E0efdab5EBEbDDC1d",
+          "0x15E2F06138aed58ca2A6AfB5A1333bBC5f728f80",
+          "0xbA5F6A0D2AC21a3feC7a6C40FACd23407AA84663",
+          "0xC1E02884AF4A283cA25ab63C45360d220d69DA52",
+          "0x1c980456751AE40315Ff73CaaC0843Be643321Be",
+          "0xeDE61eefa4850b459E3B09Fe6d8d371480D6fF00",
+          "0x53a4716a8f7DBC9543ebf9cd711952033cC64d43",
+          "0xd2f23773bF5e2d59F6bB925c2232F6e83f3f79e0",
+          "0x9e0501537723c71250307F5B1A8eE60e167D21C9",
+          "0xCAF08BF08D0c87e2c74dd9EBEC9C776037bD7e8E"
         ],
         "RISK_ADMIN": [
           "0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6",
@@ -554,7 +564,7 @@
           "0xD3DE4b3571744EB77946d65aBF01408902E92c4E"
         ]
       },
-      "latestBlockNumber": 23197623
+      "latestBlockNumber": 23240791
     },
     "gsmRoles": {},
     "govV3": {
@@ -570,7 +580,7 @@
             "0x7FDA7C3528ad8f05e62148a700D456898b55f8d2"
           ]
         },
-        "latestBlockNumber": 23197629
+        "latestBlockNumber": 23240797
       },
       "contracts": {
         "GranularGuardian": {
@@ -836,7 +846,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 23197628
+      "latestCCCBlockNumber": 23240797
     }
   },
   "TENDERLY": {
