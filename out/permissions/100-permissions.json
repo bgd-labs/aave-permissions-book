@@ -518,7 +518,7 @@
           "0x677c9f358dA5DC83aF6760a839E4448D72840d04"
         ]
       },
-      "latestBlockNumber": 37378417
+      "latestBlockNumber": 37395293
     },
     "gsmRoles": {},
     "govV3": {
@@ -528,7 +528,7 @@
           "RETRY_ROLE": [],
           "SOLVE_EMERGENCY_ROLE": []
         },
-        "latestBlockNumber": 37378424
+        "latestBlockNumber": 37395300
       },
       "contracts": {
         "GranularGuardian": {
@@ -583,7 +583,7 @@
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
                     "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
-                    "0xfd639f49Da6cadc98f01B60900C8BE30C38c4B27",
+                    "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
                     "0xA3103D0ED00d24795Faa2d641ACf6A320EeD7396",
                     "0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
@@ -606,7 +606,7 @@
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
                     "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
-                    "0xfd639f49Da6cadc98f01B60900C8BE30C38c4B27",
+                    "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
                     "0xA3103D0ED00d24795Faa2d641ACf6A320EeD7396",
                     "0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
@@ -696,7 +696,7 @@
             }
           ]
         },
-        "undefined": {
+        "Hyperlane adapter": {
           "address": "0xA806DA549FcB2B4912a7dFFE4c1aA7A1ed0Bd5C9",
           "modifiers": [
             {
@@ -823,7 +823,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 37378424
+      "latestCCCBlockNumber": 37395300
     }
   },
   "TENDERLY": {

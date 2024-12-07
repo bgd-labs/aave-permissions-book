@@ -584,7 +584,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 281762544
+      "latestBlockNumber": 282107185
     },
     "gsmRoles": {},
     "govV3": {
@@ -600,7 +600,7 @@
             "0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959"
           ]
         },
-        "latestBlockNumber": 281762598
+        "latestBlockNumber": 282107269
       },
       "contracts": {
         "GranularGuardian": {
@@ -633,7 +633,7 @@
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
                     "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
-                    "0xfd639f49Da6cadc98f01B60900C8BE30C38c4B27",
+                    "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
                     "0xA3103D0ED00d24795Faa2d641ACf6A320EeD7396",
                     "0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
@@ -687,7 +687,7 @@
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
                     "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
-                    "0xfd639f49Da6cadc98f01B60900C8BE30C38c4B27",
+                    "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
                     "0xA3103D0ED00d24795Faa2d641ACf6A320EeD7396",
                     "0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
@@ -710,7 +710,7 @@
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
                     "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
-                    "0xfd639f49Da6cadc98f01B60900C8BE30C38c4B27",
+                    "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
                     "0xA3103D0ED00d24795Faa2d641ACf6A320EeD7396",
                     "0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
@@ -866,7 +866,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 281762597
+      "latestCCCBlockNumber": 282107268
     }
   },
   "TENDERLY": {
