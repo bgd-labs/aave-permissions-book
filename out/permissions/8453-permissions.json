@@ -556,7 +556,8 @@
           "0x53a4716a8f7DBC9543ebf9cd711952033cC64d43",
           "0xd2f23773bF5e2d59F6bB925c2232F6e83f3f79e0",
           "0x9e0501537723c71250307F5B1A8eE60e167D21C9",
-          "0xCAF08BF08D0c87e2c74dd9EBEC9C776037bD7e8E"
+          "0xCAF08BF08D0c87e2c74dd9EBEC9C776037bD7e8E",
+          "0x352423e2fA5D5c99343d371C9e3bC56C87723Cc7"
         ],
         "RISK_ADMIN": [
           "0x12DEB4025b79f2B43f6aeF079F9D77C3f9a67bb6",
@@ -564,7 +565,7 @@
           "0xD3DE4b3571744EB77946d65aBF01408902E92c4E"
         ]
       },
-      "latestBlockNumber": 23413614
+      "latestBlockNumber": 23456804
     },
     "gsmRoles": {},
     "govV3": {
@@ -580,7 +581,7 @@
             "0x7FDA7C3528ad8f05e62148a700D456898b55f8d2"
           ]
         },
-        "latestBlockNumber": 23413625
+        "latestBlockNumber": 23456810
       },
       "contracts": {
         "GranularGuardian": {
@@ -846,7 +847,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 23413625
+      "latestCCCBlockNumber": 23456810
     }
   },
   "TENDERLY": {
