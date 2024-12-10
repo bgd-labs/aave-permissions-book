@@ -445,7 +445,7 @@
           "0x05c77Cf62346329a157d7A6F874464D049CECb26"
         ]
       },
-      "latestBlockNumber": 50831950
+      "latestBlockNumber": 50911314
     },
     "gsmRoles": {},
     "govV3": {
@@ -461,7 +461,7 @@
             "0x2451337aD5fE8b563bEB3b9c4A2B8789294879Ec"
           ]
         },
-        "latestBlockNumber": 50831957
+        "latestBlockNumber": 50911322
       },
       "contracts": {
         "GranularGuardian": {
@@ -491,7 +491,7 @@
                 {
                   "address": "0x4257bf0746D783f0D962913d7d8AFA408B62547E",
                   "owners": [
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -545,7 +545,7 @@
                 {
                   "address": "0x4257bf0746D783f0D962913d7d8AFA408B62547E",
                   "owners": [
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -568,7 +568,7 @@
                 {
                   "address": "0x4257bf0746D783f0D962913d7d8AFA408B62547E",
                   "owners": [
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -723,7 +723,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 50831957
+      "latestCCCBlockNumber": 50911321
     }
   }
 }

@@ -624,7 +624,7 @@
           "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
         ]
       },
-      "latestBlockNumber": 54104405
+      "latestBlockNumber": 54146626
     },
     "gsmRoles": {},
     "govV3": {
@@ -640,7 +640,7 @@
             "0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36"
           ]
         },
-        "latestBlockNumber": 54104411
+        "latestBlockNumber": 54146637
       },
       "contracts": {
         "GranularGuardian": {
@@ -671,7 +671,7 @@
                   "address": "0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -725,7 +725,7 @@
                   "address": "0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -748,7 +748,7 @@
                   "address": "0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -992,7 +992,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 54104411
+      "latestCCCBlockNumber": 54146637
     }
   },
   "V2": {

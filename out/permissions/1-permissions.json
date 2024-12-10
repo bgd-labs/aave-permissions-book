@@ -510,7 +510,7 @@
           "0x46Aa1063e5265b43663E81329333B47c517A5409"
         ]
       },
-      "latestBlockNumber": 21361266
+      "latestBlockNumber": 21368440
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -530,7 +530,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 21361266
+        "latestBlockNumber": 21368440
       },
       "GSM_USDT": {
         "role": {
@@ -549,7 +549,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 21361266
+        "latestBlockNumber": 21368440
       }
     },
     "govV3": {
@@ -1371,7 +1371,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 21361263
+      "latestBlockNumber": 21368433
     },
     "gsmRoles": {},
     "govV3": {
@@ -1387,7 +1387,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 21361264
+        "latestBlockNumber": 21368435
       },
       "contracts": {
         "GranularGuardian": {
@@ -1418,7 +1418,7 @@
                   "address": "0xCe52ab41C40575B072A18C9700091Ccbe4A06710",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -1476,7 +1476,7 @@
                   "address": "0xCe52ab41C40575B072A18C9700091Ccbe4A06710",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -1500,7 +1500,7 @@
                   "address": "0xCe52ab41C40575B072A18C9700091Ccbe4A06710",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -1547,7 +1547,7 @@
                   "address": "0xCe52ab41C40575B072A18C9700091Ccbe4A06710",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -1570,7 +1570,7 @@
                   "address": "0xCe52ab41C40575B072A18C9700091Ccbe4A06710",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -1947,7 +1947,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 21361264
+      "latestCCCBlockNumber": 21368435
     }
   },
   "V2": {
@@ -3426,7 +3426,7 @@
           "0x81aFd0F99c2Afa2f2DD7E387c2Ef9CD2a29b6E1A"
         ]
       },
-      "latestBlockNumber": 21361265
+      "latestBlockNumber": 21368437
     },
     "gsmRoles": {},
     "govV3": {
@@ -4042,7 +4042,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 21361266
+      "latestBlockNumber": 21368438
     },
     "gsmRoles": {},
     "govV3": {

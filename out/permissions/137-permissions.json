@@ -611,7 +611,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 65250865
+      "latestBlockNumber": 65290687
     },
     "gsmRoles": {},
     "govV3": {
@@ -627,7 +627,7 @@
             "0xbCEB4f363f2666E2E8E430806F37e97C405c130b"
           ]
         },
-        "latestBlockNumber": 65250871
+        "latestBlockNumber": 65290697
       },
       "contracts": {
         "GranularGuardian": {
@@ -658,7 +658,7 @@
                   "address": "0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -712,7 +712,7 @@
                   "address": "0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -735,7 +735,7 @@
                   "address": "0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -1001,7 +1001,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 65250871
+      "latestCCCBlockNumber": 65290697
     }
   },
   "V2": {

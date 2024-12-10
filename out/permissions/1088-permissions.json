@@ -497,7 +497,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 19134554
+      "latestBlockNumber": 19143389
     },
     "gsmRoles": {},
     "govV3": {
@@ -513,7 +513,7 @@
             "0x9853589F951D724D9f7c6724E0fD63F9d888C429"
           ]
         },
-        "latestBlockNumber": 19134555
+        "latestBlockNumber": 19143391
       },
       "contracts": {
         "GranularGuardian": {
@@ -544,7 +544,7 @@
                   "address": "0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -598,7 +598,7 @@
                   "address": "0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -621,7 +621,7 @@
                   "address": "0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -779,7 +779,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 19134555
+      "latestCCCBlockNumber": 19143391
     }
   }
 }

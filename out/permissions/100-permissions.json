@@ -518,7 +518,7 @@
           "0x677c9f358dA5DC83aF6760a839E4448D72840d04"
         ]
       },
-      "latestBlockNumber": 37429082
+      "latestBlockNumber": 37445874
     },
     "gsmRoles": {},
     "govV3": {
@@ -528,7 +528,7 @@
           "RETRY_ROLE": [],
           "SOLVE_EMERGENCY_ROLE": []
         },
-        "latestBlockNumber": 37429089
+        "latestBlockNumber": 37445885
       },
       "contracts": {
         "GranularGuardian": {
@@ -581,7 +581,7 @@
                   "address": "0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -604,7 +604,7 @@
                   "address": "0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b",
                   "owners": [
                     "0xDA5Ae43e179987a66B9831F92223567e1F38BE7D",
-                    "0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272",
+                    "0x1e3804357eD445251FfECbb6e40107bf03888885",
                     "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
                     "0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
                     "0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
@@ -823,7 +823,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 37429089
+      "latestCCCBlockNumber": 37445884
     }
   },
   "TENDERLY": {
