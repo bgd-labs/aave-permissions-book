@@ -330,42 +330,6 @@
           }
         ]
       },
-      "ParaSwapLiquiditySwapAdapter": {
-        "address": "0x63dfa7c09Dc2Ff4030d6B8Dc2ce6262BF898C8A4",
-        "modifiers": [
-          {
-            "modifier": "onlyOwner",
-            "addresses": [
-              {
-                "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "rescueTokens"
-            ]
-          }
-        ]
-      },
-      "ParaSwapRepayAdapter": {
-        "address": "0x86b0521f92a554057e54B93098BA2A6Aaa2F4ACB",
-        "modifiers": [
-          {
-            "modifier": "onlyOwner",
-            "addresses": [
-              {
-                "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "rescueTokens"
-            ]
-          }
-        ]
-      },
       "EmissionManager": {
         "address": "0x41585C50524fb8c3899B43D7D797d9486AAc94DB",
         "modifiers": [
@@ -554,7 +518,7 @@
           "0x677c9f358dA5DC83aF6760a839E4448D72840d04"
         ]
       },
-      "latestBlockNumber": 37491192
+      "latestBlockNumber": 37491250
     },
     "gsmRoles": {},
     "govV3": {
@@ -564,7 +528,7 @@
           "RETRY_ROLE": [],
           "SOLVE_EMERGENCY_ROLE": []
         },
-        "latestBlockNumber": 37491198
+        "latestBlockNumber": 37491261
       },
       "contracts": {
         "GranularGuardian": {
@@ -859,7 +823,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 37491198
+      "latestCCCBlockNumber": 37491260
     }
   },
   "TENDERLY": {
