@@ -728,10 +728,13 @@ export const networkConfigs: NetworkConfigs = {
     rpcUrl: process.env.RPC_LINEA,
     explorer: 'https://lineascan.build/',
     addressesNames: {
-      '0x0BF186764D8333a938f35e5dD124a7b9b9dccDF9': 'Aave Guardian Linea',
+      '0x0BF186764D8333a938f35e5dD124a7b9b9dccDF9':
+        'Aave Protocol Guardian Linea',
       '0xfD3a6E65e470a7D7D730FFD5D36a9354E8F9F4Ea': 'BGD',
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0xc1cd6faF6e9138b4e6C21d438f9ebF2bd6F6cA16':
+        'Aave Governance Guardian Linea',
+      '0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E':
         'Aave Governance Guardian Linea',
     },
     pools: {
