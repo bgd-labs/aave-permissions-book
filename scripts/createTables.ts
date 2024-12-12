@@ -105,6 +105,8 @@ export const generateTable = (network: string, pool: string): string => {
       ? 'POLYGON_ZK_EVM'
       : network == '324'
       ? 'ZK_SYNC'
+      : network == '59144'
+      ? 'LINEA'
       : ChainIdToNetwork[Number(network)].toUpperCase();
 
   const addressesNames = networkConfigs[network].addressesNames || {};
@@ -513,7 +515,6 @@ export const generateTable = (network: string, pool: string): string => {
     readmeByNetwork += adminTable + '\n';
   }
 
-  // TODO: add granular guardian admin table
   let ggAdminTable = `### Granular Guardian Admins \n`;
   const ggAdminsHeaderTitles = ['Role', 'Contract'];
   const ggAdminHeader = getTableHeader(ggAdminsHeaderTitles);
