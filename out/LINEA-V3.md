@@ -4,11 +4,11 @@
 | contract |upgradeable by |
 |----------|----------|
 |  [PoolAddressesProvider](https://lineascan.build//address/0x89502c3731F69DDC95B65753708A07F8Cd0373F4) |  not upgradeable | |--------|--------|
-|  [Pool](https://lineascan.build//address/0xc47b8C00b0f69a36fa203Ffeac0334874574a8Ac) |  External Contract | |--------|--------|
-|  [PoolConfigurator](https://lineascan.build//address/0x812E7c19421D9f41A6DDCF047d5cc2dE2Ca5Bfa2) |  External Contract | |--------|--------|
+|  [Pool](https://lineascan.build//address/0xc47b8C00b0f69a36fa203Ffeac0334874574a8Ac) |  Governance | |--------|--------|
+|  [PoolConfigurator](https://lineascan.build//address/0x812E7c19421D9f41A6DDCF047d5cc2dE2Ca5Bfa2) |  Governance | |--------|--------|
 |  [AaveOracle](https://lineascan.build//address/0xCFDAdA7DCd2e785cF706BaDBC2B8Af5084d595e9) |  not upgradeable | |--------|--------|
-|  [Collector](https://lineascan.build//address/0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809) |  External Contract | |--------|--------|
-|  [RewardsController](https://lineascan.build//address/0xc67bb8F2314fA0df50cBa314c6509A7bdAD500C0) |  External Contract | |--------|--------|
+|  [Collector](https://lineascan.build//address/0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809) |  Governance | |--------|--------|
+|  [RewardsController](https://lineascan.build//address/0xc67bb8F2314fA0df50cBa314c6509A7bdAD500C0) |  Governance | |--------|--------|
 |  [WrappedTokenGatewayV3](https://lineascan.build//address/0x4758213271BFdC72224A7a8742dC865fC97756e1) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://lineascan.build//address/0x0165C65FB21bDC9Cdc09C627d62AB3a983337158) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://lineascan.build//address/0x96dFCCB3F9ACDaF6c8f8a35E814023C3484d1eA2) |  not upgradeable | |--------|--------|
@@ -16,29 +16,29 @@
 |  [ACLManager](https://lineascan.build//address/0xbf32c7dFC72b730967072B112927ca0de205dbb5) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://lineascan.build//address/0xc1cd6faF6e9138b4e6C21d438f9ebF2bd6F6cA16) |  not upgradeable | |--------|--------|
-|  [PayloadsController](https://lineascan.build//address/0x61308f66DEF56EffFa25C8CB5408D6dDdB450149) |  External Contract | |--------|--------|
+|  [PayloadsController](https://lineascan.build//address/0x3BcE23a1363728091bc57A58a226CF2940C2e074) |  Governance | |--------|--------|
 |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  not upgradeable | |--------|--------|
 |  [Linea native adapter](https://lineascan.build//address/0xB3332d31ECFC3ef3BF6Cda79833D11d1A53f5cE6) |  not upgradeable | |--------|--------|
-|  [CrossChainController](https://lineascan.build//address/0x0D3f821e9741C8a8Bcac231162320251Db0cdf52) |  External Contract | |--------|--------|
+|  [CrossChainController](https://lineascan.build//address/0x0D3f821e9741C8a8Bcac231162320251Db0cdf52) |  Governance | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
 |----------|----------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
-|  configureProtocolFees |  External Contract | |--------|--------|
-|  updateReserveCaps |  External Contract | |--------|--------|
+|  configureProtocolFees |  Governance | |--------|--------|
+|  updateReserveCaps |  Governance | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
-|  upgradeAaveTokens (a/v/s) |  External Contract | |--------|--------|
-|  upgradeAaveOracles |  External Contract | |--------|--------|
+|  upgradeAaveTokens (a/v/s) |  Governance | |--------|--------|
+|  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
-|  pausePool |  External Contract,Multi-sig | |--------|--------|
-|  pauseAndFreezeReserve |  External Contract,Multi-sig | |--------|--------|
-|  reserveListing |  External Contract | |--------|--------|
-|  adminsConfiguration |  External Contract | |--------|--------|
-|  protocolUpgradeablity |  External Contract | |--------|--------|
-|  adiConfigurations |  External Contract | |--------|--------|
-|  retryAndInvalidateMessages |  Multi-sig,External Contract | |--------|--------|
+|  pausePool |  Governance,Multi-sig | |--------|--------|
+|  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
+|  reserveListing |  Governance | |--------|--------|
+|  adminsConfiguration |  Governance | |--------|--------|
+|  protocolUpgradeablity |  Governance | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  retryAndInvalidateMessages |  Multi-sig,Governance | |--------|--------|
 
 ### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -68,11 +68,11 @@
 |  [GranularGuardian](https://lineascan.build//address/0xc1cd6faF6e9138b4e6C21d438f9ebF2bd6F6cA16) |  - |  onlyRetryGuardian |  [BGD](https://lineascan.build//address/0xfD3a6E65e470a7D7D730FFD5D36a9354E8F9F4Ea) |  retryEnvelope, retryTransaction | |--------|--------|--------|--------|--------|
 |  [GranularGuardian](https://lineascan.build//address/0xc1cd6faF6e9138b4e6C21d438f9ebF2bd6F6cA16) |  - |  onlyEmergencyGuardian |  [Aave Governance Guardian Linea](https://lineascan.build//address/0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E) |  solveEmergency | |--------|--------|--------|--------|--------|
 |  [GranularGuardian](https://lineascan.build//address/0xc1cd6faF6e9138b4e6C21d438f9ebF2bd6F6cA16) |  - |  onlyDefaultAdmin |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://lineascan.build//address/0x61308f66DEF56EffFa25C8CB5408D6dDdB450149) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyOwner |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  updateExecutors | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://lineascan.build//address/0x61308f66DEF56EffFa25C8CB5408D6dDdB450149) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyGuardian |  [Aave Governance Guardian Linea](https://lineascan.build//address/0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E) |  cancelPayload | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://lineascan.build//address/0x61308f66DEF56EffFa25C8CB5408D6dDdB450149) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyOwnerOrGuardian |  [Aave Governance Guardian Linea](https://lineascan.build//address/0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E), [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  updateGuardian | |--------|--------|--------|--------|--------|
-|  [PayloadsController](https://lineascan.build//address/0x61308f66DEF56EffFa25C8CB5408D6dDdB450149) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyRescueGuardian |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
-|  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  - |  onlyOwner |  [0x6ec33534BE07d45cc4E02Fbd127F8ed2aE919a6b](https://lineascan.build//address/0x6ec33534BE07d45cc4E02Fbd127F8ed2aE919a6b) |  executeTransaction | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://lineascan.build//address/0x3BcE23a1363728091bc57A58a226CF2940C2e074) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyOwner |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  updateExecutors | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://lineascan.build//address/0x3BcE23a1363728091bc57A58a226CF2940C2e074) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyGuardian |  [Aave Governance Guardian Linea](https://lineascan.build//address/0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E) |  cancelPayload | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://lineascan.build//address/0x3BcE23a1363728091bc57A58a226CF2940C2e074) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyOwnerOrGuardian |  [Aave Governance Guardian Linea](https://lineascan.build//address/0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E), [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  updateGuardian | |--------|--------|--------|--------|--------|
+|  [PayloadsController](https://lineascan.build//address/0x3BcE23a1363728091bc57A58a226CF2940C2e074) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyRescueGuardian |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
+|  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  - |  onlyOwner |  [PayloadsController](https://lineascan.build//address/0x3BcE23a1363728091bc57A58a226CF2940C2e074) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [Linea native adapter](https://lineascan.build//address/0xB3332d31ECFC3ef3BF6Cda79833D11d1A53f5cE6) |  - |  trustedRemote |  [CrossChainController(Eth)](https://lineascan.build//address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://lineascan.build//address/0x0D3f821e9741C8a8Bcac231162320251Db0cdf52) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyOwner |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  approveSenders, removeSenders, enableBridgeAdapters, disableBridgeAdapters, updateMessagesValidityTimestamp, allowReceiverBridgeAdapters, disallowReceiverBridgeAdapters | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://lineascan.build//address/0x0D3f821e9741C8a8Bcac231162320251Db0cdf52) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyOwnerOrGuardian |  [Aave Granular Guardian Linea](https://lineascan.build//address/0xc1cd6faF6e9138b4e6C21d438f9ebF2bd6F6cA16), [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  retryEnvelope, retryTransaction, updateGuardian | |--------|--------|--------|--------|--------|
