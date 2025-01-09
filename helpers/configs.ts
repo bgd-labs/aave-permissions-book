@@ -47,6 +47,9 @@ import {
   GovernanceV3ZkSync,
   MiscZkSync,
   AaveV3ZkSync,
+  AaveV3Linea,
+  MiscLinea,
+  GovernanceV3Linea,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -717,6 +720,38 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: GovernanceV3ZkSync,
         addresses: {
           '0x1BC5C10CAe378fDbd7D52ec4F9f34590a619c68E': 'ZkSyncAdapter',
+        },
+      },
+    },
+  },
+  ['59144']: {
+    rpcUrl: process.env.RPC_LINEA,
+    explorer: 'https://lineascan.build/',
+    addressesNames: {
+      '0x0BF186764D8333a938f35e5dD124a7b9b9dccDF9':
+        'Aave Protocol Guardian Linea',
+      '0xfD3a6E65e470a7D7D730FFD5D36a9354E8F9F4Ea': 'BGD',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0xc1cd6faF6e9138b4e6C21d438f9ebF2bd6F6cA16':
+        'Aave Granular Guardian Linea',
+      '0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E':
+        'Aave Governance Guardian Linea',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 12430800,
+        crossChainControllerBlock: 13185200,
+        granularGuardianBlock: 13223700,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: {
+          ...AaveV3Linea,
+          ...MiscLinea,
+          COLLECTOR: '0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809', // TODO: REMOVE ONCE ADDED ON ADDRESS BOOK
+        },
+        governanceAddressBook: GovernanceV3Linea,
+        addresses: {
+          '0xB3332d31ECFC3ef3BF6Cda79833D11d1A53f5cE6': 'LineaAdapter',
         },
       },
     },
