@@ -131,12 +131,12 @@
                 "signersThreshold": 0
               },
               {
-                "address": "0xCd04D93bEA13921DaD05240D577090b5AC36DfCA",
+                "address": "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
                 "owners": [],
                 "signersThreshold": 0
               },
               {
-                "address": "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
+                "address": "0xd2D586f849620ef042FE3aF52eAa10e9b78bf7De",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -179,12 +179,12 @@
                 "signersThreshold": 0
               },
               {
-                "address": "0xCd04D93bEA13921DaD05240D577090b5AC36DfCA",
+                "address": "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
                 "owners": [],
                 "signersThreshold": 0
               },
               {
-                "address": "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
+                "address": "0xd2D586f849620ef042FE3aF52eAa10e9b78bf7De",
                 "owners": [],
                 "signersThreshold": 0
               },
@@ -562,8 +562,8 @@
         "RISK_ADMIN": [
           "0xADf86b537eF08591c2777E144322E8b0Ca7E82a7",
           "0xe59470B3BE3293534603487E00A44C72f2CD466d",
-          "0xCd04D93bEA13921DaD05240D577090b5AC36DfCA",
-          "0x14568979093FFF97aeBD73F58051a4f0e297b1eB"
+          "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
+          "0xd2D586f849620ef042FE3aF52eAa10e9b78bf7De"
         ],
         "FLASH_BORROWER": [
           "0x219ac6dA971dE6d943cffD1BD62abde71525d382",
@@ -585,7 +585,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 299636397
+      "latestBlockNumber": 299979320
     },
     "gsmRoles": {},
     "govV3": {
@@ -601,7 +601,7 @@
             "0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959"
           ]
         },
-        "latestBlockNumber": 299636437
+        "latestBlockNumber": 299979384
       },
       "contracts": {
         "GranularGuardian": {
@@ -867,7 +867,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 299636436
+      "latestCCCBlockNumber": 299979383
     }
   },
   "TENDERLY": {
