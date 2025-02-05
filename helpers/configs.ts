@@ -738,22 +738,22 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Governance Guardian Linea',
     },
     pools: {
-      [Pools.V3]: {
-        aclBlock: 12430800,
-        crossChainControllerBlock: 13185200,
-        granularGuardianBlock: 13223700,
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: {
-          ...AaveV3Linea,
-          ...MiscLinea,
-          COLLECTOR: '0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809', // TODO: REMOVE ONCE ADDED ON ADDRESS BOOK
-        },
-        governanceAddressBook: GovernanceV3Linea,
-        addresses: {
-          '0xB3332d31ECFC3ef3BF6Cda79833D11d1A53f5cE6': 'LineaAdapter',
-        },
-      },
+      // [Pools.V3]: {
+      //   aclBlock: 12430800,
+      //   crossChainControllerBlock: 13185200,
+      //   granularGuardianBlock: 13223700,
+      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   addressBook: {
+      //     ...AaveV3Linea,
+      //     ...MiscLinea,
+      //     COLLECTOR: '0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809', // TODO: REMOVE ONCE ADDED ON ADDRESS BOOK
+      //   },
+      //   governanceAddressBook: GovernanceV3Linea,
+      //   addresses: {
+      //     '0xB3332d31ECFC3ef3BF6Cda79833D11d1A53f5cE6': 'LineaAdapter',
+      //   },
+      // },
       [Pools.TENDERLY]: {
         aclBlock: 12430800,
         crossChainControllerBlock: 13185200,

@@ -283,6 +283,7 @@ const generateNetworkPermissions = async (network: string) => {
               fullJson[poolKey]?.govV3?.latestCCCBlockNumber ||
               pool.crossChainControllerBlock;
           }
+
           if (cccFromBlock) {
             const { senders, latestCCCBlockNumber } =
               await getCCCSendersAndAdapters(
