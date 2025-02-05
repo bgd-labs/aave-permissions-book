@@ -736,6 +736,7 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Granular Guardian Linea',
       '0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E':
         'Aave Governance Guardian Linea',
+      '0xF092A5aC5E284E7c433dAFE5b8B138bFcA53a4Ee': 'Risk Council',
     },
     pools: {
       [Pools.V3]: {
