@@ -611,7 +611,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 67569114
+      "latestBlockNumber": 67569407
     },
     "gsmRoles": {},
     "govV3": {
@@ -627,7 +627,7 @@
             "0xbCEB4f363f2666E2E8E430806F37e97C405c130b"
           ]
         },
-        "latestBlockNumber": 67569119
+        "latestBlockNumber": 67569420
       },
       "contracts": {
         "GranularGuardian": {
@@ -1001,7 +1001,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 67569119
+      "latestCCCBlockNumber": 67569419
     }
   },
   "V2": {
@@ -1270,13 +1270,13 @@
         ]
       },
       "ParaSwapRepayAdapter": {
-        "address": "0xE84cF064a0a65290Ae5673b500699f3753063936",
+        "address": "0x6D49dC81a1f07a6B1902DC79bc2D408cb9D555d1",
         "modifiers": [
           {
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383",
+                "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
                 "owners": [],
                 "signersThreshold": 0
               }
