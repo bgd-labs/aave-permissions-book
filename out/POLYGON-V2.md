@@ -12,7 +12,7 @@
 |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  not upgradeable | |--------|--------|
 |  [WrappedTokenGatewayV2](https://polygonscan.com/address/0xf1e6d4347105138B51E2bacA9A22fA228309ebB1) |  not upgradeable | |--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://polygonscan.com/address/0x35784a624D4FfBC3594f4d16fA3801FeF063241c) |  not upgradeable | |--------|--------|
-|  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE84cF064a0a65290Ae5673b500699f3753063936) |  not upgradeable | |--------|--------|
+|  [ParaSwapRepayAdapter](https://polygonscan.com/address/0x6D49dC81a1f07a6B1902DC79bc2D408cb9D555d1) |  not upgradeable | |--------|--------|
 |  [LendingPoolAddressesProviderRegistry](https://polygonscan.com/address/0x3ac4e9aa29940770aeC38fe853a4bbabb2dA9C19) |  not upgradeable | |--------|--------|
 |  [DefaultIncentivesController](https://polygonscan.com/address/0x357D51124f59836DeD84c8a1730D72B749d8BC23) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
@@ -48,7 +48,7 @@
 |  [ProxyAdmin](https://polygonscan.com/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [WrappedTokenGatewayV2](https://polygonscan.com/address/0xf1e6d4347105138B51E2bacA9A22fA228309ebB1) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://polygonscan.com/address/0x35784a624D4FfBC3594f4d16fA3801FeF063241c) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  rescueTokens | |--------|--------|--------|--------|--------|
-|  [ParaSwapRepayAdapter](https://polygonscan.com/address/0xE84cF064a0a65290Ae5673b500699f3753063936) |  - |  onlyOwner |  [Collector](https://polygonscan.com/address/0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383) |  rescueTokens | |--------|--------|--------|--------|--------|
+|  [ParaSwapRepayAdapter](https://polygonscan.com/address/0x6D49dC81a1f07a6B1902DC79bc2D408cb9D555d1) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  rescueTokens | |--------|--------|--------|--------|--------|
 |  [LendingPoolAddressesProviderRegistry](https://polygonscan.com/address/0x3ac4e9aa29940770aeC38fe853a4bbabb2dA9C19) |  - |  onlyOwner |  [Executor_lvl1](https://polygonscan.com/address/0xDf7d0e6454DB638881302729F5ba99936EaAB233) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [DefaultIncentivesController](https://polygonscan.com/address/0x357D51124f59836DeD84c8a1730D72B749d8BC23) |  - |  onlyEmissionManager |  [Polygon v2 incentives admin](https://polygonscan.com/address/0x2bB25175d9B0F8965780209EB558Cc3b56cA6d32) |  setDistributionEnd, configureAssets, setClaimer, setRewardsVault | |--------|--------|--------|--------|--------|
 
