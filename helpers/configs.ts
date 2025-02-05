@@ -766,9 +766,9 @@ export const networkConfigs: NetworkConfigs = {
           COLLECTOR: '0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809', },
         governanceAddressBook: GovernanceV3Linea,
         tenderlyBasePool: Pools.V3,
-        tenderlyBlock: 15459893,
+        tenderlyBlock: 15461167,
         tenderlyRpcUrl:
-          'https://rpc.tenderly.co/fork/1f6e3bac-cb84-42a1-ae5b-71afac905510',
+          'https://rpc.tenderly.co/fork/b7ae51a2-3733-4271-8910-8212effada58',
       },
     },
   },
