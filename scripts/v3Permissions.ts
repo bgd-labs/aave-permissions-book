@@ -4,7 +4,7 @@ import { collectorAbi } from '../abis/collectorAbi.js';
 import { Pools } from '../helpers/configs.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { poolAddressProviderAbi } from '../abis/lendingPoolAddressProviderAbi.js';
-import { getProxyAdmin } from '../helpers/proxyAdmin.js';
+import { getProxyAdmin, getProxyAdminFromFactory } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import { ChainId } from '@aave/contract-helpers';
 import {
@@ -606,29 +606,40 @@ export const resolveV3Modifiers = async (
     };
   }
 
-  const proxyAdminContract = new ethers.Contract(
-    addressBook.PROXY_ADMIN,
-    onlyOwnerAbi,
-    provider,
-  );
-  const proxyAdminOwner = await proxyAdminContract.owner();
+  // TODO: new proxy admins are registered on the proxy factory
+  if (addressBook.PROXY_ADMIN) {
+    const proxyAdminContract = new ethers.Contract(
+      addressBook.PROXY_ADMIN,
+      onlyOwnerAbi,
+      provider,
+    );
+    const proxyAdminOwner = await proxyAdminContract.owner();
+    
+    obj['ProxyAdmin'] = {
+      address: addressBook.PROXY_ADMIN,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: proxyAdminOwner,
+              owners: await getSafeOwners(provider, proxyAdminOwner),
+              signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
+            },
+          ],
+          functions: roles['ProxyAdmin']['onlyOwner'],
+        },
+      ],
+    };
+  }
 
-  obj['ProxyAdmin'] = {
-    address: addressBook.PROXY_ADMIN,
-    modifiers: [
-      {
-        modifier: 'onlyOwner',
-        addresses: [
-          {
-            address: proxyAdminOwner,
-            owners: await getSafeOwners(provider, proxyAdminOwner),
-            signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
-          },
-        ],
-        functions: roles['ProxyAdmin']['onlyOwner'],
-      },
-    ],
-  };
+  // if (!addressBook.PROXY_ADMIN && addressBook.TRANSPARENT_PROXY_FACTORY) {
+  //   const proxyAdmin = await getProxyAdminFromFactory(addressBook.TRANSPARENT_PROXY_FACTORY, todo, provider);
+  //   obj['ProxyAdmin'] = {
+  //     address: addressBook.PROXY_ADMIN,
+  //     modifiers: [],
+  //   };
+  // }
 
   if (addressBook.PROXY_ADMIN_LONG) {
     const proxyAdminLongContract = new ethers.Contract(
@@ -843,10 +854,20 @@ export const resolveV3Modifiers = async (
     .map((contract) => contract.contract);
   for (let i = 0; i < proxyAdminContracts.length; i++) {
     if (obj[proxyAdminContracts[i]]) {
-      obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
-        obj[proxyAdminContracts[i]].address,
-        provider,
-      );
+      if (addressBook.TRANSPARENT_PROXY_FACTORY && !addressBook.PROXY_ADMIN) {
+        try {
+          const proxyAdmin = await getProxyAdminFromFactory(addressBook.TRANSPARENT_PROXY_FACTORY, proxyAdminContracts[i], provider)
+          obj[proxyAdminContracts[i]]['proxyAdmin'] = proxyAdmin;
+        } catch (error) {
+          console.log(`[${chainId}]: Error getting proxy admin for ${proxyAdminContracts[i]}`);
+        }
+      } else {
+        obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
+          obj[proxyAdminContracts[i]].address,
+          provider,
+        );
+      }
+
     }
   }
 
