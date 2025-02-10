@@ -50,6 +50,8 @@ import {
   AaveV3Linea,
   MiscLinea,
   GovernanceV3Linea,
+  MiscMantle,
+  GovernanceV3Mantle,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -753,6 +755,39 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: GovernanceV3Linea,
         addresses: {
           '0xB3332d31ECFC3ef3BF6Cda79833D11d1A53f5cE6': 'LineaAdapter',
+        },
+      },
+    },
+  },
+  ['5000']: {
+    rpcUrl: process.env.RPC_MANTLE,
+    explorer: 'https://mantlescan.xyz/',
+    addressesNames: {
+      // '':
+      //   'Aave Protocol Guardian Linea',
+      '': 'BGD',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0xb26670d2800DBB9cfCe2f2660FfDcA48C799c86d':
+        'Aave Granular Guardian Mantle',
+      '0x14816fC7f443A9C834d30eeA64daD20C4f56fBCD':
+        'Aave Governance Guardian Mantle',
+      '': 'Risk Council',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 75528130, // TODO: update once acl is deployed
+        crossChainControllerBlock: 75528130,
+        granularGuardianBlock: 75528470,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: {
+          // ...AaveV3Mantle,
+          ...MiscMantle,
+          // COLLECTOR: '0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809', // TODO: REMOVE ONCE ADDED ON ADDRESS BOOK
+        },
+        governanceAddressBook: GovernanceV3Mantle,
+        addresses: {
+          '0x4E740ac02b866b429738a9e225e92A15F4452521': 'MantleAdapter',
         },
       },
     },
