@@ -1,5 +1,6 @@
 import { ethers, providers } from 'ethers';
 import {
+  collectorRoleNames,
   ghoGSMRoleNames,
   ghoRoleNames,
   granularGuardianRoleNames,
@@ -17,13 +18,14 @@ import { getCurrentRoleAdmins } from '../helpers/adminRoles.js';
 import { resolveV2Modifiers } from './v2Permissions.js';
 import { resolveV3Modifiers } from './v3Permissions.js';
 import { resolveGovV2Modifiers } from './governancePermissions.js';
-import { Contracts, FullPermissions, GovV3, Roles } from '../helpers/types.js';
+import { Collector, Contracts, FullPermissions, GovV3, Roles } from '../helpers/types.js';
 import { resolveSafetyV2Modifiers } from './safetyPermissions.js';
 import { resolveV2MiscModifiers } from './v2MiscPermissions.js';
 import { getCCCSendersAndAdapters } from '../helpers/crossChainControllerLogs.js';
 import { resolveGovV3Modifiers } from './govV3Permissions.js';
 import { resolveGHOModifiers } from './ghoPermissions.js';
 import { overwriteBaseTenderlyPool } from '../helpers/jsonParsers.js';
+import { resolveCollectorModifiers } from './collectorPermissions.js';
 
 const generateNetworkPermissions = async (network: string) => {
   // get current permissions
@@ -49,6 +51,8 @@ const generateNetworkPermissions = async (network: string) => {
     let poolPermissions: Contracts = {};
     let admins = {} as Roles;
     let gsmAdmins = {} as Record<string, Roles>;
+    let collector = {} as Collector;
+    let cAdmins = {} as Roles;
     let govV3 = {} as GovV3;
     govV3.ggRoles = {} as Roles;
 
@@ -270,94 +274,160 @@ const generateNetworkPermissions = async (network: string) => {
             admins.role,
           );
         }
-        if (
-          pool.crossChainControllerBlock &&
-          pool.crossChainPermissionsJson &&
-          pool.governanceAddressBook
-        ) {
-          let cccFromBlock;
+      }
+    } else {
+      console.log(`pool not supported: ${poolKey}`);
+    }
+
+    if (pool.collectorBlock && pool.addressBook.COLLECTOR) {
+      let fromBlock;
+      if (pool.tenderlyBasePool) {
+        await overwriteBaseTenderlyPool(
+          poolKey,
+          network,
+          pool.tenderlyBasePool,
+        );
+        // get current permissions
+        fullJson = getPermissionsByNetwork(network);
+        fromBlock = pool.tenderlyBlock;
+      } else {
+        fromBlock =
+          fullJson[poolKey]?.collector?.latestBlockNumber || pool.collectorBlock;
+      }
+      console.log(`
+        ------------------------------------
+          network: ${network}
+          pool: ${poolKey}
+          fromBlock: ${fromBlock}
+          Collector Table
+        ------------------------------------
+        `);
+      if (fromBlock) {
+        cAdmins = await getCurrentRoleAdmins(
+          poolKey === Pools.TENDERLY ||
+            poolKey === Pools.LIDO_TENDERLY ||
+            poolKey === Pools.ETHERFI_TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
+          (fullJson[poolKey] && fullJson[poolKey]?.collector?.cRoles?.role) ||
+            ({} as Record<string, string[]>),
+          fromBlock,
+          Number(network),
+          Pools[poolKey as keyof typeof Pools],
+          collectorRoleNames,
+          pool.addressBook.COLLECTOR,
+          true
+        );
+        
+        const collectorPermissions = await resolveCollectorModifiers(
+          pool.addressBook,
+          poolKey === Pools.TENDERLY ||
+            poolKey === Pools.LIDO_TENDERLY ||
+            poolKey === Pools.ETHERFI_TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
+          permissionsJson,
+          Number(network),
+          cAdmins.role,
+        );
+        collector.contracts = collectorPermissions;
+        collector.cRoles = cAdmins;
+      }
+    }
+
+    if (
+      pool.crossChainControllerBlock &&
+      pool.crossChainPermissionsJson &&
+      pool.governanceAddressBook
+    ) {
+
+      let cccFromBlock;
+      if (pool.tenderlyBasePool) {
+        cccFromBlock = pool.tenderlyBlock;
+      } else {
+        cccFromBlock =
+          fullJson[poolKey]?.govV3?.latestCCCBlockNumber ||
+          pool.crossChainControllerBlock;
+      }
+      console.log(`
+        ------------------------------------
+          network: ${network}
+          pool: ${poolKey}
+          fromBlock: ${cccFromBlock}
+          Governance Table
+        ------------------------------------
+        `);
+      if (cccFromBlock) {
+        const { senders, latestCCCBlockNumber } =
+          await getCCCSendersAndAdapters(
+            poolKey === Pools.TENDERLY ||
+              poolKey === Pools.LIDO_TENDERLY ||
+              poolKey === Pools.ETHERFI_TENDERLY
+              ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+              : provider,
+            (fullJson[poolKey] && fullJson[poolKey]?.govV3?.senders) || [],
+            cccFromBlock,
+            pool.governanceAddressBook,
+            Number(network),
+            Pools[poolKey as keyof typeof Pools],
+          );
+
+        if (pool.granularGuardianBlock) {
+          let ggFromBlock;
           if (pool.tenderlyBasePool) {
-            cccFromBlock = pool.tenderlyBlock;
+            ggFromBlock = pool.tenderlyBlock;
           } else {
-            cccFromBlock =
-              fullJson[poolKey]?.govV3?.latestCCCBlockNumber ||
-              pool.crossChainControllerBlock;
+            ggFromBlock =
+              fullJson[poolKey]?.govV3?.ggRoles?.latestBlockNumber ||
+              pool.granularGuardianBlock;
           }
-          if (cccFromBlock) {
-            const { senders, latestCCCBlockNumber } =
-              await getCCCSendersAndAdapters(
-                poolKey === Pools.TENDERLY ||
-                  poolKey === Pools.LIDO_TENDERLY ||
-                  poolKey === Pools.ETHERFI_TENDERLY
-                  ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-                  : provider,
-                (fullJson[poolKey] && fullJson[poolKey]?.govV3?.senders) || [],
-                cccFromBlock,
-                pool.governanceAddressBook,
-                Number(network),
-                Pools[poolKey as keyof typeof Pools],
-              );
 
-            if (pool.granularGuardianBlock) {
-              let ggFromBlock;
-              if (pool.tenderlyBasePool) {
-                ggFromBlock = pool.tenderlyBlock;
-              } else {
-                ggFromBlock =
-                  fullJson[poolKey]?.govV3?.ggRoles?.latestBlockNumber ||
-                  pool.granularGuardianBlock;
-              }
-
-              if (ggFromBlock) {
-                const ggRoles = await getCurrentRoleAdmins(
-                  poolKey === Pools.TENDERLY ||
-                    poolKey === Pools.LIDO_TENDERLY ||
-                    poolKey === Pools.ETHERFI_TENDERLY
-                    ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-                    : provider,
-                  (fullJson[poolKey] &&
-                    fullJson[poolKey]?.govV3?.ggRoles?.role) ||
-                    ({} as Record<string, string[]>),
-                  ggFromBlock,
-                  Number(network),
-                  Pools[poolKey as keyof typeof Pools],
-                  granularGuardianRoleNames,
-                  pool.governanceAddressBook.GRANULAR_GUARDIAN,
-                );
-
-                govV3.ggRoles.role = ggRoles.role;
-                govV3.ggRoles.latestBlockNumber = ggRoles.latestBlockNumber;
-              }
-            }
-
-            const permissionsGovV3Json = getStaticPermissionsJson(
-              pool.crossChainPermissionsJson,
-            );
-
-            govV3.contracts = await resolveGovV3Modifiers(
-              pool.governanceAddressBook,
+          if (ggFromBlock) {
+            const ggRoles = await getCurrentRoleAdmins(
               poolKey === Pools.TENDERLY ||
                 poolKey === Pools.LIDO_TENDERLY ||
                 poolKey === Pools.ETHERFI_TENDERLY
                 ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
                 : provider,
-              permissionsGovV3Json,
+              (fullJson[poolKey] &&
+                fullJson[poolKey]?.govV3?.ggRoles?.role) ||
+                ({} as Record<string, string[]>),
+              ggFromBlock,
               Number(network),
-              senders,
-              poolKey === Pools.TENDERLY ||
-                poolKey === Pools.LIDO_TENDERLY ||
-                poolKey === Pools.ETHERFI_TENDERLY,
-              govV3.ggRoles.role || {},
-              pool.addresses,
+              Pools[poolKey as keyof typeof Pools],
+              granularGuardianRoleNames,
+              pool.governanceAddressBook.GRANULAR_GUARDIAN,
             );
 
-            govV3.senders = senders;
-            govV3.latestCCCBlockNumber = latestCCCBlockNumber;
+            govV3.ggRoles.role = ggRoles.role;
+            govV3.ggRoles.latestBlockNumber = ggRoles.latestBlockNumber;
           }
         }
+
+        const permissionsGovV3Json = getStaticPermissionsJson(
+          pool.crossChainPermissionsJson,
+        );
+
+        govV3.contracts = await resolveGovV3Modifiers(
+          pool.governanceAddressBook,
+          poolKey === Pools.TENDERLY ||
+            poolKey === Pools.LIDO_TENDERLY ||
+            poolKey === Pools.ETHERFI_TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
+          permissionsGovV3Json,
+          Number(network),
+          senders,
+          poolKey === Pools.TENDERLY ||
+            poolKey === Pools.LIDO_TENDERLY ||
+            poolKey === Pools.ETHERFI_TENDERLY,
+          govV3.ggRoles.role || {},
+          pool.addresses,
+        );
+
+        govV3.senders = senders;
+        govV3.latestCCCBlockNumber = latestCCCBlockNumber;
       }
-    } else {
-      console.log(`pool not supported: ${poolKey}`);
     }
 
     if (Object.keys(fullJson).length === 0) {
@@ -367,6 +437,7 @@ const generateNetworkPermissions = async (network: string) => {
           roles: admins,
           gsmRoles: gsmAdmins,
           govV3: govV3,
+          collector: collector
         },
       };
     } else {
@@ -376,6 +447,7 @@ const generateNetworkPermissions = async (network: string) => {
         roles: admins,
         gsmRoles: gsmAdmins,
         govV3: govV3,
+        collector: collector
       };
     }
     console.log(`----${network} : ${poolKey} finished`);

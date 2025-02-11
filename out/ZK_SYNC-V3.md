@@ -7,7 +7,6 @@
 |  [Pool](https://era.zksync.network//address/0x78e30497a3c7527d953c6B1E3541b021A98Ac43c) |  Governance | |--------|--------|
 |  [PoolConfigurator](https://era.zksync.network//address/0x0207d31b4377C74bEC37356aaD83E3dCc979F40E) |  Governance | |--------|--------|
 |  [AaveOracle](https://era.zksync.network//address/0xC7F58Fca663a8d377B6D0c9703C697f56dC40088) |  not upgradeable | |--------|--------|
-|  [Collector](https://era.zksync.network//address/0xd69Cbda644c6be817AaFb5Fd9174f50C33803B6b) |  Governance | |--------|--------|
 |  [RewardsController](https://era.zksync.network//address/0x37c972C9dDfC2138EBe33eC19dba063AB9f8966e) |  Governance | |--------|--------|
 |  [WrappedTokenGatewayV3](https://era.zksync.network//address/0xD5f6c8D402E0a0222f7FA132F9e80fDCC074df5C) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://era.zksync.network//address/0x92AA83Ce0CC590E6B0627a9E22e84Ef43F389D1f) |  not upgradeable | |--------|--------|
@@ -15,6 +14,7 @@
 |  [ProxyAdmin](https://era.zksync.network//address/0x158d6c497317367CEa3CBAb0BD84E6de236F060D) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://era.zksync.network//address/0xc6150b63c2F02528d4A969a248710A4658ed7928) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) |  not upgradeable | |--------|--------|
+|  [Collector](https://era.zksync.network//address/0xd69Cbda644c6be817AaFb5Fd9174f50C33803B6b) |  Governance | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://era.zksync.network//address/0xe0e23196D42b54F262a3DE952e6B34B197D1A228) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://era.zksync.network//address/0x2E79349c3F5e4751E87b966812C9E65E805996F1) |  Governance | |--------|--------|
@@ -55,8 +55,6 @@
 |  [PoolConfigurator](https://era.zksync.network//address/0x0207d31b4377C74bEC37356aaD83E3dCc979F40E) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyRiskOrPoolOrEmergencyAdmins |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020), [Manual AGRS](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26), [Aave Guardian ZkSync](https://era.zksync.network//address/0xba845c27903F7dDB5c676e5b74728C871057E000) |  setReserveFreeze | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://era.zksync.network//address/0x0207d31b4377C74bEC37356aaD83E3dCc979F40E) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020), [Aave Guardian ZkSync](https://era.zksync.network//address/0xba845c27903F7dDB5c676e5b74728C871057E000) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://era.zksync.network//address/0xC7F58Fca663a8d377B6D0c9703C697f56dC40088) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
-|  [Collector](https://era.zksync.network//address/0xd69Cbda644c6be817AaFb5Fd9174f50C33803B6b) |  [ProxyAdmin](https://era.zksync.network//address/0x158d6c497317367CEa3CBAb0BD84E6de236F060D) |  onlyFundsAdmin |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://era.zksync.network//address/0xd69Cbda644c6be817AaFb5Fd9174f50C33803B6b) |  [ProxyAdmin](https://era.zksync.network//address/0x158d6c497317367CEa3CBAb0BD84E6de236F060D) |  onlyAdminOrRecipient |  [ProxyAdmin](https://era.zksync.network//address/0x158d6c497317367CEa3CBAb0BD84E6de236F060D), [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 |  [RewardsController](https://era.zksync.network//address/0x37c972C9dDfC2138EBe33eC19dba063AB9f8966e) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyEmissionManager |  [EmissionManager](https://era.zksync.network//address/0x92AA83Ce0CC590E6B0627a9E22e84Ef43F389D1f) |  configureAssets, setTransferStrategy, setRewardOracle, setClaimer | |--------|--------|--------|--------|--------|
 |  [WrappedTokenGatewayV3](https://era.zksync.network//address/0xD5f6c8D402E0a0222f7FA132F9e80fDCC074df5C) |  - |  onlyOwner |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://era.zksync.network//address/0x92AA83Ce0CC590E6B0627a9E22e84Ef43F389D1f) |  - |  onlyOwner |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
@@ -65,6 +63,8 @@
 |  [ACLManager](https://era.zksync.network//address/0xc6150b63c2F02528d4A969a248710A4658ed7928) |  - |  onlyRole |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) |  - |  onlyOwner |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) |  - |  onlyRiskCouncil |  [0x5BF14aeaFe54A9dE94D0C4CeA73A9B4C46F94F2D (Safe)](https://era.zksync.network//address/0x5BF14aeaFe54A9dE94D0C4CeA73A9B4C46F94F2D) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Collector](https://era.zksync.network//address/0xd69Cbda644c6be817AaFb5Fd9174f50C33803B6b) |  [ProxyAdmin](https://era.zksync.network//address/0x158d6c497317367CEa3CBAb0BD84E6de236F060D) |  onlyFundsAdmin |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://era.zksync.network//address/0xd69Cbda644c6be817AaFb5Fd9174f50C33803B6b) |  [ProxyAdmin](https://era.zksync.network//address/0x158d6c497317367CEa3CBAb0BD84E6de236F060D) |  onlyAdminOrRecipient |  [ProxyAdmin](https://era.zksync.network//address/0x158d6c497317367CEa3CBAb0BD84E6de236F060D), [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -109,4 +109,10 @@
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) | |--------|--------|
 |  SOLVE_EMERGENCY_ROLE |  [Aave Governance Guardian ZkSync](https://era.zksync.network//address/0x4257bf0746D783f0D962913d7d8AFA408B62547E) | |--------|--------|
 |  RETRY_ROLE |  [BGD](https://era.zksync.network//address/0x2451337aD5fE8b563bEB3b9c4A2B8789294879Ec) | |--------|--------|
+
+### Collector Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) | |--------|--------|
 

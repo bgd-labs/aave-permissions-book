@@ -7,7 +7,6 @@
 |  [Pool](https://andromeda-explorer.metis.io/address/0x90df02551bB792286e8D4f13E0e357b4Bf1D6a57) |  Governance | |--------|--------|
 |  [PoolConfigurator](https://andromeda-explorer.metis.io/address/0x69FEE8F261E004453BE0800BC9039717528645A6) |  Governance | |--------|--------|
 |  [AaveOracle](https://andromeda-explorer.metis.io/address/0x38D36e85E47eA6ff0d18B0adF12E5fC8984A6f8e) |  not upgradeable | |--------|--------|
-|  [Collector](https://andromeda-explorer.metis.io/address/0xB5b64c7E00374e766272f8B442Cd261412D4b118) |  Governance | |--------|--------|
 |  [RewardsController](https://andromeda-explorer.metis.io/address/0x30C1b8F0490fa0908863d6Cbd2E36400b4310A6B) |  Governance | |--------|--------|
 |  [EmissionManager](https://andromeda-explorer.metis.io/address/0xfDb2580A1ac4CDc67E4236738b28af59e2022Dd2) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://andromeda-explorer.metis.io/address/0x9E7B73ffD9D2026F3ff4212c29E209E09C8A91F5) |  not upgradeable | |--------|--------|
@@ -16,6 +15,7 @@
 |  [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://andromeda-explorer.metis.io/address/0x58226D26658F19724cB881E9F747EeDC846BB1c9) |  not upgradeable | |--------|--------|
+|  [Collector](https://andromeda-explorer.metis.io/address/0xB5b64c7E00374e766272f8B442Cd261412D4b118) |  Governance | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://andromeda-explorer.metis.io/address/0x61BE97d3a0550549f67CA7421725fA73Fa2036B5) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://andromeda-explorer.metis.io/address/0x2233F8A66A728FBa6E1dC95570B25360D07D5524) |  Governance | |--------|--------|
@@ -56,8 +56,6 @@
 |  [PoolConfigurator](https://andromeda-explorer.metis.io/address/0x69FEE8F261E004453BE0800BC9039717528645A6) |  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  onlyRiskOrPoolOrEmergencyAdmins |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718), [CapPlusRiskSteward](https://andromeda-explorer.metis.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731), [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f), [Manual AGRS](https://andromeda-explorer.metis.io/address/0x58226D26658F19724cB881E9F747EeDC846BB1c9), [Aave Protocol Guardian Metis](https://andromeda-explorer.metis.io/address/0x56C1a4b54921DEA9A344967a8693C7E661D72968) |  setReserveFreeze | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://andromeda-explorer.metis.io/address/0x69FEE8F261E004453BE0800BC9039717528645A6) |  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718), [Aave Protocol Guardian Metis](https://andromeda-explorer.metis.io/address/0x56C1a4b54921DEA9A344967a8693C7E661D72968) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://andromeda-explorer.metis.io/address/0x38D36e85E47eA6ff0d18B0adF12E5fC8984A6f8e) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
-|  [Collector](https://andromeda-explorer.metis.io/address/0xB5b64c7E00374e766272f8B442Cd261412D4b118) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyFundsAdmin |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://andromeda-explorer.metis.io/address/0xB5b64c7E00374e766272f8B442Cd261412D4b118) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyAdminOrRecipient |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97), [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 |  [RewardsController](https://andromeda-explorer.metis.io/address/0x30C1b8F0490fa0908863d6Cbd2E36400b4310A6B) |  [PoolAddressesProvider](https://andromeda-explorer.metis.io/address/0xB9FABd7500B2C6781c35Dd48d54f81fc2299D7AF) |  onlyEmissionManager |  [EmissionManager](https://andromeda-explorer.metis.io/address/0xfDb2580A1ac4CDc67E4236738b28af59e2022Dd2) |  configureAssets, setTransferStrategy, setRewardOracle, setClaimer | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://andromeda-explorer.metis.io/address/0xfDb2580A1ac4CDc67E4236738b28af59e2022Dd2) |  - |  onlyOwner |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
 |  [PoolAddressesProviderRegistry](https://andromeda-explorer.metis.io/address/0x9E7B73ffD9D2026F3ff4212c29E209E09C8A91F5) |  - |  onlyOwner |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
@@ -67,6 +65,8 @@
 |  [FreezeSteward](https://andromeda-explorer.metis.io/address/0x2C77153fF4a1e83A8d8D750735FB101ECB55949f) |  - |  onlyEmergencyAdmin |  [Aave Protocol Guardian Metis](https://andromeda-explorer.metis.io/address/0x56C1a4b54921DEA9A344967a8693C7E661D72968) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://andromeda-explorer.metis.io/address/0x58226D26658F19724cB881E9F747EeDC846BB1c9) |  - |  onlyOwner |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://andromeda-explorer.metis.io/address/0x58226D26658F19724cB881E9F747EeDC846BB1c9) |  - |  onlyRiskCouncil |  [Risk Council](https://andromeda-explorer.metis.io/address/0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Collector](https://andromeda-explorer.metis.io/address/0xB5b64c7E00374e766272f8B442Cd261412D4b118) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyFundsAdmin |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://andromeda-explorer.metis.io/address/0xB5b64c7E00374e766272f8B442Cd261412D4b118) |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97) |  onlyAdminOrRecipient |  [ProxyAdmin](https://andromeda-explorer.metis.io/address/0x1CabD986cBAbDf12E00128DFf03C80ee62C4fd97), [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -111,4 +111,10 @@
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) | |--------|--------|
 |  SOLVE_EMERGENCY_ROLE |  [Aave Governance Guardian Metis](https://andromeda-explorer.metis.io/address/0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe) | |--------|--------|
 |  RETRY_ROLE |  [BGD](https://andromeda-explorer.metis.io/address/0x9853589F951D724D9f7c6724E0fD63F9d888C429) | |--------|--------|
+
+### Collector Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://andromeda-explorer.metis.io/address/0x6fD45D32375d5aDB8D76275A3932c740F03a8718) | |--------|--------|
 

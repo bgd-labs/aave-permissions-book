@@ -7,7 +7,6 @@
 |  [Pool](https://optimistic.etherscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  Governance | |--------|--------|
 |  [PoolConfigurator](https://optimistic.etherscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  Governance | |--------|--------|
 |  [AaveOracle](https://optimistic.etherscan.io/address/0xD81eb3728a631871a7eBBaD631b5f424909f0c77) |  not upgradeable | |--------|--------|
-|  [Collector](https://optimistic.etherscan.io/address/0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf) |  Governance | |--------|--------|
 |  [RewardsController](https://optimistic.etherscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  Governance | |--------|--------|
 |  [WrappedTokenGatewayV3](https://optimistic.etherscan.io/address/0x60eE8b61a13c67d0191c851BEC8F0bc850160710) |  not upgradeable | |--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://optimistic.etherscan.io/address/0x830C5A67a0C95D69dA5fb7801Ac1773c6fB53857) |  not upgradeable | |--------|--------|
@@ -20,6 +19,7 @@
 |  [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba) |  not upgradeable | |--------|--------|
 |  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://optimistic.etherscan.io/address/0x928807b90A74210268B590D0159FCf1340Ad76Bd) |  not upgradeable | |--------|--------|
+|  [Collector](https://optimistic.etherscan.io/address/0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf) |  Governance | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://optimistic.etherscan.io/address/0x6c5264C380C7022e54f585c4E354ffb6f221a03b) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://optimistic.etherscan.io/address/0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4) |  Governance | |--------|--------|
@@ -60,8 +60,6 @@
 |  [PoolConfigurator](https://optimistic.etherscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  [PoolAddressesProvider](https://optimistic.etherscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyRiskOrPoolOrEmergencyAdmins |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf), [CapPlusRiskSteward](https://optimistic.etherscan.io/address/0x5E76E98E0963EcDC6A065d1435F84065b7523f39), [FreezeSteward](https://optimistic.etherscan.io/address/0x3829943c53F2d00e20B58475aF19716724bF90Ba), [Manual AGRS](https://optimistic.etherscan.io/address/0x928807b90A74210268B590D0159FCf1340Ad76Bd), [Aave Protocol Guardian Optimism](https://optimistic.etherscan.io/address/0x56C1a4b54921DEA9A344967a8693C7E661D72968) |  setReserveFreeze | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://optimistic.etherscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  [PoolAddressesProvider](https://optimistic.etherscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf), [Aave Protocol Guardian Optimism](https://optimistic.etherscan.io/address/0x56C1a4b54921DEA9A344967a8693C7E661D72968) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://optimistic.etherscan.io/address/0xD81eb3728a631871a7eBBaD631b5f424909f0c77) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
-|  [Collector](https://optimistic.etherscan.io/address/0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyFundsAdmin |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://optimistic.etherscan.io/address/0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyAdminOrRecipient |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476), [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 |  [RewardsController](https://optimistic.etherscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  [PoolAddressesProvider](https://optimistic.etherscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyEmissionManager |  [EmissionManager](https://optimistic.etherscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  configureAssets, setTransferStrategy, setRewardOracle, setClaimer | |--------|--------|--------|--------|--------|
 |  [WrappedTokenGatewayV3](https://optimistic.etherscan.io/address/0x60eE8b61a13c67d0191c851BEC8F0bc850160710) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://optimistic.etherscan.io/address/0x830C5A67a0C95D69dA5fb7801Ac1773c6fB53857) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  rescueTokens | |--------|--------|--------|--------|--------|
@@ -75,6 +73,8 @@
 |  [AaveMerkleDistributor](https://optimistic.etherscan.io/address/0x1685D81212580DD4cDA287616C2f6F4794927e18) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://optimistic.etherscan.io/address/0x928807b90A74210268B590D0159FCf1340Ad76Bd) |  - |  onlyOwner |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://optimistic.etherscan.io/address/0x928807b90A74210268B590D0159FCf1340Ad76Bd) |  - |  onlyRiskCouncil |  [Risk Council](https://optimistic.etherscan.io/address/0xCb86256A994f0c505c5e15c75BF85fdFEa0F2a56) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Collector](https://optimistic.etherscan.io/address/0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyFundsAdmin |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://optimistic.etherscan.io/address/0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf) |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyAdminOrRecipient |  [ProxyAdmin](https://optimistic.etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476), [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -119,4 +119,10 @@
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) | |--------|--------|
 |  SOLVE_EMERGENCY_ROLE |  [Aave Governance Guardian Optimism](https://optimistic.etherscan.io/address/0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe) | |--------|--------|
 |  RETRY_ROLE |  [BGD](https://optimistic.etherscan.io/address/0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF) | |--------|--------|
+
+### Collector Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://optimistic.etherscan.io/address/0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf) | |--------|--------|
 

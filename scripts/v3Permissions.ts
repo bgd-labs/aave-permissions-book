@@ -373,57 +373,59 @@ export const resolveV3Modifiers = async (
     ],
   };
 
-  if (
-    addressBook.COLLECTOR &&
-    addressBook.COLLECTOR !== constants.AddressZero
-  ) {
-    const collector = new ethers.Contract(
-      addressBook.COLLECTOR,
-      collectorAbi,
-      provider,
-    );
+  // if (
+  //   addressBook.COLLECTOR &&
+  //   addressBook.COLLECTOR !== constants.AddressZero
+  // ) {
+  //   const collector = new ethers.Contract(
+  //     addressBook.COLLECTOR,
+  //     collectorAbi,
+  //     provider,
+  //   );
 
-    const fundsAdmin = await collector.getFundsAdmin();
-    const collectorProxyAdmin = await getProxyAdmin(
-      addressBook.COLLECTOR,
-      provider,
-    );
-    obj['Collector'] = {
-      address: addressBook.COLLECTOR,
-      modifiers: [
-        {
-          modifier: 'onlyFundsAdmin',
-          addresses: [
-            {
-              address: fundsAdmin,
-              owners: await getSafeOwners(provider, fundsAdmin),
-              signersThreshold: await getSafeThreshold(provider, fundsAdmin),
-            },
-          ],
-          functions: roles['Collector']['onlyFundsAdmin'],
-        },
-        {
-          modifier: 'onlyAdminOrRecipient',
-          addresses: [
-            {
-              address: collectorProxyAdmin,
-              owners: await getSafeOwners(provider, collectorProxyAdmin),
-              signersThreshold: await getSafeThreshold(
-                provider,
-                collectorProxyAdmin,
-              ),
-            },
-            {
-              address: fundsAdmin,
-              owners: await getSafeOwners(provider, fundsAdmin),
-              signersThreshold: await getSafeThreshold(provider, fundsAdmin),
-            },
-          ],
-          functions: roles['Collector']['onlyAdminOrRecipient'],
-        },
-      ],
-    };
-  }
+  //   console.log('4.1.0-----------------------------')
+  //   const fundsAdmin = await collector.getFundsAdmin();
+  //   const collectorProxyAdmin = await getProxyAdmin(
+  //     addressBook.COLLECTOR,
+  //     provider,
+  //   );
+  //   console.log('4.1.1.1-----------------------------')
+  //   obj['Collector'] = {
+  //     address: addressBook.COLLECTOR,
+  //     modifiers: [
+  //       {
+  //         modifier: 'onlyFundsAdmin',
+  //         addresses: [
+  //           {
+  //             address: fundsAdmin,
+  //             owners: await getSafeOwners(provider, fundsAdmin),
+  //             signersThreshold: await getSafeThreshold(provider, fundsAdmin),
+  //           },
+  //         ],
+  //         functions: roles['Collector']['onlyFundsAdmin'],
+  //       },
+  //       {
+  //         modifier: 'onlyAdminOrRecipient',
+  //         addresses: [
+  //           {
+  //             address: collectorProxyAdmin,
+  //             owners: await getSafeOwners(provider, collectorProxyAdmin),
+  //             signersThreshold: await getSafeThreshold(
+  //               provider,
+  //               collectorProxyAdmin,
+  //             ),
+  //           },
+  //           {
+  //             address: fundsAdmin,
+  //             owners: await getSafeOwners(provider, fundsAdmin),
+  //             signersThreshold: await getSafeThreshold(provider, fundsAdmin),
+  //           },
+  //         ],
+  //         functions: roles['Collector']['onlyAdminOrRecipient'],
+  //       },
+  //     ],
+  //   };
+  // }
 
   // for now, we use the same as practically there is only one rewards controller and emission manager
   // but could be that there is one of these for every token
@@ -476,6 +478,7 @@ export const resolveV3Modifiers = async (
       ],
     };
   }
+  
   if (addressBook.SWAP_COLLATERAL_ADAPTER) {
     const paraswapLiquiditySwapContract = new ethers.Contract(
       addressBook.SWAP_COLLATERAL_ADAPTER,

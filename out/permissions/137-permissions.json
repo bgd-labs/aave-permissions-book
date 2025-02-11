@@ -248,47 +248,6 @@
           }
         ]
       },
-      "Collector": {
-        "address": "0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383",
-        "modifiers": [
-          {
-            "modifier": "onlyFundsAdmin",
-            "addresses": [
-              {
-                "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "approve",
-              "transfer",
-              "setFundsAdmin",
-              "createStream"
-            ]
-          },
-          {
-            "modifier": "onlyAdminOrRecipient",
-            "addresses": [
-              {
-                "address": "0xd3cf979e676265e4f6379749dece4708b9a22476",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "withdrawFromStream",
-              "cancelStream"
-            ]
-          }
-        ],
-        "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
-      },
       "RewardsController": {
         "address": "0x929EC64c34a17401F460460D4B9390518E5B473e",
         "proxyAdmin": "0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb",
@@ -611,7 +570,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 67586455
+      "latestBlockNumber": 67805184
     },
     "gsmRoles": {},
     "govV3": {
@@ -627,7 +586,7 @@
             "0xbCEB4f363f2666E2E8E430806F37e97C405c130b"
           ]
         },
-        "latestBlockNumber": 67586462
+        "latestBlockNumber": 67805198
       },
       "contracts": {
         "GranularGuardian": {
@@ -1001,7 +960,63 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 67586461
+      "latestCCCBlockNumber": 67805198
+    },
+    "collector": {
+      "contracts": {
+        "Collector": {
+          "address": "0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383",
+          "modifiers": [
+            {
+              "modifier": "onlyFundsAdmin",
+              "addresses": [
+                {
+                  "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin",
+                "createStream"
+              ]
+            },
+            {
+              "modifier": "onlyAdminOrRecipient",
+              "addresses": [
+                {
+                  "address": "0xd3cf979e676265e4f6379749dece4708b9a22476",
+                  "owners": [],
+                  "signersThreshold": 0
+                },
+                {
+                  "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "withdrawFromStream",
+                "cancelStream"
+              ]
+            }
+          ],
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        }
+      },
+      "cRoles": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0xDf7d0e6454DB638881302729F5ba99936EaAB233"
+          ],
+          "FUNDS_ADMIN_ROLE": [
+            "0xDf7d0e6454DB638881302729F5ba99936EaAB233"
+          ]
+        },
+        "latestBlockNumber": 67805196
+      }
     }
   },
   "V2": {
@@ -1171,47 +1186,6 @@
           }
         ]
       },
-      "Collector": {
-        "address": "0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383",
-        "modifiers": [
-          {
-            "modifier": "onlyFundsAdmin",
-            "addresses": [
-              {
-                "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "approve",
-              "transfer",
-              "setFundsAdmin",
-              "createStream"
-            ]
-          },
-          {
-            "modifier": "onlyAdminOrRecipient",
-            "addresses": [
-              {
-                "address": "0xd3cf979e676265e4f6379749dece4708b9a22476",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "withdrawFromStream",
-              "cancelStream"
-            ]
-          }
-        ],
-        "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
-      },
       "ProxyAdmin": {
         "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
         "modifiers": [
@@ -1270,13 +1244,13 @@
         ]
       },
       "ParaSwapRepayAdapter": {
-        "address": "0xE84cF064a0a65290Ae5673b500699f3753063936",
+        "address": "0x6D49dC81a1f07a6B1902DC79bc2D408cb9D555d1",
         "modifiers": [
           {
             "modifier": "onlyOwner",
             "addresses": [
               {
-                "address": "0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383",
+                "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -1338,6 +1312,62 @@
     "gsmRoles": {},
     "govV3": {
       "ggRoles": {}
+    },
+    "collector": {
+      "contracts": {
+        "Collector": {
+          "address": "0xe8599F3cc5D38a9aD6F3684cd5CEa72f10Dbc383",
+          "modifiers": [
+            {
+              "modifier": "onlyFundsAdmin",
+              "addresses": [
+                {
+                  "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "approve",
+                "transfer",
+                "setFundsAdmin",
+                "createStream"
+              ]
+            },
+            {
+              "modifier": "onlyAdminOrRecipient",
+              "addresses": [
+                {
+                  "address": "0xd3cf979e676265e4f6379749dece4708b9a22476",
+                  "owners": [],
+                  "signersThreshold": 0
+                },
+                {
+                  "address": "0xDf7d0e6454DB638881302729F5ba99936EaAB233",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "withdrawFromStream",
+                "cancelStream"
+              ]
+            }
+          ],
+          "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
+        }
+      },
+      "cRoles": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0xDf7d0e6454DB638881302729F5ba99936EaAB233"
+          ],
+          "FUNDS_ADMIN_ROLE": [
+            "0xDf7d0e6454DB638881302729F5ba99936EaAB233"
+          ]
+        },
+        "latestBlockNumber": 67805211
+      }
     }
   },
   "TENDERLY": {

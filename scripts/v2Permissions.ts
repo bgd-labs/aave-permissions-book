@@ -8,7 +8,6 @@ import { arcTimelockAbi } from '../abis/arcTimelockAbi.js';
 import { AaveV2EthereumArc } from '@bgd-labs/aave-address-book';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
-import { collectorAbi } from '../abis/collectorAbi.js';
 import { ChainId } from '@aave/contract-helpers';
 import { Contracts, PermissionsJson } from '../helpers/types.js';
 
@@ -276,52 +275,12 @@ export const resolveV2Modifiers = async (
     ],
   };
 
-  const collector = new ethers.Contract(
-    addressBook.COLLECTOR,
-    collectorAbi,
-    provider,
-  );
 
-  const fundsAdmin = await collector.getFundsAdmin();
   const collectorProxyAdmin = await getProxyAdmin(
     addressBook.COLLECTOR,
     provider,
   );
-  obj['Collector'] = {
-    address: addressBook.COLLECTOR,
-    modifiers: [
-      {
-        modifier: 'onlyFundsAdmin',
-        addresses: [
-          {
-            address: fundsAdmin,
-            owners: await getSafeOwners(provider, fundsAdmin),
-            signersThreshold: await getSafeThreshold(provider, fundsAdmin),
-          },
-        ],
-        functions: roles['Collector']['onlyFundsAdmin'],
-      },
-      {
-        modifier: 'onlyAdminOrRecipient',
-        addresses: [
-          {
-            address: collectorProxyAdmin,
-            owners: await getSafeOwners(provider, collectorProxyAdmin),
-            signersThreshold: await getSafeThreshold(
-              provider,
-              collectorProxyAdmin,
-            ),
-          },
-          {
-            address: fundsAdmin,
-            owners: await getSafeOwners(provider, fundsAdmin),
-            signersThreshold: await getSafeThreshold(provider, fundsAdmin),
-          },
-        ],
-        functions: roles['Collector']['onlyAdminOrRecipient'],
-      },
-    ],
-  };
+
   const proxyAdminContract = new ethers.Contract(
     collectorProxyAdmin,
     onlyOwnerAbi,
@@ -576,11 +535,14 @@ export const resolveV2Modifiers = async (
   const proxyAdminContracts: string[] = permissionsObject
     .filter((contract) => contract.proxyAdmin)
     .map((contract) => contract.contract);
+
   for (let i = 0; i < proxyAdminContracts.length; i++) {
-    obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
-      obj[proxyAdminContracts[i]].address,
-      provider,
-    );
+    if (obj[proxyAdminContracts[i]]) {
+      obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
+        obj[proxyAdminContracts[i]].address,
+        provider,
+      );
+    }
   }
 
   return obj;
