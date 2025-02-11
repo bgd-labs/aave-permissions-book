@@ -15,7 +15,7 @@ export const roleRevokedEventABI = [
 export const defaultRolesAdmin =
   '0x0000000000000000000000000000000000000000000000000000000000000000';
 
-function initializeRoleCodeMap(roleNames: string[]): Map<string, string> {
+function initializeRoleCodeMap(roleNames: string[], collector?: boolean): Map<string, string> {
   let roleCodeMap = new Map<string, string>([
     [
       '0x0000000000000000000000000000000000000000000000000000000000000000',
@@ -26,6 +26,12 @@ function initializeRoleCodeMap(roleNames: string[]): Map<string, string> {
   for (const roleName of roleNames) {
     const code = ethers.utils.solidityKeccak256(['string'], [roleName]);
     roleCodeMap.set(code, roleName);
+  }
+  if (collector) {
+    roleCodeMap.set(
+      '0x46554e44535f41444d494e000000000000000000000000000000000000000000',
+      'FUNDS_ADMIN_ROLE',
+    );
   }
 
   return roleCodeMap;
@@ -50,8 +56,9 @@ export const getCurrentRoleAdmins = async (
   pool: Pools,
   roleNames: string[],
   contract: string,
+  collector?: boolean,
 ): Promise<Roles> => {
-  const roleHexToNameMap = initializeRoleCodeMap(roleNames);
+  const roleHexToNameMap = initializeRoleCodeMap(roleNames, collector);
   let limit = getLimit(chainId);
   let timeout = undefined;
 

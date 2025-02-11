@@ -8,7 +8,6 @@
 |  [PoolConfigurator](https://etherscan.io/address/0x64b761D848206f447Fe2dd461b0c635Ec39EbB27) |  Governance | |--------|--------|
 |  [GHOFlashMinter](https://etherscan.io/address/0xb639D208Bcf0589D54FaC24E655C79EC529762B8) |  not upgradeable | |--------|--------|
 |  [AaveOracle](https://etherscan.io/address/0x54586bE62E3c3580375aE3723C145253060Ca0C2) |  not upgradeable | |--------|--------|
-|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  Governance | |--------|--------|
 |  [RewardsController](https://etherscan.io/address/0x8164Cc65827dcFe994AB23944CBC90e0aa80bFcb) |  Governance | |--------|--------|
 |  [WrappedTokenGatewayV3](https://etherscan.io/address/0xA434D495249abE33E031Fe71a969B81f3c07950D) |  not upgradeable | |--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://etherscan.io/address/0xADC0A53095A0af87F3aa29FE0715B5c28016364e) |  not upgradeable | |--------|--------|
@@ -23,6 +22,7 @@
 |  [AaveMerkleDistributor](https://etherscan.io/address/0xa88c6D90eAe942291325f9ae3c66f3563B93FE10) |  not upgradeable | |--------|--------|
 |  [AavePolEthBridge](https://etherscan.io/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://etherscan.io/address/0x7C7143f4bE189928A6a98D8686c5e84c893c59c7) |  not upgradeable | |--------|--------|
+|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  Governance | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://etherscan.io/address/0x4457cA11E90f416Cc1D3a8E1cA41C0cdEcC251d4) |  not upgradeable | |--------|--------|
 |  [AaveGovernanceV3](https://etherscan.io/address/0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7) |  Governance | |--------|--------|
@@ -76,8 +76,6 @@
 |  [PoolConfigurator](https://etherscan.io/address/0x64b761D848206f447Fe2dd461b0c635Ec39EbB27) |  [PoolAddressesProvider](https://etherscan.io/address/0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A), [Aave Protocol Guardian Ethereum](https://etherscan.io/address/0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [GHOFlashMinter](https://etherscan.io/address/0xb639D208Bcf0589D54FaC24E655C79EC529762B8) |  - |  onlyPoolAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  updateFee, updateGhoTreasury | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://etherscan.io/address/0x54586bE62E3c3580375aE3723C145253060Ca0C2) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
-|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyFundsAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyAdminOrRecipient |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476), [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 |  [RewardsController](https://etherscan.io/address/0x8164Cc65827dcFe994AB23944CBC90e0aa80bFcb) |  [PoolAddressesProvider](https://etherscan.io/address/0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e) |  onlyEmissionManager |  [EmissionManager](https://etherscan.io/address/0x223d844fc4B006D67c0cDbd39371A9F73f69d974) |  configureAssets, setTransferStrategy, setRewardOracle, setClaimer | |--------|--------|--------|--------|--------|
 |  [WrappedTokenGatewayV3](https://etherscan.io/address/0xA434D495249abE33E031Fe71a969B81f3c07950D) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://etherscan.io/address/0xADC0A53095A0af87F3aa29FE0715B5c28016364e) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  rescueTokens | |--------|--------|--------|--------|--------|
@@ -94,6 +92,8 @@
 |  [AavePolEthBridge](https://etherscan.io/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  - |  onlyRescueGuardian |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://etherscan.io/address/0x7C7143f4bE189928A6a98D8686c5e84c893c59c7) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://etherscan.io/address/0x7C7143f4bE189928A6a98D8686c5e84c893c59c7) |  - |  onlyRiskCouncil |  [Risk Council](https://etherscan.io/address/0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyFundsAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyAdminOrRecipient |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476), [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -150,4 +150,10 @@
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) | |--------|--------|
 |  SOLVE_EMERGENCY_ROLE |  [Aave Governance Guardian Ethereum](https://etherscan.io/address/0xCe52ab41C40575B072A18C9700091Ccbe4A06710) | |--------|--------|
 |  RETRY_ROLE |  [BGD](https://etherscan.io/address/0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF) | |--------|--------|
+
+### Collector Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) | |--------|--------|
 

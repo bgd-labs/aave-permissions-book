@@ -7,7 +7,6 @@
 |  [Pool](https://arbiscan.io/address/0x794a61358D6845594F94dc1DB02A252b5b4814aD) |  Governance | |--------|--------|
 |  [PoolConfigurator](https://arbiscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  Governance | |--------|--------|
 |  [AaveOracle](https://arbiscan.io/address/0xb56c2F0B653B2e0b10C9b928C8580Ac5Df02C7C7) |  not upgradeable | |--------|--------|
-|  [Collector](https://arbiscan.io/address/0x053D55f9B5AF8694c503EB288a1B7E552f590710) |  Governance | |--------|--------|
 |  [RewardsController](https://arbiscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  Governance | |--------|--------|
 |  [WrappedTokenGatewayV3](https://arbiscan.io/address/0x5760E34c4003752329bC77790B1De44C2799F8C3) |  not upgradeable | |--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://arbiscan.io/address/0xF3C3F14dd7BDb7E03e6EBc3bc5Ffc6D66De12251) |  not upgradeable | |--------|--------|
@@ -20,6 +19,7 @@
 |  [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://arbiscan.io/address/0x14568979093FFF97aeBD73F58051a4f0e297b1eB) |  not upgradeable | |--------|--------|
+|  [Collector](https://arbiscan.io/address/0x053D55f9B5AF8694c503EB288a1B7E552f590710) |  Governance | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://arbiscan.io/address/0x4922093c476CfbCF903C7C4082d2D64bAE8A37cE) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://arbiscan.io/address/0x89644CA1bB8064760312AE4F03ea41b05dA3637C) |  Governance | |--------|--------|
@@ -60,8 +60,6 @@
 |  [PoolConfigurator](https://arbiscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  [PoolAddressesProvider](https://arbiscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyRiskOrPoolOrEmergencyAdmins |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327), [CapPlusRiskSteward](https://arbiscan.io/address/0xADf86b537eF08591c2777E144322E8b0Ca7E82a7), [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d), [Manual AGRS](https://arbiscan.io/address/0x14568979093FFF97aeBD73F58051a4f0e297b1eB), [0xd2D586f849620ef042FE3aF52eAa10e9b78bf7De](https://arbiscan.io/address/0xd2D586f849620ef042FE3aF52eAa10e9b78bf7De), [Aave Protocol Guardian Arbitrum](https://arbiscan.io/address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setReserveFreeze | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://arbiscan.io/address/0x8145eddDf43f50276641b55bd3AD95944510021E) |  [PoolAddressesProvider](https://arbiscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327), [Aave Protocol Guardian Arbitrum](https://arbiscan.io/address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://arbiscan.io/address/0xb56c2F0B653B2e0b10C9b928C8580Ac5Df02C7C7) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
-|  [Collector](https://arbiscan.io/address/0x053D55f9B5AF8694c503EB288a1B7E552f590710) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyFundsAdmin |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://arbiscan.io/address/0x053D55f9B5AF8694c503EB288a1B7E552f590710) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyAdminOrRecipient |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476), [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 |  [RewardsController](https://arbiscan.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  [PoolAddressesProvider](https://arbiscan.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyEmissionManager |  [EmissionManager](https://arbiscan.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  configureAssets, setTransferStrategy, setRewardOracle, setClaimer | |--------|--------|--------|--------|--------|
 |  [WrappedTokenGatewayV3](https://arbiscan.io/address/0x5760E34c4003752329bC77790B1De44C2799F8C3) |  - |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://arbiscan.io/address/0xF3C3F14dd7BDb7E03e6EBc3bc5Ffc6D66De12251) |  - |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  rescueTokens | |--------|--------|--------|--------|--------|
@@ -75,6 +73,8 @@
 |  [FreezeSteward](https://arbiscan.io/address/0xe59470B3BE3293534603487E00A44C72f2CD466d) |  - |  onlyEmergencyAdmin |  [Aave Protocol Guardian Arbitrum](https://arbiscan.io/address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://arbiscan.io/address/0x14568979093FFF97aeBD73F58051a4f0e297b1eB) |  - |  onlyOwner |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://arbiscan.io/address/0x14568979093FFF97aeBD73F58051a4f0e297b1eB) |  - |  onlyRiskCouncil |  [Risk Council](https://arbiscan.io/address/0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Collector](https://arbiscan.io/address/0x053D55f9B5AF8694c503EB288a1B7E552f590710) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyFundsAdmin |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://arbiscan.io/address/0x053D55f9B5AF8694c503EB288a1B7E552f590710) |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyAdminOrRecipient |  [ProxyAdmin](https://arbiscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476), [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -119,4 +119,10 @@
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) | |--------|--------|
 |  SOLVE_EMERGENCY_ROLE |  [Aave Governance Guardian Arbitrum](https://arbiscan.io/address/0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b) | |--------|--------|
 |  RETRY_ROLE |  [BGD](https://arbiscan.io/address/0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959) | |--------|--------|
+
+### Collector Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://arbiscan.io/address/0xFF1137243698CaA18EE364Cc966CF0e02A4e6327) | |--------|--------|
 

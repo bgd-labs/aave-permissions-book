@@ -24,6 +24,11 @@ export type GovV3 = {
   ggRoles?: Roles;
   // bridgeAdapters: string[];
 };
+export type Collector = {
+  latestBlockNumber: number;
+  contracts: Contracts;
+  cRoles: Roles;
+};
 export type AddressInfo = {
   address: string;
   owners: string[];
@@ -40,6 +45,7 @@ export type PoolInfo = {
   gsmRoles?: Record<string, Roles>;
   contracts: Contracts;
   govV3?: GovV3;
+  collector?: Collector;
 };
 
 export type Pool = Record<string, PoolInfo>;
@@ -64,6 +70,7 @@ export type PoolConfigs = {
   addresses?: Record<string, string>;
 
   gsmBlocks?: Record<string, number>;
+  collectorBlock?: number;
 };
 export type Network = {
   rpcUrl: string | undefined;

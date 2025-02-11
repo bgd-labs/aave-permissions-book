@@ -7,7 +7,6 @@
 |  [Pool](https://bscscan.com/address/0x6807dc923806fE8Fd134338EABCA509979a7e0cB) |  Governance | |--------|--------|
 |  [PoolConfigurator](https://bscscan.com/address/0x67bdF23C7fCE7C65fF7415Ba3F2520B45D6f9584) |  Governance | |--------|--------|
 |  [AaveOracle](https://bscscan.com/address/0x39bc1bfDa2130d6Bb6DBEfd366939b4c7aa7C697) |  not upgradeable | |--------|--------|
-|  [Collector](https://bscscan.com/address/0x25Ec457d1778b0E5316e7f38f3c22baF413F1A8C) |  Governance | |--------|--------|
 |  [RewardsController](https://bscscan.com/address/0xC206C2764A9dBF27d599613b8F9A63ACd1160ab4) |  Governance | |--------|--------|
 |  [WrappedTokenGatewayV3](https://bscscan.com/address/0xe63eAf6DAb1045689BD3a332bC596FfcF54A5C88) |  not upgradeable | |--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://bscscan.com/address/0x33E0b3fc976DC9C516926BA48CfC0A9E10a2aAA5) |  not upgradeable | |--------|--------|
@@ -19,6 +18,7 @@
 |  [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://bscscan.com/address/0x83f15Bc50d1A212576B202f80489502a7cc10412) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://bscscan.com/address/0xbe7998712402B6A63975515A532Ce503437998b7) |  not upgradeable | |--------|--------|
+|  [Collector](https://bscscan.com/address/0x25Ec457d1778b0E5316e7f38f3c22baF413F1A8C) |  Governance | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://bscscan.com/address/0xe4FB5e3F506BE0095f38004f993D16fdA8224383) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://bscscan.com/address/0xE5EF2Dd06755A97e975f7E282f828224F2C3e627) |  Governance | |--------|--------|
@@ -61,8 +61,6 @@
 |  [PoolConfigurator](https://bscscan.com/address/0x67bdF23C7fCE7C65fF7415Ba3F2520B45D6f9584) |  [PoolAddressesProvider](https://bscscan.com/address/0xff75B6da14FfbbfD355Daf7a2731456b3562Ba6D) |  onlyRiskOrPoolOrEmergencyAdmins |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a), [FreezeSteward](https://bscscan.com/address/0x83f15Bc50d1A212576B202f80489502a7cc10412), [CapPlusRiskSteward](https://bscscan.com/address/0x971F1C94b139AdEdedA729DA636e2B0C433Ff595), [Manual AGRS](https://bscscan.com/address/0xbe7998712402B6A63975515A532Ce503437998b7), [Aave Protocol Guardian Binance](https://bscscan.com/address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setReserveFreeze | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://bscscan.com/address/0x67bdF23C7fCE7C65fF7415Ba3F2520B45D6f9584) |  [PoolAddressesProvider](https://bscscan.com/address/0xff75B6da14FfbbfD355Daf7a2731456b3562Ba6D) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a), [Aave Protocol Guardian Binance](https://bscscan.com/address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://bscscan.com/address/0x39bc1bfDa2130d6Bb6DBEfd366939b4c7aa7C697) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
-|  [Collector](https://bscscan.com/address/0x25Ec457d1778b0E5316e7f38f3c22baF413F1A8C) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyFundsAdmin |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://bscscan.com/address/0x25Ec457d1778b0E5316e7f38f3c22baF413F1A8C) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyAdminOrRecipient |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c), [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 |  [RewardsController](https://bscscan.com/address/0xC206C2764A9dBF27d599613b8F9A63ACd1160ab4) |  [PoolAddressesProvider](https://bscscan.com/address/0xff75B6da14FfbbfD355Daf7a2731456b3562Ba6D) |  onlyEmissionManager |  [EmissionManager](https://bscscan.com/address/0x6eD1c70aa357fB8a7e1Eac85aa59e33287Df8f85) |  configureAssets, setTransferStrategy, setRewardOracle, setClaimer | |--------|--------|--------|--------|--------|
 |  [WrappedTokenGatewayV3](https://bscscan.com/address/0xe63eAf6DAb1045689BD3a332bC596FfcF54A5C88) |  - |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://bscscan.com/address/0x33E0b3fc976DC9C516926BA48CfC0A9E10a2aAA5) |  - |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  rescueTokens | |--------|--------|--------|--------|--------|
@@ -75,6 +73,8 @@
 |  [FreezeSteward](https://bscscan.com/address/0x83f15Bc50d1A212576B202f80489502a7cc10412) |  - |  onlyEmergencyAdmin |  [Aave Protocol Guardian Binance](https://bscscan.com/address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://bscscan.com/address/0xbe7998712402B6A63975515A532Ce503437998b7) |  - |  onlyOwner |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://bscscan.com/address/0xbe7998712402B6A63975515A532Ce503437998b7) |  - |  onlyRiskCouncil |  [Risk Council](https://bscscan.com/address/0x126dc589cc75f17385dD95516F3F1788d862E7bc) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Collector](https://bscscan.com/address/0x25Ec457d1778b0E5316e7f38f3c22baF413F1A8C) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyFundsAdmin |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://bscscan.com/address/0x25Ec457d1778b0E5316e7f38f3c22baF413F1A8C) |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c) |  onlyAdminOrRecipient |  [ProxyAdmin](https://bscscan.com/address/0x39EBFfc7679c62Dfcc4A3E2c09Bcb0be255Ae63c), [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -122,4 +122,10 @@
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) | |--------|--------|
 |  SOLVE_EMERGENCY_ROLE |  [Aave Governance Guardian Binance](https://bscscan.com/address/0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b) | |--------|--------|
 |  RETRY_ROLE |  [BGD](https://bscscan.com/address/0xE8C5ab722d0b1B7316Cc4034f2BE91A5B1d29964) | |--------|--------|
+
+### Collector Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://bscscan.com/address/0x9390B1735def18560c509E2d0bc090E9d6BA257a) | |--------|--------|
 

@@ -115,7 +115,12 @@ export const generateTable = (network: string, pool: string): string => {
   let readmeByNetwork = `# ${networkName} \n`;
 
   const poolGuardians: PoolGuardians = {};
-  const poolPermitsByContract = networkPermits[pool];
+  let poolPermitsByContract = networkPermits[pool];
+  
+  poolPermitsByContract.contracts = {
+    ...networkPermits[pool].contracts,
+    ...getPermissionsByNetwork(network)[pool].collector?.contracts,
+  }
 
   if (!poolPermitsByContract?.contracts) {
     return readmeDirectoryTable;
@@ -142,6 +147,7 @@ export const generateTable = (network: string, pool: string): string => {
     v3Contracts = generateContractsByAddress({
       ...(poolPermitsByContract?.contracts || {}),
       ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+      ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
     });
   } else {
     v3Contracts = generateContractsByAddress({
@@ -149,6 +155,7 @@ export const generateTable = (network: string, pool: string): string => {
       ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
       ...getPermissionsByNetwork(network)['V3'].contracts,
       ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
+      ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
     });
   }
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
@@ -180,11 +187,13 @@ export const generateTable = (network: string, pool: string): string => {
           pool === Pools.LIDO_TENDERLY
           ? {
               ...poolPermitsByContract.contracts,
+              ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
               ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
             }
           : {
               ...poolPermitsByContract.contracts,
               ...getPermissionsByNetwork(network)['V3'].contracts,
+              ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
               ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
             },
         govPermissions,
@@ -254,11 +263,13 @@ export const generateTable = (network: string, pool: string): string => {
     {
       ...poolPermitsByContract.contracts,
       ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+      ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
       ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
     },
     {
       ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
       ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
+      // ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
     } || {},
   );
   for (let actionName of Object.keys(actionExecutors)) {
@@ -547,6 +558,41 @@ export const generateTable = (network: string, pool: string): string => {
     });
 
     readmeByNetwork += ggAdminTable + '\n';
+  }
+
+
+  // collector tables
+  let collectorAdminTable = `### Collector Admins \n`;
+  const collectorAdminHeaderTitles = ['Role', 'Contract'];
+  const collectorAdminHeader = getTableHeader(collectorAdminHeaderTitles);
+  collectorAdminTable += collectorAdminHeader;
+
+  if (
+    networkConfigs[network].pools[pool] && 
+    poolPermitsByContract.collector && 
+    poolPermitsByContract.collector.cRoles && 
+    poolPermitsByContract.collector.cRoles.role
+  ) {
+    Object.keys(poolPermitsByContract.collector.cRoles.role).forEach((role) => {
+      const roleAddresses = poolPermitsByContract.collector?.cRoles.role[role] || [];
+      collectorAdminTable += getTableBody([
+        role,
+        `${roleAddresses
+          .map((roleAddress: string) =>
+            generateTableAddress(
+              roleAddress,
+              addressesNames,
+              contractsByAddress,
+              poolGuardians,
+              network,
+            ),
+          )
+          .join(', ')}`,
+      ]);
+      collectorAdminTable += getLineSeparator(collectorAdminHeaderTitles.length);
+    });
+
+    readmeByNetwork += collectorAdminTable + '\n';
   }
 
   // gho gsms tables

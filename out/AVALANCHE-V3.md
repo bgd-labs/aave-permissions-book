@@ -9,7 +9,6 @@
 |  [ProofOfReserveExecutorV3](https://snowtrace.io/address/0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc) |  not upgradeable | |--------|--------|
 |  [ProofOfReserveAggregatorV3](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  not upgradeable | |--------|--------|
 |  [AaveOracle](https://snowtrace.io/address/0xEBd36016B3eD09D4693Ed4251c67Bd858c3c7C9C) |  not upgradeable | |--------|--------|
-|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  Governance | |--------|--------|
 |  [RewardsController](https://snowtrace.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  Governance | |--------|--------|
 |  [WrappedTokenGatewayV3](https://snowtrace.io/address/0xCf3045a03F83ADfBCbA1f19Cb2cF4E19075F8668) |  not upgradeable | |--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2Cf641F7C0eac2788A7924B82d6Ca8EB7bAa4E3A) |  not upgradeable | |--------|--------|
@@ -22,6 +21,7 @@
 |  [FreezeSteward](https://snowtrace.io/address/0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99) |  not upgradeable | |--------|--------|
 |  [AaveMerkleDistributor](https://snowtrace.io/address/0xA065d5A299E618CD84a87641d5eEbC7916Fdf32E) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://snowtrace.io/address/0xbf03aB677DEdA36E19D294d1735b93Dd9d1E0c05) |  not upgradeable | |--------|--------|
+|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  Governance | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://snowtrace.io/address/0xc1162BCb2E5E3ca4725512008c7522dF8C8B7B65) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  Governance | |--------|--------|
@@ -68,8 +68,6 @@
 |  [ProofOfReserveExecutorV3](https://snowtrace.io/address/0xab22988D93d5F942fC6B6c6Ea285744809D1d9Cc) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  enableAssets, disableAssets | |--------|--------|--------|--------|--------|
 |  [ProofOfReserveAggregatorV3](https://snowtrace.io/address/0x80f2c02224a2E548FC67c0bF705eBFA825dd5439) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  enableProofOfReserveFeed, enableProofOfReserveFeedWithBridgeWrapper, disableProofOfReserveFeed | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://snowtrace.io/address/0xEBd36016B3eD09D4693Ed4251c67Bd858c3c7C9C) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
-|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyFundsAdmin |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyAdminOrRecipient |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476), [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 |  [RewardsController](https://snowtrace.io/address/0x929EC64c34a17401F460460D4B9390518E5B473e) |  [PoolAddressesProvider](https://snowtrace.io/address/0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb) |  onlyEmissionManager |  [EmissionManager](https://snowtrace.io/address/0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73) |  configureAssets, setTransferStrategy, setRewardOracle, setClaimer | |--------|--------|--------|--------|--------|
 |  [WrappedTokenGatewayV3](https://snowtrace.io/address/0xCf3045a03F83ADfBCbA1f19Cb2cF4E19075F8668) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [ParaSwapLiquiditySwapAdapter](https://snowtrace.io/address/0x2Cf641F7C0eac2788A7924B82d6Ca8EB7bAa4E3A) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  rescueTokens | |--------|--------|--------|--------|--------|
@@ -83,6 +81,8 @@
 |  [AaveMerkleDistributor](https://snowtrace.io/address/0xA065d5A299E618CD84a87641d5eEbC7916Fdf32E) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://snowtrace.io/address/0xbf03aB677DEdA36E19D294d1735b93Dd9d1E0c05) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://snowtrace.io/address/0xbf03aB677DEdA36E19D294d1735b93Dd9d1E0c05) |  - |  onlyRiskCouncil |  [Risk Council](https://snowtrace.io/address/0xCa66149425E7DC8f81276F6D80C4b486B9503D1a) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyFundsAdmin |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyAdminOrRecipient |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476), [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -131,4 +131,10 @@
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) | |--------|--------|
 |  SOLVE_EMERGENCY_ROLE |  [Aave Governance Guardian Avalanche](https://snowtrace.io/address/0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe) | |--------|--------|
 |  RETRY_ROLE |  [BGD](https://snowtrace.io/address/0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36) | |--------|--------|
+
+### Collector Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) | |--------|--------|
 

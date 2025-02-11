@@ -7,7 +7,6 @@
 |  [Pool](https://scrollscan.com//address/0x11fCfe756c05AD438e312a7fd934381537D3cFfe) |  Governance | |--------|--------|
 |  [PoolConfigurator](https://scrollscan.com//address/0x32BCab42a2bb5AC577D24b425D46d8b8e0Df9b7f) |  Governance | |--------|--------|
 |  [AaveOracle](https://scrollscan.com//address/0x04421D8C506E2fA2371a08EfAaBf791F624054F3) |  not upgradeable | |--------|--------|
-|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  Governance | |--------|--------|
 |  [RewardsController](https://scrollscan.com//address/0xa3f3100C4f1D0624DB9DB97b40C13885Ce297799) |  Governance | |--------|--------|
 |  [WrappedTokenGatewayV3](https://scrollscan.com//address/0x31A239f3e39c5D8BA6B201bA81ed584492Ae960F) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://scrollscan.com//address/0x6091546836DAe0487A50E300da3F237727441D90) |  not upgradeable | |--------|--------|
@@ -17,6 +16,7 @@
 |  [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e) |  not upgradeable | |--------|--------|
 |  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://scrollscan.com//address/0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B) |  not upgradeable | |--------|--------|
+|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  Governance | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://scrollscan.com//address/0xa835707d28e6C37C49d661742f2Fb5987367cEd4) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  Governance | |--------|--------|
@@ -57,8 +57,6 @@
 |  [PoolConfigurator](https://scrollscan.com//address/0x32BCab42a2bb5AC577D24b425D46d8b8e0Df9b7f) |  [PoolAddressesProvider](https://scrollscan.com//address/0x69850D0B276776781C063771b161bd8894BCdD04) |  onlyRiskOrPoolOrEmergencyAdmins |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24), [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37), [CapPlusRiskSteward](https://scrollscan.com//address/0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e), [Manual AGRS](https://scrollscan.com//address/0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B), [Aave Protocol Guardian Scroll](https://scrollscan.com//address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setReserveFreeze | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://scrollscan.com//address/0x32BCab42a2bb5AC577D24b425D46d8b8e0Df9b7f) |  [PoolAddressesProvider](https://scrollscan.com//address/0x69850D0B276776781C063771b161bd8894BCdD04) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24), [Aave Protocol Guardian Scroll](https://scrollscan.com//address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://scrollscan.com//address/0x04421D8C506E2fA2371a08EfAaBf791F624054F3) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
-|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyFundsAdmin |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyAdminOrRecipient |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E), [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 |  [RewardsController](https://scrollscan.com//address/0xa3f3100C4f1D0624DB9DB97b40C13885Ce297799) |  [PoolAddressesProvider](https://scrollscan.com//address/0x69850D0B276776781C063771b161bd8894BCdD04) |  onlyEmissionManager |  [EmissionManager](https://scrollscan.com//address/0x6091546836DAe0487A50E300da3F237727441D90) |  configureAssets, setTransferStrategy, setRewardOracle, setClaimer | |--------|--------|--------|--------|--------|
 |  [WrappedTokenGatewayV3](https://scrollscan.com//address/0x31A239f3e39c5D8BA6B201bA81ed584492Ae960F) |  - |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [EmissionManager](https://scrollscan.com//address/0x6091546836DAe0487A50E300da3F237727441D90) |  - |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  setClaimer, setEmissionAdmin, setRewardsController | |--------|--------|--------|--------|--------|
@@ -69,6 +67,8 @@
 |  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  - |  onlyEmergencyAdmin |  [Aave Protocol Guardian Scroll](https://scrollscan.com//address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://scrollscan.com//address/0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B) |  - |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://scrollscan.com//address/0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B) |  - |  onlyRiskCouncil |  [Risk Council](https://scrollscan.com//address/0x611439a74546888c3535B4dd119A5Cbb9f5332EA) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
+|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyFundsAdmin |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyAdminOrRecipient |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E), [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -113,4 +113,10 @@
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) | |--------|--------|
 |  SOLVE_EMERGENCY_ROLE |  [Aave Governance Guardian Scroll](https://scrollscan.com//address/0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b) | |--------|--------|
 |  RETRY_ROLE |  [BGD](https://scrollscan.com//address/0x4aAa03F0A61cf93eA252e987b585453578108358) | |--------|--------|
+
+### Collector Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) | |--------|--------|
 
