@@ -1,7 +1,7 @@
 import { ethers, providers, utils, constants } from 'ethers';
 import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
-import { getProxyAdmin } from '../helpers/proxyAdmin.js';
+import { getProxyAdmin, getProxyAdminFromFactory } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import { ChainId } from '@aave/contract-helpers';
 import {
@@ -121,16 +121,59 @@ export const resolveCollectorModifiers = async (
     };
   }
 
+
+  if (!addressBook.PROXY_ADMIN && addressBook.TRANSPARENT_PROXY_FACTORY) {
+    const collectorProxyAdmin = await getProxyAdminFromFactory(
+      addressBook.TRANSPARENT_PROXY_FACTORY,
+      addressBook.COLLECTOR,
+      provider,
+    );
+    const proxyAdminContract = new ethers.Contract(
+      collectorProxyAdmin,
+      onlyOwnerAbi,
+      provider,
+    );
+    if (collectorProxyAdmin !== constants.AddressZero) {
+      const proxyAdminOwner = await proxyAdminContract.owner();
+
+      obj['CollectorProxyAdmin'] = {
+        address: collectorProxyAdmin,
+        modifiers: [
+          {
+            modifier: 'onlyOwner',
+            addresses: [
+              {
+                address: proxyAdminOwner,
+                owners: await getSafeOwners(provider, proxyAdminOwner),
+                signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
+              },
+            ],
+            functions: roles['ProxyAdmin']['onlyOwner'],
+          },
+        ],
+      };
+    }
+  }
+  
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
     .filter((contract) => contract.proxyAdmin)
     .map((contract) => contract.contract);
   for (let i = 0; i < proxyAdminContracts.length; i++) {
     if (obj[proxyAdminContracts[i]]) {
-      obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
-        obj[proxyAdminContracts[i]].address,
-        provider,
-      );
+      if (addressBook.TRANSPARENT_PROXY_FACTORY && !addressBook.PROXY_ADMIN) {
+        try {
+          const proxyAdmin = await getProxyAdminFromFactory(addressBook.TRANSPARENT_PROXY_FACTORY, obj[proxyAdminContracts[i]].address, provider)
+          obj[proxyAdminContracts[i]]['proxyAdmin'] = proxyAdmin;
+        } catch (error) {
+          console.log(`[${chainId}]: Error getting proxy admin for ${proxyAdminContracts[i]}`);
+        }
+      } else {
+        obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
+          obj[proxyAdminContracts[i]].address,
+          provider,
+        );
+      }
     }
   }
 
