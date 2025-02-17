@@ -123,8 +123,7 @@ export const resolveCollectorModifiers = async (
 
 
   if (!addressBook.PROXY_ADMIN && addressBook.TRANSPARENT_PROXY_FACTORY) {
-    const collectorProxyAdmin = await getProxyAdminFromFactory(
-      addressBook.TRANSPARENT_PROXY_FACTORY,
+    const collectorProxyAdmin = await getProxyAdmin(
       addressBook.COLLECTOR,
       provider,
     );
@@ -161,19 +160,10 @@ export const resolveCollectorModifiers = async (
     .map((contract) => contract.contract);
   for (let i = 0; i < proxyAdminContracts.length; i++) {
     if (obj[proxyAdminContracts[i]]) {
-      if (addressBook.TRANSPARENT_PROXY_FACTORY && !addressBook.PROXY_ADMIN) {
-        try {
-          const proxyAdmin = await getProxyAdminFromFactory(addressBook.TRANSPARENT_PROXY_FACTORY, obj[proxyAdminContracts[i]].address, provider)
-          obj[proxyAdminContracts[i]]['proxyAdmin'] = proxyAdmin;
-        } catch (error) {
-          console.log(`[${chainId}]: Error getting proxy admin for ${proxyAdminContracts[i]}`);
-        }
-      } else {
         obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
           obj[proxyAdminContracts[i]].address,
           provider,
-        );
-      }
+      );
     }
   }
 
