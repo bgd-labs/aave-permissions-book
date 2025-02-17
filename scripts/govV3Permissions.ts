@@ -247,8 +247,7 @@ export const resolveGovV3Modifiers = async (
     };
 
     if (!addressBook.PROXY_ADMIN && addressBook.TRANSPARENT_PROXY_FACTORY) {
-      const pcProxyAdmin = await getProxyAdminFromFactory(
-        addressBook.TRANSPARENT_PROXY_FACTORY,
+      const pcProxyAdmin = await getProxyAdmin(
         addressBook.PAYLOADS_CONTROLLER,
         provider,
       );
@@ -657,8 +656,7 @@ export const resolveGovV3Modifiers = async (
     }
 
     if (!addressBook.PROXY_ADMIN && addressBook.TRANSPARENT_PROXY_FACTORY) {
-      const cccProxyAdmin = await getProxyAdminFromFactory(
-        addressBook.TRANSPARENT_PROXY_FACTORY,
+      const cccProxyAdmin = await getProxyAdmin(
         addressBook.CROSS_CHAIN_CONTROLLER,
         provider,
       );
@@ -693,19 +691,10 @@ export const resolveGovV3Modifiers = async (
     .map((contract) => contract.contract);
   for (let i = 0; i < proxyAdminContracts.length; i++) {
     if (obj[proxyAdminContracts[i]]) {
-      if (addressBook.TRANSPARENT_PROXY_FACTORY && !addressBook.PROXY_ADMIN) {
-        try {
-          const proxyAdmin = await getProxyAdminFromFactory(addressBook.TRANSPARENT_PROXY_FACTORY, obj[proxyAdminContracts[i]].address, provider)
-          obj[proxyAdminContracts[i]]['proxyAdmin'] = proxyAdmin;
-        } catch (error) {
-          console.log(`[${chainId}]: Error getting proxy admin for ${proxyAdminContracts[i]}`);
-        }
-      } else {
-        obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
-          obj[proxyAdminContracts[i]].address,
-          provider,
-        );
-      }
+      obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
+        obj[proxyAdminContracts[i]].address,
+        provider,
+      );
     }
   }
 
