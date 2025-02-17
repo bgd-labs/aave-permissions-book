@@ -1,5 +1,4 @@
 import {
-  getAllPermissionsJson,
   getPermissionsByNetwork,
   saveJson,
 } from '../helpers/fileSystem.js';
@@ -36,11 +35,9 @@ export const generateTableAddress = (
 ): string => {
   const checkSummedAddress = address ? utils.getAddress(address) : null;
 
-  // console.log(contractsByAddress);
   if (chainId) {
     const newContractsByAddress = generateContractsByAddress({
       ...getPermissionsByNetwork(chainId)['V3'].govV3?.contracts,
-      // ...getPermissionsByNetwork(chainId)['V3'].contracts,
     });
     const networkContractsByAddress: Record<string, string> = {};
     Object.keys(newContractsByAddress).forEach((key) => {
@@ -53,10 +50,15 @@ export const generateTableAddress = (
       ...networkContractsByAddress,
     };
   }
-  return checkSummedAddress
+  return address && checkSummedAddress
     ? '[' +
-        (addressesNames[checkSummedAddress]
+        (
+          addressesNames[address] 
+          ? addressesNames[address] 
+          : addressesNames[checkSummedAddress]
           ? addressesNames[checkSummedAddress]
+          : contractsByAddress[address]
+          ? contractsByAddress[address]
           : contractsByAddress[checkSummedAddress]
           ? contractsByAddress[checkSummedAddress]
           : poolGuardians[checkSummedAddress] &&
@@ -310,7 +312,7 @@ export const generateTable = (network: string, pool: string): string => {
           network,
         )})`,
         `${generateTableAddress(
-          contract.proxyAdmin,
+          utils.getAddress(contract.proxyAdmin),
           addressesNames,
           contractsByAddress,
           poolGuardians,
