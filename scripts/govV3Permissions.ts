@@ -251,6 +251,7 @@ export const resolveGovV3Modifiers = async (
         addressBook.PAYLOADS_CONTROLLER,
         provider,
       );
+      console.log('pcProxyAdmin', pcProxyAdmin);
       const proxyAdminContract = new ethers.Contract(
         pcProxyAdmin,
         onlyOwnerAbi,
