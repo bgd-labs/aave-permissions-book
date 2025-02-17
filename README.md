@@ -46,6 +46,7 @@ These documents contain tables with the following information:
 |  GNOSIS |  V3 |  [Permissions](./out/GNOSIS-V3.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V3 |  [Permissions](./out/POLYGON-V3.md#contracts) | |--------|--------|--------|
 |  POLYGON |  V2 |  [Permissions](./out/POLYGON-V2.md#contracts) | |--------|--------|--------|
+|  SONIC |  V3 |  [Permissions](./out/SONIC-V3.md#contracts) | |--------|--------|--------|
 |  ZK_SYNC |  V3 |  [Permissions](./out/ZK_SYNC-V3.md#contracts) | |--------|--------|--------|
 |  METIS_ANDROMEDA |  V3 |  [Permissions](./out/METIS_ANDROMEDA-V3.md#contracts) | |--------|--------|--------|
 |  BASE |  V3 |  [Permissions](./out/BASE-V3.md#contracts) | |--------|--------|--------|
