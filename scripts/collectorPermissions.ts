@@ -121,8 +121,7 @@ export const resolveCollectorModifiers = async (
     };
   }
 
-
-  if (!addressBook.PROXY_ADMIN && addressBook.TRANSPARENT_PROXY_FACTORY) {
+  if ((!addressBook.PROXY_ADMIN && addressBook.TRANSPARENT_PROXY_FACTORY) || chainId === 42220) {
     const collectorProxyAdmin = await getProxyAdmin(
       addressBook.COLLECTOR,
       provider,
