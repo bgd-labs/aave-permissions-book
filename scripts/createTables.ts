@@ -111,6 +111,8 @@ export const generateTable = (network: string, pool: string): string => {
       ? 'LINEA'
       : network == '146'
       ? 'SONIC'
+      : network == '42220'
+      ? 'CELO'
       : ChainIdToNetwork[Number(network)].toUpperCase();
 
   const addressesNames = networkConfigs[network].addressesNames || {};
