@@ -334,7 +334,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 30439788
+      "latestBlockNumber": 30439954
     },
     "gsmRoles": {},
     "govV3": {
@@ -350,7 +350,7 @@
             "0xfD3a6E65e470a7D7D730FFD5D36a9354E8F9F4Ea"
           ]
         },
-        "latestBlockNumber": 30439790
+        "latestBlockNumber": 30439956
       },
       "contracts": {
         "GranularGuardian": {
@@ -656,7 +656,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 30439790
+      "latestCCCBlockNumber": 30439956
     },
     "collector": {
       "contracts": {
@@ -700,6 +700,26 @@
             }
           ],
           "proxyAdmin": "0x3be917ff374858325b69623fa44556a6ebee7413"
+        },
+        "CollectorProxyAdmin": {
+          "address": "0x3be917ff374858325b69623fa44556a6ebee7413",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
         }
       },
       "cRoles": {
@@ -711,7 +731,7 @@
             "0x1dF462e2712496373A347f8ad10802a5E95f053D"
           ]
         },
-        "latestBlockNumber": 30439789
+        "latestBlockNumber": 30439955
       }
     }
   }

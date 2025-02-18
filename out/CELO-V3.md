@@ -12,7 +12,8 @@
 |  [PoolAddressesProviderRegistry](https://celoscan.io//address/0xB4B6939D0804DCE8d0Ac3e59b2eD5C072829d56b) |  not upgradeable | |--------|--------|
 |  [ProxyAdmin](https://celoscan.io//address/0x54BDcc37c4143f944A3EE51C892a6cBDF305E7a0) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://celoscan.io//address/0x7a12dCfd73C1B4cddf294da4cFce75FcaBBa314C) |  not upgradeable | |--------|--------|
-|  [Collector](https://celoscan.io//address/0xC959439207dA5341B74aDcdAC59016aa9Be7E9E7) |  Not owned | |--------|--------|
+|  [Collector](https://celoscan.io//address/0xC959439207dA5341B74aDcdAC59016aa9Be7E9E7) |  Governance | |--------|--------|
+|  [CollectorProxyAdmin](https://celoscan.io//address/0x3be917ff374858325b69623fa44556a6ebee7413) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://celoscan.io//address/0xbE815420A63A413BB8D508d8022C0FF150Ea7C39) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://celoscan.io//address/0xE48E10834C04E394A04BF22a565D063D40b9FA42) |  Governance | |--------|--------|
@@ -59,8 +60,9 @@
 |  [PoolAddressesProviderRegistry](https://celoscan.io//address/0xB4B6939D0804DCE8d0Ac3e59b2eD5C072829d56b) |  - |  onlyOwner |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://celoscan.io//address/0x54BDcc37c4143f944A3EE51C892a6cBDF305E7a0) |  - |  onlyOwner |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://celoscan.io//address/0x7a12dCfd73C1B4cddf294da4cFce75FcaBBa314C) |  - |  onlyRole |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  setRoleAdmin | |--------|--------|--------|--------|--------|
-|  [Collector](https://celoscan.io//address/0xC959439207dA5341B74aDcdAC59016aa9Be7E9E7) |  [0x3Be917Ff374858325b69623FA44556a6ebEe7413](https://celoscan.io//address/0x3Be917Ff374858325b69623FA44556a6ebEe7413) |  onlyFundsAdmin |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://celoscan.io//address/0xC959439207dA5341B74aDcdAC59016aa9Be7E9E7) |  [0x3Be917Ff374858325b69623FA44556a6ebEe7413](https://celoscan.io//address/0x3Be917Ff374858325b69623FA44556a6ebEe7413) |  onlyAdminOrRecipient |  [0x3Be917Ff374858325b69623FA44556a6ebEe7413](https://celoscan.io//address/0x3Be917Ff374858325b69623FA44556a6ebEe7413), [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://celoscan.io//address/0xC959439207dA5341B74aDcdAC59016aa9Be7E9E7) |  [CollectorProxyAdmin](https://celoscan.io//address/0x3Be917Ff374858325b69623FA44556a6ebEe7413) |  onlyFundsAdmin |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://celoscan.io//address/0xC959439207dA5341B74aDcdAC59016aa9Be7E9E7) |  [CollectorProxyAdmin](https://celoscan.io//address/0x3Be917Ff374858325b69623FA44556a6ebEe7413) |  onlyAdminOrRecipient |  [CollectorProxyAdmin](https://celoscan.io//address/0x3Be917Ff374858325b69623FA44556a6ebEe7413), [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
+|  [CollectorProxyAdmin](https://celoscan.io//address/0x3be917ff374858325b69623fa44556a6ebee7413) |  - |  onlyOwner |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
