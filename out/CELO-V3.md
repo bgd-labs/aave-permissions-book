@@ -4,41 +4,42 @@
 | contract |upgradeable by |
 |----------|----------|
 |  [PoolAddressesProvider](https://celoscan.io//address/0x9F7Cf9417D5251C59fE94fB9147feEe1aAd9Cea5) |  not upgradeable | |--------|--------|
-|  [Pool](https://celoscan.io//address/0x3E59A31363E2ad014dcbc521c4a0d5757d9f3402) |  External Contract | |--------|--------|
-|  [PoolConfigurator](https://celoscan.io//address/0x7567E3434CC1BEf724AB595e6072367Ef4914691) |  External Contract | |--------|--------|
+|  [Pool](https://celoscan.io//address/0x3E59A31363E2ad014dcbc521c4a0d5757d9f3402) |  Governance | |--------|--------|
+|  [PoolConfigurator](https://celoscan.io//address/0x7567E3434CC1BEf724AB595e6072367Ef4914691) |  Governance | |--------|--------|
 |  [AaveOracle](https://celoscan.io//address/0x1e693D088ceFD1E95ba4c4a5F7EeA41a1Ec37e8b) |  not upgradeable | |--------|--------|
-|  [RewardsController](https://celoscan.io//address/0x4725A0FdbEB14A77964bC1C221eE3a7982263103) |  External Contract | |--------|--------|
+|  [RewardsController](https://celoscan.io//address/0x4725A0FdbEB14A77964bC1C221eE3a7982263103) |  Governance | |--------|--------|
 |  [EmissionManager](https://celoscan.io//address/0x9e04Cb339163b06068397d9b6af2dA78440954e0) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://celoscan.io//address/0xB4B6939D0804DCE8d0Ac3e59b2eD5C072829d56b) |  not upgradeable | |--------|--------|
 |  [ProxyAdmin](https://celoscan.io//address/0x54BDcc37c4143f944A3EE51C892a6cBDF305E7a0) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://celoscan.io//address/0x7a12dCfd73C1B4cddf294da4cFce75FcaBBa314C) |  not upgradeable | |--------|--------|
+|  [Collector](https://celoscan.io//address/0xC959439207dA5341B74aDcdAC59016aa9Be7E9E7) |  Not owned | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://celoscan.io//address/0xbE815420A63A413BB8D508d8022C0FF150Ea7C39) |  not upgradeable | |--------|--------|
-|  [PayloadsController](https://celoscan.io//address/0xE48E10834C04E394A04BF22a565D063D40b9FA42) |  External Contract | |--------|--------|
+|  [PayloadsController](https://celoscan.io//address/0xE48E10834C04E394A04BF22a565D063D40b9FA42) |  Governance | |--------|--------|
 |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  not upgradeable | |--------|--------|
 |  [CCIP adapter](https://celoscan.io//address/0x3d534E8964e7aAcfc702751cc9A2BB6A9fe7d928) |  not upgradeable | |--------|--------|
 |  [LayerZero adapter](https://celoscan.io//address/0x83BC62fbeA15B7Bfe11e8eEE57997afA5451f38C) |  not upgradeable | |--------|--------|
 |  [Hyperlane adapter](https://celoscan.io//address/0x7b065E68E70f346B18636Ab86779980287ec73e0) |  not upgradeable | |--------|--------|
-|  [CrossChainController](https://celoscan.io//address/0x50F4dAA86F3c747ce15C3C38bD0383200B61d6Dd) |  External Contract | |--------|--------|
+|  [CrossChainController](https://celoscan.io//address/0x50F4dAA86F3c747ce15C3C38bD0383200B61d6Dd) |  Governance | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
 |----------|----------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
-|  configureProtocolFees |  External Contract | |--------|--------|
-|  updateReserveCaps |  External Contract | |--------|--------|
+|  configureProtocolFees |  Governance | |--------|--------|
+|  updateReserveCaps |  Governance | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
-|  upgradeAaveTokens (a/v/s) |  External Contract | |--------|--------|
-|  upgradeAaveOracles |  External Contract | |--------|--------|
+|  upgradeAaveTokens (a/v/s) |  Governance | |--------|--------|
+|  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
-|  pausePool |  External Contract,Multi-sig | |--------|--------|
-|  pauseAndFreezeReserve |  External Contract,Multi-sig | |--------|--------|
-|  reserveListing |  External Contract | |--------|--------|
-|  adminsConfiguration |  External Contract | |--------|--------|
-|  protocolUpgradeablity |  External Contract | |--------|--------|
-|  adiConfigurations |  External Contract | |--------|--------|
-|  retryAndInvalidateMessages |  Multi-sig,External Contract | |--------|--------|
+|  pausePool |  Governance,Multi-sig | |--------|--------|
+|  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
+|  reserveListing |  Governance | |--------|--------|
+|  adminsConfiguration |  Governance | |--------|--------|
+|  protocolUpgradeablity |  Governance | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  retryAndInvalidateMessages |  Multi-sig,Governance | |--------|--------|
 
 ### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -58,6 +59,8 @@
 |  [PoolAddressesProviderRegistry](https://celoscan.io//address/0xB4B6939D0804DCE8d0Ac3e59b2eD5C072829d56b) |  - |  onlyOwner |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  registerAddressesProvider, unregisterAddressesProvider | |--------|--------|--------|--------|--------|
 |  [ProxyAdmin](https://celoscan.io//address/0x54BDcc37c4143f944A3EE51C892a6cBDF305E7a0) |  - |  onlyOwner |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [ACLManager](https://celoscan.io//address/0x7a12dCfd73C1B4cddf294da4cFce75FcaBBa314C) |  - |  onlyRole |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  setRoleAdmin | |--------|--------|--------|--------|--------|
+|  [Collector](https://celoscan.io//address/0xC959439207dA5341B74aDcdAC59016aa9Be7E9E7) |  [0x3Be917Ff374858325b69623FA44556a6ebEe7413](https://celoscan.io//address/0x3Be917Ff374858325b69623FA44556a6ebEe7413) |  onlyFundsAdmin |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://celoscan.io//address/0xC959439207dA5341B74aDcdAC59016aa9Be7E9E7) |  [0x3Be917Ff374858325b69623FA44556a6ebEe7413](https://celoscan.io//address/0x3Be917Ff374858325b69623FA44556a6ebEe7413) |  onlyAdminOrRecipient |  [0x3Be917Ff374858325b69623FA44556a6ebEe7413](https://celoscan.io//address/0x3Be917Ff374858325b69623FA44556a6ebEe7413), [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -69,7 +72,7 @@
 |  [PayloadsController](https://celoscan.io//address/0xE48E10834C04E394A04BF22a565D063D40b9FA42) |  [ProxyAdmin](https://celoscan.io//address/0x54BDcc37c4143f944A3EE51C892a6cBDF305E7a0) |  onlyGuardian |  [Aave Governance Guardian Celo](https://celoscan.io//address/0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E) |  cancelPayload | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://celoscan.io//address/0xE48E10834C04E394A04BF22a565D063D40b9FA42) |  [ProxyAdmin](https://celoscan.io//address/0x54BDcc37c4143f944A3EE51C892a6cBDF305E7a0) |  onlyOwnerOrGuardian |  [Aave Governance Guardian Celo](https://celoscan.io//address/0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E), [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  updateGuardian | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://celoscan.io//address/0xE48E10834C04E394A04BF22a565D063D40b9FA42) |  [ProxyAdmin](https://celoscan.io//address/0x54BDcc37c4143f944A3EE51C892a6cBDF305E7a0) |  onlyRescueGuardian |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
-|  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  - |  onlyOwner |  [0x956DE559DFc27678FD69d4f49f485196b50BDD0F](https://celoscan.io//address/0x956DE559DFc27678FD69d4f49f485196b50BDD0F) |  executeTransaction | |--------|--------|--------|--------|--------|
+|  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  - |  onlyOwner |  [PayloadsController](https://celoscan.io//address/0xE48E10834C04E394A04BF22a565D063D40b9FA42) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [CCIP adapter](https://celoscan.io//address/0x3d534E8964e7aAcfc702751cc9A2BB6A9fe7d928) |  - |  trustedRemote |  [CrossChainController(Eth)](https://celoscan.io//address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [LayerZero adapter](https://celoscan.io//address/0x83BC62fbeA15B7Bfe11e8eEE57997afA5451f38C) |  - |  trustedRemote |  [CrossChainController(Eth)](https://celoscan.io//address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [Hyperlane adapter](https://celoscan.io//address/0x7b065E68E70f346B18636Ab86779980287ec73e0) |  - |  trustedRemote |  [CrossChainController(Eth)](https://celoscan.io//address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
@@ -103,4 +106,10 @@
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) | |--------|--------|
 |  SOLVE_EMERGENCY_ROLE |  [Aave Governance Guardian Celo](https://celoscan.io//address/0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E) | |--------|--------|
 |  RETRY_ROLE |  [BGD](https://celoscan.io//address/0xfD3a6E65e470a7D7D730FFD5D36a9354E8F9F4Ea) | |--------|--------|
+
+### Collector Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) | |--------|--------|
 

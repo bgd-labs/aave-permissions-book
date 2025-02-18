@@ -804,7 +804,7 @@ export const networkConfigs: NetworkConfigs = {
     pools: {
       [Pools.V3]: {
         aclBlock: 30390000,
-        // collectorBlock: ,
+        collectorBlock: 30390060,
         crossChainControllerBlock: 29733820,
         granularGuardianBlock: 29750070,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
