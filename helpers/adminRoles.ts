@@ -83,7 +83,6 @@ export const getCurrentRoleAdmins = async (
     const tenderlyProvider = new providers.StaticJsonRpcProvider(
       networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl,
     );
-
     limit = 999;
     timeout = 10000;
 
