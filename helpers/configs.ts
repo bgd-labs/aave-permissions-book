@@ -830,7 +830,6 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: {
           ...AaveV3Sonic,
           ...MiscSonic,
-          RISK_STEWARD: '0xAe13e4DA0952f0B8fE04E21df53716fCF799a923'
         },
         governanceAddressBook: {
           ...GovernanceV3Sonic, 
