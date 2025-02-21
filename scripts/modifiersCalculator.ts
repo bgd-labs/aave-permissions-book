@@ -248,10 +248,15 @@ const generateNetworkPermissions = async (network: string) => {
             fromBlock: ${fromBlock}
           ------------------------------------
           `);
-
+          
         if (Object.keys(pool.addressBook).length > 0) {
+          console.log('---2')
           admins = await getCurrentRoleAdmins(
-            provider,
+            poolKey === Pools.TENDERLY ||
+              poolKey === Pools.LIDO_TENDERLY ||
+              poolKey === Pools.ETHERFI_TENDERLY
+              ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+              : provider,
             (fullJson[poolKey] && fullJson[poolKey]?.roles?.role) ||
               ({} as Record<string, string[]>),
             fromBlock,
@@ -260,7 +265,7 @@ const generateNetworkPermissions = async (network: string) => {
             protocolRoleNames,
             pool.addressBook.ACL_MANAGER,
           );
-
+          
           poolPermissions = await resolveV3Modifiers(
             pool.addressBook,
             poolKey === Pools.TENDERLY ||
