@@ -250,7 +250,6 @@ const generateNetworkPermissions = async (network: string) => {
           `);
           
         if (Object.keys(pool.addressBook).length > 0) {
-          console.log('---2')
           admins = await getCurrentRoleAdmins(
             poolKey === Pools.TENDERLY ||
               poolKey === Pools.LIDO_TENDERLY ||

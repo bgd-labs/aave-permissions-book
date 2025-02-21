@@ -796,7 +796,7 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Granular Guardian Sonic',
       '0x63C4422D6cc849549daeb600B7EcE52bD18fAd7f':
         'Aave Governance Guardian Sonic',
-      '': 'Risk Council',
+      '0x1dE39A17a9Fa8c76899fff37488482EEb7835d04': 'Risk Council',
     },
     pools: {
       // [Pools.V3]: {
@@ -830,6 +830,7 @@ export const networkConfigs: NetworkConfigs = {
         addressBook: {
           ...AaveV3Sonic,
           ...MiscSonic,
+          RISK_STEWARD: '0xAe13e4DA0952f0B8fE04E21df53716fCF799a923'
         },
         governanceAddressBook: {
           ...GovernanceV3Sonic, 
