@@ -796,7 +796,7 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Granular Guardian Sonic',
       '0x63C4422D6cc849549daeb600B7EcE52bD18fAd7f':
         'Aave Governance Guardian Sonic',
-      '': 'Risk Council',
+      '0x1dE39A17a9Fa8c76899fff37488482EEb7835d04': 'Risk Council',
     },
     pools: {
       [Pools.V3]: {
@@ -820,6 +820,26 @@ export const networkConfigs: NetworkConfigs = {
           '0x1098F187F5f444Bc1c77cD9beE99e8d460347F5F': 'HyperLaneAdapter',
         },
       },
+      // [Pools.TENDERLY]: {
+      //   aclBlock: 7408201,
+      //   collectorBlock: 7408280,
+      //   crossChainControllerBlock: 7277160,
+      //   granularGuardianBlock: 7281310,
+      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   addressBook: {
+      //     ...AaveV3Sonic,
+      //     ...MiscSonic,
+      //   },
+      //   governanceAddressBook: {
+      //     ...GovernanceV3Sonic, 
+      //     ...MiscSonic
+      //   },
+      //   tenderlyBasePool: Pools.V3,
+      //   tenderlyBlock: 9104420,
+      //   tenderlyRpcUrl:
+      //     'https://rpc.tenderly.co/fork/eaf1f612-3b0b-4925-b619-4e02d1bbc127',
+      // },
     },
   },
 };
