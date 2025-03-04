@@ -570,7 +570,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 67805184
+      "latestBlockNumber": 68642869
     },
     "gsmRoles": {},
     "govV3": {
@@ -586,7 +586,7 @@
             "0xbCEB4f363f2666E2E8E430806F37e97C405c130b"
           ]
         },
-        "latestBlockNumber": 67805198
+        "latestBlockNumber": 68642873
       },
       "contracts": {
         "GranularGuardian": {
@@ -960,7 +960,7 @@
       "senders": [
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d"
       ],
-      "latestCCCBlockNumber": 67805198
+      "latestCCCBlockNumber": 68642872
     },
     "collector": {
       "contracts": {
@@ -1015,7 +1015,7 @@
             "0xDf7d0e6454DB638881302729F5ba99936EaAB233"
           ]
         },
-        "latestBlockNumber": 67805196
+        "latestBlockNumber": 68642872
       }
     }
   },
@@ -1366,7 +1366,7 @@
             "0xDf7d0e6454DB638881302729F5ba99936EaAB233"
           ]
         },
-        "latestBlockNumber": 67805211
+        "latestBlockNumber": 68642877
       }
     }
   },
