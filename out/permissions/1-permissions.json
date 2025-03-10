@@ -1006,7 +1006,7 @@
         ]
       },
       "WrappedTokenGatewayV3": {
-        "address": "0xA434D495249abE33E031Fe71a969B81f3c07950D",
+        "address": "0xd01607c3C5eCABa394D8be377a08590149325722",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -1332,7 +1332,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 21974734
+      "latestBlockNumber": 22017692
     },
     "gsmRoles": {},
     "govV3": {
@@ -1348,7 +1348,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 21974736
+        "latestBlockNumber": 22017694
       },
       "contracts": {
         "GranularGuardian": {
@@ -1908,7 +1908,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 21974736
+      "latestCCCBlockNumber": 22017694
     },
     "collector": {
       "contracts": {
@@ -1963,7 +1963,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 21974736
+        "latestBlockNumber": 22017694
       }
     }
   },
@@ -2323,7 +2323,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 21974740
+        "latestBlockNumber": 22017701
       }
     }
   },
@@ -2587,7 +2587,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 21974740
+        "latestBlockNumber": 22017702
       }
     }
   },
@@ -3163,7 +3163,7 @@
         ]
       },
       "WrappedTokenGatewayV3": {
-        "address": "0x0B8C700917a6991FEa7198dDFC80bc8962b5055D",
+        "address": "0x3167C452fA3fa1e5C16bB83Bc0fde4519C464299",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -3454,7 +3454,7 @@
           "0x5C905d62B22e4DAa4967E517C4a047Ff6026C731"
         ]
       },
-      "latestBlockNumber": 21974737
+      "latestBlockNumber": 22017696
     },
     "gsmRoles": {},
     "govV3": {
@@ -3513,7 +3513,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 21974738
+        "latestBlockNumber": 22017698
       }
     }
   },
@@ -3798,7 +3798,7 @@
         ]
       },
       "WrappedTokenGatewayV3": {
-        "address": "0xAB911dFB2bB9e264EE836F30D3367618f8Aef965",
+        "address": "0xf956B38F035dC9067fb827A512D3CF35202AB0Bc",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -4085,7 +4085,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 21974738
+      "latestBlockNumber": 22017698
     },
     "gsmRoles": {},
     "govV3": {
@@ -4144,7 +4144,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 21974739
+        "latestBlockNumber": 22017699
       }
     }
   },
