@@ -41,14 +41,13 @@ export const getLogs = async ({
   finalBlock: number;
 }> => {
   const currentBlock = await provider.getBlockNumber();
-
   // TODO: for now i have put a margin, but should maybe be comparision between from and current
   if (!tenderly && fromBlock + 10 >= (maxBlock ?? currentBlock)) {
     return { eventLogs: logs, finalBlock: fromBlock };
   } else if (tenderly && fromBlock >= (maxBlock ?? currentBlock)) {
     return { eventLogs: logs, finalBlock: fromBlock };
   }
-
+  
   let toBlock: number = 0;
   if (limit) {
     if (maxBlock) {
@@ -64,7 +63,7 @@ export const getLogs = async ({
       toBlock = currentBlock;
     }
   }
-
+  
   // get All logs of stream creation
 
   // Quick patch, to not add nulls into the query, as not clear how support for this is working on tenderly.

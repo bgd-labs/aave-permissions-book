@@ -813,13 +813,74 @@ export const networkConfigs: NetworkConfigs = {
           ...AaveV3Celo,
           ...MiscCelo,
         },
-        governanceAddressBook: GovernanceV3Celo,
+        governanceAddressBook: {
+          ...GovernanceV3Celo,
+          ...MiscCelo,
+        },
         addresses: {
           '0x3d534E8964e7aAcfc702751cc9A2BB6A9fe7d928': 'CCIPAdapter',
           '0x7b065E68E70f346B18636Ab86779980287ec73e0': 'HyperLaneAdapter',
           '0x83BC62fbeA15B7Bfe11e8eEE57997afA5451f38C': 'LayerZeroAdapter'
         },
       },
+    },
+  },
+  ['146']: {
+    rpcUrl: process.env.RPC_SONIC,
+    explorer: 'https://sonicscan.org/',
+    addressesNames: {
+      '0xA4aF5175ed38e791362F01c67a487DbA4aE07dFe':
+        'Aave Protocol Guardian Sonic',
+      '0x7837d7a167732aE41627A3B829871d9e32e2e7f2': 'BGD',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0x10078c1D8E46dd1ed5D8df2C42d5ABb969b11566':
+        'Aave Granular Guardian Sonic',
+      '0x63C4422D6cc849549daeb600B7EcE52bD18fAd7f':
+        'Aave Governance Guardian Sonic',
+      '0x1dE39A17a9Fa8c76899fff37488482EEb7835d04': 'Risk Council',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 7408201,
+        collectorBlock: 7408280,
+        crossChainControllerBlock: 7277160,
+        granularGuardianBlock: 7281310,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: {
+          ...AaveV3Sonic,
+          ...MiscSonic,
+        },
+        governanceAddressBook: {
+          ...GovernanceV3Sonic, 
+          ...MiscSonic
+        },
+        addresses: {
+          '0x1905fCdDa41241C0871A5eC3f9dcC3E8d247261D': 'CCIPAdapter',
+          '0x7B8FaC105A7a85f02C3f31559d2ee7313BDC5d7f': 'LayerZeroAdapter',
+          '0x1098F187F5f444Bc1c77cD9beE99e8d460347F5F': 'HyperLaneAdapter',
+        },
+      },
+      // [Pools.TENDERLY]: {
+      //   aclBlock: 7408201,
+      //   collectorBlock: 7408280,
+      //   crossChainControllerBlock: 7277160,
+      //   granularGuardianBlock: 7281310,
+      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   addressBook: {
+      //     ...AaveV3Sonic,
+      //     ...MiscSonic,
+      //   },
+      //   governanceAddressBook: {
+      //     ...GovernanceV3Sonic, 
+      //     ...MiscSonic
+      //   },
+      //   tenderlyBasePool: Pools.V3,
+      //   tenderlyBlock: 9104420,
+      //   tenderlyRpcUrl:
+      //     'https://rpc.tenderly.co/fork/eaf1f612-3b0b-4925-b619-4e02d1bbc127',
+      // },
     },
   },
 };
