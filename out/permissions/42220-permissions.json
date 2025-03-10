@@ -316,6 +316,45 @@
             ]
           }
         ]
+      },
+      "Manual AGRS": {
+        "address": "0x69a6CaF240698982c3Ac89E0A7C12E76bCEee4ef",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "setRiskConfig",
+              "setAddressRestricted"
+            ]
+          },
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0xd85786B5FC61E2A0c0a3144a33A0fC70646a99f6",
+                "owners": [
+                  "0xc2cf0387f2a83A7F5C6675F4CDe7F367ea1B989a",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 2
+              }
+            ],
+            "functions": [
+              "updateCaps",
+              "updateRates",
+              "updateCollateralSide",
+              "updateLstPriceCaps",
+              "updateStablePriceCaps"
+            ]
+          }
+        ]
       }
     },
     "roles": {
@@ -334,7 +373,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 30439954
+      "latestBlockNumber": 30789923
     },
     "gsmRoles": {},
     "govV3": {
@@ -350,7 +389,7 @@
             "0xfD3a6E65e470a7D7D730FFD5D36a9354E8F9F4Ea"
           ]
         },
-        "latestBlockNumber": 30439956
+        "latestBlockNumber": 30789952
       },
       "contracts": {
         "GranularGuardian": {
@@ -650,13 +689,26 @@
               "functions": [
                 "receiveCrossChainMessage"
               ]
+            },
+            {
+              "modifier": "onlyGuardian",
+              "addresses": [
+                {
+                  "address": "0xbE815420A63A413BB8D508d8022C0FF150Ea7C39",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "solveEmergency"
+              ]
             }
           ],
           "proxyAdmin": "0x54bdcc37c4143f944a3ee51c892a6cbdf305e7a0"
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 30439956
+      "latestCCCBlockNumber": 30789940
     },
     "collector": {
       "contracts": {
@@ -731,7 +783,7 @@
             "0x1dF462e2712496373A347f8ad10802a5E95f053D"
           ]
         },
-        "latestBlockNumber": 30439955
+        "latestBlockNumber": 30789940
       }
     }
   }

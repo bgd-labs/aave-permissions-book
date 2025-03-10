@@ -411,7 +411,7 @@ const generateNetworkPermissions = async (network: string) => {
         const permissionsGovV3Json = getStaticPermissionsJson(
           pool.crossChainPermissionsJson,
         );
-
+        console.log('------------------------------------');
         govV3.contracts = await resolveGovV3Modifiers(
           pool.governanceAddressBook,
           poolKey === Pools.TENDERLY ||
@@ -429,6 +429,7 @@ const generateNetworkPermissions = async (network: string) => {
           pool.addresses,
         );
 
+        console.log('------------------------------------');
         govV3.senders = senders;
         govV3.latestCCCBlockNumber = latestCCCBlockNumber;
       }
