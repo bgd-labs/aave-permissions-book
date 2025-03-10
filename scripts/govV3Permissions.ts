@@ -6,17 +6,17 @@ import {
 } from '../helpers/types.js';
 import { ethers, providers, constants } from 'ethers';
 import { ChainId } from '@aave/contract-helpers';
-import { getProxyAdmin, getProxyAdminFromFactory } from '../helpers/proxyAdmin.js';
+import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import {
-  ICrossChainController_ABI,
   IWithGuardian_ABI,
   IOwnable_ABI,
-  IRescuable_ABI,
 } from '@bgd-labs/aave-address-book/abis';
 import { baseAdapter } from '../abis/BaseAdapter.js';
 import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
+import { PayloadsController_ABI } from '../abis/payloadsController.js';
+import { ICrossChainController_ABI } from '../abis/crossChainController.js';
 
 export const resolveGovV3Modifiers = async (
   addressBook: any,
@@ -184,13 +184,14 @@ export const resolveGovV3Modifiers = async (
     );
     const pcContractRescue = new ethers.Contract(
       addressBook.PAYLOADS_CONTROLLER,
-      IRescuable_ABI,
+      PayloadsController_ABI,
       provider,
     );
 
     const pcGuardian = await pcContractGuardian.guardian();
     const pcOwner = await pcContractOwner.owner();
     const rescuer = await pcContractRescue.whoCanRescue();
+    
     obj['PayloadsController'] = {
       address: addressBook.PAYLOADS_CONTROLLER,
       modifiers: [
@@ -275,7 +276,7 @@ export const resolveGovV3Modifiers = async (
       };
     }
   }
-
+  
   if (
     addressBook.VOTING_MACHINE &&
     addressBook.VOTING_MACHINE !== constants.AddressZero
@@ -304,6 +305,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
+  
   if (
     addressBook.VOTING_PORTAL_ETH_ETH &&
     addressBook.VOTING_PORTAL_ETH_ETH !== constants.AddressZero
@@ -332,6 +334,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
+  
   if (
     addressBook.VOTING_PORTAL_ETH_AVAX &&
     addressBook.VOTING_PORTAL_ETH_AVAX !== constants.AddressZero
@@ -360,6 +363,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
+  
   if (
     addressBook.VOTING_PORTAL_ETH_POL &&
     addressBook.VOTING_PORTAL_ETH_POL !== constants.AddressZero
@@ -388,7 +392,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-
+  
   if (
     addressBook.EXECUTOR_LVL_1 &&
     addressBook.EXECUTOR_LVL_1 !== constants.AddressZero
@@ -416,7 +420,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-
+  
   if (
     addressBook.EXECUTOR_LVL_2 &&
     addressBook.EXECUTOR_LVL_2 !== constants.AddressZero
@@ -444,7 +448,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-
+  
   if (
     addressBook.EMERGENCY_REGISTRY &&
     addressBook.EMERGENCY_REGISTRY !== constants.AddressZero
@@ -472,7 +476,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-
+  
   if (
     addressBook.CROSS_CHAIN_CONTROLLER &&
     addressBook.CROSS_CHAIN_CONTROLLER !== constants.AddressZero
@@ -494,7 +498,7 @@ export const resolveGovV3Modifiers = async (
     );
     const cccContractRescue = new ethers.Contract(
       addressBook.CROSS_CHAIN_CONTROLLER,
-      IRescuable_ABI,
+      ICrossChainController_ABI,
       provider,
     );
     const owner = await cccContractOwner.owner();
@@ -640,7 +644,8 @@ export const resolveGovV3Modifiers = async (
       chainId === ChainId.avalanche ||
       chainId === 56 ||
       chainId === 100 ||
-      chainId === 146
+      chainId === 146 ||
+      chainId === 42220
     ) {
       obj['CrossChainController'].modifiers.push({
         modifier: 'onlyGuardian',

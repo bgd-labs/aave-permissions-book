@@ -411,7 +411,7 @@ const generateNetworkPermissions = async (network: string) => {
         const permissionsGovV3Json = getStaticPermissionsJson(
           pool.crossChainPermissionsJson,
         );
-
+        
         govV3.contracts = await resolveGovV3Modifiers(
           pool.governanceAddressBook,
           poolKey === Pools.TENDERLY ||

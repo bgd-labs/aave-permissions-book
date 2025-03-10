@@ -271,7 +271,7 @@
         ]
       },
       "WrappedTokenGatewayV3": {
-        "address": "0x60eE8b61a13c67d0191c851BEC8F0bc850160710",
+        "address": "0x5f2508cAE9923b02316254026CD43d7902866725",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -551,7 +551,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 132753558
+      "latestBlockNumber": 133012839
     },
     "gsmRoles": {},
     "govV3": {
@@ -567,7 +567,7 @@
             "0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF"
           ]
         },
-        "latestBlockNumber": 132753568
+        "latestBlockNumber": 133012855
       },
       "contracts": {
         "GranularGuardian": {
@@ -833,7 +833,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 132753568
+      "latestCCCBlockNumber": 133012854
     },
     "collector": {
       "contracts": {
@@ -888,7 +888,7 @@
             "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf"
           ]
         },
-        "latestBlockNumber": 132753567
+        "latestBlockNumber": 133012853
       }
     }
   },
