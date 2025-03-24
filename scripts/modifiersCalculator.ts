@@ -1,5 +1,6 @@
 import { ethers, providers } from 'ethers';
 import {
+  clinicStewardRoleNames,
   collectorRoleNames,
   ghoGSMRoleNames,
   ghoRoleNames,
@@ -18,7 +19,7 @@ import { getCurrentRoleAdmins } from '../helpers/adminRoles.js';
 import { resolveV2Modifiers } from './v2Permissions.js';
 import { resolveV3Modifiers } from './v3Permissions.js';
 import { resolveGovV2Modifiers } from './governancePermissions.js';
-import { Collector, Contracts, FullPermissions, GovV3, Roles } from '../helpers/types.js';
+import { ClinicSteward, Collector, Contracts, FullPermissions, GovV3, Roles } from '../helpers/types.js';
 import { resolveSafetyV2Modifiers } from './safetyPermissions.js';
 import { resolveV2MiscModifiers } from './v2MiscPermissions.js';
 import { getCCCSendersAndAdapters } from '../helpers/crossChainControllerLogs.js';
@@ -26,6 +27,7 @@ import { resolveGovV3Modifiers } from './govV3Permissions.js';
 import { resolveGHOModifiers } from './ghoPermissions.js';
 import { overwriteBaseTenderlyPool } from '../helpers/jsonParsers.js';
 import { resolveCollectorModifiers } from './collectorPermissions.js';
+import { resolveClinicStewardModifiers } from './clinicStewardPermissions.js';
 
 const generateNetworkPermissions = async (network: string) => {
   // get current permissions
@@ -52,6 +54,7 @@ const generateNetworkPermissions = async (network: string) => {
     let admins = {} as Roles;
     let gsmAdmins = {} as Record<string, Roles>;
     let collector = {} as Collector;
+    let clinicSteward = {} as ClinicSteward;
     let cAdmins = {} as Roles;
     let govV3 = {} as GovV3;
     govV3.ggRoles = {} as Roles;
@@ -339,6 +342,57 @@ const generateNetworkPermissions = async (network: string) => {
       }
     }
 
+    if (pool.clinicStewardBlock && pool.addressBook.CLINIC_STEWARD) {
+      let fromBlock;
+      if (pool.tenderlyBasePool) {
+        await overwriteBaseTenderlyPool(
+          poolKey,
+          network,
+          pool.tenderlyBasePool,
+        );
+        // get current permissions
+        fullJson = getPermissionsByNetwork(network);
+        fromBlock = pool.tenderlyBlock;
+      } else {
+        fromBlock =
+          fullJson[poolKey]?.clinicSteward?.latestBlockNumber || pool.clinicStewardBlock;
+      }
+      console.log(`
+        ------------------------------------
+          network: ${network}
+          pool: ${poolKey}
+          fromBlock: ${fromBlock}
+          Clinic Steward Table
+        ------------------------------------
+        `);
+      if (fromBlock) {
+        cAdmins = await getCurrentRoleAdmins(
+          poolKey === Pools.TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
+          (fullJson[poolKey] && fullJson[poolKey]?.clinicSteward?.clinicStewardRoles?.role) ||
+            ({} as Record<string, string[]>),
+          fromBlock,
+          Number(network),
+          Pools[poolKey as keyof typeof Pools],
+          clinicStewardRoleNames,
+          pool.addressBook.CLINIC_STEWARD,
+          true
+        );
+        
+        const clinicStewardPermissions = await resolveClinicStewardModifiers(
+          pool.addressBook,
+          poolKey === Pools.TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
+          permissionsJson,
+          cAdmins.role,
+        );
+        clinicSteward.contracts = clinicStewardPermissions;
+        clinicSteward.clinicStewardRoles = cAdmins;
+      }
+    }
+
     if (
       pool.crossChainControllerBlock &&
       pool.crossChainPermissionsJson &&
@@ -441,7 +495,8 @@ const generateNetworkPermissions = async (network: string) => {
           roles: admins,
           gsmRoles: gsmAdmins,
           govV3: govV3,
-          collector: collector
+          collector: collector,
+          clinicSteward: clinicSteward,
         },
       };
     } else {
@@ -451,7 +506,8 @@ const generateNetworkPermissions = async (network: string) => {
         roles: admins,
         gsmRoles: gsmAdmins,
         govV3: govV3,
-        collector: collector
+        collector: collector,
+        clinicSteward: clinicSteward,
       };
     }
     console.log(`----${network} : ${poolKey} finished`);

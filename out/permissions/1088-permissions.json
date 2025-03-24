@@ -456,7 +456,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 19998905
+      "latestBlockNumber": 20000012
     },
     "gsmRoles": {},
     "govV3": {
@@ -472,7 +472,7 @@
             "0x9853589F951D724D9f7c6724E0fD63F9d888C429"
           ]
         },
-        "latestBlockNumber": 19998907
+        "latestBlockNumber": 20000014
       },
       "contracts": {
         "GranularGuardian": {
@@ -738,7 +738,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 19998907
+      "latestCCCBlockNumber": 20000014
     },
     "collector": {
       "contracts": {
@@ -804,7 +804,62 @@
             "0x53d3c1B2d42578F56ef4c0142F19CDB54CE55040"
           ]
         },
-        "latestBlockNumber": 19998907
+        "latestBlockNumber": 20000013
+      }
+    },
+    "clinicSteward": {
+      "contracts": {
+        "ClinicSteward": {
+          "address": "0x53d3c1B2d42578F56ef4c0142F19CDB54CE55040",
+          "modifiers": [
+            {
+              "modifier": "onlyCleanUpRole",
+              "addresses": [
+                {
+                  "address": "0xdeadD8aB03075b7FBA81864202a2f59EE25B312b",
+                  "owners": [],
+                  "signersThreshold": 0
+                },
+                {
+                  "address": "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "renewAllowance",
+                "batchRepayBadDebt",
+                "batchLiquidate",
+                "batchRepayBadDebt"
+              ]
+            },
+            {
+              "modifier": "onlyAdmin",
+              "addresses": [
+                {
+                  "address": "0x6fD45D32375d5aDB8D76275A3932c740F03a8718",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "setAvailableBudget"
+              ]
+            }
+          ]
+        }
+      },
+      "clinicStewardRoles": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0x6fD45D32375d5aDB8D76275A3932c740F03a8718"
+          ],
+          "CLEANUP_ROLE": [
+            "0xdeadD8aB03075b7FBA81864202a2f59EE25B312b",
+            "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
+          ]
+        },
+        "latestBlockNumber": 20000014
       }
     }
   }

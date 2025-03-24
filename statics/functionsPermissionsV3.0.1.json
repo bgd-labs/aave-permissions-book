@@ -4,47 +4,69 @@
     "functions": [
       {
         "name": "mintUnbacked",
-        "roles": ["onlyBridge"]
+        "roles": [
+          "onlyBridge"
+        ]
       },
       {
         "name": "backUnbacked",
-        "roles": ["onlyBridge"]
+        "roles": [
+          "onlyBridge"
+        ]
       },
       {
         "name": "initReserve",
-        "roles": ["onlyPoolConfigurator"]
+        "roles": [
+          "onlyPoolConfigurator"
+        ]
       },
       {
         "name": "dropReserve",
-        "roles": ["onlyPoolConfigurator"]
+        "roles": [
+          "onlyPoolConfigurator"
+        ]
       },
       {
         "name": "setReserveInterestRateStrategyAddress",
-        "roles": ["onlyPoolConfigurator"]
+        "roles": [
+          "onlyPoolConfigurator"
+        ]
       },
       {
         "name": "setConfiguration",
-        "roles": ["onlyPoolConfigurator"]
+        "roles": [
+          "onlyPoolConfigurator"
+        ]
       },
       {
         "name": "updateBridgeProtocolFee",
-        "roles": ["onlyPoolConfigurator"]
+        "roles": [
+          "onlyPoolConfigurator"
+        ]
       },
       {
         "name": "updateFlashloanPremiums",
-        "roles": ["onlyPoolConfigurator"]
+        "roles": [
+          "onlyPoolConfigurator"
+        ]
       },
       {
         "name": "configureEModeCategory",
-        "roles": ["onlyPoolConfigurator"]
+        "roles": [
+          "onlyPoolConfigurator"
+        ]
       },
       {
         "name": "resetIsolationModeTotalDebt",
-        "roles": ["onlyPoolConfigurator"]
+        "roles": [
+          "onlyPoolConfigurator"
+        ]
       },
       {
         "name": "rescueTokens",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       }
     ]
   },
@@ -53,119 +75,177 @@
     "functions": [
       {
         "name": "initReserves",
-        "roles": ["onlyAssetListingOrPoolAdmins"]
+        "roles": [
+          "onlyAssetListingOrPoolAdmins"
+        ]
       },
       {
         "name": "dropReserve",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       },
       {
         "name": "dropReserve",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       },
       {
         "name": "updateAToken",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       },
       {
         "name": "updateStableDebtToken",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       },
       {
         "name": "updateVariableDebtToken",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       },
       {
         "name": "setReserveActive",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       },
       {
         "name": "updateBridgeProtocolFee",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       },
       {
         "name": "updateFlashloanPremiumTotal",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       },
       {
         "name": "updateFlashloanPremiumToProtocol",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       },
       {
         "name": "setPoolPause",
-        "roles": ["onlyEmergencyOrPoolAdmin"]
+        "roles": [
+          "onlyEmergencyOrPoolAdmin"
+        ]
       },
       {
         "name": "setReserveBorrowing",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setReserveBorrowing",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "configureReserveAsCollateral",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setReserveStableRateBorrowing",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setReserveFreeze",
-        "roles": ["onlyRiskOrPoolOrEmergencyAdmins"]
+        "roles": [
+          "onlyRiskOrPoolOrEmergencyAdmins"
+        ]
       },
       {
         "name": "setBorrowableInIsolation",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setReserveFactor",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setDebtCeiling",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setSiloedBorrowing",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setBorrowCap",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setSupplyCap",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setLiquidationProtocolFee",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setEModeCategory",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setAssetEModeCategory",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setUnbackedMintCap",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setReserveInterestRateStrategyAddress",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       },
       {
         "name": "setReservePause",
-        "roles": ["onlyEmergencyOrPoolAdmin"]
+        "roles": [
+          "onlyEmergencyOrPoolAdmin"
+        ]
       },
       {
         "name": "setReserveFlashLoaning",
-        "roles": ["onlyRiskOrPoolAdmins"]
+        "roles": [
+          "onlyRiskOrPoolAdmins"
+        ]
       }
     ]
   },
@@ -174,11 +254,15 @@
     "functions": [
       {
         "name": "setAssetSources",
-        "roles": ["onlyAssetListingOrPoolAdmins"]
+        "roles": [
+          "onlyAssetListingOrPoolAdmins"
+        ]
       },
       {
         "name": "setFallbackOracle",
-        "roles": ["onlyAssetListingOrPoolAdmins"]
+        "roles": [
+          "onlyAssetListingOrPoolAdmins"
+        ]
       }
     ]
   },
@@ -188,27 +272,39 @@
     "functions": [
       {
         "name": "approve",
-        "roles": ["onlyFundsAdmin"]
+        "roles": [
+          "onlyFundsAdmin"
+        ]
       },
       {
         "name": "transfer",
-        "roles": ["onlyFundsAdmin"]
+        "roles": [
+          "onlyFundsAdmin"
+        ]
       },
       {
         "name": "setFundsAdmin",
-        "roles": ["onlyFundsAdmin"]
+        "roles": [
+          "onlyFundsAdmin"
+        ]
       },
       {
         "name": "createStream",
-        "roles": ["onlyFundsAdmin"]
+        "roles": [
+          "onlyFundsAdmin"
+        ]
       },
       {
         "name": "withdrawFromStream",
-        "roles": ["onlyAdminOrRecipient"]
+        "roles": [
+          "onlyAdminOrRecipient"
+        ]
       },
       {
         "name": "cancelStream",
-        "roles": ["onlyAdminOrRecipient"]
+        "roles": [
+          "onlyAdminOrRecipient"
+        ]
       }
     ]
   },
@@ -218,19 +314,27 @@
     "functions": [
       {
         "name": "configureAssets",
-        "roles": ["onlyEmissionManager"]
+        "roles": [
+          "onlyEmissionManager"
+        ]
       },
       {
         "name": "setTransferStrategy",
-        "roles": ["onlyEmissionManager"]
+        "roles": [
+          "onlyEmissionManager"
+        ]
       },
       {
         "name": "setRewardOracle",
-        "roles": ["onlyEmissionManager"]
+        "roles": [
+          "onlyEmissionManager"
+        ]
       },
       {
         "name": "setClaimer",
-        "roles": ["onlyEmissionManager"]
+        "roles": [
+          "onlyEmissionManager"
+        ]
       }
     ]
   },
@@ -240,43 +344,63 @@
     "functions": [
       {
         "name": "setMarketId",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setAddress",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setAddressAsProxy",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setPoolImpl",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setPoolConfiguratorImpl",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setPriceOracle",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setACLManager",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setACLAdmin",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setPriceOracleSentinel",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setPoolDataProvider",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -285,11 +409,15 @@
     "functions": [
       {
         "name": "registerAddressesProvider",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "unregisterAddressesProvider",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -298,11 +426,15 @@
     "functions": [
       {
         "name": "emergencyTokenTransfer",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "emergencyEtherTransfer",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -311,7 +443,9 @@
     "functions": [
       {
         "name": "rescueTokens",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -320,7 +454,9 @@
     "functions": [
       {
         "name": "rescueTokens",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -329,35 +465,51 @@
     "functions": [
       {
         "name": "setClaimer",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setEmissionAdmin",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setRewardsController",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setDistributionEnd",
-        "roles": ["onlyEmissionAdmin"]
+        "roles": [
+          "onlyEmissionAdmin"
+        ]
       },
       {
         "name": "setRewardOracle",
-        "roles": ["onlyEmissionAdmin"]
+        "roles": [
+          "onlyEmissionAdmin"
+        ]
       },
       {
         "name": "setTransferStrategy",
-        "roles": ["onlyEmissionAdmin"]
+        "roles": [
+          "onlyEmissionAdmin"
+        ]
       },
       {
         "name": "configureAssets",
-        "roles": ["onlyEmissionAdmin"]
+        "roles": [
+          "onlyEmissionAdmin"
+        ]
       },
       {
         "name": "setEmissionPerSecond",
-        "roles": ["onlyEmissionAdmin"]
+        "roles": [
+          "onlyEmissionAdmin"
+        ]
       }
     ]
   },
@@ -366,11 +518,15 @@
     "functions": [
       {
         "name": "registerAddressesProvider",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "unregisterAddressesProvider",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -384,15 +540,21 @@
     "functions": [
       {
         "name": "changeProxyAdmin",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "upgrade",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "upgradeAndCall",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -401,7 +563,9 @@
     "functions": [
       {
         "name": "setRoleAdmin",
-        "roles": ["onlyRole"]
+        "roles": [
+          "onlyRole"
+        ]
       }
     ]
   },
@@ -410,11 +574,15 @@
     "functions": [
       {
         "name": "updateFee",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       },
       {
         "name": "updateGhoTreasury",
-        "roles": ["onlyPoolAdmin"]
+        "roles": [
+          "onlyPoolAdmin"
+        ]
       }
     ]
   },
@@ -423,7 +591,44 @@
     "functions": [
       {
         "name": "updateCaps",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "ClinicSteward",
+    "functions": [
+      {
+        "name": "renewAllowance",
+        "roles": [
+          "onlyCleanUpRole"
+        ]
+      },
+      {
+        "name": "batchRepayBadDebt",
+        "roles": [
+          "onlyCleanUpRole"
+        ]
+      },
+      {
+        "name": "batchLiquidate",
+        "roles": [
+          "onlyCleanUpRole"
+        ]
+      },
+      {
+        "name": "batchRepayBadDebt",
+        "roles": [
+          "onlyCleanUpRole"
+        ]
+      },
+      {
+        "name": "setAvailableBudget",
+        "roles": [
+          "onlyAdmin"
+        ]
       }
     ]
   },
@@ -432,7 +637,9 @@
     "functions": [
       {
         "name": "setFreeze",
-        "roles": ["onlyEmergencyAdmin"]
+        "roles": [
+          "onlyEmergencyAdmin"
+        ]
       }
     ]
   },
@@ -441,15 +648,21 @@
     "functions": [
       {
         "name": "addDistributions",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "emergencyTokenTransfer",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "emergencyEtherTransfer",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -458,15 +671,21 @@
     "functions": [
       {
         "name": "bridge",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "emergencyTokenTransfer",
-        "roles": ["onlyRescueGuardian"]
+        "roles": [
+          "onlyRescueGuardian"
+        ]
       },
       {
         "name": "emergencyEtherTransfer",
-        "roles": ["onlyRescueGuardian"]
+        "roles": [
+          "onlyRescueGuardian"
+        ]
       }
     ]
   },
@@ -475,11 +694,15 @@
     "functions": [
       {
         "name": "enableAssets",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "disableAssets",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -488,15 +711,21 @@
     "functions": [
       {
         "name": "enableProofOfReserveFeed",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "enableProofOfReserveFeedWithBridgeWrapper",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "disableProofOfReserveFeed",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -505,31 +734,45 @@
     "functions": [
       {
         "name": "setRiskConfig",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setAddressRestricted",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "updateCaps",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
       },
       {
         "name": "updateRates",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
       },
       {
         "name": "updateCollateralSide",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
       },
       {
         "name": "updateLstPriceCaps",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
       },
       {
         "name": "updateStablePriceCaps",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
       }
     ]
   }

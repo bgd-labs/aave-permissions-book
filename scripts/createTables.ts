@@ -126,6 +126,7 @@ export const generateTable = (network: string, pool: string): string => {
   poolPermitsByContract.contracts = {
     ...networkPermits[pool].contracts,
     ...getPermissionsByNetwork(network)[pool].collector?.contracts,
+    ...getPermissionsByNetwork(network)[pool].clinicSteward?.contracts,
   }
 
   if (!poolPermitsByContract?.contracts) {
@@ -154,6 +155,7 @@ export const generateTable = (network: string, pool: string): string => {
       ...(poolPermitsByContract?.contracts || {}),
       ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
       ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
+      ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
     });
   } else {
     v3Contracts = generateContractsByAddress({
@@ -162,6 +164,7 @@ export const generateTable = (network: string, pool: string): string => {
       ...getPermissionsByNetwork(network)['V3'].contracts,
       ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
       ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
+      ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
     });
   }
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
@@ -195,12 +198,14 @@ export const generateTable = (network: string, pool: string): string => {
               ...poolPermitsByContract.contracts,
               ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
               ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+              ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
             }
           : {
               ...poolPermitsByContract.contracts,
               ...getPermissionsByNetwork(network)['V3'].contracts,
               ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
               ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+              ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
             },
         govPermissions,
       );
@@ -270,6 +275,7 @@ export const generateTable = (network: string, pool: string): string => {
       ...poolPermitsByContract.contracts,
       ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
       ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
+      ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
       ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
     },
     {
@@ -599,6 +605,40 @@ export const generateTable = (network: string, pool: string): string => {
 
     readmeByNetwork += collectorAdminTable + '\n';
   }
+
+    // Clinic Steward tables
+    let clinicStewardAdminTable = `### Clinic Steward Admins \n`;
+    const clinicStewardAdminHeaderTitles = ['Role', 'Contract'];
+    const clinicStewardAdminHeader = getTableHeader(clinicStewardAdminHeaderTitles);
+    clinicStewardAdminTable += clinicStewardAdminHeader;
+  
+    if (
+      networkConfigs[network].pools[pool] && 
+      poolPermitsByContract.clinicSteward && 
+      poolPermitsByContract.clinicSteward.clinicStewardRoles && 
+      poolPermitsByContract.clinicSteward.clinicStewardRoles.role
+    ) {
+      Object.keys(poolPermitsByContract.clinicSteward.clinicStewardRoles.role).forEach((role) => {
+        const roleAddresses = poolPermitsByContract.clinicSteward?.clinicStewardRoles.role[role] || [];
+        clinicStewardAdminTable += getTableBody([
+          role,
+          `${roleAddresses
+            .map((roleAddress: string) =>
+              generateTableAddress(
+                roleAddress,
+                addressesNames,
+                contractsByAddress,
+                poolGuardians,
+                network,
+              ),
+            )
+            .join(', ')}`,
+        ]);
+        clinicStewardAdminTable += getLineSeparator(clinicStewardAdminHeaderTitles.length);
+      });
+  
+      readmeByNetwork += clinicStewardAdminTable + '\n';
+    }
 
   // gho gsms tables
   if (networkConfigs[network].pools[pool] && poolPermitsByContract.gsmRoles) {

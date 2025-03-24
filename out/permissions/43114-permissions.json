@@ -583,7 +583,7 @@
           "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
         ]
       },
-      "latestBlockNumber": 59168102
+      "latestBlockNumber": 59173646
     },
     "gsmRoles": {},
     "govV3": {
@@ -599,7 +599,7 @@
             "0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36"
           ]
         },
-        "latestBlockNumber": 59168114
+        "latestBlockNumber": 59173669
       },
       "contracts": {
         "GranularGuardian": {
@@ -951,7 +951,7 @@
       "senders": [
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F"
       ],
-      "latestCCCBlockNumber": 59168114
+      "latestCCCBlockNumber": 59173669
     },
     "collector": {
       "contracts": {
@@ -1017,7 +1017,62 @@
             "0x6c2B732cB368322E460D718df3CD4F553d5fbAde"
           ]
         },
-        "latestBlockNumber": 59168110
+        "latestBlockNumber": 59173654
+      }
+    },
+    "clinicSteward": {
+      "contracts": {
+        "ClinicSteward": {
+          "address": "0x6c2B732cB368322E460D718df3CD4F553d5fbAde",
+          "modifiers": [
+            {
+              "modifier": "onlyCleanUpRole",
+              "addresses": [
+                {
+                  "address": "0xdeadD8aB03075b7FBA81864202a2f59EE25B312b",
+                  "owners": [],
+                  "signersThreshold": 0
+                },
+                {
+                  "address": "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "renewAllowance",
+                "batchRepayBadDebt",
+                "batchLiquidate",
+                "batchRepayBadDebt"
+              ]
+            },
+            {
+              "modifier": "onlyAdmin",
+              "addresses": [
+                {
+                  "address": "0x3C06dce358add17aAf230f2234bCCC4afd50d090",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "setAvailableBudget"
+              ]
+            }
+          ]
+        }
+      },
+      "clinicStewardRoles": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0x3C06dce358add17aAf230f2234bCCC4afd50d090"
+          ],
+          "CLEANUP_ROLE": [
+            "0xdeadD8aB03075b7FBA81864202a2f59EE25B312b",
+            "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
+          ]
+        },
+        "latestBlockNumber": 59173666
       }
     }
   },
@@ -1436,9 +1491,10 @@
             "0x6c2B732cB368322E460D718df3CD4F553d5fbAde"
           ]
         },
-        "latestBlockNumber": 59168131
+        "latestBlockNumber": 59173692
       }
-    }
+    },
+    "clinicSteward": {}
   },
   "V2_TENDERLY": {
     "contracts": {

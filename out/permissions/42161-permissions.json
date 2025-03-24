@@ -555,7 +555,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 319005012
+      "latestBlockNumber": 319044994
     },
     "gsmRoles": {},
     "govV3": {
@@ -571,7 +571,7 @@
             "0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959"
           ]
         },
-        "latestBlockNumber": 319005143
+        "latestBlockNumber": 319045132
       },
       "contracts": {
         "GranularGuardian": {
@@ -837,7 +837,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 319005141
+      "latestCCCBlockNumber": 319045129
     },
     "collector": {
       "contracts": {
@@ -903,7 +903,66 @@
             "0x7B58055fC6bE4B23cF8c9287b7d3C4adBE919a9c"
           ]
         },
-        "latestBlockNumber": 319005126
+        "latestBlockNumber": 319045102
+      }
+    },
+    "clinicSteward": {
+      "contracts": {
+        "ClinicSteward": {
+          "address": "0x7B58055fC6bE4B23cF8c9287b7d3C4adBE919a9c",
+          "modifiers": [
+            {
+              "modifier": "onlyCleanUpRole",
+              "addresses": [
+                {
+                  "address": "0xdeadD8aB03075b7FBA81864202a2f59EE25B312b",
+                  "owners": [
+                    "0x818C277dBE886b934e60aa047250A73529E26A99",
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890"
+                  ],
+                  "signersThreshold": 2
+                },
+                {
+                  "address": "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "renewAllowance",
+                "batchRepayBadDebt",
+                "batchLiquidate",
+                "batchRepayBadDebt"
+              ]
+            },
+            {
+              "modifier": "onlyAdmin",
+              "addresses": [
+                {
+                  "address": "0xFF1137243698CaA18EE364Cc966CF0e02A4e6327",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "setAvailableBudget"
+              ]
+            }
+          ]
+        }
+      },
+      "clinicStewardRoles": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0xFF1137243698CaA18EE364Cc966CF0e02A4e6327"
+          ],
+          "CLEANUP_ROLE": [
+            "0xdeadD8aB03075b7FBA81864202a2f59EE25B312b",
+            "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
+          ]
+        },
+        "latestBlockNumber": 319045118
       }
     }
   },

@@ -17,6 +17,7 @@
 |  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://scrollscan.com//address/0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B) |  not upgradeable | |--------|--------|
 |  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  Governance | |--------|--------|
+|  [ClinicSteward](https://scrollscan.com//address/0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://scrollscan.com//address/0xa835707d28e6C37C49d661742f2Fb5987367cEd4) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://scrollscan.com//address/0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE) |  Governance | |--------|--------|
@@ -67,8 +68,10 @@
 |  [FreezeSteward](https://scrollscan.com//address/0xc68D0C511076283075bD5cc9aA61E43673135f37) |  - |  onlyEmergencyAdmin |  [Aave Protocol Guardian Scroll](https://scrollscan.com//address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) |  setFreeze | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://scrollscan.com//address/0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B) |  - |  onlyOwner |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://scrollscan.com//address/0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B) |  - |  onlyRiskCouncil |  [Risk Council](https://scrollscan.com//address/0x611439a74546888c3535B4dd119A5Cbb9f5332EA) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
-|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyFundsAdmin |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24), [0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de](https://scrollscan.com//address/0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyAdminOrRecipient |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E), [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24), [0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de](https://scrollscan.com//address/0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyFundsAdmin |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24), [ClinicSteward](https://scrollscan.com//address/0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://scrollscan.com//address/0x90eB541e1a431D8a30ED85A77675D1F001128cb5) |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E) |  onlyAdminOrRecipient |  [ProxyAdmin](https://scrollscan.com//address/0x782559e349b084bB7C07c08404aE6E3436cDAE2E), [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24), [ClinicSteward](https://scrollscan.com//address/0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
+|  [ClinicSteward](https://scrollscan.com//address/0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de) |  - |  onlyCleanUpRole |  [0xdeadD8aB03075b7FBA81864202a2f59EE25B312b](https://scrollscan.com//address/0xdeadD8aB03075b7FBA81864202a2f59EE25B312b), [0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193](https://scrollscan.com//address/0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193) |  renewAllowance, batchRepayBadDebt, batchLiquidate, batchRepayBadDebt | |--------|--------|--------|--------|--------|
+|  [ClinicSteward](https://scrollscan.com//address/0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de) |  - |  onlyAdmin |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) |  setAvailableBudget | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -118,5 +121,11 @@
 | Role |Contract |
 |----------|----------|
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) | |--------|--------|
-|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24), [0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de](https://scrollscan.com//address/0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24), [ClinicSteward](https://scrollscan.com//address/0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de) | |--------|--------|
+
+### Clinic Steward Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) | |--------|--------|
+|  CLEANUP_ROLE |  [0xdeadD8aB03075b7FBA81864202a2f59EE25B312b](https://scrollscan.com//address/0xdeadD8aB03075b7FBA81864202a2f59EE25B312b), [0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193](https://scrollscan.com//address/0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193) | |--------|--------|
 

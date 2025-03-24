@@ -15,6 +15,7 @@
 |  [ACLManager](https://lineascan.build//address/0xbf32c7dFC72b730967072B112927ca0de205dbb5) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://lineascan.build//address/0x3238FC1d642b60F41a35f62570237656C85F4744) |  not upgradeable | |--------|--------|
 |  [Collector](https://lineascan.build//address/0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809) |  Governance | |--------|--------|
+|  [ClinicSteward](https://lineascan.build//address/0xA68A0864F304b5145f00A3f8Fd3ec2281568700F) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://lineascan.build//address/0xc1cd6faF6e9138b4e6C21d438f9ebF2bd6F6cA16) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://lineascan.build//address/0x3BcE23a1363728091bc57A58a226CF2940C2e074) |  Governance | |--------|--------|
@@ -63,8 +64,10 @@
 |  [ACLManager](https://lineascan.build//address/0xbf32c7dFC72b730967072B112927ca0de205dbb5) |  - |  onlyRole |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  setRoleAdmin | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://lineascan.build//address/0x3238FC1d642b60F41a35f62570237656C85F4744) |  - |  onlyOwner |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://lineascan.build//address/0x3238FC1d642b60F41a35f62570237656C85F4744) |  - |  onlyRiskCouncil |  [Risk Council](https://lineascan.build//address/0xF092A5aC5E284E7c433dAFE5b8B138bFcA53a4Ee) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
-|  [Collector](https://lineascan.build//address/0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyFundsAdmin |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88), [0xA68A0864F304b5145f00A3f8Fd3ec2281568700F](https://lineascan.build//address/0xA68A0864F304b5145f00A3f8Fd3ec2281568700F) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://lineascan.build//address/0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyAdminOrRecipient |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A), [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88), [0xA68A0864F304b5145f00A3f8Fd3ec2281568700F](https://lineascan.build//address/0xA68A0864F304b5145f00A3f8Fd3ec2281568700F) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://lineascan.build//address/0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyFundsAdmin |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88), [ClinicSteward](https://lineascan.build//address/0xA68A0864F304b5145f00A3f8Fd3ec2281568700F) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://lineascan.build//address/0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809) |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A) |  onlyAdminOrRecipient |  [ProxyAdmin](https://lineascan.build//address/0x160E35e28fEE90F3656420584e0a990276219b5A), [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88), [ClinicSteward](https://lineascan.build//address/0xA68A0864F304b5145f00A3f8Fd3ec2281568700F) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
+|  [ClinicSteward](https://lineascan.build//address/0xA68A0864F304b5145f00A3f8Fd3ec2281568700F) |  - |  onlyCleanUpRole |  [0xdeadD8aB03075b7FBA81864202a2f59EE25B312b](https://lineascan.build//address/0xdeadD8aB03075b7FBA81864202a2f59EE25B312b), [0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193](https://lineascan.build//address/0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193) |  renewAllowance, batchRepayBadDebt, batchLiquidate, batchRepayBadDebt | |--------|--------|--------|--------|--------|
+|  [ClinicSteward](https://lineascan.build//address/0xA68A0864F304b5145f00A3f8Fd3ec2281568700F) |  - |  onlyAdmin |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) |  setAvailableBudget | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -114,5 +117,11 @@
 | Role |Contract |
 |----------|----------|
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) | |--------|--------|
-|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88), [0xA68A0864F304b5145f00A3f8Fd3ec2281568700F](https://lineascan.build//address/0xA68A0864F304b5145f00A3f8Fd3ec2281568700F) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88), [ClinicSteward](https://lineascan.build//address/0xA68A0864F304b5145f00A3f8Fd3ec2281568700F) | |--------|--------|
+
+### Clinic Steward Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://lineascan.build//address/0x8c2d95FE7aeB57b86961F3abB296A54f0ADb7F88) | |--------|--------|
+|  CLEANUP_ROLE |  [0xdeadD8aB03075b7FBA81864202a2f59EE25B312b](https://lineascan.build//address/0xdeadD8aB03075b7FBA81864202a2f59EE25B312b), [0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193](https://lineascan.build//address/0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193) | |--------|--------|
 
