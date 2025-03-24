@@ -456,7 +456,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 19998868
+      "latestBlockNumber": 19998905
     },
     "gsmRoles": {},
     "govV3": {
@@ -472,7 +472,7 @@
             "0x9853589F951D724D9f7c6724E0fD63F9d888C429"
           ]
         },
-        "latestBlockNumber": 19998870
+        "latestBlockNumber": 19998907
       },
       "contracts": {
         "GranularGuardian": {
@@ -738,7 +738,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 19998870
+      "latestCCCBlockNumber": 19998907
     },
     "collector": {
       "contracts": {
@@ -804,7 +804,7 @@
             "0x53d3c1B2d42578F56ef4c0142F19CDB54CE55040"
           ]
         },
-        "latestBlockNumber": 19998870
+        "latestBlockNumber": 19998907
       }
     }
   }

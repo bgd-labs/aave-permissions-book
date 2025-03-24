@@ -513,7 +513,7 @@
           "0xbe7998712402B6A63975515A532Ce503437998b7"
         ]
       },
-      "latestBlockNumber": 47742749
+      "latestBlockNumber": 47742835
     },
     "gsmRoles": {},
     "govV3": {
@@ -529,7 +529,7 @@
             "0xE8C5ab722d0b1B7316Cc4034f2BE91A5B1d29964"
           ]
         },
-        "latestBlockNumber": 47742755
+        "latestBlockNumber": 47742843
       },
       "contracts": {
         "GranularGuardian": {
@@ -856,7 +856,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 47742755
+      "latestCCCBlockNumber": 47742843
     },
     "collector": {
       "contracts": {
@@ -922,7 +922,7 @@
             "0x9e842f55Fdbb8F332D7c7aCe2B67fa5e4CCAAc43"
           ]
         },
-        "latestBlockNumber": 47742754
+        "latestBlockNumber": 47742841
       }
     }
   },

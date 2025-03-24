@@ -1332,7 +1332,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 22115988
+      "latestBlockNumber": 22116009
     },
     "gsmRoles": {},
     "govV3": {
@@ -1348,7 +1348,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 22115990
+        "latestBlockNumber": 22116012
       },
       "contracts": {
         "GranularGuardian": {
@@ -1908,7 +1908,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 22115990
+      "latestCCCBlockNumber": 22116012
     },
     "collector": {
       "contracts": {
@@ -1985,7 +1985,7 @@
             "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
           ]
         },
-        "latestBlockNumber": 22115990
+        "latestBlockNumber": 22116011
       }
     }
   },
@@ -2367,7 +2367,7 @@
             "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
           ]
         },
-        "latestBlockNumber": 22115998
+        "latestBlockNumber": 22116019
       }
     }
   },
@@ -2653,7 +2653,7 @@
             "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
           ]
         },
-        "latestBlockNumber": 22115999
+        "latestBlockNumber": 22116020
       }
     }
   },
@@ -3520,7 +3520,7 @@
           "0x5C905d62B22e4DAa4967E517C4a047Ff6026C731"
         ]
       },
-      "latestBlockNumber": 22115992
+      "latestBlockNumber": 22116014
     },
     "gsmRoles": {},
     "govV3": {
@@ -3601,7 +3601,7 @@
             "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
           ]
         },
-        "latestBlockNumber": 22115994
+        "latestBlockNumber": 22116015
       }
     }
   },
@@ -4173,7 +4173,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 22115994
+      "latestBlockNumber": 22116016
     },
     "gsmRoles": {},
     "govV3": {
@@ -4254,7 +4254,7 @@
             "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
           ]
         },
-        "latestBlockNumber": 22115996
+        "latestBlockNumber": 22116017
       }
     }
   },
