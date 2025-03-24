@@ -551,7 +551,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 133012839
+      "latestBlockNumber": 133605590
     },
     "gsmRoles": {},
     "govV3": {
@@ -567,7 +567,7 @@
             "0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF"
           ]
         },
-        "latestBlockNumber": 133012855
+        "latestBlockNumber": 133605607
       },
       "contracts": {
         "GranularGuardian": {
@@ -833,7 +833,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 133012854
+      "latestCCCBlockNumber": 133605606
     },
     "collector": {
       "contracts": {
@@ -845,6 +845,11 @@
               "addresses": [
                 {
                   "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+                  "owners": [],
+                  "signersThreshold": 0
+                },
+                {
+                  "address": "0xD835fb6f9823b4054Ccf30403De76AA8abcd00b8",
                   "owners": [],
                   "signersThreshold": 0
                 }
@@ -868,6 +873,11 @@
                   "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
                   "owners": [],
                   "signersThreshold": 0
+                },
+                {
+                  "address": "0xD835fb6f9823b4054Ccf30403De76AA8abcd00b8",
+                  "owners": [],
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -885,10 +895,11 @@
             "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf"
           ],
           "FUNDS_ADMIN_ROLE": [
-            "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf"
+            "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+            "0xD835fb6f9823b4054Ccf30403De76AA8abcd00b8"
           ]
         },
-        "latestBlockNumber": 133012853
+        "latestBlockNumber": 133605604
       }
     }
   },
