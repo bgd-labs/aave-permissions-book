@@ -17,6 +17,7 @@ import {
 import { capsPlusRiskStewardABI } from '../abis/capsPlusRiskSteward.js';
 import { erc20Bridge } from '../abis/Erc20Bridge.js';
 import { RISK_STEWARDS_ABI } from '../abis/riskStewards.js';
+import { SVR_ORACLE_STEWARD_ABI } from '../abis/svrOracle.js';
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -424,7 +425,7 @@ export const resolveV3Modifiers = async (
       ],
     };
   }
-  
+
   if (addressBook.SWAP_COLLATERAL_ADAPTER) {
     const paraswapLiquiditySwapContract = new ethers.Contract(
       addressBook.SWAP_COLLATERAL_ADAPTER,
@@ -702,6 +703,50 @@ export const resolveV3Modifiers = async (
             },
           ],
           functions: roles['AaveMerkleDistributor']['onlyOwner'],
+        },
+      ],
+    };
+  }
+
+  if (addressBook.SVR_STEWARD) {
+    const svrOracleStewardContract = new ethers.Contract(
+      addressBook.SVR_STEWARD,
+      SVR_ORACLE_STEWARD_ABI,
+      provider,
+    );
+    const svrOwner = await svrOracleStewardContract.owner();
+    const svrGuardian = await svrOracleStewardContract.guardian();
+
+    obj['SvrOracleSteward'] = {
+      address: addressBook.SVR_STEWARD,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: svrOwner,
+              owners: await getSafeOwners(provider, svrOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                svrOwner,
+              ),
+            },
+          ],
+          functions: roles['SvrOracleSteward']['onlyOwner'],
+        },
+        {
+          modifier: 'onlyGuardian',
+          addresses: [
+            {
+              address: svrGuardian,
+              owners: await getSafeOwners(provider, svrGuardian),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                svrGuardian,
+              ),
+            },
+          ],
+          functions: roles['SvrOracleSteward']['onlyGuardian'],
         },
       ],
     };

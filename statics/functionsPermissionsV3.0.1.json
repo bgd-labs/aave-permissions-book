@@ -598,6 +598,29 @@
     ]
   },
   {
+    "contract": "SvrOracleSteward",
+    "functions": [
+      {
+        "name": "removeOracle",
+        "roles": [
+          "onlyOwner"
+        ]
+      },
+      {
+        "name": "enableSvrOracles",
+        "roles": [
+          "onlyOwner"
+        ]
+      },
+      {
+        "name": "disableSvrOracle",
+        "roles": [
+          "onlyGuardian"
+        ]
+      }
+    ]
+  },
+  {
     "contract": "ClinicSteward",
     "functions": [
       {
