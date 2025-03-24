@@ -29,6 +29,11 @@ export type Collector = {
   contracts: Contracts;
   cRoles: Roles;
 };
+export type ClinicSteward = {
+  latestBlockNumber: number;
+  contracts: Contracts;
+  clinicStewardRoles: Roles;
+};
 export type AddressInfo = {
   address: string;
   owners: string[];
@@ -46,6 +51,7 @@ export type PoolInfo = {
   contracts: Contracts;
   govV3?: GovV3;
   collector?: Collector;
+  clinicSteward?: ClinicSteward;
 };
 
 export type Pool = Record<string, PoolInfo>;
@@ -71,6 +77,7 @@ export type PoolConfigs = {
 
   gsmBlocks?: Record<string, number>;
   collectorBlock?: number;
+  clinicStewardBlock?: number;
 };
 export type Network = {
   rpcUrl: string | undefined;

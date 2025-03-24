@@ -22,6 +22,7 @@
 |  [AaveMerkleDistributor](https://snowtrace.io/address/0xA065d5A299E618CD84a87641d5eEbC7916Fdf32E) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://snowtrace.io/address/0xbf03aB677DEdA36E19D294d1735b93Dd9d1E0c05) |  not upgradeable | |--------|--------|
 |  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  Governance | |--------|--------|
+|  [ClinicSteward](https://snowtrace.io/address/0x6c2B732cB368322E460D718df3CD4F553d5fbAde) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://snowtrace.io/address/0xc1162BCb2E5E3ca4725512008c7522dF8C8B7B65) |  not upgradeable | |--------|--------|
 |  [PayloadsController](https://snowtrace.io/address/0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80) |  Governance | |--------|--------|
@@ -81,8 +82,10 @@
 |  [AaveMerkleDistributor](https://snowtrace.io/address/0xA065d5A299E618CD84a87641d5eEbC7916Fdf32E) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  addDistributions, emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://snowtrace.io/address/0xbf03aB677DEdA36E19D294d1735b93Dd9d1E0c05) |  - |  onlyOwner |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  setRiskConfig, setAddressRestricted | |--------|--------|--------|--------|--------|
 |  [Manual AGRS](https://snowtrace.io/address/0xbf03aB677DEdA36E19D294d1735b93Dd9d1E0c05) |  - |  onlyRiskCouncil |  [Risk Council](https://snowtrace.io/address/0xCa66149425E7DC8f81276F6D80C4b486B9503D1a) |  updateCaps, updateRates, updateCollateralSide, updateLstPriceCaps, updateStablePriceCaps | |--------|--------|--------|--------|--------|
-|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyFundsAdmin |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
-|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyAdminOrRecipient |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476), [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyFundsAdmin |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090), [ClinicSteward](https://snowtrace.io/address/0x6c2B732cB368322E460D718df3CD4F553d5fbAde) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
+|  [Collector](https://snowtrace.io/address/0x5ba7fd868c40c16f7aDfAe6CF87121E13FC2F7a0) |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyAdminOrRecipient |  [ProxyAdmin](https://snowtrace.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476), [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090), [ClinicSteward](https://snowtrace.io/address/0x6c2B732cB368322E460D718df3CD4F553d5fbAde) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
+|  [ClinicSteward](https://snowtrace.io/address/0x6c2B732cB368322E460D718df3CD4F553d5fbAde) |  - |  onlyCleanUpRole |  [CleanUp Admin](https://snowtrace.io/address/0xdeadD8aB03075b7FBA81864202a2f59EE25B312b), [ACI Automation](https://snowtrace.io/address/0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193) |  renewAllowance, batchRepayBadDebt, batchLiquidate, batchRepayBadDebt | |--------|--------|--------|--------|--------|
+|  [ClinicSteward](https://snowtrace.io/address/0x6c2B732cB368322E460D718df3CD4F553d5fbAde) |  - |  onlyAdmin |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) |  setAvailableBudget | |--------|--------|--------|--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -136,5 +139,11 @@
 | Role |Contract |
 |----------|----------|
 |  DEFAULT_ADMIN |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) | |--------|--------|
-|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) | |--------|--------|
+|  FUNDS_ADMIN_ROLE |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090), [ClinicSteward](https://snowtrace.io/address/0x6c2B732cB368322E460D718df3CD4F553d5fbAde) | |--------|--------|
+
+### Clinic Steward Admins 
+| Role |Contract |
+|----------|----------|
+|  DEFAULT_ADMIN |  [Executor_lvl1](https://snowtrace.io/address/0x3C06dce358add17aAf230f2234bCCC4afd50d090) | |--------|--------|
+|  CLEANUP_ROLE |  [CleanUp Admin](https://snowtrace.io/address/0xdeadD8aB03075b7FBA81864202a2f59EE25B312b), [ACI Automation](https://snowtrace.io/address/0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193) | |--------|--------|
 

@@ -551,7 +551,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 133012839
+      "latestBlockNumber": 133610717
     },
     "gsmRoles": {},
     "govV3": {
@@ -567,7 +567,7 @@
             "0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF"
           ]
         },
-        "latestBlockNumber": 133012855
+        "latestBlockNumber": 133610735
       },
       "contracts": {
         "GranularGuardian": {
@@ -833,7 +833,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 133012854
+      "latestCCCBlockNumber": 133610734
     },
     "collector": {
       "contracts": {
@@ -845,6 +845,11 @@
               "addresses": [
                 {
                   "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+                  "owners": [],
+                  "signersThreshold": 0
+                },
+                {
+                  "address": "0xD835fb6f9823b4054Ccf30403De76AA8abcd00b8",
                   "owners": [],
                   "signersThreshold": 0
                 }
@@ -868,6 +873,11 @@
                   "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
                   "owners": [],
                   "signersThreshold": 0
+                },
+                {
+                  "address": "0xD835fb6f9823b4054Ccf30403De76AA8abcd00b8",
+                  "owners": [],
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -885,10 +895,70 @@
             "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf"
           ],
           "FUNDS_ADMIN_ROLE": [
-            "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf"
+            "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+            "0xD835fb6f9823b4054Ccf30403De76AA8abcd00b8"
           ]
         },
-        "latestBlockNumber": 133012853
+        "latestBlockNumber": 133610731
+      }
+    },
+    "clinicSteward": {
+      "contracts": {
+        "ClinicSteward": {
+          "address": "0xD835fb6f9823b4054Ccf30403De76AA8abcd00b8",
+          "modifiers": [
+            {
+              "modifier": "onlyCleanUpRole",
+              "addresses": [
+                {
+                  "address": "0xdeadD8aB03075b7FBA81864202a2f59EE25B312b",
+                  "owners": [
+                    "0x818C277dBE886b934e60aa047250A73529E26A99",
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890"
+                  ],
+                  "signersThreshold": 2
+                },
+                {
+                  "address": "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "renewAllowance",
+                "batchRepayBadDebt",
+                "batchLiquidate",
+                "batchRepayBadDebt"
+              ]
+            },
+            {
+              "modifier": "onlyAdmin",
+              "addresses": [
+                {
+                  "address": "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "setAvailableBudget"
+              ]
+            }
+          ]
+        }
+      },
+      "clinicStewardRoles": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf"
+          ],
+          "CLEANUP_ROLE": [
+            "0xdeadD8aB03075b7FBA81864202a2f59EE25B312b",
+            "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
+          ]
+        },
+        "latestBlockNumber": 133610733
       }
     }
   },

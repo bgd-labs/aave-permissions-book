@@ -95,6 +95,11 @@ export const collectorRoleNames = [
   'FUNDS_ADMIN_ROLE',
 ];
 
+export const clinicStewardRoleNames = [
+  'DEFAULT_ADMIN',
+  'CLEANUP_ROLE',
+];
+
 export const ghoGSMRoleNames = [
   'DEFAULT_ADMIN_ROLE',
   'CONFIGURATOR_ROLE',
@@ -157,6 +162,10 @@ export const networkConfigs: NetworkConfigs = {
       '0xCe52ab41C40575B072A18C9700091Ccbe4A06710':
         'Aave Governance Guardian Ethereum',
       '0xb9481a29f0f996BCAc759aB201FB3844c81866c4': 'GHO Steward v2',
+      '0x98217A06721Ebf727f2C8d9aD7718ec28b7aAe34': 'GHO Aave Steward',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x7571F419F7Df2d0622C1A20154a0D4250B2265cC': 'Lido ClinicSteward'
     },
     pools: {
       [Pools.V3]: {
@@ -172,6 +181,7 @@ export const networkConfigs: NetworkConfigs = {
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
           '0x6Abb61beb5848B476d026C4934E8a6415e2E75a8': 'HyperLaneAdapter',
         },
+        clinicStewardBlock: 21967120,
       },
       [Pools.LIDO]: {
         collectorBlock: 21765718,
@@ -183,6 +193,7 @@ export const networkConfigs: NetworkConfigs = {
           ...MiscEthereum,
           COLLECTOR: AaveV3Ethereum.COLLECTOR,
         },
+        clinicStewardBlock: 21967120,
       },
       // [Pools.LIDO_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
@@ -350,6 +361,8 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Governance Guardian Polygon',
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Polygon',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
@@ -365,6 +378,7 @@ export const networkConfigs: NetworkConfigs = {
           '0xDA4B6024aA06f7565BBcAaD9B8bE24C3c229AAb5': 'LayerZeroAdapter',
           '0x3c25b96fF62D21E90556869272a277eE2E229747': 'HyperLaneAdapter',
         },
+        clinicStewardBlock: 68599710
       },
       [Pools.V2]: {
         collectorBlock: 67485143,
@@ -406,6 +420,8 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Governance Guardian Binance',
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Binance',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
@@ -421,6 +437,7 @@ export const networkConfigs: NetworkConfigs = {
           '0xFF1137243698CaA18EE364Cc966CF0e02A4e6327': 'LayerZeroAdapter',
           '0x118DFD5418890c0332042ab05173Db4A2C1d283c': 'HyperLaneAdapter',
         },
+        clinicStewardBlock: 47144040,
       },
       // [Pools.TENDERLY]: {
       //   aclBlock: 33571625,
@@ -455,6 +472,8 @@ export const networkConfigs: NetworkConfigs = {
         'Proof Of Reserve Executor V3',
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
         'Aave Protocol Guardian Avalanche',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
@@ -471,6 +490,7 @@ export const networkConfigs: NetworkConfigs = {
           '0xf41193E25408F652AF878c47E4401A01B5E4B682': 'LayerZeroAdapter',
           '0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04': 'HyperLaneAdapter',
         },
+        clinicStewardBlock: 58156580,
       },
       [Pools.V2]: {
         collectorBlock: 57114737,
@@ -512,6 +532,8 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Governance Guardian Optimism',
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
         'Aave Protocol Guardian Optimism',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
@@ -526,6 +548,7 @@ export const networkConfigs: NetworkConfigs = {
         addresses: {
           '0x81d32B36380e6266e1BDd490eAC56cdB300afBe0': 'OpAdapter',
         },
+        clinicStewardBlock: 132707080,
       },
       // [Pools.TENDERLY]: {
       //   aclBlock: 4365546,
@@ -554,6 +577,8 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Governance Guardian Arbitrum',
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Arbitrum',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
@@ -568,6 +593,7 @@ export const networkConfigs: NetworkConfigs = {
         addresses: {
           '0x3829943c53F2d00e20B58475aF19716724bF90Ba': 'ArbAdapter',
         },
+        clinicStewardBlock: 311843330,
       },
       // [Pools.TENDERLY]: {
       //   aclBlock: 7740502,
@@ -596,6 +622,8 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Governance Guardian Metis',
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
         'Aave Protocol Guardian Metis',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
@@ -610,6 +638,7 @@ export const networkConfigs: NetworkConfigs = {
         addresses: {
           '0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf': 'MetisAdapter',
         },
+        clinicStewardBlock: 19835080,
       },
     },
   },
@@ -625,6 +654,8 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Governance Guardian Base',
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
         'Aave Protocol Guardian Base',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
@@ -639,6 +670,7 @@ export const networkConfigs: NetworkConfigs = {
         addresses: {
           '0x7b62461a3570c6AC8a9f8330421576e417B71EE7': 'CBaseAdapter',
         },
+        clinicStewardBlock: 27111930,
       },
       // [Pools.TENDERLY]: {
       //   aclBlock: 2357130,
@@ -666,6 +698,8 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Governance Guardian Gnosis',
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Gnosis',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
@@ -682,6 +716,7 @@ export const networkConfigs: NetworkConfigs = {
           '0x4A4c73d563395ad827511F70097d4Ef82E653805': 'HyperLaneAdapter',
           '0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b': 'GnosisChainAdapter',
         },
+        clinicStewardBlock: 38845800,
       },
       // [Pools.TENDERLY]: {
       //   aclBlock: 30293056,
@@ -710,6 +745,8 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Governance Guardian Scroll',
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Scroll',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
@@ -724,6 +761,7 @@ export const networkConfigs: NetworkConfigs = {
         addresses: {
           '0x118DFD5418890c0332042ab05173Db4A2C1d283c': 'ScrollAdapter',
         },
+        clinicStewardBlock: 13798480,
       },
     },
   },
@@ -736,6 +774,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
       '0x4257bf0746D783f0D962913d7d8AFA408B62547E':
         'Aave Governance Guardian ZkSync',
+      '0x77CC0A0582475bfD74CD838610e817d05c181E11': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
@@ -750,6 +790,7 @@ export const networkConfigs: NetworkConfigs = {
         addresses: {
           '0x1BC5C10CAe378fDbd7D52ec4F9f34590a619c68E': 'ZkSyncAdapter',
         },
+        clinicStewardBlock: 56964260,
       },
     },
   },
@@ -766,9 +807,12 @@ export const networkConfigs: NetworkConfigs = {
       '0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E':
         'Aave Governance Guardian Linea',
       '0xF092A5aC5E284E7c433dAFE5b8B138bFcA53a4Ee': 'Risk Council',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
     },
     pools: {
       [Pools.V3]: {
+        clinicStewardBlock: 16499170,
         aclBlock: 12430800,
         collectorBlock: 15376154,
         crossChainControllerBlock: 13185200,
@@ -852,7 +896,7 @@ export const networkConfigs: NetworkConfigs = {
           ...MiscSonic,
         },
         governanceAddressBook: {
-          ...GovernanceV3Sonic, 
+          ...GovernanceV3Sonic,
           ...MiscSonic
         },
         addresses: {
