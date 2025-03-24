@@ -52,31 +52,31 @@ export const generateTableAddress = (
   }
   return address && checkSummedAddress
     ? '[' +
-        (
-          addressesNames[address] 
-          ? addressesNames[address] 
-          : addressesNames[checkSummedAddress]
+    (
+      addressesNames[address]
+        ? addressesNames[address]
+        : addressesNames[checkSummedAddress]
           ? addressesNames[checkSummedAddress]
           : contractsByAddress[address]
-          ? contractsByAddress[address]
-          : contractsByAddress[checkSummedAddress]
-          ? contractsByAddress[checkSummedAddress]
-          : poolGuardians[checkSummedAddress] &&
-            poolGuardians[checkSummedAddress].owners.length > 0
-          ? addressesNames[checkSummedAddress]
-            ? addressesNames[checkSummedAddress]
-            : `${checkSummedAddress} (Safe)`
-          : checkSummedAddress) +
-        '](' +
-        (contractsByAddress[checkSummedAddress] &&
-        (contractsByAddress[checkSummedAddress] === 'ShortExecutor' ||
-          contractsByAddress[checkSummedAddress] === 'LongExecutor')
-          ? explorerAddressUrlComposer(
-              checkSummedAddress,
-              ChainId.mainnet.toString(),
-            )
-          : explorerAddressUrlComposer(checkSummedAddress, network)) +
-        ')'
+            ? contractsByAddress[address]
+            : contractsByAddress[checkSummedAddress]
+              ? contractsByAddress[checkSummedAddress]
+              : poolGuardians[checkSummedAddress] &&
+                poolGuardians[checkSummedAddress].owners.length > 0
+                ? addressesNames[checkSummedAddress]
+                  ? addressesNames[checkSummedAddress]
+                  : `${checkSummedAddress} (Safe)`
+                : checkSummedAddress) +
+    '](' +
+    (contractsByAddress[checkSummedAddress] &&
+      (contractsByAddress[checkSummedAddress] === 'ShortExecutor' ||
+        contractsByAddress[checkSummedAddress] === 'LongExecutor')
+      ? explorerAddressUrlComposer(
+        checkSummedAddress,
+        ChainId.mainnet.toString(),
+      )
+      : explorerAddressUrlComposer(checkSummedAddress, network)) +
+    ')'
     : '-';
 };
 
@@ -98,22 +98,22 @@ export const generateTable = (network: string, pool: string): string => {
     network === '8453'
       ? 'BASE'
       : network == '56'
-      ? 'BINANCE'
-      : network == '100'
-      ? 'GNOSIS'
-      : network == '534352'
-      ? 'SCROLL'
-      : network == '1101'
-      ? 'POLYGON_ZK_EVM'
-      : network == '324'
-      ? 'ZK_SYNC'
-      : network == '59144'
-      ? 'LINEA'
-      : network == '146'
-      ? 'SONIC'
-      : network == '42220'
-      ? 'CELO'
-      : ChainIdToNetwork[Number(network)].toUpperCase();
+        ? 'BINANCE'
+        : network == '100'
+          ? 'GNOSIS'
+          : network == '534352'
+            ? 'SCROLL'
+            : network == '1101'
+              ? 'POLYGON_ZK_EVM'
+              : network == '324'
+                ? 'ZK_SYNC'
+                : network == '59144'
+                  ? 'LINEA'
+                  : network == '146'
+                    ? 'SONIC'
+                    : network == '42220'
+                      ? 'CELO'
+                      : ChainIdToNetwork[Number(network)].toUpperCase();
 
   const addressesNames = networkConfigs[network].addressesNames || {};
 
@@ -122,7 +122,7 @@ export const generateTable = (network: string, pool: string): string => {
 
   const poolGuardians: PoolGuardians = {};
   let poolPermitsByContract = networkPermits[pool];
-  
+
   poolPermitsByContract.contracts = {
     ...networkPermits[pool].contracts,
     ...getPermissionsByNetwork(network)[pool].collector?.contracts,
@@ -195,18 +195,18 @@ export const generateTable = (network: string, pool: string): string => {
           pool === Pools.ETHERFI_TENDERLY ||
           pool === Pools.LIDO_TENDERLY
           ? {
-              ...poolPermitsByContract.contracts,
-              ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
-              ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
-              ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
-            }
+            ...poolPermitsByContract.contracts,
+            ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
+            ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+            ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
+          }
           : {
-              ...poolPermitsByContract.contracts,
-              ...getPermissionsByNetwork(network)['V3'].contracts,
-              ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
-              ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
-              ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
-            },
+            ...poolPermitsByContract.contracts,
+            ...getPermissionsByNetwork(network)['V3'].contracts,
+            ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
+            ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+            ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
+          },
         govPermissions,
       );
     decentralizationTableBody += getTableBody([
@@ -486,10 +486,9 @@ export const generateTable = (network: string, pool: string): string => {
 
     Object.keys(poolGuardians).forEach((guardian) => {
       guardianTable += getTableBody([
-        `[${
-          addressesNames[utils.getAddress(guardian)]
-            ? addressesNames[utils.getAddress(guardian)]
-            : `${utils.getAddress(guardian)} (Safe)`
+        `[${addressesNames[utils.getAddress(guardian)]
+          ? addressesNames[utils.getAddress(guardian)]
+          : `${utils.getAddress(guardian)} (Safe)`
         }](${explorerAddressUrlComposer(guardian, network)})`,
         `${poolGuardians[guardian].threshold}/${poolGuardians[guardian].owners.length}`,
         guardian,
@@ -579,9 +578,9 @@ export const generateTable = (network: string, pool: string): string => {
   collectorAdminTable += collectorAdminHeader;
 
   if (
-    networkConfigs[network].pools[pool] && 
-    poolPermitsByContract.collector && 
-    poolPermitsByContract.collector.cRoles && 
+    networkConfigs[network].pools[pool] &&
+    poolPermitsByContract.collector &&
+    poolPermitsByContract.collector.cRoles &&
     poolPermitsByContract.collector.cRoles.role
   ) {
     Object.keys(poolPermitsByContract.collector.cRoles.role).forEach((role) => {
@@ -606,39 +605,39 @@ export const generateTable = (network: string, pool: string): string => {
     readmeByNetwork += collectorAdminTable + '\n';
   }
 
-    // Clinic Steward tables
-    let clinicStewardAdminTable = `### Clinic Steward Admins \n`;
-    const clinicStewardAdminHeaderTitles = ['Role', 'Contract'];
-    const clinicStewardAdminHeader = getTableHeader(clinicStewardAdminHeaderTitles);
-    clinicStewardAdminTable += clinicStewardAdminHeader;
-  
-    if (
-      networkConfigs[network].pools[pool] && 
-      poolPermitsByContract.clinicSteward && 
-      poolPermitsByContract.clinicSteward.clinicStewardRoles && 
-      poolPermitsByContract.clinicSteward.clinicStewardRoles.role
-    ) {
-      Object.keys(poolPermitsByContract.clinicSteward.clinicStewardRoles.role).forEach((role) => {
-        const roleAddresses = poolPermitsByContract.clinicSteward?.clinicStewardRoles.role[role] || [];
-        clinicStewardAdminTable += getTableBody([
-          role,
-          `${roleAddresses
-            .map((roleAddress: string) =>
-              generateTableAddress(
-                roleAddress,
-                addressesNames,
-                contractsByAddress,
-                poolGuardians,
-                network,
-              ),
-            )
-            .join(', ')}`,
-        ]);
-        clinicStewardAdminTable += getLineSeparator(clinicStewardAdminHeaderTitles.length);
-      });
-  
-      readmeByNetwork += clinicStewardAdminTable + '\n';
-    }
+  // Clinic Steward tables
+  let clinicStewardAdminTable = `### Clinic Steward Admins \n`;
+  const clinicStewardAdminHeaderTitles = ['Role', 'Contract'];
+  const clinicStewardAdminHeader = getTableHeader(clinicStewardAdminHeaderTitles);
+  clinicStewardAdminTable += clinicStewardAdminHeader;
+
+  if (
+    networkConfigs[network].pools[pool] &&
+    poolPermitsByContract.clinicSteward &&
+    poolPermitsByContract.clinicSteward.clinicStewardRoles &&
+    poolPermitsByContract.clinicSteward.clinicStewardRoles.role
+  ) {
+    Object.keys(poolPermitsByContract.clinicSteward.clinicStewardRoles.role).forEach((role) => {
+      const roleAddresses = poolPermitsByContract.clinicSteward?.clinicStewardRoles.role[role] || [];
+      clinicStewardAdminTable += getTableBody([
+        role,
+        `${roleAddresses
+          .map((roleAddress: string) =>
+            generateTableAddress(
+              roleAddress,
+              addressesNames,
+              contractsByAddress,
+              poolGuardians,
+              network,
+            ),
+          )
+          .join(', ')}`,
+      ]);
+      clinicStewardAdminTable += getLineSeparator(clinicStewardAdminHeaderTitles.length);
+    });
+
+    readmeByNetwork += clinicStewardAdminTable + '\n';
+  }
 
   // gho gsms tables
   if (networkConfigs[network].pools[pool] && poolPermitsByContract.gsmRoles) {
