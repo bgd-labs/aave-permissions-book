@@ -165,7 +165,11 @@ export const networkConfigs: NetworkConfigs = {
       '0x98217A06721Ebf727f2C8d9aD7718ec28b7aAe34': 'GHO Aave Steward',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
       '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
-      '0x7571F419F7Df2d0622C1A20154a0D4250B2265cC': 'Lido ClinicSteward'
+      '0x7571F419F7Df2d0622C1A20154a0D4250B2265cC': 'Lido ClinicSteward',
+      '0x9b24C168d6A76b5459B1d47071a54962a4df36c3': 'Old VotingPortal_Eth_Pol',
+      '0x33aCEf7365809218485873B7d0d67FeE411B5D79': 'Old VotingPortal_Eth_Avax',
+      '0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f': 'Old VotingPortal_Eth_Eth',
+      '0x617332a777780F546261247F621051d0b98975Eb': 'Old VotingMachine',
     },
     pools: {
       [Pools.V3]: {
@@ -362,7 +366,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Polygon',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d': 'Old VotingMachine',
     },
     pools: {
       [Pools.V3]: {
@@ -473,7 +478,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
         'Aave Protocol Guardian Avalanche',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F': 'Old VotingMachine'
     },
     pools: {
       [Pools.V3]: {
