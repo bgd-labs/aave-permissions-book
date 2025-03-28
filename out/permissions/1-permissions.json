@@ -1376,7 +1376,7 @@
         "ASSET_LISTING_ADMIN": [],
         "BRIDGE": []
       },
-      "latestBlockNumber": 22117055
+      "latestBlockNumber": 22144602
     },
     "gsmRoles": {},
     "govV3": {
@@ -1392,7 +1392,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 22117058
+        "latestBlockNumber": 22144604
       },
       "contracts": {
         "GranularGuardian": {
@@ -1614,7 +1614,7 @@
           "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476"
         },
         "VotingMachine": {
-          "address": "0x617332a777780F546261247F621051d0b98975Eb",
+          "address": "0x06a1795a88b82700896583e123F46BE43877bFb6",
           "modifiers": [
             {
               "modifier": "onlyOwner",
@@ -1632,7 +1632,7 @@
           ]
         },
         "VotingPortal_Eth_Eth": {
-          "address": "0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f",
+          "address": "0x6ACe1Bf22D57a33863161bFDC851316Fb0442690",
           "modifiers": [
             {
               "modifier": "onlyOwner",
@@ -1651,7 +1651,7 @@
           ]
         },
         "VotingPortal_Eth_Avax": {
-          "address": "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
+          "address": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
           "modifiers": [
             {
               "modifier": "onlyOwner",
@@ -1670,7 +1670,7 @@
           ]
         },
         "VotingPortal_Eth_Pol": {
-          "address": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+          "address": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
           "modifiers": [
             {
               "modifier": "onlyOwner",
@@ -1952,7 +1952,7 @@
         "0x33aCEf7365809218485873B7d0d67FeE411B5D79",
         "0x9b24C168d6A76b5459B1d47071a54962a4df36c3"
       ],
-      "latestCCCBlockNumber": 22117058
+      "latestCCCBlockNumber": 22144604
     },
     "collector": {
       "contracts": {
@@ -2029,7 +2029,7 @@
             "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
           ]
         },
-        "latestBlockNumber": 22117058
+        "latestBlockNumber": 22144603
       }
     },
     "clinicSteward": {
@@ -2088,7 +2088,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22117058
+        "latestBlockNumber": 22144604
       }
     }
   },
@@ -2470,7 +2470,7 @@
             "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
           ]
         },
-        "latestBlockNumber": 22117066
+        "latestBlockNumber": 22144611
       }
     },
     "clinicSteward": {}
@@ -2757,7 +2757,7 @@
             "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
           ]
         },
-        "latestBlockNumber": 22117067
+        "latestBlockNumber": 22144612
       }
     },
     "clinicSteward": {}
@@ -3625,7 +3625,7 @@
           "0x5C905d62B22e4DAa4967E517C4a047Ff6026C731"
         ]
       },
-      "latestBlockNumber": 22117060
+      "latestBlockNumber": 22144606
     },
     "gsmRoles": {},
     "govV3": {
@@ -3706,7 +3706,7 @@
             "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
           ]
         },
-        "latestBlockNumber": 22117062
+        "latestBlockNumber": 22144608
       }
     },
     "clinicSteward": {
@@ -3765,7 +3765,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22117062
+        "latestBlockNumber": 22144608
       }
     }
   },
@@ -4337,7 +4337,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 22117063
+      "latestBlockNumber": 22144608
     },
     "gsmRoles": {},
     "govV3": {
@@ -4418,7 +4418,7 @@
             "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
           ]
         },
-        "latestBlockNumber": 22117064
+        "latestBlockNumber": 22144610
       }
     },
     "clinicSteward": {}
