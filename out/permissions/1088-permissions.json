@@ -456,7 +456,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 20037795
+      "latestBlockNumber": 20127407
     },
     "gsmRoles": {},
     "govV3": {
@@ -472,7 +472,7 @@
             "0x9853589F951D724D9f7c6724E0fD63F9d888C429"
           ]
         },
-        "latestBlockNumber": 20037797
+        "latestBlockNumber": 20127410
       },
       "contracts": {
         "GranularGuardian": {
@@ -738,7 +738,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 20037797
+      "latestCCCBlockNumber": 20127410
     },
     "collector": {
       "contracts": {
@@ -804,7 +804,7 @@
             "0x53d3c1B2d42578F56ef4c0142F19CDB54CE55040"
           ]
         },
-        "latestBlockNumber": 20037796
+        "latestBlockNumber": 20127409
       }
     },
     "clinicSteward": {
@@ -859,7 +859,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 20037797
+        "latestBlockNumber": 20127409
       }
     }
   }

@@ -477,7 +477,7 @@
           "0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B"
         ]
       },
-      "latestBlockNumber": 14281475
+      "latestBlockNumber": 14524166
     },
     "gsmRoles": {},
     "govV3": {
@@ -493,7 +493,7 @@
             "0x4aAa03F0A61cf93eA252e987b585453578108358"
           ]
         },
-        "latestBlockNumber": 14281480
+        "latestBlockNumber": 14524173
       },
       "contracts": {
         "GranularGuardian": {
@@ -759,7 +759,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 14281480
+      "latestCCCBlockNumber": 14524173
     },
     "collector": {
       "contracts": {
@@ -776,6 +776,11 @@
                 },
                 {
                   "address": "0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de",
+                  "owners": [],
+                  "signersThreshold": 0
+                },
+                {
+                  "address": "0xf4c8A85fee25f055795E5DcDF39b447aD5761aC7",
                   "owners": [],
                   "signersThreshold": 0
                 }
@@ -804,6 +809,11 @@
                   "address": "0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de",
                   "owners": [],
                   "signersThreshold": 0
+                },
+                {
+                  "address": "0xf4c8A85fee25f055795E5DcDF39b447aD5761aC7",
+                  "owners": [],
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -822,10 +832,11 @@
           ],
           "FUNDS_ADMIN_ROLE": [
             "0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24",
-            "0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de"
+            "0x7616355B00c9d1D2Faf3937Dacb5B9aA1e6755de",
+            "0xf4c8A85fee25f055795E5DcDF39b447aD5761aC7"
           ]
         },
-        "latestBlockNumber": 14281477
+        "latestBlockNumber": 14524171
       }
     },
     "clinicSteward": {
@@ -880,7 +891,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 14281479
+        "latestBlockNumber": 14524172
       }
     }
   }
