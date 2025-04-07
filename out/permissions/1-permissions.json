@@ -814,6 +814,11 @@
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0x8b493f416F5F7933cC146b1899c069F2361cad60",
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -974,6 +979,11 @@
             "addresses": [
               {
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x8b493f416F5F7933cC146b1899c069F2361cad60",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -1373,10 +1383,12 @@
           "0x7C7143f4bE189928A6a98D8686c5e84c893c59c7",
           "0x98217A06721Ebf727f2C8d9aD7718ec28b7aAe34"
         ],
-        "ASSET_LISTING_ADMIN": [],
+        "ASSET_LISTING_ADMIN": [
+          "0x8b493f416F5F7933cC146b1899c069F2361cad60"
+        ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 22146339
+      "latestBlockNumber": 22217154
     },
     "gsmRoles": {},
     "govV3": {
@@ -1392,7 +1404,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 22146342
+        "latestBlockNumber": 22217157
       },
       "contracts": {
         "GranularGuardian": {
@@ -1972,7 +1984,7 @@
         "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
         "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6"
       ],
-      "latestCCCBlockNumber": 22146342
+      "latestCCCBlockNumber": 22217157
     },
     "collector": {
       "contracts": {
@@ -1994,6 +2006,11 @@
                 },
                 {
                   "address": "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
+                  "owners": [],
+                  "signersThreshold": 0
+                },
+                {
+                  "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
                   "owners": [],
                   "signersThreshold": 0
                 }
@@ -2027,6 +2044,11 @@
                   "address": "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
                   "owners": [],
                   "signersThreshold": 0
+                },
+                {
+                  "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
+                  "owners": [],
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -2046,10 +2068,11 @@
           "FUNDS_ADMIN_ROLE": [
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
             "0xf00E2de0E78DFf055A92AD4719a179CE275b6Ef7",
-            "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
+            "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
+            "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22146341
+        "latestBlockNumber": 22217156
       }
     },
     "clinicSteward": {
@@ -2108,7 +2131,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22146341
+        "latestBlockNumber": 22217156
       }
     }
   },
@@ -2437,6 +2460,11 @@
                   "address": "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
                   "owners": [],
                   "signersThreshold": 0
+                },
+                {
+                  "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
+                  "owners": [],
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -2468,6 +2496,11 @@
                   "address": "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
                   "owners": [],
                   "signersThreshold": 0
+                },
+                {
+                  "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
+                  "owners": [],
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -2487,10 +2520,11 @@
           "FUNDS_ADMIN_ROLE": [
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
             "0xf00E2de0E78DFf055A92AD4719a179CE275b6Ef7",
-            "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
+            "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
+            "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22146348
+        "latestBlockNumber": 22217164
       }
     },
     "clinicSteward": {}
@@ -2724,6 +2758,11 @@
                   "address": "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
                   "owners": [],
                   "signersThreshold": 0
+                },
+                {
+                  "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
+                  "owners": [],
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -2755,6 +2794,11 @@
                   "address": "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
                   "owners": [],
                   "signersThreshold": 0
+                },
+                {
+                  "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
+                  "owners": [],
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -2774,10 +2818,11 @@
           "FUNDS_ADMIN_ROLE": [
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
             "0xf00E2de0E78DFf055A92AD4719a179CE275b6Ef7",
-            "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
+            "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
+            "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22146349
+        "latestBlockNumber": 22217165
       }
     },
     "clinicSteward": {}
@@ -3645,7 +3690,7 @@
           "0x5C905d62B22e4DAa4967E517C4a047Ff6026C731"
         ]
       },
-      "latestBlockNumber": 22146343
+      "latestBlockNumber": 22217159
     },
     "gsmRoles": {},
     "govV3": {
@@ -3671,6 +3716,11 @@
                 },
                 {
                   "address": "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
+                  "owners": [],
+                  "signersThreshold": 0
+                },
+                {
+                  "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
                   "owners": [],
                   "signersThreshold": 0
                 }
@@ -3704,6 +3754,11 @@
                   "address": "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
                   "owners": [],
                   "signersThreshold": 0
+                },
+                {
+                  "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
+                  "owners": [],
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -3723,10 +3778,11 @@
           "FUNDS_ADMIN_ROLE": [
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
             "0xf00E2de0E78DFf055A92AD4719a179CE275b6Ef7",
-            "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
+            "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
+            "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22146345
+        "latestBlockNumber": 22217160
       }
     },
     "clinicSteward": {
@@ -3785,7 +3841,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22146345
+        "latestBlockNumber": 22217161
       }
     }
   },
@@ -4357,7 +4413,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 22146346
+      "latestBlockNumber": 22217161
     },
     "gsmRoles": {},
     "govV3": {
@@ -4383,6 +4439,11 @@
                 },
                 {
                   "address": "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
+                  "owners": [],
+                  "signersThreshold": 0
+                },
+                {
+                  "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
                   "owners": [],
                   "signersThreshold": 0
                 }
@@ -4416,6 +4477,11 @@
                   "address": "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
                   "owners": [],
                   "signersThreshold": 0
+                },
+                {
+                  "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
+                  "owners": [],
+                  "signersThreshold": 0
                 }
               ],
               "functions": [
@@ -4435,10 +4501,11 @@
           "FUNDS_ADMIN_ROLE": [
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
             "0xf00E2de0E78DFf055A92AD4719a179CE275b6Ef7",
-            "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC"
+            "0x7571F419F7Df2d0622C1A20154a0D4250B2265cC",
+            "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22146347
+        "latestBlockNumber": 22217162
       }
     },
     "clinicSteward": {}
