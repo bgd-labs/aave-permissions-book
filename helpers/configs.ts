@@ -174,6 +174,7 @@ export const networkConfigs: NetworkConfigs = {
       '0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f': 'Old VotingPortal_Eth_Eth',
       '0x617332a777780F546261247F621051d0b98975Eb': 'Old VotingMachine',
       '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -590,6 +591,7 @@ export const networkConfigs: NetworkConfigs = {
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
       '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
       '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -668,6 +670,7 @@ export const networkConfigs: NetworkConfigs = {
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
       '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
       '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
