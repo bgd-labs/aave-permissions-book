@@ -56,6 +56,9 @@ import {
   AaveV3Celo,
   MiscCelo,
   GovernanceV3Celo,
+  GhoArbitrum,
+  GhoEthereum,
+  GhoBase
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -170,6 +173,7 @@ export const networkConfigs: NetworkConfigs = {
       '0x33aCEf7365809218485873B7d0d67FeE411B5D79': 'Old VotingPortal_Eth_Avax',
       '0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f': 'Old VotingPortal_Eth_Eth',
       '0x617332a777780F546261247F621051d0b98975Eb': 'Old VotingMachine',
+      '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
     },
     pools: {
       [Pools.V3]: {
@@ -180,7 +184,7 @@ export const networkConfigs: NetworkConfigs = {
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
         granularGuardianBlock: 20324867,
-        addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
+        addressBook: { ...AaveV3Ethereum, ...MiscEthereum, ...GhoEthereum },
         addresses: {
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
           '0x6Abb61beb5848B476d026C4934E8a6415e2E75a8': 'HyperLaneAdapter',
@@ -584,7 +588,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Arbitrum',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
     },
     pools: {
       [Pools.V3]: {
@@ -594,7 +599,7 @@ export const networkConfigs: NetworkConfigs = {
         granularGuardianBlock: 233088975,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum },
+        addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum, ...GhoArbitrum },
         governanceAddressBook: GovernanceV3Arbitrum,
         addresses: {
           '0x3829943c53F2d00e20B58475aF19716724bF90Ba': 'ArbAdapter',
@@ -661,7 +666,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
         'Aave Protocol Guardian Base',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
     },
     pools: {
       [Pools.V3]: {
@@ -671,7 +677,7 @@ export const networkConfigs: NetworkConfigs = {
         granularGuardianBlock: 17207502,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: { ...AaveV3Base, ...MiscBase },
+        addressBook: { ...AaveV3Base, ...MiscBase, ...GhoBase },
         governanceAddressBook: GovernanceV3Base,
         addresses: {
           '0x7b62461a3570c6AC8a9f8330421576e417B71EE7': 'CBaseAdapter',

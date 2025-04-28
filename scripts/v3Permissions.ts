@@ -845,6 +845,47 @@ export const resolveV3Modifiers = async (
     };
   }
 
+  if (addressBook.GHO_AAVE_CORE_STEWARD) {
+    const ghoAaveCoreStewardContract = new ethers.Contract(
+      addressBook.GHO_AAVE_CORE_STEWARD,
+      EDGE_RISK_STEWARD_CAPS_ABI,
+      provider,
+    );
+    const ghoAaveCoreStewardOwner = await ghoAaveCoreStewardContract.owner();
+    const ghoAaveCoreStewardGuardian = await ghoAaveCoreStewardContract.RISK_COUNCIL();
+
+    obj['GhoAaveSteward'] = {
+      address: addressBook.GHO_AAVE_CORE_STEWARD,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: ghoAaveCoreStewardOwner,
+              owners: await getSafeOwners(provider, ghoAaveCoreStewardOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                ghoAaveCoreStewardOwner,
+              ),
+            },
+          ],
+          functions: roles['GhoAaveSteward']['onlyOwner'],
+        },
+        {
+          modifier: 'onlyRiskCouncil',
+          addresses: [
+            {
+              address: ghoAaveCoreStewardGuardian,
+              owners: await getSafeOwners(provider, ghoAaveCoreStewardGuardian),
+              signersThreshold: await getSafeThreshold(provider, ghoAaveCoreStewardGuardian),
+            },
+          ],
+          functions: roles['GhoAaveSteward']['onlyRiskCouncil'],
+        },
+      ],
+    };
+  }
+
 
 
 

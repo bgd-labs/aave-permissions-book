@@ -892,5 +892,34 @@
         ]
       }
     ]
+  },
+  {
+    "contract": "GhoAaveSteward",
+    "functions": [
+      {
+        "name": "updateGhoBorrowRate",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "updateGhoBorrowCap",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "updateGhoSupplyCap",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "setBorrowRateConfig",
+        "roles": [
+          "onlyOwner"
+        ]
+      }
+    ]
   }
 ]
