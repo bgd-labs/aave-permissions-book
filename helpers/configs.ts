@@ -461,7 +461,7 @@ export const networkConfigs: NetworkConfigs = {
   },
   [ChainId.avalanche]: {
     rpcUrl: process.env.RPC_AVALANCHE,
-    explorer: 'https://snowtrace.io',
+    explorer: 'https://snowscan.xyz',
     addressesNames: {
       '0xa35b76E4935449E33C56aB24b23fcd3246f13470': 'Aave Guardian Avalanche',
       '0x01244E7842254e3FD229CD263472076B1439D1Cd':

@@ -1280,6 +1280,52 @@
           }
         ]
       },
+      "PoolExposureSteward": {
+        "address": "0x22aC12a6937BBBC0a301AF9154d08EaD95673122",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "approvePool",
+              "revokePool"
+            ]
+          },
+          {
+            "modifier": "onlyOwnerOrGuardian",
+            "addresses": [
+              {
+                "address": "0x22740deBa78d5a0c24C58C740e3715ec29de1bFa",
+                "owners": [
+                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb"
+                ],
+                "signersThreshold": 3
+              },
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "depositV3",
+              "withdrawV3",
+              "withdrawV2",
+              "migrateV2toV3",
+              "migrateBetweenV3"
+            ]
+          }
+        ]
+      },
       "AavePolEthBridge": {
         "address": "0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36",
         "modifiers": [
@@ -1388,7 +1434,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 22366374
+      "latestBlockNumber": 22366818
     },
     "gsmRoles": {},
     "govV3": {
@@ -1404,7 +1450,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 22366377
+        "latestBlockNumber": 22366820
       },
       "contracts": {
         "GranularGuardian": {
@@ -1984,7 +2030,7 @@
         "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
         "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6"
       ],
-      "latestCCCBlockNumber": 22366377
+      "latestCCCBlockNumber": 22366820
     },
     "collector": {
       "contracts": {
@@ -2072,7 +2118,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22366376
+        "latestBlockNumber": 22366820
       }
     },
     "clinicSteward": {
@@ -2131,7 +2177,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22366377
+        "latestBlockNumber": 22366820
       }
     }
   },
@@ -2524,7 +2570,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22366383
+        "latestBlockNumber": 22366827
       }
     },
     "clinicSteward": {}
@@ -2822,7 +2868,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22366385
+        "latestBlockNumber": 22366828
       }
     },
     "clinicSteward": {}
@@ -3690,7 +3736,7 @@
           "0x5C905d62B22e4DAa4967E517C4a047Ff6026C731"
         ]
       },
-      "latestBlockNumber": 22366379
+      "latestBlockNumber": 22366823
     },
     "gsmRoles": {},
     "govV3": {
@@ -3782,7 +3828,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22366380
+        "latestBlockNumber": 22366824
       }
     },
     "clinicSteward": {
@@ -3841,7 +3887,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22366381
+        "latestBlockNumber": 22366825
       }
     }
   },
@@ -4413,7 +4459,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 22366381
+      "latestBlockNumber": 22366825
     },
     "gsmRoles": {},
     "govV3": {
@@ -4505,7 +4551,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22366382
+        "latestBlockNumber": 22366826
       }
     },
     "clinicSteward": {}
