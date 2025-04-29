@@ -20,7 +20,7 @@ export type GetLogsType = {
   chainId?: ChainId | string;
 };
 
-const MAX_RETRIES = 5;
+const MAX_RETRIES = 10;
 export const getLogs = async ({
   provider,
   address,
@@ -47,7 +47,7 @@ export const getLogs = async ({
   } else if (tenderly && fromBlock >= (maxBlock ?? currentBlock)) {
     return { eventLogs: logs, finalBlock: fromBlock };
   }
-  
+
   let toBlock: number = 0;
   if (limit) {
     if (maxBlock) {
@@ -63,7 +63,7 @@ export const getLogs = async ({
       toBlock = currentBlock;
     }
   }
-  
+
   // get All logs of stream creation
 
   // Quick patch, to not add nulls into the query, as not clear how support for this is working on tenderly.
@@ -93,8 +93,7 @@ export const getLogs = async ({
     logs.push(...logEvents);
 
     console.log(
-      `${chainId ? chainId : ''} | ${
-        tenderly ? 'tenderly' : ''
+      `${chainId ? chainId : ''} | ${tenderly ? 'tenderly' : ''
       } | from: ${fromBlock} to: ${toBlock} logs: ${logEvents.length}`,
     );
 

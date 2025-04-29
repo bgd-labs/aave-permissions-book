@@ -177,7 +177,7 @@ const generateNetworkPermissions = async (network: string) => {
           admins = await getCurrentRoleAdmins(
             provider,
             (fullJson[poolKey] && fullJson[poolKey]?.roles?.role) ||
-              ({} as Record<string, string[]>),
+            ({} as Record<string, string[]>),
             fromBlock,
             Number(network),
             Pools[poolKey as keyof typeof Pools],
@@ -204,7 +204,7 @@ const generateNetworkPermissions = async (network: string) => {
                   // @ts-ignore
                   Object.keys(fullJson[poolKey].gsmRoles).length > 0 &&
                   fullJson[poolKey]?.gsmRoles?.[key].role) ||
-                  ({} as Record<string, string[]>),
+                ({} as Record<string, string[]>),
                 gsmBlock,
                 Number(network),
                 Pools[poolKey as keyof typeof Pools],
@@ -251,7 +251,7 @@ const generateNetworkPermissions = async (network: string) => {
             fromBlock: ${fromBlock}
           ------------------------------------
           `);
-          
+
         if (Object.keys(pool.addressBook).length > 0) {
           admins = await getCurrentRoleAdmins(
             poolKey === Pools.TENDERLY ||
@@ -260,14 +260,14 @@ const generateNetworkPermissions = async (network: string) => {
               ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
               : provider,
             (fullJson[poolKey] && fullJson[poolKey]?.roles?.role) ||
-              ({} as Record<string, string[]>),
+            ({} as Record<string, string[]>),
             fromBlock,
             Number(network),
             Pools[poolKey as keyof typeof Pools],
             protocolRoleNames,
             pool.addressBook.ACL_MANAGER,
           );
-          
+
           poolPermissions = await resolveV3Modifiers(
             pool.addressBook,
             poolKey === Pools.TENDERLY ||
@@ -299,7 +299,7 @@ const generateNetworkPermissions = async (network: string) => {
         fromBlock = pool.tenderlyBlock;
       } else {
         fromBlock =
-          fullJson[poolKey]?.collector?.latestBlockNumber || pool.collectorBlock;
+          fullJson[poolKey]?.collector?.cRoles?.latestBlockNumber || pool.collectorBlock;
       }
       console.log(`
         ------------------------------------
@@ -317,7 +317,7 @@ const generateNetworkPermissions = async (network: string) => {
             ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
             : provider,
           (fullJson[poolKey] && fullJson[poolKey]?.collector?.cRoles?.role) ||
-            ({} as Record<string, string[]>),
+          ({} as Record<string, string[]>),
           fromBlock,
           Number(network),
           Pools[poolKey as keyof typeof Pools],
@@ -325,7 +325,7 @@ const generateNetworkPermissions = async (network: string) => {
           pool.addressBook.COLLECTOR,
           true
         );
-        
+
         const collectorPermissions = await resolveCollectorModifiers(
           pool.addressBook,
           poolKey === Pools.TENDERLY ||
@@ -371,7 +371,7 @@ const generateNetworkPermissions = async (network: string) => {
             ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
             : provider,
           (fullJson[poolKey] && fullJson[poolKey]?.clinicSteward?.clinicStewardRoles?.role) ||
-            ({} as Record<string, string[]>),
+          ({} as Record<string, string[]>),
           fromBlock,
           Number(network),
           Pools[poolKey as keyof typeof Pools],
@@ -379,7 +379,7 @@ const generateNetworkPermissions = async (network: string) => {
           pool.addressBook.CLINIC_STEWARD,
           true
         );
-        
+
         const clinicStewardPermissions = await resolveClinicStewardModifiers(
           pool.addressBook,
           poolKey === Pools.TENDERLY
@@ -449,7 +449,7 @@ const generateNetworkPermissions = async (network: string) => {
                 : provider,
               (fullJson[poolKey] &&
                 fullJson[poolKey]?.govV3?.ggRoles?.role) ||
-                ({} as Record<string, string[]>),
+              ({} as Record<string, string[]>),
               ggFromBlock,
               Number(network),
               Pools[poolKey as keyof typeof Pools],
@@ -465,7 +465,7 @@ const generateNetworkPermissions = async (network: string) => {
         const permissionsGovV3Json = getStaticPermissionsJson(
           pool.crossChainPermissionsJson,
         );
-        
+
         govV3.contracts = await resolveGovV3Modifiers(
           pool.governanceAddressBook,
           poolKey === Pools.TENDERLY ||
@@ -477,8 +477,8 @@ const generateNetworkPermissions = async (network: string) => {
           Number(network),
           senders,
           poolKey === Pools.TENDERLY ||
-            poolKey === Pools.LIDO_TENDERLY ||
-            poolKey === Pools.ETHERFI_TENDERLY,
+          poolKey === Pools.LIDO_TENDERLY ||
+          poolKey === Pools.ETHERFI_TENDERLY,
           govV3.ggRoles.role || {},
           pool.addresses,
         );
