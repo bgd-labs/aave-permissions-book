@@ -798,5 +798,128 @@
         ]
       }
     ]
+  },
+  {
+    "contract": "EdgeRiskStewardCaps",
+    "functions": [
+      {
+        "name": "updateRates",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "updateCollateralSide",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "updateLstPriceCaps",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "updateStablePriceCaps",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "updateCaps",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "setRiskConfig",
+        "roles": [
+          "onlyOwner"
+        ]
+      },
+      {
+        "name": "setAddressRestricted",
+        "roles": [
+          "onlyOwner"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "PoolExposureSteward",
+    "functions": [
+      {
+        "name": "depositV3",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      },
+      {
+        "name": "withdrawV3",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      },
+      {
+        "name": "withdrawV2",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      },
+      {
+        "name": "migrateV2toV3",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      },
+      {
+        "name": "migrateBetweenV3",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      },
+      {
+        "name": "approvePool",
+        "roles": [
+          "onlyOwner"
+        ]
+      },
+      {
+        "name": "revokePool",
+        "roles": [
+          "onlyOwner"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "GhoAaveSteward",
+    "functions": [
+      {
+        "name": "updateGhoBorrowRate",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "updateGhoBorrowCap",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "updateGhoSupplyCap",
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      },
+      {
+        "name": "setBorrowRateConfig",
+        "roles": [
+          "onlyOwner"
+        ]
+      }
+    ]
   }
 ]

@@ -56,6 +56,9 @@ import {
   AaveV3Celo,
   MiscCelo,
   GovernanceV3Celo,
+  GhoArbitrum,
+  GhoEthereum,
+  GhoBase
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 dotenv.config();
@@ -170,6 +173,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x33aCEf7365809218485873B7d0d67FeE411B5D79': 'Old VotingPortal_Eth_Avax',
       '0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f': 'Old VotingPortal_Eth_Eth',
       '0x617332a777780F546261247F621051d0b98975Eb': 'Old VotingMachine',
+      '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -180,7 +185,7 @@ export const networkConfigs: NetworkConfigs = {
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
         granularGuardianBlock: 20324867,
-        addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
+        addressBook: { ...AaveV3Ethereum, ...MiscEthereum, ...GhoEthereum },
         addresses: {
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
           '0x6Abb61beb5848B476d026C4934E8a6415e2E75a8': 'HyperLaneAdapter',
@@ -368,6 +373,7 @@ export const networkConfigs: NetworkConfigs = {
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
       '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
       '0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d': 'Old VotingMachine',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -426,7 +432,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Binance',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -461,7 +468,7 @@ export const networkConfigs: NetworkConfigs = {
   },
   [ChainId.avalanche]: {
     rpcUrl: process.env.RPC_AVALANCHE,
-    explorer: 'https://snowtrace.io',
+    explorer: 'https://snowscan.xyz',
     addressesNames: {
       '0xa35b76E4935449E33C56aB24b23fcd3246f13470': 'Aave Guardian Avalanche',
       '0x01244E7842254e3FD229CD263472076B1439D1Cd':
@@ -479,7 +486,9 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Protocol Guardian Avalanche',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
       '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
-      '0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F': 'Old VotingMachine'
+      '0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F': 'Old VotingMachine',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
+      '0x54714FAc85b0bf627288CC3a186dE81A42f1D635': 'Aave Steward Injector Caps'
     },
     pools: {
       [Pools.V3]: {
@@ -539,7 +548,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
         'Aave Protocol Guardian Optimism',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -584,7 +594,10 @@ export const networkConfigs: NetworkConfigs = {
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Arbitrum',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
+      '0x35d53dEB2F6f40Ea7af32B6F8BEd88eA966DF1D9': 'Aave Steward Injector Caps'
     },
     pools: {
       [Pools.V3]: {
@@ -594,7 +607,7 @@ export const networkConfigs: NetworkConfigs = {
         granularGuardianBlock: 233088975,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum },
+        addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum, ...GhoArbitrum },
         governanceAddressBook: GovernanceV3Arbitrum,
         addresses: {
           '0x3829943c53F2d00e20B58475aF19716724bF90Ba': 'ArbAdapter',
@@ -629,7 +642,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
         'Aave Protocol Guardian Metis',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -661,7 +675,10 @@ export const networkConfigs: NetworkConfigs = {
       '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
         'Aave Protocol Guardian Base',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
+      '0x4f84A364B66Eb6280350da011829a6BD02B4712f': 'Aave Steward Injector Caps'
     },
     pools: {
       [Pools.V3]: {
@@ -671,7 +688,7 @@ export const networkConfigs: NetworkConfigs = {
         granularGuardianBlock: 17207502,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        addressBook: { ...AaveV3Base, ...MiscBase },
+        addressBook: { ...AaveV3Base, ...MiscBase, ...GhoBase },
         governanceAddressBook: GovernanceV3Base,
         addresses: {
           '0x7b62461a3570c6AC8a9f8330421576e417B71EE7': 'CBaseAdapter',
@@ -705,7 +722,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Gnosis',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -752,7 +770,8 @@ export const networkConfigs: NetworkConfigs = {
       '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
         'Aave Protocol Guardian Scroll',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -781,7 +800,9 @@ export const networkConfigs: NetworkConfigs = {
       '0x4257bf0746D783f0D962913d7d8AFA408B62547E':
         'Aave Governance Guardian ZkSync',
       '0x77CC0A0582475bfD74CD838610e817d05c181E11': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
+      '0x5BF14aeaFe54A9dE94D0C4CeA73A9B4C46F94F2D': 'Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -814,7 +835,8 @@ export const networkConfigs: NetworkConfigs = {
         'Aave Governance Guardian Linea',
       '0xF092A5aC5E284E7c433dAFE5b8B138bFcA53a4Ee': 'Risk Council',
       '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation'
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -850,6 +872,7 @@ export const networkConfigs: NetworkConfigs = {
       '0x056E4C4E80D1D14a637ccbD0412CDAAEc5B51F4E':
         'Aave Governance Guardian Celo',
       '0xd85786B5FC61E2A0c0a3144a33A0fC70646a99f6': 'Risk Council',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {
@@ -888,6 +911,7 @@ export const networkConfigs: NetworkConfigs = {
       '0x63C4422D6cc849549daeb600B7EcE52bD18fAd7f':
         'Aave Governance Guardian Sonic',
       '0x1dE39A17a9Fa8c76899fff37488482EEb7835d04': 'Risk Council',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council'
     },
     pools: {
       [Pools.V3]: {

@@ -18,6 +18,8 @@ import { capsPlusRiskStewardABI } from '../abis/capsPlusRiskSteward.js';
 import { erc20Bridge } from '../abis/Erc20Bridge.js';
 import { RISK_STEWARDS_ABI } from '../abis/riskStewards.js';
 import { SVR_ORACLE_STEWARD_ABI } from '../abis/svrOracle.js';
+import { EDGE_RISK_STEWARD_CAPS_ABI } from '../abis/edgeRiskStewardCaps.js';
+import { POOL_EXPOSURE_STEWARD_ABI } from '../abis/poolExposureStewards.js';
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -751,6 +753,141 @@ export const resolveV3Modifiers = async (
       ],
     };
   }
+
+  if (addressBook.EDGE_RISK_STEWARD_CAPS) {
+    const edgeRiskStewardCapsContract = new ethers.Contract(
+      addressBook.EDGE_RISK_STEWARD_CAPS,
+      EDGE_RISK_STEWARD_CAPS_ABI,
+      provider,
+    );
+    const edgeRiskStewardOwner = await edgeRiskStewardCapsContract.owner();
+    const edgeRiskStewardCouncil = await edgeRiskStewardCapsContract.RISK_COUNCIL();
+
+
+    obj['EdgeRiskStewardCaps'] = {
+      address: addressBook.EDGE_RISK_STEWARD_CAPS,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: edgeRiskStewardOwner,
+              owners: await getSafeOwners(provider, edgeRiskStewardOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                edgeRiskStewardOwner,
+              ),
+            },
+          ],
+          functions: roles['EdgeRiskStewardCaps']['onlyOwner'],
+        },
+        {
+          modifier: 'onlyRiskCouncil',
+          addresses: [
+            {
+              address: edgeRiskStewardCouncil,
+              owners: await getSafeOwners(provider, edgeRiskStewardCouncil),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                edgeRiskStewardCouncil,
+              ),
+            },
+          ],
+          functions: roles['EdgeRiskStewardCaps']['onlyRiskCouncil'],
+        },
+      ],
+    };
+  }
+
+  if (addressBook.POOL_EXPOSURE_STEWARD) {
+    const poolExposureStewardContract = new ethers.Contract(
+      addressBook.POOL_EXPOSURE_STEWARD,
+      POOL_EXPOSURE_STEWARD_ABI,
+      provider,
+    );
+    const poolExposureStewardOwner = await poolExposureStewardContract.owner();
+    const poolExposureStewardGuardian = await poolExposureStewardContract.guardian();
+
+    obj['PoolExposureSteward'] = {
+      address: addressBook.POOL_EXPOSURE_STEWARD,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: poolExposureStewardOwner,
+              owners: await getSafeOwners(provider, poolExposureStewardOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                poolExposureStewardOwner,
+              ),
+            },
+          ],
+          functions: roles['PoolExposureSteward']['onlyOwner'],
+        },
+        {
+          modifier: 'onlyOwnerOrGuardian',
+          addresses: [
+            {
+              address: poolExposureStewardGuardian,
+              owners: await getSafeOwners(provider, poolExposureStewardGuardian),
+              signersThreshold: await getSafeThreshold(provider, poolExposureStewardGuardian),
+            },
+            {
+              address: poolExposureStewardOwner,
+              owners: await getSafeOwners(provider, poolExposureStewardOwner),
+              signersThreshold: await getSafeThreshold(provider, poolExposureStewardOwner),
+            },
+          ],
+          functions: roles['PoolExposureSteward']['onlyOwnerOrGuardian'],
+        },
+      ],
+    };
+  }
+
+  if (addressBook.GHO_AAVE_CORE_STEWARD) {
+    const ghoAaveCoreStewardContract = new ethers.Contract(
+      addressBook.GHO_AAVE_CORE_STEWARD,
+      EDGE_RISK_STEWARD_CAPS_ABI,
+      provider,
+    );
+    const ghoAaveCoreStewardOwner = await ghoAaveCoreStewardContract.owner();
+    const ghoAaveCoreStewardGuardian = await ghoAaveCoreStewardContract.RISK_COUNCIL();
+
+    obj['GhoAaveSteward'] = {
+      address: addressBook.GHO_AAVE_CORE_STEWARD,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: ghoAaveCoreStewardOwner,
+              owners: await getSafeOwners(provider, ghoAaveCoreStewardOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                ghoAaveCoreStewardOwner,
+              ),
+            },
+          ],
+          functions: roles['GhoAaveSteward']['onlyOwner'],
+        },
+        {
+          modifier: 'onlyRiskCouncil',
+          addresses: [
+            {
+              address: ghoAaveCoreStewardGuardian,
+              owners: await getSafeOwners(provider, ghoAaveCoreStewardGuardian),
+              signersThreshold: await getSafeThreshold(provider, ghoAaveCoreStewardGuardian),
+            },
+          ],
+          functions: roles['GhoAaveSteward']['onlyRiskCouncil'],
+        },
+      ],
+    };
+  }
+
+
+
 
   if (addressBook.AAVE_POL_ETH_BRIDGE) {
     const polEthBridgeContract = new ethers.Contract(
