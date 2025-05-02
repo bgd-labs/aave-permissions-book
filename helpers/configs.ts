@@ -8,6 +8,7 @@ import {
   AaveV2Ethereum,
   AaveV2EthereumAMM,
   AaveV2EthereumArc,
+  UmbrellaEthereum,
   AaveV2Polygon,
   AaveV3Arbitrum,
   AaveV3Avalanche,
@@ -185,7 +186,7 @@ export const networkConfigs: NetworkConfigs = {
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
         granularGuardianBlock: 20324867,
-        addressBook: { ...AaveV3Ethereum, ...MiscEthereum, ...GhoEthereum },
+        addressBook: { ...AaveV3Ethereum, ...MiscEthereum, ...GhoEthereum, ...UmbrellaEthereum },
         addresses: {
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
           '0x6Abb61beb5848B476d026C4934E8a6415e2E75a8': 'HyperLaneAdapter',
