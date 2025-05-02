@@ -471,6 +471,42 @@
           }
         ]
       },
+      "EdgeRiskStewardCaps": {
+        "address": "0xB892202d9Ce2C16C565A492a5168689b215Eb269",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x9390B1735def18560c509E2d0bc090E9d6BA257a",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "setRiskConfig",
+              "setAddressRestricted"
+            ]
+          },
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x4f84A364B66Eb6280350da011829a6BD02B4712f",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "updateRates",
+              "updateCollateralSide",
+              "updateLstPriceCaps",
+              "updateStablePriceCaps",
+              "updateCaps"
+            ]
+          }
+        ]
+      },
       "PoolExposureSteward": {
         "address": "0x4f1F3E32f20847a4c9F002882eB607aD750b6115",
         "modifiers": [
@@ -630,7 +666,7 @@
           "0xB892202d9Ce2C16C565A492a5168689b215Eb269"
         ]
       },
-      "latestBlockNumber": 29565953
+      "latestBlockNumber": 29694207
     },
     "gsmRoles": {},
     "govV3": {
@@ -646,7 +682,7 @@
             "0x7FDA7C3528ad8f05e62148a700D456898b55f8d2"
           ]
         },
-        "latestBlockNumber": 29565971
+        "latestBlockNumber": 29694224
       },
       "contracts": {
         "GranularGuardian": {
@@ -912,7 +948,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 29565970
+      "latestCCCBlockNumber": 29694224
     },
     "collector": {
       "contracts": {
@@ -989,7 +1025,7 @@
             "0x4f1F3E32f20847a4c9F002882eB607aD750b6115"
           ]
         },
-        "latestBlockNumber": 29565965
+        "latestBlockNumber": 29694220
       }
     },
     "clinicSteward": {
@@ -1044,7 +1080,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 29565968
+        "latestBlockNumber": 29694222
       }
     }
   },
