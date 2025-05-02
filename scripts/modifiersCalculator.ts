@@ -8,6 +8,8 @@ import {
   networkConfigs,
   Pools,
   protocolRoleNames,
+  umbrellaIncentivesRoleNames,
+  umbrellaRoleNames,
 } from '../helpers/configs.js';
 import {
   getAllPermissionsJson,
@@ -19,7 +21,7 @@ import { getCurrentRoleAdmins } from '../helpers/adminRoles.js';
 import { resolveV2Modifiers } from './v2Permissions.js';
 import { resolveV3Modifiers } from './v3Permissions.js';
 import { resolveGovV2Modifiers } from './governancePermissions.js';
-import { ClinicSteward, Collector, Contracts, FullPermissions, GovV3, Roles } from '../helpers/types.js';
+import { ClinicSteward, Collector, Contracts, FullPermissions, GovV3, Roles, Umbrella } from '../helpers/types.js';
 import { resolveSafetyV2Modifiers } from './safetyPermissions.js';
 import { resolveV2MiscModifiers } from './v2MiscPermissions.js';
 import { getCCCSendersAndAdapters } from '../helpers/crossChainControllerLogs.js';
@@ -28,6 +30,7 @@ import { resolveGHOModifiers } from './ghoPermissions.js';
 import { overwriteBaseTenderlyPool } from '../helpers/jsonParsers.js';
 import { resolveCollectorModifiers } from './collectorPermissions.js';
 import { resolveClinicStewardModifiers } from './clinicStewardPermissions.js';
+import { resolveUmbrellaModifiers } from './umbrellaPermissions.js';
 
 const generateNetworkPermissions = async (network: string) => {
   // get current permissions
@@ -55,6 +58,7 @@ const generateNetworkPermissions = async (network: string) => {
     let gsmAdmins = {} as Record<string, Roles>;
     let collector = {} as Collector;
     let clinicSteward = {} as ClinicSteward;
+    let umbrella = {} as Umbrella;
     let cAdmins = {} as Roles;
     let govV3 = {} as GovV3;
     govV3.ggRoles = {} as Roles;
@@ -355,7 +359,7 @@ const generateNetworkPermissions = async (network: string) => {
         fromBlock = pool.tenderlyBlock;
       } else {
         fromBlock =
-          fullJson[poolKey]?.clinicSteward?.latestBlockNumber || pool.clinicStewardBlock;
+          fullJson[poolKey]?.clinicSteward?.clinicStewardRoles?.latestBlockNumber || pool.clinicStewardBlock;
       }
       console.log(`
         ------------------------------------
@@ -390,6 +394,75 @@ const generateNetworkPermissions = async (network: string) => {
         );
         clinicSteward.contracts = clinicStewardPermissions;
         clinicSteward.clinicStewardRoles = cAdmins;
+      }
+    }
+
+
+    if (pool.umbrellaBlock && pool.umbrellaAddressBook && pool.umbrellaIncentivesBlock) {
+      let umbrellaFromBlock;
+      if (pool.tenderlyBasePool) {
+        umbrellaFromBlock = pool.tenderlyBlock;
+      } else {
+        umbrellaFromBlock =
+          fullJson[poolKey]?.umbrella?.umbrellaRoles?.latestBlockNumber || pool.umbrellaBlock;
+      }
+      let umbrellaIncentivesFromBlock;
+      if (pool.tenderlyBasePool) {
+        umbrellaIncentivesFromBlock = pool.tenderlyBlock;
+      } else {
+        umbrellaIncentivesFromBlock =
+          fullJson[poolKey]?.umbrella?.umbrellaIncentivesRoles?.latestBlockNumber || pool.umbrellaIncentivesBlock;
+      }
+
+      if (umbrellaFromBlock && umbrellaIncentivesFromBlock) {
+        console.log(`
+          ------------------------------------
+            network: ${network}
+            pool: ${poolKey}
+            fromBlock: ${umbrellaFromBlock}
+            Umbrella Table
+          ------------------------------------
+          `);
+
+        const umbrellaRoles = await getCurrentRoleAdmins(
+          poolKey === Pools.TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
+          (fullJson[poolKey] && fullJson[poolKey]?.umbrella?.umbrellaRoles?.role) ||
+          ({} as Record<string, string[]>),
+          umbrellaFromBlock,
+          Number(network),
+          Pools[poolKey as keyof typeof Pools],
+          umbrellaRoleNames,
+          pool.umbrellaAddressBook.UMBRELLA,
+        );
+
+        const umbrellaIncentivesRoles = await getCurrentRoleAdmins(
+          poolKey === Pools.TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
+          (fullJson[poolKey] && fullJson[poolKey]?.umbrella?.umbrellaIncentivesRoles?.role) ||
+          ({} as Record<string, string[]>),
+          umbrellaIncentivesFromBlock,
+          Number(network),
+          Pools[poolKey as keyof typeof Pools],
+          umbrellaIncentivesRoleNames,
+          pool.umbrellaAddressBook.UMBRELLA_INCENTIVES_CONTROLLER,
+        );
+
+        const umbrellaPermissions = await resolveUmbrellaModifiers(
+          pool.umbrellaAddressBook,
+          poolKey === Pools.TENDERLY
+            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            : provider,
+          permissionsJson,
+          umbrellaRoles.role,
+          umbrellaIncentivesRoles.role,
+        );
+
+        umbrella.contracts = umbrellaPermissions;
+        umbrella.umbrellaRoles = umbrellaRoles;
+        umbrella.umbrellaIncentivesRoles = umbrellaIncentivesRoles;
       }
     }
 
@@ -497,6 +570,7 @@ const generateNetworkPermissions = async (network: string) => {
           govV3: govV3,
           collector: collector,
           clinicSteward: clinicSteward,
+          umbrella: umbrella,
         },
       };
     } else {
@@ -508,6 +582,7 @@ const generateNetworkPermissions = async (network: string) => {
         govV3: govV3,
         collector: collector,
         clinicSteward: clinicSteward,
+        umbrella: umbrella,
       };
     }
     console.log(`----${network} : ${poolKey} finished`);

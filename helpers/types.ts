@@ -34,6 +34,11 @@ export type ClinicSteward = {
   contracts: Contracts;
   clinicStewardRoles: Roles;
 };
+export type Umbrella = {
+  contracts: Contracts;
+  umbrellaRoles: Roles;
+  umbrellaIncentivesRoles: Roles;
+};
 export type AddressInfo = {
   address: string;
   owners: string[];
@@ -52,6 +57,7 @@ export type PoolInfo = {
   govV3?: GovV3;
   collector?: Collector;
   clinicSteward?: ClinicSteward;
+  umbrella?: Umbrella;
 };
 
 export type Pool = Record<string, PoolInfo>;
@@ -78,6 +84,10 @@ export type PoolConfigs = {
   gsmBlocks?: Record<string, number>;
   collectorBlock?: number;
   clinicStewardBlock?: number;
+
+  umbrellaBlock?: number;
+  umbrellaIncentivesBlock?: number;
+  umbrellaAddressBook?: any;
 };
 export type Network = {
   rpcUrl: string | undefined;
