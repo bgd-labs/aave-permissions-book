@@ -121,10 +121,8 @@ export const getCurrentRoleAdmins = async (
   // get roleGranted events
   const roleGrantedTopic0 = utils.id('RoleGranted(bytes32,address,address)');
   const roleRevokedTopic0 = utils.id('RoleRevoked(bytes32,address,address)');
-  console.log('granted: ', roleGrantedTopic0)
-  console.log('revoked: ', roleRevokedTopic0)
+
   const roles: Record<string, string[]> = { ...oldRoles };
-  console.log('eventLogs', eventLogs)
   // save or remove admins
   for (let eventLog of eventLogs) {
     // eventLogs.forEach((eventLog) => {

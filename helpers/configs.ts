@@ -199,10 +199,7 @@ export const networkConfigs: NetworkConfigs = {
         granularGuardianBlock: 20324867,
         umbrellaBlock: 22346140,
         umbrellaIncentivesBlock: 22346130,
-        umbrellaAddressBook: {
-          UMBRELLA: '0xa6Cfa5803Da7851D6D9B7Dd97abF32DC53f7200d',
-          UMBRELLA_INCENTIVES_CONTROLLER: '0x4655Ce3D625a63d30bA704087E52B4C31E38188B'
-        },
+        umbrellaAddressBook: UmbrellaEthereum,
         addressBook: { ...AaveV3Ethereum, ...MiscEthereum, ...GhoEthereum },
         addresses: {
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',

@@ -1,4 +1,4 @@
-import { providers, constants } from 'ethers';
+import { providers, constants, ethers } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import {
@@ -7,6 +7,8 @@ import {
   Guardian,
   PermissionsJson,
 } from '../helpers/types.js';
+import { getProxyAdmin } from '../helpers/proxyAdmin.js';
+import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
 
 const getAddressInfo = async (
   provider: providers.Provider,
@@ -84,8 +86,38 @@ export const resolveUmbrellaModifiers = async (
   }
 
   if (addressBook.UMBRELLA) {
+    const umbrellaProxyAdmin = await getProxyAdmin(
+      addressBook.UMBRELLA,
+      provider,
+    );
+    const proxyAdminContract = new ethers.Contract(
+      umbrellaProxyAdmin,
+      onlyOwnerAbi,
+      provider,
+    );
+    if (umbrellaProxyAdmin !== constants.AddressZero) {
+      const proxyAdminOwner = await proxyAdminContract.owner();
+
+      obj['UmbrellaProxyAdmin'] = {
+        address: umbrellaProxyAdmin,
+        modifiers: [
+          {
+            modifier: 'onlyOwner',
+            addresses: [
+              {
+                address: proxyAdminOwner,
+                owners: await getSafeOwners(provider, proxyAdminOwner),
+                signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
+              },
+            ],
+            functions: roles['ProxyAdmin']['onlyOwner'],
+          },
+        ],
+      };
+    }
     obj['Umbrella'] = {
       address: addressBook.UMBRELLA,
+      proxyAdmin: umbrellaProxyAdmin,
       modifiers: [
         {
           modifier: 'onlyCoverageManager',
@@ -151,11 +183,43 @@ export const resolveUmbrellaModifiers = async (
         },
       ],
     };
+
   }
 
   if (addressBook.UMBRELLA_INCENTIVES_CONTROLLER) {
+    const umbrellaICProxyAdmin = await getProxyAdmin(
+      addressBook.UMBRELLA_INCENTIVES_CONTROLLER,
+      provider,
+    );
+    const proxyAdminContract = new ethers.Contract(
+      umbrellaICProxyAdmin,
+      onlyOwnerAbi,
+      provider,
+    );
+    if (umbrellaICProxyAdmin !== constants.AddressZero) {
+      const proxyAdminOwner = await proxyAdminContract.owner();
+
+      obj['UmbrellaIncentivesControllerProxyAdmin'] = {
+        address: umbrellaICProxyAdmin,
+        modifiers: [
+          {
+            modifier: 'onlyOwner',
+            addresses: [
+              {
+                address: proxyAdminOwner,
+                owners: await getSafeOwners(provider, proxyAdminOwner),
+                signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
+              },
+            ],
+            functions: roles['ProxyAdmin']['onlyOwner'],
+          },
+        ],
+      };
+    }
+
     obj['UmbrellaIncentivesController'] = {
       address: addressBook.UMBRELLA_INCENTIVES_CONTROLLER,
+      proxyAdmin: umbrellaICProxyAdmin,
       modifiers: [
 
         {
@@ -190,6 +254,7 @@ export const resolveUmbrellaModifiers = async (
         },
       ],
     };
+
   }
 
   return obj;

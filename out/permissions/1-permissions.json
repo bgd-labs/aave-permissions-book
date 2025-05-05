@@ -1407,7 +1407,7 @@
         ]
       },
       "Manual AGRS": {
-        "address": "0x7C7143f4bE189928A6a98D8686c5e84c893c59c7",
+        "address": "0x46Ab47bA01EF627ce47F2ED61C9482794a6109c4",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -1483,7 +1483,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 22396961
+      "latestBlockNumber": 22416507
     },
     "gsmRoles": {},
     "govV3": {
@@ -1499,7 +1499,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 22396964
+        "latestBlockNumber": 22416511
       },
       "contracts": {
         "GranularGuardian": {
@@ -2079,7 +2079,7 @@
         "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
         "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6"
       ],
-      "latestCCCBlockNumber": 22396964
+      "latestCCCBlockNumber": 22416511
     },
     "collector": {
       "contracts": {
@@ -2167,7 +2167,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22396963
+        "latestBlockNumber": 22416510
       }
     },
     "clinicSteward": {
@@ -2226,13 +2226,34 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22396963
+        "latestBlockNumber": 22416510
       }
     },
     "umbrella": {
       "contracts": {
+        "UmbrellaProxyAdmin": {
+          "address": "0x7d74ebb22545edaea067ad4c9805991b191a729b",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
         "Umbrella": {
           "address": "0xa6Cfa5803Da7851D6D9B7Dd97abF32DC53f7200d",
+          "proxyAdmin": "0x7d74ebb22545edaea067ad4c9805991b191a729b",
           "modifiers": [
             {
               "modifier": "onlyCoverageManager",
@@ -2297,8 +2318,29 @@
             }
           ]
         },
+        "UmbrellaIncentivesControllerProxyAdmin": {
+          "address": "0xebaeacb6102b21d7996524d8ad47b33a3115ba69",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
         "UmbrellaIncentivesController": {
           "address": "0x4655Ce3D625a63d30bA704087E52B4C31E38188B",
+          "proxyAdmin": "0xebaeacb6102b21d7996524d8ad47b33a3115ba69",
           "modifiers": [
             {
               "modifier": "onlyRewardsAdmin",
@@ -2346,7 +2388,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 22396964
+        "latestBlockNumber": 22416510
       },
       "umbrellaIncentivesRoles": {
         "role": {
@@ -2357,7 +2399,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 22396964
+        "latestBlockNumber": 22416510
       }
     }
   },
