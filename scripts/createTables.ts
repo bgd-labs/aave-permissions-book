@@ -127,6 +127,7 @@ export const generateTable = (network: string, pool: string): string => {
     ...networkPermits[pool].contracts,
     ...getPermissionsByNetwork(network)[pool].collector?.contracts,
     ...getPermissionsByNetwork(network)[pool].clinicSteward?.contracts,
+    ...getPermissionsByNetwork(network)[pool].umbrella?.contracts,
   }
 
   if (!poolPermitsByContract?.contracts) {

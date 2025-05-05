@@ -234,7 +234,7 @@ export const resolveUmbrellaModifiers = async (
               };
             }),
           ]),
-          functions: roles['Umbrella']['onlyRewardsAdmin'],
+          functions: roles['UmbrellaRewardsController']['onlyRewardsAdmin'],
         },
         {
           modifier: 'onlyAdmin',
@@ -250,7 +250,7 @@ export const resolveUmbrellaModifiers = async (
               }),
             ])
           ],
-          functions: roles['Umbrella']['onlyAdmin'],
+          functions: roles['UmbrellaRewardsController']['onlyAdmin'],
         },
       ],
     };

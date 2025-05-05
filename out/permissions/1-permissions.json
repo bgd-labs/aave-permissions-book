@@ -1483,7 +1483,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 22416507
+      "latestBlockNumber": 22416638
     },
     "gsmRoles": {},
     "govV3": {
@@ -1499,7 +1499,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 22416511
+        "latestBlockNumber": 22416642
       },
       "contracts": {
         "GranularGuardian": {
@@ -2079,7 +2079,7 @@
         "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
         "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6"
       ],
-      "latestCCCBlockNumber": 22416511
+      "latestCCCBlockNumber": 22416642
     },
     "collector": {
       "contracts": {
@@ -2167,7 +2167,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22416510
+        "latestBlockNumber": 22416640
       }
     },
     "clinicSteward": {
@@ -2226,7 +2226,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22416510
+        "latestBlockNumber": 22416641
       }
     },
     "umbrella": {
@@ -2350,6 +2350,9 @@
                   "owners": [],
                   "signersThreshold": 0
                 }
+              ],
+              "functions": [
+                "configureRewards"
               ]
             },
             {
@@ -2362,12 +2365,8 @@
                 }
               ],
               "functions": [
-                "setDeficitOffset",
-                "createStakeTokens",
-                "setCooldownStk",
-                "setUnstakeWindowStk",
-                "updateSlashingConfigs",
-                "removeSlashingConfigs"
+                "configureAssetWithRewards",
+                "setClaimer"
               ]
             }
           ]
@@ -2388,7 +2387,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 22416510
+        "latestBlockNumber": 22416641
       },
       "umbrellaIncentivesRoles": {
         "role": {
@@ -2399,7 +2398,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 22416510
+        "latestBlockNumber": 22416641
       }
     }
   },
