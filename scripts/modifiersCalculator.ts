@@ -419,7 +419,7 @@ const generateNetworkPermissions = async (network: string) => {
           ------------------------------------
             network: ${network}
             pool: ${poolKey}
-            fromBlock: ${umbrellaFromBlock}
+            fromBlock: ${umbrellaFromBlock} | ${umbrellaIncentivesFromBlock}
             Umbrella Table
           ------------------------------------
           `);
@@ -447,7 +447,7 @@ const generateNetworkPermissions = async (network: string) => {
           Number(network),
           Pools[poolKey as keyof typeof Pools],
           umbrellaIncentivesRoleNames,
-          pool.umbrellaAddressBook.UMBRELLA_INCENTIVES_CONTROLLER,
+          pool.umbrellaAddressBook.UMBRELLA_REWARDS_CONTROLLER,
         );
 
         const umbrellaPermissions = await resolveUmbrellaModifiers(

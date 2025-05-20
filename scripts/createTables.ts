@@ -505,7 +505,7 @@ export const generateTable = (network: string, pool: string): string => {
       poolPermitsByContract.umbrella.contracts,
     )) {
       const contract = poolPermitsByContract.umbrella.contracts[contractName];
-
+console.log(contractName)
       if (contract.modifiers.length === 0) {
         umbrellaTableBody += getTableBody([
           `[${contractName}](${explorerAddressUrlComposer(

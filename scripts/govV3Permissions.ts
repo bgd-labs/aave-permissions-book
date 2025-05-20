@@ -278,124 +278,124 @@ export const resolveGovV3Modifiers = async (
     }
   }
 
-  if (
-    addressBook.PERMISSIONED_PAYLOADS_CONTROLLER &&
-    addressBook.PERMISSIONED_PAYLOADS_CONTROLLER !== constants.AddressZero
-  ) {
-    const ppcProxyAdmin = await getProxyAdmin(
-      addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
-      provider,
-    );
-    const proxyAdminContract = new ethers.Contract(
-      ppcProxyAdmin,
-      onlyOwnerAbi,
-      provider,
-    );
-    if (ppcProxyAdmin !== constants.AddressZero) {
-      const proxyAdminOwner = await proxyAdminContract.owner();
+  // if (
+  //   addressBook.PERMISSIONED_PAYLOADS_CONTROLLER &&
+  //   addressBook.PERMISSIONED_PAYLOADS_CONTROLLER !== constants.AddressZero
+  // ) {
+  //   const ppcProxyAdmin = await getProxyAdmin(
+  //     addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
+  //     provider,
+  //   );
+  //   const proxyAdminContract = new ethers.Contract(
+  //     ppcProxyAdmin,
+  //     onlyOwnerAbi,
+  //     provider,
+  //   );
+  //   if (ppcProxyAdmin !== constants.AddressZero) {
+  //     const proxyAdminOwner = await proxyAdminContract.owner();
 
-      obj['PermissionedPayloadsControllerProxyAdmin'] = {
-        address: ppcProxyAdmin,
-        modifiers: [
-          {
-            modifier: 'onlyOwner',
-            addresses: [
-              {
-                address: proxyAdminOwner,
-                owners: await getSafeOwners(provider, proxyAdminOwner),
-                signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
-              },
-            ],
-            functions: roles['ProxyAdmin']['onlyOwner'],
-          },
-        ],
-      };
-    }
+  //     obj['PermissionedPayloadsControllerProxyAdmin'] = {
+  //       address: ppcProxyAdmin,
+  //       modifiers: [
+  //         {
+  //           modifier: 'onlyOwner',
+  //           addresses: [
+  //             {
+  //               address: proxyAdminOwner,
+  //               owners: await getSafeOwners(provider, proxyAdminOwner),
+  //               signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
+  //             },
+  //           ],
+  //           functions: roles['ProxyAdmin']['onlyOwner'],
+  //         },
+  //       ],
+  //     };
+  //   }
 
 
-    const ppcContract = new ethers.Contract(
-      addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
-      PERMISSIONED_PAYLOADS_CONTROLLER_ABI,
-      provider,
-    );
+  //   const ppcContract = new ethers.Contract(
+  //     addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
+  //     PERMISSIONED_PAYLOADS_CONTROLLER_ABI,
+  //     provider,
+  //   );
 
-    const pcGuardian = await ppcContract.guardian();
-    const pcOwner = await ppcContract.owner();
-    const rescuer = await ppcContract.whoCanRescue();
-    const payloadsManager = await ppcContract.payloadsManager();
+  //   const pcGuardian = await ppcContract.guardian();
+  //   const pcOwner = await ppcContract.owner();
+  //   const rescuer = await ppcContract.whoCanRescue();
+  //   const payloadsManager = await ppcContract.payloadsManager();
 
-    obj['PermissionedPayloadsController'] = {
-      address: addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
-      proxyAdmin: ppcProxyAdmin,
-      modifiers: [
-        {
-          modifier: 'onlyGuardian',
-          addresses: [
-            {
-              address: pcGuardian,
-              owners: await getSafeOwners(provider, pcGuardian),
-              signersThreshold: await getSafeThreshold(provider, pcGuardian),
-            },
-          ],
-          functions: roles['PermissionedPayloadsController']['onlyGuardian'],
-        },
-        {
-          modifier: 'onlyOwnerOrGuardian',
-          addresses: [
-            {
-              address: pcGuardian,
-              owners: await getSafeOwners(provider, pcGuardian),
-              signersThreshold: await getSafeThreshold(provider, pcGuardian),
-            },
-            {
-              address: pcOwner,
-              owners: await getSafeOwners(provider, pcOwner),
-              signersThreshold: await getSafeThreshold(provider, pcOwner),
-            },
-          ],
-          functions: roles['PermissionedPayloadsController']['onlyOwnerOrGuardian'],
-        },
-        {
-          modifier: 'onlyRescueGuardian',
-          addresses: [
-            {
-              address: rescuer,
-              owners: await getSafeOwners(provider, rescuer),
-              signersThreshold: await getSafeThreshold(provider, rescuer),
-            },
-          ],
-          functions: roles['PermissionedPayloadsController']['onlyRescueGuardian'],
-        },
-        {
-          modifier: 'onlyPayloadsManagerOrGuardian',
-          addresses: [
-            {
-              address: pcGuardian,
-              owners: await getSafeOwners(provider, pcGuardian),
-              signersThreshold: await getSafeThreshold(provider, pcGuardian),
-            },
-            {
-              address: payloadsManager,
-              owners: await getSafeOwners(provider, payloadsManager),
-              signersThreshold: await getSafeThreshold(provider, payloadsManager),
-            },
-          ],
-          functions: roles['PermissionedPayloadsController']['onlyPayloadsManagerOrGuardian'],
-        },
-        {
-          modifier: 'onlyPayloadsManager',
-          addresses: [
-            {
-              address: payloadsManager,
-              owners: await getSafeOwners(provider, payloadsManager),
-              signersThreshold: await getSafeThreshold(provider, payloadsManager),
-            },
-          ],
-          functions: roles['PermissionedPayloadsController']['onlyPayloadsManager'],
-        },
-      ],
-    };
-  }
+  //   obj['PermissionedPayloadsController'] = {
+  //     address: addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
+  //     proxyAdmin: ppcProxyAdmin,
+  //     modifiers: [
+  //       {
+  //         modifier: 'onlyGuardian',
+  //         addresses: [
+  //           {
+  //             address: pcGuardian,
+  //             owners: await getSafeOwners(provider, pcGuardian),
+  //             signersThreshold: await getSafeThreshold(provider, pcGuardian),
+  //           },
+  //         ],
+  //         functions: roles['PermissionedPayloadsController']['onlyGuardian'],
+  //       },
+  //       {
+  //         modifier: 'onlyOwnerOrGuardian',
+  //         addresses: [
+  //           {
+  //             address: pcGuardian,
+  //             owners: await getSafeOwners(provider, pcGuardian),
+  //             signersThreshold: await getSafeThreshold(provider, pcGuardian),
+  //           },
+  //           {
+  //             address: pcOwner,
+  //             owners: await getSafeOwners(provider, pcOwner),
+  //             signersThreshold: await getSafeThreshold(provider, pcOwner),
+  //           },
+  //         ],
+  //         functions: roles['PermissionedPayloadsController']['onlyOwnerOrGuardian'],
+  //       },
+  //       {
+  //         modifier: 'onlyRescueGuardian',
+  //         addresses: [
+  //           {
+  //             address: rescuer,
+  //             owners: await getSafeOwners(provider, rescuer),
+  //             signersThreshold: await getSafeThreshold(provider, rescuer),
+  //           },
+  //         ],
+  //         functions: roles['PermissionedPayloadsController']['onlyRescueGuardian'],
+  //       },
+  //       {
+  //         modifier: 'onlyPayloadsManagerOrGuardian',
+  //         addresses: [
+  //           {
+  //             address: pcGuardian,
+  //             owners: await getSafeOwners(provider, pcGuardian),
+  //             signersThreshold: await getSafeThreshold(provider, pcGuardian),
+  //           },
+  //           {
+  //             address: payloadsManager,
+  //             owners: await getSafeOwners(provider, payloadsManager),
+  //             signersThreshold: await getSafeThreshold(provider, payloadsManager),
+  //           },
+  //         ],
+  //         functions: roles['PermissionedPayloadsController']['onlyPayloadsManagerOrGuardian'],
+  //       },
+  //       {
+  //         modifier: 'onlyPayloadsManager',
+  //         addresses: [
+  //           {
+  //             address: payloadsManager,
+  //             owners: await getSafeOwners(provider, payloadsManager),
+  //             signersThreshold: await getSafeThreshold(provider, payloadsManager),
+  //           },
+  //         ],
+  //         functions: roles['PermissionedPayloadsController']['onlyPayloadsManager'],
+  //       },
+  //     ],
+  //   };
+  // }
 
   if (
     addressBook.VOTING_MACHINE &&
@@ -569,33 +569,33 @@ export const resolveGovV3Modifiers = async (
     };
   }
 
-  if (
-    addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR &&
-    addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR !== constants.AddressZero
-  ) {
-    const executorContract = new ethers.Contract(
-      addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR,
-      IOwnable_ABI,
-      provider,
-    );
-    const owner = await executorContract.owner();
-    obj['PermissionedExecutor'] = {
-      address: addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR,
-      modifiers: [
-        {
-          modifier: 'onlyOwner',
-          addresses: [
-            {
-              address: owner,
-              owners: await getSafeOwners(provider, owner),
-              signersThreshold: await getSafeThreshold(provider, owner),
-            },
-          ],
-          functions: roles['Executor']['onlyOwner'],
-        },
-      ],
-    };
-  }
+  // if (
+  //   addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR &&
+  //   addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR !== constants.AddressZero
+  // ) {
+  //   const executorContract = new ethers.Contract(
+  //     addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR,
+  //     IOwnable_ABI,
+  //     provider,
+  //   );
+  //   const owner = await executorContract.owner();
+  //   obj['PermissionedExecutor'] = {
+  //     address: addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR,
+  //     modifiers: [
+  //       {
+  //         modifier: 'onlyOwner',
+  //         addresses: [
+  //           {
+  //             address: owner,
+  //             owners: await getSafeOwners(provider, owner),
+  //             signersThreshold: await getSafeThreshold(provider, owner),
+  //           },
+  //         ],
+  //         functions: roles['Executor']['onlyOwner'],
+  //       },
+  //     ],
+  //   };
+  // }
 
   if (
     addressBook.EMERGENCY_REGISTRY &&
