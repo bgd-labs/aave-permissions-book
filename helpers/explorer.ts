@@ -1,5 +1,4 @@
 import { ethers } from 'ethers';
-import { ChainId } from '@aave/contract-helpers';
 import { networkConfigs } from './configs.js';
 
 export const explorerAddressUrlComposer = (
@@ -15,7 +14,7 @@ export const explorerAddressUrlComposer = (
 
 export const explorerTxUrlComposer = (
   transaction: string,
-  chainId: ChainId,
+  chainId: typeof ChainId,
 ): string => {
   return `${networkConfigs[chainId].explorer}/tx/${transaction}`;
 };

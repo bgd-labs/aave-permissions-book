@@ -4,7 +4,7 @@ import {
 } from '../helpers/fileSystem.js';
 import { getNetowkName, networkConfigs, Pools } from '../helpers/configs.js';
 import { explorerAddressUrlComposer } from '../helpers/explorer.js';
-import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
+import { ChainId } from '@bgd-labs/toolbox';
 import { generateContractsByAddress } from '../helpers/jsonParsers.js';
 import {
   getLineSeparator,
@@ -94,27 +94,7 @@ export const generateTable = (network: string, pool: string): string => {
   const networkPermits = getPermissionsByNetwork(network);
   const mainnetPermissions = getPermissionsByNetwork(ChainId.mainnet);
 
-  const networkName =
-    network === '8453'
-      ? 'BASE'
-      : network == '56'
-        ? 'BINANCE'
-        : network == '100'
-          ? 'GNOSIS'
-          : network == '534352'
-            ? 'SCROLL'
-            : network == '1101'
-              ? 'POLYGON_ZK_EVM'
-              : network == '324'
-                ? 'ZK_SYNC'
-                : network == '59144'
-                  ? 'LINEA'
-                  : network == '146'
-                    ? 'SONIC'
-                    : network == '42220'
-                      ? 'CELO'
-                      : ChainIdToNetwork[Number(network)].toUpperCase();
-
+  const networkName = networkConfigs[Number(network)].name.toUpperCase();
   const addressesNames = networkConfigs[network].addressesNames || {};
 
   // create network Readme with pool tables

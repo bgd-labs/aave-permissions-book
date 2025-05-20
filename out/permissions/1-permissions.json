@@ -186,7 +186,8 @@
       "ggRoles": {}
     },
     "collector": {},
-    "clinicSteward": {}
+    "clinicSteward": {},
+    "umbrella": {}
   },
   "V2_MISC": {
     "contracts": {
@@ -259,7 +260,8 @@
       "ggRoles": {}
     },
     "collector": {},
-    "clinicSteward": {}
+    "clinicSteward": {},
+    "umbrella": {}
   },
   "GHO": {
     "contracts": {
@@ -1483,7 +1485,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 22523943
+      "latestBlockNumber": 22524665
     },
     "gsmRoles": {},
     "govV3": {
@@ -1499,7 +1501,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 22523947
+        "latestBlockNumber": 22524669
       },
       "contracts": {
         "GranularGuardian": {
@@ -2079,7 +2081,7 @@
         "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
         "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6"
       ],
-      "latestCCCBlockNumber": 22523947
+      "latestCCCBlockNumber": 22524669
     },
     "collector": {
       "contracts": {
@@ -2167,7 +2169,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22523945
+        "latestBlockNumber": 22524667
       }
     },
     "clinicSteward": {
@@ -2226,7 +2228,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22523946
+        "latestBlockNumber": 22524667
       }
     },
     "umbrella": {
@@ -2484,7 +2486,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 22523946
+        "latestBlockNumber": 22524668
       },
       "umbrellaIncentivesRoles": {
         "role": {
@@ -2495,7 +2497,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 22523946
+        "latestBlockNumber": 22524668
       }
     }
   },
@@ -2888,10 +2890,11 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22395219
+        "latestBlockNumber": 22524676
       }
     },
-    "clinicSteward": {}
+    "clinicSteward": {},
+    "umbrella": {}
   },
   "V2_AMM": {
     "contracts": {
@@ -3186,10 +3189,11 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22395220
+        "latestBlockNumber": 22524677
       }
     },
-    "clinicSteward": {}
+    "clinicSteward": {},
+    "umbrella": {}
   },
   "V2_ARC": {
     "contracts": {
@@ -3559,6 +3563,11 @@
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0x84f2C90f2D66E700baA4CF3cbF66bE7D8f21Bd87",
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -3729,6 +3738,11 @@
             "addresses": [
               {
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x84f2C90f2D66E700baA4CF3cbF66bE7D8f21Bd87",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -4080,7 +4094,9 @@
         "EMERGENCY_ADMIN": [
           "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30"
         ],
-        "ASSET_LISTING_ADMIN": [],
+        "ASSET_LISTING_ADMIN": [
+          "0x84f2C90f2D66E700baA4CF3cbF66bE7D8f21Bd87"
+        ],
         "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
@@ -4096,7 +4112,7 @@
           "0x5C905d62B22e4DAa4967E517C4a047Ff6026C731"
         ]
       },
-      "latestBlockNumber": 22395214
+      "latestBlockNumber": 22524671
     },
     "gsmRoles": {},
     "govV3": {
@@ -4188,7 +4204,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22395216
+        "latestBlockNumber": 22524672
       }
     },
     "clinicSteward": {
@@ -4247,9 +4263,10 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22395216
+        "latestBlockNumber": 22524673
       }
-    }
+    },
+    "umbrella": {}
   },
   "ETHERFI": {
     "contracts": {
@@ -4819,7 +4836,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 22395216
+      "latestBlockNumber": 22524673
     },
     "gsmRoles": {},
     "govV3": {
@@ -4911,10 +4928,11 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22395218
+        "latestBlockNumber": 22524674
       }
     },
-    "clinicSteward": {}
+    "clinicSteward": {},
+    "umbrella": {}
   },
   "TENDERLY": {
     "contracts": {

@@ -1,5 +1,5 @@
 import { ethers, providers, utils } from 'ethers';
-import { ChainId } from '@aave/contract-helpers';
+import { ChainId } from '@bgd-labs/toolbox';
 import { networkConfigs, Pools } from './configs.js';
 import { getLogs } from './eventLogs.js';
 import { getLimit } from './limits.js';
@@ -24,7 +24,7 @@ export const getCCCSendersAndAdapters = async (
   // oldBridgeAdapters: string[],
   fromBlock: number,
   addressBook: any,
-  chainId: ChainId | string,
+  chainId: typeof ChainId | string,
   pool: Pools,
 ) => {
   let timeout = undefined;

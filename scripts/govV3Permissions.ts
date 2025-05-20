@@ -5,7 +5,7 @@ import {
   Roles,
 } from '../helpers/types.js';
 import { ethers, providers, constants } from 'ethers';
-import { ChainId } from '@aave/contract-helpers';
+import { ChainId } from '@bgd-labs/toolbox';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';

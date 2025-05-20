@@ -90,6 +90,7 @@ export type PoolConfigs = {
   umbrellaAddressBook?: any;
 };
 export type Network = {
+  name: string;
   rpcUrl: string | undefined;
   explorer: string;
   pools: Record<string, PoolConfigs>;

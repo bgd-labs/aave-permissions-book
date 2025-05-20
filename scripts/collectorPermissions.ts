@@ -3,7 +3,7 @@ import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin, getProxyAdminFromFactory } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
-import { ChainId } from '@aave/contract-helpers';
+import { ChainId } from '@bgd-labs/toolbox';
 import {
   AddressInfo,
   Contracts,
@@ -41,7 +41,7 @@ export const resolveCollectorModifiers = async (
   addressBook: any,
   provider: providers.Provider,
   permissionsObject: PermissionsJson,
-  chainId: ChainId | number,
+  chainId: typeof ChainId | number,
   adminRoles: Record<string, string[]>,
 ): Promise<Contracts> => {
   let obj: Contracts = {};
