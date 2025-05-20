@@ -1483,7 +1483,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 22395209
+      "latestBlockNumber": 22523943
     },
     "gsmRoles": {},
     "govV3": {
@@ -1499,7 +1499,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 22395212
+        "latestBlockNumber": 22523947
       },
       "contracts": {
         "GranularGuardian": {
@@ -2079,7 +2079,7 @@
         "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
         "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6"
       ],
-      "latestCCCBlockNumber": 22395212
+      "latestCCCBlockNumber": 22523947
     },
     "collector": {
       "contracts": {
@@ -2167,7 +2167,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 22395211
+        "latestBlockNumber": 22523945
       }
     },
     "clinicSteward": {
@@ -2226,7 +2226,276 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 22395212
+        "latestBlockNumber": 22523946
+      }
+    },
+    "umbrella": {
+      "contracts": {
+        "UmbrellaProxyAdmin": {
+          "address": "0xfd57de1f38e3f730e0beb7238dd50e396851dda0",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
+        "Umbrella": {
+          "address": "0xD400fc38ED4732893174325693a63C30ee3881a8",
+          "proxyAdmin": "0xfd57de1f38e3f730e0beb7238dd50e396851dda0",
+          "modifiers": [
+            {
+              "modifier": "onlyCoverageManager",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "coverDeficitOffset",
+                "coverPendingDeficit",
+                "coverReserveDeficit"
+              ]
+            },
+            {
+              "modifier": "onlyAdmin",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "setDeficitOffset",
+                "createStakeTokens",
+                "setCooldownStk",
+                "setUnstakeWindowStk",
+                "updateSlashingConfigs",
+                "removeSlashingConfigs"
+              ]
+            },
+            {
+              "modifier": "onlyRescueGuardian",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "emergencyTokenTransferStk",
+                "emergencyEtherTransferStk"
+              ]
+            },
+            {
+              "modifier": "onlyPauseGuardian",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "pauseStk",
+                "unpauseStk"
+              ]
+            }
+          ]
+        },
+        "PermissionedPayloadsControllerProxyAdmin": {
+          "address": "0x1c7b0090badf16edcbd11cd1d20ddc403ed43d17",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
+        "PermissionedPayloadsController": {
+          "address": "0xF86F77F7531B3374274E3f725E0A81D60bC4bB67",
+          "proxyAdmin": "0x1c7b0090badf16edcbd11cd1d20ddc403ed43d17",
+          "modifiers": [
+            {
+              "modifier": "onlyGuardian",
+              "addresses": [
+                {
+                  "address": "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF",
+                  "owners": [
+                    "0x0650302887619fa7727D8BD480Cda11A638B219B",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7"
+                  ],
+                  "signersThreshold": 2
+                }
+              ],
+              "functions": [
+                "setExecutionDelay"
+              ]
+            },
+            {
+              "modifier": "onlyOwnerOrGuardian",
+              "addresses": [
+                {
+                  "address": "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF",
+                  "owners": [
+                    "0x0650302887619fa7727D8BD480Cda11A638B219B",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7"
+                  ],
+                  "signersThreshold": 2
+                },
+                {
+                  "address": "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF",
+                  "owners": [
+                    "0x0650302887619fa7727D8BD480Cda11A638B219B",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7"
+                  ],
+                  "signersThreshold": 2
+                }
+              ],
+              "functions": [
+                "updateGuardian"
+              ]
+            },
+            {
+              "modifier": "onlyRescueGuardian",
+              "addresses": [
+                {
+                  "address": "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF",
+                  "owners": [
+                    "0x0650302887619fa7727D8BD480Cda11A638B219B",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7"
+                  ],
+                  "signersThreshold": 2
+                }
+              ],
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
+            },
+            {
+              "modifier": "onlyPayloadsManagerOrGuardian",
+              "addresses": [
+                {
+                  "address": "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF",
+                  "owners": [
+                    "0x0650302887619fa7727D8BD480Cda11A638B219B",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7"
+                  ],
+                  "signersThreshold": 2
+                },
+                {
+                  "address": "0x22740deBa78d5a0c24C58C740e3715ec29de1bFa",
+                  "owners": [
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
+                    "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                    "0xbA037E4746ff58c55dc8F27a328C428F258DDACb"
+                  ],
+                  "signersThreshold": 3
+                }
+              ],
+              "functions": [
+                "cancelPayload"
+              ]
+            },
+            {
+              "modifier": "onlyPayloadsManager",
+              "addresses": [
+                {
+                  "address": "0x22740deBa78d5a0c24C58C740e3715ec29de1bFa",
+                  "owners": [
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
+                    "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                    "0xbA037E4746ff58c55dc8F27a328C428F258DDACb"
+                  ],
+                  "signersThreshold": 3
+                }
+              ],
+              "functions": [
+                "createPayload"
+              ]
+            }
+          ]
+        },
+        "PermissionedExecutor": {
+          "address": "0x2759de67aD133C747C9f41d56F1b8A343cE679a1",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xF86F77F7531B3374274E3f725E0A81D60bC4bB67",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "executeTransaction"
+              ]
+            }
+          ]
+        }
+      },
+      "umbrellaRoles": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ],
+          "COVERAGE_MANAGER_ROLE": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ],
+          "RESCUE_GUARDIAN_ROLE": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ],
+          "PAUSE_GUARDIAN_ROLE": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ]
+        },
+        "latestBlockNumber": 22523946
+      },
+      "umbrellaIncentivesRoles": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ],
+          "REWARDS_ADMIN_ROLE": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ]
+        },
+        "latestBlockNumber": 22523946
       }
     }
   },

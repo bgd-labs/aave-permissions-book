@@ -21,7 +21,7 @@
   "homepage": "https://github.com/bgd-labs/aave-permissions-list#readme",
   "devDependencies": {
     "@aave/contract-helpers": "^1.18.2",
-    "@bgd-labs/aave-address-book": "4.19.2-9f8908a798c57ca3ffd4ba463149ed34e20470ef.0",
+    "@bgd-labs/aave-address-book": "4.20.1",
     "@types/node": "^18.8.3",
     "dotenv": "^16.0.3",
     "ethers": "^5.7.1",
@@ -29,5 +29,8 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.19.0",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@bgd-labs/toolbox": "^0.0.14"
   }
 }

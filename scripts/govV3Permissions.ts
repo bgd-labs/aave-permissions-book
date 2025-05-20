@@ -17,6 +17,7 @@ import { baseAdapter } from '../abis/BaseAdapter.js';
 import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
 import { PayloadsController_ABI } from '../abis/payloadsController.js';
 import { ICrossChainController_ABI } from '../abis/crossChainController.js';
+import { PERMISSIONED_PAYLOADS_CONTROLLER_ABI } from '../abis/permissionedPayloadsController.js';
 
 export const resolveGovV3Modifiers = async (
   addressBook: any,
@@ -191,7 +192,7 @@ export const resolveGovV3Modifiers = async (
     const pcGuardian = await pcContractGuardian.guardian();
     const pcOwner = await pcContractOwner.owner();
     const rescuer = await pcContractRescue.whoCanRescue();
-    
+
     obj['PayloadsController'] = {
       address: addressBook.PAYLOADS_CONTROLLER,
       modifiers: [
@@ -276,7 +277,126 @@ export const resolveGovV3Modifiers = async (
       };
     }
   }
-  
+
+  // if (
+  //   addressBook.PERMISSIONED_PAYLOADS_CONTROLLER &&
+  //   addressBook.PERMISSIONED_PAYLOADS_CONTROLLER !== constants.AddressZero
+  // ) {
+  //   const ppcProxyAdmin = await getProxyAdmin(
+  //     addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
+  //     provider,
+  //   );
+  //   const proxyAdminContract = new ethers.Contract(
+  //     ppcProxyAdmin,
+  //     onlyOwnerAbi,
+  //     provider,
+  //   );
+  //   if (ppcProxyAdmin !== constants.AddressZero) {
+  //     const proxyAdminOwner = await proxyAdminContract.owner();
+
+  //     obj['PermissionedPayloadsControllerProxyAdmin'] = {
+  //       address: ppcProxyAdmin,
+  //       modifiers: [
+  //         {
+  //           modifier: 'onlyOwner',
+  //           addresses: [
+  //             {
+  //               address: proxyAdminOwner,
+  //               owners: await getSafeOwners(provider, proxyAdminOwner),
+  //               signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
+  //             },
+  //           ],
+  //           functions: roles['ProxyAdmin']['onlyOwner'],
+  //         },
+  //       ],
+  //     };
+  //   }
+
+
+  //   const ppcContract = new ethers.Contract(
+  //     addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
+  //     PERMISSIONED_PAYLOADS_CONTROLLER_ABI,
+  //     provider,
+  //   );
+
+  //   const pcGuardian = await ppcContract.guardian();
+  //   const pcOwner = await ppcContract.owner();
+  //   const rescuer = await ppcContract.whoCanRescue();
+  //   const payloadsManager = await ppcContract.payloadsManager();
+
+  //   obj['PermissionedPayloadsController'] = {
+  //     address: addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
+  //     proxyAdmin: ppcProxyAdmin,
+  //     modifiers: [
+  //       {
+  //         modifier: 'onlyGuardian',
+  //         addresses: [
+  //           {
+  //             address: pcGuardian,
+  //             owners: await getSafeOwners(provider, pcGuardian),
+  //             signersThreshold: await getSafeThreshold(provider, pcGuardian),
+  //           },
+  //         ],
+  //         functions: roles['PermissionedPayloadsController']['onlyGuardian'],
+  //       },
+  //       {
+  //         modifier: 'onlyOwnerOrGuardian',
+  //         addresses: [
+  //           {
+  //             address: pcGuardian,
+  //             owners: await getSafeOwners(provider, pcGuardian),
+  //             signersThreshold: await getSafeThreshold(provider, pcGuardian),
+  //           },
+  //           {
+  //             address: pcOwner,
+  //             owners: await getSafeOwners(provider, pcOwner),
+  //             signersThreshold: await getSafeThreshold(provider, pcOwner),
+  //           },
+  //         ],
+  //         functions: roles['PermissionedPayloadsController']['onlyOwnerOrGuardian'],
+  //       },
+  //       {
+  //         modifier: 'onlyRescueGuardian',
+  //         addresses: [
+  //           {
+  //             address: rescuer,
+  //             owners: await getSafeOwners(provider, rescuer),
+  //             signersThreshold: await getSafeThreshold(provider, rescuer),
+  //           },
+  //         ],
+  //         functions: roles['PermissionedPayloadsController']['onlyRescueGuardian'],
+  //       },
+  //       {
+  //         modifier: 'onlyPayloadsManagerOrGuardian',
+  //         addresses: [
+  //           {
+  //             address: pcGuardian,
+  //             owners: await getSafeOwners(provider, pcGuardian),
+  //             signersThreshold: await getSafeThreshold(provider, pcGuardian),
+  //           },
+  //           {
+  //             address: payloadsManager,
+  //             owners: await getSafeOwners(provider, payloadsManager),
+  //             signersThreshold: await getSafeThreshold(provider, payloadsManager),
+  //           },
+  //         ],
+  //         functions: roles['PermissionedPayloadsController']['onlyPayloadsManagerOrGuardian'],
+  //       },
+  //       {
+  //         modifier: 'onlyPayloadsManager',
+  //         addresses: [
+  //           {
+  //             address: payloadsManager,
+  //             owners: await getSafeOwners(provider, payloadsManager),
+  //             signersThreshold: await getSafeThreshold(provider, payloadsManager),
+  //           },
+  //         ],
+  //         functions: roles['PermissionedPayloadsController']['onlyPayloadsManager'],
+  //       },
+  //     ],
+  //   };
+  // }
+
   if (
     addressBook.VOTING_MACHINE &&
     addressBook.VOTING_MACHINE !== constants.AddressZero
@@ -305,7 +425,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-  
+
   if (
     addressBook.VOTING_PORTAL_ETH_ETH &&
     addressBook.VOTING_PORTAL_ETH_ETH !== constants.AddressZero
@@ -334,7 +454,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-  
+
   if (
     addressBook.VOTING_PORTAL_ETH_AVAX &&
     addressBook.VOTING_PORTAL_ETH_AVAX !== constants.AddressZero
@@ -363,7 +483,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-  
+
   if (
     addressBook.VOTING_PORTAL_ETH_POL &&
     addressBook.VOTING_PORTAL_ETH_POL !== constants.AddressZero
@@ -392,7 +512,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-  
+
   if (
     addressBook.EXECUTOR_LVL_1 &&
     addressBook.EXECUTOR_LVL_1 !== constants.AddressZero
@@ -420,7 +540,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-  
+
   if (
     addressBook.EXECUTOR_LVL_2 &&
     addressBook.EXECUTOR_LVL_2 !== constants.AddressZero
@@ -448,7 +568,35 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-  
+
+  // if (
+  //   addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR &&
+  //   addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR !== constants.AddressZero
+  // ) {
+  //   const executorContract = new ethers.Contract(
+  //     addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR,
+  //     IOwnable_ABI,
+  //     provider,
+  //   );
+  //   const owner = await executorContract.owner();
+  //   obj['PermissionedExecutor'] = {
+  //     address: addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR,
+  //     modifiers: [
+  //       {
+  //         modifier: 'onlyOwner',
+  //         addresses: [
+  //           {
+  //             address: owner,
+  //             owners: await getSafeOwners(provider, owner),
+  //             signersThreshold: await getSafeThreshold(provider, owner),
+  //           },
+  //         ],
+  //         functions: roles['Executor']['onlyOwner'],
+  //       },
+  //     ],
+  //   };
+  // }
+
   if (
     addressBook.EMERGENCY_REGISTRY &&
     addressBook.EMERGENCY_REGISTRY !== constants.AddressZero
@@ -476,7 +624,7 @@ export const resolveGovV3Modifiers = async (
       ],
     };
   }
-  
+
   if (
     addressBook.CROSS_CHAIN_CONTROLLER &&
     addressBook.CROSS_CHAIN_CONTROLLER !== constants.AddressZero

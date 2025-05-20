@@ -921,5 +921,163 @@
         ]
       }
     ]
+  },
+  {
+    "contract": "Umbrella",
+    "functions": [
+      {
+        "name": "setDeficitOffset",
+        "roles": [
+          "onlyAdmin"
+        ]
+      },
+      {
+        "name": "coverDeficitOffset",
+        "roles": [
+          "onlyCoverageManager"
+        ]
+      },
+      {
+        "name": "coverPendingDeficit",
+        "roles": [
+          "onlyCoverageManager"
+        ]
+      },
+      {
+        "name": "coverReserveDeficit",
+        "roles": [
+          "onlyCoverageManager"
+        ]
+      },
+      {
+        "name": "createStakeTokens",
+        "roles": [
+          "onlyAdmin"
+        ]
+      },
+      {
+        "name": "setCooldownStk",
+        "roles": [
+          "onlyAdmin"
+        ]
+      },
+      {
+        "name": "setUnstakeWindowStk",
+        "roles": [
+          "onlyAdmin"
+        ]
+      },
+      {
+        "name": "emergencyTokenTransferStk",
+        "roles": [
+          "onlyRescueGuardian"
+        ]
+      },
+      {
+        "name": "emergencyEtherTransferStk",
+        "roles": [
+          "onlyRescueGuardian"
+        ]
+      },
+      {
+        "name": "pauseStk",
+        "roles": [
+          "onlyPauseGuardian"
+        ]
+      },
+      {
+        "name": "unpauseStk",
+        "roles": [
+          "onlyPauseGuardian"
+        ]
+      },
+      {
+        "name": "updateSlashingConfigs",
+        "roles": [
+          "onlyAdmin"
+        ]
+      },
+      {
+        "name": "removeSlashingConfigs",
+        "roles": [
+          "onlyAdmin"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "UmbrellaRewardsController",
+    "functions": [
+      {
+        "name": "configureAssetWithRewards",
+        "roles": [
+          "onlyAdmin"
+        ]
+      },
+      {
+        "name": "setClaimer",
+        "roles": [
+          "onlyAdmin"
+        ]
+      },
+      {
+        "name": "configureRewards",
+        "roles": [
+          "onlyRewardsAdmin"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "PermissionedPayloadsController",
+    "functions": [
+      {
+        "name": "emergencyTokenTransfer",
+        "roles": [
+          "onlyRescueGuardian"
+        ]
+      },
+      {
+        "name": "emergencyEtherTransfer",
+        "roles": [
+          "onlyRescueGuardian"
+        ]
+      },
+      {
+        "name": "cancelPayload",
+        "roles": [
+          "onlyPayloadsManagerOrGuardian"
+        ]
+      },
+      {
+        "name": "updateGuardian",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      },
+      {
+        "name": "createPayload",
+        "roles": [
+          "onlyPayloadsManager"
+        ]
+      },
+      {
+        "name": "setExecutionDelay",
+        "roles": [
+          "onlyGuardian"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "Executor",
+    "functions": [
+      {
+        "name": "executeTransaction",
+        "roles": [
+          "onlyOwner"
+        ]
+      }
+    ]
   }
 ]

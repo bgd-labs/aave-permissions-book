@@ -1,21 +1,18 @@
-import { ChainId } from '@aave/contract-helpers';
 import dotenv from 'dotenv';
 
 import {
-  AaveGovernanceV2,
   AaveSafetyModule,
   AaveV2Avalanche,
   AaveV2Ethereum,
   AaveV2EthereumAMM,
   AaveV2EthereumArc,
+  UmbrellaEthereum,
   AaveV2Polygon,
   AaveV3Arbitrum,
   AaveV3Avalanche,
   AaveV3Ethereum,
   AaveV3EthereumLido,
   AaveV3EthereumEtherFi,
-  AaveV3Fantom,
-  AaveV3Harmony,
   AaveV3Optimism,
   AaveV3Polygon,
   AaveV3Metis,
@@ -36,7 +33,6 @@ import {
   MiscBase,
   MiscOptimism,
   MiscPolygon,
-  MiscFantom,
   MiscMetis,
   MiscAvalanche,
   AaveV3BNB,
@@ -61,6 +57,7 @@ import {
   GhoBase
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
+import { ChainId } from '@bgd-labs/toolbox';
 dotenv.config();
 
 export enum Pools {
@@ -127,6 +124,19 @@ export const granularGuardianRoleNames = [
   'SOLVE_EMERGENCY_ROLE',
 ];
 
+export const umbrellaRoleNames = [
+  'DEFAULT_ADMIN',
+  'COVERAGE_MANAGER_ROLE',
+  'PAUSE_GUARDIAN_ROLE',
+  'RESCUE_GUARDIAN_ROLE',
+
+];
+
+export const umbrellaIncentivesRoleNames = [
+  'DEFAULT_ADMIN',
+  'REWARDS_ADMIN_ROLE',
+];
+
 export const getNetowkName: Record<string | number, string> = {
   1: 'Eth',
   100: 'Gno',
@@ -185,6 +195,9 @@ export const networkConfigs: NetworkConfigs = {
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
         granularGuardianBlock: 20324867,
+        umbrellaBlock: 22346140,
+        umbrellaIncentivesBlock: 22346130,
+        umbrellaAddressBook: UmbrellaEthereum,
         addressBook: { ...AaveV3Ethereum, ...MiscEthereum, ...GhoEthereum },
         addresses: {
           '0x2a323be63e08E08536Fc3b5d8C6f24825e68895e': 'LayerZeroAdapter',
