@@ -6,7 +6,7 @@ import { generateRoles } from '../helpers/jsonParsers.js';
 import { poolAddressProviderAbi } from '../abis/lendingPoolAddressProviderAbi.js';
 import { getProxyAdmin, getProxyAdminFromFactory } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
-import { ChainId } from '@aave/contract-helpers';
+import { ChainId } from '@bgd-labs/toolbox';
 import {
   AddressInfo,
   Contracts,

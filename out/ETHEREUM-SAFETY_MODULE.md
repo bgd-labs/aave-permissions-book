@@ -1,4 +1,4 @@
-# MAINNET 
+# ETHEREUM 
 ## SAFETY_MODULE 
 ### Contracts upgradeability
 | contract |upgradeable by |

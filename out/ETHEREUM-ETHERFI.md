@@ -1,4 +1,4 @@
-# MAINNET 
+# ETHEREUM 
 ## ETHERFI 
 ### Contracts upgradeability
 | contract |upgradeable by |

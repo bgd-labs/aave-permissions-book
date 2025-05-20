@@ -1,5 +1,5 @@
 import { providers } from 'ethers';
-import { ChainId } from '@aave/contract-helpers';
+import { ChainId } from '@bgd-labs/toolbox';
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
@@ -17,7 +17,7 @@ export type GetLogsType = {
   topic2?: string;
   topic3?: string;
   tenderly?: boolean;
-  chainId?: ChainId | string;
+  chainId?: typeof ChainId | string;
 };
 
 const MAX_RETRIES = 20;

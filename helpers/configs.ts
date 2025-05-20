@@ -153,6 +153,7 @@ export const getNetowkName: Record<string | number, string> = {
 
 export const networkConfigs: NetworkConfigs = {
   [ChainId.mainnet]: {
+    name: 'Ethereum',
     rpcUrl: process.env.RPC_MAINNET,
     explorer: 'https://etherscan.io',
     addressesNames: {
@@ -369,6 +370,7 @@ export const networkConfigs: NetworkConfigs = {
     },
   },
   [ChainId.polygon]: {
+    name: 'Polygon',
     rpcUrl: process.env.RPC_POLYGON,
     explorer: 'https://polygonscan.com',
     addressesNames: {
@@ -432,7 +434,8 @@ export const networkConfigs: NetworkConfigs = {
       // },
     },
   },
-  ['56']: {
+  [ChainId.bnb]: {
+    name: 'Binance',
     rpcUrl: process.env.RPC_BINANCE,
     explorer: 'https://bscscan.com',
     addressesNames: {
@@ -480,6 +483,7 @@ export const networkConfigs: NetworkConfigs = {
     },
   },
   [ChainId.avalanche]: {
+    name: 'Avalanche',
     rpcUrl: process.env.RPC_AVALANCHE,
     explorer: 'https://snowscan.xyz',
     addressesNames: {
@@ -549,6 +553,7 @@ export const networkConfigs: NetworkConfigs = {
     },
   },
   [ChainId.optimism]: {
+    name: 'Optimism',
     rpcUrl: process.env.RPC_OPTIMISM,
     explorer: 'https://optimistic.etherscan.io',
     addressesNames: {
@@ -594,7 +599,8 @@ export const networkConfigs: NetworkConfigs = {
       // },
     },
   },
-  [ChainId.arbitrum_one]: {
+  [ChainId.arbitrum]: {
+    name: 'Arbitrum',
     rpcUrl: process.env.RPC_ARBITRUM,
     explorer: 'https://arbiscan.io',
     addressesNames: {
@@ -642,7 +648,8 @@ export const networkConfigs: NetworkConfigs = {
       // },
     },
   },
-  [ChainId.metis_andromeda]: {
+  [ChainId.metis]: {
+    name: 'Metis',
     rpcUrl: process.env.RPC_METIS,
     explorer: 'https://andromeda-explorer.metis.io',
     addressesNames: {
@@ -675,7 +682,8 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
-  ['8453']: {
+  [ChainId.base]: {
+    name: 'Base',
     rpcUrl: process.env.RPC_BASE,
     explorer: 'https://basescan.org',
     addressesNames: {
@@ -723,7 +731,8 @@ export const networkConfigs: NetworkConfigs = {
       // },
     },
   },
-  ['100']: {
+  [ChainId.gnosis]: {
+    name: 'Gnosis',
     rpcUrl: process.env.RPC_GNOSIS,
     explorer: 'https://gnosisscan.io/',
     addressesNames: {
@@ -770,7 +779,8 @@ export const networkConfigs: NetworkConfigs = {
       // },
     },
   },
-  ['534352']: {
+  [ChainId.scroll]: {
+    name: 'Scroll',
     rpcUrl: process.env.RPC_SCROLL,
     explorer: 'https://scrollscan.com/',
     addressesNames: {
@@ -803,7 +813,8 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
-  ['324']: {
+  [ChainId.zksync]: {
+    name: 'ZkSync',
     rpcUrl: process.env.RPC_ZKSYNC,
     explorer: 'https://era.zksync.network/',
     addressesNames: {
@@ -834,7 +845,8 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
-  ['59144']: {
+  [ChainId.linea]: {
+    name: 'Linea',
     rpcUrl: process.env.RPC_LINEA,
     explorer: 'https://lineascan.build/',
     addressesNames: {
@@ -872,7 +884,8 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
-  ['42220']: {
+  [ChainId.celo]: {
+    name: 'Celo',
     rpcUrl: process.env.RPC_CELO,
     explorer: 'https://celoscan.io/',
     addressesNames: {
@@ -911,7 +924,8 @@ export const networkConfigs: NetworkConfigs = {
       },
     },
   },
-  ['146']: {
+  [ChainId.sonic]: {
+    name: 'Sonic',
     rpcUrl: process.env.RPC_SONIC,
     explorer: 'https://sonicscan.org/',
     addressesNames: {
@@ -971,43 +985,3 @@ export const networkConfigs: NetworkConfigs = {
     },
   },
 };
-// ---------------------- DEPRECATED --------------------------------------
-// [ChainId.fantom]: {
-//   rpcUrl: process.env.RPC_FANTOM,
-//   explorer: 'https://ftmscan.com',
-//   addressesNames: {
-//     '0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949': 'Aave Guardian Fantom',
-//     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-//   },
-//   pools: {
-//     [Pools.V3]: {
-//       aclBlock: 33141475,
-//       permissionsJson: './statics/functionsPermissionsV3.json',
-//       addressBook: { ...AaveV3Fantom, ...MiscFantom },
-//     },
-//   },
-// },
-// ['1101']: {
-//   rpcUrl: process.env.RPC_ZKEVM,
-//   explorer: 'https://zkevm.polygonscan.com/',
-//   addressesNames: {
-//     '0x8C05474F1f0161F71276677De0a2d8a347583c45':
-//       'Aave Guardian Polygon ZkEvm',
-//     '0x07CD7D7866074FDFC4b8b86B126dD7199859483a': 'BGD',
-//     '0xC165b4ae0dfB650E0123d4A70D260029Cb6e2C0f': 'Risk Council',
-//     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-//   },
-//   pools: {
-//     [Pools.V3]: {
-//       aclBlock: 9169630,
-//       crossChainControllerBlock: 6314218,
-//       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-//       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-//       addressBook: { ...AaveV3PolygonZkEvm, ...MiscPolygonZkEvm },
-//       governanceAddressBook: GovernanceV3PolygonZkEvm,
-//       addresses: {
-//         '0x889c0cc3283DB588A34E89Ad1E8F25B0fc827b4b': 'ZkEVMAdapter',
-//       },
-//     },
-//   },
-// },

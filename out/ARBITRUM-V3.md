@@ -1,4 +1,4 @@
-# ARBITRUM_ONE 
+# ARBITRUM 
 ## V3 
 ### Contracts upgradeability
 | contract |upgradeable by |

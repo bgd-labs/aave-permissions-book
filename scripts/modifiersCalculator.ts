@@ -186,7 +186,7 @@ const generateNetworkPermissions = async (network: string) => {
             Number(network),
             Pools[poolKey as keyof typeof Pools],
             ghoRoleNames,
-            pool.addressBook.GHO_TOKEN,
+            pool.addressBook.GHO,
           );
           // get gsms admin roles
           if (pool.gsmBlocks) {

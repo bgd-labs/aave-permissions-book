@@ -1,5 +1,5 @@
 import { ethers, providers, utils } from 'ethers';
-import { ChainId } from '@aave/contract-helpers';
+import { ChainId } from '@bgd-labs/toolbox';
 import { getLogs } from './eventLogs.js';
 import { Roles } from './types.js';
 import { networkConfigs, Pools } from './configs.js';
@@ -52,7 +52,7 @@ export const getCurrentRoleAdmins = async (
   provider: providers.Provider,
   oldRoles: Record<string, string[]>,
   fromBlock: number,
-  chainId: ChainId | string,
+  chainId: typeof ChainId | string,
   pool: Pools,
   roleNames: string[],
   contract: string,

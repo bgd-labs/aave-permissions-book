@@ -6,7 +6,7 @@ import {
   Roles,
 } from '../helpers/types.js';
 import { Pools } from '../helpers/configs.js';
-import { ChainId } from '@aave/contract-helpers';
+import { ChainId } from '@bgd-labs/toolbox';
 import { ethers, providers, utils } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
@@ -33,7 +33,7 @@ export const resolveGHOModifiers = async (
   provider: providers.Provider,
   permissionsObject: PermissionsJson,
   pool: Pools,
-  chainId: ChainId | number,
+  chainId: typeof ChainId | number,
   adminRoles: Record<string, string[]>,
   gsmAdminRoles: Record<string, Roles>,
 ): Promise<Contracts> => {

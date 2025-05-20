@@ -1,4 +1,4 @@
-# METIS_ANDROMEDA 
+# METIS 
 ## V3 
 ### Contracts upgradeability
 | contract |upgradeable by |
