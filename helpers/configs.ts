@@ -54,7 +54,10 @@ import {
   GovernanceV3Celo,
   GhoArbitrum,
   GhoEthereum,
-  GhoBase
+  GhoBase,
+  GovernanceV3Soneium,
+  AaveV3Soneium,
+  MiscSoneium
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 import { ChainId } from '@bgd-labs/toolbox';
@@ -982,6 +985,43 @@ export const networkConfigs: NetworkConfigs = {
       //   tenderlyRpcUrl:
       //     'https://rpc.tenderly.co/fork/eaf1f612-3b0b-4925-b619-4e02d1bbc127',
       // },
+    },
+  },
+  [ChainId.soneium]: {
+    name: 'Soneium',
+    rpcUrl: process.env.RPC_SONEIUM,
+    explorer: 'https://sonicscan.org/',
+    addressesNames: {
+      '0xEf323B194caD8e02D9E5D8F07B34f625f1c088f1':
+        'Aave Protocol Guardian Soneium',
+      '0xdc62E0e65b2251Dc66404ca717FD32dcC365Be3A': 'BGD',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0xD8E6956718784B914740267b7A50B952fb516656':
+        'Aave Granular Guardian Soneium',
+      '0x19CE4363FEA478Aa04B9EA2937cc5A2cbcD44be6':
+        'Aave Governance Guardian Soneium',
+      '0x45cCB319C57A6Ae0d53C4dB1a151dF75015103b1': 'Risk Council',
+      '': 'Finance Risk Council'
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 6402340,
+        collectorBlock: 7004610,
+        crossChainControllerBlock: 6442410,
+        granularGuardianBlock: 6448120,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: {
+          ...AaveV3Soneium,
+          ...MiscSoneium,
+        },
+        governanceAddressBook: {
+          ...GovernanceV3Soneium,
+          ...MiscSoneium
+        },
+        addresses: {
+        },
+      },
     },
   },
 };

@@ -23,6 +23,8 @@ export const getLimit = (chainId: ChainId | string) => {
     limit = 9999;
   } else if (chainId === ChainId.bnb) {
     limit = 9999;
+  } else if (chainId === ChainId.soneium) {
+    limit = 9999;
   }
 
 
