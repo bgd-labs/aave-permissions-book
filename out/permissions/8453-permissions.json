@@ -577,7 +577,7 @@
                 "owners": [
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x818C277dBE886b934e60aa047250A73529E26A99",
+                  "0x320A4e54e3641A7a9dAF47016a93CDe6F848A340",
                   "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
                 ],
                 "signersThreshold": 3
@@ -666,7 +666,7 @@
           "0xB892202d9Ce2C16C565A492a5168689b215Eb269"
         ]
       },
-      "latestBlockNumber": 30480619
+      "latestBlockNumber": 31083383
     },
     "gsmRoles": {},
     "govV3": {
@@ -682,7 +682,7 @@
             "0x7FDA7C3528ad8f05e62148a700D456898b55f8d2"
           ]
         },
-        "latestBlockNumber": 30480634
+        "latestBlockNumber": 31083400
       },
       "contracts": {
         "GranularGuardian": {
@@ -948,7 +948,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 30480634
+      "latestCCCBlockNumber": 31083399
     },
     "collector": {
       "contracts": {
@@ -1025,7 +1025,7 @@
             "0x4f1F3E32f20847a4c9F002882eB607aD750b6115"
           ]
         },
-        "latestBlockNumber": 30480632
+        "latestBlockNumber": 31083396
       }
     },
     "clinicSteward": {
@@ -1080,7 +1080,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 30480634
+        "latestBlockNumber": 31083398
       }
     },
     "umbrella": {}
