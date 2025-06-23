@@ -57,7 +57,8 @@ import {
   GhoBase,
   GovernanceV3Soneium,
   AaveV3Soneium,
-  MiscSoneium
+  MiscSoneium,
+  GovernanceV3Bob
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 import { ChainId } from '@bgd-labs/toolbox';
@@ -1019,6 +1020,43 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: {
           ...GovernanceV3Soneium,
           ...MiscSoneium
+        },
+        addresses: {
+        },
+      },
+    },
+  },
+  [ChainId.bob]: {
+    name: 'Bob',
+    rpcUrl: process.env.RPC_BOB,
+    explorer: 'https://explorer.gobob.xyz/',
+    addressesNames: {
+      '':
+        'Aave Protocol Guardian Bob',
+      '0xdc62E0e65b2251Dc66404ca717FD32dcC365Be3A': 'BGD',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0xb2C672931Bd1Da226e29997Ec8cEB60Fb1DA3959':
+        'Aave Granular Guardian Bob',
+      '0x19CE4363FEA478Aa04B9EA2937cc5A2cbcD44be6':
+        'Aave Governance Guardian Bob',
+      '': 'Risk Council',
+      '': 'Finance Risk Council'
+    },
+    pools: {
+      [Pools.V3]: {
+        // aclBlock: ,
+        // collectorBlock: ,
+        crossChainControllerBlock: 18092370,
+        granularGuardianBlock: 18092630,
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: {
+          // ...AaveV3Bob,
+          // ...MiscBob,
+        },
+        governanceAddressBook: {
+          ...GovernanceV3Bob,
+          // ...MiscBob
         },
         addresses: {
         },
