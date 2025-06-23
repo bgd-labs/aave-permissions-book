@@ -16,7 +16,7 @@
             "0xdc62E0e65b2251Dc66404ca717FD32dcC365Be3A"
           ]
         },
-        "latestBlockNumber": 18912151
+        "latestBlockNumber": 18913304
       },
       "contracts": {
         "GranularGuardian": {
@@ -162,6 +162,26 @@
           ],
           "proxyAdmin": "0x4a756221ad070ba472ba59cd6d5e7dd6d2c866cc"
         },
+        "PayloadsControllerProxyAdmin": {
+          "address": "0x4a756221ad070ba472ba59cd6d5e7dd6d2c866cc",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x90800d1F54384523723eD3962c7Cd59d7866c83d",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
         "Executor_lvl1": {
           "address": "0x90800d1F54384523723eD3962c7Cd59d7866c83d",
           "modifiers": [
@@ -275,10 +295,30 @@
             }
           ],
           "proxyAdmin": "0x628ca0cb6e8a163bb1c4a50b75d7d4e7d38e8b18"
+        },
+        "CrossChainControllerProxyAdmin": {
+          "address": "0x628ca0cb6e8a163bb1c4a50b75d7d4e7d38e8b18",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x90800d1F54384523723eD3962c7Cd59d7866c83d",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 18912151
+      "latestCCCBlockNumber": 18913304
     },
     "collector": {},
     "clinicSteward": {},

@@ -58,7 +58,8 @@ import {
   GovernanceV3Soneium,
   AaveV3Soneium,
   MiscSoneium,
-  GovernanceV3Bob
+  GovernanceV3Bob,
+  MiscBob
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 import { ChainId } from '@bgd-labs/toolbox';
@@ -1056,7 +1057,7 @@ export const networkConfigs: NetworkConfigs = {
         },
         governanceAddressBook: {
           ...GovernanceV3Bob,
-          // ...MiscBob
+          ...MiscBob
         },
         addresses: {
         },
