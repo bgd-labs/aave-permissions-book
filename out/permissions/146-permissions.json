@@ -121,7 +121,7 @@
                 "signersThreshold": 0
               },
               {
-                "address": "0xAe13e4DA0952f0B8fE04E21df53716fCF799a923",
+                "address": "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -154,7 +154,7 @@
                 "signersThreshold": 0
               },
               {
-                "address": "0xAe13e4DA0952f0B8fE04E21df53716fCF799a923",
+                "address": "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c",
                 "owners": [],
                 "signersThreshold": 0
               },
@@ -427,10 +427,10 @@
         "BRIDGE": [],
         "FLASH_BORROWER": [],
         "RISK_ADMIN": [
-          "0xAe13e4DA0952f0B8fE04E21df53716fCF799a923"
+          "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c"
         ]
       },
-      "latestBlockNumber": 35506513
+      "latestBlockNumber": 37005584
     },
     "gsmRoles": {},
     "govV3": {
@@ -446,7 +446,7 @@
             "0x7837d7a167732aE41627A3B829871d9e32e2e7f2"
           ]
         },
-        "latestBlockNumber": 35506559
+        "latestBlockNumber": 37006007
       },
       "contracts": {
         "GranularGuardian": {
@@ -805,7 +805,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 35506557
+      "latestCCCBlockNumber": 37005873
     },
     "collector": {
       "contracts": {
@@ -891,7 +891,7 @@
             "0x4A137d528444Cc0346320CFa5C80FFc68087D7F9"
           ]
         },
-        "latestBlockNumber": 35506543
+        "latestBlockNumber": 37005728
       }
     },
     "clinicSteward": {},

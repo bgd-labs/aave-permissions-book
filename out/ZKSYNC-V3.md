@@ -28,14 +28,14 @@
 |----------|----------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
 |  configureProtocolFees |  Governance | |--------|--------|
-|  updateReserveCaps |  Governance,Multi-sig | |--------|--------|
+|  updateReserveCaps |  Governance,External Contract | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  upgradeAaveTokens (a/v/s) |  Governance | |--------|--------|
 |  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Governance,Multi-sig | |--------|--------|
-|  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
+|  pauseAndFreezeReserve |  Governance,External Contract,Multi-sig | |--------|--------|
 |  reserveListing |  Governance | |--------|--------|
 |  adminsConfiguration |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
@@ -52,8 +52,8 @@
 |  [Pool](https://era.zksync.network//address/0x78e30497a3c7527d953c6B1E3541b021A98Ac43c) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyBridge |   |  mintUnbacked, backUnbacked | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://era.zksync.network//address/0x0207d31b4377C74bEC37356aaD83E3dCc979F40E) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyPoolAdmin |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  dropReserve, dropReserve, updateAToken, updateStableDebtToken, updateVariableDebtToken, setReserveActive, updateBridgeProtocolFee, updateFlashloanPremiumTotal, updateFlashloanPremiumToProtocol | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://era.zksync.network//address/0x0207d31b4377C74bEC37356aaD83E3dCc979F40E) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  initReserves | |--------|--------|--------|--------|--------|
-|  [PoolConfigurator](https://era.zksync.network//address/0x0207d31b4377C74bEC37356aaD83E3dCc979F40E) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyRiskOrPoolAdmins |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020), [Manual AGRS](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) |  setReserveBorrowing, setReserveBorrowing, configureReserveAsCollateral, setReserveStableRateBorrowing, setBorrowableInIsolation, setReserveFactor, setDebtCeiling, setSiloedBorrowing, setBorrowCap, setSupplyCap, setLiquidationProtocolFee, setEModeCategory, setAssetEModeCategory, setUnbackedMintCap, setReserveInterestRateStrategyAddress, setReserveFlashLoaning | |--------|--------|--------|--------|--------|
-|  [PoolConfigurator](https://era.zksync.network//address/0x0207d31b4377C74bEC37356aaD83E3dCc979F40E) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyRiskOrPoolOrEmergencyAdmins |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020), [Manual AGRS](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26), [Aave Guardian ZkSync](https://era.zksync.network//address/0xba845c27903F7dDB5c676e5b74728C871057E000) |  setReserveFreeze | |--------|--------|--------|--------|--------|
+|  [PoolConfigurator](https://era.zksync.network//address/0x0207d31b4377C74bEC37356aaD83E3dCc979F40E) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyRiskOrPoolAdmins |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020), [0x528a1036C8450464f8a00A0A8c2f517595E44169](https://era.zksync.network//address/0x528a1036C8450464f8a00A0A8c2f517595E44169) |  setReserveBorrowing, setReserveBorrowing, configureReserveAsCollateral, setReserveStableRateBorrowing, setBorrowableInIsolation, setReserveFactor, setDebtCeiling, setSiloedBorrowing, setBorrowCap, setSupplyCap, setLiquidationProtocolFee, setEModeCategory, setAssetEModeCategory, setUnbackedMintCap, setReserveInterestRateStrategyAddress, setReserveFlashLoaning | |--------|--------|--------|--------|--------|
+|  [PoolConfigurator](https://era.zksync.network//address/0x0207d31b4377C74bEC37356aaD83E3dCc979F40E) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyRiskOrPoolOrEmergencyAdmins |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020), [0x528a1036C8450464f8a00A0A8c2f517595E44169](https://era.zksync.network//address/0x528a1036C8450464f8a00A0A8c2f517595E44169), [Aave Guardian ZkSync](https://era.zksync.network//address/0xba845c27903F7dDB5c676e5b74728C871057E000) |  setReserveFreeze | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://era.zksync.network//address/0x0207d31b4377C74bEC37356aaD83E3dCc979F40E) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020), [Aave Guardian ZkSync](https://era.zksync.network//address/0xba845c27903F7dDB5c676e5b74728C871057E000) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://era.zksync.network//address/0xC7F58Fca663a8d377B6D0c9703C697f56dC40088) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
 |  [RewardsController](https://era.zksync.network//address/0x37c972C9dDfC2138EBe33eC19dba063AB9f8966e) |  [PoolAddressesProvider](https://era.zksync.network//address/0x2A3948BB219D6B2Fa83D64100006391a96bE6cb7) |  onlyEmissionManager |  [EmissionManager](https://era.zksync.network//address/0x92AA83Ce0CC590E6B0627a9E22e84Ef43F389D1f) |  configureAssets, setTransferStrategy, setRewardOracle, setClaimer | |--------|--------|--------|--------|--------|
@@ -105,7 +105,7 @@
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |   | |--------|--------|
-|  RISK_ADMIN |  [Manual AGRS](https://era.zksync.network//address/0x05c77Cf62346329a157d7A6F874464D049CECb26) | |--------|--------|
+|  RISK_ADMIN |  [0x528a1036C8450464f8a00A0A8c2f517595E44169](https://era.zksync.network//address/0x528a1036C8450464f8a00A0A8c2f517595E44169) | |--------|--------|
 
 ### Granular Guardian Admins 
 | Role |Contract |
