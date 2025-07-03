@@ -121,27 +121,17 @@
                 "signersThreshold": 0
               },
               {
-                "address": "0xADf86b537eF08591c2777E144322E8b0Ca7E82a7",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0xe59470B3BE3293534603487E00A44C72f2CD466d",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
                 "address": "0xd2D586f849620ef042FE3aF52eAa10e9b78bf7De",
                 "owners": [],
                 "signersThreshold": 0
               },
               {
                 "address": "0x085E34722e04567Df9E6d2c32e82fd74f3342e79",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x365d47ceD3D7Eb6a9bdB3814aA23cc06B2D33Ef8",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -174,27 +164,17 @@
                 "signersThreshold": 0
               },
               {
-                "address": "0xADf86b537eF08591c2777E144322E8b0Ca7E82a7",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0xe59470B3BE3293534603487E00A44C72f2CD466d",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
                 "address": "0xd2D586f849620ef042FE3aF52eAa10e9b78bf7De",
                 "owners": [],
                 "signersThreshold": 0
               },
               {
                 "address": "0x085E34722e04567Df9E6d2c32e82fd74f3342e79",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x365d47ceD3D7Eb6a9bdB3814aA23cc06B2D33Ef8",
                 "owners": [],
                 "signersThreshold": 0
               },
@@ -649,11 +629,9 @@
         ],
         "ASSET_LISTING_ADMIN": [],
         "RISK_ADMIN": [
-          "0xADf86b537eF08591c2777E144322E8b0Ca7E82a7",
-          "0xe59470B3BE3293534603487E00A44C72f2CD466d",
-          "0x14568979093FFF97aeBD73F58051a4f0e297b1eB",
           "0xd2D586f849620ef042FE3aF52eAa10e9b78bf7De",
-          "0x085E34722e04567Df9E6d2c32e82fd74f3342e79"
+          "0x085E34722e04567Df9E6d2c32e82fd74f3342e79",
+          "0x365d47ceD3D7Eb6a9bdB3814aA23cc06B2D33Ef8"
         ],
         "FLASH_BORROWER": [
           "0x219ac6dA971dE6d943cffD1BD62abde71525d382",
@@ -675,7 +653,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 350376459
+      "latestBlockNumber": 353834565
     },
     "gsmRoles": {},
     "govV3": {
@@ -691,7 +669,7 @@
             "0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959"
           ]
         },
-        "latestBlockNumber": 350376602
+        "latestBlockNumber": 353834728
       },
       "contracts": {
         "GranularGuardian": {
@@ -957,7 +935,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 350376600
+      "latestCCCBlockNumber": 353834726
     },
     "collector": {
       "contracts": {
@@ -1034,7 +1012,7 @@
             "0xfB1D12D7C9c3Eb6b40fe0502801CdFCE816a0d18"
           ]
         },
-        "latestBlockNumber": 350376575
+        "latestBlockNumber": 353834699
       }
     },
     "clinicSteward": {
@@ -1093,7 +1071,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 350376591
+        "latestBlockNumber": 353834716
       }
     },
     "umbrella": {}

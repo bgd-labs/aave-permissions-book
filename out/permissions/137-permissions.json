@@ -121,17 +121,7 @@
                 "signersThreshold": 0
               },
               {
-                "address": "0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0x88dECc4bf07f5219ea7D1E32fe3762DA28ff7609",
+                "address": "0x1e0A5985D58B45C38598e293189aa5228054629b",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -164,17 +154,7 @@
                 "signersThreshold": 0
               },
               {
-                "address": "0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0x88dECc4bf07f5219ea7D1E32fe3762DA28ff7609",
+                "address": "0x1e0A5985D58B45C38598e293189aa5228054629b",
                 "owners": [],
                 "signersThreshold": 0
               },
@@ -602,9 +582,7 @@
         ],
         "ASSET_LISTING_ADMIN": [],
         "RISK_ADMIN": [
-          "0xc5de989E0D1BF605d19478Fdd32Aa827a10b464f",
-          "0xa7b40ed4dfAC9255EA9Dd218A3874f380D9FbBEB",
-          "0x88dECc4bf07f5219ea7D1E32fe3762DA28ff7609"
+          "0x1e0A5985D58B45C38598e293189aa5228054629b"
         ],
         "FLASH_BORROWER": [
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084",
@@ -616,7 +594,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 73123750
+      "latestBlockNumber": 73529026
     },
     "gsmRoles": {},
     "govV3": {
@@ -632,7 +610,7 @@
             "0xbCEB4f363f2666E2E8E430806F37e97C405c130b"
           ]
         },
-        "latestBlockNumber": 73123763
+        "latestBlockNumber": 73529039
       },
       "contracts": {
         "GranularGuardian": {
@@ -1011,7 +989,7 @@
         "0xc8a2ADC4261c6b669CdFf69E717E77C9cFeB420d",
         "0x44c8b753229006A8047A05b90379A7e92185E97C"
       ],
-      "latestCCCBlockNumber": 73123763
+      "latestCCCBlockNumber": 73529039
     },
     "collector": {
       "contracts": {
@@ -1088,7 +1066,7 @@
             "0xE5b11ab4D36E58C9171e3DB98Ba17336606Cd6ef"
           ]
         },
-        "latestBlockNumber": 73123760
+        "latestBlockNumber": 73529036
       }
     },
     "clinicSteward": {
@@ -1143,7 +1121,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 73123762
+        "latestBlockNumber": 73529038
       }
     },
     "umbrella": {}
@@ -1517,7 +1495,7 @@
             "0xE5b11ab4D36E58C9171e3DB98Ba17336606Cd6ef"
           ]
         },
-        "latestBlockNumber": 73123775
+        "latestBlockNumber": 73529051
       }
     },
     "clinicSteward": {},

@@ -32,14 +32,14 @@
 |----------|----------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
 |  configureProtocolFees |  Governance | |--------|--------|
-|  updateReserveCaps |  Governance,Multi-sig | |--------|--------|
+|  updateReserveCaps |  Governance,External Contract | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
 |  upgradeAaveTokens (a/v/s) |  Governance | |--------|--------|
 |  upgradeAaveOracles |  Governance | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Governance,Multi-sig | |--------|--------|
-|  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
+|  pauseAndFreezeReserve |  Governance,External Contract,Multi-sig | |--------|--------|
 |  reserveListing |  Governance | |--------|--------|
 |  adminsConfiguration |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
@@ -56,8 +56,8 @@
 |  [Pool](https://sonicscan.org//address/0x5362dBb1e601abF3a4c14c22ffEdA64042E5eAA3) |  [PoolAddressesProvider](https://sonicscan.org//address/0x5C2e738F6E27bCE0F7558051Bf90605dD6176900) |  onlyBridge |   |  mintUnbacked, backUnbacked | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://sonicscan.org//address/0x50c70FEB95aBC1A92FC30b9aCc41Bd349E5dE2f0) |  [PoolAddressesProvider](https://sonicscan.org//address/0x5C2e738F6E27bCE0F7558051Bf90605dD6176900) |  onlyPoolAdmin |  [Executor_lvl1](https://sonicscan.org//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) |  dropReserve, dropReserve, updateAToken, updateStableDebtToken, updateVariableDebtToken, setReserveActive, updateBridgeProtocolFee, updateFlashloanPremiumTotal, updateFlashloanPremiumToProtocol | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://sonicscan.org//address/0x50c70FEB95aBC1A92FC30b9aCc41Bd349E5dE2f0) |  [PoolAddressesProvider](https://sonicscan.org//address/0x5C2e738F6E27bCE0F7558051Bf90605dD6176900) |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://sonicscan.org//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) |  initReserves | |--------|--------|--------|--------|--------|
-|  [PoolConfigurator](https://sonicscan.org//address/0x50c70FEB95aBC1A92FC30b9aCc41Bd349E5dE2f0) |  [PoolAddressesProvider](https://sonicscan.org//address/0x5C2e738F6E27bCE0F7558051Bf90605dD6176900) |  onlyRiskOrPoolAdmins |  [Executor_lvl1](https://sonicscan.org//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7), [Manual AGRS](https://sonicscan.org//address/0xAe13e4DA0952f0B8fE04E21df53716fCF799a923) |  setReserveBorrowing, setReserveBorrowing, configureReserveAsCollateral, setReserveStableRateBorrowing, setBorrowableInIsolation, setReserveFactor, setDebtCeiling, setSiloedBorrowing, setBorrowCap, setSupplyCap, setLiquidationProtocolFee, setEModeCategory, setAssetEModeCategory, setUnbackedMintCap, setReserveInterestRateStrategyAddress, setReserveFlashLoaning | |--------|--------|--------|--------|--------|
-|  [PoolConfigurator](https://sonicscan.org//address/0x50c70FEB95aBC1A92FC30b9aCc41Bd349E5dE2f0) |  [PoolAddressesProvider](https://sonicscan.org//address/0x5C2e738F6E27bCE0F7558051Bf90605dD6176900) |  onlyRiskOrPoolOrEmergencyAdmins |  [Executor_lvl1](https://sonicscan.org//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7), [Manual AGRS](https://sonicscan.org//address/0xAe13e4DA0952f0B8fE04E21df53716fCF799a923), [Aave Protocol Guardian Sonic](https://sonicscan.org//address/0xA4aF5175ed38e791362F01c67a487DbA4aE07dFe) |  setReserveFreeze | |--------|--------|--------|--------|--------|
+|  [PoolConfigurator](https://sonicscan.org//address/0x50c70FEB95aBC1A92FC30b9aCc41Bd349E5dE2f0) |  [PoolAddressesProvider](https://sonicscan.org//address/0x5C2e738F6E27bCE0F7558051Bf90605dD6176900) |  onlyRiskOrPoolAdmins |  [Executor_lvl1](https://sonicscan.org//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7), [0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c](https://sonicscan.org//address/0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c) |  setReserveBorrowing, setReserveBorrowing, configureReserveAsCollateral, setReserveStableRateBorrowing, setBorrowableInIsolation, setReserveFactor, setDebtCeiling, setSiloedBorrowing, setBorrowCap, setSupplyCap, setLiquidationProtocolFee, setEModeCategory, setAssetEModeCategory, setUnbackedMintCap, setReserveInterestRateStrategyAddress, setReserveFlashLoaning | |--------|--------|--------|--------|--------|
+|  [PoolConfigurator](https://sonicscan.org//address/0x50c70FEB95aBC1A92FC30b9aCc41Bd349E5dE2f0) |  [PoolAddressesProvider](https://sonicscan.org//address/0x5C2e738F6E27bCE0F7558051Bf90605dD6176900) |  onlyRiskOrPoolOrEmergencyAdmins |  [Executor_lvl1](https://sonicscan.org//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7), [0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c](https://sonicscan.org//address/0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c), [Aave Protocol Guardian Sonic](https://sonicscan.org//address/0xA4aF5175ed38e791362F01c67a487DbA4aE07dFe) |  setReserveFreeze | |--------|--------|--------|--------|--------|
 |  [PoolConfigurator](https://sonicscan.org//address/0x50c70FEB95aBC1A92FC30b9aCc41Bd349E5dE2f0) |  [PoolAddressesProvider](https://sonicscan.org//address/0x5C2e738F6E27bCE0F7558051Bf90605dD6176900) |  onlyEmergencyOrPoolAdmin |  [Executor_lvl1](https://sonicscan.org//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7), [Aave Protocol Guardian Sonic](https://sonicscan.org//address/0xA4aF5175ed38e791362F01c67a487DbA4aE07dFe) |  setPoolPause, setReservePause | |--------|--------|--------|--------|--------|
 |  [AaveOracle](https://sonicscan.org//address/0xD63f7658C66B2934Bd234D79D06aEF5290734B30) |  - |  onlyAssetListingOrPoolAdmins |  [Executor_lvl1](https://sonicscan.org//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) |  setAssetSources, setFallbackOracle | |--------|--------|--------|--------|--------|
 |  [RewardsController](https://sonicscan.org//address/0x24bD6e9ca54F1737467DEf82dCA9702925B3Aa59) |  [PoolAddressesProvider](https://sonicscan.org//address/0x5C2e738F6E27bCE0F7558051Bf90605dD6176900) |  onlyEmissionManager |  [EmissionManager](https://sonicscan.org//address/0xd3A0A19Cdb7d1615f30988763BEA5f8feCc17a87) |  configureAssets, setTransferStrategy, setRewardOracle, setClaimer | |--------|--------|--------|--------|--------|
@@ -114,7 +114,7 @@
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |   | |--------|--------|
-|  RISK_ADMIN |  [Manual AGRS](https://sonicscan.org//address/0xAe13e4DA0952f0B8fE04E21df53716fCF799a923) | |--------|--------|
+|  RISK_ADMIN |  [0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c](https://sonicscan.org//address/0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c) | |--------|--------|
 
 ### Granular Guardian Admins 
 | Role |Contract |

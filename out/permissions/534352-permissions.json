@@ -121,17 +121,7 @@
                 "signersThreshold": 0
               },
               {
-                "address": "0xc68D0C511076283075bD5cc9aA61E43673135f37",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B",
+                "address": "0x0451f67bA61966C346daBAbB50a30Cc6A9A67C69",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -164,17 +154,7 @@
                 "signersThreshold": 0
               },
               {
-                "address": "0xc68D0C511076283075bD5cc9aA61E43673135f37",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B",
+                "address": "0x0451f67bA61966C346daBAbB50a30Cc6A9A67C69",
                 "owners": [],
                 "signersThreshold": 0
               },
@@ -518,12 +498,10 @@
           "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
         ],
         "RISK_ADMIN": [
-          "0xc68D0C511076283075bD5cc9aA61E43673135f37",
-          "0xc4dcA550EF04FD0f8AbD4c384575Fb8a8123054e",
-          "0x64093fe5f8Cf62aFb4377cf7EF4373537fe9155B"
+          "0x0451f67bA61966C346daBAbB50a30Cc6A9A67C69"
         ]
       },
-      "latestBlockNumber": 16680877
+      "latestBlockNumber": 16941854
     },
     "gsmRoles": {},
     "govV3": {
@@ -539,7 +517,7 @@
             "0x4aAa03F0A61cf93eA252e987b585453578108358"
           ]
         },
-        "latestBlockNumber": 16680884
+        "latestBlockNumber": 16941869
       },
       "contracts": {
         "GranularGuardian": {
@@ -805,7 +783,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 16680884
+      "latestCCCBlockNumber": 16941866
     },
     "collector": {
       "contracts": {
@@ -882,7 +860,7 @@
             "0xf4c8A85fee25f055795E5DcDF39b447aD5761aC7"
           ]
         },
-        "latestBlockNumber": 16680882
+        "latestBlockNumber": 16941858
       }
     },
     "clinicSteward": {
@@ -937,7 +915,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 16680884
+        "latestBlockNumber": 16941862
       }
     },
     "umbrella": {}
