@@ -31,6 +31,7 @@ import { resolveCollectorModifiers } from './collectorPermissions.js';
 import { resolveClinicStewardModifiers } from './clinicStewardPermissions.js';
 import { resolveUmbrellaModifiers } from './umbrellaPermissions.js';
 import { getRPCClient, getRpcClientFromUrl } from '../helpers/rpc.js';
+import { ChainId } from '@bgd-labs/toolbox';
 
 const generateNetworkPermissions = async (network: string) => {
   // get current permissions
@@ -96,7 +97,7 @@ const generateNetworkPermissions = async (network: string) => {
             : provider,
           permissionsJson,
           Pools[poolKey as keyof typeof Pools],
-          Number(network),
+          network as typeof ChainId,
         );
       }
     } else if (poolKey === Pools.GOV_V2 || poolKey === Pools.GOV_V2_TENDERLY) {
