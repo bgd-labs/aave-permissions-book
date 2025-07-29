@@ -1,8 +1,9 @@
-import { ethers, providers, utils } from 'ethers';
 import { ChainId } from '@bgd-labs/toolbox';
 import { networkConfigs, Pools } from './configs.js';
 import { getLogs } from './eventLogs.js';
 import { getLimit } from './limits.js';
+import { Client, Log, parseAbi } from 'viem';
+
 
 export const senderUpdatedABI = [
   'event SenderUpdated(address indexed sender, bool indexed isApproved)',
@@ -11,15 +12,15 @@ export const senderUpdatedABI = [
 
 export const parseLog = (
   abi: string[],
-  eventLog: ethers.providers.Log,
+  eventLog: Log,
 ): ethers.utils.Result => {
-  const iface = new ethers.utils.Interface(abi);
+  const iface = parseAbi(abi);
   const parsedEvent = iface.parseLog(eventLog);
   return parsedEvent.args;
 };
 
 export const getCCCSendersAndAdapters = async (
-  provider: providers.Provider,
+  provider: Client,
   oldSenders: string[],
   // oldBridgeAdapters: string[],
   fromBlock: number,
@@ -30,7 +31,7 @@ export const getCCCSendersAndAdapters = async (
   let timeout = undefined;
   let limit = getLimit(chainId);
 
-  let eventLogs: providers.Log[] = [];
+  let eventLogs: Log[] = [];
   let finalBlock: number = 0;
 
   // get sender updated event

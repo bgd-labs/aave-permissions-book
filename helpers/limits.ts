@@ -1,29 +1,29 @@
 import { ChainId } from "@bgd-labs/toolbox";
 
 
-export const getLimit = (chainId: ChainId | string) => {
+export const getLimit = (chainId: typeof ChainId) => {
   let limit = undefined;
 
   // if (chainId === ChainId.avalanche) {
   //   limit = 3000;
   // }
-  if (chainId === ChainId.sonic) {
+  if (Number(chainId) === Number(ChainId.sonic)) {
     limit = 9999;
-  } else if (chainId === ChainId.celo) {
+  } else if (Number(chainId) === Number(ChainId.celo)) {
     limit = 9999;
-  } else if (chainId === ChainId.linea) {
+  } else if (Number(chainId) === Number(ChainId.linea)) {
     limit = 9999;
-  } else if (chainId === ChainId.scroll) {
+  } else if (Number(chainId) === Number(ChainId.scroll)) {
     limit = 9999;
-  } else if (chainId === ChainId.gnosis) {
+  } else if (Number(chainId) === Number(ChainId.gnosis)) {
     limit = 9999;
-  } else if (chainId === ChainId.metis) {
+  } else if (Number(chainId) === Number(ChainId.metis)) {
     limit = 9999;
-  } else if (chainId === ChainId.avalanche) {
+  } else if (Number(chainId) === Number(ChainId.avalanche)) {
     limit = 9999;
-  } else if (chainId === ChainId.bnb) {
+  } else if (Number(chainId) === Number(ChainId.bnb)) {
     limit = 9999;
-  } else if (chainId === ChainId.soneium) {
+  } else if (Number(chainId) === Number(ChainId.soneium)) {
     limit = 9999;
   }
 

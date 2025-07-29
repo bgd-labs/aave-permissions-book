@@ -1,9 +1,10 @@
-import { ethers, providers, utils } from 'ethers';
 import { ChainId } from '@bgd-labs/toolbox';
 import { getLogs } from './eventLogs.js';
 import { Roles } from './types.js';
 import { networkConfigs, Pools } from './configs.js';
 import { getLimit } from './limits.js';
+import { Client, Log, parseAbi } from 'viem';
+import { getRpcClientFromUrl } from './rpc.js';
 
 export const roleGrantedEventABI = [
   'event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)',
@@ -39,9 +40,9 @@ function initializeRoleCodeMap(roleNames: string[], collector?: boolean): Map<st
 
 export const parseLog = (
   abi: string[],
-  eventLog: ethers.providers.Log,
+  eventLog: Log,
 ): { account: string; role: string } => {
-  const iface = new ethers.utils.Interface(abi);
+  const iface = parseAbi(abi);
   const parsedEvent = iface.parseLog(eventLog);
   const { role, account } = parsedEvent.args;
 
@@ -49,7 +50,7 @@ export const parseLog = (
 };
 
 export const getCurrentRoleAdmins = async (
-  provider: providers.Provider,
+  provider: Client,
   oldRoles: Record<string, string[]>,
   fromBlock: number,
   chainId: typeof ChainId | string,
@@ -62,7 +63,7 @@ export const getCurrentRoleAdmins = async (
   let limit = getLimit(chainId);
   let timeout = undefined;
 
-  let eventLogs: providers.Log[] = [];
+  let eventLogs: Log[] = [];
   let finalBlock: number = 0;
   if (
     pool === Pools.TENDERLY ||
@@ -80,8 +81,8 @@ export const getCurrentRoleAdmins = async (
       maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock,
       chainId,
     });
-    const tenderlyProvider = new providers.StaticJsonRpcProvider(
-      networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl,
+    const tenderlyProvider = getRpcClientFromUrl(
+      networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl!,
     );
     limit = 999;
     timeout = 10000;

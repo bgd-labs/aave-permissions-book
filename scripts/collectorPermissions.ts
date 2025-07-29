@@ -1,4 +1,3 @@
-import { ethers, providers, utils, constants } from 'ethers';
 import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin, getProxyAdminFromFactory } from '../helpers/proxyAdmin.js';
@@ -10,9 +9,10 @@ import {
   Guardian,
   PermissionsJson,
 } from '../helpers/types.js';
+import { Address, Client, getAddress, getContract, zeroAddress } from 'viem';
 
 const getAddressInfo = async (
-  provider: providers.Provider,
+  provider: Client,
   roleAddress: string,
 ): Promise<AddressInfo> => {
   const owners = await getSafeOwners(provider, roleAddress);
@@ -39,7 +39,7 @@ const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
 
 export const resolveCollectorModifiers = async (
   addressBook: any,
-  provider: providers.Provider,
+  provider: Client,
   permissionsObject: PermissionsJson,
   chainId: typeof ChainId | number,
   adminRoles: Record<string, string[]>,
@@ -69,7 +69,7 @@ export const resolveCollectorModifiers = async (
 
   if (
     addressBook.COLLECTOR &&
-    addressBook.COLLECTOR !== constants.AddressZero
+    addressBook.COLLECTOR !== zeroAddress
   ) {
     const collectorProxyAdmin = await getProxyAdmin(
       addressBook.COLLECTOR,
@@ -126,13 +126,9 @@ export const resolveCollectorModifiers = async (
       addressBook.COLLECTOR,
       provider,
     );
-    const proxyAdminContract = new ethers.Contract(
-      collectorProxyAdmin,
-      onlyOwnerAbi,
-      provider,
-    );
-    if (collectorProxyAdmin !== constants.AddressZero) {
-      const proxyAdminOwner = await proxyAdminContract.owner();
+    const proxyAdminContract = getContract({ address: getAddress(collectorProxyAdmin), abi: onlyOwnerAbi, client: provider });
+    if (collectorProxyAdmin !== zeroAddress) {
+      const proxyAdminOwner = await proxyAdminContract.read.owner() as Address;
 
       obj['CollectorProxyAdmin'] = {
         address: collectorProxyAdmin,
@@ -152,16 +148,16 @@ export const resolveCollectorModifiers = async (
       };
     }
   }
-  
+
   // add proxy admins
   const proxyAdminContracts: string[] = permissionsObject
     .filter((contract) => contract.proxyAdmin)
     .map((contract) => contract.contract);
   for (let i = 0; i < proxyAdminContracts.length; i++) {
     if (obj[proxyAdminContracts[i]]) {
-        obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
-          obj[proxyAdminContracts[i]].address,
-          provider,
+      obj[proxyAdminContracts[i]]['proxyAdmin'] = await getProxyAdmin(
+        obj[proxyAdminContracts[i]].address,
+        provider,
       );
     }
   }

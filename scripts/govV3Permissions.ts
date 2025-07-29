@@ -4,7 +4,6 @@ import {
   PermissionsJson,
   Roles,
 } from '../helpers/types.js';
-import { ethers, providers, constants } from 'ethers';
 import { ChainId } from '@bgd-labs/toolbox';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
@@ -18,12 +17,13 @@ import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
 import { PayloadsController_ABI } from '../abis/payloadsController.js';
 import { ICrossChainController_ABI } from '../abis/crossChainController.js';
 import { PERMISSIONED_PAYLOADS_CONTROLLER_ABI } from '../abis/permissionedPayloadsController.js';
+import { Address, Client, getAddress, getContract, zeroAddress } from 'viem';
 
 export const resolveGovV3Modifiers = async (
   addressBook: any,
-  provider: providers.Provider,
+  provider: Client,
   permissionsObject: PermissionsJson,
-  chainId: ChainId | number,
+  chainId: typeof ChainId | number,
   senders: string[],
   tenderly: boolean,
   ggAdminRoles: Record<string, string[]>,
@@ -54,7 +54,7 @@ export const resolveGovV3Modifiers = async (
 
   if (
     addressBook.GRANULAR_GUARDIAN &&
-    addressBook.GRANULAR_GUARDIAN !== constants.AddressZero
+    addressBook.GRANULAR_GUARDIAN !== zeroAddress
   ) {
     obj['GranularGuardian'] = {
       address: addressBook.GRANULAR_GUARDIAN,
@@ -109,20 +109,12 @@ export const resolveGovV3Modifiers = async (
   // only valid while 2.5 is active
   if (
     addressBook.GOVERNANCE &&
-    addressBook.GOVERNANCE !== constants.AddressZero
+    addressBook.GOVERNANCE !== zeroAddress
   ) {
-    const govContractGuardian = new ethers.Contract(
-      addressBook.GOVERNANCE,
-      IWithGuardian_ABI,
-      provider,
-    );
-    const govContractOwner = new ethers.Contract(
-      addressBook.GOVERNANCE,
-      IOwnable_ABI,
-      provider,
-    );
-    const govGuardian = await govContractGuardian.guardian();
-    const govOwner = await govContractOwner.owner();
+    const govContractGuardian = getContract({ address: getAddress(addressBook.GOVERNANCE), abi: IWithGuardian_ABI, client: provider });
+    const govContractOwner = getContract({ address: getAddress(addressBook.GOVERNANCE), abi: IOwnable_ABI, client: provider });
+    const govGuardian = await govContractGuardian.read.guardian() as Address;
+    const govOwner = await govContractOwner.read.owner() as Address;
 
     obj['AaveGovernanceV3'] = {
       address: addressBook.GOVERNANCE,
@@ -171,27 +163,15 @@ export const resolveGovV3Modifiers = async (
 
   if (
     addressBook.PAYLOADS_CONTROLLER &&
-    addressBook.PAYLOADS_CONTROLLER !== constants.AddressZero
+    addressBook.PAYLOADS_CONTROLLER !== zeroAddress
   ) {
-    const pcContractGuardian = new ethers.Contract(
-      addressBook.PAYLOADS_CONTROLLER,
-      IWithGuardian_ABI,
-      provider,
-    );
-    const pcContractOwner = new ethers.Contract(
-      addressBook.PAYLOADS_CONTROLLER,
-      IOwnable_ABI,
-      provider,
-    );
-    const pcContractRescue = new ethers.Contract(
-      addressBook.PAYLOADS_CONTROLLER,
-      PayloadsController_ABI,
-      provider,
-    );
+    const pcContractGuardian = getContract({ address: getAddress(addressBook.PAYLOADS_CONTROLLER), abi: IWithGuardian_ABI, client: provider });
+    const pcContractOwner = getContract({ address: getAddress(addressBook.PAYLOADS_CONTROLLER), abi: IOwnable_ABI, client: provider });
+    const pcContractRescue = getContract({ address: getAddress(addressBook.PAYLOADS_CONTROLLER), abi: PayloadsController_ABI, client: provider });
 
-    const pcGuardian = await pcContractGuardian.guardian();
-    const pcOwner = await pcContractOwner.owner();
-    const rescuer = await pcContractRescue.whoCanRescue();
+    const pcGuardian = await pcContractGuardian.read.guardian() as Address;
+    const pcOwner = await pcContractOwner.read.owner() as Address;
+    const rescuer = await pcContractRescue.read.whoCanRescue() as Address;
 
     obj['PayloadsController'] = {
       address: addressBook.PAYLOADS_CONTROLLER,
@@ -253,12 +233,8 @@ export const resolveGovV3Modifiers = async (
         addressBook.PAYLOADS_CONTROLLER,
         provider,
       );
-      const proxyAdminContract = new ethers.Contract(
-        pcProxyAdmin,
-        onlyOwnerAbi,
-        provider,
-      );
-      const proxyAdminOwner = await proxyAdminContract.owner();
+      const proxyAdminContract = getContract({ address: getAddress(pcProxyAdmin), abi: onlyOwnerAbi, client: provider });
+      const proxyAdminOwner = await proxyAdminContract.read.owner() as Address;
       obj['PayloadsControllerProxyAdmin'] = {
         address: pcProxyAdmin,
         modifiers: [
@@ -399,15 +375,11 @@ export const resolveGovV3Modifiers = async (
 
   if (
     addressBook.VOTING_MACHINE &&
-    addressBook.VOTING_MACHINE !== constants.AddressZero
+    addressBook.VOTING_MACHINE !== zeroAddress
   ) {
-    const vmContract = new ethers.Contract(
-      addressBook.VOTING_MACHINE,
-      IOwnable_ABI,
-      provider,
-    );
+    const vmContract = getContract({ address: getAddress(addressBook.VOTING_MACHINE), abi: IOwnable_ABI, client: provider });
 
-    const owner = await vmContract.owner();
+    const owner = await vmContract.read.owner() as Address;
     obj['VotingMachine'] = {
       address: addressBook.VOTING_MACHINE,
       modifiers: [
@@ -428,15 +400,11 @@ export const resolveGovV3Modifiers = async (
 
   if (
     addressBook.VOTING_PORTAL_ETH_ETH &&
-    addressBook.VOTING_PORTAL_ETH_ETH !== constants.AddressZero
+    addressBook.VOTING_PORTAL_ETH_ETH !== zeroAddress
   ) {
-    const vpContract = new ethers.Contract(
-      addressBook.VOTING_PORTAL_ETH_ETH,
-      IOwnable_ABI,
-      provider,
-    );
+    const vpContract = getContract({ address: getAddress(addressBook.VOTING_PORTAL_ETH_ETH), abi: IOwnable_ABI, client: provider });
 
-    const owner = await vpContract.owner();
+    const owner = await vpContract.read.owner() as Address;
     obj['VotingPortal_Eth_Eth'] = {
       address: addressBook.VOTING_PORTAL_ETH_ETH,
       modifiers: [
@@ -457,15 +425,11 @@ export const resolveGovV3Modifiers = async (
 
   if (
     addressBook.VOTING_PORTAL_ETH_AVAX &&
-    addressBook.VOTING_PORTAL_ETH_AVAX !== constants.AddressZero
+    addressBook.VOTING_PORTAL_ETH_AVAX !== zeroAddress
   ) {
-    const vpContract = new ethers.Contract(
-      addressBook.VOTING_PORTAL_ETH_AVAX,
-      IOwnable_ABI,
-      provider,
-    );
+    const vpContract = getContract({ address: getAddress(addressBook.VOTING_PORTAL_ETH_AVAX), abi: IOwnable_ABI, client: provider });
 
-    const owner = await vpContract.owner();
+    const owner = await vpContract.read.owner() as Address;
     obj['VotingPortal_Eth_Avax'] = {
       address: addressBook.VOTING_PORTAL_ETH_AVAX,
       modifiers: [
@@ -486,15 +450,11 @@ export const resolveGovV3Modifiers = async (
 
   if (
     addressBook.VOTING_PORTAL_ETH_POL &&
-    addressBook.VOTING_PORTAL_ETH_POL !== constants.AddressZero
+    addressBook.VOTING_PORTAL_ETH_POL !== zeroAddress
   ) {
-    const vpContract = new ethers.Contract(
-      addressBook.VOTING_PORTAL_ETH_POL,
-      IOwnable_ABI,
-      provider,
-    );
+    const vpContract = getContract({ address: getAddress(addressBook.VOTING_PORTAL_ETH_POL), abi: IOwnable_ABI, client: provider });
 
-    const owner = await vpContract.owner();
+    const owner = await vpContract.read.owner() as Address;
     obj['VotingPortal_Eth_Pol'] = {
       address: addressBook.VOTING_PORTAL_ETH_POL,
       modifiers: [
@@ -515,14 +475,10 @@ export const resolveGovV3Modifiers = async (
 
   if (
     addressBook.EXECUTOR_LVL_1 &&
-    addressBook.EXECUTOR_LVL_1 !== constants.AddressZero
+    addressBook.EXECUTOR_LVL_1 !== zeroAddress
   ) {
-    const executorContract = new ethers.Contract(
-      addressBook.EXECUTOR_LVL_1,
-      IOwnable_ABI,
-      provider,
-    );
-    const owner = await executorContract.owner();
+    const executorContract = getContract({ address: getAddress(addressBook.EXECUTOR_LVL_1), abi: IOwnable_ABI, client: provider });
+    const owner = await executorContract.read.owner() as Address;
     obj['Executor_lvl1'] = {
       address: addressBook.EXECUTOR_LVL_1,
       modifiers: [
@@ -543,14 +499,10 @@ export const resolveGovV3Modifiers = async (
 
   if (
     addressBook.EXECUTOR_LVL_2 &&
-    addressBook.EXECUTOR_LVL_2 !== constants.AddressZero
+    addressBook.EXECUTOR_LVL_2 !== zeroAddress
   ) {
-    const executorContract = new ethers.Contract(
-      addressBook.EXECUTOR_LVL_2,
-      IOwnable_ABI,
-      provider,
-    );
-    const owner = await executorContract.owner();
+    const executorContract = getContract({ address: getAddress(addressBook.EXECUTOR_LVL_2), abi: IOwnable_ABI, client: provider });
+    const owner = await executorContract.read.owner() as Address;
     obj['Executor_lvl2'] = {
       address: addressBook.EXECUTOR_LVL_2,
       modifiers: [
@@ -599,14 +551,10 @@ export const resolveGovV3Modifiers = async (
 
   if (
     addressBook.EMERGENCY_REGISTRY &&
-    addressBook.EMERGENCY_REGISTRY !== constants.AddressZero
+    addressBook.EMERGENCY_REGISTRY !== zeroAddress
   ) {
-    const emergencyRegistryContract = new ethers.Contract(
-      addressBook.EMERGENCY_REGISTRY,
-      IOwnable_ABI,
-      provider,
-    );
-    const owner = await emergencyRegistryContract.owner();
+    const emergencyRegistryContract = getContract({ address: getAddress(addressBook.EMERGENCY_REGISTRY), abi: IOwnable_ABI, client: provider });
+    const owner = await emergencyRegistryContract.read.owner() as Address;
     obj['EmergencyRegistry'] = {
       address: addressBook.EMERGENCY_REGISTRY,
       modifiers: [
@@ -627,37 +575,21 @@ export const resolveGovV3Modifiers = async (
 
   if (
     addressBook.CROSS_CHAIN_CONTROLLER &&
-    addressBook.CROSS_CHAIN_CONTROLLER !== constants.AddressZero
+    addressBook.CROSS_CHAIN_CONTROLLER !== zeroAddress
   ) {
-    const cccContract = new ethers.Contract(
-      addressBook.CROSS_CHAIN_CONTROLLER,
-      ICrossChainController_ABI,
-      provider,
-    );
-    const cccContractOwner = new ethers.Contract(
-      addressBook.CROSS_CHAIN_CONTROLLER,
-      IOwnable_ABI,
-      provider,
-    );
-    const cccContractGuardian = new ethers.Contract(
-      addressBook.CROSS_CHAIN_CONTROLLER,
-      IWithGuardian_ABI,
-      provider,
-    );
-    const cccContractRescue = new ethers.Contract(
-      addressBook.CROSS_CHAIN_CONTROLLER,
-      ICrossChainController_ABI,
-      provider,
-    );
-    const owner = await cccContractOwner.owner();
-    const guardian = await cccContractGuardian.guardian();
-    const rescuer = await cccContractRescue.whoCanRescue();
+    const cccContract = getContract({ address: getAddress(addressBook.CROSS_CHAIN_CONTROLLER), abi: ICrossChainController_ABI, client: provider });
+    const cccContractOwner = getContract({ address: getAddress(addressBook.CROSS_CHAIN_CONTROLLER), abi: IOwnable_ABI, client: provider });
+    const cccContractGuardian = getContract({ address: getAddress(addressBook.CROSS_CHAIN_CONTROLLER), abi: IWithGuardian_ABI, client: provider });
+    const cccContractRescue = getContract({ address: getAddress(addressBook.CROSS_CHAIN_CONTROLLER), abi: ICrossChainController_ABI, client: provider });
+    const owner = await cccContractOwner.read.owner() as Address;
+    const guardian = await cccContractGuardian.read.guardian() as Address;
+    const rescuer = await cccContractRescue.read.whoCanRescue() as Address;
 
-    const supportedChains = await cccContract.getSupportedChains();
+    const supportedChains = await cccContract.read.getSupportedChains() as number[];
     const receiverBridges: Set<string> = new Set();
     for (let i = 0; i < supportedChains.length; i++) {
       const bridges: string[] =
-        await cccContract.getReceiverBridgeAdaptersByChain(supportedChains[i]);
+        await cccContract.read.getReceiverBridgeAdaptersByChain([supportedChains[i]]) as string[];
       bridges.map((bridge) => receiverBridges.add(bridge));
     }
 
@@ -666,34 +598,26 @@ export const resolveGovV3Modifiers = async (
       // get trusted remotes
       const trustedRemotes: { address: string; chain: string }[] = [];
       for (let j = 0; j < supportedChains.length; j++) {
-        const bridgeAdapterContract = new ethers.Contract(
-          receiverBridgesArray[i],
-          baseAdapter,
-          provider,
-        );
+        const bridgeAdapterContract = getContract({ address: getAddress(receiverBridgesArray[i]), abi: baseAdapter, client: provider });
         const trustedRemote: string =
-          await bridgeAdapterContract.getTrustedRemoteByChainId(
-            supportedChains[j],
-          );
+          await bridgeAdapterContract.read.getTrustedRemoteByChainId(
+            [supportedChains[j]],
+          ) as Address;
 
-        if (trustedRemote === constants.AddressZero) {
+        if (trustedRemote === zeroAddress) {
           break;
         }
         trustedRemotes.push({
           address: trustedRemote,
-          chain: supportedChains[j],
+          chain: supportedChains[j].toString(),
         });
       }
 
       let bridgeAdapterName = `BridgeAdapter${i}`;
 
       try {
-        const bridgeAdapterContract = new ethers.Contract(
-          receiverBridgesArray[i],
-          baseAdapter,
-          provider,
-        );
-        bridgeAdapterName = await bridgeAdapterContract.adapterName();
+        const bridgeAdapterContract = getContract({ address: getAddress(receiverBridgesArray[i]), abi: baseAdapter, client: provider });
+        bridgeAdapterName = await bridgeAdapterContract.read.adapterName() as string;
       } catch (error) {
         if (addressNames && addressNames[receiverBridgesArray[i]] !== '') {
           bridgeAdapterName = addressNames[receiverBridgesArray[i]];
@@ -813,12 +737,8 @@ export const resolveGovV3Modifiers = async (
         addressBook.CROSS_CHAIN_CONTROLLER,
         provider,
       );
-      const proxyAdminContract = new ethers.Contract(
-        cccProxyAdmin,
-        onlyOwnerAbi,
-        provider,
-      );
-      const proxyAdminOwner = await proxyAdminContract.owner();
+      const proxyAdminContract = getContract({ address: getAddress(cccProxyAdmin), abi: onlyOwnerAbi, client: provider });
+      const proxyAdminOwner = await proxyAdminContract.read.owner() as Address;
       obj['CrossChainControllerProxyAdmin'] = {
         address: cccProxyAdmin,
         modifiers: [
