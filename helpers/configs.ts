@@ -213,7 +213,6 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.LIDO]: {
         collectorBlock: 21765718,
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         aclBlock: 20262410,
         addressBook: {
           ...AaveV3EthereumLido,
@@ -224,7 +223,6 @@ export const networkConfigs: NetworkConfigs = {
       },
       // [Pools.LIDO_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
       //   aclBlock: 20262410,
       //   addressBook: {
       //     ...AaveV3EthereumLido,
@@ -239,7 +237,6 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.ETHERFI]: {
         collectorBlock: 21765718,
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         aclBlock: 20625515,
         addressBook: {
           ...AaveV3EthereumEtherFi,
@@ -249,7 +246,6 @@ export const networkConfigs: NetworkConfigs = {
       },
       // [Pools.ETHERFI_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
       //   aclBlock: 20625515,
       //   addressBook: {
       //     ...AaveV3EthereumEtherFi,

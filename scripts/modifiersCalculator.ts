@@ -31,13 +31,12 @@ import { resolveCollectorModifiers } from './collectorPermissions.js';
 import { resolveClinicStewardModifiers } from './clinicStewardPermissions.js';
 import { resolveUmbrellaModifiers } from './umbrellaPermissions.js';
 import { getRPCClient, getRpcClientFromUrl } from '../helpers/rpc.js';
-import { ChainId } from '@bgd-labs/toolbox';
 
 const generateNetworkPermissions = async (network: string) => {
   // get current permissions
   let fullJson = getPermissionsByNetwork(network);
   // generate permissions
-  let provider = getRPCClient(Number(network));
+  let provider = getRPCClient(Number(network))
 
   const pools = networkConfigs[network].pools;
   const poolsKeys = Object.keys(pools).map((pool) => pool);
@@ -97,7 +96,7 @@ const generateNetworkPermissions = async (network: string) => {
             : provider,
           permissionsJson,
           Pools[poolKey as keyof typeof Pools],
-          network as typeof ChainId,
+          network,
         );
       }
     } else if (poolKey === Pools.GOV_V2 || poolKey === Pools.GOV_V2_TENDERLY) {
@@ -490,11 +489,7 @@ const generateNetworkPermissions = async (network: string) => {
       if (cccFromBlock) {
         const { senders, latestCCCBlockNumber } =
           await getCCCSendersAndAdapters(
-            poolKey === Pools.TENDERLY ||
-              poolKey === Pools.LIDO_TENDERLY ||
-              poolKey === Pools.ETHERFI_TENDERLY
-              ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
-              : provider,
+            provider,
             (fullJson[poolKey] && fullJson[poolKey]?.govV3?.senders) || [],
             cccFromBlock,
             pool.governanceAddressBook,
@@ -604,6 +599,7 @@ async function main() {
   );
 
   const results = await Promise.allSettled(permissions);
+  console.log('--------------FINISHED--------------')
 }
 
 main();

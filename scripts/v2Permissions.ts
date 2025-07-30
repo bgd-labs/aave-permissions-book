@@ -16,7 +16,7 @@ export const resolveV2Modifiers = async (
   provider: Client,
   permissionsObject: PermissionsJson,
   pool: Pools,
-  chainId: typeof ChainId,
+  chainId: string,
 ): Promise<Contracts> => {
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);

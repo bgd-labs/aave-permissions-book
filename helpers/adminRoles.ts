@@ -1,23 +1,16 @@
-import { ChainId } from '@bgd-labs/toolbox';
-import { getLogs } from './eventLogs.js';
 import { Roles } from './types.js';
 import { networkConfigs, Pools } from './configs.js';
 import { getLimit } from './limits.js';
-import { Client, Log, parseAbi } from 'viem';
-import { getRpcClientFromUrl } from './rpc.js';
+import { Client, Log, keccak256, encodePacked } from 'viem';
+import { getEvents, getRpcClientFromUrl } from './rpc.js';
 
-export const roleGrantedEventABI = [
-  'event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)',
-];
-export const roleRevokedEventABI = [
-  'event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)',
-];
+
 
 export const defaultRolesAdmin =
   '0x0000000000000000000000000000000000000000000000000000000000000000';
 
-function initializeRoleCodeMap(roleNames: string[], collector?: boolean): Map<string, string> {
-  let roleCodeMap = new Map<string, string>([
+const initializeRoleCodeMap = (roleNames: string[], collector?: boolean): Map<string, string> => {
+  const roleCodeMap = new Map<string, string>([
     [
       '0x0000000000000000000000000000000000000000000000000000000000000000',
       'DEFAULT_ADMIN',
@@ -25,9 +18,10 @@ function initializeRoleCodeMap(roleNames: string[], collector?: boolean): Map<st
   ]);
 
   for (const roleName of roleNames) {
-    const code = ethers.utils.solidityKeccak256(['string'], [roleName]);
+    const code = keccak256(encodePacked(['string'], [roleName]));
     roleCodeMap.set(code, roleName);
   }
+
   if (collector) {
     roleCodeMap.set(
       '0x46554e44535f41444d494e000000000000000000000000000000000000000000',
@@ -38,107 +32,33 @@ function initializeRoleCodeMap(roleNames: string[], collector?: boolean): Map<st
   return roleCodeMap;
 }
 
-export const parseLog = (
-  abi: string[],
-  eventLog: Log,
-): { account: string; role: string } => {
-  const iface = parseAbi(abi);
-  const parsedEvent = iface.parseLog(eventLog);
-  const { role, account } = parsedEvent.args;
 
-  return { account, role };
-};
 
-export const getCurrentRoleAdmins = async (
-  provider: Client,
+export const getRoleAdmins = ({
+  oldRoles,
+  roleNames,
+  collector,
+  eventLogs,
+}: {
   oldRoles: Record<string, string[]>,
-  fromBlock: number,
-  chainId: typeof ChainId | string,
-  pool: Pools,
   roleNames: string[],
-  contract: string,
   collector?: boolean,
-): Promise<Roles> => {
+  eventLogs: Log[],
+}) => {
   const roleHexToNameMap = initializeRoleCodeMap(roleNames, collector);
-  let limit = getLimit(chainId);
-  let timeout = undefined;
-
-  let eventLogs: Log[] = [];
-  let finalBlock: number = 0;
-  if (
-    pool === Pools.TENDERLY ||
-    pool === Pools.GHO_TENDERLY ||
-    pool == Pools.ETHERFI_TENDERLY ||
-    pool == Pools.LIDO_TENDERLY
-  ) {
-    const networkLogs = await getLogs({
-      provider,
-      address: contract,
-      fromBlock,
-      logs: [],
-      limit,
-      timeout,
-      maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock,
-      chainId,
-    });
-    const tenderlyProvider = getRpcClientFromUrl(
-      networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl!,
-    );
-    limit = 999;
-    timeout = 10000;
-
-    const tenderlyBlock =
-      networkConfigs[Number(chainId)].pools[pool].tenderlyBlock ||
-      networkLogs.finalBlock;
-
-    const tenderlyLogs = await getLogs({
-      provider: tenderlyProvider,
-      address: contract,
-      fromBlock: tenderlyBlock,
-      logs: [],
-      limit,
-      timeout,
-      tenderly: true,
-      chainId,
-    });
-
-    const logs = [...networkLogs.eventLogs, ...tenderlyLogs.eventLogs];
-    eventLogs = logs;
-    finalBlock = networkLogs.finalBlock;
-  } else {
-    const logs = await getLogs({
-      provider,
-      address: contract,
-      fromBlock,
-      logs: [],
-      limit,
-      timeout,
-      chainId,
-    });
-    eventLogs = logs.eventLogs;
-    finalBlock = logs.finalBlock;
-  }
-
-  // get roleGranted events
-  const roleGrantedTopic0 = utils.id('RoleGranted(bytes32,address,address)');
-  const roleRevokedTopic0 = utils.id('RoleRevoked(bytes32,address,address)');
-
   const roles: Record<string, string[]> = { ...oldRoles };
-  // save or remove admins
-  for (let eventLog of eventLogs) {
-    // eventLogs.forEach((eventLog) => {
-    if (eventLog.topics[0] === roleGrantedTopic0) {
-      const { role, account } = parseLog(roleGrantedEventABI, eventLog);
-      const roleName = roleHexToNameMap.get(role);
+
+  eventLogs.forEach((eventLog) => {
+    const role = eventLog.args.role;
+    const account = eventLog.args.account;
+    const roleName = roleHexToNameMap.get(role);
+
+    if (eventLog.eventName === 'RoleGranted') {
       // console.log(`role granted
-      //   topic0: ${eventLog.topics[0]}
-      //   grant : ${roleGrantedTopic0}
-      //   revoke: ${roleRevokedTopic0}
       //   address: ${account}
       //   rawRole: ${role}
       //   role: ${roleName}
       // `);
-
       if (roleName && !roles[roleName]) {
         roles[roleName] = [];
       }
@@ -151,13 +71,8 @@ export const getCurrentRoleAdmins = async (
           roles[roleName].push(account);
         }
       }
-    } else if (eventLog.topics[0] === roleRevokedTopic0) {
-      const { role, account } = parseLog(roleRevokedEventABI, eventLog);
-      const roleName = roleHexToNameMap.get(role);
+    } else if (eventLog.eventName === 'RoleRevoked') {
       // console.log(`role revoked
-      //   topic0: ${eventLog.topics[0]}
-      //   grant : ${roleGrantedTopic0}
-      //   revoke: ${roleRevokedTopic0}
       //   address: ${account}
       //   rawRole: ${role}
       //   role: ${roleName}
@@ -165,17 +80,92 @@ export const getCurrentRoleAdmins = async (
       if (roleName) {
         roles[roleName] = roles[roleName].filter((role) => role !== account);
       }
-    } else {
-      // console.log(`
-      //   topic0: ${eventLog}
-      // `);
     }
-  }
+  })
 
   roleNames.forEach((roleName) => {
     if (!roles[roleName]) roles[roleName] = [];
   });
   // console.log('roes: ', roles);
   // console.log('-------------------------------');
-  return { role: roles, latestBlockNumber: finalBlock };
+  return roles;
+};
+
+
+
+export const getCurrentRoleAdmins = async (
+  client: Client,
+  oldRoles: Record<string, string[]>,
+  fromBlock: number,
+  chainId: string,
+  pool: Pools,
+  roleNames: string[],
+  contract: string,
+  collector?: boolean,
+): Promise<Roles> => {
+  let limit = getLimit(chainId) ?? 0;
+
+  let events: Log[] = [];
+  let latestBlockNumber = 0;
+  if (
+    pool === Pools.TENDERLY ||
+    pool === Pools.GHO_TENDERLY ||
+    pool == Pools.ETHERFI_TENDERLY ||
+    pool == Pools.LIDO_TENDERLY
+  ) {
+    const preTenderlyForkEvents = await getEvents({
+      client,
+      fromBlock,
+      contract,
+      eventTypes: ['RoleGranted', 'RoleRevoked'],
+      maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock!,
+      limit
+    });
+
+    const tenderlyProvider = getRpcClientFromUrl(
+      networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl!,
+    );
+
+
+    const tenderlyForkEvents = await getEvents({
+      client: tenderlyProvider,
+      fromBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock!,
+      contract,
+      eventTypes: ['RoleGranted', 'RoleRevoked'],
+      limit: 999
+    });
+    events = [...preTenderlyForkEvents, ...tenderlyForkEvents];
+
+    preTenderlyForkEvents.forEach((event) => {
+      if (Number(event.blockNumber) > latestBlockNumber) {
+        latestBlockNumber = Number(event.blockNumber);
+      }
+    });
+  } else {
+    events = await getEvents({
+      client,
+      fromBlock,
+      contract,
+      eventTypes: ['RoleGranted', 'RoleRevoked'],
+      limit
+    });
+
+    events.forEach((event) => {
+      if (Number(event.blockNumber) > latestBlockNumber) {
+        latestBlockNumber = Number(event.blockNumber);
+      }
+    });
+  }
+
+  const roles = getRoleAdmins({
+    oldRoles,
+    roleNames,
+    collector,
+    eventLogs: events,
+  });
+
+
+  // console.log('roes: ', roles);
+  // console.log('-------------------------------');
+  return { role: roles, latestBlockNumber };
 };

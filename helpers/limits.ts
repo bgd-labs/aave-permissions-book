@@ -1,7 +1,7 @@
 import { ChainId } from "@bgd-labs/toolbox";
 
 
-export const getLimit = (chainId: typeof ChainId) => {
+export const getLimit = (chainId: string) => {
   let limit = undefined;
 
   // if (chainId === ChainId.avalanche) {

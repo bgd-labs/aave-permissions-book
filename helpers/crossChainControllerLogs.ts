@@ -1,110 +1,29 @@
-import { ChainId } from '@bgd-labs/toolbox';
-import { networkConfigs, Pools } from './configs.js';
-import { getLogs } from './eventLogs.js';
 import { getLimit } from './limits.js';
-import { Client, Log, parseAbi } from 'viem';
+import { Client, Log } from 'viem';
+import { getEvents, getRpcClientFromUrl } from './rpc.js';
+import { Pools } from './configs.js';
+import { networkConfigs } from './configs.js';
 
 
-export const senderUpdatedABI = [
-  'event SenderUpdated(address indexed sender, bool indexed isApproved)',
-  // 'event ReceiverBridgeAdaptersUpdated(address indexed bridgeAdapter, bool indexed allowed, uint256 indexed chainId)',
-];
-
-export const parseLog = (
-  abi: string[],
-  eventLog: Log,
-): ethers.utils.Result => {
-  const iface = parseAbi(abi);
-  const parsedEvent = iface.parseLog(eventLog);
-  return parsedEvent.args;
-};
-
-export const getCCCSendersAndAdapters = async (
-  provider: Client,
+export const getSenders = ({
+  oldSenders,
+  eventLogs,
+}: {
   oldSenders: string[],
-  // oldBridgeAdapters: string[],
-  fromBlock: number,
-  addressBook: any,
-  chainId: typeof ChainId | string,
-  pool: Pools,
-) => {
-  let timeout = undefined;
-  let limit = getLimit(chainId);
-
-  let eventLogs: Log[] = [];
-  let finalBlock: number = 0;
-
-  // get sender updated event
-  const senderUpdatedTopic0 = utils.id('SenderUpdated(address,bool)');
-
-  if (
-    pool === Pools.TENDERLY ||
-    pool === Pools.GHO_TENDERLY ||
-    pool == Pools.ETHERFI_TENDERLY ||
-    pool == Pools.LIDO_TENDERLY
-  ) {
-    const networkLogs = await getLogs({
-      provider,
-      address: addressBook.CROSS_CHAIN_CONTROLLER,
-      fromBlock,
-      logs: [],
-      limit,
-      timeout,
-      maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock,
-      topic0: senderUpdatedTopic0,
-      chainId,
-    });
-    const tenderlyProvider = new providers.StaticJsonRpcProvider(
-      networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl,
-    );
-
-    limit = 999;
-    timeout = 10000;
-
-    const tenderlyBlock =
-      networkConfigs[Number(chainId)].pools[pool].tenderlyBlock ||
-      networkLogs.finalBlock;
-
-    const tenderlyLogs = await getLogs({
-      provider: tenderlyProvider,
-      address: addressBook.CROSS_CHAIN_CONTROLLER,
-      fromBlock: tenderlyBlock,
-      logs: [],
-      limit,
-      timeout,
-      tenderly: true,
-      topic0: senderUpdatedTopic0,
-      chainId,
-    });
-
-    const logs = [...networkLogs.eventLogs, ...tenderlyLogs.eventLogs];
-
-    eventLogs = logs;
-    finalBlock = networkLogs.finalBlock;
-  } else {
-    const logs = await getLogs({
-      provider,
-      address: addressBook.CROSS_CHAIN_CONTROLLER,
-      fromBlock,
-      logs: [],
-      limit,
-      timeout,
-      topic0: senderUpdatedTopic0,
-      chainId,
-    });
-    eventLogs = logs.eventLogs;
-    finalBlock = logs.finalBlock;
-  }
+  eventLogs: Log[],
+}) => {
 
   const senders = new Set<string>(oldSenders);
-  // const bridgeAdapters = new Set<string>(oldBridgeAdapters);
 
-  // save or remove senders
-  for (let eventLog of eventLogs) {
-    if (eventLog.topics[0] === senderUpdatedTopic0) {
-      const { sender, isApproved } = parseLog(senderUpdatedABI, eventLog);
+  eventLogs.forEach((eventLog) => {
+    // @ts-ignore
+    const sender = eventLog.args.sender;
+    // @ts-ignore
+    const isApproved = eventLog.args.isApproved;
+
+    // @ts-ignore
+    if (eventLog.eventName === 'SenderUpdated') {
       // console.log(`sender
-      //   topic0: ${eventLog.topics[0]}
       //   sender : ${sender}
       //   isApproved: ${isApproved}
       // `);
@@ -114,19 +33,81 @@ export const getCCCSendersAndAdapters = async (
       } else {
         senders.delete(sender);
       }
-    } else {
-      console.error(new Error('some error parsing logs'));
-      return {
-        senders: Array.from(senders),
-        // bridgeAdapters: Array.from(bridgeAdapters),
-        latestCCCBlockNumber: finalBlock,
-      };
+
     }
+  })
+
+  return Array.from(senders);
+};
+
+export const getCCCSendersAndAdapters = async (
+  client: Client,
+  oldSenders: string[],
+  fromBlock: number,
+  addressBook: any,
+  chainId: string,
+  pool: Pools,
+) => {
+  let limit = getLimit(chainId) ?? 0;
+
+  let events: Log[] = [];
+  let latestBlockNumber = 0;
+
+  if (
+    pool === Pools.TENDERLY
+  ) {
+    const preTenderlyForkEvents = await getEvents({
+      client,
+      fromBlock,
+      contract: addressBook.CROSS_CHAIN_CONTROLLER,
+      eventTypes: ['SenderUpdated'],
+      maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock!,
+      limit
+    });
+
+    const tenderlyProvider = getRpcClientFromUrl(
+      networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl!,
+    );
+
+
+    const tenderlyForkEvents = await getEvents({
+      client: tenderlyProvider,
+      fromBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock!,
+      contract: addressBook.CROSS_CHAIN_CONTROLLER,
+      eventTypes: ['SenderUpdated'],
+      limit: 999
+    });
+    events = [...preTenderlyForkEvents, ...tenderlyForkEvents];
+
+    preTenderlyForkEvents.forEach((event) => {
+      if (Number(event.blockNumber) > latestBlockNumber) {
+        latestBlockNumber = Number(event.blockNumber);
+      }
+    });
+  } else {
+    events = await getEvents({
+      client,
+      fromBlock,
+      contract: addressBook.CROSS_CHAIN_CONTROLLER,
+      eventTypes: ['SenderUpdated'],
+      limit
+    });
+    events.forEach((event) => {
+      if (Number(event.blockNumber) > latestBlockNumber) {
+        latestBlockNumber = Number(event.blockNumber);
+      }
+    });
   }
 
+
+  const senders = getSenders({
+    oldSenders,
+    eventLogs: events,
+  });
+
+
   return {
-    senders: Array.from(senders),
-    // bridgeAdapters: Array.from(bridgeAdapters),
-    latestCCCBlockNumber: finalBlock,
+    senders,
+    latestCCCBlockNumber: latestBlockNumber,
   };
 };
