@@ -82,7 +82,7 @@ export const getEvents = async ({
       toBlock: BigInt(currentBlock),
       events: eventsAbis
     })
-    console.log(`chainId: ${client.chain?.id}, startBlock: ${startBlock}, toBlock: ${currentBlock}, maxBlock: ${maxBlock ?? 'null'}, intervalLogs: ${intervalLogs.length}`);
+    console.log(`chainId: ${client.chain?.id}, startBlock: ${startBlock}, toBlock: ${currentBlock}, maxBlock: ${maxBlock ?? 'null'}, limit: ${limit}, | event: ${eventTypes.join(', ')}, intervalLogs: ${intervalLogs.length}`);
 
     logs.push(...intervalLogs);
   }
