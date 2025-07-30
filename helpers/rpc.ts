@@ -79,7 +79,7 @@ export const getEvents = async ({
       client,
       address: getAddress(contract),
       fromBlock: BigInt(startBlock),
-      toBlock: BigInt(Math.min(startBlock + limit, Number(currentBlock))),
+      toBlock: BigInt(currentBlock),
       events: eventsAbis
     })
     console.log(`chainId: ${client.chain?.id}, startBlock: ${startBlock}, toBlock: ${currentBlock}, maxBlock: ${maxBlock ?? 'null'}, intervalLogs: ${intervalLogs.length}`);
@@ -87,5 +87,5 @@ export const getEvents = async ({
     logs.push(...intervalLogs);
   }
 
-  return logs;
+  return { logs, currentBlock: Number(currentBlock) };
 }

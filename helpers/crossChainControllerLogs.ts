@@ -56,7 +56,7 @@ export const getCCCSendersAndAdapters = async (
   if (
     pool === Pools.TENDERLY
   ) {
-    const preTenderlyForkEvents = await getEvents({
+    const { logs: preTenderlyForkEvents, currentBlock: preTenderlyForkCurrentBlock } = await getEvents({
       client,
       fromBlock,
       contract: addressBook.CROSS_CHAIN_CONTROLLER,
@@ -70,7 +70,7 @@ export const getCCCSendersAndAdapters = async (
     );
 
 
-    const tenderlyForkEvents = await getEvents({
+    const { logs: tenderlyForkEvents } = await getEvents({
       client: tenderlyProvider,
       fromBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock!,
       contract: addressBook.CROSS_CHAIN_CONTROLLER,
@@ -79,24 +79,17 @@ export const getCCCSendersAndAdapters = async (
     });
     events = [...preTenderlyForkEvents, ...tenderlyForkEvents];
 
-    preTenderlyForkEvents.forEach((event) => {
-      if (Number(event.blockNumber) > latestBlockNumber) {
-        latestBlockNumber = Number(event.blockNumber);
-      }
-    });
+    latestBlockNumber = preTenderlyForkCurrentBlock;
   } else {
-    events = await getEvents({
+    const { logs: networkEvents, currentBlock: eventsCurrentBlock } = await getEvents({
       client,
       fromBlock,
       contract: addressBook.CROSS_CHAIN_CONTROLLER,
       eventTypes: ['SenderUpdated'],
       limit
     });
-    events.forEach((event) => {
-      if (Number(event.blockNumber) > latestBlockNumber) {
-        latestBlockNumber = Number(event.blockNumber);
-      }
-    });
+    events = networkEvents;
+    latestBlockNumber = eventsCurrentBlock;
   }
 
 
@@ -105,6 +98,7 @@ export const getCCCSendersAndAdapters = async (
     eventLogs: events,
   });
 
+  console.log(`chainId: ${client.chain?.id}, latestCCCBlockNumber: ${latestBlockNumber}`);
 
   return {
     senders,

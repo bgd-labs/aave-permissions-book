@@ -113,7 +113,7 @@ export const getCurrentRoleAdmins = async (
     pool == Pools.ETHERFI_TENDERLY ||
     pool == Pools.LIDO_TENDERLY
   ) {
-    const preTenderlyForkEvents = await getEvents({
+    const { logs: preTenderlyForkEvents, currentBlock: preTenderlyForkCurrentBlock } = await getEvents({
       client,
       fromBlock,
       contract,
@@ -127,7 +127,7 @@ export const getCurrentRoleAdmins = async (
     );
 
 
-    const tenderlyForkEvents = await getEvents({
+    const { logs: tenderlyForkEvents } = await getEvents({
       client: tenderlyProvider,
       fromBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock!,
       contract,
@@ -136,13 +136,9 @@ export const getCurrentRoleAdmins = async (
     });
     events = [...preTenderlyForkEvents, ...tenderlyForkEvents];
 
-    preTenderlyForkEvents.forEach((event) => {
-      if (Number(event.blockNumber) > latestBlockNumber) {
-        latestBlockNumber = Number(event.blockNumber);
-      }
-    });
+    latestBlockNumber = preTenderlyForkCurrentBlock;
   } else {
-    events = await getEvents({
+    const { logs: networkEvents, currentBlock: eventsCurrentBlock } = await getEvents({
       client,
       fromBlock,
       contract,
@@ -150,11 +146,8 @@ export const getCurrentRoleAdmins = async (
       limit
     });
 
-    events.forEach((event) => {
-      if (Number(event.blockNumber) > latestBlockNumber) {
-        latestBlockNumber = Number(event.blockNumber);
-      }
-    });
+    events = networkEvents;
+    latestBlockNumber = eventsCurrentBlock;
   }
 
   const roles = getRoleAdmins({
@@ -164,7 +157,7 @@ export const getCurrentRoleAdmins = async (
     eventLogs: events,
   });
 
-
+  console.log(`chainId: ${client.chain?.id}, latestBlockNumber: ${latestBlockNumber}`);
   // console.log('roes: ', roles);
   // console.log('-------------------------------');
   return { role: roles, latestBlockNumber };
