@@ -1,4 +1,4 @@
-[
+export const aclManagerAbi = [
   {
     "inputs": [
       {
@@ -101,55 +101,101 @@
   {
     "inputs": [],
     "name": "ASSET_LISTING_ADMIN_ROLE",
-    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "BRIDGE_ROLE",
-    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "DEFAULT_ADMIN_ROLE",
-    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "EMERGENCY_ADMIN_ROLE",
-    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "FLASH_BORROWER_ROLE",
-    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "POOL_ADMIN_ROLE",
-    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "RISK_ADMIN_ROLE",
-    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "addAssetListingAdmin",
     "outputs": [],
@@ -158,7 +204,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "bridge", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "bridge",
+        "type": "address"
+      }
     ],
     "name": "addBridge",
     "outputs": [],
@@ -167,7 +217,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "addEmergencyAdmin",
     "outputs": [],
@@ -176,7 +230,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "borrower", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
+      }
     ],
     "name": "addFlashBorrower",
     "outputs": [],
@@ -185,7 +243,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "addPoolAdmin",
     "outputs": [],
@@ -194,7 +256,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "addRiskAdmin",
     "outputs": [],
@@ -203,17 +269,35 @@
   },
   {
     "inputs": [
-      { "internalType": "bytes32", "name": "role", "type": "bytes32" }
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      }
     ],
     "name": "getRoleAdmin",
-    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "bytes32", "name": "role", "type": "bytes32" },
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "grantRole",
     "outputs": [],
@@ -222,71 +306,149 @@
   },
   {
     "inputs": [
-      { "internalType": "bytes32", "name": "role", "type": "bytes32" },
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "hasRole",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "isAssetListingAdmin",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "bridge", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "bridge",
+        "type": "address"
+      }
     ],
     "name": "isBridge",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "isEmergencyAdmin",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "borrower", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
+      }
     ],
     "name": "isFlashBorrower",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "isPoolAdmin",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "isRiskAdmin",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "removeAssetListingAdmin",
     "outputs": [],
@@ -295,7 +457,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "bridge", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "bridge",
+        "type": "address"
+      }
     ],
     "name": "removeBridge",
     "outputs": [],
@@ -304,7 +470,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "removeEmergencyAdmin",
     "outputs": [],
@@ -313,7 +483,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "borrower", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
+      }
     ],
     "name": "removeFlashBorrower",
     "outputs": [],
@@ -322,7 +496,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "removePoolAdmin",
     "outputs": [],
@@ -331,7 +509,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "admin", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "admin",
+        "type": "address"
+      }
     ],
     "name": "removeRiskAdmin",
     "outputs": [],
@@ -340,8 +522,16 @@
   },
   {
     "inputs": [
-      { "internalType": "bytes32", "name": "role", "type": "bytes32" },
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "renounceRole",
     "outputs": [],
@@ -350,8 +540,16 @@
   },
   {
     "inputs": [
-      { "internalType": "bytes32", "name": "role", "type": "bytes32" },
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "revokeRole",
     "outputs": [],
@@ -360,8 +558,16 @@
   },
   {
     "inputs": [
-      { "internalType": "bytes32", "name": "role", "type": "bytes32" },
-      { "internalType": "bytes32", "name": "adminRole", "type": "bytes32" }
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "adminRole",
+        "type": "bytes32"
+      }
     ],
     "name": "setRoleAdmin",
     "outputs": [],
@@ -370,10 +576,20 @@
   },
   {
     "inputs": [
-      { "internalType": "bytes4", "name": "interfaceId", "type": "bytes4" }
+      {
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
     ],
     "name": "supportsInterface",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   }

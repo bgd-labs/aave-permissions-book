@@ -269,6 +269,42 @@
           }
         ]
       },
+      "ParaSwapLiquiditySwapAdapter": {
+        "address": "0x78F8Bd884C3D738B74B420540659c82f392820e0",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x7b62461a3570c6AC8a9f8330421576e417B71EE7",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "rescueTokens"
+            ]
+          }
+        ]
+      },
+      "ParaSwapRepayAdapter": {
+        "address": "0x5598BbFA2f4fE8151f45bBA0a3edE1b54B51a0a9",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x7b62461a3570c6AC8a9f8330421576e417B71EE7",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "rescueTokens"
+            ]
+          }
+        ]
+      },
       "EmissionManager": {
         "address": "0xd3A0A19Cdb7d1615f30988763BEA5f8feCc17a87",
         "modifiers": [
@@ -373,7 +409,7 @@
         ]
       },
       "Manual AGRS": {
-        "address": "0xAe13e4DA0952f0B8fE04E21df53716fCF799a923",
+        "address": "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -430,7 +466,7 @@
           "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c"
         ]
       },
-      "latestBlockNumber": 40741573
+      "latestBlockNumber": 41056325
     },
     "gsmRoles": {},
     "govV3": {
@@ -446,7 +482,7 @@
             "0x7837d7a167732aE41627A3B829871d9e32e2e7f2"
           ]
         },
-        "latestBlockNumber": 40742041
+        "latestBlockNumber": 41056325
       },
       "contracts": {
         "GranularGuardian": {
@@ -805,7 +841,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 40741914
+      "latestCCCBlockNumber": 41056325
     },
     "collector": {
       "contracts": {
@@ -891,7 +927,7 @@
             "0x4A137d528444Cc0346320CFa5C80FFc68087D7F9"
           ]
         },
-        "latestBlockNumber": 40741756
+        "latestBlockNumber": 41056325
       }
     },
     "clinicSteward": {},

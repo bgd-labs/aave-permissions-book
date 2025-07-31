@@ -1,13 +1,13 @@
-import { ethers, providers, utils } from 'ethers';
 import { gnosisSafeABI } from '../abis/gnosisSafe.js';
+import { Client, getAddress, getContract } from 'viem';
 
 export const getSafeOwners = async (
-  provider: providers.Provider,
+  provider: Client,
   address: string,
 ): Promise<string[]> => {
-  const gnosisContract = new ethers.Contract(address, gnosisSafeABI, provider);
+  const gnosisContract = getContract({ address: getAddress(address), abi: gnosisSafeABI, client: provider });
   try {
-    const safeOwners = await gnosisContract.getOwners();
+    const safeOwners = await gnosisContract.read.getOwners() as string[];
     return safeOwners;
   } catch (error) {
     return [];
@@ -15,14 +15,14 @@ export const getSafeOwners = async (
 };
 
 export const getSafeThreshold = async (
-  provider: providers.Provider,
+  provider: Client,
   address: string,
 ): Promise<number> => {
-  const gnosisContract = new ethers.Contract(address, gnosisSafeABI, provider);
+  const gnosisContract = getContract({ address: getAddress(address), abi: gnosisSafeABI, client: provider });
 
   try {
-    const signersThreshold = await gnosisContract.getThreshold();
-    return Number(signersThreshold.toString());
+    const signersThreshold = await gnosisContract.read.getThreshold() as bigint;
+    return Number(signersThreshold);
   } catch (error) {
     return 0;
   }

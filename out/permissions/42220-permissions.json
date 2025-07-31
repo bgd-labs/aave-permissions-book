@@ -403,7 +403,7 @@
         ]
       },
       "Manual AGRS": {
-        "address": "0x69a6CaF240698982c3Ac89E0A7C12E76bCEee4ef",
+        "address": "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -461,7 +461,7 @@
           "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c"
         ]
       },
-      "latestBlockNumber": 41893540
+      "latestBlockNumber": 42076867
     },
     "gsmRoles": {},
     "govV3": {
@@ -477,7 +477,7 @@
             "0xfD3a6E65e470a7D7D730FFD5D36a9354E8F9F4Ea"
           ]
         },
-        "latestBlockNumber": 41893847
+        "latestBlockNumber": 42076868
       },
       "contracts": {
         "GranularGuardian": {
@@ -796,7 +796,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 41893749
+      "latestCCCBlockNumber": 42076868
     },
     "collector": {
       "contracts": {
@@ -871,7 +871,7 @@
             "0x1dF462e2712496373A347f8ad10802a5E95f053D"
           ]
         },
-        "latestBlockNumber": 41893648
+        "latestBlockNumber": 42076868
       }
     },
     "clinicSteward": {},

@@ -1,4 +1,3 @@
-import { providers, constants, ethers } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import {
@@ -11,6 +10,7 @@ import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
 import { PERMISSIONED_PAYLOADS_CONTROLLER_ABI } from '../abis/permissionedPayloadsController.js';
 import { IOwnable_ABI } from '@bgd-labs/aave-address-book/abis';
+import { Address, Client, getAddress, getContract, zeroAddress } from 'viem';
 
 const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
   const cleanAddresses: AddressInfo[] = [];
@@ -29,7 +29,7 @@ const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
 
 export const resolveUmbrellaModifiers = async (
   addressBook: any,
-  provider: providers.Provider,
+  provider: Client,
   permissionsObject: PermissionsJson,
   umbrellaRoles: Record<string, string[]>,
   umbrellaIncentivesRoles: Record<string, string[]>,
@@ -81,13 +81,9 @@ export const resolveUmbrellaModifiers = async (
       addressBook.UMBRELLA,
       provider,
     );
-    const proxyAdminContract = new ethers.Contract(
-      umbrellaProxyAdmin,
-      onlyOwnerAbi,
-      provider,
-    );
-    if (umbrellaProxyAdmin !== constants.AddressZero) {
-      const proxyAdminOwner = await proxyAdminContract.owner();
+    const proxyAdminContract = getContract({ address: getAddress(umbrellaProxyAdmin), abi: onlyOwnerAbi, client: provider });
+    if (umbrellaProxyAdmin !== zeroAddress) {
+      const proxyAdminOwner = await proxyAdminContract.read.owner() as Address;
 
       obj['UmbrellaProxyAdmin'] = {
         address: umbrellaProxyAdmin,
@@ -182,13 +178,9 @@ export const resolveUmbrellaModifiers = async (
       addressBook.UMBRELLA_INCENTIVES_CONTROLLER,
       provider,
     );
-    const proxyAdminContract = new ethers.Contract(
-      umbrellaICProxyAdmin,
-      onlyOwnerAbi,
-      provider,
-    );
-    if (umbrellaICProxyAdmin !== constants.AddressZero) {
-      const proxyAdminOwner = await proxyAdminContract.owner();
+    const proxyAdminContract = getContract({ address: getAddress(umbrellaICProxyAdmin), abi: onlyOwnerAbi, client: provider });
+    if (umbrellaICProxyAdmin !== zeroAddress) {
+      const proxyAdminOwner = await proxyAdminContract.read.owner() as Address;
 
       obj['UmbrellaIncentivesControllerProxyAdmin'] = {
         address: umbrellaICProxyAdmin,
@@ -250,19 +242,15 @@ export const resolveUmbrellaModifiers = async (
 
   if (
     addressBook.PERMISSIONED_PAYLOADS_CONTROLLER &&
-    addressBook.PERMISSIONED_PAYLOADS_CONTROLLER !== constants.AddressZero
+    addressBook.PERMISSIONED_PAYLOADS_CONTROLLER !== zeroAddress
   ) {
     const ppcProxyAdmin = await getProxyAdmin(
       addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
       provider,
     );
-    const proxyAdminContract = new ethers.Contract(
-      ppcProxyAdmin,
-      onlyOwnerAbi,
-      provider,
-    );
-    if (ppcProxyAdmin !== constants.AddressZero) {
-      const proxyAdminOwner = await proxyAdminContract.owner();
+    const proxyAdminContract = getContract({ address: getAddress(ppcProxyAdmin), abi: onlyOwnerAbi, client: provider });
+    if (ppcProxyAdmin !== zeroAddress) {
+      const proxyAdminOwner = await proxyAdminContract.read.owner() as Address;
 
       obj['PermissionedPayloadsControllerProxyAdmin'] = {
         address: ppcProxyAdmin,
@@ -283,16 +271,12 @@ export const resolveUmbrellaModifiers = async (
     }
 
 
-    const ppcContract = new ethers.Contract(
-      addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
-      PERMISSIONED_PAYLOADS_CONTROLLER_ABI,
-      provider,
-    );
+    const ppcContract = getContract({ address: getAddress(addressBook.PERMISSIONED_PAYLOADS_CONTROLLER), abi: PERMISSIONED_PAYLOADS_CONTROLLER_ABI, client: provider });
 
-    const pcGuardian = await ppcContract.guardian();
-    const pcOwner = await ppcContract.owner();
-    const rescuer = await ppcContract.whoCanRescue();
-    const payloadsManager = await ppcContract.payloadsManager();
+    const pcGuardian = await ppcContract.read.guardian() as Address;
+    const pcOwner = await ppcContract.read.owner() as Address;
+    const rescuer = await ppcContract.read.whoCanRescue() as Address;
+    const payloadsManager = await ppcContract.read.payloadsManager() as Address;
 
     obj['PermissionedPayloadsController'] = {
       address: addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
@@ -370,14 +354,10 @@ export const resolveUmbrellaModifiers = async (
 
   if (
     addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR &&
-    addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR !== constants.AddressZero
+    addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR !== zeroAddress
   ) {
-    const executorContract = new ethers.Contract(
-      addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR,
-      IOwnable_ABI,
-      provider,
-    );
-    const owner = await executorContract.owner();
+    const executorContract = getContract({ address: getAddress(addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR), abi: IOwnable_ABI, client: provider });
+    const owner = await executorContract.read.owner() as Address;
     obj['PermissionedExecutor'] = {
       address: addressBook.PERMISSIONED_PAYLOADS_CONTROLLER_EXECUTOR,
       modifiers: [

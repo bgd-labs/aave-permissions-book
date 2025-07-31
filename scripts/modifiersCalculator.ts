@@ -1,4 +1,3 @@
-import { ethers, providers } from 'ethers';
 import {
   clinicStewardRoleNames,
   collectorRoleNames,
@@ -31,14 +30,13 @@ import { overwriteBaseTenderlyPool } from '../helpers/jsonParsers.js';
 import { resolveCollectorModifiers } from './collectorPermissions.js';
 import { resolveClinicStewardModifiers } from './clinicStewardPermissions.js';
 import { resolveUmbrellaModifiers } from './umbrellaPermissions.js';
+import { getRPCClient, getRpcClientFromUrl } from '../helpers/rpc.js';
 
 const generateNetworkPermissions = async (network: string) => {
   // get current permissions
   let fullJson = getPermissionsByNetwork(network);
   // generate permissions
-  let provider = new ethers.providers.JsonRpcProvider(
-    networkConfigs[network].rpcUrl,
-  );
+  let provider = getRPCClient(Number(network))
 
   const pools = networkConfigs[network].pools;
   const poolsKeys = Object.keys(pools).map((pool) => pool);
@@ -94,11 +92,11 @@ const generateNetworkPermissions = async (network: string) => {
           poolKey === Pools.V2_TENDERLY ||
             poolKey === Pools.V2_AMM_TENDERLY ||
             poolKey === Pools.V2_ARC_TENDERLY
-            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
             : provider,
           permissionsJson,
           Pools[poolKey as keyof typeof Pools],
-          Number(network),
+          network,
         );
       }
     } else if (poolKey === Pools.GOV_V2 || poolKey === Pools.GOV_V2_TENDERLY) {
@@ -112,7 +110,7 @@ const generateNetworkPermissions = async (network: string) => {
       poolPermissions = await resolveGovV2Modifiers(
         pool.addressBook,
         poolKey === Pools.GOV_V2_TENDERLY
-          ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+          ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
           : provider,
         permissionsJson,
       );
@@ -129,7 +127,7 @@ const generateNetworkPermissions = async (network: string) => {
       poolPermissions = await resolveSafetyV2Modifiers(
         pool.addressBook,
         poolKey === Pools.SAFETY_MODULE_TENDERLY
-          ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+          ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
           : provider,
         permissionsJson,
       );
@@ -147,7 +145,7 @@ const generateNetworkPermissions = async (network: string) => {
         pool.addressBook,
         pool.addresses || {},
         poolKey === Pools.V2_MISC_TENDERLY
-          ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+          ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
           : provider,
         permissionsJson,
       );
@@ -168,7 +166,7 @@ const generateNetworkPermissions = async (network: string) => {
         fromBlock =
           fullJson[poolKey]?.roles?.latestBlockNumber || pool.ghoBlock;
       }
-
+      console.log('fromBlock : ', fromBlock);
       if (fromBlock) {
         console.log(`
           ------------------------------------
@@ -183,11 +181,12 @@ const generateNetworkPermissions = async (network: string) => {
             (fullJson[poolKey] && fullJson[poolKey]?.roles?.role) ||
             ({} as Record<string, string[]>),
             fromBlock,
-            Number(network),
+            network,
             Pools[poolKey as keyof typeof Pools],
             ghoRoleNames,
-            pool.addressBook.GHO,
+            pool.addressBook.GHO_TOKEN,
           );
+
           // get gsms admin roles
           if (pool.gsmBlocks) {
             for (let i = 0; i < Object.keys(pool.gsmBlocks).length; i++) {
@@ -210,25 +209,27 @@ const generateNetworkPermissions = async (network: string) => {
                   fullJson[poolKey]?.gsmRoles?.[key].role) ||
                 ({} as Record<string, string[]>),
                 gsmBlock,
-                Number(network),
+                network,
                 Pools[poolKey as keyof typeof Pools],
                 ghoGSMRoleNames,
                 pool.addressBook[key],
               );
             }
+
+            poolPermissions = await resolveGHOModifiers(
+              pool.addressBook,
+              poolKey === Pools.GHO_TENDERLY
+                ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
+                : provider,
+              permissionsJson,
+              Pools[poolKey as keyof typeof Pools],
+              Number(network),
+              admins.role,
+              gsmAdmins,
+            );
+            
           }
 
-          poolPermissions = await resolveGHOModifiers(
-            pool.addressBook,
-            poolKey === Pools.GHO_TENDERLY
-              ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-              : provider,
-            permissionsJson,
-            Pools[poolKey as keyof typeof Pools],
-            Number(network),
-            admins.role,
-            gsmAdmins,
-          );
         }
       }
     } else if (pool.aclBlock) {
@@ -261,12 +262,12 @@ const generateNetworkPermissions = async (network: string) => {
             poolKey === Pools.TENDERLY ||
               poolKey === Pools.LIDO_TENDERLY ||
               poolKey === Pools.ETHERFI_TENDERLY
-              ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+              ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
               : provider,
             (fullJson[poolKey] && fullJson[poolKey]?.roles?.role) ||
             ({} as Record<string, string[]>),
             fromBlock,
-            Number(network),
+            network,
             Pools[poolKey as keyof typeof Pools],
             protocolRoleNames,
             pool.addressBook.ACL_MANAGER,
@@ -277,7 +278,7 @@ const generateNetworkPermissions = async (network: string) => {
             poolKey === Pools.TENDERLY ||
               poolKey === Pools.LIDO_TENDERLY ||
               poolKey === Pools.ETHERFI_TENDERLY
-              ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+              ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
               : provider,
             permissionsJson,
             Pools[poolKey as keyof typeof Pools],
@@ -318,12 +319,12 @@ const generateNetworkPermissions = async (network: string) => {
           poolKey === Pools.TENDERLY ||
             poolKey === Pools.LIDO_TENDERLY ||
             poolKey === Pools.ETHERFI_TENDERLY
-            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
             : provider,
           (fullJson[poolKey] && fullJson[poolKey]?.collector?.cRoles?.role) ||
           ({} as Record<string, string[]>),
           fromBlock,
-          Number(network),
+          network,
           Pools[poolKey as keyof typeof Pools],
           collectorRoleNames,
           pool.addressBook.COLLECTOR,
@@ -335,7 +336,7 @@ const generateNetworkPermissions = async (network: string) => {
           poolKey === Pools.TENDERLY ||
             poolKey === Pools.LIDO_TENDERLY ||
             poolKey === Pools.ETHERFI_TENDERLY
-            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
             : provider,
           permissionsJson,
           Number(network),
@@ -372,12 +373,12 @@ const generateNetworkPermissions = async (network: string) => {
       if (fromBlock) {
         cAdmins = await getCurrentRoleAdmins(
           poolKey === Pools.TENDERLY
-            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
             : provider,
           (fullJson[poolKey] && fullJson[poolKey]?.clinicSteward?.clinicStewardRoles?.role) ||
           ({} as Record<string, string[]>),
           fromBlock,
-          Number(network),
+          network,
           Pools[poolKey as keyof typeof Pools],
           clinicStewardRoleNames,
           pool.addressBook.CLINIC_STEWARD,
@@ -387,7 +388,7 @@ const generateNetworkPermissions = async (network: string) => {
         const clinicStewardPermissions = await resolveClinicStewardModifiers(
           pool.addressBook,
           poolKey === Pools.TENDERLY
-            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
             : provider,
           permissionsJson,
           cAdmins.role,
@@ -426,12 +427,12 @@ const generateNetworkPermissions = async (network: string) => {
 
         const umbrellaRoles = await getCurrentRoleAdmins(
           poolKey === Pools.TENDERLY
-            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
             : provider,
           (fullJson[poolKey] && fullJson[poolKey]?.umbrella?.umbrellaRoles?.role) ||
           ({} as Record<string, string[]>),
           umbrellaFromBlock,
-          Number(network),
+          network,
           Pools[poolKey as keyof typeof Pools],
           umbrellaRoleNames,
           pool.umbrellaAddressBook.UMBRELLA,
@@ -439,12 +440,12 @@ const generateNetworkPermissions = async (network: string) => {
 
         const umbrellaIncentivesRoles = await getCurrentRoleAdmins(
           poolKey === Pools.TENDERLY
-            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
             : provider,
           (fullJson[poolKey] && fullJson[poolKey]?.umbrella?.umbrellaIncentivesRoles?.role) ||
           ({} as Record<string, string[]>),
           umbrellaIncentivesFromBlock,
-          Number(network),
+          network,
           Pools[poolKey as keyof typeof Pools],
           umbrellaIncentivesRoleNames,
           pool.umbrellaAddressBook.UMBRELLA_REWARDS_CONTROLLER,
@@ -453,7 +454,7 @@ const generateNetworkPermissions = async (network: string) => {
         const umbrellaPermissions = await resolveUmbrellaModifiers(
           pool.umbrellaAddressBook,
           poolKey === Pools.TENDERLY
-            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
             : provider,
           permissionsJson,
           umbrellaRoles.role,
@@ -491,15 +492,11 @@ const generateNetworkPermissions = async (network: string) => {
       if (cccFromBlock) {
         const { senders, latestCCCBlockNumber } =
           await getCCCSendersAndAdapters(
-            poolKey === Pools.TENDERLY ||
-              poolKey === Pools.LIDO_TENDERLY ||
-              poolKey === Pools.ETHERFI_TENDERLY
-              ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
-              : provider,
+            provider,
             (fullJson[poolKey] && fullJson[poolKey]?.govV3?.senders) || [],
             cccFromBlock,
             pool.governanceAddressBook,
-            Number(network),
+            network,
             Pools[poolKey as keyof typeof Pools],
           );
 
@@ -518,13 +515,13 @@ const generateNetworkPermissions = async (network: string) => {
               poolKey === Pools.TENDERLY ||
                 poolKey === Pools.LIDO_TENDERLY ||
                 poolKey === Pools.ETHERFI_TENDERLY
-                ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+                ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
                 : provider,
               (fullJson[poolKey] &&
                 fullJson[poolKey]?.govV3?.ggRoles?.role) ||
               ({} as Record<string, string[]>),
               ggFromBlock,
-              Number(network),
+              network,
               Pools[poolKey as keyof typeof Pools],
               granularGuardianRoleNames,
               pool.governanceAddressBook.GRANULAR_GUARDIAN,
@@ -544,7 +541,7 @@ const generateNetworkPermissions = async (network: string) => {
           poolKey === Pools.TENDERLY ||
             poolKey === Pools.LIDO_TENDERLY ||
             poolKey === Pools.ETHERFI_TENDERLY
-            ? new providers.StaticJsonRpcProvider(pool.tenderlyRpcUrl)
+            ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
             : provider,
           permissionsGovV3Json,
           Number(network),
@@ -605,6 +602,7 @@ async function main() {
   );
 
   const results = await Promise.allSettled(permissions);
+  console.log('--------------FINISHED--------------')
 }
 
 main();
