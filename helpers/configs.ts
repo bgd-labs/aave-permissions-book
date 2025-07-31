@@ -54,10 +54,11 @@ import {
   GovernanceV3Celo,
   GhoArbitrum,
   GhoEthereum,
+  GhoAvalanche,
   GhoBase,
   GovernanceV3Soneium,
   AaveV3Soneium,
-  MiscSoneium
+  MiscSoneium,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 import { ChainId } from '@bgd-labs/toolbox';
@@ -260,7 +261,7 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.GHO]: {
         permissionsJson: './statics/functionsPermissionsGHO.json',
         ghoBlock: 17698470,
-        addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
+        addressBook: { ...AaveV3Ethereum, ...MiscEthereum, ...GhoEthereum },
         gsmBlocks: {
           GSM_USDC: 19037420,
           GSM_USDT: 19037420,
@@ -482,76 +483,82 @@ export const networkConfigs: NetworkConfigs = {
   //     // },
   //   },
   // },
-  // [ChainId.avalanche]: {
-  //   name: 'Avalanche',
-  //   rpcUrl: process.env.RPC_AVALANCHE,
-  //   explorer: 'https://snowscan.xyz',
-  //   addressesNames: {
-  //     '0xa35b76E4935449E33C56aB24b23fcd3246f13470': 'Aave Guardian Avalanche',
-  //     '0x01244E7842254e3FD229CD263472076B1439D1Cd':
-  //       'Aave Guardian Avalanche (legacy)',
-  //     '0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26':
-  //       'Avalanche v2 incentives admin',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //     '0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36': 'BGD',
-  //     '0xCa66149425E7DC8f81276F6D80C4b486B9503D1a': 'Risk Council',
-  //     '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
-  //       'Aave Governance Guardian Avalanche',
-  //     '0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4':
-  //       'Proof Of Reserve Executor V3',
-  //     '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
-  //       'Aave Protocol Guardian Avalanche',
-  //     '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-  //     '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
-  //     '0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F': 'Old VotingMachine',
-  //     '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
-  //     '0x54714FAc85b0bf627288CC3a186dE81A42f1D635': 'Aave Steward Injector Caps'
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       collectorBlock: 57114737,
-  //       aclBlock: 11970456,
-  //       crossChainControllerBlock: 32549880,
-  //       granularGuardianBlock: 48074792,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //       addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
-  //       governanceAddressBook: GovernanceV3Avalanche,
-  //       addresses: {
-  //         '0x3F006299eC88985c18E6e885EeA29A49eC579882': 'CCIPAdapter',
-  //         '0xf41193E25408F652AF878c47E4401A01B5E4B682': 'LayerZeroAdapter',
-  //         '0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04': 'HyperLaneAdapter',
-  //       },
-  //       clinicStewardBlock: 58156580,
-  //     },
-  //     [Pools.V2]: {
-  //       collectorBlock: 57114737,
-  //       permissionsJson: './statics/functionsPermissionsV2PoR.json',
-  //       addressBook: AaveV2Avalanche,
-  //     },
-  //     // [Pools.V2_TENDERLY]: {
-  //     //   permissionsJson: './statics/functionsPermissionsV2PoR.json',
-  //     //   addressBook: AaveV2Avalanche,
-  //     //   tenderlyBasePool: Pools.V2,
-  //     //   tenderlyBlock: 51885151,
-  //     //   tenderlyRpcUrl:
-  //     //     'https://rpc.tenderly.co/fork/fd8c12b8-5ad9-454b-bde9-f7ea0e244ae5',
-  //     // },
-  //     // [Pools.TENDERLY]: {
-  //     //   aclBlock: 11970456,
-  //     //   crossChainControllerBlock: 32549880,
-  //     //   granularGuardianBlock: 48074792,
-  //     //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //     //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //     //   addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
-  //     //   governanceAddressBook: GovernanceV3Avalanche,
-  //     //   tenderlyBasePool: Pools.V3,
-  //     //   tenderlyBlock: 51885151,
-  //     //   tenderlyRpcUrl:
-  //     //     'https://rpc.tenderly.co/fork/fd8c12b8-5ad9-454b-bde9-f7ea0e244ae5',
-  //     // },
-  //   },
-  // },
+  [ChainId.avalanche]: {
+    name: 'Avalanche',
+    rpcUrl: process.env.RPC_AVALANCHE,
+    explorer: 'https://snowscan.xyz',
+    addressesNames: {
+      '0xa35b76E4935449E33C56aB24b23fcd3246f13470': 'Aave Guardian Avalanche',
+      '0x01244E7842254e3FD229CD263472076B1439D1Cd':
+        'Aave Guardian Avalanche (legacy)',
+      '0x5CfCd7E6D055Ba4f7B998914336254aDE3F69f26':
+        'Avalanche v2 incentives admin',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36': 'BGD',
+      '0xCa66149425E7DC8f81276F6D80C4b486B9503D1a': 'Risk Council',
+      '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
+        'Aave Governance Guardian Avalanche',
+      '0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4':
+        'Proof Of Reserve Executor V3',
+      '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
+        'Aave Protocol Guardian Avalanche',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F': 'Old VotingMachine',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
+      '0x54714FAc85b0bf627288CC3a186dE81A42f1D635': 'Aave Steward Injector Caps'
+    },
+    pools: {
+      //     [Pools.V3]: {
+      //       collectorBlock: 57114737,
+      //       aclBlock: 11970456,
+      //       crossChainControllerBlock: 32549880,
+      //       granularGuardianBlock: 48074792,
+      //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //       addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
+      //       governanceAddressBook: GovernanceV3Avalanche,
+      //       addresses: {
+      //         '0x3F006299eC88985c18E6e885EeA29A49eC579882': 'CCIPAdapter',
+      //         '0xf41193E25408F652AF878c47E4401A01B5E4B682': 'LayerZeroAdapter',
+      //         '0xa198Fac58E02A5C5F8F7e877895d50cFa9ad1E04': 'HyperLaneAdapter',
+      //       },
+      //       clinicStewardBlock: 58156580,
+      //     },
+
+      // [Pools.GHO]: {
+      //   permissionsJson: './statics/functionsPermissionsGHO.json',
+      //   ghoBlock: 62012650,
+      //   addressBook: { ...AaveV3Avalanche, ...MiscAvalanche, ...GhoAvalanche },
+      // },
+      //     [Pools.V2]: {
+      //       collectorBlock: 57114737,
+      //       permissionsJson: './statics/functionsPermissionsV2PoR.json',
+      //       addressBook: AaveV2Avalanche,
+      //     },
+      //     // [Pools.V2_TENDERLY]: {
+      //     //   permissionsJson: './statics/functionsPermissionsV2PoR.json',
+      //     //   addressBook: AaveV2Avalanche,
+      //     //   tenderlyBasePool: Pools.V2,
+      //     //   tenderlyBlock: 51885151,
+      //     //   tenderlyRpcUrl:
+      //     //     'https://rpc.tenderly.co/fork/fd8c12b8-5ad9-454b-bde9-f7ea0e244ae5',
+      //     // },
+      //     // [Pools.TENDERLY]: {
+      //     //   aclBlock: 11970456,
+      //     //   crossChainControllerBlock: 32549880,
+      //     //   granularGuardianBlock: 48074792,
+      //     //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //     //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //     //   addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
+      //     //   governanceAddressBook: GovernanceV3Avalanche,
+      //     //   tenderlyBasePool: Pools.V3,
+      //     //   tenderlyBlock: 51885151,
+      //     //   tenderlyRpcUrl:
+      //     //     'https://rpc.tenderly.co/fork/fd8c12b8-5ad9-454b-bde9-f7ea0e244ae5',
+      //     // },
+    },
+  },
   // [ChainId.optimism]: {
   //   name: 'Optimism',
   //   rpcUrl: process.env.RPC_OPTIMISM,
@@ -599,55 +606,60 @@ export const networkConfigs: NetworkConfigs = {
   //     // },
   //   },
   // },
-  // [ChainId.arbitrum]: {
-  //   name: 'Arbitrum',
-  //   rpcUrl: process.env.RPC_ARBITRUM,
-  //   explorer: 'https://arbiscan.io',
-  //   addressesNames: {
-  //     '0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb': 'Aave Guardian Arbitrum',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //     '0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959': 'BGD',
-  //     '0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2': 'Risk Council',
-  //     '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
-  //       'Aave Governance Guardian Arbitrum',
-  //     '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
-  //       'Aave Protocol Guardian Arbitrum',
-  //     '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-  //     '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
-  //     '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
-  //     '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
-  //     '0x35d53dEB2F6f40Ea7af32B6F8BEd88eA966DF1D9': 'Aave Steward Injector Caps'
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       collectorBlock: 302176258,
-  //       aclBlock: 7740502,
-  //       crossChainControllerBlock: 112113800,
-  //       granularGuardianBlock: 233088975,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //       addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum, ...GhoArbitrum },
-  //       governanceAddressBook: GovernanceV3Arbitrum,
-  //       addresses: {
-  //         '0x3829943c53F2d00e20B58475aF19716724bF90Ba': 'ArbAdapter',
-  //       },
-  //       clinicStewardBlock: 311843330,
-  //     },
-  //     // [Pools.TENDERLY]: {
-  //     //   aclBlock: 7740502,
-  //     //   crossChainControllerBlock: 112113800,
-  //     //   granularGuardianBlock: 233088975,
-  //     //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //     //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //     //   addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum },
-  //     //   governanceAddressBook: GovernanceV3Arbitrum,
-  //     //   tenderlyBasePool: Pools.V3,
-  //     //   tenderlyBlock: 264687509,
-  //     //   tenderlyRpcUrl:
-  //     //     'https://rpc.tenderly.co/fork/db3768c1-7d7e-4e11-88a4-0652e3bca2fb',
-  //     // },
-  //   },
-  // },
+  [ChainId.arbitrum]: {
+    name: 'Arbitrum',
+    rpcUrl: process.env.RPC_ARBITRUM,
+    explorer: 'https://arbiscan.io',
+    addressesNames: {
+      '0xbbd9f90699c1FA0D7A65870D241DD1f1217c96Eb': 'Aave Guardian Arbitrum',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959': 'BGD',
+      '0x3Be327F22eB4BD8042e6944073b8826dCf357Aa2': 'Risk Council',
+      '0x1A0581dd5C7C3DA4Ba1CDa7e0BcA7286afc4973b':
+        'Aave Governance Guardian Arbitrum',
+      '0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6':
+        'Aave Protocol Guardian Arbitrum',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
+      '0x35d53dEB2F6f40Ea7af32B6F8BEd88eA966DF1D9': 'Aave Steward Injector Caps'
+    },
+    pools: {
+      //     [Pools.V3]: {
+      //       collectorBlock: 302176258,
+      //       aclBlock: 7740502,
+      //       crossChainControllerBlock: 112113800,
+      //       granularGuardianBlock: 233088975,
+      //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //       addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum, ...GhoArbitrum },
+      //       governanceAddressBook: GovernanceV3Arbitrum,
+      //       addresses: {
+      //         '0x3829943c53F2d00e20B58475aF19716724bF90Ba': 'ArbAdapter',
+      //       },
+      //       clinicStewardBlock: 311843330,
+      //     },
+      // [Pools.GHO]: {
+      //   permissionsJson: './statics/functionsPermissionsGHO.json',
+      //   ghoBlock: 224701170,
+      //   addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum, ...GhoArbitrum },
+      // },
+      //     // [Pools.TENDERLY]: {
+      //     //   aclBlock: 7740502,
+      //     //   crossChainControllerBlock: 112113800,
+      //     //   granularGuardianBlock: 233088975,
+      //     //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //     //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //     //   addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum },
+      //     //   governanceAddressBook: GovernanceV3Arbitrum,
+      //     //   tenderlyBasePool: Pools.V3,
+      //     //   tenderlyBlock: 264687509,
+      //     //   tenderlyRpcUrl:
+      //     //     'https://rpc.tenderly.co/fork/db3768c1-7d7e-4e11-88a4-0652e3bca2fb',
+      //     // },
+    },
+  },
   // [ChainId.metis]: {
   //   name: 'Metis',
   //   rpcUrl: process.env.RPC_METIS,
@@ -682,55 +694,60 @@ export const networkConfigs: NetworkConfigs = {
   //     },
   //   },
   // },
-  // [ChainId.base]: {
-  //   name: 'Base',
-  //   rpcUrl: process.env.RPC_BASE,
-  //   explorer: 'https://basescan.org',
-  //   addressesNames: {
-  //     '0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A': 'Aave Guardian Base',
-  //     '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
-  //     '0x7FDA7C3528ad8f05e62148a700D456898b55f8d2': 'BGD',
-  //     '0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1': 'Risk Council',
-  //     '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
-  //       'Aave Governance Guardian Base',
-  //     '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
-  //       'Aave Protocol Guardian Base',
-  //     '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
-  //     '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
-  //     '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
-  //     '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
-  //     '0x4f84A364B66Eb6280350da011829a6BD02B4712f': 'Aave Steward Injector Caps'
-  //   },
-  //   pools: {
-  //     [Pools.V3]: {
-  //       collectorBlock: 25895171,
-  //       aclBlock: 2357130,
-  //       crossChainControllerBlock: 3686170,
-  //       granularGuardianBlock: 17207502,
-  //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //       addressBook: { ...AaveV3Base, ...MiscBase, ...GhoBase },
-  //       governanceAddressBook: GovernanceV3Base,
-  //       addresses: {
-  //         '0x7b62461a3570c6AC8a9f8330421576e417B71EE7': 'CBaseAdapter',
-  //       },
-  //       clinicStewardBlock: 27111930,
-  //     },
-  //     // [Pools.TENDERLY]: {
-  //     //   aclBlock: 2357130,
-  //     //   crossChainControllerBlock: 3686170,
-  //     //   granularGuardianBlock: 17207502,
-  //     //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-  //     //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-  //     //   addressBook: { ...AaveV3Base, ...MiscBase },
-  //     //   governanceAddressBook: GovernanceV3Base,
-  //     //   tenderlyBasePool: Pools.V3,
-  //     //   tenderlyBlock: 21181024,
-  //     //   tenderlyRpcUrl:
-  //     //     'https://rpc.tenderly.co/fork/b225e6c7-118e-4f89-8e29-503b2e6e39a0',
-  //     // },
-  //   },
-  // },
+  [ChainId.base]: {
+    name: 'Base',
+    rpcUrl: process.env.RPC_BASE,
+    explorer: 'https://basescan.org',
+    addressesNames: {
+      '0x9e10C0A1Eb8FF6a0AaA53a62C7a338f35D7D9a2A': 'Aave Guardian Base',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
+      '0x7FDA7C3528ad8f05e62148a700D456898b55f8d2': 'BGD',
+      '0xfbeB4AcB31340bA4de9C87B11dfBf7e2bc8C0bF1': 'Risk Council',
+      '0x360c0a69Ed2912351227a0b745f890CB2eBDbcFe':
+        'Aave Governance Guardian Base',
+      '0x56C1a4b54921DEA9A344967a8693C7E661D72968':
+        'Aave Protocol Guardian Base',
+      '0xdeadD8aB03075b7FBA81864202a2f59EE25B312b': 'CleanUp Admin',
+      '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
+      '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
+      '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
+      '0x4f84A364B66Eb6280350da011829a6BD02B4712f': 'Aave Steward Injector Caps'
+    },
+    pools: {
+      //     [Pools.V3]: {
+      //       collectorBlock: 25895171,
+      //       aclBlock: 2357130,
+      //       crossChainControllerBlock: 3686170,
+      //       granularGuardianBlock: 17207502,
+      //       crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //       permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //       addressBook: { ...AaveV3Base, ...MiscBase, ...GhoBase },
+      //       governanceAddressBook: GovernanceV3Base,
+      //       addresses: {
+      //         '0x7b62461a3570c6AC8a9f8330421576e417B71EE7': 'CBaseAdapter',
+      //       },
+      //       clinicStewardBlock: 27111930,
+      //     },
+      // [Pools.GHO]: {
+      //   permissionsJson: './statics/functionsPermissionsGHO.json',
+      //   ghoBlock: 24786490,
+      //   addressBook: { ...AaveV3Base, ...MiscBase, ...GhoBase },
+      // },
+      //     // [Pools.TENDERLY]: {
+      //     //   aclBlock: 2357130,
+      //     //   crossChainControllerBlock: 3686170,
+      //     //   granularGuardianBlock: 17207502,
+      //     //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+      //     //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //     //   addressBook: { ...AaveV3Base, ...MiscBase },
+      //     //   governanceAddressBook: GovernanceV3Base,
+      //     //   tenderlyBasePool: Pools.V3,
+      //     //   tenderlyBlock: 21181024,
+      //     //   tenderlyRpcUrl:
+      //     //     'https://rpc.tenderly.co/fork/b225e6c7-118e-4f89-8e29-503b2e6e39a0',
+      //     // },
+    },
+  },
   // [ChainId.gnosis]: {
   //   name: 'Gnosis',
   //   rpcUrl: process.env.RPC_GNOSIS,

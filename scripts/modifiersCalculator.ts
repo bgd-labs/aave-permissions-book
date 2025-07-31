@@ -166,7 +166,7 @@ const generateNetworkPermissions = async (network: string) => {
         fromBlock =
           fullJson[poolKey]?.roles?.latestBlockNumber || pool.ghoBlock;
       }
-
+      console.log('fromBlock : ', fromBlock);
       if (fromBlock) {
         console.log(`
           ------------------------------------
@@ -184,8 +184,9 @@ const generateNetworkPermissions = async (network: string) => {
             network,
             Pools[poolKey as keyof typeof Pools],
             ghoRoleNames,
-            pool.addressBook.GHO,
+            pool.addressBook.GHO_TOKEN,
           );
+          console.log('admins : ', admins);
           // get gsms admin roles
           if (pool.gsmBlocks) {
             for (let i = 0; i < Object.keys(pool.gsmBlocks).length; i++) {
@@ -213,6 +214,7 @@ const generateNetworkPermissions = async (network: string) => {
                 ghoGSMRoleNames,
                 pool.addressBook[key],
               );
+              console.log('gsmAdmins : ', gsmAdmins);
             }
           }
 
@@ -227,6 +229,7 @@ const generateNetworkPermissions = async (network: string) => {
             admins.role,
             gsmAdmins,
           );
+          console.log('poolPermissions : ', poolPermissions);
         }
       }
     } else if (pool.aclBlock) {
