@@ -1,4 +1,3 @@
-import { ethers, providers } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
@@ -6,11 +5,12 @@ import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
 import { Contracts, PermissionsJson } from '../helpers/types.js';
 import { MiscEthereum } from '@bgd-labs/aave-address-book';
 import { erABI } from '../abis/EcosystemReserve.js';
+import { Address, Client, getAddress, getContract } from 'viem';
 
 export const resolveV2MiscModifiers = async (
   addressBook: any,
   addresses: Record<string, string>,
-  provider: providers.Provider,
+  provider: Client,
   permissionsObject: PermissionsJson,
 ): Promise<Contracts> => {
   const obj: Contracts = {};
@@ -21,12 +21,8 @@ export const resolveV2MiscModifiers = async (
     modifiers: [],
   };
 
-  const ecosystemReserveContract = new ethers.Contract(
-    MiscEthereum.ECOSYSTEM_RESERVE,
-    erABI,
-    provider,
-  );
-  const erFundsAdmin = await ecosystemReserveContract.getFundsAdmin();
+  const ecosystemReserveContract = getContract({ address: getAddress(MiscEthereum.ECOSYSTEM_RESERVE), abi: erABI, client: provider });
+  const erFundsAdmin = await ecosystemReserveContract.read.getFundsAdmin() as Address;
 
   obj['EcosystemReserve'] = {
     address: MiscEthereum.ECOSYSTEM_RESERVE,
@@ -56,12 +52,8 @@ export const resolveV2MiscModifiers = async (
     ],
   };
 
-  const ecosystemReserveControllerContract = new ethers.Contract(
-    MiscEthereum.AAVE_ECOSYSTEM_RESERVE_CONTROLLER,
-    onlyOwnerAbi,
-    provider,
-  );
-  const erControllerOwner = await ecosystemReserveControllerContract.owner();
+  const ecosystemReserveControllerContract = getContract({ address: getAddress(MiscEthereum.AAVE_ECOSYSTEM_RESERVE_CONTROLLER), abi: onlyOwnerAbi, client: provider });
+  const erControllerOwner = await ecosystemReserveControllerContract.read.owner() as Address;
 
   obj['EcosystemReserveController'] = {
     address: MiscEthereum.AAVE_ECOSYSTEM_RESERVE_CONTROLLER,
