@@ -186,7 +186,7 @@ const generateNetworkPermissions = async (network: string) => {
             ghoRoleNames,
             pool.addressBook.GHO_TOKEN,
           );
-          console.log('admins : ', admins);
+
           // get gsms admin roles
           if (pool.gsmBlocks) {
             for (let i = 0; i < Object.keys(pool.gsmBlocks).length; i++) {
@@ -214,22 +214,22 @@ const generateNetworkPermissions = async (network: string) => {
                 ghoGSMRoleNames,
                 pool.addressBook[key],
               );
-              console.log('gsmAdmins : ', gsmAdmins);
             }
+
+            poolPermissions = await resolveGHOModifiers(
+              pool.addressBook,
+              poolKey === Pools.GHO_TENDERLY
+                ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
+                : provider,
+              permissionsJson,
+              Pools[poolKey as keyof typeof Pools],
+              Number(network),
+              admins.role,
+              gsmAdmins,
+            );
+            
           }
 
-          poolPermissions = await resolveGHOModifiers(
-            pool.addressBook,
-            poolKey === Pools.GHO_TENDERLY
-              ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
-              : provider,
-            permissionsJson,
-            Pools[poolKey as keyof typeof Pools],
-            Number(network),
-            admins.role,
-            gsmAdmins,
-          );
-          console.log('poolPermissions : ', poolPermissions);
         }
       }
     } else if (pool.aclBlock) {

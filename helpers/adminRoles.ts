@@ -159,7 +159,6 @@ export const getCurrentRoleAdmins = async (
     eventLogs: events,
   });
 
-  console.log(`chainId: ${client.chain?.id}, latestBlockNumber: ${latestBlockNumber}`);
   // console.log('roes: ', roles);
   // console.log('-------------------------------');
   return { role: roles, latestBlockNumber };

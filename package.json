@@ -29,7 +29,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@bgd-labs/toolbox": "0.0.25",
+    "@bgd-labs/toolbox": "0.0.32",
     "viem": "^2.33.1"
   }
 }

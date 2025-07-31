@@ -1,7 +1,6 @@
-import { getClient, getLogsRecursive } from "@bgd-labs/toolbox";
+import { ChainId, getClient, getLogsRecursive } from "@bgd-labs/toolbox";
 import { env } from "process";
-import { Abi, AbiEvent, AbiItem, Client, creagetAbiItem, teClient, http, getAbiItem, getAddress, Log, createClient } from "viem";
-import { getLimit } from "./limits.js";
+import { AbiEvent, Client, http, getAbiItem, getAddress, Log, createClient, createPublicClient } from "viem";
 import { aclManagerAbi } from "../abis/aclManager.js";
 import { getBlockNumber } from "viem/actions";
 import { crossChainControllerAbi } from "../abis/crossChainControllerAbi.js";
@@ -9,15 +8,18 @@ import { crossChainControllerAbi } from "../abis/crossChainControllerAbi.js";
 const getHttpConfig = () => {
   return {
     timeout: 30_000,
-    batch: {
-      batchSize: 50,
-      wait: 100,
-    },
+    // batch: {
+    //   batchSize: 50,
+    //   wait: 100,
+    // },
   } as const;
 };
 
 
 export const getRPCClient = (chainId: number): Client => {
+  if (chainId === ChainId.avalanche) {
+    return getRpcClientFromUrl(`https://${env.QUICKNODE_ENDPOINT_NAME}.avalanche-mainnet.quiknode.pro/${env.QUICKNODE_TOKEN}/ext/bc/C/rpc`);
+  }
   return getClient(chainId, {
     httpConfig: getHttpConfig(),
     clientConfig: {
@@ -68,9 +70,8 @@ export const getEvents = async ({
   limit: number,
   maxBlock?: number,
 }) => {
-  const currentBlock = maxBlock ?? await getBlockNumber(client);
 
-
+  const currentBlock = maxBlock ?? Number(await getBlockNumber(client));
   const eventsAbis = eventTypes.map(getEventTypeAbi);
 
   const logs: Log[] = [];
@@ -79,11 +80,10 @@ export const getEvents = async ({
       client,
       address: getAddress(contract),
       fromBlock: BigInt(startBlock),
-      toBlock: BigInt(currentBlock),
+      toBlock: BigInt(Math.min(startBlock + limit, currentBlock)),
       events: eventsAbis
     })
     console.log(`chainId: ${client.chain?.id}, startBlock: ${startBlock}, toBlock: ${currentBlock}, maxBlock: ${maxBlock ?? 'null'}, limit: ${limit}, | event: ${eventTypes.join(', ')}, intervalLogs: ${intervalLogs.length}`);
-
     logs.push(...intervalLogs);
   }
 

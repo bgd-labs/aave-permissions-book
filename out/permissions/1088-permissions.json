@@ -327,57 +327,8 @@
           }
         ]
       },
-      "CapPlusRiskSteward": {
-        "address": "0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731",
-        "modifiers": [
-          {
-            "modifier": "onlyRiskCouncil",
-            "addresses": [
-              {
-                "address": "0x0f547846920C34E70FBE4F3d87E46452a3FeAFfa",
-                "owners": [
-                  "0xc2cf0387f2a83A7F5C6675F4CDe7F367ea1B989a",
-                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
-                ],
-                "signersThreshold": 2
-              }
-            ],
-            "functions": [
-              "updateCaps"
-            ]
-          }
-        ]
-      },
-      "FreezeSteward": {
-        "address": "0x2C77153fF4a1e83A8d8D750735FB101ECB55949f",
-        "modifiers": [
-          {
-            "modifier": "onlyEmergencyAdmin",
-            "addresses": [
-              {
-                "address": "0x56C1a4b54921DEA9A344967a8693C7E661D72968",
-                "owners": [
-                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
-                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
-                  "0x818C277dBE886b934e60aa047250A73529E26A99",
-                  "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
-                  "0xC5bE5c0134857B4b96F45AA6f6B77DB96Ac1487e",
-                  "0xd4af2E86a27F8F77B0556E081F97B215C9cA8f2E",
-                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
-                ],
-                "signersThreshold": 5
-              }
-            ],
-            "functions": [
-              "setFreeze"
-            ]
-          }
-        ]
-      },
       "Manual AGRS": {
-        "address": "0x58226D26658F19724cB881E9F747EeDC846BB1c9",
+        "address": "0x97CB9e81d480A2AB03299760654C1DDC0C16bE07",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -434,7 +385,7 @@
         "BRIDGE": [],
         "FLASH_BORROWER": []
       },
-      "latestBlockNumber": 20916142
+      "latestBlockNumber": 20921689
     },
     "gsmRoles": {},
     "govV3": {
@@ -450,7 +401,7 @@
             "0x9853589F951D724D9f7c6724E0fD63F9d888C429"
           ]
         },
-        "latestBlockNumber": 20916143
+        "latestBlockNumber": 20921689
       },
       "contracts": {
         "GranularGuardian": {
@@ -716,7 +667,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 20916143
+      "latestCCCBlockNumber": 20921689
     },
     "collector": {
       "contracts": {
@@ -782,7 +733,7 @@
             "0x53d3c1B2d42578F56ef4c0142F19CDB54CE55040"
           ]
         },
-        "latestBlockNumber": 20916143
+        "latestBlockNumber": 20921689
       }
     },
     "clinicSteward": {
@@ -837,7 +788,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 20916143
+        "latestBlockNumber": 20921689
       }
     },
     "umbrella": {}
