@@ -11,6 +11,7 @@ import {
   getTableBody,
   getTableHeader,
 } from '../helpers/tables.js';
+import { utils } from 'ethers';
 import { getPrincipalReadme } from './readme.js';
 import {
   AddressInfo,
@@ -23,7 +24,6 @@ import {
   getActionExecutors,
   getLevelOfDecentralization,
 } from '../helpers/decentralization.js';
-import { getAddress } from 'viem';
 
 export const generateTableAddress = (
   address: string | undefined,
@@ -33,7 +33,7 @@ export const generateTableAddress = (
   network: string,
   chainId?: string,
 ): string => {
-  const checkSummedAddress = address ? getAddress(address) : null;
+  const checkSummedAddress = address ? utils.getAddress(address) : null;
 
   if (chainId) {
     const newContractsByAddress = generateContractsByAddress({
@@ -305,7 +305,7 @@ export const generateTable = (network: string, pool: string): string => {
           network,
         )})`,
         `${generateTableAddress(
-          getAddress(contract.proxyAdmin!),
+          utils.getAddress(contract.proxyAdmin),
           addressesNames,
           contractsByAddress,
           poolGuardians,
@@ -570,9 +570,9 @@ export const generateTable = (network: string, pool: string): string => {
 
     Object.keys(poolGuardians).forEach((guardian) => {
       guardianTable += getTableBody([
-        `[${addressesNames[getAddress(guardian)]
-          ? addressesNames[getAddress(guardian)]
-          : `${getAddress(guardian)} (Safe)`
+        `[${addressesNames[utils.getAddress(guardian)]
+          ? addressesNames[utils.getAddress(guardian)]
+          : `${utils.getAddress(guardian)} (Safe)`
         }](${explorerAddressUrlComposer(guardian, network)})`,
         `${poolGuardians[guardian].threshold}/${poolGuardians[guardian].owners.length}`,
         guardian,

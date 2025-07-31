@@ -1,3 +1,4 @@
+import { providers, constants } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import {
@@ -6,10 +7,9 @@ import {
   Guardian,
   PermissionsJson,
 } from '../helpers/types.js';
-import { Client, zeroAddress } from 'viem';
 
 const getAddressInfo = async (
-  provider: Client,
+  provider: providers.Provider,
   roleAddress: string,
 ): Promise<AddressInfo> => {
   const owners = await getSafeOwners(provider, roleAddress);
@@ -36,7 +36,7 @@ const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
 
 export const resolveClinicStewardModifiers = async (
   addressBook: any,
-  provider: Client,
+  provider: providers.Provider,
   permissionsObject: PermissionsJson,
   adminRoles: Record<string, string[]>,
 ): Promise<Contracts> => {
@@ -65,7 +65,7 @@ export const resolveClinicStewardModifiers = async (
 
   if (
     addressBook.CLINIC_STEWARD &&
-    addressBook.CLINIC_STEWARD !== zeroAddress
+    addressBook.CLINIC_STEWARD !== constants.AddressZero
   ) {
     obj['ClinicSteward'] = {
       address: addressBook.CLINIC_STEWARD,

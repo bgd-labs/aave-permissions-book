@@ -272,7 +272,7 @@
             "modifier": "onlyFacilitator",
             "addresses": [
               {
-                "address": "0x593B09afc075B3c326CE2AD7750888645BA8943d",
+                "address": "0x00907f9921424583e7ffBfEdf84F92B7B2Be4977",
                 "owners": []
               },
               {
@@ -280,15 +280,11 @@
                 "owners": []
               },
               {
-                "address": "0x535b2f7C20B9C83d70e519cf9991578eF9816B7B",
+                "address": "0x0d8eFfC11dF3F229AA1EA0509BC9DFa632A13578",
                 "owners": []
               },
               {
-                "address": "0xFeeb6FE430B7523fEF2a38327241eE7153779535",
-                "owners": []
-              },
-              {
-                "address": "0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285",
+                "address": "0x686F8D21520f4ecEc7ba577be08354F4d1EB8262",
                 "owners": []
               }
             ],
@@ -332,7 +328,7 @@
         ]
       },
       "GSM_USDC": {
-        "address": "0xFeeb6FE430B7523fEF2a38327241eE7153779535",
+        "address": "0x0d8eFfC11dF3F229AA1EA0509BC9DFa632A13578",
         "modifiers": [
           {
             "modifier": "onlyRescuer",
@@ -343,7 +339,18 @@
           },
           {
             "modifier": "onlySwapFreezer",
-            "addresses": [],
+            "addresses": [
+              {
+                "address": "0xef6beCa8D9543eC007bceA835aF768B58F730C1f",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
             "functions": [
               "setSwapFreeze"
             ]
@@ -363,6 +370,11 @@
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0xD1E856a947CdF56b4f000ee29d34F5808E0A6848",
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -374,7 +386,7 @@
         ]
       },
       "GSM_USDT": {
-        "address": "0x535b2f7C20B9C83d70e519cf9991578eF9816B7B",
+        "address": "0x686F8D21520f4ecEc7ba577be08354F4d1EB8262",
         "modifiers": [
           {
             "modifier": "onlyRescuer",
@@ -385,7 +397,18 @@
           },
           {
             "modifier": "onlySwapFreezer",
-            "addresses": [],
+            "addresses": [
+              {
+                "address": "0x71381e6718b37C12155CB961Ca3D374A8BfFa0e5",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
             "functions": [
               "setSwapFreeze"
             ]
@@ -403,6 +426,11 @@
             "addresses": [
               {
                 "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0xD1E856a947CdF56b4f000ee29d34F5808E0A6848",
                 "owners": [],
                 "signersThreshold": 0
               }
@@ -456,7 +484,7 @@
               {
                 "address": "0x8513e6F37dBc52De87b166980Fa3F50639694B60",
                 "owners": [
-                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x320A4e54e3641A7a9dAF47016a93CDe6F848A340",
                   "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
                   "0xb647055A9915bF9c8021a684E175A353525b9890",
                   "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
@@ -488,7 +516,7 @@
           "0x46Aa1063e5265b43663E81329333B47c517A5409"
         ]
       },
-      "latestBlockNumber": 23040139
+      "latestBlockNumber": 21583249
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -497,14 +525,18 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ],
           "CONFIGURATOR_ROLE": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+            "0xD1E856a947CdF56b4f000ee29d34F5808E0A6848"
+          ],
+          "SWAP_FREEZER_ROLE": [
+            "0xef6beCa8D9543eC007bceA835aF768B58F730C1f",
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ],
-          "SWAP_FREEZER_ROLE": [],
           "DEFAULT_ADMIN_ROLE": [],
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 21583249
       },
       "GSM_USDT": {
         "role": {
@@ -512,22 +544,23 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ],
           "CONFIGURATOR_ROLE": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+            "0xD1E856a947CdF56b4f000ee29d34F5808E0A6848"
+          ],
+          "SWAP_FREEZER_ROLE": [
+            "0x71381e6718b37C12155CB961Ca3D374A8BfFa0e5",
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ],
-          "SWAP_FREEZER_ROLE": [],
           "DEFAULT_ADMIN_ROLE": [],
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 21583249
       }
     },
     "govV3": {
       "ggRoles": {}
-    },
-    "collector": {},
-    "clinicSteward": {},
-    "umbrella": {}
+    }
   },
   "GOV_V2": {
     "contracts": {
@@ -1148,6 +1181,55 @@
           }
         ]
       },
+      "CapPlusRiskSteward": {
+        "address": "0x82dcCF206Ae2Ab46E2099e663F70DeE77caE7778",
+        "modifiers": [
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+                "owners": [
+                  "0xc2cf0387f2a83A7F5C6675F4CDe7F367ea1B989a",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 2
+              }
+            ],
+            "functions": [
+              "updateCaps"
+            ]
+          }
+        ]
+      },
+      "FreezeSteward": {
+        "address": "0x2eE68ACb6A1319de1b49DC139894644E424fefD6",
+        "modifiers": [
+          {
+            "modifier": "onlyEmergencyAdmin",
+            "addresses": [
+              {
+                "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
+                "owners": [
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x818C277dBE886b934e60aa047250A73529E26A99",
+                  "0x4f96743057482a2E10253AFDacDA3fd9CF2C1DC9",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+                  "0xC5bE5c0134857B4b96F45AA6f6B77DB96Ac1487e",
+                  "0xd4af2E86a27F8F77B0556E081F97B215C9cA8f2E",
+                  "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02"
+                ],
+                "signersThreshold": 5
+              }
+            ],
+            "functions": [
+              "setFreeze"
+            ]
+          }
+        ]
+      },
       "AaveMerkleDistributor": {
         "address": "0xa88c6D90eAe942291325f9ae3c66f3563B93FE10",
         "modifiers": [
@@ -1327,7 +1409,7 @@
         ]
       },
       "Manual AGRS": {
-        "address": "0xFCE597866Ffaf617EFdcA1C1Ad50eBCB16B5171E",
+        "address": "0x46Ab47bA01EF627ce47F2ED61C9482794a6109c4",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -1403,7 +1485,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 23040139
+      "latestBlockNumber": 23024967
     },
     "gsmRoles": {},
     "govV3": {
@@ -1419,7 +1501,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23024970
       },
       "contracts": {
         "GranularGuardian": {
@@ -1999,7 +2081,7 @@
         "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
         "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6"
       ],
-      "latestCCCBlockNumber": 23040139
+      "latestCCCBlockNumber": 23024970
     },
     "collector": {
       "contracts": {
@@ -2087,7 +2169,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23024968
       }
     },
     "clinicSteward": {
@@ -2147,7 +2229,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23024969
       }
     },
     "umbrella": {
@@ -2411,7 +2493,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23024969
       },
       "umbrellaIncentivesRoles": {
         "role": {
@@ -2423,7 +2505,7 @@
             "0x2759de67aD133C747C9f41d56F1b8A343cE679a1"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23024969
       }
     }
   },
@@ -2803,7 +2885,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040140
+        "latestBlockNumber": 23024974
       }
     },
     "clinicSteward": {},
@@ -3102,7 +3184,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040140
+        "latestBlockNumber": 23024974
       }
     },
     "clinicSteward": {},
@@ -3413,7 +3495,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040127
+        "latestBlockNumber": 22524774
       }
     },
     "clinicSteward": {},
@@ -3881,6 +3963,27 @@
           }
         ]
       },
+      "CapPlusRiskSteward": {
+        "address": "0x3843b29118fFC18d5d12EE079d0324E1bF115e69",
+        "modifiers": [
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+                "owners": [
+                  "0xc2cf0387f2a83A7F5C6675F4CDe7F367ea1B989a",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 2
+              }
+            ],
+            "functions": [
+              "updateCaps"
+            ]
+          }
+        ]
+      },
       "AaveMerkleDistributor": {
         "address": "0xa88c6D90eAe942291325f9ae3c66f3563B93FE10",
         "modifiers": [
@@ -3976,7 +4079,7 @@
         ]
       },
       "Manual AGRS": {
-        "address": "0x7e6a6B115D31d4A837E3C737c49Cf6Fafe6112C3",
+        "address": "0x30adC2f98ff78fDde12F191Acb82699f640694FB",
         "modifiers": [
           {
             "modifier": "onlyOwner",
@@ -4043,7 +4146,7 @@
           "0x7e6a6B115D31d4A837E3C737c49Cf6Fafe6112C3"
         ]
       },
-      "latestBlockNumber": 23040139
+      "latestBlockNumber": 23024971
     },
     "gsmRoles": {},
     "govV3": {
@@ -4135,7 +4238,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23024972
       }
     },
     "clinicSteward": {
@@ -4195,7 +4298,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23024972
       }
     },
     "umbrella": {}
@@ -4632,6 +4735,27 @@
           }
         ]
       },
+      "CapPlusRiskSteward": {
+        "address": "0x1EBdbE77bbDDD284BdCE8D7981D7eD26D6af58cA",
+        "modifiers": [
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+                "owners": [
+                  "0xc2cf0387f2a83A7F5C6675F4CDe7F367ea1B989a",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 2
+              }
+            ],
+            "functions": [
+              "updateCaps"
+            ]
+          }
+        ]
+      },
       "AaveMerkleDistributor": {
         "address": "0xa88c6D90eAe942291325f9ae3c66f3563B93FE10",
         "modifiers": [
@@ -4747,7 +4871,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 23040139
+      "latestBlockNumber": 23024972
     },
     "gsmRoles": {},
     "govV3": {
@@ -4839,7 +4963,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23024973
       }
     },
     "clinicSteward": {},

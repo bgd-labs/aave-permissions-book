@@ -7,12 +7,12 @@ import {
 } from '../helpers/types.js';
 import { Pools } from '../helpers/configs.js';
 import { ChainId } from '@bgd-labs/toolbox';
+import { ethers, providers, utils } from 'ethers';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import { ghoABI } from '../abis/ghoABI.js';
 import { IOwnable_ABI } from '@bgd-labs/aave-address-book/abis';
 import { ghoStewardV2 } from '../abis/ghoStewardV2.js';
-import { Address, Client, getAddress, getContract } from 'viem';
 
 const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
   const cleanAddresses: AddressInfo[] = [];
@@ -30,7 +30,7 @@ const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
 };
 export const resolveGHOModifiers = async (
   addressBook: any,
-  provider: Client,
+  provider: providers.Provider,
   permissionsObject: PermissionsJson,
   pool: Pools,
   chainId: typeof ChainId | number,
@@ -59,9 +59,13 @@ export const resolveGHOModifiers = async (
     }
   }
 
-  const ghoContract = getContract({ address: getAddress(addressBook.GHO_TOKEN), abi: ghoABI, client: provider });
+  const ghoContract = new ethers.Contract(
+    addressBook.GHO_TOKEN,
+    ghoABI,
+    provider,
+  );
 
-  const facilitators = await ghoContract.read.getFacilitatorsList() as Address[];
+  const facilitators = await ghoContract.getFacilitatorsList();
 
   const facilitatorOwners: Record<string, string[]> = {};
   for (const facilitator of facilitators) {
@@ -203,8 +207,12 @@ export const resolveGHOModifiers = async (
     };
   }
 
-  const gsmRegistryContract = getContract({ address: getAddress(addressBook.GSM_REGISTRY), abi: IOwnable_ABI, client: provider });
-  const gsmRegistryOwner = await gsmRegistryContract.read.owner() as Address;
+  const gsmRegistryContract = new ethers.Contract(
+    addressBook.GSM_REGISTRY,
+    IOwnable_ABI,
+    provider,
+  );
+  const gsmRegistryOwner = await gsmRegistryContract.owner();
 
   obj['GSMRegistry'] = {
     address: addressBook.GSM_REGISTRY,
@@ -226,9 +234,13 @@ export const resolveGHOModifiers = async (
     ],
   };
 
-  const ghoStewardContract = getContract({ address: getAddress('0x8F2411a538381aae2b464499005F0211e867d84f'), abi: ghoStewardV2, client: provider });
-  const ghoStewardOwner = await ghoStewardContract.read.owner() as Address;
-  const riskCouncil = await ghoStewardContract.read.RISK_COUNCIL() as Address;
+  const ghoStewardContract = new ethers.Contract(
+    '0x8F2411a538381aae2b464499005F0211e867d84f',
+    ghoStewardV2,
+    provider,
+  );
+  const ghoStewardOwner = await ghoStewardContract.owner();
+  const riskCouncil = await ghoStewardContract.RISK_COUNCIL();
 
   obj['GhoStewardV2'] = {
     address: '0x8F2411a538381aae2b464499005F0211e867d84f',
