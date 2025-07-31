@@ -1,13 +1,12 @@
-import { isAddress } from 'viem';
+import { ethers } from 'ethers';
 import { networkConfigs } from './configs.js';
-import { ChainId } from '@bgd-labs/toolbox';
 
 export const explorerAddressUrlComposer = (
   address: string,
-  chainId: typeof ChainId,
+  chainId: string, //ChainId,
 ): string | null => {
-  if (isAddress(address)) {
-    return `${networkConfigs[Number(chainId)].explorer}/address/${address}`;
+  if (ethers.utils.isAddress(address)) {
+    return `${networkConfigs[chainId].explorer}/address/${address}`;
   }
 
   return null;
@@ -17,5 +16,5 @@ export const explorerTxUrlComposer = (
   transaction: string,
   chainId: typeof ChainId,
 ): string => {
-  return `${networkConfigs[Number(chainId)].explorer}/tx/${transaction}`;
+  return `${networkConfigs[chainId].explorer}/tx/${transaction}`;
 };

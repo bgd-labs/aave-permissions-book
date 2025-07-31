@@ -1,4 +1,4 @@
-
+import { ethers, providers, utils, constants } from 'ethers';
 import { onlyOwnerAbi } from '../abis/onlyOwnerAbi.js';
 import { collectorAbi } from '../abis/collectorAbi.js';
 import { Pools } from '../helpers/configs.js';
@@ -20,10 +20,9 @@ import { RISK_STEWARDS_ABI } from '../abis/riskStewards.js';
 import { SVR_ORACLE_STEWARD_ABI } from '../abis/svrOracle.js';
 import { EDGE_RISK_STEWARD_CAPS_ABI } from '../abis/edgeRiskStewardCaps.js';
 import { POOL_EXPOSURE_STEWARD_ABI } from '../abis/poolExposureStewards.js';
-import { Address, Client, getAddress, getContract } from 'viem';
 
 const getAddressInfo = async (
-  provider: Client,
+  provider: providers.Provider,
   roleAddress: string,
 ): Promise<AddressInfo> => {
   const owners = await getSafeOwners(provider, roleAddress);
@@ -50,10 +49,10 @@ const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
 
 export const resolveV3Modifiers = async (
   addressBook: any,
-  provider: Client,
+  provider: providers.Provider,
   permissionsObject: PermissionsJson,
   pool: Pools,
-  chainId: typeof ChainId | number,
+  chainId: ChainId | number,
   adminRoles: Record<string, string[]>,
 ): Promise<Contracts> => {
   let obj: Contracts = {};
@@ -79,9 +78,13 @@ export const resolveV3Modifiers = async (
     }
   }
 
-  const poolAddressesProvider = getContract({ address: getAddress(addressBook.POOL_ADDRESSES_PROVIDER), abi: poolAddressProviderAbi, client: provider });
+  const poolAddressesProvider = new ethers.Contract(
+    addressBook.POOL_ADDRESSES_PROVIDER,
+    poolAddressProviderAbi,
+    provider,
+  );
 
-  const poolAddressesProviderOwner = await poolAddressesProvider.read.owner() as Address;
+  const poolAddressesProviderOwner = await poolAddressesProvider.owner();
 
   obj['PoolAddressesProvider'] = {
     address: addressBook.POOL_ADDRESSES_PROVIDER,
@@ -290,8 +293,12 @@ export const resolveV3Modifiers = async (
   }
 
   if (chainId === ChainId.avalanche) {
-    const porExecutorContract = getContract({ address: getAddress(addressBook.PROOF_OF_RESERVE), abi: onlyOwnerAbi, client: provider });
-    const porExecutorOwner = await porExecutorContract.read.owner() as Address;
+    const porExecutorContract = new ethers.Contract(
+      addressBook.PROOF_OF_RESERVE,
+      onlyOwnerAbi,
+      provider,
+    );
+    const porExecutorOwner = await porExecutorContract.owner();
 
     obj['ProofOfReserveExecutorV3'] = {
       address: addressBook.PROOF_OF_RESERVE,
@@ -313,8 +320,12 @@ export const resolveV3Modifiers = async (
       ],
     };
 
-    const porAggregatorContract = getContract({ address: getAddress(addressBook.PROOF_OF_RESERVE_AGGREGATOR), abi: onlyOwnerAbi, client: provider });
-    const porAggregatorOwner = await porAggregatorContract.read.owner() as Address;
+    const porAggregatorContract = new ethers.Contract(
+      addressBook.PROOF_OF_RESERVE_AGGREGATOR,
+      onlyOwnerAbi,
+      provider,
+    );
+    const porAggregatorOwner = await porAggregatorContract.owner();
 
     obj['ProofOfReserveAggregatorV3'] = {
       address: addressBook.PROOF_OF_RESERVE_AGGREGATOR,
@@ -389,8 +400,12 @@ export const resolveV3Modifiers = async (
   };
 
   if (addressBook.WETH_GATEWAY) {
-    const wethGatewayContract = getContract({ address: getAddress(addressBook.WETH_GATEWAY), abi: onlyOwnerAbi, client: provider });
-    const wethGatewayOwner = await wethGatewayContract.read.owner() as Address;
+    const wethGatewayContract = new ethers.Contract(
+      addressBook.WETH_GATEWAY,
+      onlyOwnerAbi,
+      provider,
+    );
+    const wethGatewayOwner = await wethGatewayContract.owner();
 
     obj['WrappedTokenGatewayV3'] = {
       address: addressBook.WETH_GATEWAY,
@@ -414,8 +429,12 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.SWAP_COLLATERAL_ADAPTER) {
-    const paraswapLiquiditySwapContract = getContract({ address: getAddress(addressBook.SWAP_COLLATERAL_ADAPTER), abi: onlyOwnerAbi, client: provider });
-    const liquiditySwapOwner = await paraswapLiquiditySwapContract.read.owner() as Address;
+    const paraswapLiquiditySwapContract = new ethers.Contract(
+      addressBook.SWAP_COLLATERAL_ADAPTER,
+      onlyOwnerAbi,
+      provider,
+    );
+    const liquiditySwapOwner = await paraswapLiquiditySwapContract.owner();
 
     obj['ParaSwapLiquiditySwapAdapter'] = {
       address: addressBook.SWAP_COLLATERAL_ADAPTER,
@@ -439,8 +458,12 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.REPAY_WITH_COLLATERAL_ADAPTER) {
-    const paraswapRepaySwapContract = getContract({ address: getAddress(addressBook.REPAY_WITH_COLLATERAL_ADAPTER), abi: onlyOwnerAbi, client: provider });
-    const repaySwapOwner = await paraswapRepaySwapContract.read.owner() as Address;
+    const paraswapRepaySwapContract = new ethers.Contract(
+      addressBook.REPAY_WITH_COLLATERAL_ADAPTER,
+      onlyOwnerAbi,
+      provider,
+    );
+    const repaySwapOwner = await paraswapRepaySwapContract.owner();
 
     obj['ParaSwapRepayAdapter'] = {
       address: addressBook.REPAY_WITH_COLLATERAL_ADAPTER,
@@ -463,8 +486,12 @@ export const resolveV3Modifiers = async (
     };
   }
 
-  const emissionManagerContract = getContract({ address: getAddress(addressBook.EMISSION_MANAGER), abi: onlyOwnerAbi, client: provider });
-  const emissionManagerOwner = await emissionManagerContract.read.owner() as Address;
+  const emissionManagerContract = new ethers.Contract(
+    addressBook.EMISSION_MANAGER,
+    onlyOwnerAbi,
+    provider,
+  );
+  const emissionManagerOwner = await emissionManagerContract.owner();
 
   obj['EmissionManager'] = {
     address: addressBook.EMISSION_MANAGER,
@@ -497,8 +524,12 @@ export const resolveV3Modifiers = async (
     ],
   };
 
-  const addressesRegistryContract = getContract({ address: getAddress(addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY), abi: onlyOwnerAbi, client: provider });
-  const addressRegistryOwner = await addressesRegistryContract.read.owner() as Address;
+  const addressesRegistryContract = new ethers.Contract(
+    addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
+    onlyOwnerAbi,
+    provider,
+  );
+  const addressRegistryOwner = await addressesRegistryContract.owner();
 
   obj['PoolAddressesProviderRegistry'] = {
     address: addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
@@ -529,8 +560,12 @@ export const resolveV3Modifiers = async (
 
 
   if (addressBook.PROXY_ADMIN) {
-    const proxyAdminContract = getContract({ address: getAddress(addressBook.PROXY_ADMIN), abi: onlyOwnerAbi, client: provider });
-    const proxyAdminOwner = await proxyAdminContract.read.owner() as Address;
+    const proxyAdminContract = new ethers.Contract(
+      addressBook.PROXY_ADMIN,
+      onlyOwnerAbi,
+      provider,
+    );
+    const proxyAdminOwner = await proxyAdminContract.owner();
 
     obj['ProxyAdmin'] = {
       address: addressBook.PROXY_ADMIN,
@@ -551,8 +586,12 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.PROXY_ADMIN_LONG) {
-    const proxyAdminLongContract = getContract({ address: getAddress(addressBook.PROXY_ADMIN_LONG), abi: onlyOwnerAbi, client: provider });
-    const proxyAdminLongOwner = await proxyAdminLongContract.read.owner() as Address;
+    const proxyAdminLongContract = new ethers.Contract(
+      addressBook.PROXY_ADMIN_LONG,
+      onlyOwnerAbi,
+      provider,
+    );
+    const proxyAdminLongOwner = await proxyAdminLongContract.owner();
 
     obj['ProxyAdminLong'] = {
       address: addressBook.PROXY_ADMIN_LONG,
@@ -596,8 +635,12 @@ export const resolveV3Modifiers = async (
   };
 
   if (addressBook.CAPS_PLUS_RISK_STEWARD) {
-    const riskStewardContract = getContract({ address: getAddress(addressBook.CAPS_PLUS_RISK_STEWARD), abi: capsPlusRiskStewardABI, client: provider });
-    const riskCouncil = await riskStewardContract.read.RISK_COUNCIL() as Address;
+    const riskStewardContract = new ethers.Contract(
+      addressBook.CAPS_PLUS_RISK_STEWARD,
+      capsPlusRiskStewardABI,
+      provider,
+    );
+    const riskCouncil = await riskStewardContract.RISK_COUNCIL();
     obj['CapPlusRiskSteward'] = {
       address: addressBook.CAPS_PLUS_RISK_STEWARD,
       modifiers: [
@@ -639,8 +682,12 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.AAVE_MERKLE_DISTRIBUTOR) {
-    const merkleDistributorContract = getContract({ address: getAddress(addressBook.AAVE_MERKLE_DISTRIBUTOR), abi: onlyOwnerAbi, client: provider });
-    const merkleDistributorOwner = await merkleDistributorContract.read.owner() as Address;
+    const merkleDistributorContract = new ethers.Contract(
+      addressBook.AAVE_MERKLE_DISTRIBUTOR,
+      onlyOwnerAbi,
+      provider,
+    );
+    const merkleDistributorOwner = await merkleDistributorContract.owner();
 
     obj['AaveMerkleDistributor'] = {
       address: addressBook.AAVE_MERKLE_DISTRIBUTOR,
@@ -664,9 +711,13 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.SVR_STEWARD) {
-    const svrOracleStewardContract = getContract({ address: getAddress(addressBook.SVR_STEWARD), abi: SVR_ORACLE_STEWARD_ABI, client: provider });
-    const svrOwner = await svrOracleStewardContract.read.owner() as Address;
-    const svrGuardian = await svrOracleStewardContract.read.guardian() as Address;
+    const svrOracleStewardContract = new ethers.Contract(
+      addressBook.SVR_STEWARD,
+      SVR_ORACLE_STEWARD_ABI,
+      provider,
+    );
+    const svrOwner = await svrOracleStewardContract.owner();
+    const svrGuardian = await svrOracleStewardContract.guardian();
 
     obj['SvrOracleSteward'] = {
       address: addressBook.SVR_STEWARD,
@@ -704,9 +755,13 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.EDGE_RISK_STEWARD_CAPS) {
-    const edgeRiskStewardCapsContract = getContract({ address: getAddress(addressBook.EDGE_RISK_STEWARD_CAPS), abi: EDGE_RISK_STEWARD_CAPS_ABI, client: provider });
-    const edgeRiskStewardOwner = await edgeRiskStewardCapsContract.read.owner() as Address;
-    const edgeRiskStewardCouncil = await edgeRiskStewardCapsContract.read.RISK_COUNCIL() as Address;
+    const edgeRiskStewardCapsContract = new ethers.Contract(
+      addressBook.EDGE_RISK_STEWARD_CAPS,
+      EDGE_RISK_STEWARD_CAPS_ABI,
+      provider,
+    );
+    const edgeRiskStewardOwner = await edgeRiskStewardCapsContract.owner();
+    const edgeRiskStewardCouncil = await edgeRiskStewardCapsContract.RISK_COUNCIL();
 
 
     obj['EdgeRiskStewardCaps'] = {
@@ -745,9 +800,13 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.POOL_EXPOSURE_STEWARD) {
-    const poolExposureStewardContract = getContract({ address: getAddress(addressBook.POOL_EXPOSURE_STEWARD), abi: POOL_EXPOSURE_STEWARD_ABI, client: provider });
-    const poolExposureStewardOwner = await poolExposureStewardContract.read.owner() as Address;
-    const poolExposureStewardGuardian = await poolExposureStewardContract.read.guardian() as Address;
+    const poolExposureStewardContract = new ethers.Contract(
+      addressBook.POOL_EXPOSURE_STEWARD,
+      POOL_EXPOSURE_STEWARD_ABI,
+      provider,
+    );
+    const poolExposureStewardOwner = await poolExposureStewardContract.owner();
+    const poolExposureStewardGuardian = await poolExposureStewardContract.guardian();
 
     obj['PoolExposureSteward'] = {
       address: addressBook.POOL_EXPOSURE_STEWARD,
@@ -787,9 +846,13 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.GHO_AAVE_CORE_STEWARD) {
-    const ghoAaveCoreStewardContract = getContract({ address: getAddress(addressBook.GHO_AAVE_CORE_STEWARD), abi: EDGE_RISK_STEWARD_CAPS_ABI, client: provider });
-    const ghoAaveCoreStewardOwner = await ghoAaveCoreStewardContract.read.owner() as Address;
-    const ghoAaveCoreStewardGuardian = await ghoAaveCoreStewardContract.read.RISK_COUNCIL() as Address;
+    const ghoAaveCoreStewardContract = new ethers.Contract(
+      addressBook.GHO_AAVE_CORE_STEWARD,
+      EDGE_RISK_STEWARD_CAPS_ABI,
+      provider,
+    );
+    const ghoAaveCoreStewardOwner = await ghoAaveCoreStewardContract.owner();
+    const ghoAaveCoreStewardGuardian = await ghoAaveCoreStewardContract.RISK_COUNCIL();
 
     obj['GhoAaveSteward'] = {
       address: addressBook.GHO_AAVE_CORE_STEWARD,
@@ -827,9 +890,13 @@ export const resolveV3Modifiers = async (
 
 
   if (addressBook.AAVE_POL_ETH_BRIDGE) {
-    const polEthBridgeContract = getContract({ address: getAddress(addressBook.AAVE_POL_ETH_BRIDGE), abi: erc20Bridge, client: provider });
-    const polEthBridgeOwner = await polEthBridgeContract.read.owner() as Address;
-    const polEthBridgeRescuer = await polEthBridgeContract.read.whoCanRescue() as Address;
+    const polEthBridgeContract = new ethers.Contract(
+      addressBook.AAVE_POL_ETH_BRIDGE,
+      erc20Bridge,
+      provider,
+    );
+    const polEthBridgeOwner = await polEthBridgeContract.owner();
+    const polEthBridgeRescuer = await polEthBridgeContract.whoCanRescue();
 
     obj['AavePolEthBridge'] = {
       address: addressBook.AAVE_POL_ETH_BRIDGE,
@@ -867,9 +934,13 @@ export const resolveV3Modifiers = async (
   }
 
   if (addressBook.RISK_STEWARD) {
-    const riskStewardsContract = getContract({ address: getAddress(addressBook.RISK_STEWARD), abi: RISK_STEWARDS_ABI, client: provider });
-    const riskOwner = await riskStewardsContract.read.owner() as Address;
-    const riskCouncil = await riskStewardsContract.read.RISK_COUNCIL() as Address;
+    const riskStewardsContract = new ethers.Contract(
+      addressBook.RISK_STEWARD,
+      RISK_STEWARDS_ABI,
+      provider,
+    );
+    const riskOwner = await riskStewardsContract.owner();
+    const riskCouncil = await riskStewardsContract.RISK_COUNCIL();
 
     obj['Manual AGRS'] = {
       address: addressBook.RISK_STEWARD,

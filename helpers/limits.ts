@@ -1,32 +1,30 @@
 import { ChainId } from "@bgd-labs/toolbox";
 
 
-export const getLimit = (chainId: string) => {
+export const getLimit = (chainId: ChainId | string) => {
   let limit = undefined;
 
   // if (chainId === ChainId.avalanche) {
   //   limit = 3000;
   // }
-  if (Number(chainId) === Number(ChainId.sonic)) {
+  if (chainId === ChainId.sonic) {
     limit = 9999;
-  } else if (Number(chainId) === Number(ChainId.celo)) {
+  } else if (chainId === ChainId.celo) {
     limit = 9999;
-  } else if (Number(chainId) === Number(ChainId.linea)) {
+  } else if (chainId === ChainId.linea) {
     limit = 9999;
-  } else if (Number(chainId) === Number(ChainId.scroll)) {
+  } else if (chainId === ChainId.scroll) {
     limit = 9999;
-  } else if (Number(chainId) === Number(ChainId.gnosis)) {
+  } else if (chainId === ChainId.gnosis) {
     limit = 9999;
-  } else if (Number(chainId) === Number(ChainId.metis)) {
+  } else if (chainId === ChainId.metis) {
     limit = 9999;
-  } else if (Number(chainId) === Number(ChainId.avalanche)) {
+  } else if (chainId === ChainId.avalanche) {
     limit = 9999;
-  } else if (Number(chainId) === Number(ChainId.bnb)) {
+  } else if (chainId === ChainId.bnb) {
     limit = 9999;
-  } else if (Number(chainId) === Number(ChainId.soneium)) {
+  } else if (chainId === ChainId.soneium) {
     limit = 9999;
-  } else {
-    limit = 9999; // @TODO: for now we have this limit for everything
   }
 
 

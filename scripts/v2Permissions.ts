@@ -1,3 +1,4 @@
+import { ethers, providers, utils } from 'ethers';
 import { Pools } from '../helpers/configs.js';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { poolAddressProviderAbi } from '../abis/lendingPoolAddressProviderAbi.js';
@@ -9,26 +10,29 @@ import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import { ChainId } from '@bgd-labs/toolbox';
 import { Contracts, PermissionsJson } from '../helpers/types.js';
-import { Address, Client, getAddress, getContract } from 'viem';
 
 export const resolveV2Modifiers = async (
   addressBook: any,
-  provider: Client,
+  provider: providers.Provider,
   permissionsObject: PermissionsJson,
   pool: Pools,
-  chainId: string,
+  chainId: ChainId,
 ): Promise<Contracts> => {
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
 
-  const lendingPoolAddressesProvider = getContract({ address: getAddress(addressBook.POOL_ADDRESSES_PROVIDER), abi: poolAddressProviderAbi, client: provider });
-  const lendingPoolAddressesProviderOwner: Address =
-    await lendingPoolAddressesProvider.read.owner() as Address;
-  const lendingRateOracleAddress: Address =
-    await lendingPoolAddressesProvider.read.getLendingRateOracle() as Address;
-  const poolAdmin: Address = await lendingPoolAddressesProvider.read.getPoolAdmin() as Address;
+  const lendingPoolAddressesProvider = new ethers.Contract(
+    addressBook.POOL_ADDRESSES_PROVIDER,
+    poolAddressProviderAbi,
+    provider,
+  );
+  const lendingPoolAddressesProviderOwner: string =
+    await lendingPoolAddressesProvider.owner();
+  const lendingRateOracleAddress: string =
+    await lendingPoolAddressesProvider.getLendingRateOracle();
+  const poolAdmin: string = await lendingPoolAddressesProvider.getPoolAdmin();
   const emergencyAdmin: string =
-    await lendingPoolAddressesProvider.read.getEmergencyAdmin() as Address;
+    await lendingPoolAddressesProvider.getEmergencyAdmin();
 
   obj['LendingPoolAddressesProvider'] = {
     address: addressBook.POOL_ADDRESSES_PROVIDER,
@@ -70,11 +74,15 @@ export const resolveV2Modifiers = async (
     ],
   };
 
-  const lendingPoolConfiguratorContract = getContract({ address: getAddress(addressBook.POOL_ADDRESSES_PROVIDER), abi: lendingPoolConfigurator, client: provider });
-  const poolConfiguratorAdmin: Address =
-    await lendingPoolConfiguratorContract.read.getPoolAdmin() as Address;
-  const emergencyAdminConfigurator: Address =
-    await lendingPoolConfiguratorContract.read.getEmergencyAdmin() as Address;
+  const lendingPoolConfiguratorContract = new ethers.Contract(
+    addressBook.POOL_ADDRESSES_PROVIDER,
+    lendingPoolConfigurator,
+    provider,
+  );
+  const poolConfiguratorAdmin: string =
+    await lendingPoolConfiguratorContract.getPoolAdmin();
+  const emergencyAdminConfigurator: string =
+    await lendingPoolConfiguratorContract.getEmergencyAdmin();
   obj['LendingPoolConfigurator'] = {
     address: addressBook.POOL_CONFIGURATOR,
     proxyAdmin: addressBook.POOL_ADDRESSES_PROVIDER,
@@ -135,7 +143,7 @@ export const resolveV2Modifiers = async (
   }
 
   // Proof of reserve contracts
-  if (Number(chainId) === Number(ChainId.avalanche)) {
+  if (chainId === ChainId.avalanche) {
     // const code = ethers.utils.solidityKeccak256(
     //   ['string'],
     //   ['PROOF_OF_RESERVE_ADMIN'],
@@ -164,8 +172,12 @@ export const resolveV2Modifiers = async (
         roles['LendingPoolConfigurator']['onlyPoolOrProofOfReserveAdmin'],
     });
 
-    const porExecutorContract = getContract({ address: getAddress(addressBook.PROOF_OF_RESERVE), abi: onlyOwnerAbi, client: provider });
-    const porExecutorOwner = await porExecutorContract.read.owner() as Address;
+    const porExecutorContract = new ethers.Contract(
+      addressBook.PROOF_OF_RESERVE,
+      onlyOwnerAbi,
+      provider,
+    );
+    const porExecutorOwner = await porExecutorContract.owner();
     obj['ProofOfReserveExecutorV2'] = {
       address: addressBook.PROOF_OF_RESERVE,
       modifiers: [
@@ -185,8 +197,12 @@ export const resolveV2Modifiers = async (
         },
       ],
     };
-    const porAggregatorContract = getContract({ address: getAddress(addressBook.PROOF_OF_RESERVE_AGGREGATOR), abi: onlyOwnerAbi, client: provider });
-    const porAggregatorOwner = await porAggregatorContract.read.owner() as Address;
+    const porAggregatorContract = new ethers.Contract(
+      addressBook.PROOF_OF_RESERVE_AGGREGATOR,
+      onlyOwnerAbi,
+      provider,
+    );
+    const porAggregatorOwner = await porAggregatorContract.owner();
     obj['ProofOfReserveAggregatorV2'] = {
       address: addressBook.PROOF_OF_RESERVE_AGGREGATOR,
       modifiers: [
@@ -208,8 +224,12 @@ export const resolveV2Modifiers = async (
     };
   }
 
-  const aaveOracle = getContract({ address: getAddress(addressBook.ORACLE), abi: onlyOwnerAbi, client: provider });
-  const aaveOracleOwner = await aaveOracle.read.owner() as Address;
+  const aaveOracle = new ethers.Contract(
+    addressBook.ORACLE,
+    onlyOwnerAbi,
+    provider,
+  );
+  const aaveOracleOwner = await aaveOracle.owner();
 
   obj['AaveOracle'] = {
     address: addressBook.ORACLE,
@@ -228,8 +248,12 @@ export const resolveV2Modifiers = async (
     ],
   };
 
-  const lendingRateOracle = getContract({ address: getAddress(lendingRateOracleAddress), abi: onlyOwnerAbi, client: provider });
-  const lendingRateOracleOwner = await lendingRateOracle.read.owner() as Address;
+  const lendingRateOracle = new ethers.Contract(
+    lendingRateOracleAddress,
+    onlyOwnerAbi,
+    provider,
+  );
+  const lendingRateOracleOwner = await lendingRateOracle.owner();
 
   obj['LendingRateOracle'] = {
     address: lendingRateOracleAddress,
@@ -257,10 +281,14 @@ export const resolveV2Modifiers = async (
     provider,
   );
 
-  const proxyAdminContract = getContract({ address: getAddress(collectorProxyAdmin), abi: onlyOwnerAbi, client: provider });
-  const proxyAdminOwner = await proxyAdminContract.read.owner() as Address;
+  const proxyAdminContract = new ethers.Contract(
+    collectorProxyAdmin,
+    onlyOwnerAbi,
+    provider,
+  );
+  const proxyAdminOwner = await proxyAdminContract.owner();
   obj['ProxyAdmin'] = {
-    address: getAddress(collectorProxyAdmin),
+    address: utils.getAddress(collectorProxyAdmin),
     modifiers: [
       {
         modifier: 'onlyOwner',
@@ -278,10 +306,14 @@ export const resolveV2Modifiers = async (
 
   // extra contracts for arc
   if (pool === Pools.V2_ARC || pool === Pools.V2_ARC_TENDERLY) {
-    const arcTimelock = getContract({ address: getAddress(poolAdmin), abi: arcTimelockAbi, client: provider });
+    const arcTimelock = new ethers.Contract(
+      poolAdmin,
+      arcTimelockAbi,
+      provider,
+    );
     const governanceExecutor =
-      await arcTimelock.read.getEthereumGovernanceExecutor() as Address;
-    const arcTimelockGuardian = await arcTimelock.read.getGuardian() as Address;
+      await arcTimelock.getEthereumGovernanceExecutor();
+    const arcTimelockGuardian = await arcTimelock.getGuardian();
 
     obj['ArcTimelock'] = {
       address: poolAdmin,
@@ -317,8 +349,12 @@ export const resolveV2Modifiers = async (
       ],
     };
 
-    const permissionManager = getContract({ address: getAddress(AaveV2EthereumArc.PERMISSION_MANAGER), abi: onlyOwnerAbi, client: provider });
-    const permissionManagerOwner = await permissionManager.read.owner() as Address;
+    const permissionManager = new ethers.Contract(
+      AaveV2EthereumArc.PERMISSION_MANAGER,
+      onlyOwnerAbi,
+      provider,
+    );
+    const permissionManagerOwner = await permissionManager.owner();
 
     obj['PermissionManager'] = {
       address: AaveV2EthereumArc.PERMISSION_MANAGER,
@@ -342,8 +378,12 @@ export const resolveV2Modifiers = async (
   }
 
   if (pool !== Pools.V2_ARC && pool !== Pools.V2_ARC_TENDERLY) {
-    const wethGatewayContract = getContract({ address: getAddress(addressBook.WETH_GATEWAY), abi: onlyOwnerAbi, client: provider });
-    const wethGatewayOwner = await wethGatewayContract.read.owner() as Address;
+    const wethGatewayContract = new ethers.Contract(
+      addressBook.WETH_GATEWAY,
+      onlyOwnerAbi,
+      provider,
+    );
+    const wethGatewayOwner = await wethGatewayContract.owner();
 
     obj['WrappedTokenGatewayV2'] = {
       address: addressBook.WETH_GATEWAY,
@@ -372,8 +412,12 @@ export const resolveV2Modifiers = async (
     pool !== Pools.V2_AMM_TENDERLY &&
     pool !== Pools.V2_ARC_TENDERLY
   ) {
-    const paraswapLiquiditySwapContract = getContract({ address: getAddress(addressBook.SWAP_COLLATERAL_ADAPTER), abi: onlyOwnerAbi, client: provider });
-    const liquiditySwapOwner = await paraswapLiquiditySwapContract.read.owner() as Address;
+    const paraswapLiquiditySwapContract = new ethers.Contract(
+      addressBook.SWAP_COLLATERAL_ADAPTER,
+      onlyOwnerAbi,
+      provider,
+    );
+    const liquiditySwapOwner = await paraswapLiquiditySwapContract.owner();
 
     obj['ParaSwapLiquiditySwapAdapter'] = {
       address: addressBook.SWAP_COLLATERAL_ADAPTER,
@@ -395,8 +439,12 @@ export const resolveV2Modifiers = async (
       ],
     };
 
-    const paraswapRepaySwapContract = getContract({ address: getAddress(addressBook.REPAY_WITH_COLLATERAL_ADAPTER), abi: onlyOwnerAbi, client: provider });
-    const repaySwapOwner = await paraswapRepaySwapContract.read.owner() as Address;
+    const paraswapRepaySwapContract = new ethers.Contract(
+      addressBook.REPAY_WITH_COLLATERAL_ADAPTER,
+      onlyOwnerAbi,
+      provider,
+    );
+    const repaySwapOwner = await paraswapRepaySwapContract.owner();
 
     obj['ParaSwapRepayAdapter'] = {
       address: addressBook.REPAY_WITH_COLLATERAL_ADAPTER,
@@ -420,8 +468,12 @@ export const resolveV2Modifiers = async (
   }
 
   if (pool !== Pools.V2_ARC && pool !== Pools.V2_ARC_TENDERLY) {
-    const addressesRegistryContract = getContract({ address: getAddress(addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY), abi: onlyOwnerAbi, client: provider });
-    const addressRegistryOwner = await addressesRegistryContract.read.owner() as Address;
+    const addressesRegistryContract = new ethers.Contract(
+      addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
+      onlyOwnerAbi,
+      provider,
+    );
+    const addressRegistryOwner = await addressesRegistryContract.owner();
 
     obj['LendingPoolAddressesProviderRegistry'] = {
       address: addressBook.POOL_ADDRESSES_PROVIDER_REGISTRY,
@@ -448,7 +500,7 @@ export const resolveV2Modifiers = async (
   if (
     addressBook.DEFAULT_INCENTIVES_CONTROLLER != undefined &&
     addressBook.DEFAULT_INCENTIVES_CONTROLLER !==
-    '0x0000000000000000000000000000000000000000'
+      '0x0000000000000000000000000000000000000000'
   ) {
     obj['DefaultIncentivesController'] = {
       address: addressBook.DEFAULT_INCENTIVES_CONTROLLER,
@@ -469,10 +521,10 @@ export const resolveV2Modifiers = async (
             },
           ],
           functions:
-            Number(chainId) === Number(ChainId.mainnet)
+            chainId === ChainId.mainnet
               ? roles['DefaultIncentivesController'][
-                'onlyEmissionManager'
-              ].filter((functionName) => functionName !== 'setRewardsVault')
+                  'onlyEmissionManager'
+                ].filter((functionName) => functionName !== 'setRewardsVault')
               : roles['DefaultIncentivesController']['onlyEmissionManager'],
         },
       ],

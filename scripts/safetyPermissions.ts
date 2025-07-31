@@ -1,3 +1,5 @@
+import { ethers, providers } from 'ethers';
+
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
@@ -5,11 +7,10 @@ import { stkToken } from '../abis/stkToken.js';
 import { abptABI } from '../abis/abptABI.js';
 import { bptABI } from '../abis/bptABI.js';
 import { Contracts, PermissionsJson } from '../helpers/types.js';
-import { Address, Client, getAddress, getContract } from 'viem';
 
 export const resolveSafetyV2Modifiers = async (
   addressBook: any,
-  provider: Client,
+  provider: providers.Provider,
   permissionsObject: PermissionsJson,
 ): Promise<Contracts> => {
   const SLASH_ADMIN_ROLE = 0;
@@ -20,12 +21,16 @@ export const resolveSafetyV2Modifiers = async (
   const roles = generateRoles(permissionsObject);
 
   // stk aave token
-  const stkAaveContract = getContract({ address: getAddress(addressBook.STK_AAVE), abi: stkToken, client: provider });
+  const stkAaveContract = new ethers.Contract(
+    addressBook.STK_AAVE,
+    stkToken,
+    provider,
+  );
 
-  const stkAaveEmissionManager = await stkAaveContract.read.EMISSION_MANAGER() as Address;
-  const slashAdmin = await stkAaveContract.read.getAdmin([SLASH_ADMIN_ROLE]) as Address;
-  const cooldDownAdmin = await stkAaveContract.read.getAdmin([COOLDOWN_ADMIN_ROLE]) as Address;
-  const claimHelperAdmin = await stkAaveContract.read.getAdmin([CLAIM_HELPER_ROLE]) as Address;
+  const stkAaveEmissionManager = await stkAaveContract.EMISSION_MANAGER();
+  const slashAdmin = await stkAaveContract.getAdmin(SLASH_ADMIN_ROLE);
+  const cooldDownAdmin = await stkAaveContract.getAdmin(COOLDOWN_ADMIN_ROLE);
+  const claimHelperAdmin = await stkAaveContract.getAdmin(CLAIM_HELPER_ROLE);
 
   obj['stkAave'] = {
     address: addressBook.STK_AAVE,
@@ -84,13 +89,21 @@ export const resolveSafetyV2Modifiers = async (
   };
 
   // stk ABPT token
-  const stkABPTContract = getContract({ address: getAddress(addressBook.STK_ABPT), abi: stkToken, client: provider });
+  const stkABPTContract = new ethers.Contract(
+    addressBook.STK_ABPT,
+    stkToken,
+    provider,
+  );
 
-  const stkABPTEmissionManager = await stkABPTContract.read.EMISSION_MANAGER() as Address;
-  const abptAddress = await stkABPTContract.read.STAKED_TOKEN() as Address;
-  const stkABPTslashAdmin = await stkABPTContract.read.getAdmin([SLASH_ADMIN_ROLE]) as Address;
-  const stkABPTcooldDownAdmin = await stkABPTContract.read.getAdmin([COOLDOWN_ADMIN_ROLE]) as Address;
-  const stkABPTclaimHelperAdmin = await stkABPTContract.read.getAdmin([CLAIM_HELPER_ROLE]) as Address;
+  const stkABPTEmissionManager = await stkABPTContract.EMISSION_MANAGER();
+  const abptAddress = await stkABPTContract.STAKED_TOKEN();
+  const stkABPTslashAdmin = await stkABPTContract.getAdmin(SLASH_ADMIN_ROLE);
+  const stkABPTcooldDownAdmin = await stkABPTContract.getAdmin(
+    COOLDOWN_ADMIN_ROLE,
+  );
+  const stkABPTclaimHelperAdmin = await stkABPTContract.getAdmin(
+    CLAIM_HELPER_ROLE,
+  );
 
   obj['stkABPT'] = {
     address: addressBook.STK_ABPT,
@@ -154,9 +167,9 @@ export const resolveSafetyV2Modifiers = async (
     ],
   };
 
-  const abptContract = getContract({ address: abptAddress, abi: abptABI, client: provider });
-  const bPool = await abptContract.read.bPool() as Address;
-  const abptController = await abptContract.read.getController() as Address;
+  const abptContract = new ethers.Contract(abptAddress, abptABI, provider);
+  const bPool = await abptContract.bPool();
+  const abptController = await abptContract.getController();
 
   obj['ABPT'] = {
     address: abptAddress,
@@ -175,8 +188,8 @@ export const resolveSafetyV2Modifiers = async (
     ],
   };
 
-  const bptContract = getContract({ address: bPool, abi: bptABI, client: provider });
-  const bptController = await bptContract.read.getController() as Address;
+  const bptContract = new ethers.Contract(bPool, bptABI, provider);
+  const bptController = await bptContract.getController();
   obj['BPT'] = {
     address: bPool,
     modifiers: [
