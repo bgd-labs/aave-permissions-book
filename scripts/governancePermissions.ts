@@ -1,28 +1,23 @@
-import { ethers, providers } from 'ethers';
-
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import { AaveGovernanceV2ABI } from '../abis/AaveGovernanceV2.js';
 import { executorWithTimelockAbi } from '../abis/executorWithTimelockAbi.js';
 import { Contracts, PermissionsJson } from '../helpers/types.js';
+import { Address, Client, getAddress, getContract } from 'viem';
 
 export const resolveGovV2Modifiers = async (
   addressBook: any,
-  provider: providers.Provider,
+  provider: Client,
   permissionsObject: PermissionsJson,
 ): Promise<Contracts> => {
   const obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
 
-  const govContract = new ethers.Contract(
-    '0xec568fffba86c094cf06b22134b23074dfe2252c',
-    AaveGovernanceV2ABI,
-    provider,
-  );
+  const govContract = getContract({ address: getAddress('0xec568fffba86c094cf06b22134b23074dfe2252c'), abi: AaveGovernanceV2ABI, client: provider });
 
-  const guardian = await govContract.getGuardian();
-  const govOwner = await govContract.owner();
+  const guardian = await govContract.read.getGuardian() as Address;
+  const govOwner = await govContract.read.owner() as Address;
   obj['AaveGovernanceV2'] = {
     address: '0xEC568fffba86c094cf06b22134B23074DFE2252c',
     modifiers: [
@@ -51,13 +46,9 @@ export const resolveGovV2Modifiers = async (
     ],
   };
 
-  const shortExecutor = new ethers.Contract(
-    addressBook.SHORT_EXECUTOR,
-    executorWithTimelockAbi,
-    provider,
-  );
-  const pendingAdmin = await shortExecutor.getPendingAdmin();
-  const admin = await shortExecutor.getAdmin();
+  const shortExecutor = getContract({ address: getAddress(addressBook.SHORT_EXECUTOR), abi: executorWithTimelockAbi, client: provider });
+  const pendingAdmin = await shortExecutor.read.getPendingAdmin() as Address;
+  const admin = await shortExecutor.read.getAdmin() as Address;
 
   obj['ShortExecutor'] = {
     address: addressBook.SHORT_EXECUTOR,
@@ -97,13 +88,9 @@ export const resolveGovV2Modifiers = async (
     ],
   };
 
-  const longExecutor = new ethers.Contract(
-    addressBook.LONG_EXECUTOR,
-    executorWithTimelockAbi,
-    provider,
-  );
-  const longPendingAdmin = await longExecutor.getPendingAdmin();
-  const longAdmin = await longExecutor.getAdmin();
+  const longExecutor = getContract({ address: getAddress(addressBook.LONG_EXECUTOR), abi: executorWithTimelockAbi, client: provider });
+  const longPendingAdmin = await longExecutor.read.getPendingAdmin() as Address;
+  const longAdmin = await longExecutor.read.getAdmin() as Address;
 
   obj['LongExecutor'] = {
     address: addressBook.LONG_EXECUTOR,

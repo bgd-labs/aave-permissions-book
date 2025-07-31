@@ -54,10 +54,11 @@ import {
   GovernanceV3Celo,
   GhoArbitrum,
   GhoEthereum,
+  GhoAvalanche,
   GhoBase,
   GovernanceV3Soneium,
   AaveV3Soneium,
-  MiscSoneium
+  MiscSoneium,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 import { ChainId } from '@bgd-labs/toolbox';
@@ -213,7 +214,6 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.LIDO]: {
         collectorBlock: 21765718,
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         aclBlock: 20262410,
         addressBook: {
           ...AaveV3EthereumLido,
@@ -224,7 +224,6 @@ export const networkConfigs: NetworkConfigs = {
       },
       // [Pools.LIDO_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
       //   aclBlock: 20262410,
       //   addressBook: {
       //     ...AaveV3EthereumLido,
@@ -239,7 +238,6 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.ETHERFI]: {
         collectorBlock: 21765718,
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         aclBlock: 20625515,
         addressBook: {
           ...AaveV3EthereumEtherFi,
@@ -249,7 +247,6 @@ export const networkConfigs: NetworkConfigs = {
       },
       // [Pools.ETHERFI_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
-      //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
       //   aclBlock: 20625515,
       //   addressBook: {
       //     ...AaveV3EthereumEtherFi,
@@ -261,15 +258,15 @@ export const networkConfigs: NetworkConfigs = {
       //   tenderlyRpcUrl:
       //     'https://rpc.tenderly.co/fork/2d5e3793-0b31-48ad-a1b0-c9e5d03b0607',
       // },
-      // [Pools.GHO]: {
-      //   permissionsJson: './statics/functionsPermissionsGHO.json',
-      //   ghoBlock: 17698470,
-      //   addressBook: { ...AaveV3Ethereum, ...MiscEthereum },
-      //   gsmBlocks: {
-      //     GSM_USDC: 19037420,
-      //     GSM_USDT: 19037420,
-      //   },
-      // },
+      [Pools.GHO]: {
+        permissionsJson: './statics/functionsPermissionsGHO.json',
+        ghoBlock: 17698470,
+        addressBook: { ...AaveV3Ethereum, ...MiscEthereum, ...GhoEthereum },
+        gsmBlocks: {
+          GSM_USDC: 19037420,
+          GSM_USDT: 19037420,
+        },
+      },
       // [Pools.GHO_TENDERLY]: {
       //   permissionsJson: './statics/functionsPermissionsGHO.json',
       //   ghoBlock: 17698470,
@@ -528,6 +525,11 @@ export const networkConfigs: NetworkConfigs = {
         },
         clinicStewardBlock: 58156580,
       },
+      // [Pools.GHO]: {
+      //   permissionsJson: './statics/functionsPermissionsGHO.json',
+      //   ghoBlock: 62012650,
+      //   addressBook: { ...AaveV3Avalanche, ...MiscAvalanche, ...GhoAvalanche },
+      // },
       [Pools.V2]: {
         collectorBlock: 57114737,
         permissionsJson: './statics/functionsPermissionsV2PoR.json',
@@ -637,6 +639,11 @@ export const networkConfigs: NetworkConfigs = {
         },
         clinicStewardBlock: 311843330,
       },
+      // [Pools.GHO]: {
+      //   permissionsJson: './statics/functionsPermissionsGHO.json',
+      //   ghoBlock: 224701170,
+      //   addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum, ...GhoArbitrum },
+      // },
       // [Pools.TENDERLY]: {
       //   aclBlock: 7740502,
       //   crossChainControllerBlock: 112113800,
@@ -720,6 +727,11 @@ export const networkConfigs: NetworkConfigs = {
         },
         clinicStewardBlock: 27111930,
       },
+      // [Pools.GHO]: {
+      //   permissionsJson: './statics/functionsPermissionsGHO.json',
+      //   ghoBlock: 24786490,
+      //   addressBook: { ...AaveV3Base, ...MiscBase, ...GhoBase },
+      // },
       // [Pools.TENDERLY]: {
       //   aclBlock: 2357130,
       //   crossChainControllerBlock: 3686170,
