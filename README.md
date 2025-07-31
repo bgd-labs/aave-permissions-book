@@ -39,9 +39,9 @@ These documents contain tables with the following information:
 |  ETHEREUM |  ETHERFI |  [Permissions](./out/ETHEREUM-ETHERFI.md#contracts) | |--------|--------|--------|
 |  ETHEREUM |  GHO |  [Permissions](./out/ETHEREUM-GHO.md#contracts) | |--------|--------|--------|
 |  ETHEREUM |  V2 |  [Permissions](./out/ETHEREUM-V2.md#contracts) | |--------|--------|--------|
-|  ETHEREUM |  V2_ARC |  [Permissions](./out/ETHEREUM-V2_ARC.md#contracts) | |--------|--------|--------|
 |  ETHEREUM |  V2_AMM |  [Permissions](./out/ETHEREUM-V2_AMM.md#contracts) | |--------|--------|--------|
 |  ETHEREUM |  SAFETY_MODULE |  [Permissions](./out/ETHEREUM-SAFETY_MODULE.md#contracts) | |--------|--------|--------|
+|  ETHEREUM |  V2_MISC |  [Permissions](./out/ETHEREUM-V2_MISC.md#contracts) | |--------|--------|--------|
 |  OPTIMISM |  V3 |  [Permissions](./out/OPTIMISM-V3.md#contracts) | |--------|--------|--------|
 |  BINANCE |  V3 |  [Permissions](./out/BINANCE-V3.md#contracts) | |--------|--------|--------|
 |  GNOSIS |  V3 |  [Permissions](./out/GNOSIS-V3.md#contracts) | |--------|--------|--------|
