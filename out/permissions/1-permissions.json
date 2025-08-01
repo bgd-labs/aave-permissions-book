@@ -263,272 +263,6 @@
     "clinicSteward": {},
     "umbrella": {}
   },
-  "GHO": {
-    "contracts": {
-      "GHO": {
-        "address": "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f",
-        "modifiers": [
-          {
-            "modifier": "onlyFacilitator",
-            "addresses": [
-              {
-                "address": "0x593B09afc075B3c326CE2AD7750888645BA8943d",
-                "owners": []
-              },
-              {
-                "address": "0xb639D208Bcf0589D54FaC24E655C79EC529762B8",
-                "owners": []
-              },
-              {
-                "address": "0x535b2f7C20B9C83d70e519cf9991578eF9816B7B",
-                "owners": []
-              },
-              {
-                "address": "0xFeeb6FE430B7523fEF2a38327241eE7153779535",
-                "owners": []
-              },
-              {
-                "address": "0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285",
-                "owners": []
-              }
-            ],
-            "functions": [
-              "mint",
-              "burn"
-            ]
-          },
-          {
-            "modifier": "onlyFacilitatorManager",
-            "addresses": [
-              {
-                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "addFacilitator",
-              "removeFacilitator"
-            ]
-          },
-          {
-            "modifier": "onlyBucketManager",
-            "addresses": [
-              {
-                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
-                "owners": [],
-                "signersThreshold": 0
-              },
-              {
-                "address": "0x46Aa1063e5265b43663E81329333B47c517A5409",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "setFacilitatorBucketCapacity"
-            ]
-          }
-        ]
-      },
-      "GSM_USDC": {
-        "address": "0xFeeb6FE430B7523fEF2a38327241eE7153779535",
-        "modifiers": [
-          {
-            "modifier": "onlyRescuer",
-            "addresses": [],
-            "functions": [
-              "rescueTokens"
-            ]
-          },
-          {
-            "modifier": "onlySwapFreezer",
-            "addresses": [],
-            "functions": [
-              "setSwapFreeze"
-            ]
-          },
-          {
-            "modifier": "onlyLiquidator",
-            "addresses": [],
-            "functions": [
-              "seize",
-              "burnAfterSeize"
-            ]
-          },
-          {
-            "modifier": "onlyConfigurator",
-            "addresses": [
-              {
-                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "updateFeeStrategy",
-              "updateExposureCap",
-              "updateGhoTreasury"
-            ]
-          }
-        ]
-      },
-      "GSM_USDT": {
-        "address": "0x535b2f7C20B9C83d70e519cf9991578eF9816B7B",
-        "modifiers": [
-          {
-            "modifier": "onlyRescuer",
-            "addresses": [],
-            "functions": [
-              "rescueTokens"
-            ]
-          },
-          {
-            "modifier": "onlySwapFreezer",
-            "addresses": [],
-            "functions": [
-              "setSwapFreeze"
-            ]
-          },
-          {
-            "modifier": "onlyLiquidator",
-            "addresses": [],
-            "functions": [
-              "seize",
-              "burnAfterSeize"
-            ]
-          },
-          {
-            "modifier": "onlyConfigurator",
-            "addresses": [
-              {
-                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "updateFeeStrategy",
-              "updateExposureCap",
-              "updateGhoTreasury"
-            ]
-          }
-        ]
-      },
-      "GSMRegistry": {
-        "address": "0x167527DB01325408696326e3580cd8e55D99Dc1A",
-        "modifiers": [
-          {
-            "modifier": "onlyOwner",
-            "addresses": [
-              {
-                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "addGsm",
-              "removeGsm"
-            ]
-          }
-        ]
-      },
-      "GhoStewardV2": {
-        "address": "0x8F2411a538381aae2b464499005F0211e867d84f",
-        "modifiers": [
-          {
-            "modifier": "onlyOwner",
-            "addresses": [
-              {
-                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "setControlledFacilitator"
-            ]
-          },
-          {
-            "modifier": "onlyRiskCouncil",
-            "addresses": [
-              {
-                "address": "0x8513e6F37dBc52De87b166980Fa3F50639694B60",
-                "owners": [
-                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
-                ],
-                "signersThreshold": 3
-              }
-            ],
-            "functions": [
-              "updateGsmBuySellFees",
-              "updateGsmExposureCap",
-              "updateGhoBorrowRate",
-              "updateGhoBorrowCap",
-              "updateFacilitatorBucketCapacity"
-            ]
-          }
-        ]
-      }
-    },
-    "roles": {
-      "role": {
-        "DEFAULT_ADMIN": [
-          "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
-        ],
-        "FACILITATOR_MANAGER_ROLE": [
-          "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
-        ],
-        "BUCKET_MANAGER_ROLE": [
-          "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
-          "0x46Aa1063e5265b43663E81329333B47c517A5409"
-        ]
-      },
-      "latestBlockNumber": 23040139
-    },
-    "gsmRoles": {
-      "GSM_USDC": {
-        "role": {
-          "DEFAULT_ADMIN": [
-            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
-          ],
-          "CONFIGURATOR_ROLE": [
-            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
-          ],
-          "SWAP_FREEZER_ROLE": [],
-          "DEFAULT_ADMIN_ROLE": [],
-          "TOKEN_RESCUER_ROLE": [],
-          "LIQUIDATOR_ROLE": []
-        },
-        "latestBlockNumber": 23040139
-      },
-      "GSM_USDT": {
-        "role": {
-          "DEFAULT_ADMIN": [
-            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
-          ],
-          "CONFIGURATOR_ROLE": [
-            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
-          ],
-          "SWAP_FREEZER_ROLE": [],
-          "DEFAULT_ADMIN_ROLE": [],
-          "TOKEN_RESCUER_ROLE": [],
-          "LIQUIDATOR_ROLE": []
-        },
-        "latestBlockNumber": 23040139
-      }
-    },
-    "govV3": {
-      "ggRoles": {}
-    },
-    "collector": {},
-    "clinicSteward": {},
-    "umbrella": {}
-  },
   "GOV_V2": {
     "contracts": {
       "AaveGovernanceV2": {
@@ -1403,7 +1137,7 @@
         ],
         "BRIDGE": []
       },
-      "latestBlockNumber": 23040139
+      "latestBlockNumber": 23044990
     },
     "gsmRoles": {},
     "govV3": {
@@ -1419,7 +1153,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23044990
       },
       "contracts": {
         "GranularGuardian": {
@@ -1999,7 +1733,7 @@
         "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
         "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6"
       ],
-      "latestCCCBlockNumber": 23040139
+      "latestCCCBlockNumber": 23044990
     },
     "collector": {
       "contracts": {
@@ -2087,7 +1821,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23044990
       }
     },
     "clinicSteward": {
@@ -2147,7 +1881,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23044990
       }
     },
     "umbrella": {
@@ -2411,7 +2145,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23044990
       },
       "umbrellaIncentivesRoles": {
         "role": {
@@ -2423,7 +2157,7 @@
             "0x2759de67aD133C747C9f41d56F1b8A343cE679a1"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23044990
       }
     }
   },
@@ -2803,7 +2537,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040140
+        "latestBlockNumber": 23044996
       }
     },
     "clinicSteward": {},
@@ -3102,7 +2836,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040140
+        "latestBlockNumber": 23044996
       }
     },
     "clinicSteward": {},
@@ -4043,7 +3777,7 @@
           "0x7e6a6B115D31d4A837E3C737c49Cf6Fafe6112C3"
         ]
       },
-      "latestBlockNumber": 23040139
+      "latestBlockNumber": 23044991
     },
     "gsmRoles": {},
     "govV3": {
@@ -4135,7 +3869,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23044991
       }
     },
     "clinicSteward": {
@@ -4195,7 +3929,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23044991
       }
     },
     "umbrella": {}
@@ -4747,7 +4481,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 23040139
+      "latestBlockNumber": 23044991
     },
     "gsmRoles": {},
     "govV3": {
@@ -4839,7 +4573,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23040139
+        "latestBlockNumber": 23044991
       }
     },
     "clinicSteward": {},
@@ -7245,5 +6979,311 @@
     "govV3": {
       "ggRoles": {}
     }
+  },
+  "GHO": {
+    "contracts": {
+      "GHO": {
+        "address": "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f",
+        "modifiers": [
+          {
+            "modifier": "onlyFacilitator",
+            "addresses": [
+              {
+                "address": "0x593B09afc075B3c326CE2AD7750888645BA8943d",
+                "owners": []
+              },
+              {
+                "address": "0xb639D208Bcf0589D54FaC24E655C79EC529762B8",
+                "owners": []
+              },
+              {
+                "address": "0x535b2f7C20B9C83d70e519cf9991578eF9816B7B",
+                "owners": []
+              },
+              {
+                "address": "0xFeeb6FE430B7523fEF2a38327241eE7153779535",
+                "owners": []
+              },
+              {
+                "address": "0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285",
+                "owners": []
+              }
+            ],
+            "functions": [
+              "mint",
+              "burn"
+            ]
+          },
+          {
+            "modifier": "onlyFacilitatorManager",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "addFacilitator",
+              "removeFacilitator"
+            ]
+          },
+          {
+            "modifier": "onlyBucketManager",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x46Aa1063e5265b43663E81329333B47c517A5409",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "setFacilitatorBucketCapacity"
+            ]
+          }
+        ]
+      },
+      "GSM_USDC": {
+        "address": "0xFeeb6FE430B7523fEF2a38327241eE7153779535",
+        "modifiers": [
+          {
+            "modifier": "onlyRescuer",
+            "addresses": [],
+            "functions": [
+              "rescueTokens"
+            ]
+          },
+          {
+            "modifier": "onlySwapFreezer",
+            "addresses": [
+              {
+                "address": "0x29F8c924B7aB50649c9597B8811d08f9Ef0310c3",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "setSwapFreeze"
+            ]
+          },
+          {
+            "modifier": "onlyLiquidator",
+            "addresses": [],
+            "functions": [
+              "seize",
+              "burnAfterSeize"
+            ]
+          },
+          {
+            "modifier": "onlyConfigurator",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0xD1E856a947CdF56b4f000ee29d34F5808E0A6848",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "updateFeeStrategy",
+              "updateExposureCap",
+              "updateGhoTreasury"
+            ]
+          }
+        ]
+      },
+      "GSM_USDT": {
+        "address": "0x535b2f7C20B9C83d70e519cf9991578eF9816B7B",
+        "modifiers": [
+          {
+            "modifier": "onlyRescuer",
+            "addresses": [],
+            "functions": [
+              "rescueTokens"
+            ]
+          },
+          {
+            "modifier": "onlySwapFreezer",
+            "addresses": [
+              {
+                "address": "0x6439DA186BD3d37fE7Fd36036543b403e9FAbaE7",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "setSwapFreeze"
+            ]
+          },
+          {
+            "modifier": "onlyLiquidator",
+            "addresses": [],
+            "functions": [
+              "seize",
+              "burnAfterSeize"
+            ]
+          },
+          {
+            "modifier": "onlyConfigurator",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0xD1E856a947CdF56b4f000ee29d34F5808E0A6848",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "updateFeeStrategy",
+              "updateExposureCap",
+              "updateGhoTreasury"
+            ]
+          }
+        ]
+      },
+      "GSMRegistry": {
+        "address": "0x167527DB01325408696326e3580cd8e55D99Dc1A",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "addGsm",
+              "removeGsm"
+            ]
+          }
+        ]
+      },
+      "GhoStewardV2": {
+        "address": "0x8F2411a538381aae2b464499005F0211e867d84f",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "setControlledFacilitator"
+            ]
+          },
+          {
+            "modifier": "onlyRiskCouncil",
+            "addresses": [
+              {
+                "address": "0x8513e6F37dBc52De87b166980Fa3F50639694B60",
+                "owners": [
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 3
+              }
+            ],
+            "functions": [
+              "updateGsmBuySellFees",
+              "updateGsmExposureCap",
+              "updateGhoBorrowRate",
+              "updateGhoBorrowCap",
+              "updateFacilitatorBucketCapacity"
+            ]
+          }
+        ]
+      }
+    },
+    "roles": {
+      "role": {
+        "DEFAULT_ADMIN": [
+          "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+        ],
+        "FACILITATOR_MANAGER_ROLE": [
+          "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+        ],
+        "BUCKET_MANAGER_ROLE": [
+          "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+          "0x46Aa1063e5265b43663E81329333B47c517A5409"
+        ]
+      },
+      "latestBlockNumber": 23044991
+    },
+    "gsmRoles": {
+      "GSM_USDC": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ],
+          "CONFIGURATOR_ROLE": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+            "0xD1E856a947CdF56b4f000ee29d34F5808E0A6848"
+          ],
+          "SWAP_FREEZER_ROLE": [
+            "0x29F8c924B7aB50649c9597B8811d08f9Ef0310c3",
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ],
+          "DEFAULT_ADMIN_ROLE": [],
+          "TOKEN_RESCUER_ROLE": [],
+          "LIQUIDATOR_ROLE": []
+        },
+        "latestBlockNumber": 23044993
+      },
+      "GSM_USDT": {
+        "role": {
+          "DEFAULT_ADMIN": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ],
+          "CONFIGURATOR_ROLE": [
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+            "0xD1E856a947CdF56b4f000ee29d34F5808E0A6848"
+          ],
+          "SWAP_FREEZER_ROLE": [
+            "0x6439DA186BD3d37fE7Fd36036543b403e9FAbaE7",
+            "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+          ],
+          "DEFAULT_ADMIN_ROLE": [],
+          "TOKEN_RESCUER_ROLE": [],
+          "LIQUIDATOR_ROLE": []
+        },
+        "latestBlockNumber": 23044995
+      }
+    },
+    "govV3": {
+      "ggRoles": {}
+    },
+    "collector": {},
+    "clinicSteward": {},
+    "umbrella": {}
   }
 }
