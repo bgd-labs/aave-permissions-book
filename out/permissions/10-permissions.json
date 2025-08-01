@@ -63,14 +63,6 @@
             "functions": [
               "rescueTokens"
             ]
-          },
-          {
-            "modifier": "onlyBridge",
-            "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
-            ]
           }
         ]
       },
@@ -525,7 +517,7 @@
           "0x59bAbc14Dd73761e38E5bdA171b2298DC14da92d"
         ]
       },
-      "latestBlockNumber": 139218772
+      "latestBlockNumber": 139222123
     },
     "gsmRoles": {},
     "govV3": {
@@ -541,7 +533,7 @@
             "0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF"
           ]
         },
-        "latestBlockNumber": 139218775
+        "latestBlockNumber": 139222126
       },
       "contracts": {
         "GranularGuardian": {
@@ -807,7 +799,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 139218775
+      "latestCCCBlockNumber": 139222125
     },
     "collector": {
       "contracts": {
@@ -884,7 +876,7 @@
             "0x4684b645386525057526EB85854045914Fe389d6"
           ]
         },
-        "latestBlockNumber": 139218775
+        "latestBlockNumber": 139222125
       }
     },
     "clinicSteward": {
@@ -943,7 +935,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 139218775
+        "latestBlockNumber": 139222125
       }
     },
     "umbrella": {}
