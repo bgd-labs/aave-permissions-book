@@ -518,7 +518,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
       '0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F': 'Old VotingMachine',
       '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
-      '0x54714FAc85b0bf627288CC3a186dE81A42f1D635': 'Aave Steward Injector Caps'
+      '0x54714FAc85b0bf627288CC3a186dE81A42f1D635': 'Aave Steward Injector Caps',
+      '0xA5Ba213867E175A182a5dd6A9193C6158738105A': 'Gho Aave Steward'
     },
     pools: {
       [Pools.V3]: {
@@ -722,7 +723,8 @@ export const networkConfigs: NetworkConfigs = {
       '0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193': 'ACI Automation',
       '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
       '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
-      '0x4f84A364B66Eb6280350da011829a6BD02B4712f': 'Aave Steward Injector Caps'
+      '0x4f84A364B66Eb6280350da011829a6BD02B4712f': 'Aave Steward Injector Caps',
+      '0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45': 'Bridge Executor'
     },
     pools: {
       [Pools.V3]: {
