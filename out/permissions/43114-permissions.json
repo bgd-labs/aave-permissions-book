@@ -63,14 +63,6 @@
             "functions": [
               "rescueTokens"
             ]
-          },
-          {
-            "modifier": "onlyBridge",
-            "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
-            ]
           }
         ]
       },
@@ -611,12 +603,11 @@
           "0xA5Ba213867E175A182a5dd6A9193C6158738105A",
           "0x23AceD103f5E22bD22B9272c82f29C0E51abC5c2"
         ],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
         ]
       },
-      "latestBlockNumber": 66387091
+      "latestBlockNumber": 66391169
     },
     "gsmRoles": {},
     "govV3": {
@@ -632,7 +623,7 @@
             "0x3DBA1c4094BC0eE4772A05180B7E0c2F1cFD9c36"
           ]
         },
-        "latestBlockNumber": 66387091
+        "latestBlockNumber": 66391169
       },
       "contracts": {
         "GranularGuardian": {
@@ -989,7 +980,7 @@
         "0x9b6f5ef589A3DD08670Dd146C11C4Fb33E04494F",
         "0x4D1863d22D0ED8579f8999388BCC833CB057C2d6"
       ],
-      "latestCCCBlockNumber": 66387091
+      "latestCCCBlockNumber": 66391169
     },
     "collector": {
       "contracts": {
@@ -1066,7 +1057,7 @@
             "0x0d68D50DB848dfE6012456781c1D79A11eD12a2e"
           ]
         },
-        "latestBlockNumber": 66387091
+        "latestBlockNumber": 66391169
       }
     },
     "clinicSteward": {
@@ -1121,7 +1112,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 66387091
+        "latestBlockNumber": 66391169
       }
     },
     "umbrella": {}
@@ -1552,7 +1543,7 @@
             "0x0d68D50DB848dfE6012456781c1D79A11eD12a2e"
           ]
         },
-        "latestBlockNumber": 66387096
+        "latestBlockNumber": 66391174
       }
     },
     "clinicSteward": {},
@@ -2450,7 +2441,6 @@
           "0x6d4F341d8Bb3Dc5ABe822Aa940F1884508C13f99",
           "0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4"
         ],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
         ]

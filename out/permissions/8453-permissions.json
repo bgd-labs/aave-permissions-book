@@ -63,14 +63,6 @@
             "functions": [
               "rescueTokens"
             ]
-          },
-          {
-            "modifier": "onlyBridge",
-            "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
-            ]
           }
         ]
       },
@@ -574,7 +566,6 @@
           "0x56C1a4b54921DEA9A344967a8693C7E661D72968"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0xab515542d621574f9b5212d50593cD0C07e641bD",
           "0xA672e882aCBB96486393D43E0efdab5EBEbDDC1d",
@@ -595,7 +586,7 @@
           "0x085E34722e04567Df9E6d2c32e82fd74f3342e79"
         ]
       },
-      "latestBlockNumber": 33623487
+      "latestBlockNumber": 33626838
     },
     "gsmRoles": {},
     "govV3": {
@@ -611,7 +602,7 @@
             "0x7FDA7C3528ad8f05e62148a700D456898b55f8d2"
           ]
         },
-        "latestBlockNumber": 33623492
+        "latestBlockNumber": 33626840
       },
       "contracts": {
         "GranularGuardian": {
@@ -877,7 +868,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 33623492
+      "latestCCCBlockNumber": 33626840
     },
     "collector": {
       "contracts": {
@@ -954,7 +945,7 @@
             "0x4f1F3E32f20847a4c9F002882eB607aD750b6115"
           ]
         },
-        "latestBlockNumber": 33623490
+        "latestBlockNumber": 33626840
       }
     },
     "clinicSteward": {
@@ -1009,7 +1000,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 33623491
+        "latestBlockNumber": 33626840
       }
     },
     "umbrella": {}
@@ -1547,7 +1538,6 @@
           "0x56C1a4b54921DEA9A344967a8693C7E661D72968"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0xab515542d621574f9b5212d50593cD0C07e641bD"
         ],

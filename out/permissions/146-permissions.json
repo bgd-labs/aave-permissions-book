@@ -63,14 +63,6 @@
             "functions": [
               "rescueTokens"
             ]
-          },
-          {
-            "modifier": "onlyBridge",
-            "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
-            ]
           }
         ]
       },
@@ -460,13 +452,12 @@
           "0xA4aF5175ed38e791362F01c67a487DbA4aE07dFe"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [],
         "RISK_ADMIN": [
           "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c"
         ]
       },
-      "latestBlockNumber": 41170718
+      "latestBlockNumber": 41184298
     },
     "gsmRoles": {},
     "govV3": {
@@ -482,7 +473,7 @@
             "0x7837d7a167732aE41627A3B829871d9e32e2e7f2"
           ]
         },
-        "latestBlockNumber": 41170734
+        "latestBlockNumber": 41184307
       },
       "contracts": {
         "GranularGuardian": {
@@ -841,7 +832,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 41170734
+      "latestCCCBlockNumber": 41184307
     },
     "collector": {
       "contracts": {
@@ -927,7 +918,7 @@
             "0x4A137d528444Cc0346320CFa5C80FFc68087D7F9"
           ]
         },
-        "latestBlockNumber": 41170718
+        "latestBlockNumber": 41184298
       }
     },
     "clinicSteward": {},
@@ -1388,7 +1379,6 @@
           "0xA4aF5175ed38e791362F01c67a487DbA4aE07dFe"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [],
         "RISK_ADMIN": [
           "0xAe13e4DA0952f0B8fE04E21df53716fCF799a923"

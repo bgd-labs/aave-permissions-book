@@ -474,14 +474,6 @@
             "functions": [
               "rescueTokens"
             ]
-          },
-          {
-            "modifier": "onlyBridge",
-            "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
-            ]
           }
         ]
       },
@@ -1134,10 +1126,9 @@
         ],
         "ASSET_LISTING_ADMIN": [
           "0x8b493f416F5F7933cC146b1899c069F2361cad60"
-        ],
-        "BRIDGE": []
+        ]
       },
-      "latestBlockNumber": 23044990
+      "latestBlockNumber": 23045544
     },
     "gsmRoles": {},
     "govV3": {
@@ -1153,7 +1144,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 23044990
+        "latestBlockNumber": 23045545
       },
       "contracts": {
         "GranularGuardian": {
@@ -1733,7 +1724,7 @@
         "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
         "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6"
       ],
-      "latestCCCBlockNumber": 23044990
+      "latestCCCBlockNumber": 23045545
     },
     "collector": {
       "contracts": {
@@ -1821,7 +1812,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23044990
+        "latestBlockNumber": 23045544
       }
     },
     "clinicSteward": {
@@ -1881,7 +1872,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 23044990
+        "latestBlockNumber": 23045545
       }
     },
     "umbrella": {
@@ -2145,7 +2136,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 23044990
+        "latestBlockNumber": 23045545
       },
       "umbrellaIncentivesRoles": {
         "role": {
@@ -2157,7 +2148,7 @@
             "0x2759de67aD133C747C9f41d56F1b8A343cE679a1"
           ]
         },
-        "latestBlockNumber": 23044990
+        "latestBlockNumber": 23045545
       }
     }
   },
@@ -2537,7 +2528,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23044996
+        "latestBlockNumber": 23045546
       }
     },
     "clinicSteward": {},
@@ -2836,7 +2827,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23044996
+        "latestBlockNumber": 23045546
       }
     },
     "clinicSteward": {},
@@ -3216,14 +3207,6 @@
             ],
             "functions": [
               "rescueTokens"
-            ]
-          },
-          {
-            "modifier": "onlyBridge",
-            "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
             ]
           }
         ]
@@ -3763,7 +3746,6 @@
         "ASSET_LISTING_ADMIN": [
           "0x84f2C90f2D66E700baA4CF3cbF66bE7D8f21Bd87"
         ],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
           "0x45c00508C14601fd1C1e296eB3C0e3eEEdCa45D0",
@@ -3777,7 +3759,7 @@
           "0x7e6a6B115D31d4A837E3C737c49Cf6Fafe6112C3"
         ]
       },
-      "latestBlockNumber": 23044991
+      "latestBlockNumber": 23045545
     },
     "gsmRoles": {},
     "govV3": {
@@ -3869,7 +3851,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23044991
+        "latestBlockNumber": 23045545
       }
     },
     "clinicSteward": {
@@ -3929,7 +3911,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 23044991
+        "latestBlockNumber": 23045545
       }
     },
     "umbrella": {}
@@ -3997,14 +3979,6 @@
             ],
             "functions": [
               "rescueTokens"
-            ]
-          },
-          {
-            "modifier": "onlyBridge",
-            "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
             ]
           }
         ]
@@ -4470,7 +4444,6 @@
           "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
           "0x45c00508C14601fd1C1e296eB3C0e3eEEdCa45D0",
@@ -4481,7 +4454,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 23044991
+      "latestBlockNumber": 23045545
     },
     "gsmRoles": {},
     "govV3": {
@@ -4573,7 +4546,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23044991
+        "latestBlockNumber": 23045546
       }
     },
     "clinicSteward": {},
@@ -5150,8 +5123,7 @@
           "0x2eE68ACb6A1319de1b49DC139894644E424fefD6",
           "0xb9481a29f0f996BCAc759aB201FB3844c81866c4"
         ],
-        "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": []
+        "ASSET_LISTING_ADMIN": []
       },
       "latestBlockNumber": 20983900
     },
@@ -6339,7 +6311,6 @@
           "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
           "0x45c00508C14601fd1C1e296eB3C0e3eEEdCa45D0",
@@ -6963,7 +6934,6 @@
           "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
           "0x45c00508C14601fd1C1e296eB3C0e3eEEdCa45D0",
@@ -7237,7 +7207,7 @@
           "0x46Aa1063e5265b43663E81329333B47c517A5409"
         ]
       },
-      "latestBlockNumber": 23044991
+      "latestBlockNumber": 23045546
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -7257,7 +7227,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23044993
+        "latestBlockNumber": 23045546
       },
       "GSM_USDT": {
         "role": {
@@ -7276,7 +7246,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23044995
+        "latestBlockNumber": 23045546
       }
     },
     "govV3": {

@@ -63,14 +63,6 @@
             "functions": [
               "rescueTokens"
             ]
-          },
-          {
-            "modifier": "onlyBridge",
-            "addresses": [],
-            "functions": [
-              "mintUnbacked",
-              "backUnbacked"
-            ]
           }
         ]
       },
@@ -480,7 +472,6 @@
           "0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0xab515542d621574f9b5212d50593cD0C07e641bD"
         ],
@@ -488,7 +479,7 @@
           "0x1AA25FdD7d55FA8a401D6EFba8e48874Ef730E55"
         ]
       },
-      "latestBlockNumber": 41381311
+      "latestBlockNumber": 41382617
     },
     "gsmRoles": {},
     "govV3": {
@@ -498,7 +489,7 @@
           "RETRY_ROLE": [],
           "SOLVE_EMERGENCY_ROLE": []
         },
-        "latestBlockNumber": 41381311
+        "latestBlockNumber": 41382617
       },
       "contracts": {
         "GranularGuardian": {
@@ -793,7 +784,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 41381311
+      "latestCCCBlockNumber": 41382617
     },
     "collector": {
       "contracts": {
@@ -859,7 +850,7 @@
             "0x0447Be151c126D2d704b1Ce5F5b3ed6b7D50FABA"
           ]
         },
-        "latestBlockNumber": 41381311
+        "latestBlockNumber": 41382617
       }
     },
     "clinicSteward": {
@@ -918,7 +909,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 41381311
+        "latestBlockNumber": 41382617
       }
     },
     "umbrella": {}
@@ -1345,7 +1336,6 @@
           "0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0xab515542d621574f9b5212d50593cD0C07e641bD"
         ],

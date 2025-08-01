@@ -131,19 +131,6 @@ export const resolveV3Modifiers = async (
         ],
         functions: roles['Pool']['onlyPoolAdmin'],
       },
-      {
-        modifier: 'onlyBridge',
-        addresses: [
-          ...adminRoles['BRIDGE'].map((roleAddress) => {
-            return {
-              address: roleAddress,
-              owners: owners['BRIDGE'][roleAddress].owners || [],
-              signersThreshold: owners['BRIDGE'][roleAddress].threshold || 0,
-            };
-          }),
-        ],
-        functions: roles['Pool']['onlyBridge'],
-      },
     ],
   };
 
