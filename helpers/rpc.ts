@@ -14,11 +14,17 @@ const getHttpConfig = () => {
     // },
   } as const;
 };
-
+export const getRpcClientFromUrl = (url: string): Client => {
+  return createClient({
+    transport: http(url),
+  });
+};
 
 export const getRPCClient = (chainId: number): Client => {
   if (chainId === ChainId.avalanche) {
-    return getRpcClientFromUrl(`https://${env.QUICKNODE_ENDPOINT_NAME}.avalanche-mainnet.quiknode.pro/${env.QUICKNODE_TOKEN}/ext/bc/C/rpc`);
+    if (env.QUICKNODE_ENDPOINT_NAME && env.QUICKNODE_TOKEN) {
+      return getRpcClientFromUrl(`https://${env.QUICKNODE_ENDPOINT_NAME}.avalanche-mainnet.quiknode.pro/${env.QUICKNODE_TOKEN}/ext/bc/C/rpc`);
+    }
   }
   return getClient(chainId, {
     httpConfig: getHttpConfig(),
@@ -35,11 +41,8 @@ export const getRPCClient = (chainId: number): Client => {
   });
 };
 
-export const getRpcClientFromUrl = (url: string): Client => {
-  return createClient({
-    transport: http(url),
-  });
-};
+
+
 
 const abiByEventType: Record<string, any> = {
   'RoleGranted': aclManagerAbi,
