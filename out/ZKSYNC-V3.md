@@ -103,7 +103,6 @@
 |  POOL_ADMIN |  [Executor_lvl1](https://era.zksync.network//address/0x04cE39789e11a49595cD0ECEf6f4Bd54ABF4d020) | |--------|--------|
 |  EMERGENCY_ADMIN |  [Aave Guardian ZkSync](https://era.zksync.network//address/0xba845c27903F7dDB5c676e5b74728C871057E000) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |   | |--------|--------|
 |  RISK_ADMIN |  [Manual AGRS](https://era.zksync.network//address/0x528a1036C8450464f8a00A0A8c2f517595E44169) | |--------|--------|
 

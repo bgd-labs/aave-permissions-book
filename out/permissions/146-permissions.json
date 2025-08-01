@@ -460,7 +460,6 @@
           "0xA4aF5175ed38e791362F01c67a487DbA4aE07dFe"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [],
         "RISK_ADMIN": [
           "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c"
@@ -1388,7 +1387,6 @@
           "0xA4aF5175ed38e791362F01c67a487DbA4aE07dFe"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [],
         "RISK_ADMIN": [
           "0xAe13e4DA0952f0B8fE04E21df53716fCF799a923"

@@ -114,7 +114,6 @@ export const ghoGSMRoleNames = [
 
 export const protocolRoleNames = [
   'ASSET_LISTING_ADMIN',
-  'BRIDGE',
   'DEFAULT_ADMIN',
   'EMERGENCY_ADMIN',
   'FLASH_BORROWER',

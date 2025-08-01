@@ -96,7 +96,6 @@
 |  POOL_ADMIN |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) | |--------|--------|
 |  EMERGENCY_ADMIN |  [Aave Protocol Guardian Ethereum](https://etherscan.io/address/0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30) | |--------|--------|
 |  ASSET_LISTING_ADMIN |  [SvrOracleSteward](https://etherscan.io/address/0x84f2C90f2D66E700baA4CF3cbF66bE7D8f21Bd87) | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |  [0x49d9409111a6363d82C4371fFa43fAEA660C917B](https://etherscan.io/address/0x49d9409111a6363d82C4371fFa43fAEA660C917B), [0x45c00508C14601fd1C1e296eB3C0e3eEEdCa45D0](https://etherscan.io/address/0x45c00508C14601fd1C1e296eB3C0e3eEEdCa45D0), [0xab515542d621574f9b5212d50593cD0C07e641bD](https://etherscan.io/address/0xab515542d621574f9b5212d50593cD0C07e641bD), [0x352423e2fA5D5c99343d371C9e3bC56C87723Cc7](https://etherscan.io/address/0x352423e2fA5D5c99343d371C9e3bC56C87723Cc7) | |--------|--------|
 |  RISK_ADMIN |  [Lido Edge Risk Steward](https://etherscan.io/address/0x81aFd0F99c2Afa2f2DD7E387c2Ef9CD2a29b6E1A), [Gho Lido Direct Minter](https://etherscan.io/address/0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285), [Lido Gho Aave Steward](https://etherscan.io/address/0x5C905d62B22e4DAa4967E517C4a047Ff6026C731), [Manual AGRS](https://etherscan.io/address/0x7e6a6B115D31d4A837E3C737c49Cf6Fafe6112C3) | |--------|--------|
 

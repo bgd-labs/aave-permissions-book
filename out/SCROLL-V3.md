@@ -106,7 +106,6 @@
 |  POOL_ADMIN |  [Executor_lvl1](https://scrollscan.com//address/0xc1ABF87FfAdf4908f4eC8dc54A25DCFEabAE4A24) | |--------|--------|
 |  EMERGENCY_ADMIN |  [Aave Protocol Guardian Scroll](https://scrollscan.com//address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |  [0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3](https://scrollscan.com//address/0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3) | |--------|--------|
 |  RISK_ADMIN |  [Manual AGRS](https://scrollscan.com//address/0x0451f67bA61966C346daBAbB50a30Cc6A9A67C69) | |--------|--------|
 

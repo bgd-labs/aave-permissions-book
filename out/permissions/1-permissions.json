@@ -1134,8 +1134,7 @@
         ],
         "ASSET_LISTING_ADMIN": [
           "0x8b493f416F5F7933cC146b1899c069F2361cad60"
-        ],
-        "BRIDGE": []
+        ]
       },
       "latestBlockNumber": 23044990
     },
@@ -3763,7 +3762,6 @@
         "ASSET_LISTING_ADMIN": [
           "0x84f2C90f2D66E700baA4CF3cbF66bE7D8f21Bd87"
         ],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
           "0x45c00508C14601fd1C1e296eB3C0e3eEEdCa45D0",
@@ -4470,7 +4468,6 @@
           "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
           "0x45c00508C14601fd1C1e296eB3C0e3eEEdCa45D0",
@@ -5150,8 +5147,7 @@
           "0x2eE68ACb6A1319de1b49DC139894644E424fefD6",
           "0xb9481a29f0f996BCAc759aB201FB3844c81866c4"
         ],
-        "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": []
+        "ASSET_LISTING_ADMIN": []
       },
       "latestBlockNumber": 20983900
     },
@@ -6339,7 +6335,6 @@
           "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
           "0x45c00508C14601fd1C1e296eB3C0e3eEEdCa45D0",
@@ -6963,7 +6958,6 @@
           "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30"
         ],
         "ASSET_LISTING_ADMIN": [],
-        "BRIDGE": [],
         "FLASH_BORROWER": [
           "0x49d9409111a6363d82C4371fFa43fAEA660C917B",
           "0x45c00508C14601fd1C1e296eB3C0e3eEEdCa45D0",

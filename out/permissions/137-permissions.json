@@ -542,8 +542,7 @@
           "0xdB88AB5b485b38EDbEEf866314F9E49d095BCe39",
           "0x79D2aeFE6A21b26B024d9341A51f6b7897852499",
           "0x460b60565cb73845d56564384ab84BF84c13e47D"
-        ],
-        "BRIDGE": []
+        ]
       },
       "latestBlockNumber": 74660896
     },
@@ -1969,8 +1968,7 @@
         "FLASH_BORROWER": [
           "0xb58Fd91558fa213D97Ac94C97F831c7289278084",
           "0xab515542d621574f9b5212d50593cD0C07e641bD"
-        ],
-        "BRIDGE": []
+        ]
       },
       "latestBlockNumber": 63141275
     },

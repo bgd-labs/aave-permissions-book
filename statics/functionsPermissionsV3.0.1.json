@@ -3,18 +3,6 @@
     "contract": "Pool",
     "functions": [
       {
-        "name": "mintUnbacked",
-        "roles": [
-          "onlyBridge"
-        ]
-      },
-      {
-        "name": "backUnbacked",
-        "roles": [
-          "onlyBridge"
-        ]
-      },
-      {
         "name": "initReserve",
         "roles": [
           "onlyPoolConfigurator"

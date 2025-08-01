@@ -103,7 +103,6 @@
 |  POOL_ADMIN |  [Executor_lvl1](https://sonicscan.org//address/0x47aAdaAE1F05C978E6aBb7568d11B7F6e0FC4d6A), [Aave Protocol Guardian Soneium](https://sonicscan.org//address/0xEf323B194caD8e02D9E5D8F07B34f625f1c088f1) | |--------|--------|
 |  EMERGENCY_ADMIN |  [Aave Protocol Guardian Soneium](https://sonicscan.org//address/0xEf323B194caD8e02D9E5D8F07B34f625f1c088f1) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |   | |--------|--------|
 |  RISK_ADMIN |  [Manual AGRS](https://sonicscan.org//address/0xD9145b5F45Ad4519c7ACcD6E0A4A82e83bB8A6Dc) | |--------|--------|
 

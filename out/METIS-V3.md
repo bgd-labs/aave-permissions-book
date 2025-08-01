@@ -101,7 +101,6 @@
 |  EMERGENCY_ADMIN |  [Aave Protocol Guardian Metis](https://andromeda-explorer.metis.io/address/0x56C1a4b54921DEA9A344967a8693C7E661D72968) | |--------|--------|
 |  RISK_ADMIN |  [Manual AGRS](https://andromeda-explorer.metis.io/address/0x97CB9e81d480A2AB03299760654C1DDC0C16bE07) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |   | |--------|--------|
 
 ### Granular Guardian Admins 

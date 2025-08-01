@@ -116,7 +116,6 @@
 |  POOL_ADMIN |  [Executor_lvl1](https://gnosisscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) | |--------|--------|
 |  EMERGENCY_ADMIN |  [Aave Protocol Guardian Gnosis](https://gnosisscan.io//address/0xCb45E82419baeBCC9bA8b1e5c7858e48A3B26Ea6) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |  [0xab515542d621574f9b5212d50593cD0C07e641bD](https://gnosisscan.io//address/0xab515542d621574f9b5212d50593cD0C07e641bD) | |--------|--------|
 |  RISK_ADMIN |  [Manual AGRS](https://gnosisscan.io//address/0x1AA25FdD7d55FA8a401D6EFba8e48874Ef730E55) | |--------|--------|
 

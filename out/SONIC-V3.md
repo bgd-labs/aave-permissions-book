@@ -116,7 +116,6 @@
 |  POOL_ADMIN |  [Executor_lvl1](https://sonicscan.org//address/0x7b62461a3570c6AC8a9f8330421576e417B71EE7) | |--------|--------|
 |  EMERGENCY_ADMIN |  [Aave Protocol Guardian Sonic](https://sonicscan.org//address/0xA4aF5175ed38e791362F01c67a487DbA4aE07dFe) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |   | |--------|--------|
 |  RISK_ADMIN |  [Manual AGRS](https://sonicscan.org//address/0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c) | |--------|--------|
 

@@ -128,7 +128,6 @@
 |  EMERGENCY_ADMIN |  [Aave Protocol Guardian Avalanche](https://snowscan.xyz/address/0x56C1a4b54921DEA9A344967a8693C7E661D72968) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  RISK_ADMIN |  [Proof Of Reserve Executor V3](https://snowscan.xyz/address/0xB94e515615c244Ab25f7A6e592e3Cb7EE31E99F4), [EdgeRiskStewardCaps](https://snowscan.xyz/address/0x57218F3aB422A39115951c3Eb06881a7A719DfdD), [Gho Aave Steward](https://snowscan.xyz/address/0xA5Ba213867E175A182a5dd6A9193C6158738105A), [Manual AGRS](https://snowscan.xyz/address/0x23AceD103f5E22bD22B9272c82f29C0E51abC5c2) | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |  [0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3](https://snowscan.xyz/address/0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3) | |--------|--------|
 
 ### Granular Guardian Admins 

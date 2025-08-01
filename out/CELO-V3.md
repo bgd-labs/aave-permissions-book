@@ -104,7 +104,6 @@
 |  POOL_ADMIN |  [Executor_lvl1](https://celoscan.io//address/0x1dF462e2712496373A347f8ad10802a5E95f053D), [Aave Protocol Guardian Celo](https://celoscan.io//address/0x88E7aB6ee481Cf92e548c0e1169F824F99142c85) | |--------|--------|
 |  EMERGENCY_ADMIN |  [Aave Protocol Guardian Celo](https://celoscan.io//address/0x88E7aB6ee481Cf92e548c0e1169F824F99142c85) | |--------|--------|
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 |  FLASH_BORROWER |   | |--------|--------|
 |  RISK_ADMIN |  [Manual AGRS](https://celoscan.io//address/0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c) | |--------|--------|
 

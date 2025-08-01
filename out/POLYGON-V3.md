@@ -127,7 +127,6 @@
 |  ASSET_LISTING_ADMIN |   | |--------|--------|
 |  RISK_ADMIN |  [Manual AGRS](https://polygonscan.com/address/0x1e0A5985D58B45C38598e293189aa5228054629b) | |--------|--------|
 |  FLASH_BORROWER |  [0xb58Fd91558fa213D97Ac94C97F831c7289278084](https://polygonscan.com/address/0xb58Fd91558fa213D97Ac94C97F831c7289278084), [0xab515542d621574f9b5212d50593cD0C07e641bD](https://polygonscan.com/address/0xab515542d621574f9b5212d50593cD0C07e641bD), [0x86C3Dd18bAF4370495d9228b58fD959771285C55](https://polygonscan.com/address/0x86C3Dd18bAF4370495d9228b58fD959771285C55), [0xdB88AB5b485b38EDbEEf866314F9E49d095BCe39](https://polygonscan.com/address/0xdB88AB5b485b38EDbEEf866314F9E49d095BCe39), [0x79D2aeFE6A21b26B024d9341A51f6b7897852499](https://polygonscan.com/address/0x79D2aeFE6A21b26B024d9341A51f6b7897852499), [0x460b60565cb73845d56564384ab84BF84c13e47D](https://polygonscan.com/address/0x460b60565cb73845d56564384ab84BF84c13e47D) | |--------|--------|
-|  BRIDGE |   | |--------|--------|
 
 ### Granular Guardian Admins 
 | Role |Contract |
