@@ -190,7 +190,10 @@ export const networkConfigs: NetworkConfigs = {
       '0x617332a777780F546261247F621051d0b98975Eb': 'Old VotingMachine',
       '0x8513e6F37dBc52De87b166980Fa3F50639694B60': 'Gho Risk Council',
       '0x22740deBa78d5a0c24C58C740e3715ec29de1bFa': 'Finance Risk Council',
-      '0x6c1DC85f2aE71C3DAcd6E44Bb57DEeF61b540a5A': 'Deficit Offset Clinic Steward'
+      '0x6c1DC85f2aE71C3DAcd6E44Bb57DEeF61b540a5A': 'Deficit Offset Clinic Steward',
+      '0xf721bE7AA57a987F3e4D05DAc6fcb5aBF9F7cE9A': 'Edge Risk Steward EMode',
+      '0x9F76954f5b55B4908d178f31C07F9537AC8328E7': 'Edge Risk Steward Discount Rate',
+      '0x593B09afc075B3c326CE2AD7750888645BA8943d': 'Gho Direct Minter'
     },
     pools: {
       [Pools.V3]: {
