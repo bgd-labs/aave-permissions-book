@@ -116,6 +116,11 @@
                 "address": "0x87F4aDD5425f566F156af5074BaD2dFFCd20C594",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0x655252250f4A453854040A49E8280951A76f3033",
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -147,6 +152,11 @@
               },
               {
                 "address": "0x87F4aDD5425f566F156af5074BaD2dFFCd20C594",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x655252250f4A453854040A49E8280951A76f3033",
                 "owners": [],
                 "signersThreshold": 0
               },
@@ -476,10 +486,11 @@
           "0x14F8e5Fe35b2d0D67dBcE9329f1b5d09f60c06C3"
         ],
         "RISK_ADMIN": [
-          "0x87F4aDD5425f566F156af5074BaD2dFFCd20C594"
+          "0x87F4aDD5425f566F156af5074BaD2dFFCd20C594",
+          "0x655252250f4A453854040A49E8280951A76f3033"
         ]
       },
-      "latestBlockNumber": 56472790
+      "latestBlockNumber": 56587970
     },
     "gsmRoles": {},
     "govV3": {
@@ -495,7 +506,7 @@
             "0xE8C5ab722d0b1B7316Cc4034f2BE91A5B1d29964"
           ]
         },
-        "latestBlockNumber": 56472796
+        "latestBlockNumber": 56587982
       },
       "contracts": {
         "GranularGuardian": {
@@ -822,7 +833,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 56472796
+      "latestCCCBlockNumber": 56587976
     },
     "collector": {
       "contracts": {
@@ -899,7 +910,7 @@
             "0x58AfE45eE7D7f2AE9c26827F33A6f319Feb68Df8"
           ]
         },
-        "latestBlockNumber": 56472790
+        "latestBlockNumber": 56587976
       }
     },
     "clinicSteward": {
@@ -954,7 +965,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 56472790
+        "latestBlockNumber": 56587976
       }
     },
     "umbrella": {}

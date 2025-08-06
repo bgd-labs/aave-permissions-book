@@ -116,6 +116,11 @@
                 "address": "0xa59262276dB8F997948fdc4a10cBc1448A375636",
                 "owners": [],
                 "signersThreshold": 0
+              },
+              {
+                "address": "0x14a6801DBEBbd6CBE009c10eCFDA98C1c7B89012",
+                "owners": [],
+                "signersThreshold": 0
               }
             ],
             "functions": [
@@ -147,6 +152,11 @@
               },
               {
                 "address": "0xa59262276dB8F997948fdc4a10cBc1448A375636",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x14a6801DBEBbd6CBE009c10eCFDA98C1c7B89012",
                 "owners": [],
                 "signersThreshold": 0
               },
@@ -493,7 +503,8 @@
         ],
         "ASSET_LISTING_ADMIN": [],
         "RISK_ADMIN": [
-          "0xa59262276dB8F997948fdc4a10cBc1448A375636"
+          "0xa59262276dB8F997948fdc4a10cBc1448A375636",
+          "0x14a6801DBEBbd6CBE009c10eCFDA98C1c7B89012"
         ],
         "FLASH_BORROWER": [
           "0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85",
@@ -517,7 +528,7 @@
           "0x59bAbc14Dd73761e38E5bdA171b2298DC14da92d"
         ]
       },
-      "latestBlockNumber": 139376929
+      "latestBlockNumber": 139420124
     },
     "gsmRoles": {},
     "govV3": {
@@ -533,7 +544,7 @@
             "0x3A800fbDeAC82a4d9c68A9FA0a315e095129CDBF"
           ]
         },
-        "latestBlockNumber": 139376932
+        "latestBlockNumber": 139420129
       },
       "contracts": {
         "GranularGuardian": {
@@ -799,7 +810,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 139376932
+      "latestCCCBlockNumber": 139420129
     },
     "collector": {
       "contracts": {
@@ -876,7 +887,7 @@
             "0x4684b645386525057526EB85854045914Fe389d6"
           ]
         },
-        "latestBlockNumber": 139376931
+        "latestBlockNumber": 139420128
       }
     },
     "clinicSteward": {
@@ -935,7 +946,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 139376931
+        "latestBlockNumber": 139420128
       }
     },
     "umbrella": {}
