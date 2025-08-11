@@ -59,6 +59,9 @@ import {
   GovernanceV3Soneium,
   AaveV3Soneium,
   MiscSoneium,
+  GovernanceV3Ink,
+  AaveV3Ink,
+  MiscInk,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 import { ChainId } from '@bgd-labs/toolbox';
@@ -1044,6 +1047,36 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: {
           ...GovernanceV3Soneium,
           ...MiscSoneium
+        },
+        addresses: {
+        },
+      },
+    },
+  },
+  [ChainId.ink]: {
+    name: 'Ink',
+    rpcUrl: process.env.RPC_INK,
+    explorer: 'https://explorer.inkonchain.com/',
+    addressesNames: {
+      '0x00C2B13eF4F70Bf1827179Fe6d8facF7cFf6AcD2':
+        'Ink emergency-admin multisig',
+      '0x2e8090716C5a25332cf963d454250B88bf04E6dC':
+        'Ink super-admin multisig',
+      '0x1dF462e2712496373A347f8ad10802a5E95f053D': 'PPC Executor'
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 19948732,
+        collectorBlock: 19948732,
+        granularGuardianBlock: 19948732,
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        addressBook: {
+          ...AaveV3Ink,
+          ...MiscInk,
+        },
+        governanceAddressBook: {
+          ...GovernanceV3Ink,
+          ...MiscInk
         },
         addresses: {
         },
