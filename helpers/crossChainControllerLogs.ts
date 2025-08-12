@@ -53,43 +53,42 @@ export const getCCCSendersAndAdapters = async (
   let events: Log[] = [];
   let latestBlockNumber = 0;
 
-  if (
-    pool === Pools.TENDERLY
-  ) {
-    const { logs: preTenderlyForkEvents, currentBlock: preTenderlyForkCurrentBlock } = await getEvents({
-      client,
-      fromBlock,
-      contract: addressBook.CROSS_CHAIN_CONTROLLER,
-      eventTypes: ['SenderUpdated'],
-      maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock!,
-      limit
-    });
+  if (addressBook.CROSS_CHAIN_CONTROLLER) {
+    if (pool === Pools.TENDERLY) {
+      const { logs: preTenderlyForkEvents, currentBlock: preTenderlyForkCurrentBlock } = await getEvents({
+        client,
+        fromBlock,
+        contract: addressBook.CROSS_CHAIN_CONTROLLER,
+        eventTypes: ['SenderUpdated'],
+        maxBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock!,
+        limit
+      });
 
-    const tenderlyProvider = getRpcClientFromUrl(
-      networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl!,
-    );
+      const tenderlyProvider = getRpcClientFromUrl(
+        networkConfigs[Number(chainId)].pools[pool].tenderlyRpcUrl!,
+      );
 
+      const { logs: tenderlyForkEvents } = await getEvents({
+        client: tenderlyProvider,
+        fromBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock!,
+        contract: addressBook.CROSS_CHAIN_CONTROLLER,
+        eventTypes: ['SenderUpdated'],
+        limit: 999
+      });
+      events = [...preTenderlyForkEvents, ...tenderlyForkEvents];
 
-    const { logs: tenderlyForkEvents } = await getEvents({
-      client: tenderlyProvider,
-      fromBlock: networkConfigs[Number(chainId)].pools[pool].tenderlyBlock!,
-      contract: addressBook.CROSS_CHAIN_CONTROLLER,
-      eventTypes: ['SenderUpdated'],
-      limit: 999
-    });
-    events = [...preTenderlyForkEvents, ...tenderlyForkEvents];
-
-    latestBlockNumber = preTenderlyForkCurrentBlock;
-  } else {
-    const { logs: networkEvents, currentBlock: eventsCurrentBlock } = await getEvents({
-      client,
-      fromBlock,
-      contract: addressBook.CROSS_CHAIN_CONTROLLER,
-      eventTypes: ['SenderUpdated'],
-      limit
-    });
-    events = networkEvents;
-    latestBlockNumber = eventsCurrentBlock;
+      latestBlockNumber = preTenderlyForkCurrentBlock;
+    } else {
+      const { logs: networkEvents, currentBlock: eventsCurrentBlock } = await getEvents({
+        client,
+        fromBlock,
+        contract: addressBook.CROSS_CHAIN_CONTROLLER,
+        eventTypes: ['SenderUpdated'],
+        limit
+      });
+      events = networkEvents;
+      latestBlockNumber = eventsCurrentBlock;
+    }
   }
 
 

@@ -194,7 +194,7 @@ const isAdministeredAndByWho = (
                 govInfo,
                 modifierInfo.addresses[0].address,
               );
-              if (ownedByGov) {
+              if (ownedByGov || contractName === 'PermissionedExecutor') {
                 ownerInfo = { owned: true, ownedBy: Controller.GOV_V3 };
               } else {
                 ownerInfo = { owned: true, ownedBy: Controller.EOA };

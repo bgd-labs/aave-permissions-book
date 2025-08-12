@@ -322,11 +322,175 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 21420278
+      "latestBlockNumber": 21500126
     },
     "gsmRoles": {},
     "govV3": {
-      "ggRoles": {}
+      "ggRoles": {},
+      "contracts": {
+        "PermissionedPayloadsControllerProxyAdmin": {
+          "address": "0x8a2de8be84a4c1650c6d225c31db28277adf1fc8",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
+        "PermissionedPayloadsController": {
+          "address": "0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A",
+          "proxyAdmin": "0x8a2de8be84a4c1650c6d225c31db28277adf1fc8",
+          "modifiers": [
+            {
+              "modifier": "onlyGuardian",
+              "addresses": [
+                {
+                  "address": "0x2e8090716C5a25332cf963d454250B88bf04E6dC",
+                  "owners": [
+                    "0x26de2b9E15886b21dd86ec57C2f4983A98458FCe",
+                    "0xaFe7AB320A37b731D5cA37Ba85802f26F3b75469",
+                    "0x13e42804884a2da5874fB2a615adC2d81C710B36",
+                    "0x22E13B9A650D75dfA8cAB4170f93fDFA5E3c8220",
+                    "0xf27e36cFfACE56E6acBCf0Acf0229147d57647AB",
+                    "0xE1436888Ae97c44D92eC13bc96D4915055aB4340",
+                    "0x2746F3BA4F69Ac0B4462208aC1B5c1e5a981dCcA"
+                  ],
+                  "signersThreshold": 4
+                }
+              ],
+              "functions": [
+                "setExecutionDelay"
+              ]
+            },
+            {
+              "modifier": "onlyOwnerOrGuardian",
+              "addresses": [
+                {
+                  "address": "0x2e8090716C5a25332cf963d454250B88bf04E6dC",
+                  "owners": [
+                    "0x26de2b9E15886b21dd86ec57C2f4983A98458FCe",
+                    "0xaFe7AB320A37b731D5cA37Ba85802f26F3b75469",
+                    "0x13e42804884a2da5874fB2a615adC2d81C710B36",
+                    "0x22E13B9A650D75dfA8cAB4170f93fDFA5E3c8220",
+                    "0xf27e36cFfACE56E6acBCf0Acf0229147d57647AB",
+                    "0xE1436888Ae97c44D92eC13bc96D4915055aB4340",
+                    "0x2746F3BA4F69Ac0B4462208aC1B5c1e5a981dCcA"
+                  ],
+                  "signersThreshold": 4
+                },
+                {
+                  "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "updateGuardian"
+              ]
+            },
+            {
+              "modifier": "onlyRescueGuardian",
+              "addresses": [
+                {
+                  "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
+            },
+            {
+              "modifier": "onlyPayloadsManagerOrGuardian",
+              "addresses": [
+                {
+                  "address": "0x2e8090716C5a25332cf963d454250B88bf04E6dC",
+                  "owners": [
+                    "0x26de2b9E15886b21dd86ec57C2f4983A98458FCe",
+                    "0xaFe7AB320A37b731D5cA37Ba85802f26F3b75469",
+                    "0x13e42804884a2da5874fB2a615adC2d81C710B36",
+                    "0x22E13B9A650D75dfA8cAB4170f93fDFA5E3c8220",
+                    "0xf27e36cFfACE56E6acBCf0Acf0229147d57647AB",
+                    "0xE1436888Ae97c44D92eC13bc96D4915055aB4340",
+                    "0x2746F3BA4F69Ac0B4462208aC1B5c1e5a981dCcA"
+                  ],
+                  "signersThreshold": 4
+                },
+                {
+                  "address": "0x2e8090716C5a25332cf963d454250B88bf04E6dC",
+                  "owners": [
+                    "0x26de2b9E15886b21dd86ec57C2f4983A98458FCe",
+                    "0xaFe7AB320A37b731D5cA37Ba85802f26F3b75469",
+                    "0x13e42804884a2da5874fB2a615adC2d81C710B36",
+                    "0x22E13B9A650D75dfA8cAB4170f93fDFA5E3c8220",
+                    "0xf27e36cFfACE56E6acBCf0Acf0229147d57647AB",
+                    "0xE1436888Ae97c44D92eC13bc96D4915055aB4340",
+                    "0x2746F3BA4F69Ac0B4462208aC1B5c1e5a981dCcA"
+                  ],
+                  "signersThreshold": 4
+                }
+              ],
+              "functions": [
+                "cancelPayload"
+              ]
+            },
+            {
+              "modifier": "onlyPayloadsManager",
+              "addresses": [
+                {
+                  "address": "0x2e8090716C5a25332cf963d454250B88bf04E6dC",
+                  "owners": [
+                    "0x26de2b9E15886b21dd86ec57C2f4983A98458FCe",
+                    "0xaFe7AB320A37b731D5cA37Ba85802f26F3b75469",
+                    "0x13e42804884a2da5874fB2a615adC2d81C710B36",
+                    "0x22E13B9A650D75dfA8cAB4170f93fDFA5E3c8220",
+                    "0xf27e36cFfACE56E6acBCf0Acf0229147d57647AB",
+                    "0xE1436888Ae97c44D92eC13bc96D4915055aB4340",
+                    "0x2746F3BA4F69Ac0B4462208aC1B5c1e5a981dCcA"
+                  ],
+                  "signersThreshold": 4
+                }
+              ],
+              "functions": [
+                "createPayload"
+              ]
+            }
+          ]
+        },
+        "PermissionedExecutor": {
+          "address": "0x1dF462e2712496373A347f8ad10802a5E95f053D",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "executeTransaction"
+              ]
+            }
+          ]
+        }
+      },
+      "senders": [],
+      "latestCCCBlockNumber": 0
     },
     "collector": {
       "contracts": {
@@ -401,7 +565,7 @@
             "0x1dF462e2712496373A347f8ad10802a5E95f053D"
           ]
         },
-        "latestBlockNumber": 21420287
+        "latestBlockNumber": 21500158
       }
     },
     "clinicSteward": {},

@@ -1062,14 +1062,15 @@ export const networkConfigs: NetworkConfigs = {
         'Ink emergency-admin multisig',
       '0x2e8090716C5a25332cf963d454250B88bf04E6dC':
         'Ink super-admin multisig',
-      '0x1dF462e2712496373A347f8ad10802a5E95f053D': 'PPC Executor'
     },
     pools: {
       [Pools.V3]: {
         aclBlock: 19948732,
         collectorBlock: 19948732,
         granularGuardianBlock: 19948732,
+        crossChainControllerBlock: 19948732,
         permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         addressBook: {
           ...AaveV3Ink,
           ...MiscInk,
