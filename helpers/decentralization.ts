@@ -98,6 +98,11 @@ const isOwnedByGov = (
   for (let contractName of Object.keys(govInfo)) {
     const contract = govInfo[contractName];
     if (contract.address.toLowerCase() === address.toLowerCase()) {
+      if (contract.proxyAdmin) {
+        ownerFound = isOwnedByGov(contract.proxyAdmin, govInfo, initialAddress);
+        if (ownerFound) return ownerFound;
+      }
+
       contract.modifiers.forEach((modifierInfo) => {
         if (
           modifierInfo.modifier === 'onlyOwner' ||
@@ -194,7 +199,7 @@ const isAdministeredAndByWho = (
                 govInfo,
                 modifierInfo.addresses[0].address,
               );
-              if (ownedByGov || contractName === 'PermissionedExecutor') {
+              if (ownedByGov) {
                 ownerInfo = { owned: true, ownedBy: Controller.GOV_V3 };
               } else {
                 ownerInfo = { owned: true, ownedBy: Controller.EOA };

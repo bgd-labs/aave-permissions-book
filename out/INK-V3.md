@@ -4,26 +4,26 @@
 | contract |upgradeable by |
 |----------|----------|
 |  [PoolAddressesProvider](https://explorer.inkonchain.com//address/0x4172E6aAEC070ACB31aaCE343A58c93E4C70f44D) |  not upgradeable | |--------|--------|
-|  [Pool](https://explorer.inkonchain.com//address/0x2816cf15F6d2A220E789aA011D5EE4eB6c47FEbA) |  External Contract | |--------|--------|
-|  [PoolConfigurator](https://explorer.inkonchain.com//address/0x4f221e5c0B7103f7e3291E10097de6D9e3BfC02d) |  External Contract | |--------|--------|
+|  [Pool](https://explorer.inkonchain.com//address/0x2816cf15F6d2A220E789aA011D5EE4eB6c47FEbA) |  Governance | |--------|--------|
+|  [PoolConfigurator](https://explorer.inkonchain.com//address/0x4f221e5c0B7103f7e3291E10097de6D9e3BfC02d) |  Governance | |--------|--------|
 |  [AaveOracle](https://explorer.inkonchain.com//address/0x4758213271BFdC72224A7a8742dC865fC97756e1) |  not upgradeable | |--------|--------|
-|  [RewardsController](https://explorer.inkonchain.com//address/0xD93e3Ae8f69D04d484d1652Ca569d4b0522414DF) |  External Contract | |--------|--------|
+|  [RewardsController](https://explorer.inkonchain.com//address/0xD93e3Ae8f69D04d484d1652Ca569d4b0522414DF) |  Governance | |--------|--------|
 |  [WrappedTokenGatewayV3](https://explorer.inkonchain.com//address/0xDe090EfCD6ef4b86792e2D84E55a5fa8d49D25D2) |  not upgradeable | |--------|--------|
 |  [EmissionManager](https://explorer.inkonchain.com//address/0x9CbcEf2c44cF28ff2aa36Bff7BaB315398209A79) |  not upgradeable | |--------|--------|
 |  [PoolAddressesProviderRegistry](https://explorer.inkonchain.com//address/0x501B4c19dd9C2e06E94dA7b6D5Ed4ddA013EC741) |  not upgradeable | |--------|--------|
 |  [ACLManager](https://explorer.inkonchain.com//address/0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809) |  not upgradeable | |--------|--------|
-|  [Collector](https://explorer.inkonchain.com//address/0x9138E2cAdFEB23AFFdc0419F2912CaB8F135dba9) |  External Contract | |--------|--------|
+|  [Collector](https://explorer.inkonchain.com//address/0x9138E2cAdFEB23AFFdc0419F2912CaB8F135dba9) |  Governance | |--------|--------|
 |  [CollectorProxyAdmin](https://explorer.inkonchain.com//address/0xd059ec2cf261858e23fb5a3a5debd929501e99e8) |  not upgradeable | |--------|--------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8a2de8be84a4c1650c6d225c31db28277adf1fc8) |  not upgradeable | |--------|--------|
-|  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  External Contract | |--------|--------|
+|  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  Governance | |--------|--------|
 |  [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  not upgradeable | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
 |----------|----------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
-|  configureProtocolFees |  External Contract,Governance | |--------|--------|
+|  configureProtocolFees |  Governance | |--------|--------|
 |  updateReserveCaps |  Governance | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
@@ -32,7 +32,7 @@
 |  reserveUpgradeability |  Governance | |--------|--------|
 |  pausePool |  Governance,Multi-sig | |--------|--------|
 |  pauseAndFreezeReserve |  Governance,Multi-sig | |--------|--------|
-|  reserveListing |  External Contract,Governance | |--------|--------|
+|  reserveListing |  Governance | |--------|--------|
 |  adminsConfiguration |  Governance | |--------|--------|
 |  protocolUpgradeablity |  Governance | |--------|--------|
 
