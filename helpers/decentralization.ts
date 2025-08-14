@@ -98,6 +98,11 @@ const isOwnedByGov = (
   for (let contractName of Object.keys(govInfo)) {
     const contract = govInfo[contractName];
     if (contract.address.toLowerCase() === address.toLowerCase()) {
+      if (contract.proxyAdmin) {
+        ownerFound = isOwnedByGov(contract.proxyAdmin, govInfo, initialAddress);
+        if (ownerFound) return ownerFound;
+      }
+
       contract.modifiers.forEach((modifierInfo) => {
         if (
           modifierInfo.modifier === 'onlyOwner' ||
