@@ -510,7 +510,7 @@ const generateNetworkPermissions = async (network: string) => {
               pool.granularGuardianBlock;
           }
 
-          if (ggFromBlock) {
+          if (ggFromBlock && pool.governanceAddressBook.GRANULAR_GUARDIAN) {
             const ggRoles = await getCurrentRoleAdmins(
               poolKey === Pools.TENDERLY ||
                 poolKey === Pools.LIDO_TENDERLY ||

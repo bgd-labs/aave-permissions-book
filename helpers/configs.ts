@@ -59,6 +59,9 @@ import {
   GovernanceV3Soneium,
   AaveV3Soneium,
   MiscSoneium,
+  GovernanceV3InkWhitelabel,
+  AaveV3InkWhitelabel,
+  MiscInkWhitelabel,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 import { ChainId } from '@bgd-labs/toolbox';
@@ -1044,6 +1047,37 @@ export const networkConfigs: NetworkConfigs = {
         governanceAddressBook: {
           ...GovernanceV3Soneium,
           ...MiscSoneium
+        },
+        addresses: {
+        },
+      },
+    },
+  },
+  [ChainId.ink]: {
+    name: 'Ink_Whitelabel',
+    rpcUrl: process.env.RPC_INK,
+    explorer: 'https://explorer.inkonchain.com/',
+    addressesNames: {
+      '0x00C2B13eF4F70Bf1827179Fe6d8facF7cFf6AcD2':
+        'Ink emergency-admin multisig',
+      '0x2e8090716C5a25332cf963d454250B88bf04E6dC':
+        'Ink super-admin multisig',
+    },
+    pools: {
+      [Pools.V3]: {
+        aclBlock: 19948732,
+        collectorBlock: 19948732,
+        granularGuardianBlock: 19948732,
+        crossChainControllerBlock: 19948732,
+        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        addressBook: {
+          ...AaveV3InkWhitelabel,
+          ...MiscInkWhitelabel,
+        },
+        governanceAddressBook: {
+          ...GovernanceV3InkWhitelabel,
+          ...MiscInkWhitelabel
         },
         addresses: {
         },
