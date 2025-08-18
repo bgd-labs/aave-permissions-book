@@ -5,7 +5,6 @@ import {
   AaveV2Avalanche,
   AaveV2Ethereum,
   AaveV2EthereumAMM,
-  AaveV2EthereumArc,
   UmbrellaEthereum,
   AaveV2Polygon,
   AaveV3Arbitrum,
@@ -54,7 +53,6 @@ import {
   GovernanceV3Celo,
   GhoArbitrum,
   GhoEthereum,
-  GhoAvalanche,
   GhoBase,
   GovernanceV3Soneium,
   AaveV3Soneium,
@@ -209,7 +207,7 @@ export const networkConfigs: NetworkConfigs = {
     pools: {
       [Pools.V3]: {
         collectorBlock: 21765718,
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         governanceAddressBook: GovernanceV3Ethereum,
         aclBlock: 16291117,
@@ -227,7 +225,7 @@ export const networkConfigs: NetworkConfigs = {
       },
       [Pools.LIDO]: {
         collectorBlock: 21765718,
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         aclBlock: 20262410,
         addressBook: {
           ...AaveV3EthereumLido,
@@ -237,7 +235,7 @@ export const networkConfigs: NetworkConfigs = {
         clinicStewardBlock: 21967120,
       },
       // [Pools.LIDO_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   aclBlock: 20262410,
       //   addressBook: {
       //     ...AaveV3EthereumLido,
@@ -251,7 +249,7 @@ export const networkConfigs: NetworkConfigs = {
       // },
       [Pools.ETHERFI]: {
         collectorBlock: 21765718,
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         aclBlock: 20625515,
         addressBook: {
           ...AaveV3EthereumEtherFi,
@@ -260,7 +258,7 @@ export const networkConfigs: NetworkConfigs = {
         },
       },
       // [Pools.ETHERFI_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   aclBlock: 20625515,
       //   addressBook: {
       //     ...AaveV3EthereumEtherFi,
@@ -290,17 +288,6 @@ export const networkConfigs: NetworkConfigs = {
       //   tenderlyRpcUrl:
       //     'https://rpc.tenderly.co/fork/247e153a-3814-4cef-8dfa-dc0648a813c6',
       // },
-      // [Pools.GOV_V2]: {
-      //   permissionsJson: './statics/functionsPermissionsGov.json',
-      //   addressBook: AaveGovernanceV2,
-      // },
-      // [Pools.GOV_V2_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsGov.json',
-      //   addressBook: AaveGovernanceV2,
-      //   tenderlyBasePool: Pools.GOV_V2,
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/247e153a-3814-4cef-8dfa-dc0648a813c6',
-      // },
       [Pools.V2]: {
         collectorBlock: 21765718,
         permissionsJson: './statics/functionsPermissionsV2.json',
@@ -313,18 +300,6 @@ export const networkConfigs: NetworkConfigs = {
       //   tenderlyBlock: 20983900,
       //   tenderlyRpcUrl:
       //     'https://rpc.tenderly.co/fork/2d5e3793-0b31-48ad-a1b0-c9e5d03b0607',
-      // },
-      // [Pools.V2_ARC]: {
-      //   collectorBlock: 21765718,
-      //   permissionsJson: './statics/functionsPermissionsArc.json',
-      //   addressBook: AaveV2EthereumArc,
-      // },
-      // [Pools.V2_ARC_TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsArc.json',
-      //   addressBook: AaveV2EthereumArc,
-      //   tenderlyBasePool: Pools.V2_ARC,
-      //   tenderlyRpcUrl:
-      //     'https://rpc.tenderly.co/fork/247e153a-3814-4cef-8dfa-dc0648a813c6',
       // },
       [Pools.V2_AMM]: {
         collectorBlock: 21765718,
@@ -370,7 +345,7 @@ export const networkConfigs: NetworkConfigs = {
       //     'https://rpc.tenderly.co/fork/247e153a-3814-4cef-8dfa-dc0648a813c6',
       // },
       // [Pools.TENDERLY]: {
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
       //   governanceAddressBook: GovernanceV3Ethereum,
       //   granularGuardianBlock: 20324867,
@@ -412,7 +387,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 45029910,
         granularGuardianBlock: 59461826,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Polygon, ...MiscPolygon },
         governanceAddressBook: GovernanceV3Polygon,
         addresses: {
@@ -439,7 +414,7 @@ export const networkConfigs: NetworkConfigs = {
       //   crossChainControllerBlock: 45029910,
       //   granularGuardianBlock: 59461826,
       //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   addressBook: { ...AaveV3Polygon, ...MiscPolygon },
       //   governanceAddressBook: GovernanceV3Polygon,
       //   tenderlyBasePool: Pools.V3,
@@ -473,7 +448,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 31558150,
         granularGuardianBlock: 40546332,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3BNB, ...MiscBNB },
         governanceAddressBook: GovernanceV3BNB,
         addresses: {
@@ -487,7 +462,7 @@ export const networkConfigs: NetworkConfigs = {
       //   crossChainControllerBlock: 31558150,
       //   granularGuardianBlock: 40546332,
       //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   addressBook: { ...AaveV3BNB, ...MiscBNB },
       //   governanceAddressBook: GovernanceV3BNB,
       //   tenderlyBasePool: Pools.V3,
@@ -530,7 +505,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 32549880,
         granularGuardianBlock: 48074792,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
         governanceAddressBook: GovernanceV3Avalanche,
         addresses: {
@@ -563,7 +538,7 @@ export const networkConfigs: NetworkConfigs = {
       //   crossChainControllerBlock: 32549880,
       //   granularGuardianBlock: 48074792,
       //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   addressBook: { ...AaveV3Avalanche, ...MiscAvalanche },
       //   governanceAddressBook: GovernanceV3Avalanche,
       //   tenderlyBasePool: Pools.V3,
@@ -597,7 +572,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 106996150,
         granularGuardianBlock: 122802392,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Optimism, ...MiscOptimism },
         governanceAddressBook: GovernanceV3Optimism,
         addresses: {
@@ -610,7 +585,7 @@ export const networkConfigs: NetworkConfigs = {
       //   crossChainControllerBlock: 106996150,
       //   granularGuardianBlock: 122802392,
       //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   addressBook: { ...AaveV3Optimism, ...MiscOptimism },
       //   governanceAddressBook: GovernanceV3Optimism,
       //   tenderlyBasePool: Pools.V3,
@@ -646,7 +621,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 112113800,
         granularGuardianBlock: 233088975,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum, ...GhoArbitrum },
         governanceAddressBook: GovernanceV3Arbitrum,
         addresses: {
@@ -664,7 +639,7 @@ export const networkConfigs: NetworkConfigs = {
       //   crossChainControllerBlock: 112113800,
       //   granularGuardianBlock: 233088975,
       //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   addressBook: { ...AaveV3Arbitrum, ...MiscArbitrum },
       //   governanceAddressBook: GovernanceV3Arbitrum,
       //   tenderlyBasePool: Pools.V3,
@@ -698,7 +673,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 8526247,
         granularGuardianBlock: 17700310,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Metis, ...MiscMetis },
         governanceAddressBook: GovernanceV3Metis,
         addresses: {
@@ -735,7 +710,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 3686170,
         granularGuardianBlock: 17207502,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Base, ...MiscBase, ...GhoBase },
         governanceAddressBook: GovernanceV3Base,
         addresses: {
@@ -753,7 +728,7 @@ export const networkConfigs: NetworkConfigs = {
       //   crossChainControllerBlock: 3686170,
       //   granularGuardianBlock: 17207502,
       //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   addressBook: { ...AaveV3Base, ...MiscBase },
       //   governanceAddressBook: GovernanceV3Base,
       //   tenderlyBasePool: Pools.V3,
@@ -786,7 +761,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 30373982,
         granularGuardianBlock: 35008853,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Gnosis, ...MiscGnosis },
         governanceAddressBook: GovernanceV3Gnosis,
         addresses: {
@@ -801,7 +776,7 @@ export const networkConfigs: NetworkConfigs = {
       //   crossChainControllerBlock: 30373982,
       //   granularGuardianBlock: 35008853,
       //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   addressBook: { ...AaveV3Gnosis, ...MiscGnosis },
       //   tenderlyBasePool: Pools.V3,
       //   governanceAddressBook: GovernanceV3Gnosis,
@@ -835,7 +810,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 2140900,
         granularGuardianBlock: 7517784,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3Scroll, ...MiscScroll },
         governanceAddressBook: GovernanceV3Scroll,
         addresses: {
@@ -867,7 +842,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 40068400,
         granularGuardianBlock: 40095020,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: { ...AaveV3ZkSync, ...MiscZkSync },
         governanceAddressBook: GovernanceV3ZkSync,
         addresses: {
@@ -903,7 +878,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 13185200,
         granularGuardianBlock: 13223700,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: {
           ...AaveV3Linea,
           ...MiscLinea,
@@ -939,7 +914,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 29733820,
         granularGuardianBlock: 29750070,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: {
           ...AaveV3Celo,
           ...MiscCelo,
@@ -979,7 +954,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 7277160,
         granularGuardianBlock: 7281310,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: {
           ...AaveV3Sonic,
           ...MiscSonic,
@@ -1000,7 +975,7 @@ export const networkConfigs: NetworkConfigs = {
       //   crossChainControllerBlock: 7277160,
       //   granularGuardianBlock: 7281310,
       //   crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-      //   permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+      //   permissionsJson: './statics/functionsPermissionsV3.json',
       //   addressBook: {
       //     ...AaveV3Sonic,
       //     ...MiscSonic,
@@ -1039,7 +1014,7 @@ export const networkConfigs: NetworkConfigs = {
         crossChainControllerBlock: 6442410,
         granularGuardianBlock: 6448120,
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         addressBook: {
           ...AaveV3Soneium,
           ...MiscSoneium,
@@ -1069,7 +1044,7 @@ export const networkConfigs: NetworkConfigs = {
         collectorBlock: 19948732,
         granularGuardianBlock: 19948732,
         crossChainControllerBlock: 19948732,
-        permissionsJson: './statics/functionsPermissionsV3.0.1.json',
+        permissionsJson: './statics/functionsPermissionsV3.json',
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         addressBook: {
           ...AaveV3InkWhitelabel,

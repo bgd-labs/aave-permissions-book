@@ -63,7 +63,7 @@ These documents contain tables with the following information:
     
 ## Usage
 
-To generate the permissions json, and the subsequent permissions tables:
+To generate the permissions json, and the subsequent permissions tables, add the necessary configuration into [config](./helpers/configs.ts)
 
 ### Installation
 
