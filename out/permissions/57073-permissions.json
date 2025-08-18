@@ -324,7 +324,7 @@
         "FLASH_BORROWER": [],
         "RISK_ADMIN": []
       },
-      "latestBlockNumber": 21667186
+      "latestBlockNumber": 22004067
     },
     "gsmRoles": {},
     "govV3": {
@@ -567,7 +567,7 @@
             "0x1dF462e2712496373A347f8ad10802a5E95f053D"
           ]
         },
-        "latestBlockNumber": 21667249
+        "latestBlockNumber": 22004070
       }
     },
     "clinicSteward": {},
