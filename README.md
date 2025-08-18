@@ -84,9 +84,7 @@ To generate the permissions tables, execute:
   npm run tables:create
 ```
 
-### Contributing
 
-Check the [contributing](./CONTRIBUTING.ms) guide for how to contribute.
 
 ## License
 This repository is under [MIT License](./LICENSE)
