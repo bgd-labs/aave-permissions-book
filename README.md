@@ -63,9 +63,7 @@ These documents contain tables with the following information:
     
 ## Usage
 
-To generate the permissions json, and the subsequent permissions tables, add the necessary configuration into [config](./helpers/configs.ts).
-
-If you need to add a new modifier, you will need to first add it into the corresponding static file (used in the network / pool pairing).
+To generate the permissions json, and the subsequent permissions tables:
 
 ### Installation
 
