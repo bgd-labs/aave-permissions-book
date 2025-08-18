@@ -2,7 +2,7 @@
 ![Aave Permissions Book](./permissions_banner.jpg)
 # Aave Permissions Book
 
-Tool to index and visualize all the permissions on the whole Aave smart contracts ecosystem.
+Tool to index and visualise all the permissions on the whole Aave smart contracts ecosystem.
 
 ## Table of contents
 - [Description](#Description)
@@ -87,9 +87,4 @@ To generate the permissions tables, execute:
 
 
 ## License
-
-Copyright © 2024, Aave DAO, represented by its governance smart contracts
-
 This repository is under [MIT License](./LICENSE)
-
-Created by [BGD Labs](https://bgdlabs.com/).
