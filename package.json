@@ -1,6 +1,6 @@
 {
   "name": "aave-permissions-list",
-  "description": "This repo is containing scripts for calculating and showing addresses which hold permissions inside all contracts of Aave protocol. Tables with permissions are shown in the [out](./out/) folder.",
+  "description": "This repo is containing scripts to calculate and show which addresses hold permissions inside all contracts of Aave protocol. Tables with permissions are shown in the [out](./out/) folder.",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
