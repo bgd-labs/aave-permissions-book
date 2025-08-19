@@ -1045,9 +1045,12 @@ export const networkConfigs: NetworkConfigs = {
     explorer: 'https://explorer.inkonchain.com/',
     addressesNames: {
       '0x00C2B13eF4F70Bf1827179Fe6d8facF7cFf6AcD2':
-        'Ink emergency-admin multisig',
+        'WhiteLabel Ink emergency-admin multisig',
       '0x2e8090716C5a25332cf963d454250B88bf04E6dC':
-        'Ink super-admin multisig',
+        'WhiteLabel Ink super-admin multisig',
+      '0x1bBcC6F0BB563067Ca45450023a13E34fa963Fa9': 'Aave Governance Guardian Ink',
+      '0x81D251dA015A0C7bD882918Ca1ec6B7B8E094585': 'BGD',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
       [Pools.V3_WHITE_LABEL]: {
