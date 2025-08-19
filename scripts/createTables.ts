@@ -150,6 +150,10 @@ export const generateTable = (network: string, pool: string): string => {
       ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
       ...getPermissionsByNetwork(network)['V3'].umbrella?.contracts,
       ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.govV3?.contracts,
+      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.contracts,
+      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.collector?.contracts,
+      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.clinicSteward?.contracts,
+      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.umbrella?.contracts,
     });
   }
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
@@ -170,7 +174,6 @@ export const generateTable = (network: string, pool: string): string => {
     if (pool === Pools.V2_ARC) {
       govPermissions = {
         ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
-        ...getPermissionsByNetwork(network)['V3_WHITE_LABEL'].govV3?.contracts,
         ...getPermissionsByNetwork(ChainId.mainnet)['V2_ARC'].contracts,
       };
     }
@@ -196,6 +199,10 @@ export const generateTable = (network: string, pool: string): string => {
             ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
             ...getPermissionsByNetwork(network)['V3'].umbrella?.contracts,
             ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.govV3?.contracts,
+            ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.contracts,
+            ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.collector?.contracts,
+            ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.clinicSteward?.contracts,
+            ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.umbrella?.contracts,
           },
         govPermissions,
       );

@@ -187,7 +187,8 @@
     },
     "collector": {},
     "clinicSteward": {},
-    "umbrella": {}
+    "umbrella": {},
+    "ppc": {}
   },
   "V2_MISC": {
     "contracts": {
@@ -261,7 +262,8 @@
     },
     "collector": {},
     "clinicSteward": {},
-    "umbrella": {}
+    "umbrella": {},
+    "ppc": {}
   },
   "GOV_V2": {
     "contracts": {
@@ -1128,7 +1130,7 @@
           "0x8b493f416F5F7933cC146b1899c069F2361cad60"
         ]
       },
-      "latestBlockNumber": 23174206
+      "latestBlockNumber": 23176372
     },
     "gsmRoles": {},
     "govV3": {
@@ -1144,7 +1146,7 @@
             "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF"
           ]
         },
-        "latestBlockNumber": 23174206
+        "latestBlockNumber": 23176372
       },
       "contracts": {
         "GranularGuardian": {
@@ -1724,7 +1726,7 @@
         "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
         "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6"
       ],
-      "latestCCCBlockNumber": 23174206
+      "latestCCCBlockNumber": 23176372
     },
     "collector": {
       "contracts": {
@@ -1812,7 +1814,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23174206
+        "latestBlockNumber": 23176372
       }
     },
     "clinicSteward": {
@@ -1872,7 +1874,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 23174206
+        "latestBlockNumber": 23176372
       }
     },
     "umbrella": {
@@ -2136,7 +2138,7 @@
             "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
           ]
         },
-        "latestBlockNumber": 23174206
+        "latestBlockNumber": 23176372
       },
       "umbrellaIncentivesRoles": {
         "role": {
@@ -2148,7 +2150,162 @@
             "0x2759de67aD133C747C9f41d56F1b8A343cE679a1"
           ]
         },
-        "latestBlockNumber": 23174206
+        "latestBlockNumber": 23176372
+      }
+    },
+    "ppc": {
+      "contracts": {
+        "PermissionedPayloadsControllerProxyAdmin": {
+          "address": "0x1c7b0090badf16edcbd11cd1d20ddc403ed43d17",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "changeProxyAdmin",
+                "upgrade",
+                "upgradeAndCall"
+              ]
+            }
+          ]
+        },
+        "PermissionedPayloadsController": {
+          "address": "0xF86F77F7531B3374274E3f725E0A81D60bC4bB67",
+          "proxyAdmin": "0x1c7b0090badf16edcbd11cd1d20ddc403ed43d17",
+          "modifiers": [
+            {
+              "modifier": "onlyGuardian",
+              "addresses": [
+                {
+                  "address": "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF",
+                  "owners": [
+                    "0x0650302887619fa7727D8BD480Cda11A638B219B",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7"
+                  ],
+                  "signersThreshold": 2
+                }
+              ],
+              "functions": [
+                "setExecutionDelay"
+              ]
+            },
+            {
+              "modifier": "onlyOwnerOrGuardian",
+              "addresses": [
+                {
+                  "address": "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF",
+                  "owners": [
+                    "0x0650302887619fa7727D8BD480Cda11A638B219B",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7"
+                  ],
+                  "signersThreshold": 2
+                },
+                {
+                  "address": "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF",
+                  "owners": [
+                    "0x0650302887619fa7727D8BD480Cda11A638B219B",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7"
+                  ],
+                  "signersThreshold": 2
+                }
+              ],
+              "functions": [
+                "updateGuardian",
+                "updatePayloadsManager"
+              ]
+            },
+            {
+              "modifier": "onlyRescueGuardian",
+              "addresses": [
+                {
+                  "address": "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF",
+                  "owners": [
+                    "0x0650302887619fa7727D8BD480Cda11A638B219B",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7"
+                  ],
+                  "signersThreshold": 2
+                }
+              ],
+              "functions": [
+                "emergencyTokenTransfer",
+                "emergencyEtherTransfer"
+              ]
+            },
+            {
+              "modifier": "onlyPayloadsManagerOrGuardian",
+              "addresses": [
+                {
+                  "address": "0xb812d0944f8F581DfAA3a93Dda0d22EcEf51A9CF",
+                  "owners": [
+                    "0x0650302887619fa7727D8BD480Cda11A638B219B",
+                    "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+                    "0x5811d9FF80ff4B73A8F9bA42A6082FaB82E89Ea7"
+                  ],
+                  "signersThreshold": 2
+                },
+                {
+                  "address": "0x22740deBa78d5a0c24C58C740e3715ec29de1bFa",
+                  "owners": [
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
+                    "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                    "0xbA037E4746ff58c55dc8F27a328C428F258DDACb"
+                  ],
+                  "signersThreshold": 3
+                }
+              ],
+              "functions": [
+                "cancelPayload"
+              ]
+            },
+            {
+              "modifier": "onlyPayloadsManager",
+              "addresses": [
+                {
+                  "address": "0x22740deBa78d5a0c24C58C740e3715ec29de1bFa",
+                  "owners": [
+                    "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                    "0xb647055A9915bF9c8021a684E175A353525b9890",
+                    "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d",
+                    "0xbA037E4746ff58c55dc8F27a328C428F258DDACb"
+                  ],
+                  "signersThreshold": 3
+                }
+              ],
+              "functions": [
+                "createPayload"
+              ]
+            }
+          ]
+        },
+        "PermissionedExecutor": {
+          "address": "0x2759de67aD133C747C9f41d56F1b8A343cE679a1",
+          "modifiers": [
+            {
+              "modifier": "onlyOwner",
+              "addresses": [
+                {
+                  "address": "0xF86F77F7531B3374274E3f725E0A81D60bC4bB67",
+                  "owners": [],
+                  "signersThreshold": 0
+                }
+              ],
+              "functions": [
+                "executeTransaction"
+              ]
+            }
+          ]
+        }
       }
     }
   },
@@ -2528,11 +2685,12 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23174207
+        "latestBlockNumber": 23176374
       }
     },
     "clinicSteward": {},
-    "umbrella": {}
+    "umbrella": {},
+    "ppc": {}
   },
   "V2_AMM": {
     "contracts": {
@@ -2827,11 +2985,12 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23174207
+        "latestBlockNumber": 23176374
       }
     },
     "clinicSteward": {},
-    "umbrella": {}
+    "umbrella": {},
+    "ppc": {}
   },
   "V2_ARC": {
     "contracts": {
@@ -3759,7 +3918,7 @@
           "0x7e6a6B115D31d4A837E3C737c49Cf6Fafe6112C3"
         ]
       },
-      "latestBlockNumber": 23174207
+      "latestBlockNumber": 23176373
     },
     "gsmRoles": {},
     "govV3": {
@@ -3851,7 +4010,7 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23174207
+        "latestBlockNumber": 23176373
       }
     },
     "clinicSteward": {
@@ -3911,10 +4070,11 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 23174207
+        "latestBlockNumber": 23176373
       }
     },
-    "umbrella": {}
+    "umbrella": {},
+    "ppc": {}
   },
   "ETHERFI": {
     "contracts": {
@@ -4454,7 +4614,7 @@
           "0xBF79d8339303148E345277a994Eb2cD5d82F0067"
         ]
       },
-      "latestBlockNumber": 23174207
+      "latestBlockNumber": 23176373
     },
     "gsmRoles": {},
     "govV3": {
@@ -4546,11 +4706,12 @@
             "0x22aC12a6937BBBC0a301AF9154d08EaD95673122"
           ]
         },
-        "latestBlockNumber": 23174207
+        "latestBlockNumber": 23176373
       }
     },
     "clinicSteward": {},
-    "umbrella": {}
+    "umbrella": {},
+    "ppc": {}
   },
   "TENDERLY": {
     "contracts": {
@@ -7207,7 +7368,7 @@
           "0x46Aa1063e5265b43663E81329333B47c517A5409"
         ]
       },
-      "latestBlockNumber": 23174207
+      "latestBlockNumber": 23176373
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -7227,7 +7388,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23174207
+        "latestBlockNumber": 23176373
       },
       "GSM_USDT": {
         "role": {
@@ -7246,7 +7407,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23174207
+        "latestBlockNumber": 23176373
       }
     },
     "govV3": {
@@ -7254,6 +7415,7 @@
     },
     "collector": {},
     "clinicSteward": {},
-    "umbrella": {}
+    "umbrella": {},
+    "ppc": {}
   }
 }

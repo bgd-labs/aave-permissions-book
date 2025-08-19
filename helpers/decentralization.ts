@@ -98,10 +98,10 @@ const isOwnedByGov = (
   for (let contractName of Object.keys(govInfo)) {
     const contract = govInfo[contractName];
     if (contract.address.toLowerCase() === address.toLowerCase()) {
-      if (contract.proxyAdmin) {
-        ownerFound = isOwnedByGov(contract.proxyAdmin, govInfo, initialAddress);
-        if (ownerFound) return ownerFound;
-      }
+      // if (contract.proxyAdmin) {
+      //   ownerFound = isOwnedByGov(contract.proxyAdmin, govInfo, initialAddress);
+      //   if (ownerFound) return ownerFound;
+      // }
 
       contract.modifiers.forEach((modifierInfo) => {
         if (
@@ -190,6 +190,7 @@ const isAdministeredAndByWho = (
               contractName !== 'GhoStewardV2') ||
             modifierInfo.modifier === 'onlyEmergencyAdmin' ||
             modifierInfo.modifier === 'onlyDefaultAdmin'
+            // modifierInfo.modifier === 'onlyPayloadsManager'
           ) {
             if (modifierInfo.addresses[0].owners.length > 0) {
               ownerInfo = { owned: true, ownedBy: Controller.MULTI_SIG };
