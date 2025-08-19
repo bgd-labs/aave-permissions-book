@@ -60,6 +60,8 @@ import {
   GovernanceV3InkWhitelabel,
   AaveV3InkWhitelabel,
   MiscInkWhitelabel,
+  GovernanceV3Ink,
+  MiscInk,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 import { ChainId } from '@bgd-labs/toolbox';
@@ -87,6 +89,7 @@ export enum Pools {
   ETHERFI = 'ETHERFI',
   ETHERFI_TENDERLY = 'ETHERFI_TENDERLY',
   LIDO_TENDERLY = 'LIDO_TENDERLY',
+  V3_WHITE_LABEL = 'V3_WHITE_LABEL',
 }
 
 export const ghoRoleNames = [
@@ -1037,7 +1040,7 @@ export const networkConfigs: NetworkConfigs = {
     },
   },
   [ChainId.ink]: {
-    name: 'Ink_Whitelabel',
+    name: 'Ink',
     rpcUrl: process.env.RPC_INK,
     explorer: 'https://explorer.inkonchain.com/',
     addressesNames: {
@@ -1047,7 +1050,7 @@ export const networkConfigs: NetworkConfigs = {
         'Ink super-admin multisig',
     },
     pools: {
-      [Pools.V3]: {
+      [Pools.V3_WHITE_LABEL]: {
         aclBlock: 19948732,
         collectorBlock: 19948732,
         granularGuardianBlock: 19948732,
@@ -1065,6 +1068,19 @@ export const networkConfigs: NetworkConfigs = {
         addresses: {
         },
       },
+      [Pools.V3]: {
+        granularGuardianBlock: 9343700,
+        crossChainControllerBlock: 9342650,
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        governanceAddressBook: {
+          ...GovernanceV3Ink,
+          ...MiscInk,
+        },
+        addressBook: {
+          ...MiscInk,
+        }
+      }
     },
   },
 };
