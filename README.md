@@ -56,7 +56,8 @@ These documents contain tables with the following information:
 |  CELO |  V3 |  [Permissions](./out/CELO-V3.md#contracts) | |--------|--------|--------|
 |  AVALANCHE |  V3 |  [Permissions](./out/AVALANCHE-V3.md#contracts) | |--------|--------|--------|
 |  AVALANCHE |  V2 |  [Permissions](./out/AVALANCHE-V2.md#contracts) | |--------|--------|--------|
-|  INK_WHITELABEL |  V3 |  [Permissions](./out/INK_WHITELABEL-V3.md#contracts) | |--------|--------|--------|
+|  INK |  V3_WHITE_LABEL |  [Permissions](./out/INK-V3_WHITE_LABEL.md#contracts) | |--------|--------|--------|
+|  INK |  V3 |  [Permissions](./out/INK-V3.md#contracts) | |--------|--------|--------|
 |  LINEA |  V3 |  [Permissions](./out/LINEA-V3.md#contracts) | |--------|--------|--------|
 |  SCROLL |  V3 |  [Permissions](./out/SCROLL-V3.md#contracts) | |--------|--------|--------|
        
@@ -84,9 +85,7 @@ To generate the permissions tables, execute:
   npm run tables:create
 ```
 
-### Contributing
 
-Check the [contributing](./CONTRIBUTING.ms) guide for how to contribute.
 
 ## License
 This repository is under [MIT License](./LICENSE)

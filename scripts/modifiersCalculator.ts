@@ -70,7 +70,8 @@ const generateNetworkPermissions = async (network: string) => {
       poolKey !== Pools.TENDERLY &&
       poolKey !== Pools.GHO_TENDERLY &&
       poolKey !== Pools.GHO &&
-      !pool.aclBlock
+      !pool.aclBlock &&
+      !pool.crossChainControllerBlock
     ) {
       console.log(`
           ------------------------------------
@@ -165,7 +166,7 @@ const generateNetworkPermissions = async (network: string) => {
         fromBlock =
           fullJson[poolKey]?.roles?.latestBlockNumber || pool.ghoBlock;
       }
-      console.log('fromBlock : ', fromBlock);
+
       if (fromBlock) {
         console.log(`
           ------------------------------------
