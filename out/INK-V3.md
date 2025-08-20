@@ -15,19 +15,6 @@
 ### Actions type
 | type |can be executed by |
 |----------|----------|
-|  updateReserveBorrowSettings |  Governance | |--------|--------|
-|  configureProtocolFees |  External Contract | |--------|--------|
-|  updateReserveCaps |  External Contract | |--------|--------|
-|  updateReserveSettings |  Governance | |--------|--------|
-|  configureCollateral |  Governance | |--------|--------|
-|  upgradeAaveTokens (a/v/s) |  External Contract | |--------|--------|
-|  upgradeAaveOracles |  External Contract | |--------|--------|
-|  reserveUpgradeability |  Governance | |--------|--------|
-|  pausePool |  External Contract,Multi-sig | |--------|--------|
-|  pauseAndFreezeReserve |  External Contract,Multi-sig | |--------|--------|
-|  reserveListing |  External Contract | |--------|--------|
-|  adminsConfiguration |  External Contract | |--------|--------|
-|  protocolUpgradeablity |  External Contract | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
 |  retryAndInvalidateMessages |  Multi-sig,Governance | |--------|--------|
 

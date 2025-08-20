@@ -174,9 +174,11 @@ export const generateTable = (network: string, pool: string): string => {
   let decentralizationTableBody = '';
   for (let contractName of Object.keys(poolPermitsByContract.contracts)) {
     const contract = poolPermitsByContract.contracts[contractName];
-    let govPermissions = {
-      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+    let govPermissions = pool === Pools.V3_WHITE_LABEL ? {
       ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.govV3?.contracts,
+      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.ppc?.contracts,
+    } : {
+      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
     };
     if (pool === Pools.V2_ARC) {
       govPermissions = {
@@ -218,6 +220,7 @@ export const generateTable = (network: string, pool: string): string => {
               ...getPermissionsByNetwork(network)['V3'].umbrella?.contracts,
             },
         govPermissions,
+        pool === Pools.V3_WHITE_LABEL ? true : false,
       );
     decentralizationTableBody += getTableBody([
       `[${contractName}](${explorerAddressUrlComposer(
@@ -233,7 +236,7 @@ export const generateTable = (network: string, pool: string): string => {
   // hardcode aave a/v/s tokens
   decentralizationTableBody += getTableBody([
     `Aave a/v/s tokens`,
-    `Governance`,
+    `${pool === Pools.V3_WHITE_LABEL ? 'PPC Multi-sig' : 'Governance'}`,
   ]);
   decentralizationTableBody += getLineSeparator(
     decentralizationHeaderTitles.length,
@@ -256,6 +259,7 @@ export const generateTable = (network: string, pool: string): string => {
             ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
           },
           getPermissionsByNetwork(network)['V3'].govV3?.contracts || {},
+          pool === Pools.V3_WHITE_LABEL ? true : false,
         );
       decentralizationTableBody += getTableBody([
         `[${contractName}](${explorerAddressUrlComposer(
@@ -281,24 +285,35 @@ export const generateTable = (network: string, pool: string): string => {
   // fill pool table
   let actionsTableBody = '';
   const actionExecutors = getActionExecutors(
-    {
-      ...poolPermitsByContract.contracts,
-      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
-      ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
-      ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
-      ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
-      ...getPermissionsByNetwork(network)['V3'].ppc?.contracts,
-      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.ppc?.contracts,
-      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.govV3?.contracts,
-      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.contracts,
-      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.collector?.contracts,
-      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.clinicSteward?.contracts,
-      ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.umbrella?.contracts,
-    },
-    {
-      ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
-      ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
-    },
+    pool === Pools.V3_WHITE_LABEL ?
+      {
+        ...poolPermitsByContract.contracts,
+        ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.govV3?.contracts,
+        ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.contracts,
+        ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.collector?.contracts,
+        ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.clinicSteward?.contracts,
+        ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.umbrella?.contracts,
+        ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.ppc?.contracts,
+      } :
+      {
+        ...poolPermitsByContract.contracts,
+        ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+        ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
+        ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
+        ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
+      },
+    pool === Pools.V3_WHITE_LABEL ?
+      {
+        ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.govV3?.contracts,
+        ...getPermissionsByNetwork(network)['V3_WHITE_LABEL']?.ppc?.contracts,
+      } :
+      {
+        ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
+        ...getPermissionsByNetwork(network)['V3'].ppc?.contracts,
+        ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
+        ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
+      },
+    pool === Pools.V3_WHITE_LABEL ? true : false,
   );
   for (let actionName of Object.keys(actionExecutors)) {
     if (Array.from(actionExecutors[actionName]).length > 0) {

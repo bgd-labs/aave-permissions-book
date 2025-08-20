@@ -28,7 +28,7 @@
 | type |can be executed by |
 |----------|----------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
-|  configureProtocolFees |  Governance,Multi-sig | |--------|--------|
+|  configureProtocolFees |  Governance | |--------|--------|
 |  updateReserveCaps |  Governance,Multi-sig | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
