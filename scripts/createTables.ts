@@ -38,7 +38,9 @@ export const generateTableAddress = (
   if (chainId) {
     const newContractsByAddress = generateContractsByAddress({
       ...getPermissionsByNetwork(chainId)['V3'].govV3?.contracts,
+      ...getPermissionsByNetwork(chainId)['V3'].ppc?.contracts,
       ...getPermissionsByNetwork(chainId)['V3_WHITE_LABEL']?.govV3?.contracts,
+      ...getPermissionsByNetwork(chainId)['V3_WHITE_LABEL']?.ppc?.contracts,
     });
     const networkContractsByAddress: Record<string, string> = {};
     Object.keys(newContractsByAddress).forEach((key) => {
@@ -108,8 +110,8 @@ export const generateTable = (network: string, pool: string): string => {
     ...networkPermits[pool].contracts,
     ...getPermissionsByNetwork(network)[pool].collector?.contracts,
     ...getPermissionsByNetwork(network)[pool].clinicSteward?.contracts,
-    ...getPermissionsByNetwork(network)[pool].umbrella?.contracts,
-    ...getPermissionsByNetwork(network)[pool].ppc?.contracts,
+    // ...getPermissionsByNetwork(network)[pool].umbrella?.contracts,
+    // ...getPermissionsByNetwork(network)[pool].ppc?.contracts,
   }
 
   if (!poolPermitsByContract?.contracts) {
@@ -160,7 +162,9 @@ export const generateTable = (network: string, pool: string): string => {
       ...getPermissionsByNetwork(ChainId.mainnet)['GHO'].contracts,
       ...getPermissionsByNetwork(network)['V3'].collector?.contracts,
       ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
+      ...getPermissionsByNetwork(network)['V3'].ppc?.contracts,
       ...getPermissionsByNetwork(network)['V3'].umbrella?.contracts,
+
     });
   }
   contractsByAddress = { ...contractsByAddress, ...v3Contracts };
@@ -218,6 +222,7 @@ export const generateTable = (network: string, pool: string): string => {
               ...getPermissionsByNetwork(network)['V3'].govV3?.contracts,
               ...getPermissionsByNetwork(network)['V3'].clinicSteward?.contracts,
               ...getPermissionsByNetwork(network)['V3'].umbrella?.contracts,
+              ...getPermissionsByNetwork(network)['V3'].ppc?.contracts,
             },
         govPermissions,
         pool === Pools.V3_WHITE_LABEL ? true : false,
