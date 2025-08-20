@@ -11,29 +11,43 @@ export enum Controller {
   GOV_V3 = 'Governance',
   MULTI_SIG = 'Multi-sig',
   EOA = 'External Contract',
+  PPC_MULTI_SIG = 'PPC Multi-sig',
 }
 
-export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
+export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts, isWhiteLabel: boolean) => {
   const actionsObject: Record<string, Set<string>> = {};
   Object.keys(actionsConfig).forEach((action) => {
     actionsObject[action] = new Set<string>();
-    if (
-      action === 'updateReserveBorrowSettings' ||
-      action === 'configureCollateral' ||
-      action === 'updateReserveSettings' ||
-      action === 'reserveUpgradeability'
-    ) {
-      actionsObject[action].add(Controller.GOV_V3);
-    } else {
-      for (let contractName of Object.keys(poolInfo)) {
-        const contract = poolInfo[contractName];
-        // search all modifiers
-        contract.modifiers.forEach((modifier) => {
-          const hasFunction = modifier.functions.some((functionName: string) =>
-            // @ts-ignore
-            actionsConfig[action].includes(functionName),
-          );
-          if (hasFunction) {
+    // if (
+    //   action === 'updateReserveBorrowSettings' ||
+    //   action === 'configureCollateral' ||
+    //   action === 'updateReserveSettings' ||
+    //   action === 'reserveUpgradeability'
+    // ) {
+    //   actionsObject[action].add(Controller.GOV_V3);
+    // } else {
+    for (let contractName of Object.keys(poolInfo)) {
+      const contract = poolInfo[contractName];
+      // search all modifiers
+      contract.modifiers.forEach((modifier) => {
+        const hasFunction = modifier.functions.some((functionName: string) =>
+          // @ts-ignore
+          actionsConfig[action].includes(functionName),
+        );
+        if (hasFunction) {
+          if (
+            action === 'updateReserveBorrowSettings' ||
+            action === 'configureCollateral' ||
+            action === 'updateReserveSettings' ||
+            action === 'reserveUpgradeability' ||
+            action === 'configureProtocolFees'
+          ) {
+            if (isWhiteLabel) {
+              actionsObject[action].add(Controller.PPC_MULTI_SIG);
+            } else {
+              actionsObject[action].add(Controller.GOV_V3);
+            }
+          } else {
             modifier.addresses.map((addressInfo) => {
               if (addressInfo.owners.length > 0) {
                 actionsObject[action].add(Controller.MULTI_SIG);
@@ -42,6 +56,7 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
                   addressInfo.address,
                   poolInfo,
                   govInfo,
+                  isWhiteLabel,
                 );
                 if (ownedInfo.owned) {
                   actionsObject[action].add(ownedInfo.ownedBy);
@@ -51,9 +66,10 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {
               }
             });
           }
-        });
-      }
+        }
+      });
     }
+    // }
   });
 
   return actionsObject;
@@ -63,6 +79,7 @@ export const getLevelOfDecentralization = (
   contract: ContractInfo,
   poolInfo: Contracts,
   govInfo: Contracts,
+  isWhiteLabel: boolean,
 ): Decentralization => {
   let upgradeable = false;
   let ownedBy = Controller.NONE;
@@ -74,13 +91,14 @@ export const getLevelOfDecentralization = (
       contract.proxyAdmin,
       poolInfo,
       govInfo,
+      isWhiteLabel,
     );
 
     if (proxyOwnership.owned) {
       ownedBy = proxyOwnership.ownedBy;
     }
   } else {
-    let ownership = isOwnedAndByWho(contract.address, poolInfo, govInfo);
+    let ownership = isOwnedAndByWho(contract.address, poolInfo, govInfo, isWhiteLabel);
     if (ownership.owned) {
       ownedBy = ownership.ownedBy;
     }
@@ -137,13 +155,14 @@ const isOwnedAndByWho = (
   address: string,
   poolInfo: Contracts,
   govInfo: Contracts,
+  isWhiteLabel: boolean,
 ): { owned: boolean; ownedBy: Controller } => {
   let ownerInfo = { owned: false, ownedBy: Controller.EOA };
   for (let contractName of Object.keys(poolInfo)) {
     const contract = poolInfo[contractName];
     if (contract.address?.toLowerCase() === address.toLowerCase()) {
       if (contract.proxyAdmin) {
-        ownerInfo = isOwnedAndByWho(contract.proxyAdmin, poolInfo, govInfo);
+        ownerInfo = isOwnedAndByWho(contract.proxyAdmin, poolInfo, govInfo, isWhiteLabel);
       } else {
         contract.modifiers.forEach((modifierInfo) => {
           if (modifierInfo.modifier === 'onlyOwner') {
@@ -156,7 +175,11 @@ const isOwnedAndByWho = (
                 modifierInfo.addresses[0].address,
               );
               if (ownedByGov) {
-                ownerInfo = { owned: true, ownedBy: Controller.GOV_V3 };
+                if (isWhiteLabel) {
+                  ownerInfo = { owned: true, ownedBy: Controller.PPC_MULTI_SIG };
+                } else {
+                  ownerInfo = { owned: true, ownedBy: Controller.GOV_V3 };
+                }
               } else {
                 ownerInfo = { owned: true, ownedBy: Controller.EOA };
               }
@@ -174,13 +197,14 @@ const isAdministeredAndByWho = (
   address: string,
   poolInfo: Contracts,
   govInfo: Contracts,
+  isWhiteLabel: boolean,
 ): { owned: boolean; ownedBy: Controller } => {
   let ownerInfo = { owned: false, ownedBy: Controller.EOA };
   for (let contractName of Object.keys(poolInfo)) {
     const contract = poolInfo[contractName];
     if (contract.address?.toLowerCase() === address.toLowerCase()) {
       if (contract.proxyAdmin) {
-        ownerInfo = isOwnedAndByWho(contract.proxyAdmin, poolInfo, govInfo);
+        ownerInfo = isOwnedAndByWho(contract.proxyAdmin, poolInfo, govInfo, isWhiteLabel);
       } else {
         contract.modifiers.forEach((modifierInfo) => {
           if (
@@ -190,6 +214,7 @@ const isAdministeredAndByWho = (
               contractName !== 'GhoStewardV2') ||
             modifierInfo.modifier === 'onlyEmergencyAdmin' ||
             modifierInfo.modifier === 'onlyDefaultAdmin'
+            // modifierInfo.modifier === 'onlyPayloadsManager'
           ) {
             if (modifierInfo.addresses[0].owners.length > 0) {
               ownerInfo = { owned: true, ownedBy: Controller.MULTI_SIG };
@@ -200,7 +225,11 @@ const isAdministeredAndByWho = (
                 modifierInfo.addresses[0].address,
               );
               if (ownedByGov) {
-                ownerInfo = { owned: true, ownedBy: Controller.GOV_V3 };
+                if (isWhiteLabel) {
+                  ownerInfo = { owned: true, ownedBy: Controller.PPC_MULTI_SIG };
+                } else {
+                  ownerInfo = { owned: true, ownedBy: Controller.GOV_V3 };
+                }
               } else {
                 ownerInfo = { owned: true, ownedBy: Controller.EOA };
               }

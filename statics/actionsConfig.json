@@ -10,7 +10,10 @@
     "updateFlashloanPremiumToProtocol",
     "updateFlashloanPremiums"
   ],
-  "updateReserveCaps": ["setBorrowCap", "setSupplyCap"],
+  "updateReserveCaps": [
+    "setBorrowCap",
+    "setSupplyCap"
+  ],
   "updateReserveSettings": [
     "setEModeCategory",
     "setAssetEModeCategory",
@@ -24,11 +27,24 @@
     "setLiquidationProtocolFee",
     "setDebtCeiling"
   ],
-  "upgradeAaveTokens (a/v/s)": ["updateAToken", "updateVariableDebtToken"],
-  "upgradeAaveOracles": ["setAssetSources", "setFallbackOracle"],
-  "reserveUpgradeability": ["setReserveInterestRateStrategyAddress"],
-  "pausePool": ["setPoolPause"],
-  "pauseAndFreezeReserve": ["setReserveFreeze", "setReservePause"],
+  "upgradeAaveTokens (a/v/s)": [
+    "updateAToken",
+    "updateVariableDebtToken"
+  ],
+  "upgradeAaveOracles": [
+    "setAssetSources",
+    "setFallbackOracle"
+  ],
+  "reserveUpgradeability": [
+    "setReserveInterestRateStrategyAddress"
+  ],
+  "pausePool": [
+    "setPoolPause"
+  ],
+  "pauseAndFreezeReserve": [
+    "setReserveFreeze",
+    "setReservePause"
+  ],
   "reserveListing": [
     "initReserves",
     "enableAssets",
@@ -36,7 +52,10 @@
     "initReserve",
     "dropReserve"
   ],
-  "adminsConfiguration": ["setACLManager", "setACLAdmin"],
+  "adminsConfiguration": [
+    "setACLManager",
+    "setACLAdmin"
+  ],
   "protocolUpgradeablity": [
     "setAddress",
     "setPoolImpl",
@@ -66,7 +85,9 @@
     "setVotingConfigs",
     "setPowerStrategy"
   ],
-  "cancelProposal": ["cancelProposal"],
+  "cancelProposal": [
+    "cancelProposal"
+  ],
   "updateRiskParameters": [
     "updateCaps",
     "updateRates",

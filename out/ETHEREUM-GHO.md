@@ -13,10 +13,6 @@
 ### Actions type
 | type |can be executed by |
 |----------|----------|
-|  updateReserveBorrowSettings |  Governance | |--------|--------|
-|  updateReserveSettings |  Governance | |--------|--------|
-|  configureCollateral |  Governance | |--------|--------|
-|  reserveUpgradeability |  Governance | |--------|--------|
 |  adiConfigurations |  Governance | |--------|--------|
 |  retryAndInvalidateMessages |  Multi-sig,Governance | |--------|--------|
 |  configureGovernance |  Governance | |--------|--------|

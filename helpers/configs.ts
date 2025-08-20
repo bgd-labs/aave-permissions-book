@@ -221,6 +221,8 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.json',
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         governanceAddressBook: GovernanceV3Ethereum,
+        ppcPermissionsJson: './statics/functionsPermissionsPpcV1.json',
+        ppcAddressBook: { ...UmbrellaEthereum, ...MiscEthereum },
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
         granularGuardianBlock: 20324867,
@@ -233,6 +235,7 @@ export const networkConfigs: NetworkConfigs = {
           '0x6Abb61beb5848B476d026C4934E8a6415e2E75a8': 'HyperLaneAdapter',
         },
         clinicStewardBlock: 21967120,
+
       },
       [Pools.LIDO]: {
         collectorBlock: 21765718,
@@ -1056,19 +1059,15 @@ export const networkConfigs: NetworkConfigs = {
       [Pools.V3_WHITE_LABEL]: {
         aclBlock: 19948732,
         collectorBlock: 19948732,
-        granularGuardianBlock: 19948732,
-        crossChainControllerBlock: 19948732,
         permissionsJson: './statics/functionsPermissionsV3.json',
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         addressBook: {
           ...AaveV3InkWhitelabel,
           ...MiscInkWhitelabel,
         },
-        governanceAddressBook: {
+        ppcPermissionsJson: './statics/functionsPermissionsPpcV2.json',
+        ppcAddressBook: {
           ...GovernanceV3InkWhitelabel,
           ...MiscInkWhitelabel
-        },
-        addresses: {
         },
       },
       [Pools.V3]: {
