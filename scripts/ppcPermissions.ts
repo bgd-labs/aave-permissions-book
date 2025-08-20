@@ -17,7 +17,7 @@ export const resolvePpcModifiers = async (
   addressBook: any,
   provider: Client,
   permissionsObject: PermissionsJson,
-  // chainId: typeof ChainId | number,
+  chainId: typeof ChainId | number,
 ) => {
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
@@ -68,17 +68,6 @@ export const resolvePpcModifiers = async (
       address: addressBook.PERMISSIONED_PAYLOADS_CONTROLLER,
       proxyAdmin: ppcProxyAdmin,
       modifiers: [
-        {
-          modifier: 'onlyGuardian',
-          addresses: [
-            {
-              address: pcGuardian,
-              owners: await getSafeOwners(provider, pcGuardian),
-              signersThreshold: await getSafeThreshold(provider, pcGuardian),
-            },
-          ],
-          functions: roles['PermissionedPayloadsController']['onlyGuardian'],
-        },
         {
           modifier: 'onlyOwnerOrGuardian',
           addresses: [
@@ -135,6 +124,22 @@ export const resolvePpcModifiers = async (
         },
       ],
     };
+
+    if (chainId === ChainId.mainnet) {
+      obj['PermissionedPayloadsController'].modifiers.push(
+        {
+          modifier: 'onlyGuardian',
+          addresses: [
+            {
+              address: pcGuardian,
+              owners: await getSafeOwners(provider, pcGuardian),
+              signersThreshold: await getSafeThreshold(provider, pcGuardian),
+            },
+          ],
+          functions: roles['PermissionedPayloadsController']['onlyGuardian'],
+        },
+      );
+    }
   }
 
   if (

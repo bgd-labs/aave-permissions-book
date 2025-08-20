@@ -11,6 +11,7 @@ export enum Controller {
   GOV_V3 = 'Governance',
   MULTI_SIG = 'Multi-sig',
   EOA = 'External Contract',
+  PPC_MULTI_SIG = 'PPC Multi-sig',
 }
 
 export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts) => {

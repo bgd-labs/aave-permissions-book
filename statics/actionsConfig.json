@@ -94,8 +94,5 @@
     "updateCollateralSide",
     "updateLstPriceCaps",
     "updateStablePriceCaps"
-  ],
-  "createPermissionedPayloads": [
-    "createPayload"
   ]
 }

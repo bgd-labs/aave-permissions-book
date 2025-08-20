@@ -5,22 +5,31 @@
 |----------|----------|
 |  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [GranularGuardian](https://explorer.inkonchain.com//address/0xa2bDB2335Faf1940c99654c592B1a80618d79Fc9) |  not upgradeable | |--------|--------|
-|  [PayloadsController](https://explorer.inkonchain.com//address/0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf) |  External Contract | |--------|--------|
+|  [PayloadsController](https://explorer.inkonchain.com//address/0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf) |  Governance | |--------|--------|
 |  [PayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0xf2ba11f27ae9c11eb5a6c453c2421f6c0b29c700) |  not upgradeable | |--------|--------|
 |  [Executor_lvl1](https://explorer.inkonchain.com//address/0x47aAdaAE1F05C978E6aBb7568d11B7F6e0FC4d6A) |  not upgradeable | |--------|--------|
 |  [Ink native adapter](https://explorer.inkonchain.com//address/0xC2cD4F76B7a77AEaE3C04A9B6B105EC1Ad28e984) |  not upgradeable | |--------|--------|
-|  [CrossChainController](https://explorer.inkonchain.com//address/0x990B75fD1a2345D905a385dBC6e17BEe0Cb2f505) |  External Contract | |--------|--------|
+|  [CrossChainController](https://explorer.inkonchain.com//address/0x990B75fD1a2345D905a385dBC6e17BEe0Cb2f505) |  Governance | |--------|--------|
 |  [CrossChainControllerProxyAdmin](https://explorer.inkonchain.com//address/0x0c62e1e46e91bb2c277387bcb1b2887ed3267b9c) |  not upgradeable | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
 |----------|----------|
 |  updateReserveBorrowSettings |  Governance | |--------|--------|
+|  configureProtocolFees |  External Contract | |--------|--------|
+|  updateReserveCaps |  External Contract | |--------|--------|
 |  updateReserveSettings |  Governance | |--------|--------|
 |  configureCollateral |  Governance | |--------|--------|
+|  upgradeAaveTokens (a/v/s) |  External Contract | |--------|--------|
+|  upgradeAaveOracles |  External Contract | |--------|--------|
 |  reserveUpgradeability |  Governance | |--------|--------|
-|  adiConfigurations |  External Contract | |--------|--------|
-|  retryAndInvalidateMessages |  Multi-sig,External Contract | |--------|--------|
+|  pausePool |  External Contract,Multi-sig | |--------|--------|
+|  pauseAndFreezeReserve |  External Contract,Multi-sig | |--------|--------|
+|  reserveListing |  External Contract | |--------|--------|
+|  adminsConfiguration |  External Contract | |--------|--------|
+|  protocolUpgradeablity |  External Contract | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  retryAndInvalidateMessages |  Multi-sig,Governance | |--------|--------|
 
 ### Governance V3 Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -33,7 +42,7 @@
 |  [PayloadsController](https://explorer.inkonchain.com//address/0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf) |  [PayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0xf2Ba11f27ae9c11eB5a6C453c2421F6c0B29c700) |  onlyOwnerOrGuardian |  [Aave Governance Guardian Ink](https://explorer.inkonchain.com//address/0x1bBcC6F0BB563067Ca45450023a13E34fa963Fa9), [Executor_lvl1](https://explorer.inkonchain.com//address/0x47aAdaAE1F05C978E6aBb7568d11B7F6e0FC4d6A) |  updateGuardian | |--------|--------|--------|--------|--------|
 |  [PayloadsController](https://explorer.inkonchain.com//address/0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf) |  [PayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0xf2Ba11f27ae9c11eB5a6C453c2421F6c0B29c700) |  onlyRescueGuardian |  [Executor_lvl1](https://explorer.inkonchain.com//address/0x47aAdaAE1F05C978E6aBb7568d11B7F6e0FC4d6A) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [PayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0xf2ba11f27ae9c11eb5a6c453c2421f6c0b29c700) |  - |  onlyOwner |  [Executor_lvl1](https://explorer.inkonchain.com//address/0x47aAdaAE1F05C978E6aBb7568d11B7F6e0FC4d6A) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [Executor_lvl1](https://explorer.inkonchain.com//address/0x47aAdaAE1F05C978E6aBb7568d11B7F6e0FC4d6A) |  - |  onlyOwner |  [Deployer](https://explorer.inkonchain.com//address/0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6) |  executeTransaction | |--------|--------|--------|--------|--------|
+|  [Executor_lvl1](https://explorer.inkonchain.com//address/0x47aAdaAE1F05C978E6aBb7568d11B7F6e0FC4d6A) |  - |  onlyOwner |  [PayloadsController](https://explorer.inkonchain.com//address/0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf) |  executeTransaction | |--------|--------|--------|--------|--------|
 |  [Ink native adapter](https://explorer.inkonchain.com//address/0xC2cD4F76B7a77AEaE3C04A9B6B105EC1Ad28e984) |  - |  trustedRemote |  [CrossChainController(Eth)](https://explorer.inkonchain.com//address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) |  receiveMessage | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://explorer.inkonchain.com//address/0x990B75fD1a2345D905a385dBC6e17BEe0Cb2f505) |  [CrossChainControllerProxyAdmin](https://explorer.inkonchain.com//address/0x0C62e1e46E91bB2c277387BcB1b2887ed3267b9c) |  onlyOwner |  [Executor_lvl1](https://explorer.inkonchain.com//address/0x47aAdaAE1F05C978E6aBb7568d11B7F6e0FC4d6A) |  approveSenders, removeSenders, enableBridgeAdapters, disableBridgeAdapters, updateMessagesValidityTimestamp, allowReceiverBridgeAdapters, disallowReceiverBridgeAdapters | |--------|--------|--------|--------|--------|
 |  [CrossChainController](https://explorer.inkonchain.com//address/0x990B75fD1a2345D905a385dBC6e17BEe0Cb2f505) |  [CrossChainControllerProxyAdmin](https://explorer.inkonchain.com//address/0x0C62e1e46E91bB2c277387BcB1b2887ed3267b9c) |  onlyOwnerOrGuardian |  [GranularGuardian](https://explorer.inkonchain.com//address/0xa2bDB2335Faf1940c99654c592B1a80618d79Fc9), [Executor_lvl1](https://explorer.inkonchain.com//address/0x47aAdaAE1F05C978E6aBb7568d11B7F6e0FC4d6A) |  retryEnvelope, retryTransaction, updateGuardian | |--------|--------|--------|--------|--------|

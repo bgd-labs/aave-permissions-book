@@ -14,10 +14,10 @@
 |  [ACLManager](https://explorer.inkonchain.com//address/0x86E2938daE289763D4e09a7e42c5cCcA62Cf9809) |  not upgradeable | |--------|--------|
 |  [Collector](https://explorer.inkonchain.com//address/0x9138E2cAdFEB23AFFdc0419F2912CaB8F135dba9) |  External Contract | |--------|--------|
 |  [CollectorProxyAdmin](https://explorer.inkonchain.com//address/0xd059ec2cf261858e23fb5a3a5debd929501e99e8) |  not upgradeable | |--------|--------|
-|  Aave a/v/s tokens |  Governance | |--------|--------|
 |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8a2de8be84a4c1650c6d225c31db28277adf1fc8) |  not upgradeable | |--------|--------|
-|  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  Not owned | |--------|--------|
+|  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  External Contract | |--------|--------|
 |  [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  not upgradeable | |--------|--------|
+|  Aave a/v/s tokens |  Governance | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
@@ -35,8 +35,8 @@
 |  reserveListing |  External Contract | |--------|--------|
 |  adminsConfiguration |  External Contract | |--------|--------|
 |  protocolUpgradeablity |  External Contract | |--------|--------|
-|  adiConfigurations |  External Contract | |--------|--------|
-|  retryAndInvalidateMessages |  Multi-sig,External Contract | |--------|--------|
+|  adiConfigurations |  Governance | |--------|--------|
+|  retryAndInvalidateMessages |  Multi-sig,Governance | |--------|--------|
 
 ### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
@@ -58,12 +58,17 @@
 |  [Collector](https://explorer.inkonchain.com//address/0x9138E2cAdFEB23AFFdc0419F2912CaB8F135dba9) |  [CollectorProxyAdmin](https://explorer.inkonchain.com//address/0xd059Ec2CF261858e23fB5a3a5debD929501e99e8) |  onlyFundsAdmin |  [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  approve, transfer, setFundsAdmin, createStream | |--------|--------|--------|--------|--------|
 |  [Collector](https://explorer.inkonchain.com//address/0x9138E2cAdFEB23AFFdc0419F2912CaB8F135dba9) |  [CollectorProxyAdmin](https://explorer.inkonchain.com//address/0xd059Ec2CF261858e23fB5a3a5debD929501e99e8) |  onlyAdminOrRecipient |  [CollectorProxyAdmin](https://explorer.inkonchain.com//address/0xd059Ec2CF261858e23fB5a3a5debD929501e99e8), [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  withdrawFromStream, cancelStream | |--------|--------|--------|--------|--------|
 |  [CollectorProxyAdmin](https://explorer.inkonchain.com//address/0xd059ec2cf261858e23fb5a3a5debd929501e99e8) |  - |  onlyOwner |  [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
+|  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8a2de8be84a4c1650c6d225c31db28277adf1fc8) |  - |  onlyOwner |  [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
+|  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8A2dE8BE84A4c1650C6D225c31Db28277adf1fC8) |  onlyOwnerOrGuardian |  [WhiteLabel Ink super-admin multisig](https://explorer.inkonchain.com//address/0x2e8090716C5a25332cf963d454250B88bf04E6dC), [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  updateGuardian | |--------|--------|--------|--------|--------|
+|  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8A2dE8BE84A4c1650C6D225c31Db28277adf1fC8) |  onlyRescueGuardian |  [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
+|  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8A2dE8BE84A4c1650C6D225c31Db28277adf1fC8) |  onlyPayloadsManagerOrGuardian |  [WhiteLabel Ink super-admin multisig](https://explorer.inkonchain.com//address/0x2e8090716C5a25332cf963d454250B88bf04E6dC), [WhiteLabel Ink super-admin multisig](https://explorer.inkonchain.com//address/0x2e8090716C5a25332cf963d454250B88bf04E6dC) |  cancelPayload | |--------|--------|--------|--------|--------|
+|  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8A2dE8BE84A4c1650C6D225c31Db28277adf1fC8) |  onlyPayloadsManager |  [WhiteLabel Ink super-admin multisig](https://explorer.inkonchain.com//address/0x2e8090716C5a25332cf963d454250B88bf04E6dC) |  createPayload | |--------|--------|--------|--------|--------|
+|  [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  - |  onlyOwner |  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  executeTransaction | |--------|--------|--------|--------|--------|
 
-### Governance V3 Contracts 
+### Permissioned Payloads Controller Contracts 
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
 |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8a2de8be84a4c1650c6d225c31db28277adf1fc8) |  - |  onlyOwner |  [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
-|  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8A2dE8BE84A4c1650C6D225c31Db28277adf1fC8) |  onlyGuardian |  [WhiteLabel Ink super-admin multisig](https://explorer.inkonchain.com//address/0x2e8090716C5a25332cf963d454250B88bf04E6dC) |  setExecutionDelay | |--------|--------|--------|--------|--------|
 |  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8A2dE8BE84A4c1650C6D225c31Db28277adf1fC8) |  onlyOwnerOrGuardian |  [WhiteLabel Ink super-admin multisig](https://explorer.inkonchain.com//address/0x2e8090716C5a25332cf963d454250B88bf04E6dC), [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  updateGuardian | |--------|--------|--------|--------|--------|
 |  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8A2dE8BE84A4c1650C6D225c31Db28277adf1fC8) |  onlyRescueGuardian |  [PermissionedExecutor](https://explorer.inkonchain.com//address/0x1dF462e2712496373A347f8ad10802a5E95f053D) |  emergencyTokenTransfer, emergencyEtherTransfer | |--------|--------|--------|--------|--------|
 |  [PermissionedPayloadsController](https://explorer.inkonchain.com//address/0x1dE9CB9420Dd1f2cCeFFf9393E126b800D413b7A) |  [PermissionedPayloadsControllerProxyAdmin](https://explorer.inkonchain.com//address/0x8A2dE8BE84A4c1650C6D225c31Db28277adf1fC8) |  onlyPayloadsManagerOrGuardian |  [WhiteLabel Ink super-admin multisig](https://explorer.inkonchain.com//address/0x2e8090716C5a25332cf963d454250B88bf04E6dC), [WhiteLabel Ink super-admin multisig](https://explorer.inkonchain.com//address/0x2e8090716C5a25332cf963d454250B88bf04E6dC) |  cancelPayload | |--------|--------|--------|--------|--------|

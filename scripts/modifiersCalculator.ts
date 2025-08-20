@@ -414,7 +414,7 @@ const generateNetworkPermissions = async (network: string) => {
           ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
           : provider,
         getStaticPermissionsJson(pool.ppcPermissionsJson),
-        // Number(network),
+        Number(network),
       );
       ppc.contracts = ppcPermissions;
     }
