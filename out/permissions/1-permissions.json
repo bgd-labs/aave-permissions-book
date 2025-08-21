@@ -7353,6 +7353,96 @@
             ]
           }
         ]
+      },
+      "Gho Core Direct Minter": {
+        "address": "0x593B09afc075B3c326CE2AD7750888645BA8943d",
+        "proxyAdmin": "0xf02d4931e0d5c79af9094cd9dff16ea6e3d9acb8",
+        "modifiers": [
+          {
+            "modifier": "onlyOwnerOrGuardian",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x8513e6F37dBc52De87b166980Fa3F50639694B60",
+                "owners": [
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 3
+              }
+            ],
+            "functions": [
+              "mintAndSupply",
+              "withdrawAndBurn",
+              "updateGuardian"
+            ]
+          },
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "renounceOwnership",
+              "transferOwnership"
+            ]
+          }
+        ]
+      },
+      "Gho Lido Direct Minter": {
+        "address": "0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285",
+        "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476",
+        "modifiers": [
+          {
+            "modifier": "onlyOwnerOrGuardian",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              },
+              {
+                "address": "0x8513e6F37dBc52De87b166980Fa3F50639694B60",
+                "owners": [
+                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
+                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+                  "0xb647055A9915bF9c8021a684E175A353525b9890",
+                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
+                ],
+                "signersThreshold": 3
+              }
+            ],
+            "functions": [
+              "mintAndSupply",
+              "withdrawAndBurn",
+              "updateGuardian"
+            ]
+          },
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "renounceOwnership",
+              "transferOwnership"
+            ]
+          }
+        ]
       }
     },
     "roles": {
@@ -7368,7 +7458,7 @@
           "0x46Aa1063e5265b43663E81329333B47c517A5409"
         ]
       },
-      "latestBlockNumber": 23189412
+      "latestBlockNumber": 23190248
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -7388,7 +7478,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23189412
+        "latestBlockNumber": 23190248
       },
       "GSM_USDT": {
         "role": {
@@ -7407,7 +7497,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23189412
+        "latestBlockNumber": 23190248
       }
     },
     "govV3": {

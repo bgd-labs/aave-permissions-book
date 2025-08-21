@@ -5,23 +5,33 @@
     "functions": [
       {
         "name": "mint",
-        "roles": ["onlyFacilitator"]
+        "roles": [
+          "onlyFacilitator"
+        ]
       },
       {
         "name": "burn",
-        "roles": ["onlyFacilitator"]
+        "roles": [
+          "onlyFacilitator"
+        ]
       },
       {
         "name": "addFacilitator",
-        "roles": ["onlyFacilitatorManager"]
+        "roles": [
+          "onlyFacilitatorManager"
+        ]
       },
       {
         "name": "removeFacilitator",
-        "roles": ["onlyFacilitatorManager"]
+        "roles": [
+          "onlyFacilitatorManager"
+        ]
       },
       {
         "name": "setFacilitatorBucketCapacity",
-        "roles": ["onlyBucketManager"]
+        "roles": [
+          "onlyBucketManager"
+        ]
       }
     ]
   },
@@ -31,31 +41,45 @@
     "functions": [
       {
         "name": "rescueTokens",
-        "roles": ["onlyRescuer"]
+        "roles": [
+          "onlyRescuer"
+        ]
       },
       {
         "name": "setSwapFreeze",
-        "roles": ["onlySwapFreezer"]
+        "roles": [
+          "onlySwapFreezer"
+        ]
       },
       {
         "name": "seize",
-        "roles": ["onlyLiquidator"]
+        "roles": [
+          "onlyLiquidator"
+        ]
       },
       {
         "name": "burnAfterSeize",
-        "roles": ["onlyLiquidator"]
+        "roles": [
+          "onlyLiquidator"
+        ]
       },
       {
         "name": "updateFeeStrategy",
-        "roles": ["onlyConfigurator"]
+        "roles": [
+          "onlyConfigurator"
+        ]
       },
       {
         "name": "updateExposureCap",
-        "roles": ["onlyConfigurator"]
+        "roles": [
+          "onlyConfigurator"
+        ]
       },
       {
         "name": "updateGhoTreasury",
-        "roles": ["onlyConfigurator"]
+        "roles": [
+          "onlyConfigurator"
+        ]
       }
     ]
   },
@@ -64,11 +88,15 @@
     "functions": [
       {
         "name": "addGsm",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "removeGsm",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -77,27 +105,75 @@
     "functions": [
       {
         "name": "setControlledFacilitator",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "updateGsmBuySellFees",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
       },
       {
         "name": "updateGsmExposureCap",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
       },
       {
         "name": "updateGhoBorrowRate",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
       },
       {
         "name": "updateGhoBorrowCap",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
       },
       {
         "name": "updateFacilitatorBucketCapacity",
-        "roles": ["onlyRiskCouncil"]
+        "roles": [
+          "onlyRiskCouncil"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "Facilitator",
+    "proxyAdmin": true,
+    "functions": [
+      {
+        "name": "mintAndSupply",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      },
+      {
+        "name": "withdrawAndBurn",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      },
+      {
+        "name": "updateGuardian",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      },
+      {
+        "name": "renounceOwnership",
+        "roles": [
+          "onlyOwner"
+        ]
+      },
+      {
+        "name": "transferOwnership",
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   }

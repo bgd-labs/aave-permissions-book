@@ -10,9 +10,10 @@ import { ChainId } from '@bgd-labs/toolbox';
 import { generateRoles } from '../helpers/jsonParsers.js';
 import { getSafeOwners, getSafeThreshold } from '../helpers/guardian.js';
 import { ghoABI } from '../abis/ghoABI.js';
-import { IOwnable_ABI } from '@bgd-labs/aave-address-book/abis';
+import { IOwnable_ABI, IWithGuardian_ABI } from '@bgd-labs/aave-address-book/abis';
 import { ghoStewardV2 } from '../abis/ghoStewardV2.js';
 import { Address, Client, getAddress, getContract } from 'viem';
+import { getProxyAdmin } from '../helpers/proxyAdmin.js';
 
 const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
   const cleanAddresses: AddressInfo[] = [];
@@ -36,6 +37,7 @@ export const resolveGHOModifiers = async (
   chainId: typeof ChainId | number,
   adminRoles: Record<string, string[]>,
   gsmAdminRoles: Record<string, Roles>,
+  addresses: Record<string, string>,
 ): Promise<Contracts> => {
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
@@ -257,6 +259,64 @@ export const resolveGHOModifiers = async (
       },
     ],
   };
+
+  for (const [index, facilitator] of facilitators.entries()) {
+    const facilitatorOwnableContract = getContract({ address: getAddress(facilitator), abi: IOwnable_ABI, client: provider });
+    const facilitatorGuardianContract = getContract({ address: getAddress(facilitator), abi: IWithGuardian_ABI, client: provider });
+    try {
+      const facilitatorOwner = await facilitatorOwnableContract.read.owner() as Address;
+      const facilitatorGuardian = await facilitatorGuardianContract.read.guardian() as Address;
+
+      const proxyAdmin = await getProxyAdmin(
+        facilitator,
+        provider,
+      );
+      console.log('proxyAdmin: ', proxyAdmin);
+
+      let facilitatorName = addresses[facilitator];
+      if (!facilitatorName) {
+        facilitatorName = `facilitator-${index}`;
+      }
+
+      obj[`${facilitatorName}`] = {
+        address: facilitator,
+        proxyAdmin,
+        modifiers: [
+          {
+            modifier: 'onlyOwnerOrGuardian',
+            addresses: [
+              {
+                address: facilitatorOwner,
+                owners: await getSafeOwners(provider, facilitatorOwner),
+                signersThreshold: await getSafeThreshold(provider, facilitatorOwner),
+              },
+              {
+                address: facilitatorGuardian,
+                owners: await getSafeOwners(provider, facilitatorGuardian),
+                signersThreshold: await getSafeThreshold(provider, facilitatorGuardian),
+              },
+            ],
+            functions: roles['Facilitator']['onlyOwnerOrGuardian'],
+          },
+          {
+            modifier: 'onlyOwner',
+            addresses: [
+              {
+                address: facilitatorOwner,
+                owners: await getSafeOwners(provider, facilitatorOwner),
+                signersThreshold: await getSafeThreshold(provider, facilitatorOwner),
+              },
+            ],
+            functions: roles['Facilitator']['onlyOwner'],
+          },
+        ],
+      };
+      // console.log('obj: ', obj[`${facilitator}`]);
+    } catch (error) {
+      // do nothing
+    }
+  }
+
 
   return obj;
 };

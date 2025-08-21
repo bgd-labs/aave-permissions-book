@@ -228,6 +228,7 @@ const generateNetworkPermissions = async (network: string) => {
               Number(network),
               admins.role,
               gsmAdmins,
+              pool.addresses || {},
             );
 
           }
