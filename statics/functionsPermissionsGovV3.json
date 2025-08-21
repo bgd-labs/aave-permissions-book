@@ -5,36 +5,51 @@
     "functions": [
       {
         "name": "updateGasLimit",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "addVotingPortals",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "removeVotingPortals",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setVotingConfigs",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
-
       {
         "name": "setPowerStrategy",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "rescueVotingPortal",
-        "roles": ["onlyGuardian"]
+        "roles": [
+          "onlyGuardian"
+        ]
       },
       {
         "name": "cancelProposal",
-        "roles": ["onlyGuardian"]
+        "roles": [
+          "onlyGuardian"
+        ]
       },
       {
         "name": "updateGuardian",
-        "roles": ["onlyOwnerOrGuardian"]
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
       }
     ]
   },
@@ -44,11 +59,15 @@
     "functions": [
       {
         "name": "setStartVotingGasLimit",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "setVoteViaPortalGasLimit",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -58,7 +77,9 @@
     "functions": [
       {
         "name": "updateGasLimit",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -68,19 +89,27 @@
     "functions": [
       {
         "name": "retryEnvelope",
-        "roles": ["onlyRetryGuardian"]
+        "roles": [
+          "onlyRetryGuardian"
+        ]
       },
       {
         "name": "retryTransaction",
-        "roles": ["onlyRetryGuardian"]
+        "roles": [
+          "onlyRetryGuardian"
+        ]
       },
       {
         "name": "solveEmergency",
-        "roles": ["onlyEmergencyGuardian"]
+        "roles": [
+          "onlyEmergencyGuardian"
+        ]
       },
       {
         "name": "updateGuardian",
-        "roles": ["onlyDefaultAdmin"]
+        "roles": [
+          "onlyDefaultAdmin"
+        ]
       }
     ]
   },
@@ -90,23 +119,33 @@
     "functions": [
       {
         "name": "emergencyTokenTransfer",
-        "roles": ["onlyRescueGuardian"]
+        "roles": [
+          "onlyRescueGuardian"
+        ]
       },
       {
         "name": "emergencyEtherTransfer",
-        "roles": ["onlyRescueGuardian"]
+        "roles": [
+          "onlyRescueGuardian"
+        ]
       },
       {
         "name": "updateExecutors",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "cancelPayload",
-        "roles": ["onlyGuardian"]
+        "roles": [
+          "onlyGuardian"
+        ]
       },
       {
         "name": "updateGuardian",
-        "roles": ["onlyOwnerOrGuardian"]
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
       }
     ]
   },
@@ -115,7 +154,9 @@
     "functions": [
       {
         "name": "executeTransaction",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -124,7 +165,9 @@
     "functions": [
       {
         "name": "setEmergency",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   },
@@ -134,63 +177,93 @@
     "functions": [
       {
         "name": "emergencyTokenTransfer",
-        "roles": ["onlyRescueGuardian"]
+        "roles": [
+          "onlyRescueGuardian"
+        ]
       },
       {
         "name": "emergencyEtherTransfer",
-        "roles": ["onlyRescueGuardian"]
+        "roles": [
+          "onlyRescueGuardian"
+        ]
       },
       {
         "name": "forwardMessage",
-        "roles": ["onlyApprovedSenders"]
+        "roles": [
+          "onlyApprovedSenders"
+        ]
       },
       {
         "name": "retryEnvelope",
-        "roles": ["onlyOwnerOrGuardian"]
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
       },
       {
         "name": "retryTransaction",
-        "roles": ["onlyOwnerOrGuardian"]
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
       },
       {
         "name": "updateGuardian",
-        "roles": ["onlyOwnerOrGuardian"]
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
       },
       {
         "name": "approveSenders",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "removeSenders",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "enableBridgeAdapters",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "disableBridgeAdapters",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "updateMessagesValidityTimestamp",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "allowReceiverBridgeAdapters",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "disallowReceiverBridgeAdapters",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "receiveCrossChainMessage",
-        "roles": ["onlyApprovedBridges"]
+        "roles": [
+          "onlyApprovedBridges"
+        ]
       },
       {
         "name": "solveEmergency",
-        "roles": ["onlyGuardian"]
+        "roles": [
+          "onlyGuardian"
+        ]
       }
     ]
   },
@@ -199,44 +272,21 @@
     "functions": [
       {
         "name": "changeProxyAdmin",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "upgrade",
-        "roles": ["onlyOwner"]
+        "roles": [
+          "onlyOwner"
+        ]
       },
       {
         "name": "upgradeAndCall",
-        "roles": ["onlyOwner"]
-      }
-    ]
-  },
-  {
-    "contract": "PermissionedPayloadsController",
-    "functions": [
-      {
-        "name": "emergencyTokenTransfer",
-        "roles": ["onlyRescueGuardian"]
-      },
-      {
-        "name": "emergencyEtherTransfer",
-        "roles": ["onlyRescueGuardian"]
-      },
-      {
-        "name": "cancelPayload",
-        "roles": ["onlyPayloadsManagerOrGuardian"]
-      },
-      {
-        "name": "updateGuardian",
-        "roles": ["onlyOwnerOrGuardian"]
-      },
-      {
-        "name": "createPayload",
-        "roles": ["onlyPayloadsManager"]
-      },
-      {
-        "name": "setExecutionDelay",
-        "roles": ["onlyGuardian"]
+        "roles": [
+          "onlyOwner"
+        ]
       }
     ]
   }

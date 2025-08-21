@@ -24,6 +24,10 @@ export type GovV3 = {
   ggRoles?: Roles;
   // bridgeAdapters: string[];
 };
+export type Ppc = {
+  contracts: Contracts;
+};
+
 export type Collector = {
   latestBlockNumber: number;
   contracts: Contracts;
@@ -58,6 +62,7 @@ export type PoolInfo = {
   collector?: Collector;
   clinicSteward?: ClinicSteward;
   umbrella?: Umbrella;
+  ppc?: Ppc;
 };
 
 export type Pool = Record<string, PoolInfo>;
@@ -88,6 +93,9 @@ export type PoolConfigs = {
   umbrellaBlock?: number;
   umbrellaIncentivesBlock?: number;
   umbrellaAddressBook?: any;
+
+  ppcPermissionsJson?: string;
+  ppcAddressBook?: any;
 };
 export type Network = {
   name: string;

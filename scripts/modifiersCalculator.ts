@@ -19,7 +19,7 @@ import { getCurrentRoleAdmins } from '../helpers/adminRoles.js';
 import { resolveV2Modifiers } from './v2Permissions.js';
 import { resolveV3Modifiers } from './v3Permissions.js';
 import { resolveGovV2Modifiers } from './governancePermissions.js';
-import { ClinicSteward, Collector, Contracts, GovV3, Roles, Umbrella } from '../helpers/types.js';
+import { ClinicSteward, Collector, Contracts, GovV3, Ppc, Roles, Umbrella } from '../helpers/types.js';
 import { resolveSafetyV2Modifiers } from './safetyPermissions.js';
 import { resolveV2MiscModifiers } from './v2MiscPermissions.js';
 import { getCCCSendersAndAdapters } from '../helpers/crossChainControllerLogs.js';
@@ -30,6 +30,7 @@ import { resolveCollectorModifiers } from './collectorPermissions.js';
 import { resolveClinicStewardModifiers } from './clinicStewardPermissions.js';
 import { resolveUmbrellaModifiers } from './umbrellaPermissions.js';
 import { getRPCClient, getRpcClientFromUrl } from '../helpers/rpc.js';
+import { resolvePpcModifiers } from './ppcPermissions.js';
 
 const generateNetworkPermissions = async (network: string) => {
   // get current permissions
@@ -58,6 +59,7 @@ const generateNetworkPermissions = async (network: string) => {
     let umbrella = {} as Umbrella;
     let cAdmins = {} as Roles;
     let govV3 = {} as GovV3;
+    let ppc = {} as Ppc;
     govV3.ggRoles = {} as Roles;
 
     if (
@@ -70,7 +72,8 @@ const generateNetworkPermissions = async (network: string) => {
       poolKey !== Pools.TENDERLY &&
       poolKey !== Pools.GHO_TENDERLY &&
       poolKey !== Pools.GHO &&
-      !pool.aclBlock
+      !pool.aclBlock &&
+      !pool.crossChainControllerBlock
     ) {
       console.log(`
           ------------------------------------
@@ -165,7 +168,7 @@ const generateNetworkPermissions = async (network: string) => {
         fromBlock =
           fullJson[poolKey]?.roles?.latestBlockNumber || pool.ghoBlock;
       }
-      console.log('fromBlock : ', fromBlock);
+
       if (fromBlock) {
         console.log(`
           ------------------------------------
@@ -397,6 +400,25 @@ const generateNetworkPermissions = async (network: string) => {
       }
     }
 
+    if (pool.ppcPermissionsJson && pool.ppcAddressBook) {
+      console.log(`
+        ------------------------------------
+          network: ${network}
+          pool: ${poolKey}
+          Permissioned Payloads Controller Table
+        ------------------------------------
+        `);
+      const ppcPermissions = await resolvePpcModifiers(
+        pool.ppcAddressBook,
+        poolKey === Pools.TENDERLY
+          ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
+          : provider,
+        getStaticPermissionsJson(pool.ppcPermissionsJson),
+        Number(network),
+      );
+      ppc.contracts = ppcPermissions;
+    }
+
 
     if (pool.umbrellaBlock && pool.umbrellaAddressBook && pool.umbrellaIncentivesBlock) {
       let umbrellaFromBlock;
@@ -567,6 +589,7 @@ const generateNetworkPermissions = async (network: string) => {
           collector: collector,
           clinicSteward: clinicSteward,
           umbrella: umbrella,
+          ppc: ppc,
         },
       };
     } else {
@@ -579,6 +602,7 @@ const generateNetworkPermissions = async (network: string) => {
         collector: collector,
         clinicSteward: clinicSteward,
         umbrella: umbrella,
+        ppc: ppc,
       };
     }
     console.log(`----${network} : ${poolKey} finished`);

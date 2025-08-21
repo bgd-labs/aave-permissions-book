@@ -60,6 +60,8 @@ import {
   GovernanceV3InkWhitelabel,
   AaveV3InkWhitelabel,
   MiscInkWhitelabel,
+  GovernanceV3Ink,
+  MiscInk,
 } from '@bgd-labs/aave-address-book';
 import { NetworkConfigs } from './types.js';
 import { ChainId } from '@bgd-labs/toolbox';
@@ -87,6 +89,7 @@ export enum Pools {
   ETHERFI = 'ETHERFI',
   ETHERFI_TENDERLY = 'ETHERFI_TENDERLY',
   LIDO_TENDERLY = 'LIDO_TENDERLY',
+  V3_WHITE_LABEL = 'V3_WHITE_LABEL',
 }
 
 export const ghoRoleNames = [
@@ -218,6 +221,8 @@ export const networkConfigs: NetworkConfigs = {
         permissionsJson: './statics/functionsPermissionsV3.json',
         crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         governanceAddressBook: GovernanceV3Ethereum,
+        ppcPermissionsJson: './statics/functionsPermissionsPpcV1.json',
+        ppcAddressBook: { ...UmbrellaEthereum, ...MiscEthereum },
         aclBlock: 16291117,
         crossChainControllerBlock: 18090380,
         granularGuardianBlock: 20324867,
@@ -230,6 +235,7 @@ export const networkConfigs: NetworkConfigs = {
           '0x6Abb61beb5848B476d026C4934E8a6415e2E75a8': 'HyperLaneAdapter',
         },
         clinicStewardBlock: 21967120,
+
       },
       [Pools.LIDO]: {
         collectorBlock: 21765718,
@@ -1037,34 +1043,46 @@ export const networkConfigs: NetworkConfigs = {
     },
   },
   [ChainId.ink]: {
-    name: 'Ink_Whitelabel',
+    name: 'Ink',
     rpcUrl: process.env.RPC_INK,
     explorer: 'https://explorer.inkonchain.com/',
     addressesNames: {
       '0x00C2B13eF4F70Bf1827179Fe6d8facF7cFf6AcD2':
-        'Ink emergency-admin multisig',
+        'WhiteLabel Ink emergency-admin multisig',
       '0x2e8090716C5a25332cf963d454250B88bf04E6dC':
-        'Ink super-admin multisig',
+        'WhiteLabel Ink super-admin multisig',
+      '0x1bBcC6F0BB563067Ca45450023a13E34fa963Fa9': 'Aave Governance Guardian Ink',
+      '0x81D251dA015A0C7bD882918Ca1ec6B7B8E094585': 'BGD',
+      '0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6': 'Deployer',
     },
     pools: {
-      [Pools.V3]: {
+      [Pools.V3_WHITE_LABEL]: {
         aclBlock: 19948732,
         collectorBlock: 19948732,
-        granularGuardianBlock: 19948732,
-        crossChainControllerBlock: 19948732,
         permissionsJson: './statics/functionsPermissionsV3.json',
-        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
         addressBook: {
           ...AaveV3InkWhitelabel,
           ...MiscInkWhitelabel,
         },
-        governanceAddressBook: {
+        ppcPermissionsJson: './statics/functionsPermissionsPpcV2.json',
+        ppcAddressBook: {
           ...GovernanceV3InkWhitelabel,
           ...MiscInkWhitelabel
         },
-        addresses: {
-        },
       },
+      [Pools.V3]: {
+        granularGuardianBlock: 9343700,
+        crossChainControllerBlock: 9342650,
+        permissionsJson: './statics/functionsPermissionsV3.json',
+        crossChainPermissionsJson: './statics/functionsPermissionsGovV3.json',
+        governanceAddressBook: {
+          ...GovernanceV3Ink,
+          ...MiscInk,
+        },
+        addressBook: {
+          ...MiscInk,
+        }
+      }
     },
   },
 };

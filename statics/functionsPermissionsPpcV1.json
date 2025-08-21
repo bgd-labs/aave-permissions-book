@@ -1,0 +1,83 @@
+[
+  {
+    "contract": "PermissionedExecutor",
+    "functions": [
+      {
+        "name": "executeTransaction",
+        "roles": [
+          "onlyOwner"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "ProxyAdmin",
+    "functions": [
+      {
+        "name": "changeProxyAdmin",
+        "roles": [
+          "onlyOwner"
+        ]
+      },
+      {
+        "name": "upgrade",
+        "roles": [
+          "onlyOwner"
+        ]
+      },
+      {
+        "name": "upgradeAndCall",
+        "roles": [
+          "onlyOwner"
+        ]
+      }
+    ]
+  },
+  {
+    "contract": "PermissionedPayloadsController",
+    "functions": [
+      {
+        "name": "emergencyTokenTransfer",
+        "roles": [
+          "onlyRescueGuardian"
+        ]
+      },
+      {
+        "name": "emergencyEtherTransfer",
+        "roles": [
+          "onlyRescueGuardian"
+        ]
+      },
+      {
+        "name": "cancelPayload",
+        "roles": [
+          "onlyPayloadsManagerOrGuardian"
+        ]
+      },
+      {
+        "name": "updateGuardian",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      },
+      {
+        "name": "createPayload",
+        "roles": [
+          "onlyPayloadsManager"
+        ]
+      },
+      {
+        "name": "setExecutionDelay",
+        "roles": [
+          "onlyGuardian"
+        ]
+      },
+      {
+        "name": "updatePayloadsManager",
+        "roles": [
+          "onlyOwnerOrGuardian"
+        ]
+      }
+    ]
+  }
+]
