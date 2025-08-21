@@ -1,4 +1,4 @@
-import { ContractInfo, Contracts, GovV3, PoolInfo } from './types.js';
+import { ContractInfo, Contracts } from './types.js';
 import actionsConfig from '../statics/actionsConfig.json' assert { type: 'json' };
 
 export type Decentralization = {
@@ -18,14 +18,6 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts, isWh
   const actionsObject: Record<string, Set<string>> = {};
   Object.keys(actionsConfig).forEach((action) => {
     actionsObject[action] = new Set<string>();
-    // if (
-    //   action === 'updateReserveBorrowSettings' ||
-    //   action === 'configureCollateral' ||
-    //   action === 'updateReserveSettings' ||
-    //   action === 'reserveUpgradeability'
-    // ) {
-    //   actionsObject[action].add(Controller.GOV_V3);
-    // } else {
     for (let contractName of Object.keys(poolInfo)) {
       const contract = poolInfo[contractName];
       // search all modifiers
@@ -69,7 +61,6 @@ export const getActionExecutors = (poolInfo: Contracts, govInfo: Contracts, isWh
         }
       });
     }
-    // }
   });
 
   return actionsObject;
