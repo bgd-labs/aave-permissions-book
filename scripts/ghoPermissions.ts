@@ -70,6 +70,8 @@ export const resolveGHOModifiers = async (
     facilitatorOwners[facilitator] = await getSafeOwners(provider, facilitator);
   }
 
+
+
   obj['GHO'] = {
     address: addressBook.GHO_TOKEN,
     modifiers: [
@@ -138,9 +140,13 @@ export const resolveGHOModifiers = async (
         }
       }
     }
-
+    const gsmProxyAdmin = await getProxyAdmin(
+      addressBook[key],
+      provider,
+    );
     obj[key] = {
       address: addressBook[key],
+      proxyAdmin: gsmProxyAdmin,
       modifiers: [
         {
           modifier: 'onlyRescuer',
@@ -200,6 +206,27 @@ export const resolveGHOModifiers = async (
             }),
           ]),
           functions: roles['GSM']['onlyConfigurator'],
+        },
+      ],
+    };
+
+    // add gsm proxy admins
+    const gsmProxyAdminContract = getContract({ address: getAddress(gsmProxyAdmin), abi: IOwnable_ABI, client: provider });
+    const gsmProxyAdminOwner = await gsmProxyAdminContract.read.owner() as Address;
+
+    obj[`${key}-proxyAdmin`] = {
+      address: gsmProxyAdmin,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: gsmProxyAdminOwner,
+              owners: await getSafeOwners(provider, gsmProxyAdminOwner),
+              signersThreshold: await getSafeThreshold(provider, gsmProxyAdminOwner),
+            },
+          ],
+          functions: roles['ProxyAdmin']['onlyOwner'],
         },
       ],
     };

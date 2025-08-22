@@ -7181,6 +7181,7 @@
       },
       "GSM_USDC": {
         "address": "0xFeeb6FE430B7523fEF2a38327241eE7153779535",
+        "proxyAdmin": "0x87f9ff2246ac5756a099c9d10802980fb75cce2b",
         "modifiers": [
           {
             "modifier": "onlyRescuer",
@@ -7237,8 +7238,29 @@
           }
         ]
       },
+      "GSM_USDC-proxyAdmin": {
+        "address": "0x87f9ff2246ac5756a099c9d10802980fb75cce2b",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "changeProxyAdmin",
+              "upgrade",
+              "upgradeAndCall"
+            ]
+          }
+        ]
+      },
       "GSM_USDT": {
         "address": "0x535b2f7C20B9C83d70e519cf9991578eF9816B7B",
+        "proxyAdmin": "0x20004c21e23c44adfdd118392c914a31a488f64d",
         "modifiers": [
           {
             "modifier": "onlyRescuer",
@@ -7291,6 +7313,26 @@
               "updateFeeStrategy",
               "updateExposureCap",
               "updateGhoTreasury"
+            ]
+          }
+        ]
+      },
+      "GSM_USDT-proxyAdmin": {
+        "address": "0x20004c21e23c44adfdd118392c914a31a488f64d",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "changeProxyAdmin",
+              "upgrade",
+              "upgradeAndCall"
             ]
           }
         ]
@@ -7478,7 +7520,7 @@
           "0x46Aa1063e5265b43663E81329333B47c517A5409"
         ]
       },
-      "latestBlockNumber": 23195383
+      "latestBlockNumber": 23195506
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -7498,7 +7540,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23195383
+        "latestBlockNumber": 23195506
       },
       "GSM_USDT": {
         "role": {
@@ -7517,7 +7559,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23195383
+        "latestBlockNumber": 23195506
       }
     },
     "govV3": {
