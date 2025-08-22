@@ -481,44 +481,6 @@
           }
         ]
       },
-      "GhoAaveSteward": {
-        "address": "0xd2D586f849620ef042FE3aF52eAa10e9b78bf7De",
-        "modifiers": [
-          {
-            "modifier": "onlyOwner",
-            "addresses": [
-              {
-                "address": "0xFF1137243698CaA18EE364Cc966CF0e02A4e6327",
-                "owners": [],
-                "signersThreshold": 0
-              }
-            ],
-            "functions": [
-              "setBorrowRateConfig"
-            ]
-          },
-          {
-            "modifier": "onlyRiskCouncil",
-            "addresses": [
-              {
-                "address": "0x8513e6F37dBc52De87b166980Fa3F50639694B60",
-                "owners": [
-                  "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
-                  "0xb647055A9915bF9c8021a684E175A353525b9890",
-                  "0xbA037E4746ff58c55dc8F27a328C428F258DDACb",
-                  "0x5d49dBcdd300aECc2C311cFB56593E71c445d60d"
-                ],
-                "signersThreshold": 3
-              }
-            ],
-            "functions": [
-              "updateGhoBorrowRate",
-              "updateGhoBorrowCap",
-              "updateGhoSupplyCap"
-            ]
-          }
-        ]
-      },
       "Manual AGRS": {
         "address": "0x365d47ceD3D7Eb6a9bdB3814aA23cc06B2D33Ef8",
         "modifiers": [
@@ -595,7 +557,7 @@
           "0x352423e2fA5D5c99343d371C9e3bC56C87723Cc7"
         ]
       },
-      "latestBlockNumber": 370925208
+      "latestBlockNumber": 371138077
     },
     "gsmRoles": {},
     "govV3": {
@@ -611,7 +573,7 @@
             "0x1Fcd437D8a9a6ea68da858b78b6cf10E8E0bF959"
           ]
         },
-        "latestBlockNumber": 370925260
+        "latestBlockNumber": 371138100
       },
       "contracts": {
         "GranularGuardian": {
@@ -877,7 +839,7 @@
         }
       },
       "senders": [],
-      "latestCCCBlockNumber": 370925255
+      "latestCCCBlockNumber": 371138097
     },
     "collector": {
       "contracts": {
@@ -954,7 +916,7 @@
             "0xfB1D12D7C9c3Eb6b40fe0502801CdFCE816a0d18"
           ]
         },
-        "latestBlockNumber": 370925240
+        "latestBlockNumber": 371138089
       }
     },
     "clinicSteward": {
@@ -1013,7 +975,7 @@
             "0x3Cbded22F878aFC8d39dCD744d3Fe62086B76193"
           ]
         },
-        "latestBlockNumber": 370925249
+        "latestBlockNumber": 371138094
       }
     },
     "umbrella": {},
