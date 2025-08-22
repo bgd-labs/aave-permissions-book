@@ -7399,6 +7399,26 @@
           }
         ]
       },
+      "Gho Core Direct Minter-proxyAdmin": {
+        "address": "0xf02d4931e0d5c79af9094cd9dff16ea6e3d9acb8",
+        "modifiers": [
+          {
+            "modifier": "onlyOwner",
+            "addresses": [
+              {
+                "address": "0xD3cF979e676265e4f6379749DECe4708B9A22476",
+                "owners": [],
+                "signersThreshold": 0
+              }
+            ],
+            "functions": [
+              "changeProxyAdmin",
+              "upgrade",
+              "upgradeAndCall"
+            ]
+          }
+        ]
+      },
       "Gho Lido Direct Minter": {
         "address": "0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285",
         "proxyAdmin": "0xd3cf979e676265e4f6379749dece4708b9a22476",
@@ -7458,7 +7478,7 @@
           "0x46Aa1063e5265b43663E81329333B47c517A5409"
         ]
       },
-      "latestBlockNumber": 23190248
+      "latestBlockNumber": 23195383
     },
     "gsmRoles": {
       "GSM_USDC": {
@@ -7478,7 +7498,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23190248
+        "latestBlockNumber": 23195383
       },
       "GSM_USDT": {
         "role": {
@@ -7497,7 +7517,7 @@
           "TOKEN_RESCUER_ROLE": [],
           "LIQUIDATOR_ROLE": []
         },
-        "latestBlockNumber": 23190248
+        "latestBlockNumber": 23195383
       }
     },
     "govV3": {

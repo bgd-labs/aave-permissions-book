@@ -271,7 +271,6 @@ export const resolveGHOModifiers = async (
         facilitator,
         provider,
       );
-      console.log('proxyAdmin: ', proxyAdmin);
 
       let facilitatorName = addresses[facilitator];
       if (!facilitatorName) {
@@ -311,7 +310,28 @@ export const resolveGHOModifiers = async (
           },
         ],
       };
-      // console.log('obj: ', obj[`${facilitator}`]);
+
+      const proxyAdminContract = getContract({ address: getAddress(proxyAdmin), abi: IOwnable_ABI, client: provider });
+      const proxyAdminOwner = await proxyAdminContract.read.owner() as Address;
+
+      if (getAddress(proxyAdmin) !== getAddress('0xd3cf979e676265e4f6379749dece4708b9a22476')) { // this is aave proxy admin so no need to re-add
+        obj[`${facilitatorName}-proxyAdmin`] = {
+          address: proxyAdmin,
+          modifiers: [
+            {
+              modifier: 'onlyOwner',
+              addresses: [
+                {
+                  address: proxyAdminOwner,
+                  owners: await getSafeOwners(provider, proxyAdminOwner),
+                  signersThreshold: await getSafeThreshold(provider, proxyAdminOwner),
+                },
+              ],
+              functions: roles['ProxyAdmin']['onlyOwner'],
+            },
+          ],
+        };
+      }
     } catch (error) {
       // do nothing
     }

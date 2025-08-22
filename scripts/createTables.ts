@@ -239,13 +239,15 @@ export const generateTable = (network: string, pool: string): string => {
     );
   }
   // hardcode aave a/v/s tokens
-  decentralizationTableBody += getTableBody([
-    `Aave a/v/s tokens`,
-    `${pool === Pools.V3_WHITE_LABEL ? 'PPC Multi-sig' : 'Governance'}`,
-  ]);
-  decentralizationTableBody += getLineSeparator(
-    decentralizationHeaderTitles.length,
-  );
+  if (pool.includes('V3') || pool.includes('V2')) {
+    decentralizationTableBody += getTableBody([
+      `Aave a/v/s tokens`,
+      `${pool === Pools.V3_WHITE_LABEL ? 'PPC Multi-sig' : 'Governance'}`,
+    ]);
+    decentralizationTableBody += getLineSeparator(
+      decentralizationHeaderTitles.length,
+    );
+  }
 
   if (
     poolPermitsByContract.govV3 &&
