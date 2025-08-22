@@ -14,6 +14,7 @@ import { IOwnable_ABI, IWithGuardian_ABI } from '@bgd-labs/aave-address-book/abi
 import { ghoStewardV2 } from '../abis/ghoStewardV2.js';
 import { Address, Client, getAddress, getContract } from 'viem';
 import { getProxyAdmin } from '../helpers/proxyAdmin.js';
+import { EDGE_RISK_STEWARD_CAPS_ABI } from '../abis/edgeRiskStewardCaps.js';
 
 const uniqueAddresses = (addressesInfo: AddressInfo[]): AddressInfo[] => {
   const cleanAddresses: AddressInfo[] = [];
@@ -33,11 +34,10 @@ export const resolveGHOModifiers = async (
   addressBook: any,
   provider: Client,
   permissionsObject: PermissionsJson,
-  pool: Pools,
-  chainId: typeof ChainId | number,
   adminRoles: Record<string, string[]>,
   gsmAdminRoles: Record<string, Roles>,
   addresses: Record<string, string>,
+  poolRoles: Record<string, string[]>,
 ): Promise<Contracts> => {
   let obj: Contracts = {};
   const roles = generateRoles(permissionsObject);
@@ -54,6 +54,27 @@ export const resolveGHOModifiers = async (
         };
       } else if (owners[roleName] && !owners[roleName][roleAddress]) {
         owners[roleName][roleAddress] = {
+          owners: await getSafeOwners(provider, roleAddress),
+          threshold: await getSafeThreshold(provider, roleAddress),
+        };
+      }
+    }
+  }
+
+  // pool roles
+  const poolOwners: Record<string, Record<string, Guardian>> = {};
+  // owners
+  for (const roleName of Object.keys(poolRoles)) {
+    for (const roleAddress of poolRoles[roleName]) {
+      if (!poolOwners[roleName]) {
+        poolOwners[roleName] = {
+          [roleAddress]: {
+            owners: await getSafeOwners(provider, roleAddress),
+            threshold: await getSafeThreshold(provider, roleAddress),
+          },
+        };
+      } else if (poolOwners[roleName] && !poolOwners[roleName][roleAddress]) {
+        poolOwners[roleName][roleAddress] = {
           owners: await getSafeOwners(provider, roleAddress),
           threshold: await getSafeThreshold(provider, roleAddress),
         };
@@ -362,6 +383,66 @@ export const resolveGHOModifiers = async (
     } catch (error) {
       // do nothing
     }
+  }
+
+  if (addressBook.GHO_FLASHMINTER_FACILITATOR) {
+    obj['GhoFlashMinter'] = {
+      address: addressBook.GHO_FLASHMINTER_FACILITATOR,
+      modifiers: [
+        {
+          modifier: 'onlyPoolAdmin',
+          addresses: uniqueAddresses([
+            ...poolRoles['POOL_ADMIN'].map((roleAddress) => {
+              console.log('roleAddress---> ', roleAddress);
+              return {
+                address: roleAddress,
+                owners: poolOwners['POOL_ADMIN'][roleAddress].owners || [],
+                signersThreshold:
+                  poolOwners['POOL_ADMIN'][roleAddress].threshold || 0,
+              };
+            }),
+          ]),
+          functions: roles['GhoFlashMinter']['onlyPoolAdmin']
+        },
+      ],
+    };
+  }
+
+  if (addressBook.GHO_AAVE_CORE_STEWARD) {
+    const ghoAaveCoreStewardContract = getContract({ address: getAddress(addressBook.GHO_AAVE_CORE_STEWARD), abi: EDGE_RISK_STEWARD_CAPS_ABI, client: provider });
+    const ghoAaveCoreStewardOwner = await ghoAaveCoreStewardContract.read.owner() as Address;
+    const ghoAaveCoreStewardGuardian = await ghoAaveCoreStewardContract.read.RISK_COUNCIL() as Address;
+
+    obj['GhoAaveSteward'] = {
+      address: addressBook.GHO_AAVE_CORE_STEWARD,
+      modifiers: [
+        {
+          modifier: 'onlyOwner',
+          addresses: [
+            {
+              address: ghoAaveCoreStewardOwner,
+              owners: await getSafeOwners(provider, ghoAaveCoreStewardOwner),
+              signersThreshold: await getSafeThreshold(
+                provider,
+                ghoAaveCoreStewardOwner,
+              ),
+            },
+          ],
+          functions: roles['GhoAaveSteward']['onlyOwner'],
+        },
+        {
+          modifier: 'onlyRiskCouncil',
+          addresses: [
+            {
+              address: ghoAaveCoreStewardGuardian,
+              owners: await getSafeOwners(provider, ghoAaveCoreStewardGuardian),
+              signersThreshold: await getSafeThreshold(provider, ghoAaveCoreStewardGuardian),
+            },
+          ],
+          functions: roles['GhoAaveSteward']['onlyRiskCouncil'],
+        },
+      ],
+    };
   }
 
 

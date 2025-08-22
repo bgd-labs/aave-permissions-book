@@ -13,6 +13,8 @@
 |  [Gho Core Direct Minter](https://etherscan.io/address/0x593B09afc075B3c326CE2AD7750888645BA8943d) |  External Contract | |--------|--------|
 |  [Gho Core Direct Minter-proxyAdmin](https://etherscan.io/address/0xf02d4931e0d5c79af9094cd9dff16ea6e3d9acb8) |  not upgradeable | |--------|--------|
 |  [Gho Lido Direct Minter](https://etherscan.io/address/0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285) |  Governance | |--------|--------|
+|  [GhoFlashMinter](https://etherscan.io/address/0xb639D208Bcf0589D54FaC24E655C79EC529762B8) |  not upgradeable | |--------|--------|
+|  [GhoAaveSteward](https://etherscan.io/address/0x98217A06721Ebf727f2C8d9aD7718ec28b7aAe34) |  not upgradeable | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
@@ -25,7 +27,7 @@
 ### Contracts
 | contract |proxyAdmin |modifier |permission owner |functions |
 |----------|----------|----------|----------|----------|
-|  [GHO](https://etherscan.io/address/0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f) |  - |  onlyFacilitator |  [Gho Core Direct Minter](https://etherscan.io/address/0x593B09afc075B3c326CE2AD7750888645BA8943d), [GHOFlashMinter](https://etherscan.io/address/0xb639D208Bcf0589D54FaC24E655C79EC529762B8), [GSM_USDT](https://etherscan.io/address/0x535b2f7C20B9C83d70e519cf9991578eF9816B7B), [GSM_USDC](https://etherscan.io/address/0xFeeb6FE430B7523fEF2a38327241eE7153779535), [Gho Lido Direct Minter](https://etherscan.io/address/0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285) |  mint, burn | |--------|--------|--------|--------|--------|
+|  [GHO](https://etherscan.io/address/0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f) |  - |  onlyFacilitator |  [Gho Core Direct Minter](https://etherscan.io/address/0x593B09afc075B3c326CE2AD7750888645BA8943d), [GhoFlashMinter](https://etherscan.io/address/0xb639D208Bcf0589D54FaC24E655C79EC529762B8), [GSM_USDT](https://etherscan.io/address/0x535b2f7C20B9C83d70e519cf9991578eF9816B7B), [GSM_USDC](https://etherscan.io/address/0xFeeb6FE430B7523fEF2a38327241eE7153779535), [Gho Lido Direct Minter](https://etherscan.io/address/0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285) |  mint, burn | |--------|--------|--------|--------|--------|
 |  [GHO](https://etherscan.io/address/0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f) |  - |  onlyFacilitatorManager |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  addFacilitator, removeFacilitator | |--------|--------|--------|--------|--------|
 |  [GHO](https://etherscan.io/address/0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f) |  - |  onlyBucketManager |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A), [Gho Bucket Steward](https://etherscan.io/address/0x46Aa1063e5265b43663E81329333B47c517A5409) |  setFacilitatorBucketCapacity | |--------|--------|--------|--------|--------|
 |  [GSM_USDC](https://etherscan.io/address/0xFeeb6FE430B7523fEF2a38327241eE7153779535) |  [GSM_USDC-proxyAdmin](https://etherscan.io/address/0x87F9ff2246aC5756A099c9D10802980fb75cCE2b) |  onlyRescuer |   |  rescueTokens | |--------|--------|--------|--------|--------|
@@ -46,6 +48,9 @@
 |  [Gho Core Direct Minter-proxyAdmin](https://etherscan.io/address/0xf02d4931e0d5c79af9094cd9dff16ea6e3d9acb8) |  - |  onlyOwner |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  changeProxyAdmin, upgrade, upgradeAndCall | |--------|--------|--------|--------|--------|
 |  [Gho Lido Direct Minter](https://etherscan.io/address/0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwnerOrGuardian |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A), [Gho Risk Council](https://etherscan.io/address/0x8513e6F37dBc52De87b166980Fa3F50639694B60) |  mintAndSupply, withdrawAndBurn, updateGuardian | |--------|--------|--------|--------|--------|
 |  [Gho Lido Direct Minter](https://etherscan.io/address/0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285) |  [ProxyAdmin](https://etherscan.io/address/0xD3cF979e676265e4f6379749DECe4708B9A22476) |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  renounceOwnership, transferOwnership | |--------|--------|--------|--------|--------|
+|  [GhoFlashMinter](https://etherscan.io/address/0xb639D208Bcf0589D54FaC24E655C79EC529762B8) |  - |  onlyPoolAdmin |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  updateGhoTreasury, updateFee | |--------|--------|--------|--------|--------|
+|  [GhoAaveSteward](https://etherscan.io/address/0x98217A06721Ebf727f2C8d9aD7718ec28b7aAe34) |  - |  onlyOwner |  [Executor_lvl1](https://etherscan.io/address/0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A) |  setBorrowRateConfig | |--------|--------|--------|--------|--------|
+|  [GhoAaveSteward](https://etherscan.io/address/0x98217A06721Ebf727f2C8d9aD7718ec28b7aAe34) |  - |  onlyRiskCouncil |  [Gho Risk Council](https://etherscan.io/address/0x8513e6F37dBc52De87b166980Fa3F50639694B60) |  updateGhoBorrowRate, updateGhoBorrowCap, updateGhoSupplyCap | |--------|--------|--------|--------|--------|
 
 ### Guardians 
 | Guardian |Threshold |Address |Owners |

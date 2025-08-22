@@ -23,7 +23,6 @@
 |  [Manual AGRS](https://etherscan.io/address/0x7e6a6B115D31d4A837E3C737c49Cf6Fafe6112C3) |  not upgradeable | |--------|--------|
 |  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  Governance | |--------|--------|
 |  [ClinicSteward](https://etherscan.io/address/0x7571F419F7Df2d0622C1A20154a0D4250B2265cC) |  not upgradeable | |--------|--------|
-|  Aave a/v/s tokens |  Governance | |--------|--------|
 
 ### Actions type
 | type |can be executed by |
