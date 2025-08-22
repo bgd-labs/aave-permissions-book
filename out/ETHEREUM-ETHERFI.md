@@ -20,6 +20,7 @@
 |  [AavePolEthBridge](https://etherscan.io/address/0x1C2BA5b8ab8e795fF44387ba6d251fa65AD20b36) |  not upgradeable | |--------|--------|
 |  [Manual AGRS](https://etherscan.io/address/0xBF79d8339303148E345277a994Eb2cD5d82F0067) |  not upgradeable | |--------|--------|
 |  [Collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c) |  Governance | |--------|--------|
+|  Aave a/v/s tokens |  Governance | |--------|--------|
 
 ### Actions type
 | type |can be executed by |

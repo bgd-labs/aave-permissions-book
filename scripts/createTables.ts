@@ -239,7 +239,7 @@ export const generateTable = (network: string, pool: string): string => {
     );
   }
   // hardcode aave a/v/s tokens
-  if (pool.includes('V3') || pool.includes('V2')) {
+  if (pool.includes('V3') || pool.includes('V2') || pool.includes('LIDO') || pool.includes('ETHERFI')) {
     decentralizationTableBody += getTableBody([
       `Aave a/v/s tokens`,
       `${pool === Pools.V3_WHITE_LABEL ? 'PPC Multi-sig' : 'Governance'}`,
