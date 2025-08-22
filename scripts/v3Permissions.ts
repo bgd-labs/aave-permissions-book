@@ -254,28 +254,6 @@ export const resolveV3Modifiers = async (
     ],
   };
 
-  if (chainId === ChainId.mainnet) {
-    obj['GHOFlashMinter'] = {
-      address: '0xb639D208Bcf0589D54FaC24E655C79EC529762B8',
-      modifiers: [
-        {
-          modifier: 'onlyPoolAdmin',
-          addresses: uniqueAddresses([
-            ...adminRoles['POOL_ADMIN'].map((roleAddress) => {
-              return {
-                address: roleAddress,
-                owners: owners['POOL_ADMIN'][roleAddress].owners || [],
-                signersThreshold:
-                  owners['POOL_ADMIN'][roleAddress].threshold || 0,
-              };
-            }),
-          ]),
-          functions: roles['GHOFlashMinter']['onlyPoolAdmin'],
-        },
-      ],
-    };
-  }
-
   if (chainId === ChainId.avalanche) {
     const porExecutorContract = getContract({ address: getAddress(addressBook.PROOF_OF_RESERVE), abi: onlyOwnerAbi, client: provider });
     const porExecutorOwner = await porExecutorContract.read.owner() as Address;
@@ -772,46 +750,6 @@ export const resolveV3Modifiers = async (
       ],
     };
   }
-
-  if (addressBook.GHO_AAVE_CORE_STEWARD) {
-    const ghoAaveCoreStewardContract = getContract({ address: getAddress(addressBook.GHO_AAVE_CORE_STEWARD), abi: EDGE_RISK_STEWARD_CAPS_ABI, client: provider });
-    const ghoAaveCoreStewardOwner = await ghoAaveCoreStewardContract.read.owner() as Address;
-    const ghoAaveCoreStewardGuardian = await ghoAaveCoreStewardContract.read.RISK_COUNCIL() as Address;
-
-    obj['GhoAaveSteward'] = {
-      address: addressBook.GHO_AAVE_CORE_STEWARD,
-      modifiers: [
-        {
-          modifier: 'onlyOwner',
-          addresses: [
-            {
-              address: ghoAaveCoreStewardOwner,
-              owners: await getSafeOwners(provider, ghoAaveCoreStewardOwner),
-              signersThreshold: await getSafeThreshold(
-                provider,
-                ghoAaveCoreStewardOwner,
-              ),
-            },
-          ],
-          functions: roles['GhoAaveSteward']['onlyOwner'],
-        },
-        {
-          modifier: 'onlyRiskCouncil',
-          addresses: [
-            {
-              address: ghoAaveCoreStewardGuardian,
-              owners: await getSafeOwners(provider, ghoAaveCoreStewardGuardian),
-              signersThreshold: await getSafeThreshold(provider, ghoAaveCoreStewardGuardian),
-            },
-          ],
-          functions: roles['GhoAaveSteward']['onlyRiskCouncil'],
-        },
-      ],
-    };
-  }
-
-
-
 
   if (addressBook.AAVE_POL_ETH_BRIDGE) {
     const polEthBridgeContract = getContract({ address: getAddress(addressBook.AAVE_POL_ETH_BRIDGE), abi: erc20Bridge, client: provider });

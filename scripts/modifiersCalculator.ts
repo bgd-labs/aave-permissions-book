@@ -218,16 +218,17 @@ const generateNetworkPermissions = async (network: string) => {
               );
             }
 
+            const poolRoles = getPermissionsByNetwork(network)['V3']?.roles?.role || {} as Record<string, string[]>;
             poolPermissions = await resolveGHOModifiers(
               pool.addressBook,
               poolKey === Pools.GHO_TENDERLY
                 ? getRpcClientFromUrl(pool.tenderlyRpcUrl!)
                 : provider,
               permissionsJson,
-              Pools[poolKey as keyof typeof Pools],
-              Number(network),
               admins.role,
               gsmAdmins,
+              pool.addresses || {},
+              poolRoles,
             );
 
           }
